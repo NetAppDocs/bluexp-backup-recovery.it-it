@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: concept-protect-vm-data.html 
+keywords: protect virtual machines, vm, policy, policies, backup back up, restore, SnapCenter Plug-in, Cloud Manager, BlueXP 
+summary: Scopri di più sulla protezione dei dati sulle tue macchine virtuali e sulle diverse policy. 
+---
+= Proteggi i dati delle tue macchine virtuali
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il backup e ripristino BlueXP per macchine virtuali offre funzionalità di protezione dei dati eseguendo il backup dei datastore e il ripristino delle macchine virtuali.
+
+È possibile eseguire il backup dei datastore su Amazon Web Services S3, Microsoft Azure Blob, piattaforma cloud Google e StorageGRID e ripristinare le macchine virtuali nel plug-in SnapCenter on-premise per l'host VMware vSphere.
+
+.Prima di iniziare
+Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione supportata prima di iniziare il backup di datastore e macchine virtuali su un cloud provider.
+
+* Plug-in SnapCenter per VMware vSphere 4.6P1 o versione successiva
++
+** Si consiglia di utilizzare il plug-in SnapCenter per VMware vSphere 4.7P1 o versione successiva per eseguire il backup dei datastore dallo storage secondario on-premise.
+
+
+* ONTAP 9.8 o versione successiva
+* BlueXP
+* Sono supportati solo gli archivi dati NFS. Gli archivi dati VMFS basati su iSCSI/FC/NVMe e vVol non sono supportati.
+* Almeno un backup dovrebbe essere stato eseguito nel plug-in SnapCenter per VMware vSphere 4.6P1.
+* Almeno una policy giornaliera, settimanale o mensile nel plug-in SnapCenter per VMware vSphere senza etichetta o etichetta uguale a quella della policy macchine virtuali in BlueXP.
+* Per le policy pre-programmate, il livello di pianificazione deve essere lo stesso per il datastore nel plug-in SnapCenter per VMware vSphere e nel cloud.
+* Assicurarsi che non vi siano volumi FlexGroup nell'archivio dati perché il backup e il ripristino dei volumi FlexGroup non sono supportati.
+* Assicurarsi che nessuno dei volumi sia crittografato perché il ripristino dei volumi crittografati non è supportato.
+* Disattivare "*_Recent*" sui gruppi di risorse richiesti. Se "*_Recent*" è attivato per il gruppo di risorse, i backup di tali gruppi di risorse non possono essere utilizzati per la protezione dei dati nel cloud e, successivamente, non possono essere utilizzati per l'operazione di ripristino.
+* Assicurarsi che il datastore di destinazione in cui verrà ripristinata la macchina virtuale disponga di spazio sufficiente per ospitare una copia di tutti i file delle macchine virtuali, ad esempio VMDK, VMX, VMSD e così via.
+* Assicurarsi che l'archivio dati di destinazione non abbia file di macchine virtuali obsoleti nel formato restore_xxx_xxxxxx_filename degli errori dell'operazione di ripristino precedente. Eliminare i file obsoleti prima di avviare un'operazione di ripristino.
+
+
+L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:
+
+image:cloud_backup_vm.png["diagramma dell'architettura"]

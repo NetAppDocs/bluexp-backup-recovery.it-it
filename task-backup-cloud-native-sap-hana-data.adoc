@@ -1,0 +1,155 @@
+---
+sidebar: sidebar 
+permalink: task-backup-cloud-native-sap-hana-data.html 
+keywords: cloud-native, application data, back up, policy, pre-canned policies, scheduled backups, on-demand backups, cloud manager, BlueXP, add hosts, create policy, SAP HANA Database 
+summary: Creare backup pianificati o on-demand del database SAP HANA. 
+---
+= Eseguire il backup dei database SAP HANA nativi del cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile creare un backup assegnando un criterio predefinito o il criterio creato.
+
+
+
+== Creare una policy per proteggere il database SAP HANA
+
+È possibile creare policy se non si desidera utilizzare o modificare le policy predefinite.
+
+. Nella pagina *applicazioni*, dall'elenco a discesa Impostazioni, selezionare *Criteri*.
+. Fare clic su *Crea policy*.
+. Specificare un nome di policy.
+. (Facoltativo) modificare il formato del nome della copia Snapshot.
+. Selezionare il tipo di policy.
+. Specificare la pianificazione e i dettagli di conservazione.
+. (Facoltativo) specificare gli script. link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["Prescrizioni e post-script."]
+. Fare clic su *Create* (Crea).
+
+
+
+
+=== Prescrizioni e post-script
+
+Durante la creazione di un criterio, è possibile fornire prescritture, postscript e script di uscita. Questi script vengono eseguiti sull'host HANA durante l'operazione di protezione dei dati.
+
+Il formato supportato per gli script è .sh, python script, perl script e così via.
+
+Il prescrittt e il postscript devono essere registrati dall'amministratore host in `/opt/NetApp/snapcenter/scc/etc/allowed_commands.config` file.
+
+`[root@scspa2622265001 etc]# cat allowed_commands.config
+command: mount
+command: umount
+command: /mnt/scripts/pre_script.sh
+command: /mnt/scripts/post_script.sh`
+
+
+
+=== Variabili ambientali
+
+Per il flusso di lavoro di backup, le seguenti variabili ambientali sono disponibili come parte di Prespt e postscript.
+
+|===
+| Variabile ambientale | Descrizione 
+
+
+ a| 
+SID
+ a| 
+L'identificatore di sistema del database HANA scelto per il ripristino
+
+
+
+ a| 
+BackupName
+ a| 
+Nome del backup scelto per l'operazione di ripristino
+
+
+
+ a| 
+UserStoreKeyNames
+ a| 
+Chiave userstore configurata per il database HANA
+
+
+
+ a| 
+OSDBUser
+ a| 
+Configurato OSDBUser per il database HANA
+
+
+
+ a| 
+Nome criterio
+ a| 
+Solo per backup pianificati
+
+
+
+ a| 
+tipo_pianificazione
+ a| 
+Solo per backup pianificati
+
+|===
+
+
+== Creare un backup del database SAP HANA
+
+È possibile assegnare un criterio predefinito o creare un criterio e assegnarlo al database. Una volta assegnato il criterio, i backup vengono creati in base alla pianificazione definita nel criterio.
+
+*Prima di iniziare*
+
+Dovrebbero essere stati aggiunti gli host del database SAP HANA.link:task-deploy-snapcenter-plugin-for-sap-hana.html#add-sap-hana-database-hosts["Aggiunta di host di database SAP HANA"]
+
+*A proposito di questa attività*
+
+Per HANA System Replication (HSR), il processo di backup pianificato viene attivato solo per il sistema HANA primario e se il sistema esegue il failover verso il sistema HANA secondario, i programmi esistenti attivano un backup sul sistema HANA primario corrente. Se il criterio non viene assegnato al sistema HANA primario e secondario, dopo il failover, le pianificazioni non avranno esito positivo.
+
+Se ai sistemi HSR vengono assegnati criteri diversi, il backup pianificato viene attivato per i sistemi HANA primario e secondario e il backup non viene eseguito per il sistema HANA secondario.
+
+*Fasi*
+
+. Nella pagina applicazioni, se il database non è protetto mediante criteri, fare clic su *Assegna policy*.
++
+Sebbene il database sia protetto mediante uno o più criteri, se necessario, è possibile continuare ad assegnare ulteriori criteri facendo clic su image:icon-action.png["per selezionare l'azione"] > *Assegna policy*.
+
+. Selezionare il criterio e fare clic su *Assegna*.
++
+I backup vengono creati in base alla pianificazione definita nel criterio.
+
++
+
+NOTE: L'account del servizio (_SnapCenter-account-<account_id>_) viene utilizzato per eseguire le operazioni di backup pianificate.
+
+
+
+
+
+== Creazione di backup on-demand del database SAP HANA
+
+Dopo aver assegnato il criterio, è possibile creare un backup on-demand dell'applicazione.
+
+*Fasi*
+
+. Nella pagina *applicazioni*, fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Backup on-Demand*.
+. Selezionare il tipo di backup on-demand.
+. Per il backup basato su policy, selezionare il criterio, il livello di conservazione e fare clic su *Create Backup* (Crea backup).
+. Per una volta, selezionare Snapshot copy based (basato su copia Snapshot) o file based (basato su file), attenersi alla seguente procedura:
++
+.. Selezionare il valore di conservazione e specificare il nome del backup.
+.. (Facoltativo) specificare gli script e il percorso per gli script.
++
+Per ulteriori informazioni, vedere link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["Prescritture e postscript"]
+
+.. Fare clic su *Create Backup* (Crea backup).
+
+
+

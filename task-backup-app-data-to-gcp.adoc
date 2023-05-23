@@ -1,0 +1,52 @@
+---
+sidebar: sidebar 
+permalink: task-backup-app-data-to-gcp.html 
+keywords: backing up, back up, backup, backup application data, Google Cloud Platform, GCP, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a GCP. 
+---
+= Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud Platform
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP alla piattaforma cloud Google.
+
+*Fasi*
+
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Activate Backup* (attiva backup).
+. Nella pagina Assign Policy (Assegna policy), selezionare il criterio e fare clic su *Next* (Avanti).
+. Aggiungere l'ambiente di lavoro.
++
+Configurare la LIF di gestione del cluster che BlueXP deve rilevare. Dopo aver aggiunto l'ambiente di lavoro per una delle applicazioni, è possibile riutilizzarlo per tutte le altre applicazioni che risiedono sullo stesso cluster ONTAP.
+
++
+.. Selezionare la SVM e fare clic su *Add Working Environment* (Aggiungi ambiente di lavoro).
+.. Nella procedura guidata Aggiungi ambiente di lavoro:
++
+... Specificare l'indirizzo IP della LIF di gestione del cluster.
+... Specificare le credenziali dell'utente del cluster ONTAP.
++
+Il backup e ripristino BlueXP per le applicazioni supporta solo l'amministratore del cluster.
+
+
+
+.. Fare clic su *Aggiungi ambiente di lavoro*.
+
+
+. Selezionare *Google Cloud Platform* come provider di cloud.
++
+.. Seleziona il progetto Google Cloud in cui desideri creare il bucket di storage Google Cloud per i backup.
+.. Nel campo Google Cloud Access Key, specificare la chiave per la crittografia dei dati.
+.. Nel campo Google Cloud Secret Key, specificare la password per la crittografia dei dati.
+.. Selezionare la regione in cui si desidera creare i backup.
+.. Specificare lo spazio IP.
+
+
+. Esaminare i dettagli e fare clic su *Activate Backup* (attiva backup).
+

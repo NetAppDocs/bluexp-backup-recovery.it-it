@@ -1,0 +1,189 @@
+---
+sidebar: sidebar 
+permalink: api-backup-restore.html 
+keywords: api, apis, rest, restful, authorization, getting started, body, header, token, reference, expired token, expires, expired, token expired, list apis 
+summary: 'Le funzionalità di backup e ripristino di BlueXP disponibili tramite l"interfaccia utente Web sono disponibili anche tramite le API RESTful.' 
+---
+= API di backup e ripristino BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Le funzionalità di backup e ripristino di BlueXP disponibili tramite l'interfaccia utente Web sono disponibili anche tramite l'API RESTful.
+
+Nel backup e ripristino di BlueXP sono definite dieci categorie di endpoint:
+
+* backup - gestisce le operazioni di backup del cloud e delle risorse on-premise e recupera i dettagli dei dati di backup
+* catalogo - gestisce la ricerca indicizzata dei file nel catalogo in base a una query (Search & Restore)
+* Cloud - recupera informazioni su varie risorse di provider cloud da BlueXP
+* Job - gestisce le voci dei dettagli della commessa nel database BlueXP
+* License (licenza): Recupera la validità della licenza degli ambienti di lavoro da BlueXP
+* ransomware scan (scansione ransomware) - avvia una scansione ransomware su un file di backup specifico
+* restore (ripristina): consente di eseguire operazioni di ripristino a livello di volume, file e cartelle
+* sfr - Recupera i file da un file di backup per operazioni di ripristino a livello di file singolo (Browse & Restore)
+* StorageGRID - consente di recuperare i dettagli su un server StorageGRID e di rilevare un server StorageGRID
+* ambiente di lavoro - gestisce le policy di backup e configura l'archivio di oggetti di destinazione associato a un ambiente di lavoro
+
+
+
+
+== Per iniziare
+
+Per iniziare a utilizzare le API di backup e ripristino di BlueXP, è necessario ottenere un token utente, l'ID account BlueXP e l'ID connettore BlueXP.
+
+Quando si effettua una chiamata API, aggiungere il token utente nell'intestazione Authorization e l'ID del connettore BlueXP nell'intestazione x-Agent-id. È necessario utilizzare l'ID account BlueXP nelle API.
+
+.Fasi
+. Ottenere un token utente dal sito Web di NetApp BlueXP.
++
+Assicurarsi di generare il token di refresh dal seguente collegamento: https://services.cloud.netapp.com/refresh-token/. Il token refresh è una stringa alfanumerica che verrà utilizzata per generare un token utente.
+
++
+[source, http]
+----
+curl --location --request POST 'https://netapp-cloud-account.auth0.com/oauth/token?=' \
+--header 'Content-Type: application/json' \
+-d '{
+    "grant_type": "refresh_token",
+    "refresh_token": "JxaVHn9cGkX92aPVCkhat3zxxxxxwsC9qMl_pLHkZtsVA",
+    "client_id": "Mu0V1ywgYteI6w1MbD15fKfVIUrNXGWC"
+}'
+----
++
+
+NOTE: Il token utente del sito Web BlueXP ha una data di scadenza. La risposta API include un campo "expires_in" che indica la scadenza del token. Per aggiornare il token, è necessario chiamare nuovamente questa API.
+
+. Ottenere l'ID account BlueXP.
++
+[source, http]
+----
+GET 'https://api.bluexp.netapp.com/tenancy/account' -H 'authority: api.bluexp.netapp.com'
+Header:
+-H 'accept: application/json'
+-H 'accept-language: en-GB,en;q=0.9'
+-H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR………
+----
++
+Questa API restituirà una risposta simile a quella riportata di seguito. È possibile recuperare l'ID del centro di costo analizzando l'output da *[0].[ accountPublicId]*.
+
++
+ [{"accountPublicId":"account-i6vJXvZW","accountName":"rashidn","isSaas":true,"isGov":false,"isPrivatePreviewEnabled":false,"is3rdPartyServicesEnabled":false,"accountSerial":"96064469711530003565","userRole":"Role-1"}………
+. Ottenere l'ID x-Agent che contiene l'ID del connettore BlueXP.
++
+[source, http]
+----
+GET curl 'https://api.services.cloud.netapp.com/occm/list-occms/account-OOnAR4ZS?excludeStandalone=true&source=saas' \
+Header:
+  -H 'authority: api.services.cloud.netapp.com' \
+  -H 'accept: application/json' \
+  -H 'accept-language: en-GB,en;q=0.9' \
+  -H 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5…………
+----
++
+Questa API restituirà una risposta simile a quella riportata di seguito. È possibile recuperare l'id agente analizzando l'output da *occm.[0].[Agent].[agentId]*.
+
++
+ {"occms":[{"account":"account-OOnAR4ZS","accountName":"cbs","occm":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Z","status":"ready","occmName":"cbsgcpdevcntsg-asia","primaryCallbackUri":"http://34.93.197.21","manualOverrideUris":[],"automaticCallbackUris":["http://34.93.197.21","http://34.93.197.21/occmui","https://34.93.197.21","https://34.93.197.21/occmui","http://10.138.0.16","http://10.138.0.16/occmui","https://10.138.0.16","https://10.138.0.16/occmui","http://localhost","http://localhost/occmui","http://localhost:1337","http://localhost:1337/occmui","https://localhost","https://localhost/occmui","https://localhost:1337","https://localhost:1337/occmui"],"createDate":"1652120369286","agent":{"useDockerInfra":true,"network":"default","name":"cbsgcpdevcntsg-asia","agentId":"imEdsEW4HyYTFbt8ZcNKTKDF05jMIe6Zclients","provider":"gcp","systemId":"a3aa3578-bfee-4d16-9e10-
+
+
+
+
+== Esempio di utilizzo delle API
+
+Nell'esempio seguente viene illustrata una chiamata API per attivare il backup e il ripristino di BlueXP in un ambiente di lavoro con una nuova policy con etichette giornaliere, orarie e settimanali impostate, che archiviano dopo giorni impostati su 180 giorni, nella regione Est-US-2 nel cloud Azure. Si noti che questo abilita solo il backup nell'ambiente di lavoro, ma non viene eseguito il backup dei volumi.
+
+Se si sceglie "auto-backup-enabled" (backup automatico abilitato): "True" (vero), viene eseguito il backup di tutti i volumi già presenti nel sistema e di tutti i volumi futuri.
+
+.Richiesta API
+Verrà utilizzato l'ID account BlueXP `account-DpTFcxN3`, ID connettore BlueXP `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`e token utente `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` in questo comando.
+
+[source, http]
+----
+curl --location --request POST 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v3/backup/working-environment/VsaWorkingEnvironment-99hPYEgk' \
+--header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g' \
+--data-raw '{
+    "provider":"AZURE",
+    "backup-policy": {
+      "archive-after-days": 180,
+      "rule": [
+        {
+          "label": "hourly",
+          "retention": "2"
+        },
+        {
+          "label": "daily",
+          "retention": "30"
+        },
+        {
+          "label": "weekly",
+          "retention": "52"
+        }
+      ]
+    },
+    "ip-space": "Default",
+    "region": "eastus2",
+    "azure": {
+      "resource-group": "rn-test-backup-rg",
+      "subscription": "3beb4dd0-25d4-464f-9bb0-303d7cf5c0c2"
+    }
+  }'
+----
+.Response è un ID processo che è possibile monitorare.
+[source, text]
+----
+{
+ "job-id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a"
+}
+----
+.Monitorare la risposta.
+[source, http]
+----
+curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpTFcxN3/providers/cloudmanager_cbs/api/v1/job/1b34b6f6-8f43-40fb-9a52-485b0dfe893a' \
+--header 'x-agent-id: iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients' \
+--header 'Accept: application/json' \
+--header 'Content-Type: application/json' \
+--header 'Authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…hE9ss2NubK6wZRHUdSaORI7JvcOorUhJ8srqdiUiW6MvuGIFAQIh668of2M3dLbhVDBe8BBMtsa939UGnJx7Qz6Eg'
+----
+.Risposta.
+[source, text]
+----
+{
+    "job": [
+        {
+            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+            "type": "backup-working-environment",
+            "status": "PENDING",
+            "error": "",
+            "time": 1651852160000
+        }
+    ]
+}
+----
+.Monitorare fino a quando lo "stato" non è "COMPLETATO".
+[source, text]
+----
+{
+    "job": [
+        {
+            "id": "1b34b6f6-8f43-40fb-9a52-485b0dfe893a",
+            "type": "backup-working-environment",
+            "status": "COMPLETED",
+            "error": "",
+            "time": 1651852160000
+        }
+    ]
+}
+----
+
+
+== Riferimento API
+
+La documentazione per ciascuna API di backup e ripristino BlueXP è disponibile all'interno del sito https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html[].

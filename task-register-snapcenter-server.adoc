@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: task-register-snapcenter-server.html 
+keywords: SnapCenter Server, register 
+summary: Completare alcuni passaggi per registrare il server SnapCenter. 
+---
+= Registrare il server SnapCenter
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Solo un utente con ruolo SnapCenterAdmin può registrare l'host su cui è in esecuzione SnapCenter Server 4.6 o versione successiva. È possibile registrare più host server SnapCenter in BlueXP.
+
+*Fasi*
+
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
+. Nell'elenco a discesa *Impostazioni*, fare clic su *Server SnapCenter*.
+. Fare clic su *Registra server SnapCenter*.
+. Specificare i seguenti dettagli:
++
+.. Nel campo Server SnapCenter, specificare l'FQDN o l'indirizzo IP dell'host server SnapCenter.
+.. Nel campo porta, specificare il numero di porta su cui è in esecuzione l'host del server SnapCenter.
++
+Assicurarsi che la porta sia aperta per consentire la comunicazione tra il server SnapCenter e BlueXP.
+
+.. Nel campo Tag, specificare il nome del sito, la città o qualsiasi nome personalizzato con cui si desidera contrassegnare il server SnapCenter.
++
+I tag sono separati da virgole.
+
+.. Nel campo Nome utente e Password, specificare le credenziali dell'utente con ruolo SnapCenterAdmin.
+
+
+. Selezionare il connettore dall'elenco a discesa *Connector* (connettore).
+. Fare clic su *Registra*.
+
+
+*Al termine*
+
+Fare clic su *Backup e ripristino* > *applicazioni* per visualizzare tutte le applicazioni protette mediante l'host del server SnapCenter registrato. Per impostazione predefinita, le applicazioni vengono rilevate automaticamente ogni giorno a mezzanotte.
+
+
+IMPORTANT: Se le SVM vengono aggiunte a SnapCenter utilizzando l'FQDN o l'indirizzo IP, le applicazioni in esecuzione su queste SVM non possono essere protette. Il backup e ripristino BlueXP per le applicazioni riconosce solo le SVM aggiunte per nome o le SVM rilevate da SnapCenter che sono state aggiunte come parte del cluster ONTAP.
+
+Le applicazioni supportate e le relative configurazioni sono:
+
+* Database Oracle:
++
+** Backup completi (dati + log) creati con almeno una pianificazione giornaliera, settimanale o mensile
+** SAN, NFS, VMDK-SAN, VMDK-NFS E RDM
+
+
+* Database Microsoft SQL Server:
++
+** Standalone, istanze di cluster di failover e gruppi di disponibilità
+** Backup completi creati con almeno una pianificazione giornaliera, settimanale o mensile
+** SAN, VMDK-SAN, VMDK-NFS E RDM
+
+
+* Database SAP HANA:
++
+** Container singolo 1.x
+** Contenitore di database multipli 2.x
+** Replica di sistema HANA (HSR)
++
+È necessario disporre di almeno un backup su siti primari e secondari. È possibile decidere di eseguire un guasto proattivo o un failover rinviato al secondario.
+
+** Risorse NDV (non-data Volumes) come file binari HANA, volume di log di archiviazione HANA, volume condiviso HANA e così via
+
+
+
+
+I seguenti database non vengono visualizzati:
+
+* Database senza backup
+* Database con policy solo on-demand o orarie
+* Database Oracle residenti su NVMe
+

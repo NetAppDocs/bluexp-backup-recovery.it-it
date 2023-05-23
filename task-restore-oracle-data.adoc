@@ -1,0 +1,96 @@
+---
+sidebar: sidebar 
+permalink: task-restore-oracle-data.html 
+keywords: restore, Azure, Amazon Web services, Oracle database 
+summary: Puoi ripristinare il database Oracle dal cloud al server SnapCenter on-premise. 
+---
+= Ripristinare il database Oracle
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare il database Oracle solo sullo stesso host in cui è stato creato il backup. Per un database RAC, i dati vengono ripristinati nel nodo on-premise in cui è stato creato il backup.
+
+È supportato solo il database completo con il ripristino del file di controllo. Se i log di archiviazione non sono presenti in AFS, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
+
+
+IMPORTANT: Single file Restore (SFR) non è supportato.
+
+*Fasi*
+
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
+. Nel campo *Filtra per*, selezionare il filtro *tipo* e dal menu a discesa selezionare *Oracle*.
+. Fare clic su *View Details* (Visualizza dettagli) corrispondente al database che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+. Nella pagina Restore Type (tipo di ripristino), eseguire le seguenti operazioni:
++
+.. Selezionare *Database state* (Stato database) se si desidera modificare lo stato del database nello stato richiesto per eseguire le operazioni di ripristino e ripristino.
++
+I vari stati di un database, da quelli superiori a quelli inferiori, sono aperti, montati, avviati e arrestati.
+
++
+*** Se il database si trova in uno stato superiore ma lo stato deve essere modificato in uno stato inferiore per eseguire un'operazione di ripristino, selezionare questa casella di controllo.
+*** Se il database si trova in uno stato inferiore ma lo stato deve essere modificato in uno stato superiore per eseguire l'operazione di ripristino, lo stato del database viene modificato automaticamente anche se non si seleziona la casella di controllo.
+*** Se un database si trova in stato aperto e per il ripristino il database deve essere in stato montato, lo stato del database viene modificato solo se si seleziona questa casella di controllo.
+
+
+.. Selezionare *file di controllo* se si desidera ripristinare il file di controllo insieme al database completo.
+.. Se lo snapshot si trova nello storage di archiviazione, specificare la priorità per ripristinare i dati dallo storage di archiviazione.
+
+
+. Nella pagina Recovery Scope (ambito ripristino), eseguire le seguenti operazioni:
++
+.. Specificare l'ambito del ripristino.
++
+|===
+| Se... | Eseguire questa operazione... 
+
+
+ a| 
+Ripristinare l'ultima transazione
+ a| 
+Selezionare *tutti i registri*.
+
+
+
+ a| 
+Ripristinare un numero SCN (System Change Number) specifico
+ a| 
+Selezionare *fino a quando SCN (System Change Number)*.
+
+
+
+ a| 
+Desidera ripristinare dati e tempi specifici
+ a| 
+Selezionare *Data e ora*.
+
+Specificare la data e l'ora del fuso orario dell'host del database.
+
+
+
+ a| 
+Non si desidera eseguire il ripristino
+ a| 
+Selezionare *Nessun ripristino*.
+
+
+
+ a| 
+Specificare le posizioni dei registri di archiviazione esterni
+ a| 
+Se i log di archiviazione non sono presenti nel file system attivo, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
+
+|===
+.. Selezionare questa casella di controllo se si desidera aprire il database dopo il ripristino.
++
+In un'installazione RAC, dopo il ripristino viene aperta solo l'istanza RAC utilizzata per il ripristino.
+
+
+
+. Esaminare i dettagli e fare clic su *Restore* (Ripristina).
+

@@ -1,0 +1,82 @@
+---
+sidebar: sidebar 
+permalink: reference-aws-backup-tiers.html 
+keywords: aws, amazon, s3, storage classes, archive 
+summary: Il backup e ripristino BlueXP supporta due classi di storage di archiviazione S3 e la maggior parte delle regioni. 
+---
+= Classi di storage di archivio AWS S3 e tempi di recupero del ripristino
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il backup e ripristino BlueXP supporta due classi di storage di archiviazione S3 e la maggior parte delle regioni.
+
+
+
+== Classi di storage di archiviazione S3 supportate per backup e ripristino BlueXP
+
+Quando i file di backup vengono creati inizialmente, vengono memorizzati nello storage S3 _Standard_. Questo Tier è ottimizzato per l'archiviazione dei dati a cui si accede raramente, ma che consente anche di accedervi immediatamente. Dopo 30 giorni, i backup passano alla classe di storage S3 _Standard-infrequent Access_ per risparmiare sui costi.
+
+Se i cluster di origine eseguono ONTAP 9.10.1 o superiore, è possibile scegliere di eseguire il Tier dei backup per lo storage _S3 Glacier_ o _S3 Glacier Deep Archive_ dopo un certo numero di giorni (in genere più di 30 giorni) per un'ulteriore ottimizzazione dei costi. Non è possibile accedere immediatamente ai dati di questi livelli quando necessario e richiede un costo di recupero più elevato, quindi è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati da questi file di backup archiviati. Consultare la sezione relativa a. <<Ripristino dei dati dallo storage di archiviazione,ripristino dei dati dallo storage di archiviazione>>.
+
+Se si sceglie _S3 Glacier_ o _S3 Glacier Deep Archive_ nella prima policy di backup quando si attiva il backup e ripristino BlueXP, tale Tier sarà l'unico Tier di archiviazione disponibile per le policy di backup future per quel cluster. Inoltre, se non si seleziona alcun livello di archiviazione nella prima policy di backup, _S3 Glacier_ sarà l'unica opzione di archiviazione per le policy future.
+
+Si noti che quando si configura il backup e ripristino BlueXP con questo tipo di regola del ciclo di vita, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il bucket nell'account AWS.
+
+https://aws.amazon.com/s3/storage-classes/["Scopri le classi di storage S3"^].
+
+
+
+== Ripristino dei dati dallo storage di archiviazione
+
+Anche se la memorizzazione di file di backup meno recenti nello storage di archiviazione è molto meno costosa rispetto allo storage Standard o Standard-IA, l'accesso ai dati da un file di backup nello storage di archiviazione per le operazioni di ripristino richiederà più tempo e costerà più denaro.
+
+Quanto costa ripristinare i dati da Amazon S3 Glacier e Amazon S3 Glacier Deep Archive?:: Sono disponibili 3 priorità di ripristino per il recupero dei dati da Amazon S3 Glacier e 2 priorità di ripristino per il recupero dei dati da Amazon S3 Glacier Deep Archive. S3 Glacier Deep Archive costa meno di S3 Glacier:
++
+--
+[cols="25,25,25,25"]
+|===
+| Tier di archiviazione 3+| Ripristinare priorità e costi 
+
+
+|  | *Alto* | *Standard* | *Basso* 
+
+
+| *Ghiacciaio S3* | Recupero più rapido, costo più elevato | Recupero più lento, costi inferiori | Recupero più lento, costo più basso 
+
+
+| *S3 Glacier Deep Archive* |  | Recupero più rapido, costi più elevati | Recupero più lento, costo più basso 
+|===
+Ogni metodo ha una tariffa di recupero per GB e una tariffa per richiesta diverse. Per informazioni dettagliate sui prezzi di S3 Glacier per regione AWS, visitare il https://aws.amazon.com/s3/pricing/["Pagina dei prezzi di Amazon S3"^].
+
+--
+Quanto tempo ci vorrà per ripristinare gli oggetti archiviati in Amazon S3 Glacier?:: Il tempo totale di ripristino è costituito da 2 parti:
++
+--
+* *Tempo di recupero*: Tempo necessario per recuperare il file di backup dall'archivio e collocarlo nello storage standard. Questo è talvolta chiamato tempo di "reidratazione". Il tempo di recupero varia a seconda della priorità di ripristino scelta.
++
+[cols="25,20,20,20"]
+|===
+| Tier di archiviazione 3+| Priorità di ripristino e tempo di recupero 
+
+
+|  | *Alto* | *Standard* | *Basso* 
+
+
+| *Ghiacciaio S3* | 3-5 minuti | 3-5 ore | 5-12 ore 
+
+
+| *S3 Glacier Deep Archive* |  | 12 ore | 48 ore 
+|===
+* *Restore Time* (tempo di ripristino): Tempo di ripristino dei dati dal file di backup nello storage standard. Questo tempo non è diverso dall'operazione di ripristino tipica direttamente dallo storage standard, quando non si utilizza un livello di archiviazione.
+
+
+Per ulteriori informazioni sulle opzioni di recupero di Amazon S3 Glacier e S3 Glacier Deep Archive, fare riferimento a. https://aws.amazon.com/s3/faqs/#Amazon_S3_Glacier["Domande frequenti su Amazon relative a queste classi di storage"^].
+
+--
+

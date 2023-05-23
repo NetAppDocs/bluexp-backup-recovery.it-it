@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: task-restore-cloud-native-sap-hana-data.html 
+keywords: cloud native, application data, restore, data files, SAP HANA, database, recovery, Cloud Manager, BlueXP 
+summary: Ripristinare i file di dati e ripristinare il database. 
+---
+= Ripristinare i database SAP HANA nativi del cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+In caso di perdita di dati, è possibile ripristinare i file di dati e non, quindi ripristinare il database.
+
+*Prima di iniziare*
+
+Il sistema SAP HANA deve essere in stato di arresto. Se il sistema SAP HANA è attivo e in esecuzione, è possibile fornire una prescrizione per arrestare il sistema.
+
+*A proposito di questa attività*
+
+Se si abilitano i backup su un volume, viene eseguita l'operazione Single file SnapRestore.
+
+*Fasi*
+
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al database che si desidera ripristinare e fare clic su *View Details* (Visualizza dettagli).
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al backup dei dati che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+. Nella pagina *Restore System*, inserire gli script. link:task-backup-cloud-native-sap-hana-data.html#prescripts-and-postscripts["Prescrizioni e post-script."]
++
+Per il flusso di lavoro di ripristino, le seguenti variabili ambientali sono disponibili come parte di Prespt e postscript.
+
++
+|===
+| Variabile ambientale | Descrizione 
+
+
+ a| 
+SID
+ a| 
+L'identificatore di sistema del database HANA scelto per il ripristino
+
+
+
+ a| 
+BackupName
+ a| 
+Nome del backup scelto per l'operazione di ripristino
+
+
+
+ a| 
+UserStoreKeyNames
+ a| 
+Chiave userstore configurata per il database HANA
+
+
+
+ a| 
+OSDBUser
+ a| 
+Configurato OSDBUser per il database HANA
+
+|===
+. Fare clic su *Restore* (Ripristina).
+
+
+*Cosa c'è di nuovo*
+
+Dopo il ripristino, ripristinare manualmente il sistema SAP HANA o fornire un postscript, che esegue il ripristino del sistema SAP HANA.
+
+
+
+== Ripristina volume non dati
+
+. Nella pagina *applicazioni*, selezionare Volume non dati dalla casella a discesa.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al backup che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+
+
+
+
+== Ripristinare il volume globale non dati
+
+*Fasi*
+
+. Nella pagina *applicazioni*, fare clic sul Global non-Data Volume che si desidera ripristinare.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al volume non dati globale che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+

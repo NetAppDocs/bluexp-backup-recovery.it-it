@@ -1,0 +1,70 @@
+---
+sidebar: sidebar 
+permalink: task-restore-backups-kubernetes.html 
+keywords: restoring, restore, restore volumes, cloud backup, volume restore, persistent volume 
+summary: I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristinare un intero volume persistente Kubernetes da un file di backup salvato. 
+---
+= Ripristino dei dati Kubernetes dai file di backup
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristinare un intero volume persistente Kubernetes da un file di backup salvato.
+
+Puoi ripristinare un volume persistente (come nuovo volume) nello stesso ambiente di lavoro o in un ambiente di lavoro diverso che utilizza lo stesso account cloud.
+
+
+
+== Ambienti di lavoro supportati e provider di storage a oggetti
+
+È possibile ripristinare un volume da un file di backup di Kubernetes nei seguenti ambienti di lavoro:
+
+[cols="40,40"]
+|===
+| Percorso del file di backup | Ambiente di lavoro di destinazione ifdef::aws[] 
+
+
+| Amazon S3 | Cluster Kubernetes in AWS endif::aws[] ifdef::Azure[] 
+
+
+| Azure Blob | Cluster Kubernetes in Azure endif::Azure[] ifdef::gcp[] 
+
+
+| Storage Google Cloud | Cluster Kubernetes in Google endif::gcp[] 
+|===
+
+
+== Ripristino dei volumi da un file di backup di Kubernetes
+
+Quando si ripristina un volume persistente da un file di backup, BlueXP crea un _nuovo_ volume utilizzando i dati del backup. È possibile ripristinare i dati in un volume nello stesso cluster Kubernetes o in un cluster Kubernetes diverso che si trova nello stesso account cloud del cluster Kubernetes di origine.
+
+Prima di iniziare, è necessario conoscere il nome del volume che si desidera ripristinare e la data del file di backup che si desidera utilizzare per creare il volume appena ripristinato.
+
+.Fasi
+. Dal menu BlueXP, selezionare *protezione > Backup e ripristino*.
+. Fare clic sulla scheda *Kubernetes* per visualizzare la dashboard Kubernetes.
++
+image:screenshot_backup_view_k8s_backups_button.png["Una schermata della dashboard di Kubernetes con l'elenco di tutti i cluster e volumi Kubernetes di cui viene eseguito il backup."]
+
+. Individuare il volume che si desidera ripristinare, quindi fare clic su image:screenshot_horizontal_more_button.gif["Icona Altro"], Quindi fare clic su *Details & Backup List*.
++
+Viene visualizzato l'elenco di tutti i file di backup per quel volume, insieme ai dettagli relativi al volume di origine, alla posizione di destinazione e ai dettagli del backup.
+
++
+image:screenshot_backup_view_k8s_backups.png["Una schermata di tutti i backup disponibili per un singolo volume di origine."]
+
+. Individuare il file di backup specifico che si desidera ripristinare in base alla data/ora, quindi fare clic su image:screenshot_horizontal_more_button.gif["Icona Altro"]E quindi *Restore*.
+. Nella pagina _Select Destination_, selezionare il cluster _Kubernetes_ in cui si desidera ripristinare il volume, il _namespace_, la _Storage Class_ e il nuovo _nome del volume persistente_.
++
+image:screenshot_restore_k8s_volume.png["Una schermata delle informazioni di destinazione in cui verrà ripristinato il volume persistente."]
+
+. Fare clic su *Restore* (Ripristina) per tornare alla dashboard di Kubernetes, in modo da esaminare l'avanzamento dell'operazione di ripristino.
+
+
+.Risultato
+BlueXP crea un nuovo volume nel cluster Kubernetes in base al backup selezionato. È possibile link:task-manage-backups-kubernetes.html["gestire le impostazioni di backup per questo nuovo volume"] secondo necessità.

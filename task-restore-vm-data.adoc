@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: task-restore-vm-data.html 
+keywords: restore virtual machines 
+summary: Puoi ripristinare le macchine virtuali dal cloud al SnapCenter on-premise. 
+---
+= Ripristinare i dati delle macchine virtuali dal cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter on-premise. Il backup verrà ripristinato nella stessa posizione da cui è stato eseguito il backup. Se il backup della macchina virtuale è stato eseguito utilizzando i criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.
+
+
+NOTE: Non è possibile ripristinare le macchine virtuali che si estendono tra i datastore.
+
+.Prima di iniziare
+Assicurarsi di aver soddisfatto tutte le link:concept-protect-vm-data.html["requisiti"] prima di ripristinare le macchine virtuali dal cloud.
+
+.Fasi
+. Nell'interfaccia utente di BlueXP, fare clic su *protezione* > *backup e ripristino* > *macchine virtuali* > *plug-in SnapCenter per VMware vSphere* e selezionare il plug-in SnapCenter per l'host VMware vSphere.
+
+
+
+NOTE: Se la macchina virtuale di origine viene spostata in un'altra posizione (vMotion) e l'utente attiva un ripristino della macchina virtuale da BlueXP, la macchina virtuale viene ripristinata nella posizione di origine da cui è stato eseguito il backup.
+
+. È possibile eseguire il ripristino dal datastore o dalle macchine virtuali:
+
+
+|===
+| Se si desidera... | Eseguire questa operazione... 
+
+
+ a| 
+Ripristinare da datastore
+ a| 
+. Fare clic su image:icon-action.png["azione"] Corrispondente all'archivio dati che si desidera ripristinare e fare clic su *View Details* (Visualizza dettagli).
+. Fare clic su *Restore* (Ripristina) corrispondente al backup che si desidera ripristinare.
+. Selezionare la macchina virtuale che si desidera ripristinare dal backup.
+. Selezionare *Archival Restore Priority* (priorità ripristino archivio) e fare clic su *Next* (Avanti).
++
+Questa opzione è disponibile solo se la macchina virtuale è protetta mediante un criterio in cui sono configurate le impostazioni di archiviazione. La priorità di ripristino dell'archivio supportata per Amazon Web Services è alta, standard e bassa e la priorità di ripristino dell'archivio supportata per Microsoft Azure è alta e standard.
+
+. Esaminare i dettagli e fare clic su *Restore* (Ripristina).
+
+
+
+
+ a| 
+Ripristino da macchine virtuali
+ a| 
+. Fare clic su image:icon-action.png["azione"] Corrispondente alla macchina virtuale che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+. Selezionare il backup tramite il quale si desidera ripristinare la macchina virtuale.
+. Selezionare *Archival Restore Priority* (priorità ripristino archivio) e fare clic su *Next* (Avanti).
++
+Questa opzione è disponibile solo se la macchina virtuale è protetta mediante un criterio in cui sono configurate le impostazioni di archiviazione. La priorità di ripristino dell'archivio supportata per Amazon Web Services è alta, standard e bassa e la priorità di ripristino dell'archivio supportata per Microsoft Azure è alta e standard.
+
+. Esaminare i dettagli e fare clic su *Restore* (Ripristina).
+
+
+|===
+La macchina virtuale viene ripristinata nella stessa posizione da cui è stato eseguito il backup.

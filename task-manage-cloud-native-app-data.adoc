@@ -1,0 +1,232 @@
+---
+sidebar: sidebar 
+permalink: task-manage-cloud-native-app-data.html 
+keywords: manage, view backup, monitor jobs, monitor, Cloud Manager, BlueXP 
+summary: Visualizzare i dettagli del backup e monitorare lo stato di tutti i processi. 
+---
+= Gestire la protezione dei dati applicativi nativi del cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+
+
+== Monitorare i lavori
+
+È possibile monitorare lo stato dei lavori avviati negli ambienti di lavoro. In questo modo è possibile visualizzare i lavori completati correttamente, quelli in corso e quelli che non sono riusciti, in modo da poter diagnosticare e risolvere eventuali problemi.
+
+Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html["Monitorare lo stato del lavoro"].
+
+
+
+== Dati di audit
+
+Quando si esegue direttamente un'API o si utilizza l'interfaccia utente per effettuare la chiamata API a una qualsiasi delle API esposte esternamente del backup e ripristino BlueXP per le applicazioni, la richiesta viene dettagliata come intestazioni, ruolo, corpo della richiesta, E le informazioni API verranno registrate nella tempistica di BlueXP e le voci di audit verranno conservate per sempre nella tempistica. Anche lo stato e la risposta agli errori della chiamata API vengono verificati dopo il completamento dell'operazione. Nel caso di risposte API asincrone come i job, l'id del job viene registrato anche come parte della risposta.
+
+Il backup e ripristino BlueXP per le applicazioni registra le voci come host IP, corpo della richiesta, nome dell'operazione, chi ha attivato, alcune intestazioni, E lo stato operativo dell'API.
+
+
+
+== Visualizzare i dettagli del backup
+
+È possibile visualizzare il numero totale di backup creati, i criteri utilizzati per la creazione dei backup, la versione del database e l'ID dell'agente.
+
+. Fare clic su *Backup and Recovery* > *applicazioni*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *View Details* (Visualizza dettagli).
+
+
+
+IMPORTANT: L'ID dell'agente è associato al connettore. Se un connettore utilizzato durante la registrazione dell'host SAP HANA non esiste più, i backup successivi dell'applicazione non avranno esito positivo perché l'ID dell'agente del nuovo connettore è diverso. Modificare l'id del connettore nell'host. Per ulteriori informazioni, vedere <<Aggiornare i dettagli del connettore>>.
+
+
+
+== Elimina clone
+
+Se non è più necessario, è possibile eliminare un clone.
+
+. Fare clic su image:button_plus_sign_square.png["per selezionare l'azione"] Accanto a *Filtra per* e seleziona *Clona opzioni* > *Clona genitori*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *View Details* (Visualizza dettagli).
+. Nella pagina Database Details (Dettagli database), fare clic su image:button_plus_sign_square.png["per selezionare l'azione"] Accanto a *Filtra per* e selezionare *Clona*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al clone che si desidera eliminare e fare clic su *Delete* (Elimina).
+. (Facoltativo) selezionare la casella di controllo *forza eliminazione*.
+
+
+
+
+== Aggiornare i dettagli del connettore
+
+Se il connettore utilizzato durante la registrazione dell'host dell'applicazione non esiste più o è danneggiato, è necessario implementare un nuovo connettore. Dopo aver implementato il nuovo connettore, eseguire l'API *Connector-update* per aggiornare i dettagli del connettore per tutti gli host registrati utilizzando il vecchio connettore.
+
+|===
+| Se sei acceso... | Eseguire questa operazione... 
+
+
+ a| 
+Host del database Oracle
+ a| 
+. Assicurarsi che tutti i link:task-add-host-discover-oracle-databases.html#prerequisites["prerequisiti"] sono soddisfatti.
+. Fare clic su *Backup and Recovery* > *applicazioni*
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *View Details* (Visualizza dettagli).
+. Modificare *ID connettore*.
+
+
+ifdef::azure[]
+
+
+
+ a| 
+Host di database SAP HANA
+ a| 
+. Assicurarsi che tutti i link:task-deploy-snapcenter-plugin-for-sap-hana.html#prerequisites["prerequisiti"] sono soddisfatti.
+. Eseguire il seguente comando:
+
+
+[listing]
+----
+curl --location --request PATCH
+'https://snapcenter.cloudmanager.cloud.netapp.com/api/saphana/hosts/connector/update' \
+--header 'x-account-id: <CM account-id>' \
+--header 'Authorization: Bearer token' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+"old_connector_id": "Old connector id that no longer exists",
+"new_connector_id": "New connector Id"
+}
+----
+I dettagli del connettore verranno aggiornati correttamente se tutti gli host hanno il plug-in SnapCenter per il servizio SAP HANA installato e in esecuzione e se sono tutti raggiungibili dal nuovo connettore.
+
+endif::azure[]
+
+|===
+Dopo aver aggiornato i dettagli del connettore per gli host Oracle o SAP HANA, eseguire le seguenti operazioni per assicurarsi che i dettagli del connettore siano stati aggiornati correttamente.
+
+. Accedere a BlueXP Connector VM ed eseguire le seguenti operazioni:
++
+.. Verificare che il plug-in sia raggiungibile dal connettore eseguendo il comando riportato di seguito dal connettore.
+`docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/getVersion --cert/config/client/certificate/certificate.pem --key/config/client/certificate/key.pem`
+.. Ottenere il percorso di montaggio base.
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+.. Copiare certificate.p12 dal percorso _<base_mount_path>/client/certificate/_ del connettore VM a _/var/opt/snapcenter/spl/etc/_ sull'host del plug-in.
+
+
+. Accedere all'host del plug-in ed eseguire le seguenti operazioni:
++
+.. Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il file certificate.p12.
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+.. Riavviare SPL: `systemctl restart spl`
+
+
+
+
+
+
+== Configurare il certificato firmato dalla CA
+
+È possibile configurare il certificato firmato dalla CA se si desidera includere ulteriore protezione nell'ambiente.
+
+
+
+=== Configurare il certificato firmato dalla CA per BlueXP Connector
+
+Il connettore utilizza un certificato autofirmato per comunicare con il plug-in. Il certificato autofirmato viene importato nel keystore dallo script di installazione. Per sostituire il certificato autofirmato con il certificato firmato dalla CA, procedere come segue.
+
+*Prima di iniziare*
+
+È possibile eseguire il seguente comando per ottenere _<base_mount_path>_:
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+
+*Fasi*
+
+. Per utilizzare il certificato CA come certificato client quando il connettore si connette al plug-in, attenersi alla seguente procedura.
++
+.. Accedere a Connector.
+.. Eliminare tutti i file esistenti che si trovano in _<base_mount_path>/client/certificate_ nel connettore.
+.. Copiare il certificato e il file delle chiavi firmato dalla CA in _<base_mount_path>/client/certificate_ nel connettore.
++
+Il nome del file deve essere certificate.pem e key.pem. Il file certificate.pem deve avere l'intera catena dei certificati, ad esempio CA intermedia e CA principale.
+
+.. Creare il formato PKCS12 del certificato con il nome certificate.p12 e mantenere l'indirizzo _<base_mount_path>/client/certificate_.
++
+Esempio: openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12
+
+.. Copiare il certificato.p12 e i certificati per tutte le CA intermedie e root nell'host plug-in in _/var/opt/snapcenter/spl/etc/_.
++
+
+NOTE: Il formato della CA intermedia e del certificato della CA principale deve essere in formato .crt.
+
+
+
+. Per convalidare il certificato inviato dal connettore, eseguire le seguenti operazioni sull'host del plug-in.
++
+.. Accedere all'host del plug-in.
+.. Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il file certificate.p12.
+`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+.. Importare la CA principale e i certificati intermedi.
+`keytool -import -trustcacerts -keystore keystore.jks -storepass snapcenter -alias trustedca -file <certificate.crt>`
++
+
+NOTE: Il certificato.crt fa riferimento ai certificati della CA principale e della CA intermedia.
+
+.. Riavviare SPL: `systemctl restart spl`
+
+
+
+
+
+
+=== Configurare il certificato firmato dalla CA per il plug-in
+
+Il certificato CA deve avere lo stesso nome registrato in Cloud Backup per l'host plug-in.
+
+*Prima di iniziare*
+
+È possibile eseguire il seguente comando per ottenere _<base_mount_path>_:
+`sudo docker volume ls | grep scs_cloud_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint`
+
+*Fasi*
+
+. Per ospitare il plug-in utilizzando il certificato CA, attenersi alla seguente procedura sull'host del plug-in.
++
+.. Accedere alla cartella contenente il keystore della SPL _/var/opt/snapcenter/spl/etc_.
+.. Creare il formato PKCS12 del certificato con certificato e chiave con alias _splkeystore_.
++
+Il file certificate.pem deve avere l'intera catena dei certificati, ad esempio CA intermedia e CA principale.
+
++
+Esempio: openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12 -name splkeystore
+
+.. Aggiungere il certificato CA creato nel passaggio precedente.
+`keytool -importkeystore -srckeystore certificate.p12 -srcstoretype pkcs12 -destkeystore keystore.jks -deststoretype JKS -srcalias splkeystore -destalias splkeystore -noprompt`
+.. Verificare i certificati.
+`keytool -list -v -keystore keystore.jks`
+.. Riavviare SPL: `systemctl restart spl`
+
+
+. Eseguire le seguenti operazioni sul connettore in modo che il connettore possa verificare il certificato del plug-in.
++
+.. Accedere al connettore come utente non root.
+.. Copiare i file della CA principale e intermedia nella directory del server.
+`cd <base_mount_path>`
+`mkdir server`
++
+I file CA devono essere in formato pem.
+
+.. Connettersi a cloud_scs_cloud e modificare *enableCACert* in _config.yml_ in *true*.
+`sudo docker exec -t cloudmanager_scs_cloud sed -i 's/enableCACert: false/enableCACert: true/g' /opt/netapp/cloudmanager-scs-cloud/config/config.yml`
+.. Riavviare il container cloud_scs_cloud.
+`sudo docker restart cloudmanager_scs_cloud`
+
+
+
+
+
+
+== Accedere alle API REST
+
+Le API REST per proteggere le applicazioni nel cloud sono disponibili all'indirizzo: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/[].
+
+Per accedere alle API REST, è necessario ottenere il token utente con autenticazione federata. Per informazioni su come ottenere il token utente, fare riferimento a. https://docs.netapp.com/us-en/cloud-manager-automation/platform/create_user_token.html#create-a-user-token-with-federated-authentication["Creare un token utente con autenticazione federata"].

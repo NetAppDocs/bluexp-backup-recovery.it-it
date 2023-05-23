@@ -1,0 +1,60 @@
+---
+sidebar: sidebar 
+permalink: task-backup-app-data-to-storagegrid.html 
+keywords: backing up, back up, backup, backup application data, Google Cloud, GCP, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a GCP. 
+---
+= Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a StorageGRID.
+
+*Cosa ti serve*
+
+Quando si esegue il backup dei dati su StorageGRID, è necessario che sia disponibile un connettore on-premise. Sarà necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise. Il connettore può essere installato in un sito con o senza accesso a Internet.
+
+Per ulteriori informazioni, vedere link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["Creare connettori per StorageGRID"].
+
+*Fasi*
+
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Activate Backup* (attiva backup).
+. Nella pagina Assign Policy (Assegna policy), selezionare il criterio e fare clic su *Next* (Avanti).
+. Aggiungere l'ambiente di lavoro.
++
+Configurare la LIF di gestione del cluster che BlueXP deve rilevare. Dopo aver aggiunto l'ambiente di lavoro per una delle applicazioni, è possibile riutilizzarlo per tutte le altre applicazioni che risiedono sullo stesso cluster ONTAP.
+
++
+.. Selezionare la SVM e fare clic su *Add Working Environment* (Aggiungi ambiente di lavoro).
+.. Nella procedura guidata Aggiungi ambiente di lavoro:
++
+... Specificare l'indirizzo IP della LIF di gestione del cluster.
+... Specificare le credenziali dell'utente del cluster ONTAP.
++
+Il backup e ripristino BlueXP per le applicazioni supporta solo l'amministratore del cluster.
+
+
+
+.. Fare clic su *Aggiungi ambiente di lavoro*.
+
+
+. Selezionare *StorageGRID*.
++
+.. Specificare l'FQDN del server StorageGRID e la porta su cui viene eseguito il server StorageGRID.
++
+Inserire i dettagli nel formato FQDN:PORT.
+
+.. Nel campo Access Key (chiave di accesso), specificare la chiave per la crittografia dei dati.
+.. Nel campo Secret Key (chiave segreta), specificare la password per la crittografia dei dati.
+.. Specificare lo spazio IP.
+
+
+. Esaminare i dettagli e fare clic su *Activate Backup* (attiva backup).
+

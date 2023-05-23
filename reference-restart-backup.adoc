@@ -1,0 +1,49 @@
+---
+sidebar: sidebar 
+permalink: reference-restart-backup.html 
+keywords: backup restart, restart backup 
+summary: In alcuni casi potrebbe essere necessario riavviare il servizio di backup e ripristino BlueXP. 
+---
+= Riavviare il servizio di backup e ripristino BlueXP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+In alcuni casi potrebbe essere necessario riavviare il servizio di backup e ripristino BlueXP.
+
+La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Per riavviare il servizio, è necessario seguire diversi passaggi iniziali a seconda che il connettore sia stato implementato nel cloud o che il connettore sia stato installato manualmente su un sistema Linux.
+
+.Fasi
+. Connettersi al sistema Linux su cui è in esecuzione il connettore.
++
+[cols="25,50"]
+|===
+| Posizione del connettore | Procedura 
+
+
+| Implementazione del cloud | Seguire le istruzioni per https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Connessione alla macchina virtuale Connector Linux"^] a seconda del cloud provider utilizzato. 
+
+
+| Installazione manuale | Accedere al sistema Linux. 
+|===
+. Immettere il comando per riavviare il servizio.
++
+[cols="45,45"]
+|===
+| Posizione del connettore | Comando 
+
+
+| Implementazione del cloud | `docker restart cloudmanager_cbs` 
+
+
+| Installazione manuale con accesso a Internet | `docker restart cloudmanager_cbs` 
+
+
+| Installazione manuale senza accesso a Internet | `docker restart ds_cloudmanager_cbs_1` 
+|===
+

@@ -1,0 +1,74 @@
+---
+sidebar: sidebar 
+permalink: task-refresh-sap-hana-target-system.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SAP HANA, SAP HANA, database, host, system refresh 
+summary: Eseguire un refresh da un sistema SAP HANA di origine, ovvero il database di produzione, a un sistema di destinazione. 
+---
+= Aggiornare il sistema di destinazione SAP HANA
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile eseguire un refresh di un sistema di destinazione SAP HANA con i dati di un sistema di origine SAP HANA. Questo può essere utilizzato per fornire i dati di produzione correnti in un sistema di test. Il backup cloud consente di selezionare una copia Snapshot da un sistema di origine e di creare un nuovo volume ANF in base alla copia Snapshot. Sono disponibili script di esempio che consentono di eseguire le operazioni necessarie sull'host del database per ripristinare il database SAP HANA.
+
+*Prima di iniziare*
+
+* Installare il sistema di destinazione SAP HANA prima di eseguire la prima operazione di refresh.
+* È necessario aggiungere manualmente i sistemi HANA di origine e di destinazione nel backup cloud.
+* Assicurarsi che la versione del database SAP HANA sia la stessa sul sistema di origine e di destinazione.
+* Si sarebbe dovuto decidere quali script di refresh utilizzare. Gli script di refresh sono disponibili nel report tecnico della soluzione.
++
+https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-automation-example-scripts.html#script-sc-system-refresh-sh["Script di esempio di automazione"]
+
++
+È possibile personalizzare gli script di refresh.
+
+* Le seguenti variabili ambientali sono disponibili come parte di Prespt e postscript:
++
+** CLONED_VOLUMES_MOUNT_PATH
+** <SOURCEVOLUME>_DESTINATION
+** HANA_DATABASE_TYPE
+** TENANT_DATABASE_NAMES
+
+
+
+
+*A proposito di questa attività*
+
+* L'aggiornamento del sistema è supportato solo per il sistema HANA di container di database multi-tenant.
+* I criteri esistenti saranno validi dopo l'aggiornamento del sistema.
+* I nuovi volumi creati avranno la seguente convenzione di denominazione: <sourcevolumename>-<timestamp>
++
+** Formato timestamp: <year> <month> <day>-<hour> <minute> <second>
++
+Ad esempio, se il volume di origine è vol1, il nome del volume aggiornato sarà vol1-20230109-184501
+
+
+
+
+
+
+NOTE: Il nuovo volume verrà inserito nello stesso pool di capacità dei volumi di destinazione.
+
+* Il percorso di giunzione sarà lo stesso del nome del volume.
+
+
+*Fasi*
+
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
+. Nella pagina *applicazioni*, fare clic su image:icon-action.png["per selezionare l'azione"] Per selezionare l'azione corrispondente al sistema che si desidera aggiornare e selezionare *System Refresh* (Aggiorna sistema).
+. Nella pagina *System Refresh*, eseguire le seguenti operazioni:
++
+.. Selezionare il sistema di origine e la copia Snapshot.
+.. Immettere gli indirizzi di esportazione da cui è possibile accedere ai nuovi volumi.
+.. Immettere prescrittt, postscript e i percorsi degli script di errore. Lo script on failure viene eseguito solo quando l'operazione di refresh del sistema non riesce.
+.. Selezionare *Elimina backup SAP HANA associati* verranno eliminate solo le copie Snapshot. Se sono presenti backup del sistema di destinazione e l'opzione precedente non è selezionata, l'operazione di aggiornamento del sistema non avrà esito positivo. È inoltre possibile eliminare i backup dalla pagina *topologia*.
+.. Fare clic su *Aggiorna*.
+
+
+

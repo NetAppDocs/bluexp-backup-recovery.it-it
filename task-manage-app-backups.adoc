@@ -1,0 +1,150 @@
+---
+sidebar: sidebar 
+permalink: task-manage-app-backups.html 
+keywords: manage, Azure, Amazon Web services, Oracle database, Microsoft SQL Server database, backups, policy, monitor, jobs, monitor jobs, SAP HANA database 
+summary: 'È possibile visualizzare i criteri e i backup. A seconda delle modifiche apportate a database, policy o gruppi di risorse, è possibile aggiornare gli aggiornamenti dall"interfaccia utente di BlueXP.' 
+---
+= Gestire la protezione delle applicazioni
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile gestire la protezione delle applicazioni visualizzando i criteri, visualizzando i backup, visualizzando le modifiche al layout del database, ai criteri e al gruppo di risorse e monitorando tutte le operazioni dall'interfaccia utente di BlueXP.
+
+
+
+== Visualizzare le policy
+
+È possibile visualizzare tutte le policy. Per ciascuno di questi criteri, quando si visualizzano i dettagli vengono elencate tutte le applicazioni associate.
+
+. Fare clic su *Backup and Recovery* > *applicazioni*.
+. Nell'elenco a discesa *Impostazioni*, fare clic su *Criteri*.
+. Fare clic su *View Details* (Visualizza dettagli) corrispondente alla policy di cui si desidera visualizzare i dettagli.
++
+Vengono elencate le applicazioni associate.
+
++
+
+NOTE: Non è possibile modificare o eliminare un criterio associato a un'applicazione.
+
+
+
+È inoltre possibile visualizzare le policy SnapCenter estese nel cloud eseguendo `Get-SmResources` Cmdlet in SnapCenter. Le informazioni relative ai parametri che possono essere utilizzati con il cmdlet e le relative descrizioni possono essere ottenute eseguendo Get-Help command_name.
+
+
+
+== Visualizza i backup sul cloud
+
+È possibile visualizzare i backup sul cloud nell'interfaccia utente di BlueXP.
+
+. Fare clic su *Backup and Recovery* > *applicazioni*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *View Details* (Visualizza dettagli).
+
+
+
+IMPORTANT: Il tempo necessario per l'elenco dei backup dipende dalla pianificazione di replica predefinita di ONTAP.
+
+* Per i database Oracle, vengono elencati sia i backup dei dati che dei log, il numero di modifica del sistema (SCN) per ciascun backup e la data di fine di ciascun backup. È possibile selezionare solo il backup dei dati e ripristinare il database sul server SnapCenter on-premise.
+* Per i database Microsoft SQL Server, vengono elencati solo i backup completi e la data di fine di ciascun backup. È possibile selezionare il backup e ripristinare il database sul server SnapCenter on-premise.
+* Per l'istanza di Microsoft SQL Server, vengono elencati i backup dei database in tale istanza.
+* Per i database SAP HANA, vengono elencati solo i backup dei dati e la data di fine di ciascun backup. È possibile selezionare il backup ed eseguire l'operazione di montaggio.
+
+
+
+NOTE: I backup creati prima di attivare la protezione cloud non sono elencati per il ripristino.
+
+È inoltre possibile visualizzare questi backup eseguendo il `Get-SmBackup` Cmdlet in SnapCenter. Le informazioni relative ai parametri che possono essere utilizzati con il cmdlet e le relative descrizioni possono essere ottenute eseguendo Get-Help command_name.
+
+
+
+== Modifica del layout del database
+
+Quando i volumi vengono aggiunti al database, il server SnapCenter assegna automaticamente le etichette agli snapshot sui nuovi volumi in base alla policy e alla pianificazione. Questi nuovi volumi non avranno l'endpoint dell'archivio di oggetti ed è necessario aggiornare i volumi eseguendo i seguenti passaggi:
+
+. Fare clic su *Backup and Recovery* > *applicazioni*.
+. Nell'elenco a discesa *Impostazioni*, fare clic su *Server SnapCenter*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al server SnapCenter che ospita l'applicazione e fare clic su *Aggiorna*.
++
+I nuovi volumi vengono scoperti.
+
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Refresh Protection* per attivare la protezione cloud per il nuovo volume.
++
+** Se un volume di storage viene rimosso dall'applicazione dopo la configurazione del provider cloud, per i nuovi backup il server SnapCenter etichetterà le snapshot su cui risiede l'applicazione.
+** È necessario eliminare manualmente la relazione dell'archivio di oggetti se il volume rimosso non viene utilizzato da altre applicazioni.
+** Se si aggiorna l'inventario delle applicazioni, esso conterrà il layout di storage corrente dell'applicazione.
+
+
+
+
+
+
+== Modifica di policy o gruppi di risorse
+
+In caso di modifica del criterio SnapCenter o del gruppo di risorse, è necessario aggiornare la relazione di protezione.
+
+. Fare clic su *Backup and Recovery* > *applicazioni*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Refresh Protection* (Aggiorna protezione).
+
+
+
+
+== Annullare la registrazione del server SnapCenter
+
+. Fare clic su *Backup and Recovery* > *applicazioni*.
+. Nell'elenco a discesa *Impostazioni*, fare clic su *Server SnapCenter*.
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al server SnapCenter e fare clic su *Annulla registrazione*.
+
+
+
+
+== Monitorare i lavori
+
+I job vengono creati per tutte le operazioni di Cloud Backup. È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ciascuna attività.
+
+. Fare clic su *Backup and Recovery* > *Job Monitoring*.
++
+Quando si avvia un'operazione, viene visualizzata una finestra che indica che il processo è stato avviato. È possibile fare clic sul collegamento per monitorare il lavoro.
+
+. Fare clic sull'attività principale per visualizzare le attività secondarie e lo stato di ciascuna di queste attività secondarie.
+
+
+
+
+== Configurare i certificati CA
+
+Se si dispone di certificati CA, è necessario copiare manualmente i certificati CA principali nel computer con connettore.
+
+*Fasi*
+
+. Copiare il certificato nel volume a cui è possibile accedere dall'agente di docker.
++
+** `cd /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/mkdir sc_certs`
+** `chmod 777 sc_certs`
+
+
+. Copiare i file dei certificati RootCA nella cartella sopra riportata sul computer con connettore.
++
+`cp <path on connector>/<filename> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/sc_certs`
+
+. Copiare il file CRL nel volume a cui è possibile accedere dall'agente del docker.
++
+** `cd /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/mkdir sc_crl`
+** `chmod 777 sc_crl`
+
+
+. Copiare i file CRL nella cartella sopra riportata sul computer con connettore.
++
+`cp <path on connector>/<filename> /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/sc_crl`
+
+. Dopo aver copiato i certificati e i file CRL, riavviare il servizio Cloud Backup for Apps.
++
+** `sudo docker exec cloudmanager_snapcenter sed -i 's/skipSCCertValidation: true/skipSCCertValidation: false/g' /opt/netapp/cloudmanager-snapcenter-agent/config/config.yml`
+** `sudo docker restart cloudmanager_snapcenter`
+
+
+

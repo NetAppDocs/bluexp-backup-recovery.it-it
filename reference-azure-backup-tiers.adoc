@@ -1,0 +1,67 @@
+---
+sidebar: sidebar 
+permalink: reference-azure-backup-tiers.html 
+keywords: microsoft azure, azure, cool, access tier, archive 
+summary: 'Il backup e ripristino BlueXP supporta un unico livello di accesso per l"archiviazione Azure e la maggior parte delle regioni.' 
+---
+= Livelli di archiviazione Azure e tempi di recupero del ripristino
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il backup e ripristino BlueXP supporta un unico livello di accesso per l'archiviazione Azure e la maggior parte delle regioni.
+
+
+
+== Livelli di accesso Azure Blob supportati per backup e ripristino BlueXP
+
+Quando i file di backup vengono creati inizialmente, vengono memorizzati nel Tier di accesso _Cool_. Questo Tier è ottimizzato per l'archiviazione dei dati a cui si accede raramente, ma quando necessario, è possibile accedervi immediatamente.
+
+Se i cluster di origine eseguono ONTAP 9.10.1 o versione successiva, è possibile scegliere di eseguire il tiering dei backup dallo storage _Cool_ allo storage _Azure Archive_ dopo un certo numero di giorni (in genere più di 30 giorni) per un'ulteriore ottimizzazione dei costi. Non è possibile accedere immediatamente ai dati di questo Tier quando necessario e richiede un costo di recupero più elevato, quindi è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati da questi file di backup archiviati. Consultare la sezione successiva su <<Ripristino dei dati dallo storage di archiviazione,ripristino dei dati dallo storage di archiviazione>>.
+
+Si noti che quando si configura il backup e ripristino di BlueXP con questo tipo di regola del ciclo di vita, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il container nell'account Azure.
+
+https://docs.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview["Scopri i Tier di accesso di Azure Blob"^].
+
+
+
+== Ripristino dei dati dallo storage di archiviazione
+
+Sebbene l'archiviazione di file di backup meno recenti nello storage di archiviazione sia molto meno costosa rispetto allo storage Cool, l'accesso ai dati da un file di backup in Azure Archive per le operazioni di ripristino richiederà più tempo e costerà più denaro.
+
+Quanto costa ripristinare i dati da Azure Archive?:: Quando si recuperano i dati da Azure Archive, è possibile scegliere due priorità di ripristino:
++
+--
+* *Alta*: Recupero più rapido, costi più elevati
+* *Standard*: Recupero più lento, costi inferiori
+
+
+Ogni metodo ha una tariffa di recupero per GB e una tariffa per richiesta diverse. Per informazioni dettagliate sui prezzi di Azure Archive per regione Azure, visitare il https://azure.microsoft.com/en-us/pricing/details/storage/blobs/["Pagina dei prezzi di Azure"^].
+
+--
+
+
+
+NOTE: La priorità alta non è supportata quando si ripristinano i dati da Azure ai sistemi StorageGRID.
+
+Quanto tempo ci vorrà per ripristinare i dati archiviati in Azure Archive?:: Il tempo di ripristino è costituito da 2 parti:
++
+--
+* *Tempo di recupero*: Il tempo necessario per recuperare il file di backup archiviato da Azure Archive e collocarlo in Cool Storage. Questo è talvolta chiamato tempo di "reidratazione". Il tempo di recupero varia a seconda della priorità di ripristino scelta:
++
+** *Alto*: < 1 ora
+** *Standard*: < 15 ore
+
+
+* *Restore Time* (tempo di ripristino): Il tempo necessario per ripristinare i dati dal file di backup in Cool Storage. Questo tempo non è diverso dalla tipica operazione di ripristino direttamente da Cool storage, quando non si utilizza un Tier di archiviazione.
+
+
+Per ulteriori informazioni sulle opzioni di recupero di Azure Archive, fare riferimento a. https://azure.microsoft.com/en-us/pricing/details/storage/blobs/#faq["Domande frequenti su Azure"^].
+
+--
+

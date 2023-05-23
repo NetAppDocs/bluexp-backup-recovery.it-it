@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: task-quick-start-oracle.html 
+keywords: Cloud Manager, BlueXP, configuration, support, Oracle 
+summary: Completa alcuni passaggi per iniziare a eseguire il backup del database Oracle. 
+---
+= Avvio rapido
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Inizia subito seguendo questa procedura.
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Verificare il supporto per la configurazione
+[role="quick-margin-list"]
+* Sistema operativo:
++
+** RHEL 7.5 o versione successiva e 8.x.
+** OL 7.5 o versione successiva e 8.x
+
+
+* Cloud storage NetApp:
++
+** Amazon FSX per ONTAP
+** Cloud Volumes ONTAP
+** Azure NetApp Files
+
+
+* Layout dello storage:
++
+** NFS v3 e v4.1 (incluso DNFS)
+** ISCSI con ASM (ASMFD, ASMLib e ASMUdev)
++
+
+NOTE: Azure NetApp Files non supporta l'ambiente SAN.
+
+
+
+* Layout dei database: Oracle Standard e Oracle Enterprise standalone (CDB e PDB legacy e multi-tenant)
+* Versioni di database: 12cR2, 18c, 19c e 21c
+
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Iscriviti a BlueXP
+[role="quick-margin-list"]
+BlueXP è accessibile da una console basata su web. Una volta iniziato a utilizzare BlueXP, il primo passo consiste nell'iscriversi utilizzando le credenziali del sito di supporto NetApp o creando un login cloud NetApp. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-sign-up-saas.html["Iscriviti a BlueXP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Accedere a BlueXP
+[role="quick-margin-list"]
+Dopo aver effettuato la registrazione a BlueXP, è possibile accedere dalla console basata sul Web. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Accedere a BlueXP"].
+
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Gestisci il tuo account BlueXP
+[role="quick-margin-list"]
+Puoi amministrare il tuo account gestendo utenti, account di servizio, aree di lavoro e connettori. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html["Gestisci il tuo account BlueXP"].

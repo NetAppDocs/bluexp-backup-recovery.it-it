@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: task-register-snapCenter-plug-in-for-vmware-vsphere.html 
+keywords: register, registration, SnapCenter Plug-in for VMware vSphere 
+summary: 'Registrare il plug-in SnapCenter per l"host VMware vSphere in BlueXP.' 
+---
+= Registrare il plug-in SnapCenter per l'host VMware vSphere
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario registrare il plug-in SnapCenter per l'host VMware vSphere in BlueXP per visualizzare i datastore e le macchine virtuali. Solo un utente con accesso amministrativo può registrare il plug-in SnapCenter per l'host VMware vSphere.
+
+
+NOTE: È possibile registrare più plug-in SnapCenter per gli host VMware vSphere in BlueXP. Tuttavia, una volta effettuata la registrazione, non è possibile rimuovere il plug-in SnapCenter per l'host VMware vSphere.
+
+.Fasi
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Virtual Machines*.
+. Dal menu a discesa *Impostazioni*, fare clic su *plug-in SnapCenter per VMware vSphere*.
+. Fare clic su *Registra il plug-in SnapCenter per VMware vSphere*.
+. Specificare i seguenti dettagli:
++
+.. Nel campo Plug-in SnapCenter per VMware vSphere, specificare l'FQDN o l'indirizzo IP del plug-in SnapCenter per l'host VMware vSphere.
+.. Nel campo porta, specificare il numero di porta su cui è in esecuzione il plug-in SnapCenter per l'host VMware vSphere.
++
+Assicurarsi che la comunicazione sia aperta tra il plug-in SnapCenter on-premise per l'host VMware vSphere in esecuzione sulla porta 8144 predefinita e l'istanza del connettore BlueXP che potrebbe essere in esecuzione in qualsiasi provider cloud (servizi Web Amazon, Microsoft Azure, piattaforma cloud Google) o on-premise.
+
+.. Nel campo Nome utente e Password, specificare le credenziali dell'utente con il ruolo di amministratore.
+
+
+. Fare clic su *Registra*.
+
+
+*Al termine*
+
+Fare clic su *Backup e ripristino* > *macchine virtuali* per visualizzare tutti i datastore e le macchine virtuali protetti mediante il plug-in SnapCenter registrato per l'host VMware vSphere.
