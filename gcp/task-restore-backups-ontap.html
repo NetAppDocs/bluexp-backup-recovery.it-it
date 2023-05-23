@@ -1,0 +1,2390 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head class="at-element-marker">
+  <title>Ripristino dei dati ONTAP dai file di backup | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Ripristino dei dati ONTAP dai file di backup | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+	<meta property="og:description" content="I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristi..." />
+  <meta property="og:image" content="https://docs.netapp.com/it-it/cloud-manager-backup-restore/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristi...">
+  <meta name="keywords" content=" restoring, restore, restore volumes, restore files, restore folders, cloud backup, file restore, single file restore, folder restore, volume restore, browse and restore, search and restore, ONTAP"><!-- Icons -->
+  <link rel="icon" href="/it-it/cloud-manager-backup-restore/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/cloud-manager-backup-restore/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+  <!-- Elastic Search -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/searchkit/0.10.0/theme.css">
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/it-it/cloud-manager-backup-restore/css/netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/it-it/cloud-manager-backup-restore/css/landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/it-it/cloud-manager-backup-restore/css/tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/it-it/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/cloud-manager-backup-restore/task-restore-backups-ontap.html" />
+  <link rel='stylesheet' href='/it-it/cloud-manager-backup-restore/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    function addAdobeLaunch(adobeId) {
+      var head = document.getElementsByTagName('head')[0];
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/"+adobeId+".min.js";
+      head.appendChild(adobe);
+    }
+
+    function addGoogleAnalytics(gtagId) {
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id="+gtagId;
+      var head = document.getElementsByTagName('head')[0];
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', gtagId);
+    }
+
+    function addConsent(consentId) {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/"+consentId+"/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = consentId;
+      head.appendChild(onetrustScript);
+    }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
+    addAdobeLaunch("launch-e9ff3acac59f");
+    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/it-it/cloud-manager-backup-restore/js/na-search.js'></script><script src='/it-it/cloud-manager-backup-restore/js/na-pagenav.js'></script><script src='/it-it/cloud-manager-backup-restore/js/na-utility.js'></script>
+ <!--  
+  <link rel='stylesheet' href='/it-it/cloud-manager-backup-restore/css/prism.css' type='text/css'>
+  <link rel='stylesheet' href='/it-it/cloud-manager-backup-restore/css/prism-netapp.css' type='text/css'>
+ -->
+
+  <!-- <script src='/it-it/cloud-manager-backup-restore/js/na-utility.js'></script> -->
+  <script src='/it-it/cloud-manager-backup-restore/js/clouddocs.js'></script>
+  <script src='/it-it/cloud-manager-backup-restore/js/jquery.navgoco.min.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <!-- <script src='/it-it/cloud-manager-backup-restore/js/toc.js'></script> -->
+  <!-- <script src='/it-it/cloud-manager-backup-restore/js/customscripts.js'></script> --><script>
+      $(document).ready(function() {
+          
+          var collapseOnInit = true;
+          
+
+          var navSettings = {
+              "caretHtml": '',
+              "accordion": collapseOnInit,
+              "openClass": 'active', // open
+              "save": false, // leave false or nav highlighting doesn't work right
+              "cookie": {
+                  "name": 'navgoco',
+                  "expires": false,
+                  "path": '/'
+              },
+              "slide": {
+                  "duration": 400,
+                  "easing": 'swing'
+              }
+          };
+
+          // Initialize navgoco with default options
+          $("#mysidebar").navgoco(navSettings);
+          
+
+          $("#collapseAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', false);
+          });
+
+          $("#expandAll").click(function(e) {
+              e.preventDefault();
+              $("#mysidebar").navgoco('toggle', true);
+          });
+
+          $(".sidebar-nav-container").on("scroll", function() {
+            $.cookie("sidebarScroll", $(".sidebar-nav-container").scrollTop(), {
+              path    : "/it-it/cloud-manager-backup-restore"  
+            });
+          });
+          $(function() {
+            if ($.cookie("sidebarScroll")) {
+              $(".sidebar-nav-container").scrollTop($.cookie("sidebarScroll"));
+            }
+          });
+
+      });
+
+  </script>
+  <script>
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+  </script>
+  <script src='/it-it/cloud-manager-backup-restore/js/custom-dropdown.js'></script>
+  <script src='/it-it/cloud-manager-backup-restore/js/FileSaver.min.js'></script>
+  <script src='/it-it/cloud-manager-backup-restore/js/jszip-utils.min.js'></script>
+  <script src='/it-it/cloud-manager-backup-restore/js/jszip.min.js'></script>
+  <!-- <script src='/it-it/cloud-manager-backup-restore/js/pdf-ux.js'></script> -->
+</head>
+
+
+  <body class role="document" data-flavor="gcp">
+    <div id="page" class="n-off-canvas-menu">
+      <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
+      <div class="n-off-canvas-menu__content-wrap">
+        <header class="site-header" id="banner">
+  
+  <!-- Start Page Toolbar -->
+  
+  <div class="page-nav-toolbar">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/it-it/cloud-manager-backup-restore/task-restore-backups-ontap.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="Google Cloud">
+    <label>Cloud provider</label>
+    <div>Google Cloud</div>  
+    <img src="/it-it/cloud-manager-backup-restore/images/filter.svg" class="custom-icon selected" alt="" />
+    <img src="/it-it/cloud-manager-backup-restore/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/it-it/cloud-manager-backup-restore/aws/task-restore-backups-ontap.html">
+      <img alt="" src="/it-it/cloud-manager-backup-restore/images/aws-ico.svg" onerror="this.src='/it-it/cloud-manager-backup-restore/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/it-it/cloud-manager-backup-restore/gcp/task-restore-backups-ontap.html">
+      <img alt="" src="/it-it/cloud-manager-backup-restore/images/gcp-ico.svg" onerror="this.src='/it-it/cloud-manager-backup-restore/images/blank-ico.png'" class="custom-icon" />Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/it-it/cloud-manager-backup-restore/azure/task-restore-backups-ontap.html">
+      <img alt="" src="/it-it/cloud-manager-backup-restore/images/azure-ico.svg" onerror="this.src='/it-it/cloud-manager-backup-restore/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
+    </li>
+    
+    
+  </ul>
+</div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-backup-restore.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/cloud-manager-backup-restore/task-restore-backups-ontap.html&page-title=Ripristino dei dati ONTAP dai file di backup" class="page-nav-contribute-link" role="button"><img src="/it-it/cloud-manager-backup-restore/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-backup-restore/blob/main/task-restore-backups-ontap.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/cloud-manager-backup-restore/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/cloud-manager-backup-restore/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+    <div class="page-nav-container">
+      <nav class="page-nav-fixed">
+        <div class="page-nav-title">IN QUESTA PAGINA</div>
+        <div class="page-nav-links">
+          <ul class="page-nav-inner" id="page-menu"></ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+  
+  
+  <!-- Start top_hat -->
+  <div class="n-top-hat">
+    <div class="n-container">
+      <div class="n-top-hat__cross-property-nav">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/products-a-z/" class="n-top-hat__link">Prodotto e soluzioni</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/support-and-training/netapp-university/" class="n-top-hat__link">Supporto e training</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://cloud.netapp.com" class="n-top-hat__link">Cloud Central</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://community.netapp.com/" class="n-top-hat__link">Community</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://blog.netapp.com/" class="n-top-hat__link">Blog</a>
+          </li>
+          <li class="n-top-hat__list-item">
+            <a href="https://customers.netapp.com/en/" class="n-top-hat__link">Testimonianze dei clienti</a>
+          </li>
+        </ul>
+      </div>
+      <div class="n-top-hat__utils">
+        <ul class="n-top-hat__list">
+          <li class="n-top-hat__list-item">
+            <a href="https://www.netapp.com/company/contact-us/" target="_self" class="n-top-hat__link" data-ntap-ui="contact-us">Contatto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- End top_hat -->
+
+  <!-- Start property bar -->
+  <style>
+    .n-property-navigation-bar__menus--desktop-experience .n-menu--mega__default-content__heading span {
+    color: #34B0FF;
+    }
+  </style>
+  <div class="n-property-bar " data-ntap-ui="sticky-nav">
+    <div class="n-property-bar__inner-wrap">
+      <div class="n-property-bar__menu-toggle">
+        <a href="#" class="n-property-bar__menu-toggle-link">
+          <span class="n-property-bar__menu-toggle-text">Menu</span>
+          <svg class="n-icon-bars n-property-bar__menu-toggle-icon" aria-labelledby="title">
+            <title>bars</title>
+            <use xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#bars"></use>
+          </svg>
+        </a>
+      </div>
+      <div class="n-property-bar__property-mark ">
+        <a href="https://www.netapp.com" class="n-property-bar__property-link">
+          <div class="n-property-bar__logo">
+            <svg class="n-icon-netapp-mark n-icon-netapp-mark n-property-bar__netapp-mark-icon" aria-labelledby="title">
+              <title>netapp-mark</title>
+              <use xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#netapp-mark"></use>
+            </svg>
+            <svg class="n-icon-netapp-logo n-property-bar__logo-svg" aria-labelledby="title">
+              <title>netapp-logo</title>
+              <use xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#netapp-logo"></use>
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      
+      
+      
+      <div class="search-property-bar">
+        <div id="search-demo-container" class="searchbox n-property-bar__search">
+          <div id="react-search" 
+          data-search-html="/it-it/cloud-manager-backup-restore/gcp/search.html"
+          data-type="widget" 
+          data-placeholder="Esplora la documentazione"
+          data-no-results-found="Nessun risultato per {query}"
+          data-did-you-mean="Cerca {suggestion}."
+          data-no-results-found-did-you-mean="Nessun risultato per {query}. Intendi {suggestion}?"
+          data-results-found="{hitCount} risultati trovati"
+          data-error-message="Si è verificato un problema durante il recupero dei risultati. Riprova."
+          data-error-reset="Reimposta ricerca"
+          data-sk-es-pf-indexes=""
+          data-flavor="gcp"></div>
+          <button class="n-property-bar__search-toggle-button" type="button">
+            <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
+              <title>search</title>
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#search"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="n-property-bar__toolbar">
+    <!-- Start Language Selector --><div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+      <div class="custom-dropdown-select custom-dropdown-select-lang">
+      <span class="lang-name">Italiano</span>
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+
+      <ul class="custom-dropdown-menu"><li>
+          <a href="https://docs.netapp.com/it-it/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ja-jp/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/ko-kr/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-cn/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/zh-tw/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/de-de/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/es-es/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+        </li><li>
+          <a href="https://docs.netapp.com/fr-fr/cloud-manager-backup-restore/task-restore-backups-ontap.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+        </li></ul>
+    </div>
+    <!-- End Language Selector -->
+
+    <div class="n-property-bar__cta"></div>
+  </div>
+  <!-- End property bar -->
+</header>
+
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+  <!-- Sidebar Column -->
+  
+  <div class="col-md-3" id="sidebar-height">
+      <button id="btn-sidebar-collapse" onclick="hideSidebar()"><img src="/it-it/cloud-manager-backup-restore/images/collapse.png" alt="Comprimi pannello di navigazione"></button>
+      <div class="n-pdf-header">
+  <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+    <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>PDF disponibili<span>
+    </span>
+  </a>
+</div>
+<div class="n-pdf-body-container">
+  <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
+        <a target="_blank" href="/it-it/cloud-manager-backup-restore/pdfs/gcp/fullsite-sidebar/Documentazione_di_backup_e_ripristino_BlueXP.pdf" >
+          <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Inizia_subito.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Inizia subito
+          </a>
+          
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_ONTAP.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati ONTAP
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_on_premise.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle applicazioni on-premise
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Ripristinare_i_dati_delle_applicazioni_on_premise.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Ripristinare i dati delle applicazioni on-premise
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_native_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle applicazioni native del cloud
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Eseguire_il_backup_dei_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Eseguire il backup dei database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Eseguire_il_backup_dei_database_SAP_HANA_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Eseguire il backup dei database SAP HANA nativi del cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Clonare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Clonare i database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_delle_macchine_virtuali.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle macchine virtuali
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_Kubernetes.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati Kubernetes
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Riferimento.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Riferimento
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/cloud-manager-backup-restore/pdfs/gcp/sidebar/Conoscenza_e_supporto.pdf" 
+            
+          >
+            <img src="/it-it/cloud-manager-backup-restore/images/pdf.png" alt="" width="16" height="16"/>
+            Conoscenza e supporto
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+  <div class="zip-pdf-link-container" style="display: none;">   
+    <a href="#" id="zipPdf">
+      <img src="/it-it/cloud-manager-backup-restore/images/pdf-zip.png" alt="" width="16" height="16"/>
+      <pre>Raccolta di documenti PDF separati<span class="zip-size"></span></pre>
+    </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+</div>
+<script>
+  $("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+  $("#toggleButtonPdf").click(function () {
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+  });
+</script><div class="prod-nav" id="product-nav">
+  <a target="_self" class="prod-fam-nav" href="https://docs.netapp.com/it-it/cloud-manager-family/"><img src="/it-it/cloud-manager-backup-restore/images/left_arrow.png" alt=""><pre>Tutta la documentazione BlueXP</pre></a>
+</div><div class="sidebar-nav-container" id="mysidebardiv">
+  <ul id="mysidebar" class="nav"><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documenti di backup e ripristino BlueXP"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/index.html">
+        Documenti di backup e ripristino BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note di rilascio"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/whats-new.html">
+        Note di rilascio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Inizia subito"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Inizia subito</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Informazioni su backup e ripristino BlueXP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-backup-to-cloud.html">
+        Informazioni su backup e ripristino BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostare la licenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-licensing-cloud-backup.html">
+        Impostare la licenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato dei processi di backup e ripristino"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-monitor-backup-jobs.html">
+        Monitorare lo stato dei processi di backup e ripristino
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati ONTAP"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Backup e ripristino dei dati ONTAP</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati del tuo volume ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-ontap-backup-to-cloud.html">
+        Proteggi i dati del tuo volume ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Google Cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-to-gcp.html">
+        Eseguire il backup di Cloud Volumes ONTAP su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su Google Cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-onprem-to-gcp.html">
+        Eseguire il backup on-premise di ONTAP su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su StorageGRID"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-onprem-private-cloud.html">
+        Eseguire il backup on-premise di ONTAP su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire i backup di ONTAP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-manage-backups-ontap.html">
+        Gestire i backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dai backup di ONTAP"
+      data-li-level="2#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-restore-backups-ontap.html">
+        Ripristino dai backup di ONTAP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Backup e ripristino dei dati delle applicazioni on-premise</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue applicazioni on-premise"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-protect-app-data-to-cloud.html">
+        Proteggi i dati delle tue applicazioni on-premise
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrare il server SnapCenter"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-register-snapcenter-server.html">
+        Registrare il server SnapCenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare un criterio per il backup delle applicazioni"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-create-policies-apps.html">
+        Creare un criterio per il backup delle applicazioni
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-app-data-to-gcp.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-app-data-to-storagegrid.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire la protezione delle applicazioni"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-manage-app-backups.html">
+        Gestire la protezione delle applicazioni
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i dati delle applicazioni on-premise"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Ripristinare i dati delle applicazioni on-premise</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database Oracle"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-restore-oracle-data.html">
+        Ripristinare il database Oracle
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database di SQL Server"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-restore-sql-data.html">
+        Ripristinare il database di SQL Server
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Montare i backup delle applicazioni"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-mount-app-backup.html">
+        Montare i backup delle applicazioni
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle applicazioni native del cloud"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Backup e ripristino dei dati delle applicazioni native del cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue applicazioni native del cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-protect-cloud-app-data-to-cloud.html">
+        Proteggi i dati delle tue applicazioni native del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database Oracle nativi del cloud"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Eseguire il backup dei database Oracle nativi del cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-quick-start-oracle.html">
+        Avvio rapido
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare FSX per ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-configure-fsx-for-ontap.html">
+        Configurare FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-configure-cloud-volumes-ontap.html">
+        Configurare Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installare il plug-in SnapCenter per Oracle e aggiungere host di database"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-add-host-discover-oracle-databases.html">
+        Installare il plug-in SnapCenter per Oracle e aggiungere host di database
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database Oracle"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-cloud-native-oracle-data.html">
+        Eseguire il backup dei database Oracle
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i database Oracle nativi del cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-restore-cloud-native-oracle-data.html">
+        Ripristinare i database Oracle nativi del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare i database Oracle nativi del cloud"
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Clonare i database Oracle nativi del cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare concetti e requisiti"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-clone-cloud-native-oracle-concepts.html">
+        Clonare concetti e requisiti
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare i database Oracle nativi del cloud"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-clone-cloud-native-oracle-data.html">
+        Clonare i database Oracle nativi del cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire la protezione dei dati applicativi nativi del cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-manage-cloud-native-app-data.html">
+        Gestire la protezione dei dati applicativi nativi del cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle macchine virtuali"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Backup e ripristino dei dati delle macchine virtuali</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue macchine virtuali"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-protect-vm-data.html">
+        Proteggi i dati delle tue macchine virtuali
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrare il plug-in SnapCenter per l'host VMware vSphere"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
+        Registrare il plug-in SnapCenter per l'host VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare una policy per il backup dei datastore"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-create-policies-vms.html">
+        Creare una policy per il backup dei datastore
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup dei datastore su Google Cloud Platform"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-vm-data-to-gcp.html">
+        Backup dei datastore su Google Cloud Platform
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei datastore su StorageGRID"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-vm-data-to-storagegrid.html">
+        Eseguire il backup dei datastore su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestione della protezione dei dati di datastore e macchine virtuali"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-manage-vm-data-in-cloud.html">
+        Gestione della protezione dei dati di datastore e macchine virtuali
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i dati delle macchine virtuali"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-restore-vm-data.html">
+        Ripristinare i dati delle macchine virtuali
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati Kubernetes"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Backup e ripristino dei dati Kubernetes</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i tuoi dati Kubernetes"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-kubernetes-backup-to-cloud.html">
+        Proteggi i tuoi dati Kubernetes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup su Google Cloud"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-backup-kubernetes-to-gcp.html">
+        Backup su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire i backup di Kubernetes"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-manage-backups-kubernetes.html">
+        Gestire i backup di Kubernetes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dai backup di Kubernetes"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-restore-backups-kubernetes.html">
+        Ripristino dai backup di Kubernetes
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatizza con l'API REST"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/api-backup-restore.html">
+        Automatizza con l'API REST
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riferimento"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Riferimento</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostazioni dei criteri di backup"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/concept-cloud-backup-policies.html">
+        Impostazioni dei criteri di backup
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di storage di archivio AWS supportati"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-aws-backup-tiers.html">
+        Tier di storage di archivio AWS supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di accesso all'archivio Azure supportati"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-azure-backup-tiers.html">
+        Tier di accesso all'archivio Azure supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di storage di archivio supportati da Google"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-google-backup-tiers.html">
+        Tier di storage di archivio supportati da Google
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup del database di backup e ripristino BlueXP in un sito buio"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-backup-cbs-db-in-dark-site.html">
+        Eseguire il backup del database di backup e ripristino BlueXP in un sito buio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riavviare il backup e il ripristino di BlueXP"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/reference-restart-backup.html">
+        Riavviare il backup e il ripristino di BlueXP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conoscenza e supporto"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Conoscenza e supporto</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrati per ricevere assistenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-support-registration.html">
+        Registrati per ricevere assistenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Richiedi assistenza"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/task-get-help.html">
+        Richiedi assistenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note legali"
+      data-li-level="1#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/cloud-manager-backup-restore/gcp/legal-notices.html">
+        Note legali
+      </a></li></ul>
+</div>
+<script>
+  window.onscroll = () => {
+    const value = -40 - (document.body.scrollHeight - (window.innerHeight + document.scrollingElement.scrollTop));
+    
+    document.getElementById("sidebar-height").style.bottom = Math.max(0,value) + "px";
+};
+</script>
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+<script>$("#mysidebar li.active").parents('ul').css("display","block");</script>
+
+
+  </div>
+  
+
+  <div class="ie-content-pane n-doc__component-detail-content n-doc__component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <div class="ie-utility">
+  <button id="btn-sidebar-expand" onclick="showSidebar()"><img src="/it-it/cloud-manager-backup-restore/images/expand.png" alt="Espandi pannello di navigazione"></button>
+  <div class="ie-menu">
+    <div class="n-breadcrumb">
+      <ul class="n-breadcrumb__list">
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com">docs.netapp.com</a>
+        </li>
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/us-en/cloud/">Documentazione Cloud</a>
+        </li>
+        
+
+        
+        <li class="n-breadcrumb__list-item">
+          <a href="https://docs.netapp.com/it-it/cloud-manager-family/">BlueXP</a>
+        </li>
+        
+
+        <li class="n-breadcrumb__list-item">
+          <a href="/it-it/cloud-manager-backup-restore/">BlueXP&nbsp;backup&nbsp;and&nbsp;recovery</a>
+        </li>
+
+      </ul>
+    </div>
+    <div style="clear: both"></div><!-- Main needs to have height -->
+  </div>
+</div>
+
+      <div class="ie-nmt-disclaimer">
+  <span>
+    <div class="ie-nmt-disclaimer-container">
+      <div class="ie-nmt-disclaimer-icon">
+        <svg class="luci-icon" aria-hidden="true">
+          <use xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#circle-info">
+        </svg>
+      </div>
+      <div class="ie-nmt-disclaimer-content">
+        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+      </div>
+      <div style="clear:both;"></div>
+    </div>
+  </span>
+</div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Ripristino dei dati ONTAP dai file di backup</h1>
+</div>
+
+
+<p class="page-details">
+  
+    
+    <time datetime="2023-05-23 21:23:23 +0000">05/23/2023</time>
+    
+  
+
+<span>Collaboratori
+</span>
+
+
+</p>
+
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristinare un intero volume ONTAP da un file di backup oppure, se è necessario ripristinare solo alcuni file, è possibile ripristinare una cartella o singoli file da un file di backup.</p>
+</div>
+<div class="paragraph">
+<p>È possibile ripristinare un <strong>volume</strong> (come nuovo volume) nell&#8217;ambiente di lavoro originale, in un ambiente di lavoro diverso che utilizza lo stesso account cloud o in un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>È possibile ripristinare una <strong>cartella</strong> in un volume nell&#8217;ambiente di lavoro originale, in un volume in un ambiente di lavoro diverso che utilizza lo stesso account cloud o in un volume su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>È possibile ripristinare <strong>file</strong> in un volume nell&#8217;ambiente di lavoro originale, in un volume in un ambiente di lavoro diverso che utilizza lo stesso account cloud o in un volume su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>Per ripristinare i dati dai file di backup a un sistema di produzione, è necessaria una licenza di backup e ripristino BlueXP valida.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="la-dashboard-di-ripristino">La dashboard di ripristino</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La dashboard di ripristino consente di eseguire operazioni di ripristino di volumi, cartelle e file. Per accedere alla dashboard di ripristino, fare clic su <strong>Backup and Recovery</strong> dal menu BlueXP, quindi fare clic sulla scheda <strong>Restore</strong>. È anche possibile fare clic su <span class="image"><img src="./media/screenshot_gallery_options.gif" alt="Pulsante More (Altro)"></span> &gt; <strong>Visualizza dashboard di ripristino</strong> dal servizio di backup e ripristino dal pannello servizi.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-backup-restore/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Il backup e il ripristino di BlueXP devono essere già attivati per almeno un ambiente di lavoro e devono esistere file di backup iniziali.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_dashboard.png" alt="La dashboard di ripristino che mostra le opzioni per utilizzare la funzionalità Browse  Restore (Sfoglia  Ripristina) o Search  Restore (Cerca  Ripristina)."></span></p>
+</div>
+<div class="paragraph">
+<p>Come si può vedere, la dashboard di ripristino offre due diversi modi per ripristinare i dati dai file di backup: <strong>Browse &amp; Restore</strong> e <strong>Search &amp; Restore</strong>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="confronto-tra-browse-restore-e-search-restore">Confronto tra Browse &amp; Restore e Search &amp; Restore</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In termini generali, <em>Browse &amp; Restore</em> è in genere migliore quando è necessario ripristinare un volume, una cartella o un file specifico dell&#8217;ultima settimana o mese, e si conoscono il nome e la posizione del file e la data dell&#8217;ultima volta in buone condizioni. La funzione <em>Search &amp; Restore</em> è generalmente migliore quando è necessario ripristinare un volume, una cartella o un file, ma non si ricorda il nome esatto, il volume in cui risiede o la data in cui si trovava l&#8217;ultima volta.</p>
+</div>
+<div class="paragraph">
+<p>Questa tabella fornisce un confronto dei 2 metodi.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sfoglia e ripristina</th>
+<th class="tableblock halign-left valign-top">Ricerca e ripristino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sfogliare una struttura in stile cartella per trovare il volume, la cartella o il file all&#8217;interno di un singolo file di backup</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cercare un volume, una cartella o un file in <strong>tutti i file di backup</strong> in base al nome del volume parziale o completo, al nome di cartella o file completo, all&#8217;intervallo di dimensioni e ai filtri di ricerca aggiuntivi</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il ripristino di volume e file funziona con i file di backup memorizzati in Amazon S3, Azure Blob, Google Cloud e NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Il ripristino di volume e file funziona con i file di backup memorizzati in Amazon S3, Azure Blob, Google Cloud e NetApp StorageGRID</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ripristino di volumi, cartelle e file da StorageGRID nei siti senza accesso a Internet</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Ripristino di volumi, cartelle e file da StorageGRID nei siti senza accesso a Internet</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non gestisce il ripristino del file se il file è stato cancellato o rinominato e l&#8217;utente non conosce il nome del file originale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gestisce le directory appena create/eliminate/rinominate e i file appena creati/cancellati/rinominati</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cerca i risultati tra cloud pubblici e privati</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cerca i risultati tra cloud pubblici e copie Snapshot locali</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non sono richieste risorse aggiuntive per i cloud provider</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sono richieste risorse aggiuntive per bucket e provider di cloud pubblico per account</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Non sono richiesti costi aggiuntivi per i cloud provider</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Costo associato alle risorse dei provider di cloud pubblico quando si esegue la scansione dei backup e dei volumi per i risultati della ricerca</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Prima di utilizzare uno dei due metodi di ripristino, assicurarsi di aver configurato l&#8217;ambiente in base ai requisiti delle risorse univoci. Tali requisiti sono descritti nelle sezioni seguenti.</p>
+</div>
+<div class="paragraph">
+<p>Consultare i requisiti e le procedure di ripristino per il tipo di operazione di ripristino che si desidera utilizzare:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;&lt;Restoring volumes using Browse &amp; Restore,Ripristinare i volumi utilizzando Sfoglia  Ripristina</p>
+</li>
+<li>
+<p>&lt;&lt;Restoring folders and files using Browse &amp; Restore,Ripristinare cartelle e file utilizzando Sfoglia  Ripristina</p>
+</li>
+<li>
+<p>&lt;&lt;Restoring ONTAP data using Search &amp; Restore,Ripristinare volumi, cartelle e file utilizzando Search  Restore</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ripristino-dei-dati-di-ontap-mediante-sfoglia-e-ripristina">Ripristino dei dati di ONTAP mediante Sfoglia e ripristina</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Prima di iniziare il ripristino di un volume, di una cartella o di un file, è necessario conoscere il nome del volume da cui si desidera eseguire il ripristino, il nome dell&#8217;ambiente di lavoro, la SVM in cui si trova il volume e la data approssimativa del file di backup da cui si desidera eseguire il ripristino.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nota:</strong> se il file di backup contenente i dati che si desidera ripristinare risiede nello storage di archiviazione (a partire da ONTAP 9.10.1), l&#8217;operazione di ripristino richiederà più tempo e comporterà un costo. Inoltre, il cluster di destinazione deve eseguire ONTAP 9.10.1 o superiore per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.</p>
+</div>
+<div class="paragraph">
+<p><a href="reference-google-backup-tiers.html">"Scopri di più sul ripristino dallo storage di archiviazione di Google"</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-backup-restore/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+La priorità alta non è supportata quando si ripristinano i dati dallo storage di archivio Azure ai sistemi StorageGRID.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sfoglia-e-ripristina-gli-ambienti-di-lavoro-supportati-e-i-provider-di-storage-a-oggetti">Sfoglia e ripristina gli ambienti di lavoro supportati e i provider di storage a oggetti</h3>
+<div class="paragraph">
+<p>È possibile ripristinare un volume, una cartella o singoli file da un file di backup di ONTAP nei seguenti ambienti di lavoro:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 41.1764%;">
+<col style="width: 58.8236%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Percorso del file di backup</th>
+<th class="tableblock halign-left valign-top">Ambiente di lavoro di destinazione ifdef::aws[]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in AWS on-premise ONTAP system endif::aws[] ifdef::Azure[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Azure on-premise ONTAP system endif::Azure[] ifdef::gcp[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Google Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google on-premise ONTAP system endif::gcp[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema ONTAP on-premise</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Per Browse &amp; Restore, il connettore può essere installato nei seguenti percorsi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Per Google Cloud Storage, il connettore deve essere implementato nel VPC della piattaforma Google Cloud</p>
+</li>
+<li>
+<p>Per StorageGRID, il connettore deve essere implementato in sede, con o senza accesso a Internet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Si noti che i riferimenti ai "sistemi ONTAP on-premise" includono i sistemi FAS, AFF e ONTAP Select.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-backup-restore/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile ripristinare cartelle o file se il file di backup è stato configurato con DataLock &amp; ransomware. In questo caso, è possibile ripristinare l&#8217;intero volume dal file di backup e quindi accedere ai file necessari.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ripristino-dei-volumi-mediante-browse-restore">Ripristino dei volumi mediante Browse &amp; Restore</h3>
+<div class="paragraph">
+<p>Quando si ripristina un volume da un file di backup, il backup e ripristino di BlueXP crea un <em>nuovo</em> volume utilizzando i dati del backup. È possibile ripristinare i dati in un volume nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che si trova nello stesso account cloud dell&#8217;ambiente di lavoro di origine. È inoltre possibile ripristinare i volumi su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_browse_restore_volume.png" alt="Diagramma che mostra il flusso per eseguire un&#8217;operazione di ripristino del volume utilizzando Browse  Restore."></span></p>
+</div>
+<div class="paragraph">
+<p>Come si può vedere, è necessario conoscere il nome dell&#8217;ambiente di lavoro, la macchina virtuale dello storage, il nome del volume e la data del file di backup per eseguire un ripristino del volume.</p>
+</div>
+<div class="paragraph">
+<p>Il seguente video mostra una breve panoramica del ripristino di un volume:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="848" height="480" src="https://www.youtube.com/embed/9Og5agUWyRk?rel=0&amp;end=164" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu BlueXP, selezionare <strong>protezione &gt; Backup e ripristino</strong>.</p>
+</li>
+<li>
+<p>Fare clic sulla scheda <strong>Restore</strong> per visualizzare la dashboard di ripristino.</p>
+</li>
+<li>
+<p>Nella sezione <em>Browse &amp; Restore</em>, fare clic su <strong>Restore Volume</strong> (Ripristina volume).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_volume_selection.png" alt="Schermata che mostra la selezione del pulsante Restore Volumes (Ripristina volumi) dalla dashboard di ripristino."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Select Source</em>, accedere al file di backup del volume che si desidera ripristinare. Selezionare il file <strong>Working Environment</strong> (ambiente di lavoro), <strong>Volume</strong> (Volume) e <strong>Backup</strong> con la data e l&#8217;ora da cui si desidera eseguire il ripristino.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_volume_snapshot.png" alt="Una schermata che mostra la selezione dell&#8217;ambiente di lavoro, del volume e del file di backup del volume che si desidera ripristinare."></span></p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Avanti</strong>.</p>
+<div class="paragraph">
+<p>Si noti che se la protezione ransomware è attiva per il file di backup (se sono stati attivati DataLock e ransomware Protection nel criterio di backup), viene richiesto di eseguire un&#8217;ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware.</p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Select Destination</em>, selezionare <strong>Working Environment</strong> (ambiente di lavoro) in cui si desidera ripristinare il volume.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_work_env_volume.png" alt="Una schermata che mostra la selezione dell&#8217;ambiente di lavoro di destinazione per il volume che si desidera ripristinare."></span></p>
+</div>
+</li>
+<li>
+<p>Se si seleziona un sistema ONTAP on-premise e non è già stata configurata la connessione del cluster allo storage a oggetti, vengono richieste ulteriori informazioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Quando si esegue il ripristino da Google Cloud Storage, selezionare il progetto Google Cloud e la chiave di accesso e la chiave segreta per accedere allo storage a oggetti, alla regione in cui sono memorizzati i backup e a IPSpace nel cluster ONTAP in cui si trova il volume di destinazione.</p>
+</li>
+<li>
+<p>Quando si esegue il ripristino da StorageGRID, immettere l&#8217;FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, selezionare la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti e l&#8217;IPSpace nel cluster ONTAP in cui risiede il volume di destinazione.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Immettere il nome da utilizzare per il volume ripristinato e selezionare Storage VM (VM di archiviazione) e aggregate (aggregato) in cui si trova il volume. Quando si ripristina un volume FlexGroup, è possibile scegliere più aggregati. Per impostazione predefinita, il nome del volume è <strong>&lt;source_volume_name&gt;_restore</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_new_vol_name.png" alt="Una schermata che mostra l&#8217;immissione del nome del nuovo volume che si desidera ripristinare."></span></p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Se si sta ripristinando il volume da un file di backup che risiede in un Tier di storage di archiviazione (disponibile a partire da ONTAP 9.10.1), è possibile selezionare la priorità di ripristino.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="reference-google-backup-tiers.html#restoring-data-from-archival-storage">"Scopri di più sul ripristino dallo storage di archiviazione di Google"</a>. I file di backup nel Tier di storage di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Fare clic su <strong>Restore</strong> (Ripristina) per tornare alla dashboard di ripristino, in modo da esaminare l&#8217;avanzamento dell&#8217;operazione di ripristino.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>Il backup e ripristino BlueXP crea un nuovo volume in base al backup selezionato. È possibile <a href="task-manage-backups-ontap.html">"gestire le impostazioni di backup per questo nuovo volume"</a> secondo necessità.</p>
+</div>
+<div class="paragraph">
+<p>Il ripristino di un volume da un file di backup che risiede nello storage di archiviazione può richiedere molti minuti o ore, a seconda del livello di archiviazione e della priorità di ripristino. Fare clic sulla scheda <strong>Job Monitoring</strong> per visualizzare l&#8217;avanzamento del ripristino.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ripristino-di-cartelle-e-file-mediante-browse-restore">Ripristino di cartelle e file mediante Browse &amp; Restore</h3>
+<div class="paragraph">
+<p>Se è necessario ripristinare solo alcuni file da un backup di un volume ONTAP, è possibile scegliere di ripristinare una cartella o singoli file invece di ripristinare l&#8217;intero volume. È possibile ripristinare cartelle e file in un volume esistente nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>Se si selezionano più file, tutti i file vengono ripristinati nello stesso volume di destinazione scelto. Quindi, se si desidera ripristinare i file in volumi diversi, è necessario eseguire il processo di ripristino più volte.</p>
+</div>
+<div class="paragraph">
+<p>Quando si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una cartella insieme a tutti i file e le sottocartelle all&#8217;interno di essa. Quando si utilizza una versione di ONTAP precedente alla 9.13.0, vengono ripristinati solo i file di tale cartella, non vengono ripristinate sottocartelle o file in sottocartelle.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-backup-restore/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Se il file di backup è stato configurato con la protezione DataLock &amp; ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l&#8217;intero volume dal file di backup e accedere alla cartella e ai file necessari.</p>
+</li>
+<li>
+<p>Se il file di backup risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l&#8217;intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect3">
+<h4 id="prerequisiti">Prerequisiti</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>La versione di ONTAP deve essere 9.6 o superiore per eseguire le operazioni di ripristino di <em>file</em>.</p>
+</li>
+<li>
+<p>La versione di ONTAP deve essere 9.11.1 o superiore per eseguire le operazioni di ripristino della <em>cartella</em>. ONTAP versione 9.13.1 è richiesto se i dati si trovano nello storage di archiviazione o se il file di backup utilizza DataLock e la protezione ransomware.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="processo-di-ripristino-di-cartelle-e-file">Processo di ripristino di cartelle e file</h4>
+<div class="paragraph">
+<p>Il processo è simile al seguente:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Per ripristinare una cartella o uno o più file da un backup di volume, fare clic sulla scheda <strong>Restore</strong> (Ripristina) e fare clic su <strong>Restore Files or Folder</strong> (Ripristina file o cartella) in <em>Browse &amp; Restore</em> (Sfoglia e ripristina).</p>
+</li>
+<li>
+<p>Selezionare l&#8217;ambiente di lavoro di origine, il volume e il file di backup in cui risiedono le cartelle o i file.</p>
+</li>
+<li>
+<p>BlueXP backup and recovery (Backup e ripristino BlueXP): Visualizza le cartelle e i file presenti nel file di backup selezionato.</p>
+</li>
+<li>
+<p>Selezionare la cartella o i file che si desidera ripristinare dal backup.</p>
+</li>
+<li>
+<p>Selezionare il percorso di destinazione in cui si desidera ripristinare la cartella o i file (ambiente di lavoro, volume e cartella) e fare clic su <strong>Restore</strong> (Ripristina).</p>
+</li>
+<li>
+<p>I file vengono ripristinati.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_browse_restore_file.png" alt="Un diagramma che mostra il flusso per eseguire un&#8217;operazione di ripristino del file utilizzando Browse  Restore (Sfoglia  Ripristina)."></span></p>
+</div>
+<div class="paragraph">
+<p>Come si può vedere, è necessario conoscere il nome dell&#8217;ambiente di lavoro, il nome del volume, la data del file di backup e il nome della cartella/file per eseguire il ripristino di una cartella o di un file.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ripristino-di-cartelle-e-file">Ripristino di cartelle e file</h4>
+<div class="paragraph">
+<p>Per ripristinare cartelle o file su un volume da un backup di un volume ONTAP, procedere come segue. È necessario conoscere il nome del volume e la data del file di backup che si desidera utilizzare per ripristinare la cartella o i file. Questa funzionalità utilizza la funzione Live Browsing per visualizzare l&#8217;elenco delle directory e dei file all&#8217;interno di ciascun file di backup.</p>
+</div>
+<div class="paragraph">
+<p>Il video seguente mostra una rapida procedura dettagliata per il ripristino di un singolo file:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="848" height="480" src="https://www.youtube.com/embed/9Og5agUWyRk?rel=0&amp;start=165" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu BlueXP, selezionare <strong>protezione &gt; Backup e ripristino</strong>.</p>
+</li>
+<li>
+<p>Fare clic sulla scheda <strong>Restore</strong> per visualizzare la dashboard di ripristino.</p>
+</li>
+<li>
+<p>Nella sezione <em>Browse &amp; Restore</em>, fare clic su <strong>Restore Files or Folder</strong> (Ripristina file o cartella).</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_files_selection.png" alt="Schermata che mostra la selezione del pulsante Restore Files (Ripristina file) o Folder (cartella) dalla dashboard di ripristino."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Select Source</em>, accedere al file di backup del volume che contiene la cartella o i file da ripristinare. Selezionare l&#8217;opzione <strong>Working Environment</strong> (ambiente di lavoro), <strong>Volume</strong> (Volume) e <strong>Backup</strong> con la data/ora da cui si desidera ripristinare i file.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_source.png" alt="Una schermata che mostra la selezione del volume e il backup degli elementi da ripristinare."></span></p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Avanti</strong> per visualizzare l&#8217;elenco delle cartelle e dei file del backup del volume.</p>
+<div class="paragraph">
+<p>Se si ripristinano cartelle o file da un file di backup che risiede in un livello di storage di archiviazione, è possibile selezionare la priorità di ripristino.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><a href="reference-google-backup-tiers.html#restoring-data-from-archival-storage">"Scopri di più sul ripristino dallo storage di archiviazione di Google"</a>. I file di backup nel Tier di storage di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.</p>
+</div>
+<div class="paragraph">
+<p>+ e se la protezione ransomware è attiva per il file di backup (se sono stati attivati DataLock e ransomware Protection nella policy di backup), viene richiesto di eseguire un&#8217;ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware.</p>
+</div>
+<div class="paragraph">
+<p>+<span class="image"><img src="./media/screenshot_restore_select_files.png" alt="Una schermata della pagina Select ITEMS (Seleziona elementi) che consente di accedere agli elementi da ripristinare."></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Nella pagina <em>Select ITEMS</em>, selezionare la cartella o i file che si desidera ripristinare e fare clic su <strong>Continue</strong> (continua). Per assistenza nella ricerca dell&#8217;elemento:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>È possibile fare clic sul nome della cartella o del file, se visualizzato.</p>
+</li>
+<li>
+<p>È possibile fare clic sull&#8217;icona di ricerca e immettere il nome della cartella o del file per accedere direttamente all&#8217;elemento.</p>
+</li>
+<li>
+<p>È possibile scorrere i livelli delle cartelle in basso utilizzando <span class="image"><img src="./media/button_subfolder.png" alt=""></span> alla fine della riga per trovare file specifici.</p>
+<div class="paragraph">
+<p>Quando si selezionano i file, questi vengono aggiunti alla parte sinistra della pagina in modo da visualizzare i file già selezionati. Se necessario, è possibile rimuovere un file da questo elenco facendo clic sulla * x* accanto al nome del file.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Select Destination</em> (Seleziona destinazione), selezionare <strong>Working Environment</strong> (ambiente di lavoro) in cui si desidera ripristinare gli elementi.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_work_env.png" alt="Una schermata che mostra la selezione dell&#8217;ambiente di lavoro di destinazione per gli elementi da ripristinare."></span></p>
+</div>
+<div class="paragraph">
+<p>Se si seleziona un cluster on-premise e non si è ancora configurata la connessione del cluster allo storage a oggetti, vengono richieste ulteriori informazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quando si esegue il ripristino da Google Cloud Storage, inserire IPSpace nel cluster ONTAP in cui risiedono i volumi di destinazione e la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti.</p>
+</li>
+<li>
+<p>Quando si esegue il ripristino da StorageGRID, immettere l&#8217;FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti e l&#8217;IPSpace nel cluster ONTAP in cui risiede il volume di destinazione.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Quindi selezionare il <strong>Volume</strong> e la <strong>cartella</strong> in cui si desidera ripristinare la cartella o i file.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_select_dest.png" alt="Una schermata che mostra la selezione del volume e della cartella per i file che si desidera ripristinare."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sono disponibili alcune opzioni per la posizione durante il ripristino di cartelle e file.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Una volta selezionato <strong>Select Target Folder</strong> (Seleziona cartella di destinazione), come mostrato sopra:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>È possibile selezionare qualsiasi cartella.</p>
+</li>
+<li>
+<p>È possibile passare il mouse su una cartella e fare clic su <span class="image"><img src="./media/button_subfolder.png" alt=""></span> alla fine della riga per eseguire il drill-down nelle sottocartelle, quindi selezionare una cartella.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Se sono stati selezionati lo stesso ambiente di lavoro di destinazione e lo stesso volume in cui si trovava la cartella o il file di origine, è possibile selezionare <strong>Mantieni percorso cartella di origine</strong> per ripristinare la cartella o i file nella stessa cartella in cui erano presenti nella struttura di origine. Tutte le stesse cartelle e sottocartelle devono già esistere; le cartelle non vengono create. Quando si ripristinano i file nella posizione originale, è possibile scegliere di sovrascrivere i file di origine o di creare nuovi file.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Fare clic su <strong>Restore</strong> (Ripristina) per tornare alla dashboard di ripristino, in modo da esaminare l&#8217;avanzamento dell&#8217;operazione di ripristino. È inoltre possibile fare clic sulla scheda <strong>Job Monitoring</strong> per visualizzare l&#8217;avanzamento del ripristino.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ripristino-dei-dati-ontap-mediante-ricerca-e-ripristino">Ripristino dei dati ONTAP mediante Ricerca e ripristino</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>È possibile ripristinare un volume, una cartella o file da un file di backup di ONTAP utilizzando Ricerca e ripristino. Search &amp; Restore (Ricerca e ripristino) consente di cercare un volume, una cartella o un file specifico da tutti i backup memorizzati nello storage cloud per un provider specifico, quindi di eseguire un ripristino. Non è necessario conoscere il nome esatto dell&#8217;ambiente di lavoro o del volume: La ricerca esamina tutti i file di backup dei volumi.</p>
+</div>
+<div class="paragraph">
+<p>L&#8217;operazione di ricerca esamina anche tutte le copie Snapshot locali esistenti anche per i volumi ONTAP. Poiché il ripristino dei dati da una copia Snapshot locale può essere più rapido e meno costoso del ripristino da un file di backup, potrebbe essere necessario ripristinare i dati da Snapshot. È possibile ripristinare Snapshot come nuovo volume <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes" target="_blank" rel="noopener">"Dalla pagina Volume Details (Dettagli volume) di Canvas"</a> (Non da backup e ripristino BlueXP).</p>
+</div>
+<div class="paragraph">
+<p>Quando si ripristina un volume da un file di backup, il backup e ripristino di BlueXP crea un <em>nuovo</em> volume utilizzando i dati del backup. È possibile ripristinare i dati come volume nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che si trova nello stesso account cloud dell&#8217;ambiente di lavoro di origine. È inoltre possibile ripristinare i volumi su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>È possibile ripristinare cartelle o file nella posizione originale del volume, in un volume diverso nello stesso ambiente di lavoro o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>Quando si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una cartella insieme a tutti i file e le sottocartelle all&#8217;interno di essa. Quando si utilizza una versione di ONTAP precedente alla 9.13.0, vengono ripristinati solo i file di tale cartella, non vengono ripristinate sottocartelle o file in sottocartelle.</p>
+</div>
+<div class="paragraph">
+<p>Se il file di backup per il volume che si desidera ripristinare risiede nello storage di archiviazione (disponibile a partire da ONTAP 9.10.1), l&#8217;operazione di ripristino richiederà più tempo e comporterà costi aggiuntivi. Tenere presente che il cluster di destinazione deve eseguire anche ONTAP 9.10.1 o versione successiva per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.</p>
+</div>
+<div class="paragraph">
+<p><a href="reference-google-backup-tiers.html">"Scopri di più sul ripristino dallo storage di archiviazione di Google"</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-backup-restore/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Se il file di backup è stato configurato con la protezione DataLock &amp; ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l&#8217;intero volume dal file di backup e accedere alla cartella e ai file necessari.</p>
+</li>
+<li>
+<p>Se il file di backup risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l&#8217;intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.</p>
+</li>
+<li>
+<p>La priorità di ripristino "alta" non è supportata quando si ripristinano i dati dallo storage di archivio Azure ai sistemi StorageGRID.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Prima di iniziare, si dovrebbe avere un&#8217;idea del nome o della posizione del volume o del file che si desidera ripristinare.</p>
+</div>
+<div class="paragraph">
+<p>Il video seguente mostra una rapida procedura dettagliata per il ripristino di un singolo file:</p>
+</div>
+<div class="videoblock">
+<div class="content">
+<iframe width="848" height="480" src="https://www.youtube.com/embed/RZktLe32hhQ?rel=0" frameborder="0" allowfullscreen></iframe>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search-restore-ambienti-di-lavoro-supportati-e-provider-di-storage-a-oggetti">Search &amp; Restore ambienti di lavoro supportati e provider di storage a oggetti</h3>
+<div class="paragraph">
+<p>È possibile ripristinare un volume, una cartella o singoli file da un file di backup di ONTAP nei seguenti ambienti di lavoro:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 41.1764%;">
+<col style="width: 58.8236%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Percorso del file di backup</th>
+<th class="tableblock halign-left valign-top">Ambiente di lavoro di destinazione ifdef::aws[]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in AWS on-premise ONTAP system endif::aws[] ifdef::Azure[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Azure on-premise ONTAP system endif::Azure[] ifdef::gcp[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Storage Google Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google on-premise ONTAP system endif::gcp[]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema ONTAP on-premise</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Per Search &amp; Restore, il connettore può essere installato nelle seguenti posizioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Per Google Cloud Storage, il connettore deve essere implementato nel VPC della piattaforma Google Cloud</p>
+</li>
+<li>
+<p>Per StorageGRID, il connettore deve essere implementato in sede, con o senza accesso a Internet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Si noti che i riferimenti ai "sistemi ONTAP on-premise" includono i sistemi FAS, AFF e ONTAP Select.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="prerequisiti-2">Prerequisiti</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Requisiti del cluster:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>La versione di ONTAP deve essere 9.8 o superiore.</p>
+</li>
+<li>
+<p>La VM di storage (SVM) su cui risiede il volume deve avere una LIF di dati configurata.</p>
+</li>
+<li>
+<p>NFS deve essere attivato sul volume (sono supportati sia i volumi NFS che SMB/CIFS).</p>
+</li>
+<li>
+<p>SnapDiff RPC Server deve essere attivato su SVM. BlueXP esegue questa operazione automaticamente quando si attiva l&#8217;indicizzazione nell&#8217;ambiente di lavoro. (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra due copie Snapshot).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Requisiti di Google Cloud:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Le autorizzazioni specifiche di Google BigQuery devono essere aggiunte al ruolo utente che fornisce a BlueXP le autorizzazioni necessarie. <a href="task-backup-onprem-to-gcp.html#verify-or-add-permissions-to-the-connector">"Assicurarsi che tutte le autorizzazioni siano configurate correttamente"</a>.</p>
+<div class="paragraph">
+<p>Nota: Se si utilizzava già il backup e ripristino BlueXP con un connettore configurato in passato, è necessario aggiungere ora le autorizzazioni BigQuery al ruolo utente BlueXP. Queste sono nuove e sono necessarie per la ricerca e il ripristino.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Requisiti StorageGRID:</p>
+<div class="paragraph">
+<p>A seconda della configurazione, sono disponibili 2 modi per implementare Search &amp; Restore:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se non sono presenti credenziali del provider cloud nell&#8217;account, le informazioni del catalogo indicizzate vengono memorizzate nel connettore.</p>
+</li>
+<li>
+<p>Se si utilizza un connettore in un sito buio, le informazioni del catalogo indicizzate vengono memorizzate nel connettore (richiede la versione 3.9.25 o superiore del connettore).</p>
+</li>
+<li>
+<p>Se lo hai fatto <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-aws.html" target="_blank" rel="noopener">"Credenziali AWS"</a> oppure <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-accounts-azure.html" target="_blank" rel="noopener">"Credenziali Azure"</a> Nell&#8217;account, il catalogo indicizzato viene memorizzato presso il cloud provider, proprio come con un connettore implementato nel cloud. (Se si dispone di entrambe le credenziali, AWS è selezionato per impostazione predefinita).</p>
+<div class="paragraph">
+<p>Anche se si utilizza un connettore on-premise, i requisiti del cloud provider devono essere soddisfatti sia per le autorizzazioni dei connettori che per le risorse del cloud provider. Per l&#8217;utilizzo di questa implementazione, vedere i requisiti AWS e Azure riportati sopra.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="processo-di-ricerca-e-ripristino">Processo di ricerca e ripristino</h3>
+<div class="paragraph">
+<p>Il processo è simile al seguente:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Prima di utilizzare Search &amp; Restore, è necessario attivare l&#8217;indicizzazione su ogni ambiente di lavoro di origine da cui si desidera ripristinare i dati dei volumi. Questo consente al catalogo indicizzato di tenere traccia dei file di backup per ogni volume.</p>
+</li>
+<li>
+<p>Se si desidera ripristinare uno o più file da un backup di un volume, in <em>Search &amp; Restore</em>, fare clic su <strong>Search &amp; Restore</strong> (Ricerca e ripristino).</p>
+</li>
+<li>
+<p>Immettere i criteri di ricerca per un volume, una cartella o un file in base al nome del volume parziale o completo, al nome del file parziale o completo, all&#8217;intervallo di dimensioni, all&#8217;intervallo di date di creazione e ad altri filtri di ricerca, quindi fare clic su <strong>Cerca</strong>.</p>
+<div class="paragraph">
+<p>La pagina risultati ricerca visualizza tutte le posizioni in cui è presente un file o un volume corrispondente ai criteri di ricerca.</p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>View All backups</strong> (Visualizza tutti i backup) per la posizione che si desidera utilizzare per ripristinare il volume o il file, quindi fare clic su <strong>Restore</strong> (Ripristina) nel file di backup effettivo che si desidera utilizzare.</p>
+</li>
+<li>
+<p>Selezionare la posizione in cui si desidera ripristinare il volume, la cartella o i file e fare clic su <strong>Restore</strong> (Ripristina).</p>
+</li>
+<li>
+<p>Il volume, la cartella o i file vengono ripristinati.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_search_restore_vol_file.png" alt="Diagramma che mostra il flusso per eseguire un&#8217;operazione di ripristino di un volume, di una cartella o di un file utilizzando Search  Restore."></span></p>
+</div>
+<div class="paragraph">
+<p>Come si può vedere, è sufficiente conoscere un nome parziale e le ricerche di backup e ripristino di BlueXP attraverso tutti i file di backup che corrispondono alla ricerca.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="abilitazione-del-catalogo-indicizzato-per-ogni-ambiente-di-lavoro">Abilitazione del catalogo indicizzato per ogni ambiente di lavoro</h3>
+<div class="paragraph">
+<p>Prima di utilizzare Search &amp; Restore, è necessario attivare l&#8217;indicizzazione su ogni ambiente di lavoro di origine da cui si intende ripristinare volumi o file. Questo consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche molto rapide ed efficienti.</p>
+</div>
+<div class="paragraph">
+<p>Quando si attiva questa funzionalità, il backup e ripristino di BlueXP attiva SnapDiff v3 sulla SVM per i volumi ed esegue le seguenti operazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Per i backup memorizzati in Google Cloud, fornisce un nuovo bucket e il <a href="https://cloud.google.com/bigquery" target="_blank" rel="noopener">"Servizi Google Cloud BigQuery"</a> sono forniti a livello di account/progetto.</p>
+</li>
+<li>
+<p>Per i backup memorizzati in StorageGRID, fornisce spazio sul connettore o sull&#8217;ambiente del cloud provider.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Se l&#8217;indicizzazione è già stata attivata per l&#8217;ambiente di lavoro, passare alla sezione successiva per ripristinare i dati.</p>
+</div>
+<div class="paragraph">
+<p>Per attivare l&#8217;indicizzazione per un ambiente di lavoro:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se non sono stati indicizzati ambienti di lavoro, nella dashboard di ripristino in <em>Search &amp; Restore</em>, fare clic su <strong>Enable Indexing for Working Environments</strong> (attiva indicizzazione per ambienti di lavoro) e fare clic su <strong>Enable Indexing</strong> (attiva indicizzazione) per l&#8217;ambiente di lavoro.</p>
+</li>
+<li>
+<p>Se almeno un ambiente di lavoro è già stato indicizzato, nella dashboard di ripristino in <em>Search &amp; Restore</em>, fare clic su <strong>Indexing Settings</strong> (Impostazioni di indicizzazione) e fare clic su <strong>Enable Indexing</strong> (attiva indicizzazione) per l&#8217;ambiente di lavoro.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Una volta eseguito il provisioning di tutti i servizi e attivato il catalogo indicizzato, l&#8217;ambiente di lavoro viene visualizzato come "attivo".</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_enable_indexing.png" alt="Una schermata che mostra gli ambienti di lavoro che hanno attivato il catalogo indicizzato."></span></p>
+</div>
+<div class="paragraph">
+<p>A seconda delle dimensioni dei volumi nell&#8217;ambiente di lavoro e del numero di file di backup nel cloud, il processo di indicizzazione iniziale potrebbe richiedere fino a un&#8217;ora. Successivamente, viene aggiornato in modo trasparente ogni ora con modifiche incrementali per rimanere aggiornato.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="ripristino-di-volumi-cartelle-e-file-mediante-search-restore">Ripristino di volumi, cartelle e file mediante Search &amp; Restore</h3>
+<div class="paragraph">
+<p>Dopo di che <a href="#abilitazione-del-catalogo-indicizzato-per-ogni-ambiente-di-lavoro">Indicizzazione abilitata per l&#8217;ambiente di lavoro</a>, È possibile ripristinare volumi, cartelle e file utilizzando Search &amp; Restore. In questo modo, è possibile utilizzare un&#8217;ampia gamma di filtri per individuare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu BlueXP, selezionare <strong>protezione &gt; Backup e ripristino</strong>.</p>
+</li>
+<li>
+<p>Fare clic sulla scheda <strong>Restore</strong> per visualizzare la dashboard di ripristino.</p>
+</li>
+<li>
+<p>Nella sezione <em>Search &amp; Restore</em>, fare clic su <strong>Search &amp; Restore</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_start_search_restore.png" alt="Schermata che mostra la selezione del pulsante Search  Restore (Cerca  Ripristina) dalla dashboard di ripristino."></span></p>
+</div>
+</li>
+<li>
+<p>Dalla pagina Search to Restore (Cerca per il ripristino):</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Nella <em>barra di ricerca</em>, immettere un nome completo o parziale del volume, del nome della cartella o del file.</p>
+</li>
+<li>
+<p>Selezionare il tipo di risorsa: <strong>Volumi</strong>, <strong>file</strong>, <strong>cartelle</strong> o <strong>tutto</strong>.</p>
+</li>
+<li>
+<p>Nell&#8217;area <em>Filtra per</em>, selezionare i criteri di filtro. Ad esempio, è possibile selezionare l&#8217;ambiente di lavoro in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Cerca</strong> e nell&#8217;area risultati ricerca vengono visualizzate tutte le risorse che hanno un file, una cartella o un volume corrispondente alla ricerca.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_step1_search_restore.png" alt="Una schermata che mostra i criteri di ricerca e i risultati della ricerca nella pagina Search  Restore."></span></p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>View All backups</strong> (Visualizza tutti i backup) per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_restore_step2_search_restore.png" alt="Una schermata che mostra come visualizzare tutti i backup che corrispondono ai criteri di ricerca."></span></p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Restore</strong> per il file di backup che si desidera utilizzare per ripristinare l&#8217;elemento dal cloud.</p>
+<div class="paragraph">
+<p>I risultati identificano anche le copie Snapshot del volume locale che contengono il file nella ricerca. Il pulsante <strong>Restore</strong> (Ripristina) non funziona per le istantanee, ma se si desidera ripristinare i dati dalla copia Snapshot anziché dal file di backup, annotare il nome e la posizione del volume, aprire la pagina Volume Details (Dettagli volume) in Canvas, E utilizzare l&#8217;opzione <strong>Restore from Snapshot copy</strong> (Ripristina da copia Snapshot).</p>
+</div>
+</li>
+<li>
+<p>Selezionare il percorso di destinazione in cui si desidera ripristinare il volume, la cartella o i file e fare clic su <strong>Restore</strong> (Ripristina).</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Per i volumi, è possibile selezionare l&#8217;ambiente di lavoro di destinazione originale oppure un ambiente di lavoro alternativo. Quando si ripristina un volume FlexGroup, è possibile scegliere più aggregati.</p>
+</li>
+<li>
+<p>Per le cartelle, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, inclusi ambiente di lavoro, volume e cartella.</p>
+</li>
+<li>
+<p>Per i file, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, inclusi ambiente di lavoro, volume e cartella. Quando si seleziona la posizione originale, è possibile scegliere di sovrascrivere i file di origine o di creare nuovi file.</p>
+<div class="paragraph">
+<p>Se si seleziona un sistema ONTAP on-premise e non è già stata configurata la connessione del cluster allo storage a oggetti, vengono richieste ulteriori informazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quando si esegue il ripristino da Google Cloud Storage, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione e la chiave di accesso e la chiave segreta per accedere allo storage a oggetti. <a href="task-backup-onprem-to-gcp.html#requirements">"Consulta i dettagli su questi requisiti"</a>.</p>
+</li>
+<li>
+<p>Quando si esegue il ripristino da StorageGRID, immettere l&#8217;FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti e l&#8217;IPSpace nel cluster ONTAP in cui risiede il volume di destinazione. <a href="task-backup-onprem-private-cloud.html#requirements">"Consulta i dettagli su questi requisiti"</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultati</div>
+<p>Il volume, la cartella o i file vengono ripristinati e si torna alla dashboard di ripristino, in modo da poter esaminare l&#8217;avanzamento dell&#8217;operazione di ripristino. È inoltre possibile fare clic sulla scheda <strong>Job Monitoring</strong> per visualizzare l&#8217;avanzamento del ripristino.</p>
+</div>
+<div class="paragraph">
+<p>Per i volumi ripristinati, è possibile <a href="task-manage-backups-ontap.html">"gestire le impostazioni di backup per questo nuovo volume"</a> secondo necessità.</p>
+</div>
+</div>
+</div>
+</div>
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+      <div class="n-footer__bottom-left">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/copyright/">© 2023 NetApp, Inc.</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Condizioni per l'utilizzo</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Direttiva sulla privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Direttiva sui Cookie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Impostazioni cookie</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a target="_self" href="javascript:netapp_mailto()">Invia feedback su questa pagina</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/it-it/cloud-manager-backup-restore/images/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/it-it/cloud-manager-backup-restore/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/it-it/cloud-manager-backup-restore/js/prism.js'></script>
+      <script type="text/javascript" src='/it-it/cloud-manager-backup-restore/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/it-it/cloud-manager-backup-restore/js/tabbed-blocks.js'></script>
+    <script src='/it-it/cloud-manager-backup-restore/js/sidebar.js'></script>
+  </body></html>
