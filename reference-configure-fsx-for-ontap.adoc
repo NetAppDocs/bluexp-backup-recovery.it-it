@@ -20,7 +20,7 @@ Con BlueXP è necessario creare un ambiente di lavoro FSX per ONTAP per aggiunge
 
 == Creare un ambiente di lavoro FSX per ONTAP
 
-È necessario creare FSX per ambienti di lavoro ONTAP in cui sono ospitati i database. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/start/task-getting-started-fsx.html["Inizia a utilizzare Amazon FSX per ONTAP"] e. link:https://docs.netapp.com/us-en/cloud-manager-fsx-ontap/use/task-creating-fsx-working-environment.html["Creare e gestire un ambiente di lavoro Amazon FSX per ONTAP"].
+È necessario creare FSX per ambienti di lavoro ONTAP in cui sono ospitati i database. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/start/task-getting-started-fsx.html["Inizia a utilizzare Amazon FSX per ONTAP"] e. link:https://docs.netapp.com/us-en/bluexp-fsx-ontap/use/task-creating-fsx-working-environment.html["Creare e gestire un ambiente di lavoro Amazon FSX per ONTAP"].
 
 È possibile creare l'ambiente di lavoro FSX per ONTAP utilizzando BlueXP o AWS. Se hai creato utilizzando AWS, dovresti scoprire FSX per i sistemi ONTAP in BlueXP.
 
@@ -30,7 +30,7 @@ Con BlueXP è necessario creare un ambiente di lavoro FSX per ONTAP per aggiunge
 
 Un account Admin deve creare un connettore in AWS che consenta a BlueXP di gestire risorse e processi all'interno del tuo ambiente di cloud pubblico.
 
-Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-aws.html["Creazione di un connettore in AWS da BlueXP"].
+Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-aws.html["Creazione di un connettore in AWS da BlueXP"].
 
 * È necessario utilizzare lo stesso connettore per gestire sia l'ambiente di lavoro FSX per ONTAP che i database.
 * Se si dispone dell'ambiente di lavoro FSX per ONTAP e dei database nello stesso cloud privato virtuale (VPC), è possibile implementare il connettore nello stesso VPC.

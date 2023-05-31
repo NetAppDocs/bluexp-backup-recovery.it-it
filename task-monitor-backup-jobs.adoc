@@ -127,7 +127,7 @@ Dalle informazioni relative ai dettagli di monitoraggio dei processi, è possibi
 
 BlueXP Notification Center tiene traccia dell'avanzamento dei processi di backup e ripristino avviati, in modo da verificare se l'operazione è stata eseguita correttamente.
 
-Oltre a visualizzare gli avvisi nell'elenco delle notifiche di BlueXP, è possibile configurare BlueXP in modo che invii le notifiche via email come avvisi, in modo da essere informati di importanti attività del sistema anche quando non si è connessi al sistema. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^].
+Oltre a visualizzare gli avvisi nell'elenco delle notifiche di BlueXP, è possibile configurare BlueXP in modo che invii le notifiche via email come avvisi, in modo da essere informati di importanti attività del sistema anche quando non si è connessi al sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^].
 
 I seguenti eventi generano avvisi via email:
 
@@ -172,7 +172,7 @@ Per impostazione predefinita, gli account Admins di BlueXP ricevono e-mail per t
 
 Per ricevere gli avvisi e-mail di backup e ripristino di BlueXP, è necessario selezionare i tipi di severità della notifica "critico", "Avviso" e "errore".
 
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^].
 
 .Fasi
 . Selezionare la scheda *Job Monitoring*.

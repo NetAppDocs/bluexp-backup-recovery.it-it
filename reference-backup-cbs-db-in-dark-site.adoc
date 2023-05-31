@@ -103,9 +103,9 @@ Una volta verificato il corretto funzionamento del sistema, si consiglia di crea
 
 === Installare un nuovo connettore su un nuovo host Linux on-premise
 
-Quando si installa un nuovo connettore BlueXP, assicurarsi di scaricare la stessa versione del software installata sul connettore originale. Le modifiche periodiche alla struttura del database di backup e ripristino di BlueXP possono rendere incompatibili le versioni software più recenti con i backup del database originali. È possibile https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Aggiornare il software del connettore alla versione più recente dopo il ripristino del database di backup"^].
+Quando si installa un nuovo connettore BlueXP, assicurarsi di scaricare la stessa versione del software installata sul connettore originale. Le modifiche periodiche alla struttura del database di backup e ripristino di BlueXP possono rendere incompatibili le versioni software più recenti con i backup del database originali. È possibile https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Aggiornare il software del connettore alla versione più recente dopo il ripristino del database di backup"^].
 
-. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["Installare il connettore BlueXP su un nuovo host Linux on-premise"^]
+. https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Installare il connettore BlueXP su un nuovo host Linux on-premise"^]
 . Accedere a BlueXP utilizzando le credenziali utente amministratore appena create.
 
 
@@ -172,15 +172,15 @@ unzip catalogxxxxxx.zip
 
 === Scopri i tuoi cluster ONTAP e i sistemi StorageGRID
 
-. https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Scopri tutti gli ambienti di lavoro ONTAP on-premise"^] che erano disponibili nel tuo ambiente precedente.
-. https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["Scopri i tuoi sistemi StorageGRID"^].
+. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Scopri tutti gli ambienti di lavoro ONTAP on-premise"^] che erano disponibili nel tuo ambiente precedente.
+. https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["Scopri i tuoi sistemi StorageGRID"^].
 
 
 
 
 === Impostare i dettagli dell'ambiente StorageGRID
 
-Aggiungere i dettagli del sistema StorageGRID associato agli ambienti di lavoro ONTAP così come sono stati configurati nella configurazione originale del connettore utilizzando https://docs.netapp.com/us-en/cloud-manager-automation/index.html["API BlueXP"^].
+Aggiungere i dettagli del sistema StorageGRID associato agli ambienti di lavoro ONTAP così come sono stati configurati nella configurazione originale del connettore utilizzando https://docs.netapp.com/us-en/bluexp-automation/index.html["API BlueXP"^].
 
 È necessario eseguire questa procedura per ogni sistema ONTAP che esegue il backup dei dati su StorageGRID.
 

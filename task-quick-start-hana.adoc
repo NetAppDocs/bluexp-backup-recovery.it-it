@@ -38,12 +38,12 @@ Inizia subito seguendo questa procedura.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Iscriviti a BlueXP
 [role="quick-margin-list"]
-BlueXP è accessibile da una console basata su web. Una volta iniziato a utilizzare BlueXP, il primo passo consiste nell'iscriversi utilizzando le credenziali del sito di supporto NetApp o creando un login cloud NetApp. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-sign-up-saas.html["Iscriviti a BlueXP"].
+BlueXP è accessibile da una console basata su web. Una volta iniziato a utilizzare BlueXP, il primo passo consiste nell'iscriversi utilizzando le credenziali del sito di supporto NetApp o creando un login cloud NetApp. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-sign-up-saas.html["Iscriviti a BlueXP"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Accedere a BlueXP
 [role="quick-margin-list"]
-Dopo aver effettuato la registrazione a BlueXP, è possibile accedere dalla console basata sul Web. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-logging-in.html["Accedere a BlueXP"].
+Dopo aver effettuato la registrazione a BlueXP, è possibile accedere dalla console basata sul Web. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["Accedere a BlueXP"].
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Gestisci il tuo account BlueXP
 [role="quick-margin-list"]
-Puoi amministrare il tuo account gestendo utenti, account di servizio, aree di lavoro e connettori. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-netapp-accounts.html["Gestisci il tuo account BlueXP"].
+Puoi amministrare il tuo account gestendo utenti, account di servizio, aree di lavoro e connettori. Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-netapp-accounts.html["Gestisci il tuo account BlueXP"].

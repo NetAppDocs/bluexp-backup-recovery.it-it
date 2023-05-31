@@ -74,7 +74,7 @@ L'immagine seguente mostra ciascun componente e le connessioni che è necessario
 image:diagram_cloud_backup_cvo_azure.png["Un diagramma che mostra come il backup e ripristino BlueXP comunica con i volumi sui sistemi di origine e lo storage di destinazione in cui si trovano i file di backup."]
 
 Versioni di ONTAP supportate:: Minimo di ONTAP 9.7P5; si consiglia ONTAP 9.8P13 e versioni successive.
-Requisiti di licenza:: Per le licenze PAYGO di backup e ripristino BlueXP, è necessario un abbonamento tramite Azure Marketplace prima di attivare il backup e ripristino BlueXP. La fatturazione per il backup e il ripristino BlueXP viene effettuata tramite questo abbonamento. https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["È possibile iscriversi dalla pagina Dettagli  credenziali della procedura guidata dell'ambiente di lavoro"^].
+Requisiti di licenza:: Per le licenze PAYGO di backup e ripristino BlueXP, è necessario un abbonamento tramite Azure Marketplace prima di attivare il backup e ripristino BlueXP. La fatturazione per il backup e il ripristino BlueXP viene effettuata tramite questo abbonamento. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["È possibile iscriversi dalla pagina Dettagli  credenziali della procedura guidata dell'ambiente di lavoro"^].
 +
 --
 Per le licenze BYOL di backup e ripristino BlueXP, è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Scopri come gestire le tue licenze BYOL"]. È necessario utilizzare una licenza BYOL quando il connettore e il sistema Cloud Volumes ONTAP sono implementati in un sito buio ("modalità privata").
@@ -82,12 +82,12 @@ Per le licenze BYOL di backup e ripristino BlueXP, è necessario il numero di se
 Inoltre, è necessario disporre di un abbonamento a Microsoft Azure per lo spazio di storage in cui verranno collocati i backup.
 
 --
-Requisiti del connettore:: Il connettore può essere installato in una regione Azure con accesso a Internet completo o limitato (modalità "standard" o "limitata"). https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-modes.html["Per ulteriori informazioni, vedere modalità di implementazione di BlueXP"^].
+Requisiti del connettore:: Il connettore può essere installato in una regione Azure con accesso a Internet completo o limitato (modalità "standard" o "limitata"). https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Per ulteriori informazioni, vedere modalità di implementazione di BlueXP"^].
 +
 --
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-azure.html["Implementare un connettore in Azure in modalità standard (accesso a Internet completo)"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-restricted-mode.html["Installazione del connettore in modalità limitata (accesso in uscita limitato)"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-azure.html["Implementare un connettore in Azure in modalità standard (accesso a Internet completo)"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-restricted-mode.html["Installazione del connettore in modalità limitata (accesso in uscita limitato)"^]
 
 
 --
@@ -162,7 +162,7 @@ Verificare o aggiungere le autorizzazioni al connettore:: Per utilizzare la funz
 "Microsoft.Synapse/workspaces/privateEndpointConnectionsApproval/action"
 ----
 +
-https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-azure.html["Visualizza il formato JSON completo per la policy"^]
+https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.html["Visualizza il formato JSON completo per la policy"^]
 
 ... Fare clic su *Review + update*, quindi su *Update*.
 
@@ -188,7 +188,7 @@ Informazioni richieste per l'utilizzo delle chiavi gestite dal cliente per la cr
 
 Il backup e ripristino BlueXP è attivato per impostazione predefinita nella procedura guidata dell'ambiente di lavoro. Assicurarsi di mantenere l'opzione attivata.
 
-Vedere https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancio di Cloud Volumes ONTAP in Azure"^] Per i requisiti e i dettagli per la creazione del sistema Cloud Volumes ONTAP.
+Vedere https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancio di Cloud Volumes ONTAP in Azure"^] Per i requisiti e i dettagli per la creazione del sistema Cloud Volumes ONTAP.
 
 
 NOTE: Se si desidera selezionare il nome del gruppo di risorse, *disabilitare* il backup e il ripristino di BlueXP durante la distribuzione di Cloud Volumes ONTAP. Seguire la procedura per <<enabling-bluexp-backup-and-recovery-on-an-existing-system,Attivazione del backup e ripristino BlueXP su un sistema esistente>> Per attivare il backup e il ripristino di BlueXP e scegliere il gruppo di risorse.

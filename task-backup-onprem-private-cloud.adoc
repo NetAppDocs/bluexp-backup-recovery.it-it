@@ -26,7 +26,7 @@ Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Verificare il supporto per la configurazione
 [role="quick-margin-list"]
-* Il cluster on-premise è stato scoperto e aggiunto a un ambiente operativo in BlueXP. Vedere https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Alla scoperta dei cluster ONTAP"^] per ulteriori informazioni.
+* Il cluster on-premise è stato scoperto e aggiunto a un ambiente operativo in BlueXP. Vedere https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Alla scoperta dei cluster ONTAP"^] per ulteriori informazioni.
 +
 ** Il cluster esegue ONTAP 9.7P5 o versione successiva.
 ** Il cluster dispone di una licenza SnapMirror, inclusa nel Premium Bundle o nel Data Protection Bundle.
@@ -95,7 +95,7 @@ Quando il connettore e il sistema ONTAP on-premise sono installati in una posizi
 
 Prima di avviare il backup dei dati dei volumi, è necessario individuare i cluster ONTAP on-premise in BlueXP.
 
-https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
 
 Requisiti ONTAP::
 +
@@ -176,14 +176,14 @@ Versione degli oggetti:: Non è necessario attivare manualmente la versione degl
 
 Quando si esegue il backup dei dati su StorageGRID, è necessario che sia disponibile un connettore on-premise. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise. Il connettore può essere installato in un sito con o senza accesso a Internet.
 
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-connector-on-prem.html["Installazione del connettore su un host Linux con accesso a Internet"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-quick-start-private-mode.html["Installazione del connettore su un host Linux senza accesso a Internet"^]
-* https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Installazione del connettore su un host Linux con accesso a Internet"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Installazione del connettore su un host Linux senza accesso a Internet"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
 
 
 
-NOTE: La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Se installato in un sito senza connessione a Internet, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare link:whats-new.html["Novità di BlueXP per backup e ripristino"] Per visualizzare le nuove funzionalità di ciascuna versione di backup e ripristino di BlueXP, seguire i passaggi da a. https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Aggiornare il software del connettore"^] quando si desidera utilizzare nuove funzioni.
+NOTE: La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Se installato in un sito senza connessione a Internet, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare link:whats-new.html["Novità di BlueXP per backup e ripristino"] Per visualizzare le nuove funzionalità di ciascuna versione di backup e ripristino di BlueXP, seguire i passaggi da a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Aggiornare il software del connettore"^] quando si desidera utilizzare nuove funzioni.
 
 Si consiglia di creare periodicamente backup locali dei dati di configurazione di backup e ripristino di BlueXP quando il connettore viene installato in un sito senza connessione a Internet. link:reference-backup-cbs-db-in-dark-site.html["Scopri come eseguire il backup dei dati di backup e ripristino di BlueXP in un sito buio"^].
 
@@ -219,7 +219,7 @@ Il supporto attuale consente di archiviare i backup nello storage AWS _S3 Glacie
 *Requisiti StorageGRID*
 
 * StorageGRID deve utilizzare 11.4 o una versione successiva
-* Il StorageGRID deve essere https://docs.netapp.com/us-en/cloud-manager-storagegrid/task-discover-storagegrid.html["Scoperta e disponibile in BlueXP Canvas"^].
+* Il StorageGRID deve essere https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["Scoperta e disponibile in BlueXP Canvas"^].
 
 
 *Requisiti Amazon S3*

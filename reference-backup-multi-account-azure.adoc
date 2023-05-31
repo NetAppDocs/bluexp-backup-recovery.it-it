@@ -16,7 +16,7 @@ summary: 'Il backup e ripristino di BlueXP consente di creare file di backup in 
 [role="lead"]
 Il backup e ripristino BlueXP consente di creare file di backup in un account Azure diverso da quello in cui risiedono i volumi Cloud Volumes ONTAP di origine. Entrambi gli account possono essere diversi dall'account in cui si trova BlueXP Connector.
 
-Questi passaggi sono necessari solo quando si è https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP nello storage Azure Blob"^].
+Questi passaggi sono necessari solo quando si è https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP nello storage Azure Blob"^].
 
 Seguire i passaggi riportati di seguito per configurare la configurazione in questo modo.
 
