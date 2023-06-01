@@ -30,7 +30,7 @@ NOTE: È possibile registrare più plug-in SnapCenter per gli host VMware vSpher
 +
 Assicurarsi che la comunicazione sia aperta tra il plug-in SnapCenter on-premise per l'host VMware vSphere in esecuzione sulla porta 8144 predefinita e l'istanza del connettore BlueXP che potrebbe essere in esecuzione in qualsiasi provider cloud (servizi Web Amazon, Microsoft Azure, piattaforma cloud Google) o on-premise.
 
-.. Nel campo Nome utente e Password, specificare le credenziali dell'utente con il ruolo di amministratore.
+.. Nel campo Nome utente e Password, specificare le credenziali dell'utente vCenter con il ruolo di amministratore.
 
 
 . Fare clic su *Registra*.

@@ -2687,7 +2687,6 @@
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">Nel campo Plug-in SnapCenter per VMware vSphere, specificare l'FQDN o l'indirizzo IP del plug-in SnapCenter per l'host VMware vSphere.</block>
   <block id="463d350eb6c9887e5addb9a6561a47ad" category="list-text">Nel campo porta, specificare il numero di porta su cui è in esecuzione il plug-in SnapCenter per l'host VMware vSphere.</block>
   <block id="2131f85f2f51908e5c573c231b274f4c" category="paragraph">Assicurarsi che la comunicazione sia aperta tra il plug-in SnapCenter on-premise per l'host VMware vSphere in esecuzione sulla porta 8144 predefinita e l'istanza del connettore BlueXP che potrebbe essere in esecuzione in qualsiasi provider cloud (servizi Web Amazon, Microsoft Azure, piattaforma cloud Google) o on-premise.</block>
-  <block id="4eb88f79049bc78204f8659b66b7b655" category="list-text">Nel campo Nome utente e Password, specificare le credenziali dell'utente con il ruolo di amministratore.</block>
   <block id="9909e23ede42f2318acada35ac10bd3e" category="list-text">Fare clic su *Registra*.</block>
   <block id="a2635d75789f249837881cc5136979e1" category="paragraph">*Al termine*</block>
   <block id="1e88a362bd23950ee5a102f645348ac8" category="paragraph">Fare clic su *Backup e ripristino* &gt; *macchine virtuali* per visualizzare tutti i datastore e le macchine virtuali protetti mediante il plug-in SnapCenter registrato per l'host VMware vSphere.</block>
@@ -3796,4 +3795,5 @@
   <block id="8ff7f40c0012810703dc67d79b10ff7b" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> che erano disponibili nel tuo ambiente precedente.</block>
   <block id="9859429ce021a771d55011bbad61663d" category="list-text"><block ref="95020d92addc538671ad8a553222768a" category="inline-link-rx"></block>.</block>
   <block id="dd356e8ea63119f95e3666d6db68f47e" category="paragraph">Aggiungere i dettagli del sistema StorageGRID associato agli ambienti di lavoro ONTAP così come sono stati configurati nella configurazione originale del connettore utilizzando<block ref="84b7c1fcfbca071b9004578261b65308" category="inline-link-rx"></block>.</block>
+  <block id="eeba430c3c4e0795629fe640359a8730" category="list-text">Nel campo Nome utente e Password, specificare le credenziali dell'utente vCenter con il ruolo di amministratore.</block>
 </blocks>
