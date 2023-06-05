@@ -88,7 +88,7 @@ In quest'ultimo caso, se ogni file di backup viene bloccato per 44 giorni, si ot
 
 === Cos'è la protezione ransomware
 
-La protezione ransomware esegue la scansione dei file di backup per cercare la prova di un attacco ransomware. Il rilevamento di attacchi ransomware viene eseguito utilizzando un confronto checksum. Se un potenziale ransomware viene identificato in un file di backup rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra segni di un attacco ransomware. (Il file identificato come un attacco ransomware viene cancellato 1 giorno dopo la sua sostituzione).
+La protezione ransomware esegue la scansione dei file di backup per cercare la prova di un attacco ransomware. Il rilevamento di attacchi ransomware viene eseguito utilizzando un confronto checksum. Se viene identificato un potenziale ransomware in un nuovo file di backup rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra segni di un attacco ransomware. (Il file identificato come un attacco ransomware viene cancellato 1 giorno dopo la sua sostituzione).
 
 Le scansioni ransomware avvengono in 3 punti del processo di backup e ripristino:
 
@@ -300,9 +300,10 @@ endif::azure[]
 
 * La protezione DataLock e ransomware non è disponibile se lo storage di archiviazione è stato configurato nel criterio di backup.
 * L'opzione DataLock selezionata quando si attiva il backup e il ripristino BlueXP deve essere utilizzata per tutti i criteri di backup per quel cluster.
-* Non è possibile utilizzare entrambe le modalità DataLock su un singolo cluster.
+* Non è possibile utilizzare più modalità DataLock su un singolo cluster.
 * Se si attiva DataLock, tutti i backup dei volumi verranno bloccati. Non è possibile combinare backup di volumi bloccati e non bloccati per un singolo cluster.
 * La protezione DataLock e ransomware è applicabile per i nuovi backup dei volumi utilizzando una policy di backup con DataLock e la protezione ransomware attivata. Non è possibile attivare questa funzione dopo l'attivazione del backup e ripristino di BlueXP.
+* I volumi FlexGroup possono utilizzare la protezione DataLock e ransomware solo quando si utilizza ONTAP 9.13.1 o superiore.
 
 
 

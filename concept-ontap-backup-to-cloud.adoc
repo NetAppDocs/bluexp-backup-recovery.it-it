@@ -440,7 +440,7 @@ Questa operazione potrebbe causare un aumento dei costi una tantum per la lettur
 
 
 * I backup dei volumi FlexGroup non possono essere spostati nello storage di archiviazione.
-* I backup dei volumi FlexGroup non possono utilizzare la protezione DataLock e ransomware.
+* I backup dei volumi FlexGroup possono utilizzare la protezione DataLock e ransomware se il cluster esegue ONTAP 9.13.1 o superiore.
 * Il backup del volume SVM-DR è supportato con le seguenti restrizioni:
 +
 ** I backup sono supportati solo dal secondario ONTAP.

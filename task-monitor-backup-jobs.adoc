@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-monitor-backup-jobs.html 
-keywords: cloud backup, cloud backup service, backup, restore, status, monitor, alert, notification 
+keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
 summary: È possibile monitorare lo stato dei processi di backup pianificati o avviati e ripristinare quelli avviati negli ambienti di lavoro. È possibile visualizzare i lavori completati correttamente, quelli attualmente in corso e quelli che hanno avuto esito negativo, in modo da poter diagnosticare e risolvere i problemi. È inoltre possibile configurare le notifiche da inviare via email in modo da essere informati di importanti attività del sistema anche quando non si è connessi al sistema. 
 ---
 = Monitorare lo stato dei processi di backup e ripristino
@@ -14,7 +14,7 @@ summary: È possibile monitorare lo stato dei processi di backup pianificati o a
 
 
 [role="lead"]
-È possibile monitorare lo stato dei processi di backup pianificati o avviati e ripristinare quelli avviati negli ambienti di lavoro. È possibile visualizzare i lavori completati correttamente, quelli attualmente in corso e quelli che hanno avuto esito negativo, in modo da poter diagnosticare e risolvere i problemi. È inoltre possibile configurare le notifiche da inviare via email in modo da essere informati di importanti attività del sistema anche quando non si è connessi al sistema.
+È possibile monitorare lo stato dei processi di backup avviati o pianificati e ripristinare quelli avviati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l'invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l'interfaccia utente o l'API.
 
 
 
@@ -45,12 +45,14 @@ image:screenshot_backup_job_monitor.png["Una schermata che mostra i processi di 
 +
 Questa schermata mostra le intestazioni di colonna predefinite.
 
-. Per visualizzare quattro colonne aggiuntive (ambiente di lavoro, SVM, Nome utente e carichi di lavoro), selezionare image:button_plus_sign_round.png["il pulsante del segno più"].
+. Per visualizzare colonne aggiuntive (ambiente di lavoro, SVM, Nome utente, carichi di lavoro, policy, E Snapshot Label), selezionare image:button_plus_sign_round.png["il pulsante del segno più"].
 
 
 
 
 === Cercare e filtrare l'elenco dei job
+
+È possibile filtrare le operazioni nella pagina Job Monitoring utilizzando diversi filtri, ad esempio i criteri di backup e l'etichetta Snapshot.
 
 Per impostazione predefinita, la pagina Job Monitoring mostra i lavori delle ultime 24 ore.
 
@@ -123,6 +125,22 @@ Dalle informazioni relative ai dettagli di monitoraggio dei processi, è possibi
 
 
 
+== Esaminare i processi relativi al ciclo di vita del backup
+
+Il monitoraggio dei flussi del ciclo di vita del backup ti aiuta con la completezza dell'audit, la responsabilità e la sicurezza del backup. Per tenere traccia del ciclo di vita del backup, è possibile identificare la scadenza di tutte le copie di backup.
+
+Un processo del ciclo di vita di backup tiene traccia di tutte le copie di snapshot eliminate o nella coda da eliminare. A partire da ONTAP 9.13, è possibile esaminare tutti i tipi di lavoro denominati "ciclo di vita del backup" nella pagina monitoraggio del processo.
+
+Il tipo di lavoro "Backup Lifecycle" acquisisce tutti i processi di eliminazione snapshot avviati su un volume protetto da backup e ripristino BlueXP.
+
+.Fasi
+. Selezionare la scheda *Job Monitoring*.
+. Selezionare l'area *Advanced Search & Filtering* (Ricerca e filtraggio avanzati) per aprire il pannello Search (Cerca).
+. Selezionare il tipo di lavoro "ciclo di vita del backup".
+
+
+
+
 == Esaminare gli avvisi di backup e ripristino in BlueXP Notification Center
 
 BlueXP Notification Center tiene traccia dell'avanzamento dei processi di backup e ripristino avviati, in modo da verificare se l'operazione è stata eseguita correttamente.
@@ -143,6 +161,11 @@ Backup del volume ad-hoc non riuscito
 
  a| 
 Attivazione del backup non riuscita nell'ambiente di lavoro
+| Critico 
+
+
+ a| 
+I file di backup non sono stati creati perché le etichette dei criteri Snapshot non corrispondono
 | Critico 
 
 
@@ -179,3 +202,11 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html
 . Visualizzare le notifiche selezionando (image:icon_bell.png["campanello di notifica"]) Nella barra dei menu di BlueXP.
 . Esaminare la notifica.
 
+
+
+
+== Esaminare l'attività operativa nella timeline di BlueXP
+
+È possibile visualizzare i dettagli delle operazioni di backup e ripristino per ulteriori analisi nella cronologia di BlueXP. La Timeline di BlueXP fornisce informazioni dettagliate su ciascun evento, avviato dall'utente o dal sistema, e mostra le azioni avviate nell'interfaccia utente o tramite l'API.
+
+https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-monitor-cm-operations.html["Scopri le differenze tra la cronologia e il centro di notifica"^].

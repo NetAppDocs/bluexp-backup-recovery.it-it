@@ -174,7 +174,7 @@ Versione degli oggetti:: Non è necessario attivare manualmente la versione degl
 
 === Creazione o commutazione di connettori
 
-Quando si esegue il backup dei dati su StorageGRID, è necessario che sia disponibile un connettore on-premise. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise. Il connettore può essere installato in un sito con o senza accesso a Internet.
+Quando si esegue il backup dei dati su StorageGRID, è necessario che sia disponibile un connettore BlueXP on-premise. È necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise. Il connettore può essere installato in un sito con o senza accesso a Internet.
 
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Scopri di più sui connettori"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Installazione del connettore su un host Linux con accesso a Internet"^]
@@ -183,24 +183,22 @@ Quando si esegue il backup dei dati su StorageGRID, è necessario che sia dispon
 
 
 
-NOTE: La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Se installato in un sito senza connessione a Internet, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare link:whats-new.html["Novità di BlueXP per backup e ripristino"] Per visualizzare le nuove funzionalità di ciascuna versione di backup e ripristino di BlueXP, seguire i passaggi da a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Aggiornare il software del connettore"^] quando si desidera utilizzare nuove funzioni.
 
-Si consiglia di creare periodicamente backup locali dei dati di configurazione di backup e ripristino di BlueXP quando il connettore viene installato in un sito senza connessione a Internet. link:reference-backup-cbs-db-in-dark-site.html["Scopri come eseguire il backup dei dati di backup e ripristino di BlueXP in un sito buio"^].
+==== Requisiti di rete del connettore
 
+Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:
 
-
-=== Preparazione del collegamento in rete per il connettore
-
-Assicurarsi che il connettore disponga delle connessioni di rete richieste.
-
-.Fasi
-. Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:
-+
-** Una connessione HTTPS tramite la porta 443 al nodo gateway StorageGRID
-** Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
-** Una connessione Internet in uscita tramite la porta 443 per il backup e ripristino di BlueXP (non necessaria quando il connettore viene installato in un sito "buio")
+* Una connessione HTTPS tramite la porta 443 al nodo gateway StorageGRID
+* Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP
+* Una connessione Internet in uscita tramite la porta 443 per il backup e ripristino di BlueXP (non necessaria quando il connettore viene installato in un sito "buio")
 
 
+
+
+==== Considerazioni sulla modalità privata (sito scuro)
+
+* La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Una volta installato in modalità privata, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare link:whats-new.html["Novità di BlueXP per backup e ripristino"] Per visualizzare le nuove funzionalità di ogni versione di backup e ripristino di BlueXP. Per utilizzare le nuove funzioni, seguire i passaggi da a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Aggiornare il software del connettore"^].
+* Quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS, viene eseguito il backup dei dati di configurazione di backup e ripristino BlueXP nel cloud. Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, il backup dei dati di configurazione di backup e ripristino BlueXP viene eseguito nel bucket StorageGRID in cui vengono memorizzati i backup. Se si verifica un errore del connettore nel sito in modalità privata, è possibile link:reference-backup-cbs-db-in-dark-site.html["Ripristinare i dati di backup e ripristino di BlueXP su un nuovo connettore"^].
 
 
 
@@ -265,7 +263,7 @@ TIP: La licenza PAYGO non è supportata quando si esegue il backup dei file su S
 
 
 
-== Abilitazione del backup e ripristino BlueXP in StorageGRID
+== Attivazione del backup e ripristino BlueXP
 
 Abilita backup e ripristino BlueXP in qualsiasi momento direttamente dall'ambiente di lavoro on-premise.
 

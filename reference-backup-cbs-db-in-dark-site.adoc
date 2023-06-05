@@ -2,9 +2,9 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database 
-summary: Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, è necessario eseguire periodicamente il backup dei file di backup e ripristino di BlueXP critici in caso di problemi con il sistema host BlueXP Connector. In questo modo sarà possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP. 
+summary: 'Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, noto come "modalità privata", il backup dei dati di configurazione di backup e ripristino BlueXP viene eseguito nel bucket StorageGRID in cui vengono memorizzati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.' 
 ---
-= Eseguire il backup e il ripristino dei dati di backup e ripristino BlueXP in un sito buio
+= Ripristinare i dati di backup e ripristino BlueXP in un sito buio
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,74 +14,20 @@ summary: Quando si utilizza il backup e ripristino BlueXP in un sito senza acces
 
 
 [role="lead"]
-Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, è necessario eseguire periodicamente il backup dei file di backup e ripristino di BlueXP critici in caso di problemi con il sistema host BlueXP Connector. In questo modo sarà possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
+Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, noto come "modalità privata" o "sito oscuro", il backup dei dati di configurazione di backup e ripristino BlueXP viene eseguito nel bucket StorageGRID in cui vengono memorizzati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
 
-Quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS in cui BlueXP Connector viene implementato presso il provider cloud o sul proprio sistema host dotato di accesso a Internet, viene eseguito il backup e l'archiviazione nel cloud di tutti i dati di configurazione importanti per il backup e il ripristino BlueXP. Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, noto come "modalità limitata" o "sito oscuro", queste informazioni di backup e ripristino BlueXP vengono memorizzate solo sul sistema di connessione locale.
+Si noti che quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS in cui BlueXP Connector viene implementato presso il provider cloud o sul proprio sistema host dotato di accesso a Internet, tutti i dati importanti di configurazione di backup e ripristino BlueXP vengono sottoposti a backup e protetti nel cloud. In caso di problemi con il connettore, è sufficiente creare un nuovo connettore e aggiungere gli ambienti di lavoro per ripristinare automaticamente i dettagli del backup.
 
-Descriveremo come eseguire il backup dei dati critici di backup e ripristino di BlueXP nel sistema StorageGRID connesso e come ripristinare i dati su un nuovo connettore, se necessario.
+Sono disponibili 2 tipi di dati di cui viene eseguito il backup:
 
-
-
-== Eseguire il backup dei dati critici di backup e ripristino di BlueXP
-
-È necessario eseguire il backup di 2 tipi di dati:
-
-* Database di backup e ripristino BlueXP
-* File di catalogo indicizzati (utilizzati per la funzionalità di ricerca e ripristino)
+* Database di backup e ripristino BlueXP - contiene un elenco di tutti i volumi, i file di backup, i criteri di backup e le informazioni di configurazione.
+* File di catalogo indicizzati - contiene indici dettagliati utilizzati per la funzionalità di ricerca e ripristino che rendono le ricerche molto rapide ed efficienti quando si cercano i dati dei volumi che si desidera ripristinare.
 
 
-
-NOTE: È consigliabile pianificare periodicamente il backup dei dati di backup e ripristino di BlueXP in modo da poter accedere sempre ai dati più recenti.
-
-Si noti che non sono mai inclusi dati di volume nel database di backup e ripristino BlueXP o nei file di catalogo indicizzati.
+Il backup di questi dati viene eseguito una volta al giorno a mezzanotte e viene conservato un massimo di 7 copie di ciascun file. Se il connettore gestisce più ambienti di lavoro ONTAP on-premise, i file di backup e ripristino BlueXP si trovano nel bucket dell'ambiente di lavoro attivato per primo.
 
 
-
-=== Eseguire il backup del database di backup e ripristino BlueXP
-
-Il database di backup e ripristino BlueXP contiene un elenco di tutti i volumi, i file di backup, i criteri di backup e le informazioni di configurazione.
-
-.Fasi
-. Accedere al sistema host del connettore utilizzando le credenziali appropriate.
-. Immettere la shell del container MySQL immettendo il seguente comando:
-+
-[source, cli]
-----
-docker exec -it ds_mysql_1 sh
-----
-. Nella shell container, implementare "env".
-. Avrai bisogno della password MySQL DB, quindi copia il valore della chiave "MYSQL_ROOT_PASSWORD".
-. Eseguire il backup di BlueXP backup e recovery di MySQL DB immettendo il seguente comando:
-+
-[source, cli]
-----
-mysqldump --user root --password -p cloud_backup --result-file=mysql.dump.cloud_backup.sql
-----
-. Copiare il backup di MySQL DB dal contenitore MySQL docker immettendo il seguente comando:
-+
-[source, cli]
-----
-docker cp ds_mysql_1:/mysql.dump.cloud_backup.sql .
-----
-. Copiare i backup in una posizione sicura della rete. È possibile utilizzare un sistema StorageGRID locale se si creano backup di volumi ONTAP in tale posizione.
-
-
-
-
-=== Eseguire il backup dei file di catalogo indicizzati
-
-Il catalogo indicizzato viene utilizzato per la funzionalità di ricerca e ripristino. Contiene informazioni su ogni volume e ogni file di backup, rendendo le ricerche molto rapide ed efficienti quando si cercano i dati dei volumi che si desidera ripristinare.
-
-. Sul sistema host del connettore, modificare la directory in "/opt/application/netapp/cbs".
-. Individuare la cartella Index Catalog. Inizia con la stringa *catalogo*.
-. Comprimere la cartella "catalog<_xxxxxx_>" immettendo il seguente comando:
-+
-[source, cli]
-----
-zip -r catalogxxxxxx.zip catalogxxxxxx
-----
-. Copiare il backup compresso in una posizione sicura della rete.
-
+TIP: Nessun dato di volume è mai incluso nel database di backup e ripristino BlueXP o nei file di catalogo indicizzati.
 
 
 
@@ -99,6 +45,19 @@ Per riportare il sistema di backup e ripristino BlueXP a uno stato operativo, è
 
 Una volta verificato il corretto funzionamento del sistema, si consiglia di creare nuovi file di backup.
 
+.Di cosa hai bisogno
+È necessario accedere ai backup di database e indici più recenti dal bucket StorageGRID in cui vengono memorizzati i file di backup:
+
+* File di database MySQL per backup e ripristino BlueXP
++
+Questo file si trova nella seguente posizione nel bucket `netapp-backup-<GUID>/mysql_backup/`e viene chiamato `CBS_DB_Backup_<day>_<month>_<year>.sql`.
+
+* File zip di backup del catalogo indicizzato
++
+Questo file si trova nella seguente posizione nel bucket `netapp-backup-<GUID>/catalog_backup/`e viene chiamato `Indexed_Catalog_DB_Backup_<db_name>_<day>_<month>_<year>.zip`.
+
+
+
 
 
 === Installare un nuovo connettore su un nuovo host Linux on-premise
@@ -113,12 +72,12 @@ Quando si installa un nuovo connettore BlueXP, assicurarsi di scaricare la stess
 
 === Ripristinare il database di backup e ripristino BlueXP
 
-. Copiare i backup MySQL dalla posizione sicura al nuovo host del connettore.
+. Copiare il backup MySQL dalla posizione di backup al nuovo host del connettore. Verrà utilizzato il nome del file di esempio "CBS_DB_Backup_23_05_2023.sql" riportato di seguito.
 . Copiare il backup nel contenitore MySQL docker utilizzando il seguente comando:
 +
 [source, cli]
 ----
-docker cp mysql.dump.cloud_backup.sql ds_mysql_1:/.
+docker cp CBS_DB_Backup_23_05_2023.sql ds_mysql_1:/.
 ----
 . Inserire la shell del container MySQL usando il seguente comando:
 +
@@ -132,13 +91,13 @@ docker exec -it ds_mysql_1 sh
 +
 [source, cli]
 ----
-mysql -u root -p cloud_backup < mysql.dump.cloud_backup.sql
+mysql -u root -p cloud_backup < CBS_DB_Backup_23_05_2023.sql
 ----
 . Verificare che MySQL DB di backup e ripristino BlueXP sia stato ripristinato correttamente utilizzando i seguenti comandi SQL:
 +
 [source, cli]
 ----
-# mysql -u root -p cloud_backup
+mysql -u root -p cloud_backup
 ----
 +
 Inserire la password.
@@ -158,14 +117,14 @@ Verificare che i volumi visualizzati siano gli stessi dell'ambiente originale.
 
 === Ripristinare i file di catalogo indicizzati
 
-. Copiare il file zip di backup del catalogo indicizzato dalla posizione sicura al nuovo host del connettore nella cartella "/opt/application/netapp/cbs".
-. Decomprimere il file "catalogxxxxxx.zip" utilizzando il seguente comando:
+. Copiare il file zip di backup del catalogo indicizzato (verrà utilizzato il nome del file di esempio "indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip") dalla posizione di backup al nuovo host del connettore nella cartella "/opt/application/netapp/cbs".
+. Decomprimere il file "indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip" utilizzando il seguente comando:
 +
 [source, cli]
 ----
-unzip catalogxxxxxx.zip
+unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 ----
-. Eseguire il comando *ls* per assicurarsi che la cartella "catalogxxxxxx" sia stata creata con le sottocartelle "Changes" e "Snapshot" sottostanti.
+. Eseguire il comando *ls* per assicurarsi che la cartella "catalogdb1" sia stata creata con le sottocartelle "Changes" e "Snapshot" sottostanti.
 
 
 
