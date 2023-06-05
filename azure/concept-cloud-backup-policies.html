@@ -402,6 +402,31 @@
 
 
 
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Monitorare_la_protezione_dei_dati.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
+            Monitorare la protezione dei dati
+          </a>
+          
+
+
 
 
         </li>
@@ -871,6 +896,22 @@
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-licensing-cloud-backup.html">
         Impostare la licenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare la protezione dei dati"
+      data-li-level="1" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Monitorare la protezione dei dati</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Report sulla copertura per la data Protection"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-report-inventory.html">
+        Report sulla copertura per la data Protection
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Monitorare lo stato dei processi di backup e ripristino"
@@ -1320,11 +1361,11 @@
         Configurare il backup per l'accesso multi-account in Azure
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup del database di backup e ripristino BlueXP in un sito buio"
+      data-pdf-filename="Ripristinare il database di backup e ripristino BlueXP in un sito buio"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-backup-cbs-db-in-dark-site.html">
-        Eseguire il backup del database di backup e ripristino BlueXP in un sito buio
+        Ripristinare il database di backup e ripristino BlueXP in un sito buio
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Riavviare il backup e il ripristino di BlueXP"
@@ -1433,7 +1474,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 14:26:17 +0000">05/31/2023</time>
+    <time datetime="2023-06-05 20:37:30 +0000">06/05/2023</time>
     
   
 
@@ -1576,7 +1617,7 @@
 <div class="sect2">
 <h3 id="cosè-la-protezione-ransomware">Cos&#8217;è la protezione ransomware</h3>
 <div class="paragraph">
-<p>La protezione ransomware esegue la scansione dei file di backup per cercare la prova di un attacco ransomware. Il rilevamento di attacchi ransomware viene eseguito utilizzando un confronto checksum. Se un potenziale ransomware viene identificato in un file di backup rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra segni di un attacco ransomware. (Il file identificato come un attacco ransomware viene cancellato 1 giorno dopo la sua sostituzione).</p>
+<p>La protezione ransomware esegue la scansione dei file di backup per cercare la prova di un attacco ransomware. Il rilevamento di attacchi ransomware viene eseguito utilizzando un confronto checksum. Se viene identificato un potenziale ransomware in un nuovo file di backup rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra segni di un attacco ransomware. (Il file identificato come un attacco ransomware viene cancellato 1 giorno dopo la sua sostituzione).</p>
 </div>
 <div class="paragraph">
 <p>Le scansioni ransomware avvengono in 3 punti del processo di backup e ripristino:</p>
@@ -1832,13 +1873,16 @@
 <p>L&#8217;opzione DataLock selezionata quando si attiva il backup e il ripristino BlueXP deve essere utilizzata per tutti i criteri di backup per quel cluster.</p>
 </li>
 <li>
-<p>Non è possibile utilizzare entrambe le modalità DataLock su un singolo cluster.</p>
+<p>Non è possibile utilizzare più modalità DataLock su un singolo cluster.</p>
 </li>
 <li>
 <p>Se si attiva DataLock, tutti i backup dei volumi verranno bloccati. Non è possibile combinare backup di volumi bloccati e non bloccati per un singolo cluster.</p>
 </li>
 <li>
 <p>La protezione DataLock e ransomware è applicabile per i nuovi backup dei volumi utilizzando una policy di backup con DataLock e la protezione ransomware attivata. Non è possibile attivare questa funzione dopo l&#8217;attivazione del backup e ripristino di BlueXP.</p>
+</li>
+<li>
+<p>I volumi FlexGroup possono utilizzare la protezione DataLock e ransomware solo quando si utilizza ONTAP 9.13.1 o superiore.</p>
 </li>
 </ul>
 </div>
