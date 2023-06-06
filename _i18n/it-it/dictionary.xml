@@ -2308,45 +2308,33 @@
   <block id="198c941b68b959d876c1fe884654eb0f" category="paragraph">Per ulteriori informazioni sulle opzioni di recupero di Azure Archive, fare riferimento a.<block ref="932993244834a73e92c6a33c0a2e980e" category="inline-link-rx"></block>.</block>
   <block id="c73a012d76ee166592a25a8ebd3e01ef" category="summary">Il backup e ripristino di BlueXP consente di creare file di backup in un account Azure diverso da quello in cui risiedono i volumi Cloud Volumes ONTAP di origine e diverso dall'account in cui risiede BlueXP Connector.</block>
   <block id="da7bc8de90297f74e7e43d559d6f8a4c" category="doc">Configurare il backup per l'accesso multi-account in Azure</block>
-  <block id="47528e7beca17f8cf55f4a42e05d76e4" category="paragraph">Il backup e ripristino BlueXP consente di creare file di backup in un account Azure diverso da quello in cui risiedono i volumi Cloud Volumes ONTAP di origine. Entrambi gli account possono essere diversi dall'account in cui si trova BlueXP Connector.</block>
   <block id="08fb1651cbfdb11878b475347705c01b" category="inline-link">Backup dei dati Cloud Volumes ONTAP nello storage Azure Blob</block>
   <block id="f9a8974587711b80f51f844aef1e99df" category="paragraph">Seguire i passaggi riportati di seguito per configurare la configurazione in questo modo.</block>
   <block id="7effdaab63f2a455255267b1c45a602d" category="section-title">Impostare il peering VNET tra gli account</block>
   <block id="29e89229775aefede67526b03124356e" category="paragraph">Si noti che se si desidera che BlueXP gestisca il sistema Cloud Volumes ONTAP in un account/regione differente, è necessario configurare il peering VNET. Il peering VNET non è richiesto per la connettività degli account di storage.</block>
   <block id="7be5dff9f26dd0cfb7e5896d6142d4c7" category="list-text">Accedere al portale Azure e da casa, selezionare Virtual Networks (reti virtuali).</block>
   <block id="24d6ea8c256f982be40d4e8e87a36c2c" category="list-text">Selezionare l'abbonamento che si sta utilizzando come abbonamento 1 e fare clic su VNET in cui si desidera impostare il peering.</block>
-  <block id="010f020ec46dae654334c56b074681e9" category="paragraph"><block ref="010f020ec46dae654334c56b074681e9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="ff903d724a3c43c1027ecc76bb702e6b" category="list-text">Selezionare *cbsnetwork* e dal pannello di sinistra, fare clic su *Peerings*, quindi fare clic su *Add*.</block>
-  <block id="48f2a3e5416499a845b82d79729c9d24" category="paragraph"><block ref="48f2a3e5416499a845b82d79729c9d24" category="inline-image-macro-rx" type="image"></block></block>
   <block id="29352d6eba72ea7dbb14542cfe329be6" category="list-text">Inserire le seguenti informazioni nella pagina di peering, quindi fare clic su *Aggiungi*.</block>
   <block id="35a314f287f704bbad5bca1d051178df" category="list-text">Peering link name for this network (Nome collegamento peering per questa rete): È possibile assegnare un nome qualsiasi per identificare la connessione peering.</block>
   <block id="23a50db2830b340ce45406a69594314e" category="list-text">Remote virtual network peering link name (Nome collegamento peering rete virtuale remota): Immettere un nome per identificare il VNET remoto.</block>
   <block id="23251ed1ab3cfb08802622b5c2f690d3" category="list-text">Mantenere tutte le selezioni come valori predefiniti.</block>
   <block id="f6158ca7f18c6d458f457bd8d96c59b3" category="list-text">In Subscription (abbonamento), selezionare l'abbonamento 2.</block>
   <block id="4949fa102af5d259068b046bbcf72842" category="list-text">Virtual network (rete virtuale), selezionare la rete virtuale con abbonamento 2 a cui si desidera impostare il peering.</block>
-  <block id="25e65bc02464ec916d34bab534d7035e" category="paragraph"><block ref="25e65bc02464ec916d34bab534d7035e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="1995f9fb02d5dc1ec670c575158c4755" category="list-text">Eseguire le stesse operazioni in Subscription 2 VNET e specificare l'abbonamento e i dettagli VNET remoti dell'abbonamento 1.</block>
-  <block id="70ad9b34a75d793ad5ca4592ae835d9e" category="paragraph"><block ref="70ad9b34a75d793ad5ca4592ae835d9e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="51578c8638d5ef3ad9f76229b740c313" category="paragraph">Vengono aggiunte le impostazioni di peering.</block>
-  <block id="daacd9916a3d67dff4ea461056675145" category="paragraph"><block ref="daacd9916a3d67dff4ea461056675145" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2aa38dadb98b1cc114f5605565fc8460" category="section-title">Creare un endpoint privato per l'account storage</block>
   <block id="65f2f7b74f3cf2f1a25c4c81a6aaa2ee" category="paragraph">Ora è necessario creare un endpoint privato per l'account storage. In questo esempio, l'account storage viene creato nell'abbonamento 1 e il sistema Cloud Volumes ONTAP viene eseguito nell'abbonamento 2.</block>
   <block id="720247e8961069a5c025366867b8b8fb" category="admonition">Per eseguire la seguente azione, è necessario disporre dell'autorizzazione di un collaboratore di rete.</block>
-  <block id="1da2c465a0473c669ecf45690f9c77f8" category="list-text">Accedere all'account storage &gt; Networking &gt; Private endpoint Connections e fare clic su *+ Private endpoint*.</block>
-  <block id="ab018e3a2da472dd06615e08149c8ae2" category="paragraph"><block ref="ab018e3a2da472dd06615e08149c8ae2" category="inline-image-macro-rx" type="image"></block></block>
   <block id="2e0fccb2492335abb1bf03e7895e57b1" category="list-text">Nella pagina _Basics_ dell'endpoint privato:</block>
   <block id="39f30cdd2630386fa4f3ba56e107c2fd" category="list-text">Selezionare Subscription 2 (abbonamento 2) (in cui vengono implementati il connettore BlueXP e il sistema Cloud Volumes ONTAP) e il gruppo di risorse.</block>
   <block id="dcf7853e5720d1d4006d6354680dfca5" category="list-text">Inserire un nome endpoint.</block>
   <block id="8632ba911e67cd674d7aa46e9c33ca03" category="list-text">Selezionare la regione.</block>
-  <block id="8de80de63c22bf5501105fe1221042c7" category="paragraph"><block ref="8de80de63c22bf5501105fe1221042c7" category="inline-image-macro-rx" type="image"></block></block>
   <block id="86429c7405c9ff23bac7996b6cc76306" category="list-text">Nella pagina _Resource_, selezionare la sottorisorsa di destinazione come *blob*.</block>
-  <block id="78ce42b66c723160afef603d60cfbd83" category="paragraph"><block ref="78ce42b66c723160afef603d60cfbd83" category="inline-image-macro-rx" type="image"></block></block>
   <block id="4f45f5d0c19691a0eac82881ce091080" category="list-text">Nella pagina di configurazione:</block>
   <block id="e17a8b8467cfbf9720f1af51cc6f6419" category="list-text">Selezionare la rete virtuale e la subnet.</block>
   <block id="a9faeeb34299d046e7a14a5d1df3950a" category="list-text">Fare clic sul pulsante di opzione *Sì* per "integrare con la zona DNS privata".</block>
-  <block id="cec5fb61420f116b9d3e7afb6183499d" category="paragraph"><block ref="cec5fb61420f116b9d3e7afb6183499d" category="inline-image-macro-rx" type="image"></block></block>
   <block id="872d4b2a2e61a2a07fc61a362e17881d" category="list-text">Nell'elenco Private DNS zone (zona DNS privata), assicurarsi che la zona privata sia selezionata dalla regione corretta e fare clic su *Review + Create* (Rivedi + Crea).</block>
-  <block id="865c712e84080e3a8a2a2e9f3ced5e13" category="paragraph"><block ref="865c712e84080e3a8a2a2e9f3ced5e13" category="inline-image-macro-rx" type="image"></block></block>
   <block id="547e2a5eac8fbdbb2c8f7a56f61c8cbe" category="paragraph">Ora l'account storage (nell'abbonamento 1) ha accesso al sistema Cloud Volumes ONTAP in esecuzione nell'abbonamento 2.</block>
   <block id="4bd946b57d99bd5b3f564041e093db5c" category="list-text">Riprovare ad abilitare il backup e il ripristino BlueXP sul sistema Cloud Volumes ONTAP e questa volta dovrebbe essere possibile.</block>
   <block id="b5e4425a80571820c3fc81b638ce52be" category="summary">Il servizio di backup e ripristino BlueXP (backup cloud) offre una protezione dei dati efficiente, sicura e conveniente per i dati NetApp ONTAP, i volumi persistenti Kubernetes, i database e le macchine virtuali, sia on-premise che nel cloud.</block>
@@ -3076,9 +3064,7 @@
   <block id="f50c680c14d8afac3d005a6dee0819cd" category="list-text">Nella pagina _Backup Settings_, fare clic su <block ref="50acd719b1954eb4890c002b3b5e71a6" category="inline-image-macro-rx" type="image"></block> Per l'ambiente di lavoro in cui si desidera modificare le impostazioni dei criteri e selezionare *Gestisci criteri*.</block>
   <block id="41e086bf0dc4275e114abb7147326f73" category="paragraph"><block ref="41e086bf0dc4275e114abb7147326f73" category="inline-image-macro-rx" type="image"></block></block>
   <block id="9c230c0e21c24d1d4e90c857d5894cbf" category="list-text">Dalla pagina _Manage Policies_, fare clic su *Edit* per il criterio di backup che si desidera modificare in quell'ambiente di lavoro.</block>
-  <block id="41b3017e09c02234f784bce8cad145cc" category="paragraph">Nota: Fare clic su <block ref="6be018d461f0945956e868c034bab91d" category="inline-image-macro-rx" type="image"></block> per visualizzare i dettagli completi della policy.</block>
   <block id="6b225e3bac3911a0f8ea09b5674f0db7" category="paragraph"><block ref="6b225e3bac3911a0f8ea09b5674f0db7" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="9f02efef52b11198bc6f5331a1f0845b" category="list-text">Nella pagina _Edit Policy_, fare clic su <block ref="6be018d461f0945956e868c034bab91d" category="inline-image-macro-rx" type="image"></block> Per espandere la sezione _etichette e conservazione_ per modificare la pianificazione e/o la conservazione del backup, quindi fare clic su *Salva*.</block>
   <block id="0fa100496915d2a1169b13ec8d09b7fd" category="paragraph"><block ref="0fa100496915d2a1169b13ec8d09b7fd" category="inline-image-macro-rx" type="image"></block></block>
   <block id="11424b9a70e420c1dd25a5c8dd143872" category="paragraph">Se nel cluster è in esecuzione ONTAP 9.10.1 o versione successiva, è possibile attivare o disattivare il tiering dei backup nello storage di archiviazione dopo un certo numero di giorni.</block>
   <block id="dd4f36f3b57f7d639e7ae704839404ab" category="paragraph"><block ref="b55a4bc37138995257f41826650c3872" category="inline-link-macro-rx"></block>.</block>
@@ -3099,7 +3085,6 @@
   <block id="4bd2ed8c1b753600a5017d620739e8ae" category="list-text">Dalla pagina _Gestisci policy_, fare clic su *Aggiungi nuova policy*.</block>
   <block id="70cb98fb549b7f6231a7cfd59ef47a25" category="inline-image-macro">Una schermata che mostra il pulsante Add New Policy (Aggiungi nuova policy) dalla pagina Manage Policies (Gestisci policy).</block>
   <block id="6bbf88b0315e00c49811f4000bb83563" category="paragraph"><block ref="6bbf88b0315e00c49811f4000bb83563" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="d664f6c85ff8f12dd3e11609510142dc" category="list-text">Nella pagina _Add New Policy_, fare clic su <block ref="6be018d461f0945956e868c034bab91d" category="inline-image-macro-rx" type="image"></block> Per espandere la sezione _etichette e conservazione_ per definire la pianificazione e la conservazione del backup, quindi fare clic su *Salva*.</block>
   <block id="a079ee8f78a153ec016a997b2904f2bb" category="inline-image-macro">Una schermata che mostra le impostazioni dei criteri di backup in cui è possibile aggiungere la pianificazione del backup e l'impostazione di conservazione del backup.</block>
   <block id="dfb577039d019da5c38a09fb1366befe" category="paragraph"><block ref="dfb577039d019da5c38a09fb1366befe" category="inline-image-macro-rx" type="image"></block></block>
   <block id="8b4b27044857ab131fc834e024419e2b" category="section-title">Modifica del criterio assegnato ai volumi esistenti</block>
@@ -3786,7 +3771,6 @@
   <block id="b9388c240794b8c3c4269e032a040c26" category="section-title">Ambito dei report</block>
   <block id="d4e9fdb94405dbff49a3feb26599c37d" category="paragraph">I report di backup e ripristino di BlueXP forniscono informazioni sui seguenti aspetti:</block>
   <block id="3836890870b8ddc941f0e578f70711aa" category="list-text">*Posizione del connettore*: On-premise o nel cloud</block>
-  <block id="6ae02a56712ac674d3b26dbbcb432186" category="list-text">*Fonte*: Cloud Volumes ONTAP, on-premise, applicazioni o Kubernetes</block>
   <block id="dd4543716a6056c2ae27a8132114fdf7" category="list-text">*Destinazione*: Qualsiasi provider cloud, NetApp StorageGRID o ONTAP S3</block>
   <block id="e692b7fe3cb28b404bc6ca3af827d329" category="list-text">*Versioni ONTAP*: 9.13.0</block>
   <block id="cb43048793076d3b50ea5dc6ba1e276c" category="section-title">Creare un report sull'inventario di backup</block>
@@ -3864,4 +3848,36 @@
   <block id="e3bc6d35311568d55f1c8ea11984b964" category="paragraph">Queste credenziali NSS sono associate all'ID account BlueXP specifico. Gli utenti che appartengono all'account BlueXP possono accedere a queste credenziali da *Support &gt; NSS Management*.</block>
   <block id="f1d083b91d676646b3b9c05e92adeceb" category="sidebar">Monitorare la protezione dei dati</block>
   <block id="7b3531405cf0ef11d1ff0b6e4af62659" category="sidebar">Ripristinare il database di backup e ripristino BlueXP in un sito buio</block>
+  <block id="444a8054fb02fac3bf777cf53bfc46a2" category="paragraph">Tenere presente che il backup e il ripristino supportano _policy di accesso Azure_ come modello di autorizzazione. Il modello di autorizzazione _Azure RBAC (role-based access control_) non è attualmente supportato.</block>
+  <block id="f101fabb54ec4d8b174645abe2ebf725" category="paragraph">Il backup e ripristino BlueXP consente di creare file di backup in un account Azure diverso da quello in cui risiedono i volumi Cloud Volumes ONTAP di origine. Entrambi gli account possono essere diversi dall'account in cui si trova BlueXP Connector.</block>
+  <block id="07d34410905760bde20fdb63ed31144f" category="inline-image-macro">Una schermata che mostra la selezione dell'abbonamento 1 e del VNET in cui si desidera impostare il peering.</block>
+  <block id="fb1dc02cd132935f4053af66afc48c60" category="paragraph"><block ref="fb1dc02cd132935f4053af66afc48c60" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="83e915c6e7e7062c9cd8608b5e3f2a01" category="inline-image-macro">Una schermata che mostra l'aggiunta del peering per VNET per l'abbonamento 1.</block>
+  <block id="dc5db5eb0a0b4ec35420ffab93b73ace" category="paragraph"><block ref="dc5db5eb0a0b4ec35420ffab93b73ace" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="709eb5d0485c10464b3571c76182a410" category="inline-image-macro">Una schermata che mostra la selezione dell'abbonamento 2 e del VNET in cui si desidera impostare il peering.</block>
+  <block id="a00f2c9eab0cd0391c31d7894688a92e" category="paragraph"><block ref="a00f2c9eab0cd0391c31d7894688a92e" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="79520a9e99311190ee909e9f8d5dd60c" category="inline-image-macro">Una schermata che mostra l'aggiunta del peering per VNET per l'abbonamento 2.</block>
+  <block id="17939e4b4a2986d200c88aae6366e213" category="paragraph"><block ref="17939e4b4a2986d200c88aae6366e213" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="707727b212e0d31a584b632b8cd67ff6" category="inline-image-macro">Una schermata che mostra i risultati della configurazione di peering.</block>
+  <block id="5a085bdfc0e83ffb98f87e8ff91cad9d" category="paragraph"><block ref="5a085bdfc0e83ffb98f87e8ff91cad9d" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="f5795d526ae72abf715b69fcc042d544" category="list-text">Accedere all'account Storage &gt; Networking &gt; Private endpoint Connections e fare clic su *+ Private endpoint*.</block>
+  <block id="f254275661fff420bcb804a971000888" category="inline-image-macro">Una schermata che mostra l'apertura della configurazione dell'endpoint privato per l'account storage.</block>
+  <block id="1e5251a20d1487ab70b1904135f48e64" category="paragraph"><block ref="1e5251a20d1487ab70b1904135f48e64" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="ccdcc6bc4b20620f4a75b50e38f7dbd2" category="inline-image-macro">Una schermata che mostra i dettagli della pagina di base dell'endpoint privato.</block>
+  <block id="ea692baa5211d33eb5ba3eaf981083c9" category="paragraph"><block ref="ea692baa5211d33eb5ba3eaf981083c9" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="18dc15061e7476362b8ef290cd96ae03" category="inline-image-macro">Una schermata che mostra i dettagli della pagina delle risorse dell'endpoint privato.</block>
+  <block id="6d05ebaf7d4c763d545c7818e77f7daa" category="paragraph"><block ref="6d05ebaf7d4c763d545c7818e77f7daa" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="c1dfe7d36721bb06cc5b4caa70a9a99d" category="inline-image-macro">Una schermata che mostra i dettagli della pagina di configurazione dell'endpoint privato.</block>
+  <block id="727ec019e03973afc5f16b2144de9e80" category="paragraph"><block ref="727ec019e03973afc5f16b2144de9e80" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="fd1f1bbf131c989b07443ab96601cbbe" category="inline-image-macro">Una schermata che mostra la selezione della zona privata dalla pagina di configurazione dell'endpoint privato.</block>
+  <block id="fe5eb2266351d487097e58cd93818ab8" category="paragraph"><block ref="fe5eb2266351d487097e58cd93818ab8" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e5d5b752cdb14505ba3ec9b2bd2be013" category="section-title">Avviso di notifica aggiuntivo per etichette di policy non corrispondenti</block>
+  <block id="92c58fc811dad1461929803e5f5d9205" category="paragraph">È stato aggiunto un nuovo avviso di backup: "I file di backup non sono stati creati perché le etichette dei criteri Snapshot non corrispondono". Se la _label_ definita in un criterio di backup non ha un'etichetta _corrispondente_ nel criterio Snapshot, non verrà creato alcun file di backup. Per aggiungere l'etichetta mancante al criterio Snapshot del volume, è necessario utilizzare Gestione di sistema o l'interfaccia utente di ONTAP.</block>
+  <block id="809c5429fbc9708f2c659ca056b2c098" category="paragraph"><block ref="1fa18ad5aa31d9e300f41aa2d9a59bdd" category="inline-link-rx"></block>.</block>
+  <block id="4dfad254c5822c7c53407757d42fec0e" category="list-text">*Origine*: Volumi Cloud Volumes ONTAP, volumi ONTAP on-premise, applicazioni o volumi persistenti Kubernetes</block>
+  <block id="0231cb971bb3375c29d3f87768ec4489" category="inline-image-macro">pulsante freccia giù</block>
+  <block id="a4b9e2d363f6ae41eb2ce095cefe91de" category="paragraph">Nota: Fare clic su <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> per visualizzare i dettagli completi della policy.</block>
+  <block id="ba85eaabcb89510a63df45c18680ba9a" category="list-text">Nella pagina _Edit Policy_, fare clic su <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> Per espandere la sezione _etichette e conservazione_ per modificare la pianificazione e/o la conservazione del backup, quindi fare clic su *Salva*.</block>
+  <block id="aafc4372a2c5748961cfe050c997ca42" category="list-text">Nella pagina _Add New Policy_, fare clic su <block ref="68009ec8a10651d6de3d648624efb837" category="inline-image-macro-rx" type="image"></block> Per espandere la sezione _etichette e conservazione_ per definire la pianificazione e la conservazione del backup, quindi fare clic su *Salva*.</block>
+  <block id="27b14a69b7d1dfde3096980cc202af91" category="sidebar">Creazione di report sulla copertura per la data Protection</block>
 </blocks>

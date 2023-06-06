@@ -29,11 +29,11 @@ Si noti che se si desidera che BlueXP gestisca il sistema Cloud Volumes ONTAP in
 . Accedere al portale Azure e da casa, selezionare Virtual Networks (reti virtuali).
 . Selezionare l'abbonamento che si sta utilizzando come abbonamento 1 e fare clic su VNET in cui si desidera impostare il peering.
 +
-image:screenshot_azure_peer1.png[""]
+image:screenshot_azure_peer1.png["Una schermata che mostra la selezione dell'abbonamento 1 e del VNET in cui si desidera impostare il peering."]
 
 . Selezionare *cbsnetwork* e dal pannello di sinistra, fare clic su *Peerings*, quindi fare clic su *Add*.
 +
-image:screenshot_azure_peer2.png[""]
+image:screenshot_azure_peer2.png["Una schermata che mostra l'aggiunta del peering per VNET per l'abbonamento 1."]
 
 . Inserire le seguenti informazioni nella pagina di peering, quindi fare clic su *Aggiungi*.
 +
@@ -43,19 +43,19 @@ image:screenshot_azure_peer2.png[""]
 ** In Subscription (abbonamento), selezionare l'abbonamento 2.
 ** Virtual network (rete virtuale), selezionare la rete virtuale con abbonamento 2 a cui si desidera impostare il peering.
 +
-image:screenshot_azure_peer3.png[""]
+image:screenshot_azure_peer3.png["Una schermata che mostra la selezione dell'abbonamento 2 e del VNET in cui si desidera impostare il peering."]
 
 
 
 . Eseguire le stesse operazioni in Subscription 2 VNET e specificare l'abbonamento e i dettagli VNET remoti dell'abbonamento 1.
 +
-image:screenshot_azure_peer4.png[""]
+image:screenshot_azure_peer4.png["Una schermata che mostra l'aggiunta del peering per VNET per l'abbonamento 2."]
 
 +
 Vengono aggiunte le impostazioni di peering.
 
 +
-image:screenshot_azure_peer5.png[""]
+image:screenshot_azure_peer5.png["Una schermata che mostra i risultati della configurazione di peering."]
 
 
 
@@ -97,9 +97,9 @@ NOTE: Per eseguire la seguente azione, è necessario disporre dell'autorizzazion
   }
 }
 ----
-. Accedere all'account storage > Networking > Private endpoint Connections e fare clic su *+ Private endpoint*.
+. Accedere all'account Storage > Networking > Private endpoint Connections e fare clic su *+ Private endpoint*.
 +
-image:screenshot_azure_networking1.png[""]
+image:screenshot_azure_networking1.png["Una schermata che mostra l'apertura della configurazione dell'endpoint privato per l'account storage."]
 
 . Nella pagina _Basics_ dell'endpoint privato:
 +
@@ -107,26 +107,26 @@ image:screenshot_azure_networking1.png[""]
 ** Inserire un nome endpoint.
 ** Selezionare la regione.
 +
-image:screenshot_azure_networking2.png[""]
+image:screenshot_azure_networking2.png["Una schermata che mostra i dettagli della pagina di base dell'endpoint privato."]
 
 
 
 . Nella pagina _Resource_, selezionare la sottorisorsa di destinazione come *blob*.
 +
-image:screenshot_azure_networking3.png[""]
+image:screenshot_azure_networking3.png["Una schermata che mostra i dettagli della pagina delle risorse dell'endpoint privato."]
 
 . Nella pagina di configurazione:
 +
 ** Selezionare la rete virtuale e la subnet.
 ** Fare clic sul pulsante di opzione *Sì* per "integrare con la zona DNS privata".
 +
-image:screenshot_azure_networking4.png[""]
+image:screenshot_azure_networking4.png["Una schermata che mostra i dettagli della pagina di configurazione dell'endpoint privato."]
 
 
 
 . Nell'elenco Private DNS zone (zona DNS privata), assicurarsi che la zona privata sia selezionata dalla regione corretta e fare clic su *Review + Create* (Rivedi + Crea).
 +
-image:screenshot_azure_networking5.png[""]
+image:screenshot_azure_networking5.png["Una schermata che mostra la selezione della zona privata dalla pagina di configurazione dell'endpoint privato."]
 
 +
 Ora l'account storage (nell'abbonamento 1) ha accesso al sistema Cloud Volumes ONTAP in esecuzione nell'abbonamento 2.

@@ -280,6 +280,9 @@ https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-azure.htm
 === Preparazione dello storage Azure Blob per i backup
 
 . È possibile utilizzare le proprie chiavi personalizzate per la crittografia dei dati nella procedura guidata di attivazione invece di utilizzare le chiavi di crittografia predefinite gestite da Microsoft. In questo caso, è necessario disporre dell'abbonamento Azure, del nome del vault delle chiavi e della chiave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Scopri come utilizzare le tue chiavi"^].
++
+Tenere presente che il backup e il ripristino supportano _policy di accesso Azure_ come modello di autorizzazione. Il modello di autorizzazione _Azure RBAC (role-based access control_) non è attualmente supportato.
+
 . Se si desidera una connessione più sicura su Internet pubblico dal data center on-premise a VNET, è possibile configurare un endpoint privato Azure nella procedura guidata di attivazione. In questo caso, è necessario conoscere VNET e Subnet per questa connessione. https://docs.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Scopri i dettagli sull'utilizzo di un endpoint privato"^].
 
 

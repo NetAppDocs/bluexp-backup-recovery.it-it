@@ -40,6 +40,14 @@ I criteri di backup per i volumi FlexGroup possono ora utilizzare la protezione 
 
 
 
+=== Avviso di notifica aggiuntivo per etichette di policy non corrispondenti
+
+È stato aggiunto un nuovo avviso di backup: "I file di backup non sono stati creati perché le etichette dei criteri Snapshot non corrispondono". Se la _label_ definita in un criterio di backup non ha un'etichetta _corrispondente_ nel criterio Snapshot, non verrà creato alcun file di backup. Per aggiungere l'etichetta mancante al criterio Snapshot del volume, è necessario utilizzare Gestione di sistema o l'interfaccia utente di ONTAP.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#review-backup-and-restore-alerts-in-the-bluexp-notification-center["Esaminare tutti gli avvisi che il backup e ripristino BlueXP può inviare"].
+
+
+
 === Backup automatico dei file critici di backup e ripristino BlueXP in siti bui
 
 Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, noto come implementazione in "modalità privata", le informazioni di backup e ripristino di BlueXP vengono memorizzate solo sul sistema di connessione locale. Questa nuova funzionalità esegue automaticamente il backup dei dati critici di backup e ripristino di BlueXP su un bucket del sistema StorageGRID connesso, in modo da poter ripristinare questi dati su un nuovo connettore, se necessario. https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["Scopri di più"]

@@ -180,6 +180,11 @@ Per impostazione predefinita, il backup e ripristino BlueXP esegue il provisioni
 --
 Configurazione richiesta per la creazione di backup in un abbonamento Azure diverso:: Per impostazione predefinita, i backup vengono creati utilizzando la stessa sottoscrizione utilizzata per il sistema Cloud Volumes ONTAP. Se si desidera utilizzare un abbonamento Azure diverso per i backup, è necessario link:reference-backup-multi-account-azure.html["Accedi al portale Azure e collega le due sottoscrizioni"].
 Informazioni richieste per l'utilizzo delle chiavi gestite dal cliente per la crittografia dei dati:: È possibile utilizzare le proprie chiavi gestite dal cliente per la crittografia dei dati nella procedura guidata di attivazione invece di utilizzare le chiavi di crittografia predefinite gestite da Microsoft. In questo caso, è necessario disporre dell'abbonamento Azure, del nome del vault delle chiavi e della chiave. https://docs.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview["Scopri come utilizzare le tue chiavi"^].
++
+--
+Tenere presente che il backup e il ripristino supportano _policy di accesso Azure_ come modello di autorizzazione. Il modello di autorizzazione _Azure RBAC (role-based access control_) non è attualmente supportato.
+
+--
 
 
 
