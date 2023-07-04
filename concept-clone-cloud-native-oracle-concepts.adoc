@@ -56,6 +56,8 @@ Prima di clonare un database Oracle, è necessario assicurarsi che i prerequisit
 * La clonazione dei database residenti su Azure NetApp Files non è supportata.
 * La clonazione dei database residenti su Qtree non è supportata.
 * Il backup di un database clonato non è supportato.
+* Se su Amazon FSX per NetApp ONTAP sono attivati backup automatici giornalieri, i volumi clonati su Amazon FSX per NetApp ONTAP non possono essere cancellati dall'interfaccia utente di BlueXP perché FSX avrebbe creato backup sui volumi clonati.
+È necessario eliminare i volumi clonati dopo aver eliminato tutti i backup del volume dall'interfaccia utente FSX e quindi eliminare i cloni dall'interfaccia utente BlueXP utilizzando l'opzione force.
 
 
 

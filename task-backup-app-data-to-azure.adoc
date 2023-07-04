@@ -16,8 +16,7 @@ summary: Completare alcuni passaggi per eseguire il backup dei dati delle applic
 [role="lead"]
 Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a Microsoft Azure.
 
-*Fasi*
-
+.Fasi
 . Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
 . Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Activate Backup* (attiva backup).
 . Nella pagina Assign Policy (Assegna policy), selezionare il criterio e fare clic su *Next* (Avanti).

@@ -18,11 +18,22 @@ In caso di perdita di dati, è possibile ripristinare i file di dati e non, quin
 
 *Prima di iniziare*
 
-Il sistema SAP HANA deve essere in stato di arresto. Se il sistema SAP HANA è attivo e in esecuzione, è possibile fornire una prescrizione per arrestare il sistema.
+* Il sistema SAP HANA deve essere in stato di arresto.
+* Se il sistema SAP HANA è attivo e in esecuzione, è possibile fornire una prescrizione per arrestare il sistema.
+
 
 *A proposito di questa attività*
 
-Se si abilitano i backup su un volume, viene eseguita l'operazione Single file SnapRestore.
+* Se si abilitano i backup ANF su un volume, viene eseguita l'operazione Single file SnapRestore.
+* Per volumi non dati e volumi non dati globali, viene eseguita l'operazione di ripristino della connessione e della copia.
++
+** I valori QoS (Quality of Service) per le operazioni di connessione e ripristino delle copie vengono rilevati dai volumi di origine di volumi non dati o volumi non dati globali.
+
+
+
+
+
+NOTE: QoS è applicabile solo per pool di capacità di tipo "Manuale".
 
 *Fasi*
 
@@ -75,6 +86,12 @@ Dopo il ripristino, ripristinare manualmente il sistema SAP HANA o fornire un po
 
 == Ripristina volume non dati
 
+*A proposito di questa attività*
+
+Per l'operazione di connessione e ripristino delle copie, accedere al portale Microsoft Azure, selezionare il volume, fare clic su *Edit* e attivare *Hide snapshot path*.
+
+*Fasi*
+
 . Nella pagina *applicazioni*, selezionare Volume non dati dalla casella a discesa.
 . Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al backup che si desidera ripristinare e fare clic su *Restore* (Ripristina).
 
@@ -82,6 +99,10 @@ Dopo il ripristino, ripristinare manualmente il sistema SAP HANA o fornire un po
 
 
 == Ripristinare il volume globale non dati
+
+*A proposito di questa attività*
+
+Per l'operazione di connessione e ripristino delle copie, accedere al portale Microsoft Azure, selezionare il volume, fare clic su *Edit* e attivare *Hide snapshot path*.
 
 *Fasi*
 

@@ -14,7 +14,7 @@ summary: Eseguire un refresh da un sistema SAP HANA di origine, ovvero il databa
 
 
 [role="lead"]
-È possibile eseguire un refresh di un sistema di destinazione SAP HANA con i dati di un sistema di origine SAP HANA. Questo può essere utilizzato per fornire i dati di produzione correnti in un sistema di test. Il backup cloud consente di selezionare una copia Snapshot da un sistema di origine e di creare un nuovo volume ANF in base alla copia Snapshot. Sono disponibili script di esempio che consentono di eseguire le operazioni necessarie sull'host del database per ripristinare il database SAP HANA.
+È possibile eseguire un refresh di un sistema di destinazione SAP HANA con i dati di un sistema di origine SAP HANA. Questo può essere utilizzato per fornire i dati di produzione correnti in un sistema di test. Il backup cloud consente di selezionare una copia Snapshot da un sistema di origine e di creare un nuovo volume Azure NetApp Files in base alla copia Snapshot. Sono disponibili script di esempio che consentono di eseguire le operazioni necessarie sull'host del database per ripristinare il database SAP HANA.
 
 *Prima di iniziare*
 
@@ -56,6 +56,8 @@ Ad esempio, se il volume di origine è vol1, il nome del volume aggiornato sarà
 NOTE: Il nuovo volume verrà inserito nello stesso pool di capacità dei volumi di destinazione.
 
 * Il percorso di giunzione sarà lo stesso del nome del volume.
+* Il "numero massimo di throughput" per il nuovo volume viene prelevato dal volume del sistema di destinazione con pool di capacità manuali Quality of Service (QoS).
+Per i pool di capacità QoS automatici, il throughput è definito dalla capacità del volume di origine.
 
 
 *Fasi*
@@ -67,7 +69,6 @@ NOTE: Il nuovo volume verrà inserito nello stesso pool di capacità dei volumi 
 .. Selezionare il sistema di origine e la copia Snapshot.
 .. Immettere gli indirizzi di esportazione da cui è possibile accedere ai nuovi volumi.
 .. Immettere prescrittt, postscript e i percorsi degli script di errore. Lo script on failure viene eseguito solo quando l'operazione di refresh del sistema non riesce.
-.. Selezionare *Elimina backup SAP HANA associati* verranno eliminate solo le copie Snapshot. Se sono presenti backup del sistema di destinazione e l'opzione precedente non è selezionata, l'operazione di aggiornamento del sistema non avrà esito positivo. È inoltre possibile eliminare i backup dalla pagina *topologia*.
 .. Fare clic su *Aggiorna*.
 
 

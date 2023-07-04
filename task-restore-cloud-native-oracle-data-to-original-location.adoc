@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
-permalink: task-restore-cloud-native-oracle-data.html 
-keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle 
-summary: Ripristinare i file di dati, i file di controllo o entrambi, quindi ripristinare il database. 
+permalink: task-restore-cloud-native-oracle-data-to-original-location.html 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle, original location 
+summary: Ripristinare i file di dati, i file di controllo o entrambi nella posizione originale, quindi ripristinare il database. 
 ---
-= Ripristinare i database Oracle nativi del cloud
+= Ripristinare i database Oracle nativi del cloud nella posizione originale
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,15 +14,13 @@ summary: Ripristinare i file di dati, i file di controllo o entrambi, quindi rip
 
 
 [role="lead"]
-In caso di perdita di dati, è possibile ripristinare i file di dati, i file di controllo o entrambi e ripristinare il database.
+In caso di perdita di dati, è possibile ripristinare i file di dati, i file di controllo o entrambi nella posizione originale e quindi ripristinare il database.
 
-*Prima di iniziare*
-
+.Prima di iniziare
 Se il database Oracle 21c è IN stato AVVIATO, l'operazione di ripristino non riesce. Eseguire il seguente comando per ripristinare correttamente il database.
 `cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
 
-*Fasi*
-
+.Fasi
 . Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al database che si desidera ripristinare e fare clic su *Restore* (Ripristina).
 . Selezionare il punto di ripristino in cui ripristinare il database e fare clic su *Restore to original location* (Ripristina posizione originale).
 . Nella sezione ambito ripristino, eseguire le seguenti operazioni:
@@ -65,10 +63,6 @@ Nel layout di Amazon FSX per NetApp ONTAP o SAN Cloud Volumes ONTAP, se il plug-
 ** File dei parametri ASM.
 +
 L'opzione *Imponi ripristino in-place* sovrascrive i file esterni di tipo parametro, password e log di archiviazione. Utilizzare il backup più recente quando è selezionata l'opzione *Force in-place restore* (forza ripristino in-place).
-
-+
-
-NOTE: Il ripristino dei file di dati con file di controllo o solo dei file di controllo per iSCSI sul layout ASM e il ripristino di tablespace e PDB non sono supportati.
 
 
 

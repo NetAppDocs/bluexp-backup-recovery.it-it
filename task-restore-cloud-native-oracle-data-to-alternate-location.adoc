@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: task-restore-cloud-native-oracle-data-to-alternate-location.html 
+keywords: cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle, alternate location 
+summary: Ripristinare il database Oracle in una posizione alternativa 
+---
+= Ripristinare i database Oracle nativi del cloud in una posizione alternativa
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+In caso di perdita di dati, è possibile ripristinare il database Oracle in una posizione alternativa solo su Azure NetApp Files. La posizione alternativa può trovarsi su un host diverso o sullo stesso host.
+
+.Prima di iniziare
+* Se il database Oracle 21c è IN stato AVVIATO, l'operazione di ripristino non riesce. Eseguire il seguente comando per ripristinare correttamente il database.
+`cp -f <ORACLE_HOME>/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar`
+* Assicurarsi che la versione di Oracle sull'host alternativo sia uguale a quella dell'host originale.
+
+
+.A proposito di questa attività
+Durante l'avvio dell'operazione di ripristino, non è consentito modificare le configurazioni ad eccezione di Oracle home, throughput massimo del volume, SID Oracle e credenziali del database.
+
+Il ripristino completo è attivato per impostazione predefinita con l'opzione _until CANCEL_ impostata su true.
+
+Per impostazione predefinita, la modalità di registro archivio è disattivata per il database ripristinato. Se necessario, è possibile attivare la modalità di registrazione dell'archivio e mantenere i registri di archiviazione sul volume NetApp.
+
+.Fasi
+. Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al database che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+. Selezionare il punto di ripristino in cui ripristinare il database e fare clic su *Restore to alternate location* > *Next*.
+. Nella pagina Configuration (Configurazione), specificare i dettagli relativi a posizione alternativa, SID, Oracle_Home, credenziali del database e throughput dello storage.
++
+Per la credenziale del database, se l'autenticazione utente del sistema operativo è disattivata, è necessario fornire una password per consentire all'utente sys di connettersi al database ripristinato sullo stesso host o su quello di destinazione.
+
+. Fare clic su *Avanti*, rivedere i dettagli e fare clic su *Ripristina*.
++
+L'avanzamento dell'operazione di ripristino può essere visualizzato nella pagina Job Monitor. Una volta completato il processo, fare clic su *Refresh Discovery* (Aggiorna rilevamento) per visualizzare il database ripristinato. Tuttavia, non è possibile proteggere il database ripristinato in una posizione alternativa.
+
+

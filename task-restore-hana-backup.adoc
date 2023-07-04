@@ -1,0 +1,44 @@
+---
+sidebar: sidebar 
+permalink: task-restore-hana-backup.html 
+keywords: restore, mount application backups, SAP HANA database 
+summary: Puoi ripristinare il database SAP HANA dal cloud al server SnapCenter on-premise. 
+---
+= Ripristinare il database SAP HANA
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare il database SAP HANA sullo stesso host.
+
+*Fasi*
+
+. Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
+. Nel campo *Filtra per*, selezionare il filtro *tipo* e dal menu a discesa selezionare *HANA*.
+. Fare clic su *View Details* (Visualizza dettagli) corrispondente al database che si desidera ripristinare e fare clic su *Restore* (Ripristina).
+. Nella pagina delle opzioni di ripristino, specificare una delle seguenti opzioni:
++
+.. Per l'ambiente NAS, specificare l'FQDN o l'indirizzo IP dell'host su cui esportare i volumi ripristinati dall'archivio di oggetti.
+.. Per l'ambiente SAN, specificare gli iniziatori dell'host a cui mappare le LUN dei volumi ripristinati dall'archivio di oggetti.
+
+
+. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
++
+
+NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
+
+. Se lo spazio disponibile sullo storage di origine non è sufficiente o se lo storage di origine non è disponibile, selezionare *Modifica ubicazione dello storage*.
+. Fare clic su *Avanti*.
+. Nella pagina Storage mapping, specificare i dettagli della posizione di storage alternativa in cui verranno memorizzati i dati ripristinati dall'archivio di oggetti.
+. Fare clic su *Avanti*.
+. Esaminare i dettagli e fare clic su *Restore* (Ripristina).
+
+
+Questa operazione esegue solo l'esportazione dello storage del backup selezionato sull'host specificato. Si consiglia di montare manualmente il file system e di visualizzare il database. Dopo aver utilizzato il volume, l'amministratore dello storage può eliminare il volume dal cluster ONTAP.
+
+Per informazioni su come attivare il database SAP HANA, vedere https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html["TR-4667: Panoramica del workflow di copia del sistema SAP con SnapCenter"^] e. https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html["TR-4667: Panoramica del workflow dei cloni di sistema SAP con SnapCenter"^].

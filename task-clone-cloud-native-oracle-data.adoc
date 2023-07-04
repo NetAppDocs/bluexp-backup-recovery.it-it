@@ -23,12 +23,10 @@ summary: 'Clonare il database sull"host di origine o su un host alternativo.'
 * Per ripristinare i dati cancellati o modificati per errore.
 
 
-*Prima di iniziare*
-
+.Prima di iniziare
 È necessario comprendere i concetti dei cloni e assicurarsi che tutti i requisiti siano soddisfatti. link:concept-clone-cloud-native-oracle-concepts.html["Scopri di più"].
 
-*Fasi*
-
+.Fasi
 . Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al database che si desidera clonare e fare clic su *View Details* (Visualizza dettagli).
 . Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente al backup dei dati e fare clic su *Clone*.
 . Nella pagina Clone Details (Dettagli clone), selezionare una delle opzioni di clonazione.

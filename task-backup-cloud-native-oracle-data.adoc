@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-cloud-native-oracle-data.html 
-keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations 
-summary: Creare backup pianificati o on-demand del database Oracle. 
+keywords: admin role, service account, pre-canned policies, cloud manager, BlueXP, scheduled backups, on-demand backups, create policy, Oracle database, backup limitations, RMAN, catalog, RMAN catalog 
+summary: Creare una policy con o senza attivare RMAN, assegnare la policy e creare backup pianificati o on-demand del database Oracle. 
 ---
 = Eseguire il backup dei database Oracle nativi del cloud
 :hardbreaks:
@@ -14,7 +14,9 @@ summary: Creare backup pianificati o on-demand del database Oracle.
 
 
 [role="lead"]
-È possibile creare un backup assegnando un criterio predefinito o il criterio creato.
+È possibile creare backup pianificati o on-demand assegnando un criterio predefinito o il criterio creato.
+
+È inoltre possibile catalogare i backup del database Oracle utilizzando Oracle Recovery Manager (RMAN) se è stata attivata la catalogazione durante la creazione di una policy. La catalogazione (RMAN) è supportata solo per i database su Azure NetApp Files. I backup catalogati possono essere utilizzati in seguito per operazioni di ripristino a livello di blocco o tablespace point-in-time. Il database deve essere in stato montato o superiore per la catalogazione.
 
 
 
@@ -29,7 +31,8 @@ summary: Creare backup pianificati o on-demand del database Oracle.
 . Specificare un nome di policy.
 . (Facoltativo) modificare il formato del nome del backup.
 . Specificare la pianificazione e i dettagli di conservazione.
-. (Facoltativo) inserire il percorso post-script e il valore di timeout per il post-script che verrà eseguito dopo il backup corretto per copiare lo snapshot nello storage secondario.
+. Se hai selezionato _daily_ e _settimanalmente_ come programma e desideri attivare la catalogazione RMAN, seleziona *Catalog backup with Oracle Recovery Manager (RMAN)*.
+. (Facoltativo) inserire il percorso post-script e il valore di timeout per il post-script che verrà eseguito dopo il backup corretto, ad esempio la copia dello snapshot nello storage secondario.
 +
 In alternativa, è possibile specificare anche gli argomenti.
 
@@ -75,17 +78,37 @@ Specifica il nome del criterio utilizzato per creare il backup.
  a| 
 PERCORSO_COMPLETO_VOLUME_DATI_PRIMARI_SC
  a| 
-Specifica i percorsi dei volumi di dati concatenati utilizzando "," come delimitatore. Per i volumi ANF, le informazioni vengono concatenate utilizzando "/" _/{anfaccount}/{subscription_id}/{resource_group}/{Capacity_pool}/{volumename}_
+Specifica i percorsi dei volumi di dati concatenati utilizzando "," come delimitatore.
+Per i volumi Azure NetApp Files, le informazioni vengono concatenate utilizzando "/"
+_ /Subscriptions/{subscription_id}/resourceGroups/{resource_group}/provider/{provider}/netAppAccounts/{anfaccount}/capacityPools/{Capacity_pool}/volumename{}_
 
 
 
  a| 
 SC_PRIMARY_ARCHIVELOGS_VOLUME_FULL_PATH
  a| 
-Specifica i percorsi dei volumi del log di archiviazione concatenati utilizzando "," come delimitatore. Per i volumi ANF, le informazioni vengono concatenate utilizzando "/" _/{anfaccount}/{subscription_id}/{resource_group}/{Capacity_pool}/{volumename}_
+Specifica i percorsi dei volumi del log di archiviazione concatenati utilizzando "," come delimitatore.
+Per i volumi Azure NetApp Files, le informazioni vengono concatenate utilizzando "/"
+_ /Subscriptions/{subscription_id}/resourceGroups/{resource_group}/provider/{provider}/netAppAccounts/{anfaccount}/capacityPools/{Capacity_pool}/volumename{}_
 
 |===
 . Fare clic su *Create* (Crea).
+
+
+
+
+== Configurare il repository del catalogo RMAN
+
+È possibile configurare il database del catalogo di ripristino come repository del catalogo RMAN. Se non si configura il repository, per impostazione predefinita, il file di controllo del database di destinazione diventa il repository del catalogo RMAN.
+
+.Prima di iniziare
+Registrare manualmente il database di destinazione con il database del catalogo RMAN.
+
+.Fasi
+. Nella pagina applicazioni, fare clic su image:icon-action.png["per selezionare l'azione"] > *Visualizza dettagli*.
+. Nella sezione Database details (Dettagli database), fare clic su image:icon-edit-pen.png["modifica di iconto"] Per configurare il repository del catalogo RMAN.
+. Specificare le credenziali per catalogare i backup con RMAN e il nome TNS (transparent Network substrate) del database di ripristino del catalogo.
+. Fare clic su *Configura*.
 
 
 
@@ -105,7 +128,7 @@ Se il database è protetto mediante uno o più criteri, è possibile assegnare u
 
 . Selezionare il criterio e fare clic su *Assegna*.
 +
-I backup verranno creati in base alla pianificazione definita nella policy.
+I backup verranno creati in base alla pianificazione definita nella policy. Se è stato abilitato il catalogo RMAN nella policy, il backup alla fine del workflow avvierà l'operazione di catalogazione come un lavoro separato. L'avanzamento della catalogazione è visibile da Job Monitor. Una volta completata la catalogazione, *Backup Details* mostrerà lo stato del catalogo per ciascun backup.
 
 +
 
@@ -123,6 +146,9 @@ Dopo aver assegnato il criterio, è possibile creare un backup on-demand dell'ap
 
 . Nella pagina applicazioni, fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Backup on-Demand*.
 . Se all'applicazione sono assegnati più criteri, selezionare il criterio, il livello di conservazione e fare clic su *Create Backup* (Crea backup).
++
+Se è stato abilitato il catalogo RMAN nella policy, il backup alla fine del workflow avvierà l'operazione di catalogazione come un lavoro separato. L'avanzamento della catalogazione è visibile da Job Monitor. Una volta completata la catalogazione, *Backup Details* mostrerà lo stato del catalogo per ciascun backup.
+
 
 
 

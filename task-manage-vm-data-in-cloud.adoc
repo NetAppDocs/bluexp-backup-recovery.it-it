@@ -55,17 +55,34 @@ Vengono visualizzati i datastore e le macchine virtuali protetti mediante il plu
 
 
 
-== Aggiorna stato di protezione
+== Aggiorna risorse e backup
 
-Quando vengono aggiunti nuovi volumi al database o se viene apportata una modifica al criterio o al gruppo di risorse, è necessario aggiornare lo stato di protezione.
+Se si desidera visualizzare gli ultimi datastore e backup aggiunti all'applicazione, è necessario aggiornare le risorse e i backup. In questo modo si avvia il rilevamento delle risorse e dei backup e vengono visualizzati i dettagli più recenti.
 
 . Fare clic su *Backup and recovery* > *Virtual Machines*.
 . Dal menu a discesa *Impostazioni*, fare clic su *plug-in SnapCenter per VMware vSphere*.
-. Fare clic su image:icon-action.png["azione"] Corrispondente al plug-in SnapCenter per l'host VMware vSphere e fare clic su *Aggiorna*.
-+
-Le nuove modifiche vengono rilevate.
+. Fare clic su image:icon-action.png["azione"] Corrispondente al plug-in SnapCenter per l'host VMware vSphere e fare clic su *Aggiorna risorse e backup*.
 
-. Fare clic su image:icon-action.png["azione"] Corrispondente all'archivio dati e fare clic su *Refresh Protection* per attivare la protezione cloud per le modifiche.
+
+
+
+== Aggiornare il criterio o il gruppo di risorse
+
+In caso di modifica del criterio o del gruppo di risorse, è necessario aggiornare la relazione di protezione.
+
+. Fare clic su *Backup and recovery* > *Virtual Machines*.
+. Fare clic su image:icon-action.png["azione"] Corrispondente al datastore e fare clic su *Refresh Protection*.
+
+
+
+
+== Annullare la registrazione del plug-in SnapCenter per l'host VMware vSphere
+
+Tutti i datastore e le macchine virtuali associati al plug-in SnapCenter per host VMware vSphere non saranno protetti.
+
+. Fare clic su *Backup and recovery* > *Virtual Machines*.
+. Dal menu a discesa *Impostazioni*, fare clic su *plug-in SnapCenter per VMware vSphere*.
+. Fare clic su image:icon-action.png["azione"] Corrispondente al plug-in SnapCenter per l'host VMware vSphere e fare clic su *Annulla registrazione*.
 
 
 

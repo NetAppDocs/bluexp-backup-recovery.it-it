@@ -16,8 +16,7 @@ summary: Completare alcuni passaggi per eseguire il backup dei dati delle applic
 [role="lead"]
 Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a Amazon Web Services.
 
-*Fasi*
-
+.Fasi
 . Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
 . Fare clic su image:icon-action.png["per selezionare l'azione"] Corrispondente all'applicazione e fare clic su *Activate Backup* (attiva backup).
 . Nella pagina Assign Policy (Assegna policy), selezionare il criterio e fare clic su *Next* (Avanti).
@@ -42,8 +41,8 @@ Il backup e ripristino BlueXP per le applicazioni supporta solo l'amministratore
 . Selezionare *Amazon Web Services* come provider cloud.
 +
 .. Specificare l'account AWS.
-.. Nel campo AWS Access Key (chiave di accesso AWS), specificare la chiave per la crittografia dei dati.
-.. Nel campo AWS Secret Key (chiave segreta AWS), specificare la password per la crittografia dei dati.
+.. Nel campo AWS Access Key (chiave di accesso AWS), specificare la chiave.
+.. Nel campo AWS Secret Key (chiave segreta AWS), specificare la password.
 .. Selezionare la regione in cui si desidera creare i backup.
 .. Specificare lo spazio IP.
 .. Selezionare il livello di archiviazione.

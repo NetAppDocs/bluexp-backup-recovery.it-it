@@ -99,8 +99,8 @@ sidebar:
         url: "/task-restore-oracle-data.html"
       - title: Ripristinare il database di SQL Server
         url: "/task-restore-sql-data.html"
-    - title: Montare i backup delle applicazioni
-      url: "/task-mount-app-backup.html"
+      - title: Ripristinare il database SAP HANA
+        url: "/task-restore-hana-backup.html"
   - title: Backup e ripristino dei dati delle applicazioni native del cloud
     entries:
     - title: Proteggi i dati delle tue applicazioni native del cloud
@@ -136,7 +136,11 @@ sidebar:
         flavor: azure
         url: "/task-backup-cloud-native-sap-hana-data.html"
     - title: Ripristinare i database Oracle nativi del cloud
-      url: "/task-restore-cloud-native-oracle-data.html"
+      entries:
+      - title: Ripristinare la posizione originale
+        url: "/task-restore-cloud-native-oracle-data-to-original-location.html"
+      - title: Ripristinare in una posizione alternativa
+        url: "/task-restore-cloud-native-oracle-data-to-alternate-location.html"
     - title: Ripristinare i database SAP HANA nativi del cloud
       flavor: azure
       url: "/task-restore-cloud-native-sap-hana-data.html"

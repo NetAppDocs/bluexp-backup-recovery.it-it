@@ -14,7 +14,7 @@ summary: Puoi ripristinare il database Oracle dal cloud al server SnapCenter on-
 
 
 [role="lead"]
-È possibile ripristinare il database Oracle solo sullo stesso host in cui è stato creato il backup. Per un database RAC, i dati vengono ripristinati nel nodo on-premise in cui è stato creato il backup.
+È possibile ripristinare il database Oracle nella posizione originale o nella posizione alternativa. Per un database RAC, i dati vengono ripristinati nel nodo on-premise in cui è stato creato il backup.
 
 È supportato solo il database completo con il ripristino del file di controllo. Se i log di archiviazione non sono presenti in AFS, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
 
@@ -26,8 +26,22 @@ IMPORTANT: Single file Restore (SFR) non è supportato.
 . Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
 . Nel campo *Filtra per*, selezionare il filtro *tipo* e dal menu a discesa selezionare *Oracle*.
 . Fare clic su *View Details* (Visualizza dettagli) corrispondente al database che si desidera ripristinare e fare clic su *Restore* (Ripristina).
-. Nella pagina Restore Type (tipo di ripristino), eseguire le seguenti operazioni:
+. Nella pagina delle opzioni di ripristino, specificare la posizione in cui si desidera ripristinare i file di database.
 +
+|===
+| Se... | Eseguire questa operazione... 
+
+
+ a| 
+Ripristinare la posizione originale
+ a| 
+.. Selezionare *Restore to original location* (Ripristina posizione originale).
+.. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
++
+
+NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
+
+.. Fare clic su *Avanti*.
 .. Selezionare *Database state* (Stato database) se si desidera modificare lo stato del database nello stato richiesto per eseguire le operazioni di ripristino e ripristino.
 +
 I vari stati di un database, da quelli superiori a quelli inferiori, sono aperti, montati, avviati e arrestati.
@@ -38,59 +52,104 @@ I vari stati di un database, da quelli superiori a quelli inferiori, sono aperti
 *** Se un database si trova in stato aperto e per il ripristino il database deve essere in stato montato, lo stato del database viene modificato solo se si seleziona questa casella di controllo.
 
 
-.. Selezionare *file di controllo* se si desidera ripristinare il file di controllo insieme al database completo.
-.. Se lo snapshot si trova nello storage di archiviazione, specificare la priorità per ripristinare i dati dallo storage di archiviazione.
-
-
-. Nella pagina Recovery Scope (ambito ripristino), eseguire le seguenti operazioni:
-+
 .. Specificare l'ambito del ripristino.
 +
-|===
-| Se... | Eseguire questa operazione... 
-
-
- a| 
-Ripristinare l'ultima transazione
- a| 
-Selezionare *tutti i registri*.
-
-
-
- a| 
-Ripristinare un numero SCN (System Change Number) specifico
- a| 
-Selezionare *fino a quando SCN (System Change Number)*.
-
-
-
- a| 
-Desidera ripristinare dati e tempi specifici
- a| 
-Selezionare *Data e ora*.
-
+*** Selezionare *All Logs* (tutti i registri) se si desidera ripristinare l'ultima transazione.
+*** Selezionare *fino a SCN (System Change Number)* se si desidera ripristinare un SCN specifico.
+*** Selezionare *Data e ora* se si desidera ripristinare dati e ore specifici.
++
 Specificare la data e l'ora del fuso orario dell'host del database.
 
+*** Selezionare *No recovery* se non si desidera eseguire il ripristino.
 
 
- a| 
-Non si desidera eseguire il ripristino
- a| 
-Selezionare *Nessun ripristino*.
-
-
-
- a| 
-Specificare le posizioni dei registri di archiviazione esterni
- a| 
-Se i log di archiviazione non sono presenti nel file system attivo, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
-
-|===
+.. Se i log di archiviazione non sono presenti nel file system attivo, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
 .. Selezionare questa casella di controllo se si desidera aprire il database dopo il ripristino.
 +
 In un'installazione RAC, dopo il ripristino viene aperta solo l'istanza RAC utilizzata per il ripristino.
 
 
 
+
+
+ a| 
+Ripristinare temporaneamente in un altro storage e copiare i file ripristinati nella posizione originale
+ a| 
+.. Selezionare *Restore to original location* (Ripristina posizione originale).
+.. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
++
+
+NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
+
+.. Selezionare *Modifica posizione di storage*.
+.. Fare clic su *Avanti*.
+.. Nella pagina Storage mapping, specificare i dettagli della posizione di storage alternativa in cui i dati ripristinati dall'archivio di oggetti verranno memorizzati temporaneamente.
++
+Se si seleziona un sistema ONTAP on-premise e non si è configurata la connessione del cluster allo storage a oggetti, vengono richieste ulteriori informazioni relative all'archivio di oggetti.
+
+.. Fare clic su *Avanti*.
+.. Selezionare *Database state* (Stato database) se si desidera modificare lo stato del database nello stato richiesto per eseguire le operazioni di ripristino e ripristino.
++
+I vari stati di un database, da quelli superiori a quelli inferiori, sono aperti, montati, avviati e arrestati.
+
++
+*** Se il database si trova in uno stato superiore ma lo stato deve essere modificato in uno stato inferiore per eseguire un'operazione di ripristino, selezionare questa casella di controllo.
+*** Se il database si trova in uno stato inferiore ma lo stato deve essere modificato in uno stato superiore per eseguire l'operazione di ripristino, lo stato del database viene modificato automaticamente anche se non si seleziona la casella di controllo.
+*** Se un database si trova in stato aperto e per il ripristino il database deve essere in stato montato, lo stato del database viene modificato solo se si seleziona questa casella di controllo.
+
+
+.. Specificare l'ambito del ripristino.
++
+*** Selezionare *All Logs* (tutti i registri) se si desidera ripristinare l'ultima transazione.
+*** Selezionare *fino a SCN (System Change Number)* se si desidera ripristinare un SCN specifico.
+*** Selezionare *Data e ora* se si desidera ripristinare dati e ore specifici.
++
+Specificare la data e l'ora del fuso orario dell'host del database.
+
+*** Selezionare *No recovery* se non si desidera eseguire il ripristino.
+
+
+.. Se i log di archiviazione non sono presenti nel file system attivo, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
+.. Selezionare questa casella di controllo se si desidera aprire il database dopo il ripristino.
++
+In un'installazione RAC, dopo il ripristino viene aperta solo l'istanza RAC utilizzata per il ripristino.
+
+
+
+
+
+ a| 
+Ripristinare in una posizione alternativa
+ a| 
+.. Selezionare *Ripristina in una posizione alternativa*.
+.. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
++
+
+NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
+
+.. Se si desidera ripristinare lo storage alternativo, attenersi alla seguente procedura:
++
+... Selezionare *Modifica posizione di storage*.
+... Fare clic su *Avanti*.
+... Nella pagina Storage mapping, specificare i dettagli della posizione di storage alternativa in cui devono essere ripristinati i dati dell'archivio di oggetti.
+
+
+.. Fare clic su *Avanti*.
+.. Nella pagina Destination host (host di destinazione), selezionare l'host su cui verrà montato il database.
++
+... (Facoltativo) per l'ambiente NAS, specificare l'FQDN o l'indirizzo IP dell'host su cui esportare i volumi ripristinati dall'archivio di oggetti.
+... (Facoltativo) per l'ambiente SAN, specificare gli iniziatori dell'host a cui mappare le LUN dei volumi ripristinati dall'archivio di oggetti.
+
+
+.. Fare clic su *Avanti*.
+
+
+|===
 . Esaminare i dettagli e fare clic su *Restore* (Ripristina).
 
+
+L'opzione *Restore to alternate location* (Ripristina in posizione alternativa) consente di montare il backup selezionato sull'host specificato. È necessario visualizzare manualmente il database.
+
+Dopo aver montato il backup, non è possibile montarlo di nuovo fino a quando non viene smontato. È possibile utilizzare l'opzione *Unmount* dall'interfaccia utente per smontare il backup.
+
+Per informazioni su come attivare il database Oracle, vedere https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["Articolo della Knowledge base"].
