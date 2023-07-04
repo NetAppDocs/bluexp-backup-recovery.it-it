@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="it">
   <head class="at-element-marker">
-  <title>Montare i backup delle applicazioni | NetApp Documentation</title>
+  <title>Ripristinare i database Oracle nativi del cloud nella posizione originale | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Montare i backup delle applicazioni | NetApp Documentation" />
+  <meta property="og:title" content="Ripristinare i database Oracle nativi del cloud nella posizione originale | NetApp Documentation" />
 	<meta property="og:type" content="website" />
-	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-mount-app-backup.html" />
-	<meta property="og:description" content="È possibile montare i backup SAP HANA e Oracle sull"host specificato." />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+	<meta property="og:description" content="Ripristinare i file di dati, i file di controllo o entrambi nella posizione originale, quindi ripristinare il database." />
   <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="È possibile montare i backup SAP HANA e Oracle sull"host specificato.">
-  <meta name="keywords" content=" mount, mount application backups, Oracle database, SAP HANA database"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Ripristinare i file di dati, i file di controllo o entrambi nella posizione originale, quindi ripristinare il database.">
+  <meta name="keywords" content=" cloud-native, application data, restore, data files, control files, recovery, Cloud Manager, BlueXP, Oracle database, Oracle, original location"><!-- Icons -->
   <link rel="icon" href="/it-it/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/bluexp-backup-recovery/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -32,17 +32,17 @@
   <link rel="stylesheet" href="/it-it/bluexp-backup-recovery/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/it-it/bluexp-backup-recovery/css/tabbed-blocks.css" type="text/css">
   <!-- Canonical url -->
-  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-mount-app-backup.html" />
-  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-mount-app-backup.html" />
+  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" />
   <link rel='stylesheet' href='/it-it/bluexp-backup-recovery/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
     function addAdobeLaunch(adobeId) {
       var head = document.getElementsByTagName('head')[0];
@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -169,7 +169,7 @@
 </head>
 
 
-  <body class role="document" data-flavor="">
+  <body class role="document" data-flavor="azure">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
@@ -178,38 +178,40 @@
   <!-- Start Page Toolbar -->
   
   <div class="page-nav-toolbar">
-<div id="flavor-dropdown" class="custom-dropdown" data-url="/it-it/bluexp-backup-recovery/task-mount-app-backup.html">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html">
   
-  <div class="custom-dropdown-select unselected" title="Tutti i cloud provider">
+  
+  <div class="custom-dropdown-select selected" title="Azure">
     <label>Cloud provider</label>
-    <span>Tutti i cloud provider</span>
-    <img src="/it-it/bluexp-backup-recovery/images/filter.svg" class="custom-icon" alt="" />
+    <div>Azure</div>  
+    <img src="/it-it/bluexp-backup-recovery/images/filter.svg" class="custom-icon selected" alt="" />
+    <img src="/it-it/bluexp-backup-recovery/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />
   </div>
   
 
   <ul class="custom-dropdown-menu">
     
     
-    <li data-value="aws" data-url="/it-it/bluexp-backup-recovery/aws/task-mount-app-backup.html">
+    <li data-value="aws" data-url="/it-it/bluexp-backup-recovery/aws/task-restore-cloud-native-oracle-data-to-original-location.html">
       <img alt="" src="/it-it/bluexp-backup-recovery/images/aws-ico.svg" onerror="this.src='/it-it/bluexp-backup-recovery/images/blank-ico.png'" class="custom-icon" />Amazon Web Services
     </li>
     
     
     
-    <li data-value="gcp" data-url="/it-it/bluexp-backup-recovery/gcp/task-mount-app-backup.html">
+    <li data-value="gcp" data-url="/it-it/bluexp-backup-recovery/gcp/task-restore-cloud-native-oracle-data-to-original-location.html">
       <img alt="" src="/it-it/bluexp-backup-recovery/images/gcp-ico.svg" onerror="this.src='/it-it/bluexp-backup-recovery/images/blank-ico.png'" class="custom-icon" />Google Cloud
     </li>
     
     
     
-    <li data-value="azure" data-url="/it-it/bluexp-backup-recovery/azure/task-mount-app-backup.html">
+    <li data-value="azure" data-url="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-oracle-data-to-original-location.html">
       <img alt="" src="/it-it/bluexp-backup-recovery/images/azure-ico.svg" onerror="this.src='/it-it/bluexp-backup-recovery/images/blank-ico.png'" class="custom-icon" />Microsoft Azure
     </li>
     
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-mount-app-backup.html&page-title=Montare i backup delle applicazioni" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-mount-app-backup.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-backup-recovery/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html&page-title=Ripristinare i database Oracle nativi del cloud nella posizione originale" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-restore-cloud-native-oracle-data-to-original-location.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-backup-recovery/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">IN QUESTA PAGINA</div>
@@ -295,7 +297,7 @@
       <div class="search-property-bar">
         <div id="search-demo-container" class="searchbox n-property-bar__search">
           <div id="react-search" 
-          data-search-html="/it-it/bluexp-backup-recovery/search.html"
+          data-search-html="/it-it/bluexp-backup-recovery/azure/search.html"
           data-type="widget" 
           data-placeholder="Esplora la documentazione"
           data-no-results-found="Nessun risultato per {query}"
@@ -305,7 +307,7 @@
           data-error-message="Si è verificato un problema durante il recupero dei risultati. Riprova."
           data-error-reset="Reimposta ricerca"
           data-sk-es-pf-indexes=""
-          data-flavor=""></div>
+          data-flavor="azure"></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -329,23 +331,23 @@
       </div>
 
       <ul class="custom-dropdown-menu"><li>
-          <a href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+          <a href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">Italiano</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">English</span></a>
+          <a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">English</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
+          <a href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">日本語</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
+          <a href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">한국어</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+          <a href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">简体中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+          <a href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+          <a href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
+          <a href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">Español</span></a>
         </li><li>
-          <a href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-mount-app-backup.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
+          <a href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html" target="_self"><span translate="no" class="notranslate">Français</span></a>
         </li></ul>
     </div>
     <!-- End Language Selector -->
@@ -374,7 +376,7 @@
         
         
         
-        <a target="_blank" href="/it-it/bluexp-backup-recovery/pdfs/fullsite-sidebar/Documentazione_di_backup_e_ripristino_BlueXP.pdf" >
+        <a target="_blank" href="/it-it/bluexp-backup-recovery/pdfs/azure/fullsite-sidebar/Documentazione_di_backup_e_ripristino_BlueXP.pdf" >
           <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
 
 
@@ -389,7 +391,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Inizia_subito.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Inizia_subito.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -416,7 +418,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Monitorare_la_protezione_dei_dati.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Monitorare_la_protezione_dei_dati.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -443,7 +445,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_ONTAP.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Backup_e_ripristino_dei_dati_ONTAP.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -488,7 +490,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_on_premise.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_on_premise.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -520,7 +522,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Ripristinare_i_dati_delle_applicazioni_on_premise.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Ripristinare_i_dati_delle_applicazioni_on_premise.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -531,14 +533,12 @@
 
 
 
+
+
         </li>
       </ul>
     
 
-  
-
-
-    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
 
 
@@ -558,7 +558,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_native_del_cloud.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_native_del_cloud.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -576,7 +576,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Eseguire_il_backup_dei_database_Oracle_nativi_del_cloud.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Eseguire_il_backup_dei_database_Oracle_nativi_del_cloud.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -611,7 +611,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Eseguire_il_backup_dei_database_SAP_HANA_nativi_del_cloud.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Eseguire_il_backup_dei_database_SAP_HANA_nativi_del_cloud.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -634,6 +634,33 @@
 
 
 
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Ripristinare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
+            Ripristinare i database Oracle nativi del cloud
+          </a>
+          
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
 
 
 
@@ -648,7 +675,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Clonare_i_database_Oracle_nativi_del_cloud.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Clonare_i_database_Oracle_nativi_del_cloud.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -684,7 +711,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_delle_macchine_virtuali.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Backup_e_ripristino_dei_dati_delle_macchine_virtuali.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -725,7 +752,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_Kubernetes.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Backup_e_ripristino_dei_dati_Kubernetes.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -762,7 +789,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Riferimento.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Riferimento.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -799,7 +826,7 @@
           
           <a target="_blank" 
             
-              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Conoscenza_e_supporto.pdf" 
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Conoscenza_e_supporto.pdf" 
             
           >
             <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
@@ -862,14 +889,14 @@
       data-pdf-filename="Documenti di backup e ripristino BlueXP"
       data-li-level="1#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/index.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/index.html">
         Documenti di backup e ripristino BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Note di rilascio"
       data-li-level="1#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/whats-new.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/whats-new.html">
         Note di rilascio
       </a></li><li 
       data-pdf-exists="true" 
@@ -885,14 +912,14 @@
       data-pdf-filename="Informazioni su backup e ripristino BlueXP"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-backup-to-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-backup-to-cloud.html">
         Informazioni su backup e ripristino BlueXP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Impostare la licenza"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-licensing-cloud-backup.html">
         Impostare la licenza
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -908,14 +935,14 @@
       data-pdf-filename="Report sulla copertura per la data Protection"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-report-inventory.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-report-inventory.html">
         Report sulla copertura per la data Protection
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Monitorare lo stato dei processi di backup e ripristino"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-monitor-backup-jobs.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-monitor-backup-jobs.html">
         Monitorare lo stato dei processi di backup e ripristino
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -931,77 +958,49 @@
       data-pdf-filename="Proteggi i dati del tuo volume ONTAP"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-ontap-backup-to-cloud.html">
         Proteggi i dati del tuo volume ONTAP
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Amazon S3"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-to-s3.html">
-        Eseguire il backup di Cloud Volumes ONTAP su Amazon S3
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup di Cloud Volumes ONTAP in Azure Blob"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-to-azure.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-to-azure.html">
         Backup di Cloud Volumes ONTAP in Azure Blob
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Google Cloud"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-to-gcp.html">
-        Eseguire il backup di Cloud Volumes ONTAP su Google Cloud
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup on-premise di ONTAP su Amazon S3"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-aws.html">
-        Eseguire il backup on-premise di ONTAP su Amazon S3
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Esegui il backup di ONTAP on-premise in Azure Blob"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-azure.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-onprem-to-azure.html">
         Esegui il backup di ONTAP on-premise in Azure Blob
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup on-premise di ONTAP su Google Cloud"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html">
-        Eseguire il backup on-premise di ONTAP su Google Cloud
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup on-premise di ONTAP su StorageGRID"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-onprem-private-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-onprem-private-cloud.html">
         Eseguire il backup on-premise di ONTAP su StorageGRID
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestire i backup di ONTAP"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-manage-backups-ontap.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backups-ontap.html">
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-manage-backup-settings-ontap.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backup-settings-ontap.html">
         Gestire le impostazioni di backup a livello di cluster
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -1017,56 +1016,42 @@
       data-pdf-filename="Proteggi i dati delle tue applicazioni on-premise"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-protect-app-data-to-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-protect-app-data-to-cloud.html">
         Proteggi i dati delle tue applicazioni on-premise
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Registrare il server SnapCenter"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-register-snapcenter-server.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-register-snapcenter-server.html">
         Registrare il server SnapCenter
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Creare un criterio per il backup delle applicazioni"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-create-policies-apps.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-create-policies-apps.html">
         Creare un criterio per il backup delle applicazioni
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Amazon Web Services"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-aws.html">
-        Eseguire il backup dei dati delle applicazioni on-premise su Amazon Web Services
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Microsoft Azure"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-azure.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-app-data-to-azure.html">
         Eseguire il backup dei dati delle applicazioni on-premise su Microsoft Azure
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-gcp.html">
-        Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-storagegrid.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-app-data-to-storagegrid.html">
         Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestire la protezione delle applicazioni"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-manage-app-backups.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-app-backups.html">
         Gestire la protezione delle applicazioni
       </a></li><li 
       data-pdf-exists="true" 
@@ -1082,23 +1067,23 @@
       data-pdf-filename="Ripristinare il database Oracle"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-oracle-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-oracle-data.html">
         Ripristinare il database Oracle
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare il database di SQL Server"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-sql-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-sql-data.html">
         Ripristinare il database di SQL Server
-      </a></li></ul></li><li 
+      </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Montare i backup delle applicazioni"
-      data-li-level="2#" 
-      class="  active "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-mount-app-backup.html">
-        Montare i backup delle applicazioni
-      </a></li></ul></li><li 
+      data-pdf-filename="Ripristinare il database SAP HANA"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-hana-backup.html">
+        Ripristinare il database SAP HANA
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni native del cloud"
       data-li-level="1" 
@@ -1112,7 +1097,7 @@
       data-pdf-filename="Proteggi i dati delle tue applicazioni native del cloud"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-protect-cloud-app-data-to-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-protect-cloud-app-data-to-cloud.html">
         Proteggi i dati delle tue applicazioni native del cloud
       </a></li><li 
       data-pdf-exists="true" 
@@ -1128,42 +1113,42 @@
       data-pdf-filename="Avvio rapido"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-quick-start-oracle.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-quick-start-oracle.html">
         Avvio rapido
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Configurare FSX per ONTAP"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-configure-fsx-for-ontap.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-configure-fsx-for-ontap.html">
         Configurare FSX per ONTAP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Configurare Cloud Volumes ONTAP"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-configure-cloud-volumes-ontap.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-configure-cloud-volumes-ontap.html">
         Configurare Cloud Volumes ONTAP
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Configurare Azure NetApp Files"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-configure-azure-netapp-files.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-configure-azure-netapp-files.html">
         Configurare Azure NetApp Files
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Installare il plug-in SnapCenter per Oracle e aggiungere host di database"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-add-host-discover-oracle-databases.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-add-host-discover-oracle-databases.html">
         Installare il plug-in SnapCenter per Oracle e aggiungere host di database
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup dei database Oracle"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-cloud-native-oracle-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-cloud-native-oracle-data.html">
         Eseguire il backup dei database Oracle
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -1179,49 +1164,65 @@
       data-pdf-filename="Avvio rapido"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-quick-start-hana.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-quick-start-hana.html">
         Avvio rapido
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Configurare Azure NetApp Files"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-configure-azure-netapp-files.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-configure-azure-netapp-files.html">
         Configurare Azure NetApp Files
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Installare il plug-in SnapCenter per SAP HANA e aggiungere host di database"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-deploy-snapcenter-plugin-for-sap-hana.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-deploy-snapcenter-plugin-for-sap-hana.html">
         Installare il plug-in SnapCenter per SAP HANA e aggiungere host di database
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup dei database SAP HANA"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-cloud-native-sap-hana-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-cloud-native-sap-hana-data.html">
         Eseguire il backup dei database SAP HANA
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare i database Oracle nativi del cloud"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data.html">
-        Ripristinare i database Oracle nativi del cloud
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Ripristinare i database Oracle nativi del cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare la posizione originale"
+      data-li-level="3#" 
+      class="  active "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-oracle-data-to-original-location.html">
+        Ripristinare la posizione originale
       </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare in una posizione alternativa"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-oracle-data-to-alternate-location.html">
+        Ripristinare in una posizione alternativa
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare i database SAP HANA nativi del cloud"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-cloud-native-sap-hana-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-sap-hana-data.html">
         Ripristinare i database SAP HANA nativi del cloud
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Aggiornare il sistema di destinazione SAP HANA"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-refresh-sap-hana-target-system.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-refresh-sap-hana-target-system.html">
         Aggiornare il sistema di destinazione SAP HANA
       </a></li><li 
       data-pdf-exists="true" 
@@ -1237,21 +1238,21 @@
       data-pdf-filename="Clonare concetti e requisiti"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-clone-cloud-native-oracle-concepts.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-clone-cloud-native-oracle-concepts.html">
         Clonare concetti e requisiti
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Clonare i database Oracle nativi del cloud"
       data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-clone-cloud-native-oracle-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-clone-cloud-native-oracle-data.html">
         Clonare i database Oracle nativi del cloud
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestire la protezione dei dati applicativi nativi del cloud"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-manage-cloud-native-app-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-cloud-native-app-data.html">
         Gestire la protezione dei dati applicativi nativi del cloud
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -1267,63 +1268,49 @@
       data-pdf-filename="Proteggi i dati delle tue macchine virtuali"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-protect-vm-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-protect-vm-data.html">
         Proteggi i dati delle tue macchine virtuali
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Registrare il plug-in SnapCenter per l'host VMware vSphere"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
         Registrare il plug-in SnapCenter per l'host VMware vSphere
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Creare una policy per il backup dei datastore"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-create-policies-vms.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-create-policies-vms.html">
         Creare una policy per il backup dei datastore
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup dei datastore su Amazon Web Services"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-aws.html">
-        Eseguire il backup dei datastore su Amazon Web Services
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup dei datastore su Microsoft Azure"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-azure.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-vm-data-to-azure.html">
         Eseguire il backup dei datastore su Microsoft Azure
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Backup dei datastore su Google Cloud Platform"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-gcp.html">
-        Backup dei datastore su Google Cloud Platform
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup dei datastore su StorageGRID"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-storagegrid.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-vm-data-to-storagegrid.html">
         Eseguire il backup dei datastore su StorageGRID
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestione della protezione dei dati di datastore e macchine virtuali"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-manage-vm-data-in-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-vm-data-in-cloud.html">
         Gestione della protezione dei dati di datastore e macchine virtuali
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare i dati delle macchine virtuali"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-vm-data.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-vm-data.html">
         Ripristinare i dati delle macchine virtuali
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -1339,49 +1326,35 @@
       data-pdf-filename="Proteggi i tuoi dati Kubernetes"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-kubernetes-backup-to-cloud.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-kubernetes-backup-to-cloud.html">
         Proteggi i tuoi dati Kubernetes
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Eseguire il backup su Amazon S3"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-kubernetes-to-s3.html">
-        Eseguire il backup su Amazon S3
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup su Azure Blob"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-kubernetes-to-azure.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-backup-kubernetes-to-azure.html">
         Backup su Azure Blob
-      </a></li><li 
-      data-pdf-exists="true" 
-      data-pdf-filename="Backup su Google Cloud"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-backup-kubernetes-to-gcp.html">
-        Backup su Google Cloud
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Gestire i backup di Kubernetes"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-manage-backups-kubernetes.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backups-kubernetes.html">
         Gestire i backup di Kubernetes
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di Kubernetes"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-restore-backups-kubernetes.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-backups-kubernetes.html">
         Ripristino dai backup di Kubernetes
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Automatizza con l'API REST"
       data-li-level="1#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/api-backup-restore.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/api-backup-restore.html">
         Automatizza con l'API REST
       </a></li><li 
       data-pdf-exists="true" 
@@ -1397,49 +1370,49 @@
       data-pdf-filename="Impostazioni dei criteri di backup"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/concept-cloud-backup-policies.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-cloud-backup-policies.html">
         Impostazioni dei criteri di backup
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Tier di storage di archivio AWS supportati"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-aws-backup-tiers.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-aws-backup-tiers.html">
         Tier di storage di archivio AWS supportati
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Tier di accesso all'archivio Azure supportati"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-azure-backup-tiers.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-azure-backup-tiers.html">
         Tier di accesso all'archivio Azure supportati
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Tier di storage di archivio supportati da Google"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-google-backup-tiers.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-google-backup-tiers.html">
         Tier di storage di archivio supportati da Google
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Configurare il backup per l'accesso multi-account in Azure"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-backup-multi-account-azure.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-backup-multi-account-azure.html">
         Configurare il backup per l'accesso multi-account in Azure
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare il database di backup e ripristino BlueXP in un sito buio"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-backup-cbs-db-in-dark-site.html">
         Ripristinare il database di backup e ripristino BlueXP in un sito buio
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Riavviare il backup e il ripristino di BlueXP"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/reference-restart-backup.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/reference-restart-backup.html">
         Riavviare il backup e il ripristino di BlueXP
       </a></li></ul></li><li 
       data-pdf-exists="true" 
@@ -1455,21 +1428,21 @@
       data-pdf-filename="Registrati per ricevere assistenza"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-support-registration.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-support-registration.html">
         Registrati per ricevere assistenza
       </a></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Richiedi assistenza"
       data-li-level="2#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/task-get-help.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-get-help.html">
         Richiedi assistenza
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Note legali"
       data-li-level="1#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/legal-notices.html">
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/legal-notices.html">
         Note legali
       </a></li></ul>
 </div>
@@ -1520,29 +1493,29 @@
   </div>
 </div>
 
-      <div class="ie-nmt-disclaimer">
-  <span>
-    <div class="ie-nmt-disclaimer-container">
-      <div class="ie-nmt-disclaimer-icon">
-        <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/it-it/bluexp-backup-recovery/images/sprite.svg#circle-info">
-        </svg>
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <svg class="luci-icon" aria-hidden="true">
+            <use xlink:href="/it-it/bluexp-backup-recovery/images/sprite.svg#circle-info">
+          </svg>
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="ie-nmt-disclaimer-content">
-        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
-      </div>
-      <div style="clear:both;"></div>
-    </div>
-  </span>
-</div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Montare i backup delle applicazioni</h1>
+    </span>
+  </div><div class="n-doc__component-detail-heading-wrap">
+  <h1 class="n-doc__component-detail-heading">Ripristinare i database Oracle nativi del cloud nella posizione originale</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 21:23:23 +0000">05/23/2023</time>
+    <time datetime="2023-07-04 19:39:17 +0000">07/04/2023</time>
     
   
 
@@ -1553,68 +1526,153 @@
 </p>
 
 <div class="paragraph lead">
-<p>Il backup e ripristino BlueXP per le applicazioni consentono di montare i backup Oracle e HANA sull&#8217;host alternativo.</p>
+<p>In caso di perdita di dati, è possibile ripristinare i file di dati, i file di controllo o entrambi nella posizione originale e quindi ripristinare il database.</p>
 </div>
 <div class="paragraph">
-<p>SnapCenter non supporta il ripristino di backup Oracle e HANA su host alternativo. Pertanto, viene fornita l&#8217;opzione di montaggio per montare i backup Oracle e HANA sull&#8217;host alternativo.</p>
-</div>
-<div class="paragraph">
-<p><strong>Fasi</strong></p>
+<div class="title">Prima di iniziare</div>
+<p>Se il database Oracle 21c è IN stato AVVIATO, l&#8217;operazione di ripristino non riesce. Eseguire il seguente comando per ripristinare correttamente il database.<br>
+<code>cp -f &lt;ORACLE_HOME&gt;/jdbc/lib/ojdbc8.jar /opt/NetApp/snapcenter/spl/plugins/sco/lib/ojdbc8-8.jar</code></p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Nell&#8217;interfaccia utente di BlueXP, fare clic su <strong>Protection</strong> &gt; <strong>Backup and Recovery</strong> &gt; <strong>Applications</strong>.</p>
+<p>Fare clic su <span class="image"><img src="./media/icon-action.png" alt="per selezionare l&#8217;azione"></span> Corrispondente al database che si desidera ripristinare e fare clic su <strong>Restore</strong> (Ripristina).</p>
 </li>
 <li>
-<p>Nel campo Filtra per, selezionare <strong>tipo</strong> e dal menu a discesa selezionare <strong>SAP HANA</strong> o <strong>Oracle</strong>.</p>
+<p>Selezionare il punto di ripristino in cui ripristinare il database e fare clic su <strong>Restore to original location</strong> (Ripristina posizione originale).</p>
 </li>
 <li>
-<p>Fare clic su <span class="image"><img src="./media/icon-action.png" alt="per selezionare l&#8217;azione"></span> Corrispondente all&#8217;applicazione protetta e selezionare <strong>Visualizza dettagli</strong>.</p>
-</li>
-<li>
-<p>Fare clic su <span class="image"><img src="./media/icon-action.png" alt="per selezionare l&#8217;azione"></span> Corrispondente al backup e selezionare <strong>Mount</strong>.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Specificare una delle seguenti opzioni:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Per l&#8217;ambiente NAS, specificare l&#8217;FQDN o l&#8217;indirizzo IP dell&#8217;host su cui esportare i volumi ripristinati dall&#8217;archivio di oggetti.</p>
-</li>
-<li>
-<p>Per l&#8217;ambiente SAN, specificare gli iniziatori dell&#8217;host a cui mappare le LUN dei volumi ripristinati dall&#8217;archivio di oggetti.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Specificare il suffisso che verrà aggiunto al nome del volume.</p>
-</li>
-<li>
-<p>Se lo snapshot si trova nello storage di archiviazione, specificare la priorità per recuperare i dati dallo storage di archiviazione.</p>
-</li>
-<li>
-<p>Fare clic su <strong>Mount</strong>.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
+<p>Nella sezione ambito ripristino, eseguire le seguenti operazioni:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Se&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Eseguire questa operazione&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ripristinare solo i file di dati</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>tutti i file di dati</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ripristinare solo i file di controllo</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>file di controllo</strong></p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ripristinare sia i file di dati che i file di controllo</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>tutti i file di dati</strong> e <strong>file di controllo</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>È inoltre possibile selezionare la casella di controllo <strong>Imponi ripristino in-place</strong>.</p>
 </div>
 <div class="paragraph">
-<p>Questa operazione consente di montare solo lo storage sull&#8217;host specificato. Si consiglia di montare manualmente il file system e di visualizzare il database. Dopo aver utilizzato il volume, l&#8217;amministratore dello storage può eliminare il volume dal cluster ONTAP.</p>
+<p>Nel layout di Amazon FSX per NetApp ONTAP o SAN Cloud Volumes ONTAP, se il plug-in SnapCenter per Oracle trova file esterni diversi dai file di dati Oracle sul gruppo di dischi ASM, viene eseguito il metodo di ripristino connessione e copia. I file esterni possono essere di uno o più dei seguenti tipi:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Per informazioni su come attivare il database Oracle, vedere <a href="https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications">"Articolo della Knowledge base"</a>.</p>
+<p>Parametro</p>
 </li>
 <li>
-<p>Per informazioni su come attivare il database SAP HANA, vedere <a href="https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-copy-workflow-with-snapcenter.html" target="_blank" rel="noopener">"TR-4667: Panoramica del workflow di copia del sistema SAP con SnapCenter"</a> e. <a href="https://docs.netapp.com/us-en/netapp-solutions-sap/lifecycle/sc-copy-clone-overview-of-sap-system-clone-workflow-with-snapcenter.html" target="_blank" rel="noopener">"TR-4667: Panoramica del workflow dei cloni di sistema SAP con SnapCenter"</a>.</p>
+<p>Password</p>
+</li>
+<li>
+<p>log di archiviazione</p>
+</li>
+<li>
+<p>log online</p>
+</li>
+<li>
+<p>File dei parametri ASM.</p>
+<div class="paragraph">
+<p>L&#8217;opzione <strong>Imponi ripristino in-place</strong> sovrascrive i file esterni di tipo parametro, password e log di archiviazione. Utilizzare il backup più recente quando è selezionata l&#8217;opzione <strong>Force in-place restore</strong> (forza ripristino in-place).</p>
+</div>
 </li>
 </ul>
+</div>
+</li>
+<li>
+<p>Nella sezione ambito ripristino, eseguire le seguenti operazioni:</p>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Se&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Eseguire questa operazione&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ripristinare l&#8217;ultima transazione</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>tutti i registri</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ripristinare un numero SCN (System Change Number) specifico</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>fino a SCN</strong> e specificare il numero SCN.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Ripristinare una data e un&#8217;ora specifiche</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>Data e ora</strong>.</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Non si desidera eseguire il ripristino</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Selezionare <strong>Nessun ripristino</strong>.</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Per l&#8217;ambito di ripristino selezionato, nel campo <strong>Archive Log Files Locations</strong> (posizioni file registro archivio) è possibile specificare la posizione che contiene i registri di archiviazione richiesti per il ripristino.</p>
+</div>
+<div class="paragraph">
+<p>Selezionare questa casella di controllo se si desidera aprire il database in modalità DI LETTURA/SCRITTURA dopo il ripristino.</p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Avanti</strong> e rivedere i dettagli.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Restore</strong> (Ripristina).</p>
+</li>
+</ol>
 </div>
 
     </article>

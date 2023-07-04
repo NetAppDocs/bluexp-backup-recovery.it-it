@@ -83,7 +83,7 @@
       head.appendChild(onetrustScript);
     }addConsent("72570c5c-fe30-465f-b0e0-b77f7fb4ae34");
     addAdobeLaunch("launch-e9ff3acac59f");
-    addGoogleAnalytics("UA-81697994-3");function OptanonWrapper() { }
+    addGoogleAnalytics("G-KYN6T440WN");function OptanonWrapper() { }
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
@@ -535,13 +535,13 @@
 
 
 
+
+
         </li>
       </ul>
     
 
   
-
-
 
 
         </li>
@@ -635,6 +635,31 @@
   
 
 
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" 
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/azure/sidebar/Ripristinare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf.png" alt="" width="16" height="16"/>
+            Ripristinare i database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
 
 
 
@@ -1051,14 +1076,14 @@
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-sql-data.html">
         Ripristinare il database di SQL Server
-      </a></li></ul></li><li 
+      </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Montare i backup delle applicazioni"
-      data-li-level="2#" 
+      data-pdf-filename="Ripristinare il database SAP HANA"
+      data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-mount-app-backup.html">
-        Montare i backup delle applicazioni
-      </a></li></ul></li><li 
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-hana-backup.html">
+        Ripristinare il database SAP HANA
+      </a></li></ul></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni native del cloud"
       data-li-level="1" 
@@ -1165,11 +1190,27 @@
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare i database Oracle nativi del cloud"
-      data-li-level="2#" 
+      data-li-level="2" 
+      class="subfolders "
+    ><a href="#">
+        <div class="na-navbar-padding"> Ripristinare i database Oracle nativi del cloud</div>
+      </a>
+      <ul style="display: none;">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare la posizione originale"
+      data-li-level="3#" 
       class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-oracle-data.html">
-        Ripristinare i database Oracle nativi del cloud
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-oracle-data-to-original-location.html">
+        Ripristinare la posizione originale
       </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare in una posizione alternativa"
+      data-li-level="3#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-cloud-native-oracle-data-to-alternate-location.html">
+        Ripristinare in una posizione alternativa
+      </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Ripristinare i database SAP HANA nativi del cloud"
       data-li-level="2#" 
@@ -1452,21 +1493,21 @@
   </div>
 </div>
 
-      <div class="ie-nmt-disclaimer">
-  <span>
-    <div class="ie-nmt-disclaimer-container">
-      <div class="ie-nmt-disclaimer-icon">
-        <svg class="luci-icon" aria-hidden="true">
-          <use xlink:href="/it-it/bluexp-backup-recovery/images/sprite.svg#circle-info">
-        </svg>
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <svg class="luci-icon" aria-hidden="true">
+            <use xlink:href="/it-it/bluexp-backup-recovery/images/sprite.svg#circle-info">
+          </svg>
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
       </div>
-      <div class="ie-nmt-disclaimer-content">
-        <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
-      </div>
-      <div style="clear:both;"></div>
-    </div>
-  </span>
-</div><div class="n-doc__component-detail-heading-wrap">
+    </span>
+  </div><div class="n-doc__component-detail-heading-wrap">
   <h1 class="n-doc__component-detail-heading">Gestire la protezione delle applicazioni</h1>
 </div>
 
@@ -1474,7 +1515,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 21:23:23 +0000">05/23/2023</time>
+    <time datetime="2023-07-04 19:39:17 +0000">07/04/2023</time>
     
   
 
@@ -1498,6 +1539,7 @@
 <p>È possibile visualizzare tutte le policy. Per ciascuno di questi criteri, quando si visualizzano i dettagli vengono elencate tutte le applicazioni associate.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
 <p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>applicazioni</strong>.</p>
@@ -1526,7 +1568,8 @@ Non è possibile modificare o eliminare un criterio associato a un&#8217;applica
 </ol>
 </div>
 <div class="paragraph">
-<p>È inoltre possibile visualizzare le policy SnapCenter estese nel cloud eseguendo <code>Get-SmResources</code> Cmdlet in SnapCenter. Le informazioni relative ai parametri che possono essere utilizzati con il cmdlet e le relative descrizioni possono essere ottenute eseguendo Get-Help command_name.</p>
+<p>È inoltre possibile visualizzare le policy SnapCenter estese nel cloud eseguendo <code>Get-SmResources</code> Cmdlet in SnapCenter.<br>
+Le informazioni relative ai parametri che possono essere utilizzati con il cmdlet e le relative descrizioni possono essere ottenute eseguendo Get-Help command name.</p>
 </div>
 </div>
 </div>
@@ -1537,6 +1580,7 @@ Non è possibile modificare o eliminare un criterio associato a un&#8217;applica
 <p>È possibile visualizzare i backup sul cloud nell&#8217;interfaccia utente di BlueXP.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
 <p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>applicazioni</strong>.</p>
@@ -1561,16 +1605,16 @@ Il tempo necessario per l&#8217;elenco dei backup dipende dalla pianificazione d
 <div class="ulist">
 <ul>
 <li>
-<p>Per i database Oracle, vengono elencati sia i backup dei dati che dei log, il numero di modifica del sistema (SCN) per ciascun backup e la data di fine di ciascun backup. È possibile selezionare solo il backup dei dati e ripristinare il database sul server SnapCenter on-premise.</p>
+<p>Per i database Oracle, vengono elencati sia i backup dei dati che dei log, il numero di modifica del sistema (SCN) per ciascun backup e la data di fine di ciascun backup. È possibile selezionare solo il backup dei dati e ripristinare il database nella posizione originale. È possibile montare il backup dei dati e il backup dei log in una posizione alternativa.</p>
 </li>
 <li>
-<p>Per i database Microsoft SQL Server, vengono elencati solo i backup completi e la data di fine di ciascun backup. È possibile selezionare il backup e ripristinare il database sul server SnapCenter on-premise.</p>
+<p>Per i database Microsoft SQL Server, vengono elencati solo i backup completi e la data di fine di ciascun backup. È possibile selezionare il backup e ripristinare il database nella posizione originale o alternativa.</p>
 </li>
 <li>
 <p>Per l&#8217;istanza di Microsoft SQL Server, vengono elencati i backup dei database in tale istanza.</p>
 </li>
 <li>
-<p>Per i database SAP HANA, vengono elencati solo i backup dei dati e la data di fine di ciascun backup. È possibile selezionare il backup ed eseguire l&#8217;operazione di montaggio.</p>
+<p>Per i database SAP HANA, vengono elencati solo i backup dei dati e la data di fine di ciascun backup. È possibile selezionare il backup ed eseguire l&#8217;esportazione dello storage su un determinato host.</p>
 </li>
 </ul>
 </div>
@@ -1587,7 +1631,36 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 </table>
 </div>
 <div class="paragraph">
-<p>È inoltre possibile visualizzare questi backup eseguendo il <code>Get-SmBackup</code> Cmdlet in SnapCenter. Le informazioni relative ai parametri che possono essere utilizzati con il cmdlet e le relative descrizioni possono essere ottenute eseguendo Get-Help command_name.</p>
+<p>È inoltre possibile visualizzare questi backup eseguendo il <code>Get-SmBackup</code> Cmdlet in SnapCenter.<br>
+Le informazioni relative ai parametri che possono essere utilizzati con il cmdlet e le relative descrizioni possono essere ottenute eseguendo Get-Help command name.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="disattivare-il-backup">Disattivare il backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>È possibile eliminare tutti i backup spostati nell&#8217;archivio di oggetti da SnapCenter e dall&#8217;archivio di oggetti.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>applicazioni</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <span class="image"><img src="./media/icon-action.png" alt="per selezionare l&#8217;azione"></span> Corrispondente all&#8217;applicazione e fare clic su Disattiva backup.</p>
+<div class="paragraph">
+<p>Per impostazione predefinita, la casella di controllo è selezionata ed elimina tutti i backup spostati nell&#8217;archivio di oggetti da SnapCenter e dall&#8217;archivio di oggetti.</p>
+</div>
+<div class="paragraph">
+<p>Se si deseleziona la casella di controllo, i backup vengono conservati solo nell&#8217;archivio di oggetti, ma non possono essere utilizzati per il ripristino a livello di applicazione. Successivamente, quando si attiva il backup per questa applicazione, i backup conservati nell&#8217;archivio di oggetti non vengono elencati per il ripristino.</p>
+</div>
+</li>
+<li>
+<p>Fare clic su <strong>Disattiva backup</strong>.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -1598,6 +1671,7 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 <p>Quando i volumi vengono aggiunti al database, il server SnapCenter assegna automaticamente le etichette agli snapshot sui nuovi volumi in base alla policy e alla pianificazione. Questi nuovi volumi non avranno l&#8217;endpoint dell&#8217;archivio di oggetti ed è necessario aggiornare i volumi eseguendo i seguenti passaggi:</p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
 <p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>applicazioni</strong>.</p>
@@ -1616,7 +1690,7 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 <div class="ulist">
 <ul>
 <li>
-<p>Se un volume di storage viene rimosso dall&#8217;applicazione dopo la configurazione del provider cloud, per i nuovi backup il server SnapCenter etichetterà le snapshot su cui risiede l&#8217;applicazione.</p>
+<p>Se un volume di storage viene aggiunto all&#8217;applicazione dopo la configurazione del provider cloud, il server SnapCenter etichetterà le snapshot per i nuovi backup su cui risiede l&#8217;applicazione.</p>
 </li>
 <li>
 <p>È necessario eliminare manualmente la relazione dell&#8217;archivio di oggetti se il volume rimosso non viene utilizzato da altre applicazioni.</p>
@@ -1638,6 +1712,7 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 <p>In caso di modifica del criterio SnapCenter o del gruppo di risorse, è necessario aggiornare la relazione di protezione.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
 <p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>applicazioni</strong>.</p>
@@ -1653,6 +1728,7 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 <h2 id="annullare-la-registrazione-del-server-snapcenter">Annullare la registrazione del server SnapCenter</h2>
 <div class="sectionbody">
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
 <p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>applicazioni</strong>.</p>
@@ -1662,6 +1738,12 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 </li>
 <li>
 <p>Fare clic su <span class="image"><img src="./media/icon-action.png" alt="per selezionare l&#8217;azione"></span> Corrispondente al server SnapCenter e fare clic su <strong>Annulla registrazione</strong>.</p>
+<div class="paragraph">
+<p>Per impostazione predefinita, la casella di controllo è selezionata ed elimina tutti i backup spostati nell&#8217;archivio di oggetti da SnapCenter e dall&#8217;archivio di oggetti.</p>
+</div>
+<div class="paragraph">
+<p>Se si deseleziona la casella di controllo, i backup vengono conservati solo nell&#8217;archivio di oggetti, ma non possono essere utilizzati per il ripristino a livello di applicazione. Successivamente, quando si attiva il backup per questa applicazione, i backup conservati nell&#8217;archivio di oggetti non vengono elencati per il ripristino.</p>
+</div>
 </li>
 </ol>
 </div>
@@ -1674,6 +1756,7 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 <p>I job vengono creati per tutte le operazioni di Cloud Backup. È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ciascuna attività.</p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
 <p>Fare clic su <strong>Backup and Recovery</strong> &gt; <strong>Job Monitoring</strong>.</p>
@@ -1692,65 +1775,134 @@ I backup creati prima di attivare la protezione cloud non sono elencati per il r
 <h2 id="configurare-i-certificati-ca">Configurare i certificati CA</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Se si dispone di certificati CA, è necessario copiare manualmente i certificati CA principali nel computer con connettore.</p>
+<p>È possibile configurare il certificato firmato dalla CA se si desidera includere ulteriore protezione nell&#8217;ambiente.</p>
+</div>
+<div class="sect2">
+<h3 id="configurare-il-certificato-firmato-dalla-ca-snapcenter-in-bluexp-connector">Configurare il certificato firmato dalla CA SnapCenter in BlueXP Connector</h3>
+<div class="paragraph">
+<p>È necessario configurare il certificato firmato dalla CA SnapCenter in BlueXP Connector in modo che il connettore possa verificare il certificato di SnapCenter.</p>
 </div>
 <div class="paragraph">
-<p><strong>Fasi</strong></p>
+<div class="title">Prima di iniziare</div>
+<p>Eseguire il seguente comando in BlueXP Connector per ottenere <em>&lt;base_mount_path&gt;</em>:<br>
+<code>sudo docker volume ls | grep snapcenter_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint</code></p>
 </div>
 <div class="olist arabic">
+<div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Copiare il certificato nel volume a cui è possibile accedere dall&#8217;agente di docker.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>cd /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/mkdir sc_certs</code></p>
+<p>Accedere al connettore.<br>
+<code>cd &lt;base_mount_path&gt; mkdir -p server/certificate</code></p>
 </li>
 <li>
-<p><code>chmod 777 sc_certs</code></p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Copiare i file dei certificati RootCA nella cartella sopra riportata sul computer con connettore.</p>
+<p>Copiare i file CA principali e intermedi nella directory <em>&lt;base_mount_path&gt;/server/certificate</em>.</p>
 <div class="paragraph">
-<p><code>cp &lt;path on connector&gt;/&lt;filename&gt; /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/sc_certs</code></p>
+<p>I file CA devono essere in formato .pem.</p>
 </div>
 </li>
 <li>
-<p>Copiare il file CRL nel volume a cui è possibile accedere dall&#8217;agente del docker.</p>
-<div class="ulist">
-<ul>
+<p>Se si dispone di file CRL, attenersi alla seguente procedura:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p><code>cd /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/mkdir sc_crl</code></p>
+<p><code>cd &lt;base_mount_path&gt; mkdir -p server/crl</code></p>
 </li>
 <li>
-<p><code>chmod 777 sc_crl</code></p>
+<p>Copiare i file CRL nella directory <em>&lt;base_mount_path&gt;/server/crl</em>.</p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
 <li>
-<p>Copiare i file CRL nella cartella sopra riportata sul computer con connettore.</p>
+<p>Connettersi a cloudmanager_snapcenter e modificare enableCACert in config.yml su true.<br>
+<code>sudo docker exec -t cloudmanager_snapcenter sed -i 's/enableCACert: false/enableCACert: true/g' /opt/netapp/cloudmanager-snapcenter/config/config.yml</code></p>
+</li>
+<li>
+<p>Riavviare il container Cloudmanager_snapcenter.<br>
+<code>sudo docker restart cloudmanager_snapcenter</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="configurare-il-certificato-firmato-dalla-ca-per-bluexp-connector">Configurare il certificato firmato dalla CA per BlueXP Connector</h3>
 <div class="paragraph">
-<p><code>cp &lt;path on connector&gt;/&lt;filename&gt; /var/lib/docker/volumes/cloudmanager_snapcenter_volume/_data/sc_crl</code></p>
+<p>Se il protocollo SSL bidirezionale è attivato in SnapCenter, attenersi alla seguente procedura sul connettore per utilizzare il certificato CA come certificato client quando il connettore si connette a SnapCenter.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prima di iniziare</div>
+<p>Eseguire il seguente comando per ottenere <em>&lt;base_mount_path&gt;</em>:<br>
+<code>sudo docker volume ls | grep snapcenter_volume | awk {'print $2'} | xargs sudo docker volume inspect | grep Mountpoint</code></p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Accedere al connettore.<br>
+<code>cd &lt;base_mount_path&gt; mkdir -p client/certificate</code></p>
+</li>
+<li>
+<p>Copiare il certificato e il file delle chiavi firmato dalla CA in <em>&lt;base_mount_path&gt;/client/certificate</em> nel connettore.</p>
+<div class="paragraph">
+<p>Il nome del file deve essere certificate.pem e key.pem. Il file certificate.pem deve avere l&#8217;intera catena dei certificati, ad esempio CA intermedia e CA principale.</p>
 </div>
 </li>
 <li>
-<p>Dopo aver copiato i certificati e i file CRL, riavviare il servizio Cloud Backup for Apps.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><code>sudo docker exec cloudmanager_snapcenter sed -i 's/skipSCCertValidation: true/skipSCCertValidation: false/g' /opt/netapp/cloudmanager-snapcenter-agent/config/config.yml</code></p>
+<p>Creare il formato PKCS12 del certificato con il nome certificate.p12 e mantenere l&#8217;indirizzo <em>&lt;base_mount_path&gt;/client/certificate</em>.</p>
+<div class="paragraph">
+<p>Esempio: openssl pkcs12 -inkey key.pem -in certificate.pem -export -out certificate.p12</p>
+</div>
 </li>
 <li>
-<p><code>sudo docker restart cloudmanager_snapcenter</code></p>
+<p>Connettersi a cloudmanager_snapcenter e modificare sendCACert in config.yml su true.<br>
+<code>sudo docker exec -t cloudmanager_snapcenter sed -i 's/sendCACert: false/sendCACert: true/g' /opt/netapp/cloudmanager-snapcenter/config/config.yml</code></p>
 </li>
-</ul>
+<li>
+<p>Riavviare il container Cloudmanager_snapcenter.<br>
+<code>sudo docker restart cloudmanager_snapcenter</code></p>
+</li>
+<li>
+<p>Per convalidare il certificato inviato dal connettore, eseguire le seguenti operazioni su SnapCenter.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Accedere all&#8217;host del server SnapCenter.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Start</strong> &gt; <strong>Avvia ricerca</strong>.</p>
+</li>
+<li>
+<p>Digitare mmc e premere <strong>Invio</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Sì</strong>.</p>
+</li>
+<li>
+<p>Nel menu file, fare clic su <strong>Aggiungi/Rimuovi snap-in</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <strong>certificati</strong> &gt; <strong>Aggiungi</strong> &gt; <strong>account computer</strong> &gt; <strong>Avanti</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <strong>computer locale</strong> &gt; <strong>fine</strong>.</p>
+</li>
+<li>
+<p>Se non si dispone di ulteriori snap-in da aggiungere alla console, fare clic su <strong>OK</strong>.</p>
+</li>
+<li>
+<p>Nella struttura della console, fare doppio clic su <strong>certificati</strong>.</p>
+</li>
+<li>
+<p>Fare clic con il pulsante destro del mouse sull&#8217;archivio <strong>Trusted Root Certification Authorities</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Import</strong> (Importa) per importare i certificati e seguire la procedura descritta in <strong>Certificate Import Wizard</strong> (importazione guidata certificati).</p>
+</li>
+</ol>
 </div>
 </li>
 </ol>
+</div>
 </div>
 </div>
 </div>

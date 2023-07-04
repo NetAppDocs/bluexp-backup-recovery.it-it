@@ -29,7 +29,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-clone-cloud-native-oracle-concepts.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -57,21 +57,21 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-protect-app-data-to-cloud.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-protect-cloud-app-data-to-cloud.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-protect-vm-data.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -155,49 +155,49 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery//search.html</loc>
       
-      <lastmod>2023-06-06T14:44:31+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:33+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-add-host-discover-oracle-databases.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-app-data-to-aws.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-app-data-to-azure.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-app-data-to-gcp.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-app-data-to-storagegrid.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-cloud-native-oracle-data.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -309,14 +309,14 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-clone-cloud-native-oracle-data.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-create-policies-apps.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -330,7 +330,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-deploy-snapcenter-plugin-for-sap-hana.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -351,7 +351,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-manage-app-backups.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -379,14 +379,14 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-manage-cloud-native-app-data.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-manage-vm-data-in-cloud.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -398,30 +398,23 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-mount-app-backup.html</loc>
-      
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
-      
-    </url>
-  
-    <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-quick-start-hana.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-quick-start-oracle.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-refresh-sap-hana-target-system.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -435,7 +428,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-register-snapcenter-server.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -461,30 +454,44 @@
     </url>
   
     <url>
-      <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data.html</loc>
+      <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-alternate-location.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html</loc>
+      
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-cloud-native-sap-hana-data.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-hana-backup.html</loc>
+      
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-oracle-data.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-sql-data.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
@@ -505,7 +512,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/whats-new.html</loc>
       
-      <lastmod>2023-06-06T14:44:13+00:00</lastmod>
+      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
       
     </url>
   
