@@ -36,7 +36,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-cloud-backup-policies.html</loc>
       
-      <lastmod>2023-06-05T20:37:30+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -50,7 +50,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html</loc>
       
-      <lastmod>2023-06-05T20:37:30+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -76,6 +76,13 @@
     </url>
   
     <url>
+      <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/concept-protection-journey.html</loc>
+      
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
+      
+    </url>
+  
+    <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/</loc>
       
       <lastmod>2023-05-23T21:23:23+00:00</lastmod>
@@ -92,7 +99,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/reference-aws-backup-tiers.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -155,7 +162,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery//search.html</loc>
       
-      <lastmod>2023-07-04T19:39:33+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:37+00:00</lastmod>
       
     </url>
   
@@ -232,49 +239,49 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-private-cloud.html</loc>
       
-      <lastmod>2023-06-05T20:37:30+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-aws.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-azure.html</loc>
       
-      <lastmod>2023-06-06T14:44:13+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-to-azure.html</loc>
       
-      <lastmod>2023-06-06T14:44:13+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-to-gcp.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-to-s3.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -344,7 +351,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -358,7 +365,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-manage-backup-settings-ontap.html</loc>
       
-      <lastmod>2023-05-23T21:23:23+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -372,7 +379,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-manage-backups-ontap.html</loc>
       
-      <lastmod>2023-06-06T14:44:13+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -393,7 +400,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-monitor-backup-jobs.html</loc>
       
-      <lastmod>2023-06-05T20:37:30+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -449,7 +456,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html</loc>
       
-      <lastmod>2023-05-31T14:26:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   
@@ -512,7 +519,7 @@
     <url>
       <loc>https://docs.netapp.com/it-it/bluexp-backup-recovery/whats-new.html</loc>
       
-      <lastmod>2023-07-04T19:39:17+00:00</lastmod>
+      <lastmod>2023-07-06T13:17:21+00:00</lastmod>
       
     </url>
   

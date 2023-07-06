@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="it">
   <head class="at-element-marker">
-  <title>Backup dei dati ONTAP on-premise su Google Cloud Storage | NetApp Documentation</title>
+  <title>Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Backup dei dati ONTAP on-premise su Google Cloud Storage | NetApp Documentation" />
+  <meta property="og:title" content="Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
-	<meta property="og:description" content="Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise allo storage cloud Google." />
+	<meta property="og:description" content="Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise a un sistema di storage secondario e a Google Clo..." />
   <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise allo storage cloud Google.">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise a un sistema di storage secondario e a Google Clo...">
   <meta name="keywords" content=" backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, gcp, google cloud"><!-- Icons -->
   <link rel="icon" href="/it-it/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
 
@@ -211,7 +211,7 @@
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html&page-title=Backup dei dati ONTAP on-premise su Google Cloud Storage" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-backup-onprem-to-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-backup-recovery/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html&page-title=Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-backup-onprem-to-gcp.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-backup-recovery/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">IN QUESTA PAGINA</div>
@@ -452,6 +452,8 @@
             Backup e ripristino dei dati ONTAP
           </a>
           
+
+
 
 
 
@@ -962,6 +964,13 @@
         Proteggi i dati del tuo volume ONTAP
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Google Cloud"
       data-li-level="2#" 
       class=" "
@@ -990,18 +999,18 @@
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/task-manage-backup-settings-ontap.html">
-        Gestire le impostazioni di backup a livello di cluster
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
@@ -1443,14 +1452,14 @@
       </div>
     </span>
   </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Backup dei dati ONTAP on-premise su Google Cloud Storage</h1>
+  <h1 class="n-doc__component-detail-heading">Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 14:26:17 +0000">05/31/2023</time>
+    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
     
   
 
@@ -1463,10 +1472,19 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise allo storage cloud Google.</p>
+<p>Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP primari on-premise su un sistema di storage secondario e su Google Cloud Storage.</p>
 </div>
-<div class="paragraph">
-<p>I "sistemi ONTAP on-premise" includono i sistemi FAS, AFF e ONTAP Select.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1474,86 +1492,70 @@
 <h2 id="avvio-rapido">Avvio rapido</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Inizia subito seguendo questi passaggi o scorri verso il basso fino alle sezioni rimanenti per ottenere dettagli completi.</p>
-</div>
-<div class="ulist quick-margin-list">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Uno"></span> Verificare il supporto per la configurazione</div>
-<ul>
-<li>
-<p>Il cluster on-premise è stato scoperto e aggiunto come ambiente di lavoro in BlueXP. Vedere <a href="https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Alla scoperta dei cluster ONTAP"</a> per ulteriori informazioni.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Il cluster esegue ONTAP 9.7P5 o versione successiva (si consiglia ONTAP 9.8P13 e versione successiva).</p>
-</li>
-<li>
-<p>Il cluster dispone di una licenza SnapMirror, inclusa nel Premium Bundle o nel Data Protection Bundle.</p>
-</li>
-<li>
-<p>Il cluster deve disporre delle connessioni di rete necessarie allo storage Google e al connettore.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Il connettore deve disporre delle connessioni di rete necessarie allo storage Google e al cluster.</p>
-</li>
-<li>
-<p>Si dispone di un abbonamento Google valido per lo spazio di storage a oggetti in cui verranno posizionati i backup.</p>
-</li>
-<li>
-<p>Si dispone di un account Google con una chiave di accesso e una chiave segreta per consentire al cluster ONTAP di eseguire il backup e il ripristino dei dati.</p>
-</li>
-</ul>
+<p>Inizia subito seguendo questa procedura. I dettagli di ciascuna fase sono forniti nelle sezioni seguenti di questo argomento.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Due"></span> Abilitare il backup e il ripristino BlueXP sul sistema</div>
-<p>Selezionare l&#8217;ambiente di lavoro e fare clic su <strong>Enable &gt; Backup Volumes</strong> (Abilita &gt; volumi di backup) accanto al servizio di backup e ripristino nel pannello di destra, quindi seguire la procedura di installazione guidata.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Uno"></span> Identificare il metodo di connessione da utilizzare</div>
+<p>Scegliere se connettere il cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzare una VPN o un&#8217;interconnessione cloud di Google e instradare il traffico attraverso un&#8217;interfaccia privata di Google Access che utilizza un indirizzo IP privato.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p><span class="image"><img src="./media/screenshot_backup_onprem_enable.png" alt="Una schermata che mostra il pulsante di abilitazione del backup e ripristino, disponibile dopo aver selezionato un ambiente di lavoro."></span></p>
+<p><a href="#identificare-il-metodo-di-connessione">Identificare il metodo di connessione</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Tre"></span> Selezionare il provider di servizi cloud e immettere i dettagli del provider</div>
-<p>Selezionare Google Cloud come provider, quindi inserire i dettagli del provider. È necessario specificare IPSpace nel cluster ONTAP in cui risiedono i volumi. È inoltre possibile scegliere le chiavi gestite dal cliente per la crittografia dei dati invece di utilizzare la chiave di crittografia predefinita gestita da Google.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Due"></span> Preparare il connettore BlueXP</div>
+<p>Se hai già un connettore implementato in Google Cloud o on-premise, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a Google Cloud.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p><span class="image"><img src="./media/screenshot_backup_onprem_to_google.png" alt="Una schermata che mostra i dettagli del cloud provider quando si esegue il backup dei volumi da un sistema ONTAP on-premise a un bucket di storage cloud Google."></span></p>
+<p><a href="#preparare-il-connettore-bluexp">Scopri come creare un connettore e come definire le impostazioni di rete richieste.</a></p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quattro"></span> Definire il criterio di backup predefinito</div>
-<p>Il criterio predefinito esegue il backup dei volumi ogni giorno e conserva le 30 copie di backup più recenti di ciascun volume. Passare a backup orari, giornalieri, settimanali, mensili o annuali, in alternativa, selezionare una delle policy definite dal sistema che fornisca più opzioni. È inoltre possibile modificare il numero di copie di backup che si desidera conservare.</p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Tre"></span> Verificare i requisiti di licenza</div>
+<p>È necessario verificare i requisiti di licenza per Google Cloud e BlueXP.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p>Per impostazione predefinita, i backup vengono memorizzati nello storage standard. Se il cluster utilizza ONTAP 9.12.1 o versione successiva, è possibile scegliere di eseguire il tiering dei backup sullo storage di Google Archive dopo un certo numero di giorni per un&#8217;ulteriore ottimizzazione dei costi. <a href="concept-cloud-backup-policies.html" target="_blank" rel="noopener">"Scopri di più sulle impostazioni di configurazione dei criteri di backup e ripristino di BlueXP disponibili"</a>.</p>
+<p>Fare riferimento a. <a href="#verificare-i-requisiti-di-licenza">Verificare i requisiti di licenza</a>.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<p><span class="image"><img src="./media/screenshot_backup_policy_gcp.png" alt="Una schermata che mostra le impostazioni di backup e ripristino di BlueXP in cui è possibile scegliere la pianificazione e il periodo di conservazione del backup."></span></p>
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quattro"></span> Preparare i cluster ONTAP</div>
+<p>Scopri i tuoi cluster ONTAP in BlueXP, verifica che soddisfino i requisiti minimi e personalizza le impostazioni di rete in modo che i cluster possano connettersi a Google Cloud.</p>
 </div>
 <div class="paragraph quick-margin-para">
-<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Cinque"></span> Selezionare i volumi di cui si desidera eseguire il backup</div>
-<p>Identificare i volumi di cui si desidera eseguire il backup utilizzando il criterio di backup predefinito nella pagina Select Volumes (Seleziona volumi). Se si desidera assegnare criteri di backup diversi a determinati volumi, è possibile creare criteri aggiuntivi e applicarli ai volumi in un secondo momento.</p>
+<p><a href="#preparare-i-cluster-ontap">Scopri come preparare i cluster ONTAP.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Cinque"></span> Prepara Google Cloud come destinazione per il backup</div>
+<p>Impostare le autorizzazioni per il connettore per creare e gestire il bucket Azure. È inoltre necessario impostare le autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket Azure.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p>In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Azure. <a href="#Preparare Azure Blob come destinazione di backup">Scopri come preparare il tuo ambiente Azure per ricevere i backup di ONTAP.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png" alt="Sei"></span> Attivare i backup sui volumi ONTAP</div>
+<p>Selezionare l&#8217;ambiente di lavoro e fare clic su <strong>Enable &gt; Backup Volumes</strong> (Abilita &gt; volumi di backup) accanto al servizio di backup e ripristino nel pannello di destra. Quindi, seguire la procedura di installazione guidata per selezionare i criteri di replica e backup da utilizzare e i volumi di cui si desidera eseguire il backup.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#attivare-i-backup-sui-volumi-ontap">Attivare i backup sui volumi ONTAP</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="requisiti">Requisiti</h2>
+<h2 id="identificare-il-metodo-di-connessione">Identificare il metodo di connessione</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione supportata prima di iniziare il backup dei volumi on-premise sullo storage Google Cloud.</p>
-</div>
-<div class="paragraph">
-<p>Esistono due metodi di connessione che è possibile utilizzare per la configurazione dei backup dai sistemi ONTAP on-premise allo storage cloud Google.</p>
+<p>Scegliere quale dei due metodi di connessione utilizzare per la configurazione dei backup dai sistemi ONTAP on-premise allo storage cloud Google.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Connessione pubblica: Consente di connettere direttamente il sistema ONTAP allo storage cloud di Google utilizzando un endpoint pubblico di Google.</p>
+<p><strong>Connessione pubblica</strong> - consente di connettere direttamente il sistema ONTAP allo storage cloud di Google utilizzando un endpoint pubblico di Google.</p>
 </li>
 <li>
-<p>Connessione privata - utilizza una VPN o Google Cloud Interconnect e instrada il traffico attraverso un&#8217;interfaccia privata di Google Access che utilizza un indirizzo IP privato.</p>
+<p><strong>Connessione privata</strong> - utilizza una VPN o Google Cloud Interconnect e instrada il traffico attraverso un&#8217;interfaccia privata di Google Access che utilizza un indirizzo IP privato.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>In alternativa, è possibile connettersi a un sistema ONTAP secondario per i volumi replicati utilizzando anche la connessione pubblica o privata.</p>
 </div>
 <div class="paragraph">
 <p>Il seguente diagramma mostra il metodo <strong>connessione pubblica</strong> e le connessioni che è necessario preparare tra i componenti. Il connettore deve essere implementato in Google Cloud Platform VPC.</p>
@@ -1567,24 +1569,185 @@
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram_cloud_backup_onprem_gcp_private.png" alt="Un diagramma che mostra come il backup e ripristino BlueXP comunica tramite una connessione privata con i volumi sul cluster e lo storage Google Cloud in cui si trovano i file di backup."></span></p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-il-connettore-bluexp">Preparare il connettore BlueXP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>BlueXP Connector è il software principale per la funzionalità BlueXP. Per eseguire il backup e il ripristino dei dati ONTAP è necessario un connettore.</p>
+</div>
 <div class="sect2">
-<h3 id="preparazione-dei-cluster-ontap">Preparazione dei cluster ONTAP</h3>
+<h3 id="creare-o-cambiare-connettori">Creare o cambiare connettori</h3>
 <div class="paragraph">
-<p>Prima di avviare il backup dei dati dei volumi, è necessario individuare i cluster ONTAP on-premise in BlueXP.</p>
+<p>Se hai già un connettore implementato nel tuo VPC Google Cloud Platform, allora sei tutto impostato.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Scopri come individuare un cluster"</a>.</p>
+<p>In caso contrario, sarà necessario creare un connettore in tale posizione per eseguire il backup dei dati ONTAP su Google Cloud Storage. Non puoi utilizzare un connettore implementato in un altro cloud provider o on-premise.</p>
 </div>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Requisiti ONTAP</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Minimo di ONTAP 9.7P5; si consiglia ONTAP 9.8P13 e versioni successive.</p>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"Scopri di più sui connettori"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html" target="_blank" rel="noopener">"Installare un connettore nel GCP"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-il-collegamento-in-rete-per-il-connettore">Preparare il collegamento in rete per il connettore</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Assicurarsi che il connettore disponga delle connessioni di rete richieste.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una connessione HTTPS tramite la porta 443 al servizio di backup e ripristino BlueXP e allo storage Google Cloud (<a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations" target="_blank" rel="noopener">"vedere l&#8217;elenco degli endpoint"</a>)</p>
+</li>
+<li>
+<p>Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Abilitare Private Google Access (o Private Service Connect) sulla subnet in cui si intende implementare il connettore. <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">"Accesso privato a Google"</a> oppure <a href="https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises" target="_blank" rel="noopener">"Connessione al servizio privato"</a> Sono necessari se si dispone di una connessione diretta dal cluster ONTAP al VPC e si desidera che la comunicazione tra il connettore e lo storage cloud di Google rimanga nella rete privata virtuale (una connessione <strong>privata</strong>).</p>
+<div class="paragraph">
+<p>Seguire le istruzioni di Google per configurare queste opzioni di accesso privato. Assicurarsi che i server DNS siano configurati in modo da puntare <code>www.googleapis.com</code> e. <code>storage.googleapis.com</code> Agli indirizzi IP interni (privati) corretti.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="verificare-o-aggiungere-le-autorizzazioni-al-connettore">Verificare o aggiungere le autorizzazioni al connettore</h3>
+<div class="paragraph">
+<p>Per utilizzare la funzionalità di backup e ripristino di BlueXP, è necessario disporre di autorizzazioni specifiche nel ruolo del connettore in modo che possa accedere al servizio Google Cloud BigQuery. Esaminare le autorizzazioni riportate di seguito e seguire la procedura per modificare il criterio.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>In <a href="https://console.cloud.google.com" target="_blank" rel="noopener">"Console Google Cloud"</a>, Accedere alla pagina <strong>ruoli</strong>.</p>
+</li>
+<li>
+<p>Utilizzando l&#8217;elenco a discesa nella parte superiore della pagina, selezionare il progetto o l&#8217;organizzazione che contiene il ruolo che si desidera modificare.</p>
+</li>
+<li>
+<p>Selezionare un ruolo personalizzato.</p>
+</li>
+<li>
+<p>Selezionare <strong>Edit role</strong> (Modifica ruolo) per aggiornare le autorizzazioni del ruolo.</p>
+</li>
+<li>
+<p>Selezionare <strong>Add Permissions</strong> (Aggiungi permessi) per aggiungere le seguenti nuove autorizzazioni al ruolo.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">bigquery.jobs.get
+bigquery.jobs.list
+bigquery.jobs.listAll
+bigquery.datasets.create
+bigquery.datasets.get
+bigquery.jobs.create
+bigquery.tables.get
+bigquery.tables.getData
+bigquery.tables.list
+bigquery.tables.create</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Aggiorna</strong> per salvare il ruolo modificato.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verificare-i-requisiti-di-licenza">Verificare i requisiti di licenza</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Prima di poter attivare il backup e il ripristino BlueXP per il cluster, è necessario sottoscrivere un&#8217;offerta PayGo BlueXP Marketplace di Google oppure acquistare e attivare una licenza BYOL di backup e ripristino BlueXP da NetApp. Queste licenze sono destinate al tuo account e possono essere utilizzate su più sistemi.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Per le licenze PAYGO di backup e ripristino BlueXP, è necessario un abbonamento a <a href="https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project" target="_blank" rel="noopener">"Offerta NetApp BlueXP di Google Marketplace"</a>. La fatturazione per il backup e il ripristino BlueXP viene effettuata tramite questo abbonamento.</p>
+</li>
+<li>
+<p>Per le licenze BYOL di backup e ripristino BlueXP, è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. <a href="task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license">"Scopri come gestire le tue licenze BYOL"</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>È necessario disporre di un abbonamento Google per lo spazio di storage a oggetti in cui verranno posizionati i backup.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Regioni supportate</strong></p>
+</div>
+<div class="paragraph">
+<p>Puoi creare backup da sistemi on-premise a Google Cloud Storage in tutte le regioni <a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">"Dove è supportato Cloud Volumes ONTAP"</a>. Specificare la regione in cui verranno memorizzati i backup quando si imposta il servizio.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-i-cluster-ontap">Preparare i cluster ONTAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dovrai preparare il tuo sistema ONTAP on-premise di origine e qualsiasi altro sistema ONTAP o Cloud Volumes ONTAP secondario on-premise.</p>
+</div>
+<div class="paragraph">
+<p>La preparazione dei cluster ONTAP prevede i seguenti passaggi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Scopri i tuoi sistemi ONTAP in BlueXP</p>
+</li>
+<li>
+<p>Verificare i requisiti di sistema di ONTAP</p>
+</li>
+<li>
+<p>Verificare i requisiti di rete di ONTAP per il backup dei dati nello storage a oggetti</p>
+</li>
+<li>
+<p>Verificare i requisiti di rete di ONTAP per la replica dei volumi</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="scopri-i-tuoi-sistemi-ontap-in-bluexp">Scopri i tuoi sistemi ONTAP in BlueXP</h3>
+<div class="paragraph">
+<p>Il sistema ONTAP di origine on-premise e qualsiasi sistema ONTAP o Cloud Volumes ONTAP secondario on-premise devono essere disponibili su BlueXP Canvas.</p>
+</div>
+<div class="paragraph">
+<p>Per aggiungere il cluster, è necessario conoscere l&#8217;indirizzo IP di gestione del cluster e la password dell&#8217;account utente amministratore.<br>
+<a href="https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Scopri come individuare un cluster"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verificare-i-requisiti-di-sistema-di-ontap">Verificare i requisiti di sistema di ONTAP</h3>
+<div class="paragraph">
+<p>Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Almeno ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.</p>
 </li>
 <li>
 <p>Una licenza SnapMirror (inclusa nel Premium Bundle o nel Data Protection Bundle).</p>
@@ -1596,24 +1759,39 @@
 </div>
 </li>
 <li>
-<p>L&#8217;ora e il fuso orario sono impostati correttamente.</p>
+<p>L&#8217;ora e il fuso orario sono impostati correttamente. Scopri come <a href="https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html" target="_blank" rel="noopener">"configurare l&#8217;ora del cluster"</a>.</p>
+</li>
+<li>
+<p>Se si intende replicare i dati, è necessario verificare che i volumi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.</p>
 <div class="paragraph">
-<p>Scopri come <a href="https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html" target="_blank" rel="noopener">"configurare l&#8217;ora del cluster"</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html" target="_blank" rel="noopener">"Visualizza le versioni di ONTAP compatibili per le relazioni SnapMirror"</a>.</p>
 </div>
 </li>
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="verificare-i-requisiti-di-rete-di-ontap-per-il-backup-dei-dati-nello-storage-a-oggetti">Verificare i requisiti di rete di ONTAP per il backup dei dati nello storage a oggetti</h3>
+<div class="paragraph">
+<p>È necessario configurare i seguenti requisiti sul sistema che si connette allo storage a oggetti.</p>
 </div>
-</dd>
-<dt class="hdlist1">Requisiti di rete del cluster</dt>
-<dd>
-<div class="openblock">
-<div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Il cluster ONTAP avvia una connessione HTTPS sulla porta 443 dalla LIF dell&#8217;intercluster allo storage Google Cloud per le operazioni di backup e ripristino.</p>
+<p>Per un&#8217;architettura di backup fan-out, configurare le seguenti impostazioni sul sistema <em>primario</em>.</p>
+</li>
+<li>
+<p>Per un&#8217;architettura di backup a cascata, configurare le seguenti impostazioni sul sistema <em>secondario</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sono necessari i seguenti requisiti di rete del cluster ONTAP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Il cluster ONTAP avvia una connessione HTTPS sulla porta 443 dalla LIF dell&#8217;intercluster allo storage cloud di Google per le operazioni di backup e ripristino.</p>
 <div class="paragraph">
 <p>ONTAP legge e scrive i dati da e verso lo storage a oggetti. Lo storage a oggetti non viene mai avviato, ma risponde.</p>
 </div>
@@ -1645,102 +1823,57 @@
 </ul>
 </div>
 </div>
-</div>
-</dd>
-</dl>
-</div>
-</div>
 <div class="sect2">
-<h3 id="creazione-o-commutazione-di-connettori">Creazione o commutazione di connettori</h3>
+<h3 id="verificare-i-requisiti-di-rete-di-ontap-per-la-replica-dei-volumi">Verificare i requisiti di rete di ONTAP per la replica dei volumi</h3>
 <div class="paragraph">
-<p>Se hai già un connettore implementato nel tuo VPC Google Cloud Platform, allora sei tutto impostato. In caso contrario, sarà necessario creare un connettore in tale posizione per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Non puoi utilizzare un connettore implementato in un altro cloud provider o on-premise.</p>
+<p>Prima di attivare i backup in BlueXP backup e recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino la versione di ONTAP e i requisiti di rete.</p>
 </div>
+<div class="sect3">
+<h4 id="requisiti-di-rete-cloud-volumes-ontap">Requisiti di rete Cloud Volumes ONTAP</h4>
+<div class="paragraph">
+<p>Il gruppo di protezione dell&#8217;istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="requisiti-di-rete-ontap-on-premise">Requisiti di rete ONTAP on-premise</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"Scopri di più sui connettori"</a></p>
+<p>Se il cluster è on-premise, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel provider di servizi cloud. Si tratta in genere di una connessione VPN.</p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html" target="_blank" rel="noopener">"Installazione di un connettore in GCP"</a></p>
+<p>I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.</p>
+<div class="paragraph">
+<p>Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. Fare riferimento a. <a href="https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html" target="_blank" rel="noopener">"Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"</a>.</p>
+</div>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="preparazione-del-collegamento-in-rete-per-il-connettore">Preparazione del collegamento in rete per il connettore</h3>
-<div class="paragraph">
-<p>Assicurarsi che il connettore disponga delle connessioni di rete richieste.</p>
 </div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:</p>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-google-cloud-storage-come-destinazione-di-backup">Preparare Google Cloud Storage come destinazione di backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La preparazione di Google Cloud Storage come destinazione di backup prevede i seguenti passaggi:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>Una connessione HTTPS tramite la porta 443 al servizio di backup e ripristino BlueXP e allo storage Google Cloud (<a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations" target="_blank" rel="noopener">"vedere l&#8217;elenco degli endpoint"</a>)</p>
+<p>Impostare le autorizzazioni.</p>
 </li>
 <li>
-<p>Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP</p>
+<p>(Facoltativo) Crea i tuoi bucket. (Il servizio creerà i bucket per te, se lo desideri).</p>
+</li>
+<li>
+<p>(Facoltativo) impostare le chiavi gestite dal cliente per la crittografia dei dati</p>
 </li>
 </ul>
 </div>
-</li>
-<li>
-<p>Abilitare Private Google Access (o Private Service Connect) sulla subnet in cui si intende implementare il connettore. <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">"Accesso privato a Google"</a> oppure <a href="https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises" target="_blank" rel="noopener">"Connessione al servizio privato"</a> Sono necessari se si dispone di una connessione diretta dal cluster ONTAP al VPC e si desidera che la comunicazione tra il connettore e lo storage cloud di Google rimanga nella rete privata virtuale (una connessione <strong>privata</strong>).</p>
-<div class="paragraph">
-<p>Seguire le istruzioni di Google per configurare queste opzioni di accesso privato. Assicurarsi che i server DNS siano configurati in modo da puntare <code>www.googleapis.com</code> e. <code>storage.googleapis.com</code> Agli indirizzi IP interni (privati) corretti.</p>
-</div>
-</li>
-</ol>
-</div>
-</div>
 <div class="sect2">
-<h3 id="verificare-o-aggiungere-le-autorizzazioni-al-connettore">Verificare o aggiungere le autorizzazioni al connettore</h3>
-<div class="paragraph">
-<p>Per utilizzare la funzionalità di backup e ripristino di BlueXP, è necessario disporre di autorizzazioni specifiche nel ruolo del connettore in modo che possa accedere al servizio Google Cloud BigQuery. Consultare le autorizzazioni riportate di seguito e seguire la procedura per modificare il criterio.</p>
-</div>
-<div class="olist arabic">
-<div class="title">Fasi</div>
-<ol class="arabic">
-<li>
-<p>In <a href="https://console.cloud.google.com" target="_blank" rel="noopener">"Console Google Cloud"</a>, Accedere alla pagina <strong>ruoli</strong>.</p>
-</li>
-<li>
-<p>Utilizzando l&#8217;elenco a discesa nella parte superiore della pagina, selezionare il progetto o l&#8217;organizzazione che contiene il ruolo che si desidera modificare.</p>
-</li>
-<li>
-<p>Fare clic su un ruolo personalizzato.</p>
-</li>
-<li>
-<p>Fare clic su <strong>Edit role</strong> (Modifica ruolo) per aggiornare le autorizzazioni del ruolo.</p>
-</li>
-<li>
-<p>Fare clic su <strong>Add Permissions</strong> (Aggiungi autorizzazioni) per aggiungere le seguenti nuove autorizzazioni al ruolo.</p>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">bigquery.jobs.get
-bigquery.jobs.list
-bigquery.jobs.listAll
-bigquery.datasets.create
-bigquery.datasets.get
-bigquery.jobs.create
-bigquery.tables.get
-bigquery.tables.getData
-bigquery.tables.list
-bigquery.tables.create</code></pre>
-</div>
-</div>
-</li>
-<li>
-<p>Fare clic su <strong>Update</strong> (Aggiorna) per salvare il ruolo modificato.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="preparazione-di-google-cloud-storage-per-i-backup">Preparazione di Google Cloud Storage per i backup</h3>
+<h3 id="impostare-le-autorizzazioni">Impostare le autorizzazioni</h3>
 <div class="paragraph">
 <p>Quando si imposta il backup, è necessario fornire chiavi di accesso allo storage per un account di servizio che dispone di autorizzazioni specifiche. Un account di servizio consente il backup e il recovery di BlueXP per autenticare e accedere ai bucket Cloud Storage utilizzati per memorizzare i backup. Le chiavi sono necessarie in modo che Google Cloud Storage sappia chi sta effettuando la richiesta.</p>
 </div>
@@ -1776,7 +1909,7 @@ storage.objects.update</code></pre>
 <p>Seleziona il tuo progetto Cloud.</p>
 </li>
 <li>
-<p>Fare clic su <strong>Create service account</strong> (Crea account servizio) e fornire le informazioni richieste:</p>
+<p>Selezionare <strong>Crea account servizio</strong> e fornire le informazioni richieste:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1786,7 +1919,7 @@ storage.objects.update</code></pre>
 <p><strong>Consenti a questo account di servizio l&#8217;accesso al progetto</strong>: Seleziona il ruolo personalizzato appena creato.</p>
 </li>
 <li>
-<p>Fare clic su <strong>fine</strong>.</p>
+<p>Selezionare <strong>fine</strong>.</p>
 </li>
 </ol>
 </div>
@@ -1796,10 +1929,10 @@ storage.objects.update</code></pre>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Selezionare un progetto e fare clic su <strong>interoperabilità</strong>. Se non è già stato fatto, fare clic su <strong>Enable Interoperability access</strong> (attiva accesso all&#8217;interoperabilità).</p>
+<p>Selezionare un progetto e scegliere <strong>interoperabilità</strong>. Se non è già stato fatto, selezionare <strong>Enable Interoperability access</strong> (attiva accesso all&#8217;interoperabilità).</p>
 </li>
 <li>
-<p>In <strong>chiavi di accesso per gli account di servizio</strong>, fare clic su <strong>Crea una chiave per un account di servizio</strong>, selezionare l&#8217;account di servizio appena creato e fare clic su <strong>Crea chiave</strong>.</p>
+<p>In <strong>chiavi di accesso per gli account di servizio</strong>, selezionare <strong>Crea una chiave per un account di servizio</strong>, selezionare l&#8217;account di servizio appena creato e fare clic su <strong>Crea chiave</strong>.</p>
 <div class="paragraph">
 <p>Quando si configura il servizio di backup, sarà necessario inserire le chiavi in BlueXP backup and Recovery in un secondo momento.</p>
 </div>
@@ -1809,10 +1942,20 @@ storage.objects.update</code></pre>
 </li>
 </ol>
 </div>
-<div class="sect3">
-<h4 id="utilizzo-delle-chiavi-di-crittografia-gestite-dal-cliente-cmek">Utilizzo delle chiavi di crittografia gestite dal cliente (CMEK)</h4>
+</div>
+<div class="sect2">
+<h3 id="crea-i-tuoi-bucket">Crea i tuoi bucket</h3>
 <div class="paragraph">
-<p>È possibile utilizzare le proprie chiavi gestite dal cliente per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite gestite da Google. Sono supportate sia le chiavi cross-region che cross-project, in modo da poter scegliere un progetto per un bucket diverso dal progetto della chiave CMEK. Se stai pensando di utilizzare le tue chiavi gestite dal cliente:</p>
+<p>Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="impostare-le-chiavi-di-crittografia-gestite-dal-cliente-cmek-per-la-crittografia-dei-dati">Impostare le chiavi di crittografia gestite dal cliente (CMEK) per la crittografia dei dati</h3>
+<div class="paragraph">
+<p>È possibile utilizzare le proprie chiavi gestite dal cliente per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite gestite da Google. Sono supportate sia le chiavi cross-region che cross-project, in modo da poter scegliere un progetto per un bucket diverso dal progetto della chiave CMEK.</p>
+</div>
+<div class="paragraph">
+<p>Se stai pensando di utilizzare le tue chiavi gestite dal cliente:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1863,132 +2006,384 @@ cloudkms.keyRings.setIamPolicy</code></pre>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="verificare-i-requisiti-di-licenza">Verificare i requisiti di licenza</h3>
-<div class="ulist">
-<ul>
-<li>
-<p>Prima di poter attivare il backup e il ripristino BlueXP per il cluster, è necessario sottoscrivere un&#8217;offerta PayGo BlueXP Marketplace di Google oppure acquistare e attivare una licenza BYOL di backup e ripristino BlueXP da NetApp. Queste licenze sono destinate al tuo account e possono essere utilizzate su più sistemi.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Per le licenze PAYGO di backup e ripristino BlueXP, è necessario un abbonamento a <a href="https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project" target="_blank" rel="noopener">"Offerta NetApp BlueXP di Google Marketplace"</a>. La fatturazione per il backup e il ripristino BlueXP viene effettuata tramite questo abbonamento.</p>
-</li>
-<li>
-<p>Per le licenze BYOL di backup e ripristino BlueXP, è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. <a href="task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license">"Scopri come gestire le tue licenze BYOL"</a>.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>È necessario disporre di un abbonamento Google per lo spazio di storage a oggetti in cui verranno posizionati i backup.</p>
-<div class="paragraph">
-<p>Puoi creare backup da sistemi on-premise a Google Cloud Storage in tutte le regioni <a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">"Dove è supportato Cloud Volumes ONTAP"</a>. Specificare la regione in cui verranno memorizzati i backup quando si imposta il servizio.</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
 </div>
 <div class="sect1">
-<h2 id="attivazione-del-backup-e-ripristino-bluexp">Attivazione del backup e ripristino BlueXP</h2>
+<h2 id="attivare-i-backup-sui-volumi-ontap">Attivare i backup sui volumi ONTAP</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Abilita backup e ripristino BlueXP in qualsiasi momento direttamente dall&#8217;ambiente di lavoro on-premise.</p>
+<p>Attiva i backup in qualsiasi momento direttamente dall&#8217;ambiente di lavoro on-premise.</p>
+</div>
+<div class="paragraph">
+<p>La procedura guidata consente di eseguire le seguenti operazioni principali:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#selezionare-i-volumi-di-cui-si-desidera-eseguire-il-backup">Selezionare i volumi di cui si desidera eseguire il backup</a></p>
+</li>
+<li>
+<p><a href="#definire-la-strategia-di-backup">Definire la strategia di backup</a></p>
+</li>
+<li>
+<p><a href="#rivedere-le-selezioni">Rivedere le selezioni</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Puoi anche farlo <a href="#mostra-i-comandi-api">Mostra i comandi API</a> durante la fase di revisione, è possibile copiare il codice per automatizzare l&#8217;attivazione del backup per gli ambienti di lavoro futuri.</p>
+</div>
+<div class="sect2">
+<h3 id="avviare-la-procedura-guidata">Avviare la procedura guidata</h3>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Accedere alla procedura guidata attiva backup e ripristino utilizzando uno dei seguenti metodi:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Nell&#8217;area di lavoro di BlueXP, selezionare l&#8217;ambiente di lavoro e selezionare <strong>Enable &gt; Backup Volumes</strong> (Abilita &gt; volumi di backup) accanto al servizio di backup e ripristino nel pannello a destra.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_backup_onprem_enable.png" alt="Una schermata che mostra il pulsante di abilitazione del backup e ripristino disponibile dopo aver selezionato un ambiente di lavoro."></span></p>
+</div>
+<div class="paragraph">
+<p>Se la destinazione di Google Cloud Storage per i backup esiste come ambiente di lavoro su Canvas, è possibile trascinare il cluster ONTAP sullo storage a oggetti di Google Cloud.</p>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Volumes</strong> (volumi) nella barra Backup and Recovery (Backup e ripristino). Dalla scheda Volumes (volumi), selezionare l&#8217;opzione <strong>Actions (&#8230;&#8203;)</strong> e selezionare <strong>Activate Backup</strong> (attiva backup) per un singolo volume (che non dispone già di replica o backup su storage a oggetti). .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se è stata eseguita la seconda opzione in questa fase, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.</p>
+</div>
+</li>
+<li>
+<p>Continuare con le seguenti opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si dispone già di un connettore BlueXP, tutti i dispositivi sono impostati. Seleziona <strong>Avanti</strong>.</p>
+</li>
+<li>
+<p>Se non si dispone già di un connettore BlueXP, viene visualizzata l&#8217;opzione <strong>Aggiungi un connettore</strong>. Fare riferimento a. <a href="#preparare-il-connettore-bluexp">Preparare il connettore BlueXP</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selezionare-i-volumi-di-cui-si-desidera-eseguire-il-backup">Selezionare i volumi di cui si desidera eseguire il backup</h3>
+<div class="paragraph">
+<p>Scegliere i volumi che si desidera proteggere. È possibile scegliere di proteggere i volumi FlexVol o FlexGroup; tuttavia, non è possibile selezionare una combinazione di questi volumi per l&#8217;ambiente di lavoro che si è scelto di proteggere.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.</p>
+</li>
+<li>
+<p>Anche i volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. (I volumi con la modalità di conformità SnapLock non sono attualmente supportati). Non è possibile selezionare una combinazione di volumi bloccati e sbloccati.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Per volume protetto si intende un volume con una o più delle seguenti opzioni: Policy di snapshot, policy di replica, policy di backup su oggetti.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se i volumi scelti presentano policy di replica e snapshot diverse da quelle selezionate in seguito, le policy esistenti verranno sovrascritte.
+</td>
+</tr>
+</table>
 </div>
 <div class="olist arabic">
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Da Canvas, selezionare l&#8217;ambiente di lavoro e fare clic su <strong>Enable &gt; Backup Volumes</strong> (Abilita &gt; volumi di backup) accanto al servizio di backup e ripristino nel pannello a destra.</p>
-<div class="paragraph">
-<p>Se la destinazione di Google Cloud Storage per i backup esiste come ambiente di lavoro su Canvas, è possibile trascinare il cluster sull&#8217;ambiente di lavoro di Google Cloud Storage per avviare la procedura di installazione guidata.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_backup_onprem_enable.png" alt="Una schermata che mostra il pulsante di abilitazione del backup e ripristino, disponibile dopo aver selezionato un ambiente di lavoro."></span></p>
-</div>
-</li>
-<li>
-<p>Selezionare Google Cloud come provider e fare clic su <strong>Avanti</strong>.</p>
-</li>
-<li>
-<p>Inserire i dati del provider e fare clic su <strong>Avanti</strong>.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Il progetto Google Cloud in cui si desidera creare il bucket di storage Google Cloud per i backup. (Il progetto deve disporre di un account di servizio con un ruolo personalizzato con autorizzazioni specifiche - <a href="#preparazione-di-google-cloud-storage-per-i-backup">come descritto qui</a>.)</p>
-</li>
-<li>
-<p>La chiave di accesso e la chiave segreta di Google utilizzati per memorizzare i backup.</p>
-</li>
-<li>
-<p>Regione di Google in cui verranno memorizzati i backup.</p>
-</li>
-<li>
-<p>IPSpace nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. Le LIF intercluster per questo IPSpace devono disporre di accesso a Internet in uscita.</p>
-</li>
-<li>
-<p>Sia che tu utilizzi la chiave di crittografia predefinita gestita da Google o scelga le chiavi gestite dal cliente per gestire la crittografia dei dati. Per utilizzare un CMEK, è necessario disporre del Key Ring e del nome della chiave. <a href="https://cloud.google.com/kms/docs/cmek" target="_blank" rel="noopener">"Scopri di più sulle chiavi di crittografia gestite dal cliente"</a>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_backup_onprem_to_google.png" alt="Una schermata che mostra i dettagli del cloud provider quando si esegue il backup dei volumi da un cluster on-premise a Google Cloud Storage."></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Se non si dispone di una licenza di backup e ripristino BlueXP per l&#8217;account, a questo punto verrà richiesto di selezionare il tipo di metodo di addebito che si desidera utilizzare. Puoi iscriverti a un&#8217;offerta BlueXP Marketplace pay-as-you-go (PAYGO) di Google (oppure, se hai più abbonamenti, devi selezionarne uno) oppure acquistare e attivare una licenza BYOL di backup e ripristino BlueXP da NetApp. <a href="task-licensing-cloud-backup.html">"Scopri come configurare le licenze di backup e ripristino di BlueXP."</a></p>
-</li>
-<li>
-<p>Inserire i dettagli del criterio di backup che verranno utilizzati per il criterio predefinito e fare clic su <strong>Avanti</strong>. È possibile selezionare una policy esistente o crearne una nuova inserendo le selezioni in ciascuna sezione:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Immettere il nome del criterio predefinito. Non è necessario modificare il nome.</p>
-</li>
-<li>
-<p>Definire la pianificazione del backup e scegliere il numero di backup da conservare. <a href="concept-ontap-backup-to-cloud.html#customizable-backup-schedule-and-retention-settings" target="_blank" rel="noopener">"Consulta l&#8217;elenco delle policy esistenti che puoi scegliere"</a>.</p>
-</li>
-<li>
-<p>Quando si utilizza ONTAP 9.12.1 o superiore, è possibile scegliere di eseguire il tiering dei backup per lo storage di archiviazione dopo un certo numero di giorni per un&#8217;ulteriore ottimizzazione dei costi. <a href="concept-cloud-backup-policies.html" target="_blank" rel="noopener">"Scopri di più sulle impostazioni di configurazione dei criteri di backup e ripristino di BlueXP disponibili"</a>.</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_backup_policy_gcp.png" alt="Una schermata che mostra le impostazioni di backup e ripristino di BlueXP in cui è possibile scegliere la pianificazione e il periodo di conservazione del backup."></span></p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Selezionare i volumi di cui si desidera eseguire il backup utilizzando il criterio di backup definito nella pagina Select Volumes (Seleziona volumi). Se si desidera assegnare criteri di backup diversi a determinati volumi, è possibile creare criteri aggiuntivi e applicarli successivamente a tali volumi.</p>
+<p>Nella pagina Select Volumes (Seleziona volumi), selezionare il volume o i volumi che si desidera proteggere.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Per eseguire il backup di tutti i volumi esistenti ed eventuali volumi aggiunti in futuro, selezionare la casella "Backup di tutti i volumi esistenti e futuri&#8230;&#8203;". Si consiglia di utilizzare questa opzione per eseguire il backup di tutti i volumi e non è necessario ricordarsi di attivare i backup per i nuovi volumi.</p>
+<p>Facoltativamente, filtrare le righe per visualizzare solo i volumi con determinati tipi di volume, stili e altro ancora per semplificare la selezione.</p>
 </li>
 <li>
-<p>Per eseguire il backup solo dei volumi esistenti, selezionare la casella nella riga del titolo (<span class="image"><img src="./media/button_backup_all_volumes.png" alt=""></span>).</p>
-</li>
-<li>
-<p>Per eseguire il backup di singoli volumi, selezionare la casella relativa a ciascun volume (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>).</p>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot_backup_select_volumes.png" alt="Una schermata che mostra la selezione dei volumi di cui verrà eseguito il backup."></span></p>
+<p>Dopo aver selezionato il primo volume, è possibile selezionare All FlexVol Volumes (tutti i volumi). Per eseguire il backup di tutti i volumi FlexVol esistenti e di eventuali volumi FlexVol aggiunti in futuro, selezionare prima un volume, quindi la casella nella riga del titolo. (<span class="image"><img src="./media/button_backup_all_volumes.png" alt=""></span>).</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Si consiglia di utilizzare questa opzione per eseguire il backup di tutti i volumi e non è necessario ricordarsi di attivare i backup per i nuovi volumi.
+</td>
+</tr>
+</table>
 </div>
 </li>
 <li>
-<p>Se in questo ambiente di lavoro sono presenti copie Snapshot locali per volumi di lettura/scrittura che corrispondono all&#8217;etichetta della pianificazione di backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzato un messaggio aggiuntivo "Export existing Snapshot copies to object storage as backup copies" (Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup). Selezionare questa casella se si desidera copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.</p>
+<p>Per eseguire il backup di singoli volumi, selezionare la casella relativa a ciascun volume (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>).</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Fare clic su <strong>Activate Backup</strong> (attiva backup) e il backup e ripristino di BlueXP inizia a eseguire i backup iniziali dei volumi.</p>
+<p>Selezionare <strong>Avanti</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="definire-la-strategia-di-backup">Definire la strategia di backup</h3>
+<div class="paragraph">
+<p>La definizione della strategia di backup implica l&#8217;impostazione delle seguenti opzioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sia che si desideri una o tutte le opzioni di backup: Snapshot locali, replica e backup su storage a oggetti</p>
+</li>
+<li>
+<p>Architettura</p>
+</li>
+<li>
+<p>Policy Snapshot locale</p>
+</li>
+<li>
+<p>Target e policy di replica</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se i volumi scelti hanno policy di replica e snapshot diverse da quelle selezionate in questa fase, le policy esistenti verranno sovrascritte.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Backup delle informazioni sullo storage a oggetti (provider, crittografia, rete, policy di backup e opzioni di esportazione).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Nella pagina Definisci strategia di backup, scegliere una o tutte le opzioni seguenti. Per impostazione predefinita, vengono selezionate tutte e tre le opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Local Snapshots</strong>: Se si esegue la replica o il backup sullo storage a oggetti, è necessario creare snapshot locali.</p>
+</li>
+<li>
+<p><strong>Replication</strong>: Consente di creare volumi replicati su un altro sistema storage ONTAP.</p>
+</li>
+<li>
+<p><strong>Backup</strong>: Esegue il backup dei volumi nello storage a oggetti.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Architettura</strong>: Se si sceglie la replica e il backup, scegliere uno dei seguenti flussi di informazioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cascading</strong>: Flussi di informazioni dal primario al secondario e dal secondario allo storage a oggetti.</p>
+</li>
+<li>
+<p><strong>Fan out</strong>: I flussi di informazioni dal primario al secondario <em>e</em> dallo storage primario a oggetti.</p>
+<div class="paragraph">
+<p>Per ulteriori informazioni su queste architetture, fare riferimento a. <a href="concept-protection-journey.html">"Pianifica il tuo percorso di protezione"</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Snapshot locale</strong>: Scegliere una policy Snapshot esistente.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l&#8217;interfaccia utente di ONTAP <code>snapmirror policy create</code> comando. Fare riferimento a..
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Replication</strong>: Impostare le seguenti opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Destinazione della replica</strong>: Selezionare l&#8217;ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l&#8217;aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.</p>
+</li>
+<li>
+<p><strong>Replication policy</strong>: Scegliere un criterio di replica esistente.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Backup su oggetto</strong>: Se si seleziona <strong>Backup</strong>, impostare le seguenti opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Provider</strong>: Selezionare <strong>Google Cloud</strong>.</p>
+</li>
+<li>
+<p><strong>Impostazioni provider</strong>: Immettere i dettagli del provider e la regione in cui verranno memorizzati i backup.</p>
+<div class="paragraph">
+<p>Creare un nuovo bucket o selezionarne uno già creato.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Se si desidera eseguire il tiering dei file di backup più vecchi sullo storage di Google Cloud Archive per un&#8217;ulteriore ottimizzazione dei costi, assicurarsi che il bucket disponga della regola del ciclo di vita appropriata.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Immettere la chiave di accesso e la chiave segreta di Google Cloud.</p>
+</div>
+</li>
+<li>
+<p><strong>Chiave di crittografia</strong>: Se è stato creato un nuovo account di storage Google Cloud, immettere le informazioni sulla chiave di crittografia fornite dal provider. Per gestire la crittografia dei dati, scegli se utilizzare le chiavi di crittografia predefinite di Google Cloud o le chiavi gestite dal cliente dall&#8217;account Google Cloud.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se hai scelto un account di storage Google Cloud esistente, le informazioni di crittografia sono già disponibili, quindi non è necessario immetterle ora.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Se si sceglie di utilizzare le proprie chiavi gestite dal cliente, inserire il portachiavi e il nome della chiave. <a href="https://cloud.google.com/kms/docs/cmek" target="_blank" rel="noopener">"Scopri di più sulle chiavi di crittografia gestite dal cliente"</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Networking</strong>: Scegliere IPSpace.</p>
+<div class="paragraph">
+<p>IPSpace nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. Le LIF intercluster per questo IPSpace devono disporre di accesso a Internet in uscita.</p>
+</div>
+</li>
+<li>
+<p><strong>Backup policy</strong>: Selezionare un criterio di backup esistente.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l&#8217;interfaccia utente di ONTAP. Fare riferimento a &lt;link&gt;.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p><strong>Esportare le copie Snapshot esistenti nello storage a oggetti come copie di backup</strong>: Se in questo ambiente di lavoro sono presenti copie Snapshot locali per volumi di lettura/scrittura che corrispondono all&#8217;etichetta della pianificazione di backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Avanti</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rivedere-le-selezioni">Rivedere le selezioni</h3>
+<div class="paragraph">
+<p>Questa è la possibilità di rivedere le selezioni e apportare eventuali modifiche.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Nella pagina Review (esamina), rivedere le selezioni.</p>
+</li>
+<li>
+<p>Facoltativamente, selezionare la casella <strong>Sincronizza automaticamente le etichette dei criteri Snapshot con le etichette dei criteri di replica e backup</strong>. In questo modo, vengono create istantanee con un&#8217;etichetta che corrisponde alle etichette dei criteri di replica e backup.</p>
+</li>
+<li>
+<p>Selezionare <strong>Activate Backup</strong> (attiva backup).</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <div class="title">Risultato</div>
-<p>Un bucket di Google Cloud Storage viene creato automaticamente nell&#8217;account di servizio indicato dalla chiave di accesso e dalla chiave segreta di Google immessi e i file di backup vengono memorizzati in tale account. Viene visualizzata la dashboard di backup del volume, che consente di monitorare lo stato dei backup. È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzando <a href="task-monitor-backup-jobs.html" target="_blank" rel="noopener">"Pannello Job Monitoring (monitoraggio processi)"</a>.</p>
+<p>Il backup e ripristino di BlueXP inizia a eseguire i backup iniziali dei volumi. Il trasferimento di riferimento del volume replicato e del file di backup include una copia completa dei dati del sistema di storage primario. I trasferimenti successivi contengono copie differenziali dei dati del sistema di storage primario contenuti nelle copie Snapshot.</p>
+</div>
+<div class="paragraph">
+<p>Nel cluster di destinazione viene creato un volume replicato che verrà sincronizzato con il volume di origine.</p>
+</div>
+<div class="paragraph">
+<p>Un bucket di Google Cloud Storage viene creato automaticamente nell&#8217;account di servizio indicato dalla chiave di accesso e dalla chiave segreta di Google immessi e i file di backup vengono memorizzati in tale account. Viene visualizzata la dashboard di backup del volume, che consente di monitorare lo stato dei backup.</p>
+</div>
+<div class="paragraph">
+<p>È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzando <a href="task-monitor-backup-jobs.html" target="_blank" rel="noopener">"Pannello Job Monitoring (monitoraggio processi)"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mostra-i-comandi-api">Mostra i comandi API</h3>
+<div class="paragraph">
+<p>È possibile visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata attiva backup e ripristino. Questa operazione potrebbe essere utile per automatizzare l&#8217;attivazione del backup negli ambienti di lavoro futuri.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dalla procedura guidata Activate backup and recovery (attiva backup e ripristino), selezionare <strong>View API request</strong> (Visualizza richiesta API).</p>
+</li>
+<li>
+<p>Per copiare i comandi negli Appunti, selezionare l&#8217;icona <strong>Copia</strong>.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

@@ -474,6 +474,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -962,6 +964,13 @@
         Proteggi i dati del tuo volume ONTAP
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Amazon S3"
       data-li-level="2#" 
       class=" "
@@ -990,18 +999,18 @@
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/task-manage-backup-settings-ontap.html">
-        Gestire le impostazioni di backup a livello di cluster
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
@@ -1450,7 +1459,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-05-23 21:23:23 +0000">05/23/2023</time>
+    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
     
   
 
@@ -1476,8 +1485,18 @@
 <div class="paragraph">
 <p>Se i cluster di origine eseguono ONTAP 9.10.1 o superiore, è possibile scegliere di eseguire il Tier dei backup per lo storage <em>S3 Glacier</em> o <em>S3 Glacier Deep Archive</em> dopo un certo numero di giorni (in genere più di 30 giorni) per un&#8217;ulteriore ottimizzazione dei costi. Non è possibile accedere immediatamente ai dati di questi livelli quando necessario e richiede un costo di recupero più elevato, quindi è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati da questi file di backup archiviati. Consultare la sezione relativa a. <a href="#ripristino-dei-dati-dallo-storage-di-archiviazione">ripristino dei dati dallo storage di archiviazione</a>.</p>
 </div>
-<div class="paragraph">
-<p>Se si sceglie <em>S3 Glacier</em> o <em>S3 Glacier Deep Archive</em> nella prima policy di backup quando si attiva il backup e ripristino BlueXP, tale Tier sarà l&#8217;unico Tier di archiviazione disponibile per le policy di backup future per quel cluster. Inoltre, se non si seleziona alcun livello di archiviazione nella prima policy di backup, <em>S3 Glacier</em> sarà l&#8217;unica opzione di archiviazione per le policy future.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se non si seleziona alcun livello di archiviazione nella prima policy di backup quando si attiva il backup e ripristino BlueXP, <em>S3 Glacier</em> sarà l&#8217;unica opzione di archiviazione per le policy future.</p>
+</li>
+<li>
+<p>Se si seleziona <em>S3 Glacier</em> nella prima policy di backup, è possibile passare al livello <em>S3 Glacier Deep Archive</em> per le policy di backup future per quel cluster.</p>
+</li>
+<li>
+<p>Se si seleziona <em>S3 Glacier Deep Archive</em> nella prima policy di backup, tale Tier sarà l&#8217;unico Tier di archiviazione disponibile per future policy di backup per quel cluster.</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
 <p>Si noti che quando si configura il backup e ripristino BlueXP con questo tipo di regola del ciclo di vita, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il bucket nell&#8217;account AWS.</p>

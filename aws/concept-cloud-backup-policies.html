@@ -474,6 +474,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -962,6 +964,13 @@
         Proteggi i dati del tuo volume ONTAP
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Amazon S3"
       data-li-level="2#" 
       class=" "
@@ -990,18 +999,18 @@
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/task-manage-backup-settings-ontap.html">
-        Gestire le impostazioni di backup a livello di cluster
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/aws/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
@@ -1450,7 +1459,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-05 20:37:30 +0000">06/05/2023</time>
+    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
     
   
 
@@ -1464,6 +1473,18 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Il backup e ripristino BlueXP consente di creare policy di backup con diverse impostazioni di configurazione per i sistemi ONTAP e Cloud Volumes ONTAP on-premise.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Queste impostazioni dei criteri sono rilevanti solo per il backup nello storage a oggetti. Nessuna di queste impostazioni influisce sulle policy di Snapshot o di replica. Impostazioni di policy simili per snapshot e repliche verranno aggiunte in futuro.
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -1565,7 +1586,7 @@
 <div class="sect2">
 <h3 id="cosè-datalock">Cos&#8217;è DataLock</h3>
 <div class="paragraph">
-<p>DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti". Il periodo di tempo in cui il file di backup viene bloccato (e conservato) viene definito periodo di conservazione DataLock. Si basa sulla pianificazione dei criteri di backup e sull&#8217;impostazione di conservazione definita dall&#8217;utente, oltre a un buffer di 14 giorni. Qualsiasi policy di conservazione DataLock inferiore a 30 giorni viene arrotondata al minimo di 30 giorni.</p>
+<p>DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo, detto anche storage immutabile. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti". Il periodo di tempo in cui il file di backup viene bloccato (e conservato) viene definito periodo di conservazione DataLock. Si basa sulla pianificazione dei criteri di backup e sull&#8217;impostazione di conservazione definita dall&#8217;utente, oltre a un buffer di 14 giorni. Qualsiasi policy di conservazione DataLock inferiore a 30 giorni viene arrotondata al minimo di 30 giorni.</p>
 </div>
 <div class="paragraph">
 <p>Tenere presente che i vecchi backup vengono cancellati dopo la scadenza del periodo di conservazione DataLock, non dopo la scadenza del periodo di conservazione dei criteri di backup.</p>
@@ -1978,8 +1999,18 @@
 <div class="paragraph">
 <p>Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile eseguire il tiering dei backup più vecchi nello storage <em>S3 Glacier</em> o <em>S3 Glacier Deep Archive</em>. <a href="reference-aws-backup-tiers.html" target="_blank" rel="noopener">"Scopri di più sullo storage di archiviazione AWS"</a>.</p>
 </div>
-<div class="paragraph">
-<p>Si noti che se si sceglie <em>S3 Glacier</em> o <em>S3 Glacier Deep Archive</em> nella prima policy di backup quando si attiva il backup e ripristino BlueXP, tale Tier sarà l&#8217;unico Tier di archiviazione disponibile per le policy di backup future per quel cluster. Inoltre, se non si seleziona alcun livello di archiviazione nella prima policy di backup, <em>S3 Glacier</em> sarà l&#8217;unica opzione di archiviazione per le policy future.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se non si seleziona alcun livello di archiviazione nella prima policy di backup quando si attiva il backup e ripristino BlueXP, <em>S3 Glacier</em> sarà l&#8217;unica opzione di archiviazione per le policy future.</p>
+</li>
+<li>
+<p>Se si seleziona <em>S3 Glacier</em> nella prima policy di backup, è possibile passare al livello <em>S3 Glacier Deep Archive</em> per le policy di backup future per quel cluster.</p>
+</li>
+<li>
+<p>Se si seleziona <em>S3 Glacier Deep Archive</em> nella prima policy di backup, tale Tier sarà l&#8217;unico Tier di archiviazione disponibile per future policy di backup per quel cluster.</p>
+</li>
+</ul>
 </div>
 </li>
 <li>

@@ -476,6 +476,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -962,6 +964,13 @@
         Proteggi i dati del tuo volume ONTAP
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Google Cloud"
       data-li-level="2#" 
       class=" "
@@ -990,18 +999,18 @@
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/task-manage-backup-settings-ontap.html">
-        Gestire le impostazioni di backup a livello di cluster
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/gcp/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
@@ -1450,7 +1459,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-04 19:39:17 +0000">07/04/2023</time>
+    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
     
   
 
@@ -1466,6 +1475,61 @@
 <div class="sectionbody">
 <div class="paragraph lead">
 <p>Scopri le novità di BlueXP backup e recovery.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="6-luglio-2023">6 luglio 2023</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="il-backup-e-ripristino-di-bluexp-include-ora-la-possibilità-di-pianificare-e-creare-copie-snapshot-e-volumi-replicati">Il backup e ripristino di BlueXP include ora la possibilità di pianificare e creare copie Snapshot e volumi replicati</h3>
+<div class="paragraph">
+<p>Il backup e ripristino BlueXP consente ora di implementare una strategia 3-2-1 in cui è possibile avere 3 copie dei dati di origine su 2 sistemi storage diversi e 1 copia nel cloud. Dopo l&#8217;attivazione, si avrà a disposizione:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Copia Snapshot del volume sul sistema di origine</p>
+</li>
+<li>
+<p>Volume replicato su un sistema storage diverso</p>
+</li>
+<li>
+<p>Backup del volume nello storage a oggetti</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html">"Scopri di più sulle nuove funzionalità di backup e ripristino a spettro completo"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Questa nuova funzionalità si applica anche alle operazioni di recovery. È possibile eseguire operazioni di ripristino da una copia Snapshot, da un volume replicato o da un file di backup nel cloud. In questo modo è possibile scegliere il file di backup che soddisfa i requisiti di ripristino, inclusi costi e velocità di ripristino.</p>
+</div>
+<div class="paragraph">
+<p>Si noti che questa nuova funzionalità e l&#8217;interfaccia utente sono supportate solo per i cluster che eseguono ONTAP 9.8 o versione successiva. Se il cluster dispone di una versione precedente del software, è possibile continuare a utilizzare la versione precedente di backup e ripristino di BlueXP. Tuttavia, si consiglia di eseguire l&#8217;aggiornamento a una versione supportata di ONTAP per ottenere le funzionalità e le funzionalità più recenti. Per continuare a utilizzare la versione precedente del software, attenersi alla seguente procedura:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dalla scheda <strong>Volumes</strong> (volumi), selezionare <strong>Backup Settings</strong> (Impostazioni di backup).</p>
+</li>
+<li>
+<p>Dalla pagina <em>Backup Settings</em>, fare clic sul pulsante di opzione <strong>Visualizza la versione precedente di backup e ripristino di BlueXP</strong>.</p>
+<div class="paragraph">
+<p>Quindi, puoi gestire i cluster meno recenti utilizzando la versione precedente del software.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="possibilità-di-creare-i-bucket-per-il-backup-sullo-storage-a-oggetti">Possibilità di creare i bucket per il backup sullo storage a oggetti</h3>
+<div class="paragraph">
+<p>Per impostazione predefinita, quando si creano file di backup nello storage a oggetti, il servizio di backup e ripristino crea i bucket nello storage a oggetti. È possibile creare autonomamente i bucket se si desidera utilizzare un determinato nome o assegnare proprietà speciali. Se si desidera creare un bucket personalizzato, è necessario crearlo prima di avviare l&#8217;attivazione guidata.</p>
+</div>
+<div class="paragraph">
+<p>Questa funzionalità non è attualmente supportata quando si creano file di backup su sistemi StorageGRID.</p>
+</div>
 </div>
 </div>
 </div>

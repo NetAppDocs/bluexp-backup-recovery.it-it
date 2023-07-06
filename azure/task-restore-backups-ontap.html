@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="it">
   <head class="at-element-marker">
-  <title>Ripristino dei dati ONTAP dai file di backup | NetApp Documentation</title>
+  <title>Ripristinare i dati ONTAP dai file di backup | NetApp Documentation</title>
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
   <meta http-equiv="language" content="en">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta property="og:title" content="Ripristino dei dati ONTAP dai file di backup | NetApp Documentation" />
+  <meta property="og:title" content="Ripristinare i dati ONTAP dai file di backup | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html" />
-	<meta property="og:description" content="I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristi..." />
+	<meta property="og:description" content="I backup dei dati del volume ONTAP sono disponibili dalle posizioni in cui sono stati creati i backup, nelle copie Snapshot, nei volumi replicati e/o nei bac..." />
   <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristi...">
-  <meta name="keywords" content=" restoring, restore, restore volumes, restore files, restore folders, cloud backup, file restore, single file restore, folder restore, volume restore, browse and restore, search and restore, ONTAP"><!-- Icons -->
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="I backup dei dati del volume ONTAP sono disponibili dalle posizioni in cui sono stati creati i backup, nelle copie Snapshot, nei volumi replicati e/o nei bac...">
+  <meta name="keywords" content=" restoring, restore, restore volumes, restore files, restore folders, cloud backup, file restore, single file restore, folder restore, volume restore, browse and restore, search and restore, restore snapshot, restore replication, restore backup, ONTAP"><!-- Icons -->
   <link rel="icon" href="/it-it/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
 
   <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/bluexp-backup-recovery/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
@@ -211,7 +211,7 @@
     
   </ul>
 </div>
-<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html&page-title=Ripristino dei dati ONTAP dai file di backup" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-restore-backups-ontap.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-backup-recovery/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
+<div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html&page-title=Ripristinare i dati ONTAP dai file di backup" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Richiedi modifiche alla documentazione</a><a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-restore-backups-ontap.adoc" class="page-nav-contribute-link" role="button"><img src="/it-it/bluexp-backup-recovery/images/edit-sm.svg" alt="" class="github-icon" />Modifica questa pagina</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/it-it/bluexp-backup-recovery/images/article-sm.svg" alt="" class="github-icon" />Scopri come collaborare</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">IN QUESTA PAGINA</div>
@@ -474,6 +474,8 @@
 
     <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
   
+
+
 
 
         </li>
@@ -962,6 +964,13 @@
         Proteggi i dati del tuo volume ONTAP
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Backup di Cloud Volumes ONTAP in Azure Blob"
       data-li-level="2#" 
       class=" "
@@ -990,18 +999,18 @@
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backup-settings-ontap.html">
-        Gestire le impostazioni di backup a livello di cluster
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class="  active "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
@@ -1508,14 +1517,14 @@
       </div>
     </span>
   </div><div class="n-doc__component-detail-heading-wrap">
-  <h1 class="n-doc__component-detail-heading">Ripristino dei dati ONTAP dai file di backup</h1>
+  <h1 class="n-doc__component-detail-heading">Ripristinare i dati ONTAP dai file di backup</h1>
 </div>
 
 
 <p class="page-details">
   
     
-    <time datetime="2023-05-31 14:26:17 +0000">05/31/2023</time>
+    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
     
   
 
@@ -1528,7 +1537,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph lead">
-<p>I backup vengono memorizzati in un archivio di oggetti nel tuo account cloud in modo da poter ripristinare i dati da un punto specifico. È possibile ripristinare un intero volume ONTAP da un file di backup oppure, se è necessario ripristinare solo alcuni file, è possibile ripristinare una cartella o singoli file da un file di backup.</p>
+<p>I backup dei dati del volume ONTAP sono disponibili dalle posizioni in cui sono stati creati i backup: Copie Snapshot, volumi replicati e backup memorizzati nello storage a oggetti. È possibile ripristinare i dati da un punto specifico in una qualsiasi di queste posizioni di backup. È possibile ripristinare un intero volume ONTAP da un file di backup oppure, se è necessario ripristinare solo alcuni file, è possibile ripristinare una cartella o singoli file.</p>
 </div>
 <div class="paragraph">
 <p>È possibile ripristinare un <strong>volume</strong> (come nuovo volume) nell&#8217;ambiente di lavoro originale, in un ambiente di lavoro diverso che utilizza lo stesso account cloud o in un sistema ONTAP on-premise.</p>
@@ -1541,6 +1550,22 @@
 </div>
 <div class="paragraph">
 <p>Per ripristinare i dati dai file di backup a un sistema di produzione, è necessaria una licenza di backup e ripristino BlueXP valida.</p>
+</div>
+<div class="paragraph">
+<p>In sintesi, questi sono i flussi validi che è possibile utilizzare per ripristinare i dati dei volumi in un ambiente di lavoro ONTAP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>File di backup &#8594; volume ripristinato</p>
+</li>
+<li>
+<p>Volume replicato &#8594; volume ripristinato</p>
+</li>
+<li>
+<p>Copia Snapshot &#8594; Volume ripristinato</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1577,7 +1602,7 @@ Il backup e il ripristino di BlueXP devono essere già attivati per almeno un am
 <p>In termini generali, <em>Browse &amp; Restore</em> è in genere migliore quando è necessario ripristinare un volume, una cartella o un file specifico dell&#8217;ultima settimana o mese, e si conoscono il nome e la posizione del file e la data dell&#8217;ultima volta in buone condizioni. La funzione <em>Search &amp; Restore</em> è generalmente migliore quando è necessario ripristinare un volume, una cartella o un file, ma non si ricorda il nome esatto, il volume in cui risiede o la data in cui si trovava l&#8217;ultima volta.</p>
 </div>
 <div class="paragraph">
-<p>Questa tabella fornisce un confronto dei 2 metodi.</p>
+<p>Questa tabella fornisce un confronto tra le funzionalità dei 2 metodi.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1596,28 +1621,75 @@ Il backup e il ripristino di BlueXP devono essere già attivati per almeno un am
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cercare un volume, una cartella o un file in <strong>tutti i file di backup</strong> in base al nome del volume parziale o completo, al nome di cartella o file completo, all&#8217;intervallo di dimensioni e ai filtri di ricerca aggiuntivi</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Il ripristino di volume e file funziona con i file di backup memorizzati in Amazon S3, Azure Blob, Google Cloud e NetApp StorageGRID</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Il ripristino di volume e file funziona con i file di backup memorizzati in Amazon S3, Azure Blob, Google Cloud e NetApp StorageGRID</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ripristino di volumi, cartelle e file da StorageGRID nei siti senza accesso a Internet</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Ripristino di volumi, cartelle e file da StorageGRID nei siti senza accesso a Internet</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non gestisce il ripristino del file se il file è stato cancellato o rinominato e l&#8217;utente non conosce il nome del file originale</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Gestisce le directory appena create/eliminate/rinominate e i file appena creati/cancellati/rinominati</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cerca i risultati tra cloud pubblici e privati</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Cerca i risultati tra cloud pubblici e copie Snapshot locali</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non sono richieste risorse aggiuntive per i cloud provider</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sono richieste risorse aggiuntive per bucket e provider di cloud pubblico per account</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Durante il ripristino dal cloud, sono necessarie risorse aggiuntive per bucket e provider di cloud pubblico per account</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Non sono richiesti costi aggiuntivi per i cloud provider</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Costo associato alle risorse dei provider di cloud pubblico quando si esegue la scansione dei backup e dei volumi per i risultati della ricerca</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Quando si esegue il ripristino dal cloud, sono necessari costi aggiuntivi per la scansione dei backup e dei volumi per i risultati della ricerca</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Questa tabella fornisce un elenco di operazioni di ripristino valide in base alla posizione in cui si trovano i file di backup.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2857%;">
+<col style="width: 14.2858%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Tipo di backup</th>
+<th class="tableblock halign-left valign-top" colspan="3">Sfoglia e ripristina</th>
+<th class="tableblock halign-left valign-top" colspan="3">Ricerca e ripristino</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Volume di ripristino</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ripristinare i file</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cartella di ripristino</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Volume di ripristino</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Ripristinare i file</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cartella di ripristino</strong></p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Copia Snapshot</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">Volume replicato</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No</p></td>
+</tr>
+<tr>
+<th class="tableblock halign-left valign-top"><p class="tableblock">File di backup</p></th>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sì</p></td>
 </tr>
 </tbody>
 </table>
@@ -1643,13 +1715,13 @@ Il backup e il ripristino di BlueXP devono essere già attivati per almeno un am
 </div>
 </div>
 <div class="sect1">
-<h2 id="ripristino-dei-dati-di-ontap-mediante-sfoglia-e-ripristina">Ripristino dei dati di ONTAP mediante Sfoglia e ripristina</h2>
+<h2 id="ripristinare-i-dati-ontap-utilizzando-sfoglia-e-ripristina">Ripristinare i dati ONTAP utilizzando Sfoglia e ripristina</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Prima di iniziare il ripristino di un volume, di una cartella o di un file, è necessario conoscere il nome del volume da cui si desidera eseguire il ripristino, il nome dell&#8217;ambiente di lavoro, la SVM in cui si trova il volume e la data approssimativa del file di backup da cui si desidera eseguire il ripristino.</p>
+<p>Prima di iniziare il ripristino di un volume, di una cartella o di un file, è necessario conoscere il nome del volume da cui si desidera eseguire il ripristino, il nome dell&#8217;ambiente di lavoro, la SVM in cui si trova il volume e la data approssimativa del file di backup da cui si desidera eseguire il ripristino. È possibile ripristinare i dati ONTAP da una copia Snapshot, un volume replicato o da backup memorizzati nello storage a oggetti.</p>
 </div>
 <div class="paragraph">
-<p><strong>Nota:</strong> se il file di backup contenente i dati che si desidera ripristinare risiede nello storage di archiviazione (a partire da ONTAP 9.10.1), l&#8217;operazione di ripristino richiederà più tempo e comporterà un costo. Inoltre, il cluster di destinazione deve eseguire ONTAP 9.10.1 o superiore per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.</p>
+<p><strong>Nota:</strong> se il file di backup contenente i dati che si desidera ripristinare risiede nello storage cloud di archiviazione (a partire da ONTAP 9.10.1), l&#8217;operazione di ripristino richiederà più tempo e comporterà un costo. Inoltre, il cluster di destinazione deve eseguire ONTAP 9.10.1 o superiore per il ripristino del volume, 9.11.1 per il ripristino dei file, 9.12.1 per Google Archive e StorageGRID e 9.13.1 per il ripristino delle cartelle.</p>
 </div>
 <div class="paragraph">
 <p><a href="reference-azure-backup-tiers.html">"Scopri di più sul ripristino dallo storage di archivio Azure"</a>.</p>
@@ -1669,34 +1741,51 @@ La priorità alta non è supportata quando si ripristinano i dati dallo storage 
 <div class="sect2">
 <h3 id="sfoglia-e-ripristina-gli-ambienti-di-lavoro-supportati-e-i-provider-di-storage-a-oggetti">Sfoglia e ripristina gli ambienti di lavoro supportati e i provider di storage a oggetti</h3>
 <div class="paragraph">
-<p>È possibile ripristinare un volume, una cartella o singoli file da un file di backup di ONTAP nei seguenti ambienti di lavoro:</p>
+<p>È possibile ripristinare i dati ONTAP da un file di backup che risiede in un ambiente di lavoro secondario (un volume replicato) o nello storage a oggetti (un file di backup) nei seguenti ambienti di lavoro. Le copie Snapshot risiedono nell&#8217;ambiente di lavoro di origine e possono essere ripristinate solo sullo stesso sistema.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nota:</strong> è possibile ripristinare un volume da qualsiasi tipo di file di backup, ma è possibile ripristinare una cartella o singoli file solo da un file di backup nello storage a oggetti in questo momento.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 41.1764%;">
-<col style="width: 58.8236%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Percorso del file di backup</th>
-<th class="tableblock halign-left valign-top">Ambiente di lavoro di destinazione ifdef::aws[]</th>
+<th class="tableblock halign-left valign-top" colspan="2">Percorso del file di backup</th>
+<th class="tableblock halign-left valign-top">Ambiente di lavoro di destinazione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Archivio oggetti (backup)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sistema secondario (replica)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ifdef::aws[]</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in AWS<br>
+Sistema ONTAP on-premise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in AWS on-premise ONTAP system endif::aws[] ifdef::Azure[]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Azure<br>
+Sistema ONTAP on-premise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Azure on-premise ONTAP system endif::Azure[] ifdef::gcp[]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Storage Google Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google<br>
+Sistema ONTAP on-premise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google on-premise ONTAP system endif::gcp[]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema ONTAP on-premise<br>
+Cloud Volumes ONTAP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sistema ONTAP on-premise</p></td>
 </tr>
 </tbody>
@@ -1731,15 +1820,18 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 </div>
 </div>
 <div class="sect2">
-<h3 id="ripristino-dei-volumi-mediante-browse-restore">Ripristino dei volumi mediante Browse &amp; Restore</h3>
+<h3 id="ripristinare-i-volumi-utilizzando-sfoglia-ripristina">Ripristinare i volumi utilizzando Sfoglia &amp; Ripristina</h3>
 <div class="paragraph">
-<p>Quando si ripristina un volume da un file di backup, il backup e ripristino di BlueXP crea un <em>nuovo</em> volume utilizzando i dati del backup. È possibile ripristinare i dati in un volume nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che si trova nello stesso account cloud dell&#8217;ambiente di lavoro di origine. È inoltre possibile ripristinare i volumi su un sistema ONTAP on-premise.</p>
+<p>Quando si ripristina un volume da un file di backup, il backup e ripristino di BlueXP crea un <em>nuovo</em> volume utilizzando i dati del backup. Quando si utilizza un backup nel cloud, è possibile ripristinare i dati in un volume nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che si trova nello stesso account cloud dell&#8217;ambiente di lavoro di origine. È inoltre possibile ripristinare i volumi su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p>Quando si esegue il ripristino da un volume replicato, è possibile ripristinare il volume nell&#8217;ambiente di lavoro originale o in un sistema Cloud Volumes ONTAP o ONTAP on-premise.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram_browse_restore_volume.png" alt="Diagramma che mostra il flusso per eseguire un&#8217;operazione di ripristino del volume utilizzando Browse  Restore."></span></p>
 </div>
 <div class="paragraph">
-<p>Come si può vedere, è necessario conoscere il nome dell&#8217;ambiente di lavoro, la macchina virtuale dello storage, il nome del volume e la data del file di backup per eseguire un ripristino del volume.</p>
+<p>Come si può vedere, è necessario conoscere il nome dell&#8217;ambiente di lavoro di origine, la VM di storage, il nome del volume e la data del file di backup per eseguire un ripristino del volume.</p>
 </div>
 <div class="paragraph">
 <p>Il seguente video mostra una breve panoramica del ripristino di un volume:</p>
@@ -1767,13 +1859,16 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <li>
 <p>Nella pagina <em>Select Source</em>, accedere al file di backup del volume che si desidera ripristinare. Selezionare il file <strong>Working Environment</strong> (ambiente di lavoro), <strong>Volume</strong> (Volume) e <strong>Backup</strong> con la data e l&#8217;ora da cui si desidera eseguire il ripristino.</p>
 <div class="paragraph">
+<p>La colonna <strong>percorso</strong> indica se il file di backup (Snapshot) è <strong>locale</strong> (una copia Snapshot sul sistema di origine), <strong>secondario</strong> (un volume replicato su un sistema ONTAP secondario) o <strong>archiviazione oggetto</strong> (un file di backup nello storage a oggetti). Scegliere il file che si desidera ripristinare.</p>
+</div>
+<div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_restore_select_volume_snapshot.png" alt="Una schermata che mostra la selezione dell&#8217;ambiente di lavoro, del volume e del file di backup del volume che si desidera ripristinare."></span></p>
 </div>
 </li>
 <li>
 <p>Fare clic su <strong>Avanti</strong>.</p>
 <div class="paragraph">
-<p>Si noti che se la protezione ransomware è attiva per il file di backup (se sono stati attivati DataLock e ransomware Protection nel criterio di backup), viene richiesto di eseguire un&#8217;ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware.</p>
+<p>Si noti che se si seleziona un file di backup nello storage a oggetti e la protezione ransomware è attiva per tale backup (se sono stati attivati DataLock e ransomware Protection nel criterio di backup), viene richiesto di eseguire un&#8217;ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware.</p>
 </div>
 </li>
 <li>
@@ -1783,7 +1878,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 </div>
 </li>
 <li>
-<p>Se si seleziona un sistema ONTAP on-premise e non è già stata configurata la connessione del cluster allo storage a oggetti, vengono richieste ulteriori informazioni:</p>
+<p>Quando si ripristina un file di backup dallo storage a oggetti, se si seleziona un sistema ONTAP on-premise e non si è ancora configurata la connessione del cluster allo storage a oggetti, vengono richieste ulteriori informazioni:</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1822,16 +1917,19 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 </div>
 <div class="paragraph">
 <div class="title">Risultato</div>
-<p>Il backup e ripristino BlueXP crea un nuovo volume in base al backup selezionato. È possibile <a href="task-manage-backups-ontap.html">"gestire le impostazioni di backup per questo nuovo volume"</a> secondo necessità.</p>
+<p>Il backup e ripristino BlueXP crea un nuovo volume in base al backup selezionato.</p>
 </div>
 <div class="paragraph">
 <p>Il ripristino di un volume da un file di backup che risiede nello storage di archiviazione può richiedere molti minuti o ore, a seconda del livello di archiviazione e della priorità di ripristino. Fare clic sulla scheda <strong>Job Monitoring</strong> per visualizzare l&#8217;avanzamento del ripristino.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ripristino-di-cartelle-e-file-mediante-browse-restore">Ripristino di cartelle e file mediante Browse &amp; Restore</h3>
+<h3 id="ripristinare-cartelle-e-file-utilizzando-sfoglia-ripristina">Ripristinare cartelle e file utilizzando Sfoglia &amp; Ripristina</h3>
 <div class="paragraph">
 <p>Se è necessario ripristinare solo alcuni file da un backup di un volume ONTAP, è possibile scegliere di ripristinare una cartella o singoli file invece di ripristinare l&#8217;intero volume. È possibile ripristinare cartelle e file in un volume esistente nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nota:</strong> al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nello storage a oggetti. Il ripristino di file e cartelle non è attualmente supportato da una copia Snapshot locale o da un file di backup che risiede in un ambiente di lavoro secondario (un volume replicato).</p>
 </div>
 <div class="paragraph">
 <p>Se si selezionano più file, tutti i file vengono ripristinati nello stesso volume di destinazione scelto. Quindi, se si desidera ripristinare i file in volumi diversi, è necessario eseguire il processo di ripristino più volte.</p>
@@ -1908,7 +2006,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 </div>
 </div>
 <div class="sect3">
-<h4 id="ripristino-di-cartelle-e-file">Ripristino di cartelle e file</h4>
+<h4 id="ripristinare-cartelle-e-file">Ripristinare cartelle e file</h4>
 <div class="paragraph">
 <p>Per ripristinare cartelle o file su un volume da un backup di un volume ONTAP, procedere come segue. È necessario conoscere il nome del volume e la data del file di backup che si desidera utilizzare per ripristinare la cartella o i file. Questa funzionalità utilizza la funzione Live Browsing per visualizzare l&#8217;elenco delle directory e dei file all&#8217;interno di ciascun file di backup.</p>
 </div>
@@ -2048,10 +2146,10 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <h2 id="ripristino-dei-dati-ontap-mediante-ricerca-e-ripristino">Ripristino dei dati ONTAP mediante Ricerca e ripristino</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>È possibile ripristinare un volume, una cartella o file da un file di backup di ONTAP utilizzando Ricerca e ripristino. Search &amp; Restore (Ricerca e ripristino) consente di cercare un volume, una cartella o un file specifico da tutti i backup memorizzati nello storage cloud per un provider specifico, quindi di eseguire un ripristino. Non è necessario conoscere il nome esatto dell&#8217;ambiente di lavoro o del volume: La ricerca esamina tutti i file di backup dei volumi.</p>
+<p>È possibile ripristinare un volume, una cartella o file da un file di backup di ONTAP utilizzando Ricerca e ripristino. Search &amp; Restore (Ricerca e ripristino) consente di cercare un volume, una cartella o un file specifico da tutti i backup, quindi di eseguire un ripristino. Non è necessario conoscere il nome esatto dell&#8217;ambiente di lavoro, il nome del volume o il nome del file: La ricerca esamina tutti i file di backup dei volumi.</p>
 </div>
 <div class="paragraph">
-<p>L&#8217;operazione di ricerca esamina anche tutte le copie Snapshot locali esistenti anche per i volumi ONTAP. Poiché il ripristino dei dati da una copia Snapshot locale può essere più rapido e meno costoso del ripristino da un file di backup, potrebbe essere necessario ripristinare i dati da Snapshot. È possibile ripristinare Snapshot come nuovo volume <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes" target="_blank" rel="noopener">"Dalla pagina Volume Details (Dettagli volume) di Canvas"</a> (Non da backup e ripristino BlueXP).</p>
+<p>L&#8217;operazione di ricerca analizza tutte le copie Snapshot locali esistenti per i volumi ONTAP, tutti i volumi replicati sui sistemi di storage secondari e tutti i file di backup presenti nello storage a oggetti. Poiché il ripristino dei dati da una copia Snapshot locale o da un volume replicato può essere più rapido e meno costoso del ripristino da un file di backup nello storage a oggetti, è possibile ripristinare i dati da queste altre posizioni.</p>
 </div>
 <div class="paragraph">
 <p>Quando si ripristina un volume da un file di backup, il backup e ripristino di BlueXP crea un <em>nuovo</em> volume utilizzando i dati del backup. È possibile ripristinare i dati come volume nell&#8217;ambiente di lavoro originale o in un ambiente di lavoro diverso che si trova nello stesso account cloud dell&#8217;ambiente di lavoro di origine. È inoltre possibile ripristinare i volumi su un sistema ONTAP on-premise.</p>
@@ -2078,10 +2176,10 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <div class="ulist">
 <ul>
 <li>
-<p>Se il file di backup è stato configurato con la protezione DataLock &amp; ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l&#8217;intero volume dal file di backup e accedere alla cartella e ai file necessari.</p>
+<p>Se il file di backup nello storage a oggetti è stato configurato con la protezione DataLock e ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l&#8217;intero volume dal file di backup e accedere alla cartella e ai file necessari.</p>
 </li>
 <li>
-<p>Se il file di backup risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l&#8217;intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.</p>
+<p>Se il file di backup nello storage a oggetti risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l&#8217;intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.</p>
 </li>
 <li>
 <p>La priorità di ripristino "alta" non è supportata quando si ripristinano i dati dallo storage di archivio Azure ai sistemi StorageGRID.</p>
@@ -2106,34 +2204,51 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <div class="sect2">
 <h3 id="search-restore-ambienti-di-lavoro-supportati-e-provider-di-storage-a-oggetti">Search &amp; Restore ambienti di lavoro supportati e provider di storage a oggetti</h3>
 <div class="paragraph">
-<p>È possibile ripristinare un volume, una cartella o singoli file da un file di backup di ONTAP nei seguenti ambienti di lavoro:</p>
+<p>È possibile ripristinare i dati ONTAP da un file di backup che risiede in un ambiente di lavoro secondario (un volume replicato) o nello storage a oggetti (un file di backup) nei seguenti ambienti di lavoro. Le copie Snapshot risiedono nell&#8217;ambiente di lavoro di origine e possono essere ripristinate solo sullo stesso sistema.</p>
+</div>
+<div class="paragraph">
+<p><strong>Nota:</strong> è possibile ripristinare volumi e file da qualsiasi tipo di file di backup, ma è possibile ripristinare una cartella solo dai file di backup nello storage a oggetti in questo momento.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 41.1764%;">
-<col style="width: 58.8236%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Percorso del file di backup</th>
-<th class="tableblock halign-left valign-top">Ambiente di lavoro di destinazione ifdef::aws[]</th>
+<th class="tableblock halign-left valign-top" colspan="2">Percorso del file di backup</th>
+<th class="tableblock halign-left valign-top">Ambiente di lavoro di destinazione</th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Archivio oggetti (backup)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Sistema secondario (replica)</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ifdef::aws[]</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Amazon S3</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in AWS<br>
+Sistema ONTAP on-premise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in AWS on-premise ONTAP system endif::aws[] ifdef::Azure[]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Azure Blob</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Azure<br>
+Sistema ONTAP on-premise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Azure on-premise ONTAP system endif::Azure[] ifdef::gcp[]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Storage Google Cloud</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google<br>
+Sistema ONTAP on-premise</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Cloud Volumes ONTAP in Google on-premise ONTAP system endif::gcp[]</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">NetApp StorageGRID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sistema ONTAP on-premise<br>
+Cloud Volumes ONTAP</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Sistema ONTAP on-premise</p></td>
 </tr>
 </tbody>
@@ -2173,7 +2288,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <p>NFS deve essere attivato sul volume (sono supportati sia i volumi NFS che SMB/CIFS).</p>
 </li>
 <li>
-<p>SnapDiff RPC Server deve essere attivato su SVM. BlueXP esegue questa operazione automaticamente quando si attiva l&#8217;indicizzazione nell&#8217;ambiente di lavoro. (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra due copie Snapshot).</p>
+<p>SnapDiff RPC Server deve essere attivato su SVM. BlueXP esegue questa operazione automaticamente quando si attiva l&#8217;indicizzazione nell&#8217;ambiente di lavoro. (SnapDiff è la tecnologia che identifica rapidamente le differenze di file e directory tra le copie Snapshot).</p>
 </li>
 </ul>
 </div>
@@ -2188,7 +2303,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <li>
 <p>Le autorizzazioni specifiche di Azure Synapse Workspace e di Data Lake Storage account devono essere aggiunte al ruolo utente che fornisce a BlueXP le autorizzazioni. <a href="task-backup-onprem-to-azure.html#verify-or-add-permissions-to-the-connector">"Assicurarsi che tutte le autorizzazioni siano configurate correttamente"</a>.</p>
 <div class="paragraph">
-<p>Nota: Se si utilizzava già il backup e ripristino BlueXP con un connettore configurato in passato, è necessario aggiungere le autorizzazioni Azure Synapse Workspace e Data Lake Storage account al ruolo utente BlueXP. Queste sono nuove e sono necessarie per la ricerca e il ripristino.</p>
+<p>Nota: Se si utilizzava già il backup e ripristino BlueXP con un connettore configurato in passato, è necessario aggiungere le autorizzazioni Azure Synapse Workspace e Data Lake Storage account al ruolo utente BlueXP. Sono necessari per la ricerca e il ripristino.</p>
 </div>
 </li>
 <li>
@@ -2208,7 +2323,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <p>Se non sono presenti credenziali del provider cloud nell&#8217;account, le informazioni del catalogo indicizzate vengono memorizzate nel connettore.</p>
 </li>
 <li>
-<p>Se si utilizza un connettore in un sito buio, le informazioni del catalogo indicizzate vengono memorizzate nel connettore (richiede la versione 3.9.25 o superiore del connettore).</p>
+<p>Se si utilizza un connettore in un sito privato (scuro), le informazioni del catalogo indicizzate vengono memorizzate nel connettore (richiede la versione 3.9.25 o superiore del connettore).</p>
 </li>
 <li>
 <p>Se lo hai fatto <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html" target="_blank" rel="noopener">"Credenziali AWS"</a> oppure <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html" target="_blank" rel="noopener">"Credenziali Azure"</a> Nell&#8217;account, il catalogo indicizzato viene memorizzato presso il cloud provider, proprio come con un connettore implementato nel cloud. (Se si dispone di entrambe le credenziali, AWS è selezionato per impostazione predefinita).</p>
@@ -2236,7 +2351,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <p>Se si desidera ripristinare uno o più file da un backup di un volume, in <em>Search &amp; Restore</em>, fare clic su <strong>Search &amp; Restore</strong> (Ricerca e ripristino).</p>
 </li>
 <li>
-<p>Immettere i criteri di ricerca per un volume, una cartella o un file in base al nome del volume parziale o completo, al nome del file parziale o completo, all&#8217;intervallo di dimensioni, all&#8217;intervallo di date di creazione e ad altri filtri di ricerca, quindi fare clic su <strong>Cerca</strong>.</p>
+<p>Immettere i criteri di ricerca per un volume, una cartella o un file in base al nome del volume parziale o completo, al nome del file completo o parziale, alla posizione di backup, all&#8217;intervallo di dimensioni, all&#8217;intervallo di date di creazione, ad altri filtri di ricerca, E fare clic su <strong>Cerca</strong>.</p>
 <div class="paragraph">
 <p>La pagina risultati ricerca visualizza tutte le posizioni in cui è presente un file o un volume corrispondente ai criteri di ricerca.</p>
 </div>
@@ -2260,7 +2375,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 </div>
 </div>
 <div class="sect2">
-<h3 id="abilitazione-del-catalogo-indicizzato-per-ogni-ambiente-di-lavoro">Abilitazione del catalogo indicizzato per ogni ambiente di lavoro</h3>
+<h3 id="abilitare-il-catalogo-indicizzato-per-ogni-ambiente-di-lavoro">Abilitare il catalogo indicizzato per ogni ambiente di lavoro</h3>
 <div class="paragraph">
 <p>Prima di utilizzare Search &amp; Restore, è necessario attivare l&#8217;indicizzazione su ogni ambiente di lavoro di origine da cui si intende ripristinare volumi o file. Questo consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche molto rapide ed efficienti.</p>
 </div>
@@ -2300,13 +2415,13 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <p><span class="image"><img src="./media/screenshot_restore_enable_indexing.png" alt="Una schermata che mostra gli ambienti di lavoro che hanno attivato il catalogo indicizzato."></span></p>
 </div>
 <div class="paragraph">
-<p>A seconda delle dimensioni dei volumi nell&#8217;ambiente di lavoro e del numero di file di backup nel cloud, il processo di indicizzazione iniziale potrebbe richiedere fino a un&#8217;ora. Successivamente, viene aggiornato in modo trasparente ogni ora con modifiche incrementali per rimanere aggiornato.</p>
+<p>A seconda delle dimensioni dei volumi nell&#8217;ambiente di lavoro e del numero di file di backup in tutte e 3 le posizioni di backup, il processo di indicizzazione iniziale potrebbe richiedere fino a un&#8217;ora. Successivamente, viene aggiornato in modo trasparente ogni ora con modifiche incrementali per rimanere aggiornato.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ripristino-di-volumi-cartelle-e-file-mediante-search-restore">Ripristino di volumi, cartelle e file mediante Search &amp; Restore</h3>
+<h3 id="ripristinare-volumi-cartelle-e-file-utilizzando-search-restore">Ripristinare volumi, cartelle e file utilizzando Search &amp; Restore</h3>
 <div class="paragraph">
-<p>Dopo di che <a href="#abilitazione-del-catalogo-indicizzato-per-ogni-ambiente-di-lavoro">Indicizzazione abilitata per l&#8217;ambiente di lavoro</a>, È possibile ripristinare volumi, cartelle e file utilizzando Search &amp; Restore. In questo modo, è possibile utilizzare un&#8217;ampia gamma di filtri per individuare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.</p>
+<p>Dopo di che <a href="#Enabling the Indexed Catalog for each working environment">Indicizzazione abilitata per l&#8217;ambiente di lavoro</a>, È possibile ripristinare volumi, cartelle e file utilizzando Search &amp; Restore. In questo modo, è possibile utilizzare un&#8217;ampia gamma di filtri per individuare il file o il volume esatto che si desidera ripristinare da tutti i file di backup.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Fasi</div>
@@ -2334,7 +2449,7 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 <p>Selezionare il tipo di risorsa: <strong>Volumi</strong>, <strong>file</strong>, <strong>cartelle</strong> o <strong>tutto</strong>.</p>
 </li>
 <li>
-<p>Nell&#8217;area <em>Filtra per</em>, selezionare i criteri di filtro. Ad esempio, è possibile selezionare l&#8217;ambiente di lavoro in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG.</p>
+<p>Nell&#8217;area <em>Filtra per</em>, selezionare i criteri di filtro. Ad esempio, è possibile selezionare l&#8217;ambiente di lavoro in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG. In alternativa, è possibile selezionare il tipo di percorso di backup se si desidera cercare i risultati solo all&#8217;interno delle copie Snapshot o dei file di backup disponibili nello storage a oggetti.</p>
 </li>
 </ol>
 </div>
@@ -2346,15 +2461,15 @@ Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possibile r
 </div>
 </li>
 <li>
-<p>Fare clic su <strong>View All backups</strong> (Visualizza tutti i backup) per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.</p>
+<p>Individuare la risorsa contenente i dati da ripristinare e fare clic su <strong>View All backups</strong> (Visualizza tutti i backup) per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.</p>
 <div class="paragraph">
 <p><span class="image"><img src="./media/screenshot_restore_step2_search_restore.png" alt="Una schermata che mostra come visualizzare tutti i backup che corrispondono ai criteri di ricerca."></span></p>
 </div>
 </li>
 <li>
-<p>Fare clic su <strong>Restore</strong> per il file di backup che si desidera utilizzare per ripristinare l&#8217;elemento dal cloud.</p>
+<p>Individuare il file di backup che si desidera utilizzare per ripristinare i dati e fare clic su <strong>Restore</strong> (Ripristina).</p>
 <div class="paragraph">
-<p>I risultati identificano anche le copie Snapshot del volume locale che contengono il file nella ricerca. Il pulsante <strong>Restore</strong> (Ripristina) non funziona per le istantanee, ma se si desidera ripristinare i dati dalla copia Snapshot anziché dal file di backup, annotare il nome e la posizione del volume, aprire la pagina Volume Details (Dettagli volume) in Canvas, E utilizzare l&#8217;opzione <strong>Restore from Snapshot copy</strong> (Ripristina da copia Snapshot).</p>
+<p>I risultati identificano anche le copie Snapshot del volume locale che contengono il file nella ricerca. È possibile scegliere di eseguire il ripristino dal file di backup del cloud o dalla copia Snapshot.</p>
 </div>
 </li>
 <li>

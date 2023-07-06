@@ -476,6 +476,8 @@
 
 
 
+
+
         </li>
       </ul>
     
@@ -962,6 +964,13 @@
         Proteggi i dati del tuo volume ONTAP
       </a></li><li 
       data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
       data-pdf-filename="Backup di Cloud Volumes ONTAP in Azure Blob"
       data-li-level="2#" 
       class=" "
@@ -990,18 +999,18 @@
         Gestire i backup di ONTAP
       </a></li><li 
       data-pdf-exists="true" 
-      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster"
-      data-li-level="2#" 
-      class=" "
-    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backup-settings-ontap.html">
-        Gestire le impostazioni di backup a livello di cluster
-      </a></li><li 
-      data-pdf-exists="true" 
       data-pdf-filename="Ripristino dai backup di ONTAP"
       data-li-level="2#" 
       class=" "
     ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-restore-backups-ontap.html">
         Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class=" "
+    ><a class="na-navbar-padding" href="/it-it/bluexp-backup-recovery/azure/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
       </a></li></ul></li><li 
       data-pdf-exists="true" 
       data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
@@ -1515,7 +1524,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-06-05 20:37:30 +0000">06/05/2023</time>
+    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
     
   
 
@@ -1679,7 +1688,7 @@ Se i sistemi ONTAP sono stati aggiornati alla versione 9.13.x e non vengono visu
 <img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
 </td>
 <td class="content">
-I dettagli del processo vengono visualizzati solo per i processi di backup e ripristino dei volumi ONTAP. I dettagli del processo di backup pianificato vengono visualizzati solo per i sistemi Cloud Volumes ONTAP a partire da ONTAP 9.13.0. Vengono visualizzati i dettagli del lavoro per i lavori in corso e completati.
+I dettagli del processo vengono visualizzati per i processi di backup di ONTAP (ad hoc e pianificati, con i processi pianificati visualizzati solo per ONTAP 9.13.0 o versioni successive) e per tutti i processi di ripristino. Vengono visualizzati i dettagli del lavoro per i lavori in corso e completati.
 </td>
 </tr>
 </table>
@@ -1765,10 +1774,10 @@ I dettagli del processo vengono visualizzati solo per i processi di backup e rip
 <p>BlueXP Notification Center tiene traccia dell&#8217;avanzamento dei processi di backup e ripristino avviati, in modo da verificare se l&#8217;operazione è stata eseguita correttamente.</p>
 </div>
 <div class="paragraph">
-<p>Oltre a visualizzare gli avvisi nell&#8217;elenco delle notifiche di BlueXP, è possibile configurare BlueXP in modo che invii le notifiche via email come avvisi, in modo da essere informati di importanti attività del sistema anche quando non si è connessi al sistema. <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html" target="_blank" rel="noopener">"Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"</a>.</p>
+<p>Oltre a visualizzare gli avvisi nel Centro notifiche, è possibile configurare BlueXP in modo che invii alcuni tipi di notifiche via email come avvisi, in modo da essere informato di importanti attività del sistema anche quando non si è connessi al sistema. <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html" target="_blank" rel="noopener">"Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"</a>.</p>
 </div>
 <div class="paragraph">
-<p>I seguenti eventi generano avvisi via email:</p>
+<p>Il Centro notifiche visualizza numerosi eventi, ma solo i seguenti eventi di backup e ripristino attivano avvisi via email:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1833,19 +1842,19 @@ I dettagli del processo vengono visualizzati solo per i processi di backup e rip
 <img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
 </td>
 <td class="content">
-A partire da Cloud Volumes ONTAP 9.13.0, vengono visualizzati tutti gli avvisi. Per i sistemi con Cloud Volumes ONTAP 9.13.0 e on-premise ONTAP, viene visualizzato solo l&#8217;avviso relativo al processo di ripristino completato con avvisi.
+A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sistemi Cloud Volumes ONTAP e ONTAP on-premise. Per i sistemi con Cloud Volumes ONTAP 9.13.0 e on-premise ONTAP, viene visualizzato solo l&#8217;avviso relativo al completamento del processo di ripristino, ma con avvisi.
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p>Per impostazione predefinita, gli account Admins di BlueXP ricevono e-mail per tutti gli avvisi "critici" e "raccomandati". Tutti gli altri utenti e destinatari sono configurati, per impostazione predefinita, per non ricevere alcuna email di notifica. Le e-mail possono essere inviate a qualsiasi utente BlueXP che fa parte del tuo NetApp Cloud account o a qualsiasi altro destinatario che abbia bisogno di conoscere l&#8217;attività di backup e ripristino.</p>
+<p>Per impostazione predefinita, gli account Admins di BlueXP ricevono e-mail per tutti gli avvisi "critici" e "raccomandati". Per impostazione predefinita, tutti gli altri utenti e destinatari non ricevono alcuna notifica e-mail. Le e-mail possono essere inviate a qualsiasi utente BlueXP che fa parte del tuo NetApp Cloud account o a qualsiasi altro destinatario che abbia bisogno di conoscere l&#8217;attività di backup e ripristino.</p>
 </div>
 <div class="paragraph">
-<p>Per ricevere gli avvisi e-mail di backup e ripristino di BlueXP, è necessario selezionare i tipi di severità della notifica "critico", "Avviso" e "errore".</p>
+<p>Per ricevere gli avvisi e-mail di backup e ripristino di BlueXP, è necessario selezionare i tipi di severità della notifica "critico", "Avviso" e "errore" nella pagina Impostazioni avvisi e notifiche.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html" target="_blank" rel="noopener">"Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html" target="_blank" rel="noopener">"Scopri come inviare e-mail di avviso per i processi di backup e ripristino"</a>.</p>
 </div>
 <div class="olist arabic">
 <div class="title">Fasi</div>
