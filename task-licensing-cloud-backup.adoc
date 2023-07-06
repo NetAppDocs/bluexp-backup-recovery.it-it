@@ -20,7 +20,7 @@ Alcune note prima di leggere ulteriori informazioni:
 
 * Se hai già sottoscritto l'abbonamento pay-as-you-go (PAYGO) nel mercato del tuo cloud provider per un sistema Cloud Volumes ONTAP, sarai automaticamente iscritto anche al backup e ripristino BlueXP. Non dovrai più iscriverti.
 * La licenza BYOL (Bring-Your-Own-License) di backup e ripristino BlueXP è una licenza mobile che è possibile utilizzare in tutti i sistemi associati all'account BlueXP. Quindi, se si dispone di una capacità di backup sufficiente da una licenza BYOL esistente, non sarà necessario acquistare un'altra licenza BYOL.
-* Se si utilizza una licenza BYOL, si consiglia di sottoscrivere anche un abbonamento PAYGO. Se si esegue il backup di più dati di quelli consentiti dalla licenza BYOL, il backup prosegue con l'abbonamento pay-as-you-go, senza interruzioni del servizio.
+* Se si utilizza una licenza BYOL, si consiglia di sottoscrivere anche un abbonamento PAYGO. Se si esegue il backup di un numero di dati superiore a quello consentito dalla licenza BYOL, o se la durata della licenza scade, il backup prosegue con l'abbonamento pay-as-you-go, senza interruzioni del servizio.
 * Quando si esegue il backup dei dati ONTAP on-premise su StorageGRID, è necessaria una licenza BYOL, ma lo spazio di storage del cloud provider non costa.
 
 
@@ -114,6 +114,8 @@ ifdef::gcp[]
 Quando si utilizza GCP, contattare il rappresentante commerciale NetApp per acquistare un contratto annuale. Il contratto è disponibile come offerta privata in Google Cloud Marketplace. Una volta che NetApp condivide l'offerta privata con te, puoi selezionare il piano annuale quando ti iscrivi da Google Cloud Marketplace durante l'attivazione del backup e ripristino BlueXP.
 
 endif::gcp[]
+
+Se si dispone di un contratto annuale da un marketplace, tutti i consumi di backup e recovery di BlueXP vengono addebitati a fronte di tale contratto. Non puoi combinare un contratto di mercato annuale con un BYOL.
 
 
 

@@ -44,6 +44,8 @@ sidebar:
     entries:
     - title: Proteggi i dati del tuo volume ONTAP
       url: "/concept-ontap-backup-to-cloud.html"
+    - title: Pianifica il tuo percorso di protezione
+      url: "/concept-protection-journey.html"
     - title: Eseguire il backup di Cloud Volumes ONTAP su Amazon S3
       flavor: aws
       url: "/task-backup-to-s3.html"
@@ -66,10 +68,10 @@ sidebar:
       url: "/task-backup-onprem-private-cloud.html"
     - title: Gestire i backup di ONTAP
       url: "/task-manage-backups-ontap.html"
-    - title: Gestire le impostazioni di backup a livello di cluster
-      url: "/task-manage-backup-settings-ontap.html"
     - title: Ripristino dai backup di ONTAP
       url: "/task-restore-backups-ontap.html"
+    - title: Gestire le impostazioni di backup a livello di cluster su oggetti
+      url: "/task-manage-backup-settings-ontap.html"
   - title: Backup e ripristino dei dati delle applicazioni on-premise
     entries:
     - title: Proteggi i dati delle tue applicazioni on-premise
@@ -260,20 +262,22 @@ homepage:
       url: task-backup-onprem-private-cloud.html
   - title: Gestire i file di backup di ONTAP
     links:
-    - title: Abilitare e disabilitare i backup dei volumi
-      url: task-manage-backups-ontap.html#enabling-and-disabling-backups-of-volumes
-    - title: Modificare un criterio di backup esistente
-      url: task-manage-backups-ontap.html#editing-an-existing-backup-policy
-    - title: Aggiungere una nuova policy di backup
-      url: task-manage-backups-ontap.html#adding-a-new-backup-policy
+    - title: Abilitare i backup dei volumi su volumi aggiuntivi
+      url: task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment
+    - title: Modificare una policy di backup su cloud esistente
+      url: task-manage-backups-ontap.html#edit-an-existing-backup-to-cloud-policy
+    - title: Aggiungi un nuovo backup alla policy cloud
+      url: task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy
     - title: Modificare il criterio assegnato ai volumi esistenti
-      url: task-manage-backups-ontap.html#changing-the-policy-assigned-to-existing-volumes
+      url: task-manage-backups-ontap.html#change-the-backup-settings-assigned-to-existing-volumes
     - title: Creare un backup manuale del volume
-      url: task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time
+      url: task-manage-backups-ontap.html#create-a-manual-volume-backup-at-any-time
     - title: Visualizzare l'elenco dei backup per ciascun volume
-      url: task-manage-backups-ontap.html#viewing-the-list-of-backups-for-each-volume
+      url: task-manage-backups-ontap.html#view-the-list-of-backups-for-each-volume
+    - title: Gestire le relazioni di replica
+      url: task-manage-backups-ontap.html#manage-the-replication-relationship-with-the-source-volume
     - title: Eliminare i backup
-      url: task-manage-backups-ontap.html#deleting-backups
+      url: task-manage-backups-ontap.html#delete-backups
   - title: Eseguire il backup dei dati delle applicazioni nel cloud
     links:
     - title: Eseguire il backup dei dati delle applicazioni on-premise su Amazon Web

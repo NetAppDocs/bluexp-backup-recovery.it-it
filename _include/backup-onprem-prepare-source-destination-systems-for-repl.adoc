@@ -1,0 +1,22 @@
+= Requisiti di rete Cloud Volumes ONTAP
+:allow-uri-read: 
+
+
+Prima di attivare i backup in BlueXP backup e recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino la versione di ONTAP e i requisiti di rete.
+
+
+
+==== Requisiti di rete Cloud Volumes ONTAP
+
+Il gruppo di protezione dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
+
+
+
+==== Requisiti di rete ONTAP on-premise
+
+* Se il cluster è on-premise, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel provider di servizi cloud. Si tratta in genere di una connessione VPN.
+* I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.
++
+Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. Fare riferimento a. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
+
+

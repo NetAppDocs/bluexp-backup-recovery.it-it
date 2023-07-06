@@ -17,6 +17,9 @@ summary: Il backup e ripristino BlueXP consente di creare policy di backup con d
 Il backup e ripristino BlueXP consente di creare policy di backup con diverse impostazioni di configurazione per i sistemi ONTAP e Cloud Volumes ONTAP on-premise.
 
 
+NOTE: Queste impostazioni dei criteri sono rilevanti solo per il backup nello storage a oggetti. Nessuna di queste impostazioni influisce sulle policy di Snapshot o di replica. Impostazioni di policy simili per snapshot e repliche verranno aggiunte in futuro.
+
+
 
 == Pianificazioni di backup
 
@@ -70,7 +73,7 @@ Questa funzione non fornisce protezione per i volumi di origine, ma solo per i b
 
 === Cos'è DataLock
 
-DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti". Il periodo di tempo in cui il file di backup viene bloccato (e conservato) viene definito periodo di conservazione DataLock. Si basa sulla pianificazione dei criteri di backup e sull'impostazione di conservazione definita dall'utente, oltre a un buffer di 14 giorni. Qualsiasi policy di conservazione DataLock inferiore a 30 giorni viene arrotondata al minimo di 30 giorni.
+DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo, detto anche storage immutabile. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti". Il periodo di tempo in cui il file di backup viene bloccato (e conservato) viene definito periodo di conservazione DataLock. Si basa sulla pianificazione dei criteri di backup e sull'impostazione di conservazione definita dall'utente, oltre a un buffer di 14 giorni. Qualsiasi policy di conservazione DataLock inferiore a 30 giorni viene arrotondata al minimo di 30 giorni.
 
 Tenere presente che i vecchi backup vengono cancellati dopo la scadenza del periodo di conservazione DataLock, non dopo la scadenza del periodo di conservazione dei criteri di backup.
 
@@ -325,7 +328,10 @@ ifdef::aws[]
 Se il cluster utilizza ONTAP 9.10.1 o versione successiva, è possibile eseguire il tiering dei backup più vecchi nello storage _S3 Glacier_ o _S3 Glacier Deep Archive_. link:reference-aws-backup-tiers.html["Scopri di più sullo storage di archiviazione AWS"^].
 
 +
-Si noti che se si sceglie _S3 Glacier_ o _S3 Glacier Deep Archive_ nella prima policy di backup quando si attiva il backup e ripristino BlueXP, tale Tier sarà l'unico Tier di archiviazione disponibile per le policy di backup future per quel cluster. Inoltre, se non si seleziona alcun livello di archiviazione nella prima policy di backup, _S3 Glacier_ sarà l'unica opzione di archiviazione per le policy future.
+** Se non si seleziona alcun livello di archiviazione nella prima policy di backup quando si attiva il backup e ripristino BlueXP, _S3 Glacier_ sarà l'unica opzione di archiviazione per le policy future.
+** Se si seleziona _S3 Glacier_ nella prima policy di backup, è possibile passare al livello _S3 Glacier Deep Archive_ per le policy di backup future per quel cluster.
+** Se si seleziona _S3 Glacier Deep Archive_ nella prima policy di backup, tale Tier sarà l'unico Tier di archiviazione disponibile per future policy di backup per quel cluster.
+
 
 
 

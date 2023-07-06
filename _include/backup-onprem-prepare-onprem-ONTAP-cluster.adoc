@@ -1,0 +1,43 @@
+= Scopri i tuoi sistemi ONTAP in BlueXP
+:allow-uri-read: 
+
+
+Dovrai preparare il tuo sistema ONTAP on-premise di origine e qualsiasi altro sistema ONTAP o Cloud Volumes ONTAP secondario on-premise.
+
+La preparazione dei cluster ONTAP prevede i seguenti passaggi:
+
+* Scopri i tuoi sistemi ONTAP in BlueXP
+* Verificare i requisiti di sistema di ONTAP
+* Verificare i requisiti di rete di ONTAP per il backup dei dati nello storage a oggetti
+* Verificare i requisiti di rete di ONTAP per la replica dei volumi
+
+
+
+
+=== Scopri i tuoi sistemi ONTAP in BlueXP
+
+Il sistema ONTAP di origine on-premise e qualsiasi sistema ONTAP o Cloud Volumes ONTAP secondario on-premise devono essere disponibili su BlueXP Canvas.
+
+Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione del cluster e la password dell'account utente amministratore.
+https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html["Scopri come individuare un cluster"^].
+
+
+
+=== Verificare i requisiti di sistema di ONTAP
+
+Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP:
+
+* Almeno ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.
+* Una licenza SnapMirror (inclusa nel Premium Bundle o nel Data Protection Bundle).
++
+*Nota:* il "Hybrid Cloud Bundle" non è richiesto quando si utilizza il backup e ripristino BlueXP.
+
++
+Scopri come https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestire le licenze del cluster"^].
+
+* L'ora e il fuso orario sono impostati correttamente. Scopri come https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configurare l'ora del cluster"^].
+* Se si intende replicare i dati, è necessario verificare che i volumi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.
++
+https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni di ONTAP compatibili per le relazioni SnapMirror"^].
+
+
