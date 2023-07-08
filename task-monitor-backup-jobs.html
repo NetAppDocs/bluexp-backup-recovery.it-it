@@ -9,14 +9,14 @@
   <meta property="og:title" content="Monitorare lo stato dei processi di backup e ripristino | NetApp Documentation" />
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-monitor-backup-jobs.html" />
-	<meta property="og:description" content="È possibile monitorare lo stato dei processi di backup pianificati o avviati e ripristinare quelli avviati negli ambienti di lavoro. È possibile visualizzare..." />
+	<meta property="og:description" content="È possibile monitorare lo stato di tutti i processi di backup e ripristino. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da..." />
   <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/images/logo-tophat-social.png" />
   <meta property="og:image:alt" content="NetApp Logo" />
   <meta name="format-detection" content="telephone=no">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="encoding" content="utf-8">
   <meta http-equiv="nss-type" content="Product Documentation"/>
-  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="È possibile monitorare lo stato dei processi di backup pianificati o avviati e ripristinare quelli avviati negli ambienti di lavoro. È possibile visualizzare...">
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="È possibile monitorare lo stato di tutti i processi di backup e ripristino. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da...">
   <meta name="keywords" content=" cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification"><!-- Icons -->
   <link rel="icon" href="/it-it/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
 
@@ -1592,7 +1592,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
+    <time datetime="2023-07-08 00:40:07 +0000">07/08/2023</time>
     
   
 
@@ -1638,7 +1638,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Sia le operazioni di backup e ripristino avviate dall&#8217;utente dall&#8217;interfaccia utente e dall&#8217;API di Cloud Backup, sia i processi avviati dal sistema, come le operazioni di backup pianificate in corso, sono disponibili nella scheda Job Monitoring. Tuttavia, questo vale solo per i sistemi Cloud Volumes ONTAP con ONTAP 9.13.0 o superiore e per i sistemi ONTAP on-premise con ONTAP 9.13.1 o superiore. Quando si eseguono versioni precedenti di ONTAP, vengono visualizzati solo i processi avviati dall&#8217;utente.</p>
+<p>Nella scheda Job Monitoring sono disponibili sia le operazioni di backup e ripristino avviate dall&#8217;interfaccia utente e dall&#8217;API di backup e ripristino di BlueXP, sia i processi avviati dal sistema, ad esempio le operazioni di backup pianificate in corso. Tuttavia, questo vale solo per i sistemi Cloud Volumes ONTAP con ONTAP 9.13.0 o superiore e per i sistemi ONTAP on-premise con ONTAP 9.13.1 o superiore. Quando si eseguono versioni precedenti di ONTAP, vengono visualizzati solo i processi avviati dall&#8217;utente.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1668,7 +1668,7 @@ Se i sistemi ONTAP sono stati aggiornati alla versione 9.13.x e non vengono visu
 </div>
 </li>
 <li>
-<p>Per visualizzare colonne aggiuntive (ambiente di lavoro, SVM, Nome utente, carichi di lavoro, policy, E Snapshot Label), selezionare <span class="image"><img src="./media/button_plus_sign_round.png" alt="il pulsante del segno più"></span>.</p>
+<p>Per visualizzare colonne aggiuntive (ambiente di lavoro, SVM, Nome utente, carico di lavoro, Nome policy, E Snapshot Label), selezionare <span class="image"><img src="./media/button_plus_sign_round.png" alt="il pulsante del segno più"></span>.</p>
 </li>
 </ol>
 </div>
@@ -1701,7 +1701,7 @@ Se i sistemi ONTAP sono stati aggiornati alla versione 9.13.x e non vengono visu
 <p>Questa schermata mostra come cercare tutti i job "Volume" "Backup" per i volumi denominati "Volume_1" nella "settimana passata".</p>
 </div>
 <div class="paragraph">
-<p>La maggior parte dei filtri sono intuitivi. Il filtro per i "workload" consente di visualizzare i job nelle seguenti categorie:</p>
+<p>La maggior parte dei filtri sono intuitivi. Il filtro per "carico di lavoro" consente di visualizzare i lavori nelle seguenti categorie:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1845,7 +1845,7 @@ I dettagli del processo vengono visualizzati per i processi di backup di ONTAP (
 <p>Oltre a visualizzare gli avvisi nel Centro notifiche, è possibile configurare BlueXP in modo che invii alcuni tipi di notifiche via email come avvisi, in modo da essere informato di importanti attività del sistema anche quando non si è connessi al sistema. <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html" target="_blank" rel="noopener">"Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"</a>.</p>
 </div>
 <div class="paragraph">
-<p>Il Centro notifiche visualizza numerosi eventi, ma solo i seguenti eventi di backup e ripristino attivano avvisi via email:</p>
+<p>Il Centro notifiche visualizza numerosi eventi di backup e ripristino, ma solo i seguenti eventi attivano avvisi via email:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1928,13 +1928,10 @@ A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sistemi C
 <div class="title">Fasi</div>
 <ol class="arabic">
 <li>
-<p>Selezionare la scheda <strong>Job Monitoring</strong>.</p>
+<p>Dalla barra dei menu di BlueXP, selezionare (<span class="image"><img src="./media/icon_bell.png" alt="campanello di notifica"></span>).</p>
 </li>
 <li>
-<p>Visualizzare le notifiche selezionando (<span class="image"><img src="./media/icon_bell.png" alt="campanello di notifica"></span>) Nella barra dei menu di BlueXP.</p>
-</li>
-<li>
-<p>Esaminare la notifica.</p>
+<p>Esaminare le notifiche.</p>
 </li>
 </ol>
 </div>

@@ -1524,7 +1524,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
+    <time datetime="2023-07-08 00:40:07 +0000">07/08/2023</time>
     
   
 
@@ -1568,7 +1568,7 @@ I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
 </div>
 <div class="paragraph quick-margin-para">
 <div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Due"></span> Preparare il connettore BlueXP</div>
-<p>Se disponi già di un connettore implementato nel tuo StorageGRID o on-premise, allora sei tutto impostato. In caso contrario, sarà necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP su StorageGRID. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a StorageGRID.</p>
+<p>Se hai già un connettore implementato nella tua sede, allora sei tutto impostato. In caso contrario, sarà necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP su StorageGRID. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a StorageGRID.</p>
 </div>
 <div class="paragraph quick-margin-para">
 <p><a href="#preparare-il-connettore-bluexp">Scopri come creare un connettore e come definire le impostazioni di rete richieste.</a></p>
@@ -1610,7 +1610,7 @@ I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
 <p>L&#8217;immagine seguente mostra ciascun componente durante il backup di un sistema ONTAP on-premise su StorageGRID e le connessioni necessarie per prepararlo tra di loro.</p>
 </div>
 <div class="paragraph">
-<p>In alternativa, è possibile connettersi a un sistema ONTAP secondario per i volumi replicati utilizzando anche la connessione pubblica o privata.</p>
+<p>In alternativa, è possibile connettersi a un sistema ONTAP secondario nella stessa posizione on-premise per replicare i volumi.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram_cloud_backup_onprem_storagegrid.png" alt="Un diagramma che mostra come il backup e ripristino BlueXP comunica con i volumi sui sistemi di origine e lo storage di destinazione in cui si trovano i file di backup."></span></p>
@@ -1672,6 +1672,9 @@ I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
 <ul>
 <li>
 <p>La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Una volta installato in modalità privata, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare <a href="whats-new.html">"Novità di BlueXP per backup e ripristino"</a> Per visualizzare le nuove funzionalità di ogni versione di backup e ripristino di BlueXP. Per utilizzare le nuove funzioni, seguire i passaggi da a. <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode" target="_blank" rel="noopener">"Aggiornare il software del connettore"</a>.</p>
+<div class="paragraph">
+<p>La nuova versione di backup e ripristino di BlueXP, che include la possibilità di pianificare e creare copie Snapshot e volumi replicati, oltre alla creazione di backup nello storage a oggetti, richiede l&#8217;utilizzo della versione 3.9.31 o superiore di BlueXP Connector. Pertanto, si consiglia di ottenere questa versione più recente per gestire tutti i backup.</p>
+</div>
 </li>
 <li>
 <p>Quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS, viene eseguito il backup dei dati di configurazione di backup e ripristino BlueXP nel cloud. Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, viene eseguito il backup dei dati di configurazione di backup e ripristino BlueXP nel bucket StorageGRID in cui vengono memorizzati i backup. Se si verifica un errore del connettore nel sito in modalità privata, è possibile <a href="reference-backup-cbs-db-in-dark-site.html" target="_blank" rel="noopener">"Ripristinare i dati di backup e ripristino di BlueXP su un nuovo connettore"</a>.</p>
@@ -1779,10 +1782,10 @@ La licenza PAYGO non è supportata quando si esegue il backup dei file su Storag
 <div class="ulist">
 <ul>
 <li>
-<p>Quando si utilizza un&#8217;architettura di backup fan-out, è necessario configurare le seguenti impostazioni sul sistema di storage primario.</p>
+<p>Quando si utilizza un&#8217;architettura di backup fan-out, è necessario configurare le seguenti impostazioni sul sistema di storage <em>primario</em>.</p>
 </li>
 <li>
-<p>Quando si utilizza un&#8217;architettura di backup a cascata, è necessario configurare le seguenti impostazioni sul sistema di storage secondario.</p>
+<p>Quando si utilizza un&#8217;architettura di backup a cascata, è necessario configurare le seguenti impostazioni sul sistema di storage <em>secondario</em>.</p>
 </li>
 </ul>
 </div>
@@ -1855,7 +1858,7 @@ La licenza PAYGO non è supportata quando si esegue il backup dei file su Storag
 <h2 id="preparare-storagegrid-come-destinazione-del-backup">Preparare StorageGRID come destinazione del backup</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>StorageGRID deve soddisfare i seguenti requisiti. Vedere <a href="https://docs.netapp.com/us-en/storagegrid-116/" target="_blank" rel="noopener">"Documentazione StorageGRID"</a> per ulteriori informazioni.</p>
+<p>StorageGRID deve soddisfare i seguenti requisiti. Vedere <a href="https://docs.netapp.com/us-en/storagegrid-117/" target="_blank" rel="noopener">"Documentazione StorageGRID"</a> per ulteriori informazioni.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -1875,7 +1878,7 @@ La licenza PAYGO non è supportata quando si esegue il backup dei file su Storag
 </dd>
 <dt class="hdlist1">Credenziali S3</dt>
 <dd>
-<p>È necessario aver creato un account tenant S3 per controllare l&#8217;accesso allo storage StorageGRID. <a href="https://docs.netapp.com/us-en/storagegrid-116/admin/creating-tenant-account.html" target="_blank" rel="noopener">"Per ulteriori informazioni, consultare la documentazione di StorageGRID"</a>.</p>
+<p>È necessario aver creato un account tenant S3 per controllare l&#8217;accesso allo storage StorageGRID. <a href="https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html" target="_blank" rel="noopener">"Per ulteriori informazioni, consultare la documentazione di StorageGRID"</a>.</p>
 <div class="openblock">
 <div class="content">
 <div class="paragraph">
@@ -2212,14 +2215,14 @@ Se i volumi scelti hanno policy di replica e snapshot diverse da quelle selezion
 </div>
 </li>
 <li>
-<p><strong>Architettura</strong>: Se si sceglie la replica e il backup, scegliere uno dei seguenti flussi di informazioni:</p>
+<p><strong>Architettura</strong>: Se si sceglie sia la replica che il backup, scegliere uno dei seguenti flussi di informazioni:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Cascading</strong>: Flussi di informazioni dal primario al secondario allo storage a oggetti e dal secondario allo storage a oggetti.</p>
+<p><strong>Cascading</strong>: Le informazioni passano dal primario al secondario, quindi dal secondario allo storage a oggetti.</p>
 </li>
 <li>
-<p><strong>Fan out</strong>: I flussi di informazioni dal primario al secondario <em>e</em> dall&#8217;origine allo storage a oggetti.</p>
+<p><strong>Fan out</strong>: I flussi di informazioni dal primario al secondario <em>e</em> dallo storage primario a oggetti.</p>
 <div class="paragraph">
 <p>Per ulteriori informazioni su queste architetture, fare riferimento a. <a href="concept-protection-journey.html">"Pianifica il tuo percorso di protezione"</a>.</p>
 </div>
@@ -2390,7 +2393,7 @@ Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestio
 <p>È possibile <a href="task-manage-backups-ontap.html" target="_blank" rel="noopener">"gestire i file di backup e le policy di backup"</a>. Ciò include l&#8217;avvio e l&#8217;arresto dei backup, l&#8217;eliminazione dei backup, l&#8217;aggiunta e la modifica della pianificazione di backup e molto altro ancora.</p>
 </li>
 <li>
-<p>È possibile <a href="task-manage-backup-settings-ontap.html" target="_blank" rel="noopener">"gestire le impostazioni di backup a livello di cluster"</a>. Ciò include la modifica delle chiavi di storage utilizzate da ONTAP per accedere allo storage cloud, la modifica della larghezza di banda della rete disponibile per caricare i backup nello storage a oggetti, la modifica dell&#8217;impostazione di backup automatico per i volumi futuri e molto altro ancora.</p>
+<p>È possibile <a href="task-manage-backup-settings-ontap.html" target="_blank" rel="noopener">"gestire le impostazioni di backup a livello di cluster"</a>. Ciò include la modifica della larghezza di banda della rete disponibile per caricare i backup nello storage a oggetti, la modifica dell&#8217;impostazione di backup automatico per i volumi futuri e molto altro ancora.</p>
 </li>
 <li>
 <p>Puoi anche farlo <a href="task-restore-backups-ontap.html" target="_blank" rel="noopener">"ripristinare volumi, cartelle o singoli file da un file di backup"</a> A un sistema ONTAP on-premise.</p>
