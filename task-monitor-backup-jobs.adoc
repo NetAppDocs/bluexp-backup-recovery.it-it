@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-monitor-backup-jobs.html 
 keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
-summary: È possibile monitorare lo stato dei processi di backup pianificati o avviati e ripristinare quelli avviati negli ambienti di lavoro. È possibile visualizzare i lavori completati correttamente, quelli attualmente in corso e quelli che hanno avuto esito negativo, in modo da poter diagnosticare e risolvere i problemi. È inoltre possibile configurare le notifiche da inviare via email in modo da essere informati di importanti attività del sistema anche quando non si è connessi al sistema. 
+summary: 'È possibile monitorare lo stato di tutti i processi di backup e ripristino. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l"invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l"interfaccia utente o l"API.' 
 ---
 = Monitorare lo stato dei processi di backup e ripristino
 :hardbreaks:
@@ -31,7 +31,7 @@ Lo stato di backup e ripristino può essere:
 * Non riuscito
 
 
-Sia le operazioni di backup e ripristino avviate dall'utente dall'interfaccia utente e dall'API di Cloud Backup, sia i processi avviati dal sistema, come le operazioni di backup pianificate in corso, sono disponibili nella scheda Job Monitoring. Tuttavia, questo vale solo per i sistemi Cloud Volumes ONTAP con ONTAP 9.13.0 o superiore e per i sistemi ONTAP on-premise con ONTAP 9.13.1 o superiore. Quando si eseguono versioni precedenti di ONTAP, vengono visualizzati solo i processi avviati dall'utente.
+Nella scheda Job Monitoring sono disponibili sia le operazioni di backup e ripristino avviate dall'interfaccia utente e dall'API di backup e ripristino di BlueXP, sia i processi avviati dal sistema, ad esempio le operazioni di backup pianificate in corso. Tuttavia, questo vale solo per i sistemi Cloud Volumes ONTAP con ONTAP 9.13.0 o superiore e per i sistemi ONTAP on-premise con ONTAP 9.13.1 o superiore. Quando si eseguono versioni precedenti di ONTAP, vengono visualizzati solo i processi avviati dall'utente.
 
 
 NOTE: Se i sistemi ONTAP sono stati aggiornati alla versione 9.13.x e non vengono visualizzate operazioni di backup pianificate in corso in Job Monitor, sarà necessario riavviare il servizio di backup e ripristino BlueXP. link:reference-restart-backup.html["Scopri come riavviare il backup e il ripristino di BlueXP"].
@@ -45,7 +45,7 @@ image:screenshot_backup_job_monitor.png["Una schermata che mostra i processi di 
 +
 Questa schermata mostra le intestazioni di colonna predefinite.
 
-. Per visualizzare colonne aggiuntive (ambiente di lavoro, SVM, Nome utente, carichi di lavoro, policy, E Snapshot Label), selezionare image:button_plus_sign_round.png["il pulsante del segno più"].
+. Per visualizzare colonne aggiuntive (ambiente di lavoro, SVM, Nome utente, carico di lavoro, Nome policy, E Snapshot Label), selezionare image:button_plus_sign_round.png["il pulsante del segno più"].
 
 
 
@@ -70,7 +70,7 @@ image:screenshot_backup_job_monitor_filters.png["Una schermata che mostra l'impo
 Questa schermata mostra come cercare tutti i job "Volume" "Backup" per i volumi denominati "Volume_1" nella "settimana passata".
 
 +
-La maggior parte dei filtri sono intuitivi. Il filtro per i "workload" consente di visualizzare i job nelle seguenti categorie:
+La maggior parte dei filtri sono intuitivi. Il filtro per "carico di lavoro" consente di visualizzare i lavori nelle seguenti categorie:
 
 +
 ** Volumi (volumi Cloud Volumes ONTAP e ONTAP on-premise)
@@ -147,7 +147,7 @@ BlueXP Notification Center tiene traccia dell'avanzamento dei processi di backup
 
 Oltre a visualizzare gli avvisi nel Centro notifiche, è possibile configurare BlueXP in modo che invii alcuni tipi di notifiche via email come avvisi, in modo da essere informato di importanti attività del sistema anche quando non si è connessi al sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^].
 
-Il Centro notifiche visualizza numerosi eventi, ma solo i seguenti eventi di backup e ripristino attivano avvisi via email:
+Il Centro notifiche visualizza numerosi eventi di backup e ripristino, ma solo i seguenti eventi attivano avvisi via email:
 
 [cols="3a,1d"]
 |===
@@ -198,9 +198,8 @@ Per ricevere gli avvisi e-mail di backup e ripristino di BlueXP, è necessario s
 https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Scopri come inviare e-mail di avviso per i processi di backup e ripristino"^].
 
 .Fasi
-. Selezionare la scheda *Job Monitoring*.
-. Visualizzare le notifiche selezionando (image:icon_bell.png["campanello di notifica"]) Nella barra dei menu di BlueXP.
-. Esaminare la notifica.
+. Dalla barra dei menu di BlueXP, selezionare (image:icon_bell.png["campanello di notifica"]).
+. Esaminare le notifiche.
 
 
 
