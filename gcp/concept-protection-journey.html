@@ -1459,7 +1459,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
+    <time datetime="2023-07-11 20:52:35 +0000">07/11/2023</time>
     
   
 
@@ -1540,7 +1540,7 @@
 <p>È possibile scegliere di creare volumi replicati su un altro sistema storage ONTAP e file di backup nel cloud. In alternativa, puoi scegliere di creare volumi replicati o file di backup.</p>
 </div>
 <div class="paragraph">
-<p>In sintesi, questi sono i flussi di protezione validi che è possibile creare per un volume o per tutti i volumi nell&#8217;ambiente di lavoro ONTAP:</p>
+<p>In sintesi, questi sono i flussi di protezione validi che è possibile creare per i volumi nel proprio ambiente di lavoro ONTAP:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1626,13 +1626,13 @@ La creazione iniziale di un volume replicato o di un file di backup include una 
 <p>Quando si creano volumi replicati e file di backup, è possibile scegliere un&#8217;architettura fan-out o a cascata per eseguire il backup dei volumi.</p>
 </div>
 <div class="paragraph">
-<p>Un&#8217;architettura <em>fan-out</em> trasferisce la copia Snapshot in modo indipendente sia al sistema di storage di destinazione che all&#8217;oggetto di backup nel cloud.</p>
+<p>Un&#8217;architettura <strong>fan-out</strong> trasferisce la copia Snapshot in modo indipendente sia al sistema storage di destinazione che all&#8217;oggetto di backup nel cloud.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram-321-fanout-detailed.png" alt="Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."></span></p>
 </div>
 <div class="paragraph">
-<p>Un&#8217;architettura <em>Cascade</em> trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all&#8217;oggetto di backup nel cloud.</p>
+<p>Un&#8217;architettura <strong>Cascade</strong> trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all&#8217;oggetto di backup nel cloud.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="./media/diagram-321-cascade-detailed.png" alt="Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."></span></p>
@@ -1690,25 +1690,18 @@ La creazione iniziale di un volume replicato o di un file di backup include una 
 <p>Se si creano criteri personalizzati per la replica o il backup, le etichette dei criteri (ad esempio, "giornaliero" o "settimanale") devono corrispondere alle etichette presenti nelle policy Snapshot, altrimenti i volumi replicati e i file di backup non verranno creati. È possibile creare policy personalizzate utilizzando Gestione di sistema o l&#8217;interfaccia della riga di comando di ONTAP.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html" target="_blank" rel="noopener">"Creare un criterio di snapshot utilizzando l&#8217;interfaccia utente di ONTAP"</a><br>
-<a href="https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html" target="_blank" rel="noopener">"Creare il criterio di replica utilizzando l&#8217;interfaccia utente di ONTAP"</a><br>
-<a href="https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy" target="_blank" rel="noopener">"Creare il criterio di backup utilizzando System Manager"</a><br>
+<p><a href="https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html" target="_blank" rel="noopener">"Creare un criterio di snapshot utilizzando System Manager"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html" target="_blank" rel="noopener">"Creare un criterio di snapshot utilizzando l&#8217;interfaccia utente di ONTAP"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html" target="_blank" rel="noopener">"Creare un criterio di replica utilizzando System Manager"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html" target="_blank" rel="noopener">"Creare un criterio di replica utilizzando l&#8217;interfaccia utente di ONTAP"</a><br>
+<a href="https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy" target="_blank" rel="noopener">"Creare una policy di backup utilizzando System Manager"</a><br>
 <a href="https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description" target="_blank" rel="noopener">"Creare un criterio di backup utilizzando l&#8217;interfaccia utente di ONTAP"</a></p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
-</td>
-<td class="content">
-Se si prevede di creare policy personalizzate quando si utilizza l&#8217;architettura a cascata, sarà necessario creare le policy di backup su oggetti sul sistema secondario in cui verranno creati i volumi replicati. Se si utilizzano i criteri predefiniti, tutti i criteri vengono impostati.
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>Nota:</strong> quando si utilizza System Manager, selezionare <strong>Asynchronous</strong> come tipo di policy per le policy di replica e selezionare <strong>Asynchronous</strong> e <strong>Backup nel cloud</strong> per le policy di backup su oggetti.</p>
 </div>
 <div class="paragraph">
-<p>È possibile creare criteri di backup su storage a oggetti nell&#8217;interfaccia utente di backup e ripristino di BleXP. Vedere la sezione per <a href="task-manage-backups-ontap.html#add-a-new-backup-policy">"aggiunta di un nuovo criterio di backup"</a> per ulteriori informazioni. È necessario creare policy di replica e snapshot utilizzando Gestione di sistema o l&#8217;interfaccia CLI di ONTAP.</p>
+<p>È possibile creare criteri di backup su storage a oggetti nell&#8217;interfaccia utente di backup e ripristino di BlueXP. Vedere la sezione per <a href="task-manage-backups-ontap.html#add-a-new-backup-policy">"aggiunta di un nuovo criterio di backup"</a> per ulteriori informazioni. È necessario creare policy di replica e snapshot utilizzando Gestione di sistema o l&#8217;interfaccia CLI di ONTAP.</p>
 </div>
 <div class="paragraph">
 <p>Di seguito sono riportati alcuni comandi CLI di esempio di ONTAP che possono essere utili se si creano criteri personalizzati. Tenere presente che è necessario utilizzare il vserver <em>admin</em> (storage VM) come <code>&lt;vserver_name&gt;</code> in questi comandi.</p>
@@ -1725,6 +1718,10 @@ Se si prevede di creare policy personalizzate quando si utilizza l&#8217;archite
 </tr>
 </thead>
 <tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semplice policy Snapshot</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly</code></p></td>
+</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Backup semplice sul cloud</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>snapmirror policy create -policy &lt;policy_name&gt; -transfer-priority normal -vserver &lt;vserver_name&gt; -create-snapshot-on-source false -type vault</code><br>
@@ -1758,6 +1755,60 @@ Per le relazioni di backup su cloud è possibile utilizzare solo le policy del v
 </td>
 </tr>
 </table>
+</div>
+<div class="sect2">
+<h3 id="dove-risiedono-le-policy">Dove risiedono le policy?</h3>
+<div class="paragraph">
+<p>I criteri di backup si trovano in posizioni diverse a seconda dell&#8217;architettura di backup che si intende utilizzare: Fan-out o Cascading. I criteri di replica e i criteri di backup non sono progettati allo stesso modo perché le repliche associano due sistemi storage ONTAP e il backup su oggetto utilizza un provider di storage come destinazione.</p>
+</div>
+<div class="paragraph">
+<p>Le policy di Snapshot risiedono sempre nel sistema di storage primario.</p>
+</div>
+<div class="paragraph">
+<p>I criteri di replica risiedono sempre nel sistema di storage secondario.</p>
+</div>
+<div class="paragraph">
+<p>I criteri di backup su oggetto vengono creati nel sistema in cui risiede il volume di origine, ovvero il cluster principale per le configurazioni fan-out e il cluster secondario per le configurazioni a cascata.</p>
+</div>
+<div class="paragraph">
+<p>Queste differenze sono indicate nella tabella.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Architettura</th>
+<th class="tableblock halign-left valign-top">Policy di Snapshot</th>
+<th class="tableblock halign-left valign-top">Policy di replica</th>
+<th class="tableblock halign-left valign-top">Policy di backup</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Fan-out</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primario</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secondario</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primario</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Cascade</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Primario</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secondario</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Secondario</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>Pertanto, se si prevede di creare policy personalizzate quando si utilizza l&#8217;architettura a cascata, sarà necessario creare la replica e il backup su policy a oggetti sul sistema secondario in cui verranno creati i volumi replicati. Se si prevede di creare policy personalizzate quando si utilizza l&#8217;architettura fan-out, sarà necessario creare policy di replica sul sistema secondario in cui verranno creati i volumi replicati e eseguire il backup su policy a oggetti sul sistema primario.</p>
+</div>
+<div class="paragraph">
+<p>Se si utilizzano i criteri predefiniti presenti in tutti i sistemi ONTAP, tutti i criteri sono impostati.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1812,13 +1863,13 @@ Per le relazioni di backup su cloud è possibile utilizzare solo le policy del v
 <div class="ulist">
 <ul>
 <li>
-<p><a href="task-backup-to-gcp.html">"Eseguire il backup dei dati Cloud Volumes ONTAP su Google Cloud"</a>.</p>
+<p><a href="task-backup-to-gcp.html">"Eseguire il backup dei dati Cloud Volumes ONTAP su Google Cloud"</a></p>
 </li>
 <li>
-<p><a href="task-backup-onprem-to-gcp.html">"Eseguire il backup dei dati ONTAP on-premise su Google Cloud"</a>.</p>
+<p><a href="task-backup-onprem-to-gcp.html">"Eseguire il backup dei dati ONTAP on-premise su Google Cloud"</a></p>
 </li>
 <li>
-<p><a href="task-backup-onprem-private-cloud.html">"Eseguire il backup dei dati ONTAP on-premise su StorageGRID"</a>.</p>
+<p><a href="task-backup-onprem-private-cloud.html">"Eseguire il backup dei dati ONTAP on-premise su StorageGRID"</a></p>
 </li>
 </ul>
 </div>

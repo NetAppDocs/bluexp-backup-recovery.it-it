@@ -1592,7 +1592,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-06 13:17:21 +0000">07/06/2023</time>
+    <time datetime="2023-07-11 20:52:35 +0000">07/11/2023</time>
     
   
 
@@ -1868,12 +1868,12 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="crea-i-tuoi-bucket">Crea i tuoi bucket</h3>
+<h3 id="crea-il-tuo-account-di-storage-azure-blob">Crea il tuo account di storage Azure Blob</h3>
 <div class="paragraph">
-<p>Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.</p>
+<p>Per impostazione predefinita, il servizio crea account di storage. Se si desidera utilizzare i propri account di storage, è possibile crearli prima di avviare la procedura guidata di attivazione del backup, quindi selezionare tali account di storage nella procedura guidata.</p>
 </div>
 <div class="paragraph">
-<p>Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup".</p>
+<p>Se si creano i propri account di storage, è necessario utilizzare il nome di un account di storage "netapp-backup".</p>
 </div>
 </div>
 </div>
@@ -1887,7 +1887,7 @@
 <div class="sect3">
 <h4 id="requisiti-di-rete-cloud-volumes-ontap">Requisiti di rete Cloud Volumes ONTAP</h4>
 <div class="paragraph">
-<p>Il gruppo di protezione dell&#8217;istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.</p>
+<p>Il gruppo di sicurezza dell&#8217;istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1900,7 +1900,7 @@
 <li>
 <p>I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.</p>
 <div class="paragraph">
-<p>Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. Fare riferimento a. <a href="https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html" target="_blank" rel="noopener">"Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"</a>.</p>
+<p>Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. <a href="https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html" target="_blank" rel="noopener">"Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"</a>.</p>
 </div>
 </li>
 <li>
@@ -1966,7 +1966,7 @@ Se si desidera selezionare il nome del gruppo di risorse, <strong>disabilitare</
 </div>
 <div class="paragraph">
 <div class="title">Risultato</div>
-<p>Il backup e ripristino di BlueXP è attivato sul sistema e consente di eseguire il backup dei volumi ogni giorno, conservando le 30 copie di backup più recenti.</p>
+<p>Il backup e ripristino BlueXP è attivato sul sistema. Dopo aver creato i volumi su questi sistemi Cloud Volumes ONTAP, avviare il backup e ripristino BlueXP e. <a href="task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment">"attivare il backup su ciascun volume che si desidera proteggere"</a>.</p>
 </div>
 <div class="paragraph">
 <p><strong>Attivare il backup e il ripristino BlueXP su un sistema esistente</strong></p>
