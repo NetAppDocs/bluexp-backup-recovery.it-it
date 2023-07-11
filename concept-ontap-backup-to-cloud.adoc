@@ -23,7 +23,7 @@ Dopo l'attivazione, il backup e il ripristino creano backup incrementali a livel
 * Backup del volume nello storage a oggetti
 
 
-image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono nel sistema di origine come copie Snapshot, come volumi replicati nel sistema di storage secondario e come file di backup nello storage a oggetti."]
+image:diagram-321-overview-mkt.png["Un diagramma che mostra come i file di backup esistono nel sistema di origine come copie Snapshot, come volumi replicati nel sistema di storage secondario e come file di backup nello storage a oggetti."]
 
 Il backup e ripristino BlueXP sfrutta la tecnologia di replica dei dati SnapMirror di NetApp per garantire che tutti i backup siano completamente sincronizzati creando copie Snapshot e trasferendole nelle posizioni di backup.
 

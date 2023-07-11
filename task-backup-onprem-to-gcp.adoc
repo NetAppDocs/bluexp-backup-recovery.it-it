@@ -27,7 +27,7 @@ Inizia subito seguendo questa procedura. I dettagli di ciascuna fase sono fornit
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["Uno"] Identificare il metodo di connessione da utilizzare
 [role="quick-margin-para"]
-Scegliere se connettere il cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzare una VPN o un'interconnessione cloud di Google e instradare il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.
+Scegli se connettere il tuo cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzerai una VPN o un'interconnessione cloud di Google e instraderai il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.
 
 [role="quick-margin-para"]
 <<Identificare il metodo di connessione>>.
@@ -55,10 +55,10 @@ Scopri i tuoi cluster ONTAP in BlueXP, verifica che soddisfino i requisiti minim
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"] Prepara Google Cloud come destinazione per il backup
 [role="quick-margin-para"]
-Impostare le autorizzazioni per il connettore per creare e gestire il bucket Azure. È inoltre necessario impostare le autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket Azure.
+Impostare le autorizzazioni per il connettore per creare e gestire il bucket Google Cloud. Dovrai anche impostare le autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket di Google Cloud.
 
 [role="quick-margin-para"]
-In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Azure. <<Preparare Azure Blob come destinazione di backup,Scopri come preparare il tuo ambiente Azure per ricevere i backup di ONTAP.>>
+In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Google Cloud. <<Prepare Google Cloud as your backup target,Scopri come preparare il tuo ambiente Google Cloud per ricevere i backup di ONTAP.>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sei"] Attivare i backup sui volumi ONTAP
 [role="quick-margin-para"]
@@ -254,7 +254,7 @@ Prima di attivare i backup in BlueXP backup e recovery, assicurarsi che i sistem
 
 ==== Requisiti di rete Cloud Volumes ONTAP
 
-Il gruppo di protezione dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
+Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
 
 
 
@@ -263,7 +263,7 @@ Il gruppo di protezione dell'istanza deve includere le regole in entrata e in us
 * Se il cluster è on-premise, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel provider di servizi cloud. Si tratta in genere di una connessione VPN.
 * I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.
 +
-Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. Fare riferimento a. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
+Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
 
 
 

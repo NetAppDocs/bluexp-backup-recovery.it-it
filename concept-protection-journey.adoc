@@ -50,7 +50,7 @@ image:diagram-321-overview.png["Un diagramma che mostra come i file di backup es
 
 È possibile scegliere di creare volumi replicati su un altro sistema storage ONTAP e file di backup nel cloud. In alternativa, puoi scegliere di creare volumi replicati o file di backup.
 
-In sintesi, questi sono i flussi di protezione validi che è possibile creare per un volume o per tutti i volumi nell'ambiente di lavoro ONTAP:
+In sintesi, questi sono i flussi di protezione validi che è possibile creare per i volumi nel proprio ambiente di lavoro ONTAP:
 
 * Volume di origine -> copia Snapshot -> volume replicato -> file di backup
 * Volume di origine -> copia Snapshot -> file di backup
@@ -87,11 +87,11 @@ Oltre a questi criteri, lo storage cloud offre opzioni di sicurezza aggiuntive s
 
 Quando si creano volumi replicati e file di backup, è possibile scegliere un'architettura fan-out o a cascata per eseguire il backup dei volumi.
 
-Un'architettura _fan-out_ trasferisce la copia Snapshot in modo indipendente sia al sistema di storage di destinazione che all'oggetto di backup nel cloud.
+Un'architettura *fan-out* trasferisce la copia Snapshot in modo indipendente sia al sistema storage di destinazione che all'oggetto di backup nel cloud.
 
 image:diagram-321-fanout-detailed.png["Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."]
 
-Un'architettura _Cascade_ trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all'oggetto di backup nel cloud.
+Un'architettura *Cascade* trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all'oggetto di backup nel cloud.
 
 image:diagram-321-cascade-detailed.png["Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."]
 
@@ -124,21 +124,25 @@ Questa tabella fornisce un confronto tra le architetture fan-out e cascata.
 
 Se si creano criteri personalizzati per la replica o il backup, le etichette dei criteri (ad esempio, "giornaliero" o "settimanale") devono corrispondere alle etichette presenti nelle policy Snapshot, altrimenti i volumi replicati e i file di backup non verranno creati. È possibile creare policy personalizzate utilizzando Gestione di sistema o l'interfaccia della riga di comando di ONTAP.
 
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Creare un criterio di snapshot utilizzando System Manager"^]
 https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Creare un criterio di snapshot utilizzando l'interfaccia utente di ONTAP"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Creare il criterio di replica utilizzando l'interfaccia utente di ONTAP"^]
-https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Creare il criterio di backup utilizzando System Manager"^]
+https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Creare un criterio di replica utilizzando System Manager"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Creare un criterio di replica utilizzando l'interfaccia utente di ONTAP"^]
+https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Creare una policy di backup utilizzando System Manager"^]
 https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Creare un criterio di backup utilizzando l'interfaccia utente di ONTAP"^]
 
+*Nota:* quando si utilizza System Manager, selezionare *Asynchronous* come tipo di policy per le policy di replica e selezionare *Asynchronous* e *Backup nel cloud* per le policy di backup su oggetti.
 
-NOTE: Se si prevede di creare policy personalizzate quando si utilizza l'architettura a cascata, sarà necessario creare le policy di backup su oggetti sul sistema secondario in cui verranno creati i volumi replicati. Se si utilizzano i criteri predefiniti, tutti i criteri vengono impostati.
-
-È possibile creare criteri di backup su storage a oggetti nell'interfaccia utente di backup e ripristino di BleXP. Vedere la sezione per link:task-manage-backups-ontap.html#add-a-new-backup-policy["aggiunta di un nuovo criterio di backup"] per ulteriori informazioni. È necessario creare policy di replica e snapshot utilizzando Gestione di sistema o l'interfaccia CLI di ONTAP.
+È possibile creare criteri di backup su storage a oggetti nell'interfaccia utente di backup e ripristino di BlueXP. Vedere la sezione per link:task-manage-backups-ontap.html#add-a-new-backup-policy["aggiunta di un nuovo criterio di backup"] per ulteriori informazioni. È necessario creare policy di replica e snapshot utilizzando Gestione di sistema o l'interfaccia CLI di ONTAP.
 
 Di seguito sono riportati alcuni comandi CLI di esempio di ONTAP che possono essere utili se si creano criteri personalizzati. Tenere presente che è necessario utilizzare il vserver _admin_ (storage VM) come `<vserver_name>` in questi comandi.
 
 [cols="30,70"]
 |===
 | Descrizione policy | Comando 
+
+
+| Semplice policy Snapshot | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
 
 
 | Backup semplice sul cloud | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
@@ -158,6 +162,34 @@ Di seguito sono riportati alcuni comandi CLI di esempio di ONTAP che possono ess
 |===
 
 NOTE: Per le relazioni di backup su cloud è possibile utilizzare solo le policy del vault.
+
+
+
+=== Dove risiedono le policy?
+
+I criteri di backup si trovano in posizioni diverse a seconda dell'architettura di backup che si intende utilizzare: Fan-out o Cascading. I criteri di replica e i criteri di backup non sono progettati allo stesso modo perché le repliche associano due sistemi storage ONTAP e il backup su oggetto utilizza un provider di storage come destinazione.
+
+Le policy di Snapshot risiedono sempre nel sistema di storage primario.
+
+I criteri di replica risiedono sempre nel sistema di storage secondario.
+
+I criteri di backup su oggetto vengono creati nel sistema in cui risiede il volume di origine, ovvero il cluster principale per le configurazioni fan-out e il cluster secondario per le configurazioni a cascata.
+
+Queste differenze sono indicate nella tabella.
+
+[cols="25,25,25,25"]
+|===
+| Architettura | Policy di Snapshot | Policy di replica | Policy di backup 
+
+
+| *Fan-out* | Primario | Secondario | Primario 
+
+
+| *Cascade* | Primario | Secondario | Secondario 
+|===
+Pertanto, se si prevede di creare policy personalizzate quando si utilizza l'architettura a cascata, sarà necessario creare la replica e il backup su policy a oggetti sul sistema secondario in cui verranno creati i volumi replicati. Se si prevede di creare policy personalizzate quando si utilizza l'architettura fan-out, sarà necessario creare policy di replica sul sistema secondario in cui verranno creati i volumi replicati e eseguire il backup su policy a oggetti sul sistema primario.
+
+Se si utilizzano i criteri predefiniti presenti in tutti i sistemi ONTAP, tutti i criteri sono impostati.
 
 
 
@@ -195,29 +227,29 @@ Consultare l'argomento relativo al backup del provider di servizi cloud in cui s
 
 ifdef::aws[]
 
-* link:task-backup-to-s3.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Amazon S3"].
-* link:task-backup-onprem-to-aws.html["Eseguire il backup dei dati ONTAP on-premise su Amazon S3"].
+* link:task-backup-to-s3.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Amazon S3"]
+* link:task-backup-onprem-to-aws.html["Eseguire il backup dei dati ONTAP on-premise su Amazon S3"]
 
 
 endif::aws[]
 
 ifdef::azure[]
 
-* link:task-backup-to-azure.html["Eseguire il backup dei dati Cloud Volumes ONTAP in Azure Blob"].
-* link:task-backup-onprem-to-azure.html["Backup dei dati ONTAP on-premise su Azure Blob"].
+* link:task-backup-to-azure.html["Eseguire il backup dei dati Cloud Volumes ONTAP in Azure Blob"]
+* link:task-backup-onprem-to-azure.html["Backup dei dati ONTAP on-premise su Azure Blob"]
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* link:task-backup-to-gcp.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Google Cloud"].
-* link:task-backup-onprem-to-gcp.html["Eseguire il backup dei dati ONTAP on-premise su Google Cloud"].
+* link:task-backup-to-gcp.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Google Cloud"]
+* link:task-backup-onprem-to-gcp.html["Eseguire il backup dei dati ONTAP on-premise su Google Cloud"]
 
 
 endif::gcp[]
 
-* link:task-backup-onprem-private-cloud.html["Eseguire il backup dei dati ONTAP on-premise su StorageGRID"].
+* link:task-backup-onprem-private-cloud.html["Eseguire il backup dei dati ONTAP on-premise su StorageGRID"]
 
 
 

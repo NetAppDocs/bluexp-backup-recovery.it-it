@@ -525,7 +525,6 @@
   <block id="033ea2ef069463a1ce7c46766e6c716e" category="inline-image-macro">Mostra l'opzione di backup e ripristino di BlueXP nella procedura guidata dell'ambiente di lavoro.</block>
   <block id="3677061f67b20fd09e3bcdba7eea445c" category="paragraph"><block ref="3677061f67b20fd09e3bcdba7eea445c" category="inline-image-macro-rx" type="image"></block></block>
   <block id="70bc26cbd40eafb70eb1aa399ddb72bb" category="list-text">Completare le pagine della procedura guidata per implementare il sistema.</block>
-  <block id="3c109ca3c8fa9a28c55f534f9e003b51" category="paragraph">Il backup e ripristino di BlueXP è attivato sul sistema e consente di eseguire il backup dei volumi ogni giorno, conservando le 30 copie di backup più recenti.</block>
   <block id="b8a6a9c5fa81a9fc0842c6df5d41e302" category="paragraph">Abilitare il backup e il ripristino BlueXP in qualsiasi momento direttamente dall'ambiente di lavoro.</block>
   <block id="49912178a2257abdcbca7d537c5669ea" category="list-text">Selezionare l'ambiente di lavoro e fare clic su *Enable* (attiva) accanto al servizio di backup e ripristino nel pannello di destra.</block>
   <block id="94dd9372ab529c315f08bd0bae6ae331" category="paragraph">Se la destinazione Amazon S3 per i backup esiste come ambiente di lavoro su Canvas, puoi trascinare il cluster sull'ambiente di lavoro Amazon S3 per avviare l'installazione guidata.</block>
@@ -3663,23 +3662,19 @@ Tutti i dati scritti nel volume di origine tra l'ultima replica dei dati e l'ora
   <block id="ae8eba8963c30867457e97dd99e8fff7" category="list-text">Sono supportate solo le chiavi regionali; le chiavi globali non sono supportate.</block>
   <block id="fdbd81a7d2b282a658a8b0e7b92cdebc" category="section-title">Crea i tuoi bucket</block>
   <block id="74d8456ec74a0cc3a517057feb10fb90" category="paragraph">Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.</block>
-  <block id="50af2238e1149fc4e9c6d4a91ec928b7" category="paragraph">Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup".</block>
   <block id="d4ab2296bb945d417a8addf4512bf51b" category="section-title">Verificare i requisiti di rete di ONTAP per la replica dei volumi</block>
   <block id="ea6fd0bb1b39590b996d07b96d466780" category="paragraph">Prima di attivare i backup in BlueXP backup e recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino la versione di ONTAP e i requisiti di rete.</block>
   <block id="d4bf25559c8ed55928a387cd23720e35" category="section-title">Requisiti di rete Cloud Volumes ONTAP</block>
-  <block id="f8ddaef2a077514c95bf1ab920675fc9" category="paragraph">Il gruppo di protezione dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.</block>
   <block id="0736192094f1dc9a582442df0a017527" category="section-title">Requisiti di rete ONTAP on-premise</block>
   <block id="ab255acccc17b6b850a499063aaf4ef1" category="list-text">Se il cluster è on-premise, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel provider di servizi cloud. Si tratta in genere di una connessione VPN.</block>
   <block id="1fbce003d68708feb24931b9e6366f50" category="list-text">I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.</block>
   <block id="d7bb556723e915c43fe4fd9b0f90d545" category="inline-link">Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP</block>
-  <block id="3bab5731acdafc9aee7c0eb1d8b0217d" category="paragraph">Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. Fare riferimento a.<block ref="f62b93c20d5bac3c11ab8a3b52ce12c9" category="inline-link-rx"></block>.</block>
   <block id="c08b01fe5c09939cdbabcb370734dad8" category="list-text">Per replicare i dati tra due sistemi Cloud Volumes ONTAP in diverse subnet, è necessario instradare insieme le subnet (impostazione predefinita).</block>
   <block id="a8597301498b7ba277bd04c5d9cec26a" category="section-title">Abilitare il backup e ripristino BlueXP su Cloud Volumes ONTAP</block>
   <block id="3a3585e7353e26db7ebd817873594905" category="paragraph">Abilitare il backup e il ripristino di BluXP è semplice. I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o nuovo.</block>
   <block id="8a8476fd6836ec12c30dec20bc5004af" category="paragraph">*Attivare il backup e il ripristino BlueXP su un nuovo sistema*</block>
   <block id="901ae31ede407d1b2f9642db905682f2" category="list-text">Da BlueXP Canvas, selezionare *Add Working Environment* (Aggiungi ambiente di lavoro), scegliere il provider cloud e selezionare *Add New* (Aggiungi nuovo). Selezionare *Crea Cloud Volumes ONTAP*.</block>
   <block id="2804562bc1e662a5b5b8ecf3b0be67c6" category="admonition">Per modificare le impostazioni di backup o aggiungere la replica, fare riferimento a. <block ref="5cd1a7d7fa9fd41e0b8e095748eb7b5f" category="inline-link-macro-rx"></block>.</block>
-  <block id="8f68c2bda59a58c30828aa9f67c7f46d" category="paragraph">Il backup e ripristino di BlueXP è attivato sul sistema, esegue il backup del volume creato ogni giorno e conserva le 30 copie di backup più recenti.</block>
   <block id="fc90b8f1413f3c199581e8299d3f470a" category="paragraph">*Attivare il backup e il ripristino BlueXP su un sistema esistente*</block>
   <block id="f44b20d5d9a676a009838194fcecc749" category="list-text">Da BlueXP Canvas, selezionare l'ambiente di lavoro e selezionare *Enable* (attiva) accanto al servizio di backup e ripristino nel pannello di destra.</block>
   <block id="4ade5af203d6e65a0d4f2dfba9bb43b8" category="section-title">Attivare i backup sui volumi ONTAP</block>
@@ -3761,7 +3756,6 @@ Tutti i dati scritti nel volume di origine tra l'ultima replica dei dati e l'ora
   <block id="0565cf043978c615b1f8f7cad9c764d4" category="paragraph">Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP primari on-premise su un sistema di storage secondario e su Google Cloud Storage.</block>
   <block id="0c0bf2caafe0a0bcf95f58c110265658" category="admonition">I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.</block>
   <block id="8679d305959a742634fdc19258f41c4e" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Identificare il metodo di connessione da utilizzare</block>
-  <block id="6cf819bd9293aa813cfa27132d7de812" category="paragraph">Scegliere se connettere il cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzare una VPN o un'interconnessione cloud di Google e instradare il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.</block>
   <block id="8ec119f44cc76251903e9141fc7c49c4" category="paragraph"><block ref="d61bfca6e72207060fa33f0ff3f8d293" category="inline-xref-macro-rx"></block>.</block>
   <block id="b59dc58d729f5c77a50756af1a9eb983" category="paragraph">Se hai già un connettore implementato in Google Cloud o on-premise, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a Google Cloud.</block>
   <block id="1e4b37a7966ae0a6eb7927e68e223924" category="inline-xref">Scopri come creare un connettore e come definire le impostazioni di rete richieste.</block>
@@ -3983,7 +3977,6 @@ ifdef::aws[]</block>
   <block id="9bdfbf10688e2b38e82b1ddeb1a0af32" category="paragraph">Il backup e ripristino di BlueXP inizia a eseguire i backup iniziali dei volumi. Il trasferimento di riferimento del volume replicato e del file di backup include una copia completa dei dati di origine. I trasferimenti successivi contengono copie differenziali dei dati dello storage primario contenuti nelle copie Snapshot.</block>
   <block id="c6f935fce64d135ae3250df1beb9c2aa" category="doc">Eseguire il backup dei dati ONTAP on-premise nello storage Azure Blob</block>
   <block id="b26f7b31288fff69c8d3c7065e19c5d4" category="paragraph">Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise a un sistema di storage secondario e a Azure Blob Storage.</block>
-  <block id="facdda46f755c89c58831dda3b15ddef" category="paragraph">Scegliere se connettere il cluster ONTAP on-premise direttamente ad Azure tramite Internet pubblico o se utilizzare una VPN o Azure ExpressRoute e instradare il traffico attraverso un'interfaccia endpoint VPC privata ad Azure.</block>
   <block id="57baa3c287eb66f99ca7a7281024c30a" category="paragraph">Se hai già un connettore implementato in Azure VNET o on-premise, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP nello storage Azure Blob. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi ad Azure.</block>
   <block id="9175d0745db62701ca4f4b1f795bc78e" category="paragraph">Scopri i cluster ONTAP in BlueXP, verifica che soddisfino i requisiti minimi e personalizza le impostazioni di rete in modo che i cluster possano connettersi ad Azure.</block>
   <block id="45b0dc574541901afc9c84c2a03ebe28" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block> Preparare Azure Blob come destinazione di backup</block>
@@ -4004,7 +3997,6 @@ ifdef::aws[]</block>
   <block id="5e1b8f741e88cd7d205e1784bab10a4d" category="list-text">Selezionare i puntini di sospensione (*...*) per il ruolo personalizzato, quindi selezionare *Modifica*.</block>
   <block id="148cf82a167a4c42f015c88ac109090a" category="list-text">Selezionare *JSON* e aggiungere le seguenti autorizzazioni:</block>
   <block id="6df6e5e28f7a16afde6dc4915de4a5ca" category="list-text">Selezionare *Revisione + aggiornamento*, quindi selezionare *Aggiorna*.</block>
-  <block id="0deda7204e72e002187e85560cc2206f" category="paragraph">È necessario verificare i requisiti di licenza per Azure e BlueXP:</block>
   <block id="dc6287483bb6663eb24a6b4a97292566" category="section-title">Preparare Azure Blob come destinazione di backup</block>
   <block id="e6a4bcd05aae8d20923024df759b8204" category="inline-link">Scopri come utilizzare le tue chiavi</block>
   <block id="7c6c6d3f55cf70ec4e78761174989411" category="list-text">È possibile utilizzare le proprie chiavi personalizzate per la crittografia dei dati nella procedura guidata di attivazione invece di utilizzare le chiavi di crittografia predefinite gestite da Microsoft. In questo caso, è necessario disporre dell'abbonamento Azure, del nome del vault delle chiavi e della chiave.<block ref="5499082d3ade4f2b56fcc95816a14476" category="inline-link-rx"></block>.</block>
@@ -4130,7 +4122,6 @@ ifdef::aws[]</block>
   <block id="33f10a7c625758670c871505fd040a03" category="cell">Crea backup dei tuoi dati nel cloud per motivi di protezione e archiviazione a lungo termine. Se necessario, è possibile ripristinare un volume, una cartella o singoli file dal backup nello stesso ambiente di lavoro o in un ambiente diverso.</block>
   <block id="84d2eb5ebd4a59c9d3a33c1ddc7bf406" category="paragraph">Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino. Una copia Snapshot è un'immagine point-in-time di sola lettura di un volume. L'immagine consuma uno spazio di storage minimo e comporta un overhead delle performance trascurabile, in quanto registra solo le modifiche apportate ai file dall'ultima copia Snapshot. La copia Snapshot creata sul volume viene utilizzata per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.</block>
   <block id="112d5b2e7f70a350b739f08063ce85af" category="paragraph">È possibile scegliere di creare volumi replicati su un altro sistema storage ONTAP e file di backup nel cloud. In alternativa, puoi scegliere di creare volumi replicati o file di backup.</block>
-  <block id="f76d5fec0b4dd48f5a1f783d14d860b5" category="paragraph">In sintesi, questi sono i flussi di protezione validi che è possibile creare per un volume o per tutti i volumi nell'ambiente di lavoro ONTAP:</block>
   <block id="f46d552561904382654668028ef332b7" category="list-text">Volume di origine -&gt; copia Snapshot -&gt; volume replicato -&gt; file di backup</block>
   <block id="6e0f3f7af71dbdcd66969d229d562636" category="list-text">Volume di origine -&gt; copia Snapshot -&gt; file di backup</block>
   <block id="416d6dba97115e0823c4346a7315efbf" category="list-text">Volume di origine -&gt; copia Snapshot -&gt; volume replicato</block>
@@ -4156,10 +4147,8 @@ ifdef::aws[]</block>
   <block id="2b769a9268eb2aee4276cba6c57ef0e9" category="cell">Elevato (tariffe provider)</block>
   <block id="f20b3ca4032bc39e75089941e59da9ae" category="section-title">Quale architettura di backup utilizzerai</block>
   <block id="df2734a3248ea58d4bd1131a234481c4" category="paragraph">Quando si creano volumi replicati e file di backup, è possibile scegliere un'architettura fan-out o a cascata per eseguire il backup dei volumi.</block>
-  <block id="8601698382afe44631c1bb72709c3331" category="paragraph">Un'architettura _fan-out_ trasferisce la copia Snapshot in modo indipendente sia al sistema di storage di destinazione che all'oggetto di backup nel cloud.</block>
   <block id="fca2f290b176dda18963912f7b942907" category="inline-image-macro">Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup.</block>
   <block id="ffd891a8050a93a047c73180f9384213" category="paragraph"><block ref="ffd891a8050a93a047c73180f9384213" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f7be3b6161c8430044f21d47653acb13" category="paragraph">Un'architettura _Cascade_ trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all'oggetto di backup nel cloud.</block>
   <block id="47439f17d6378e02c6cc8d869a82c912" category="paragraph"><block ref="47439f17d6378e02c6cc8d869a82c912" category="inline-image-macro-rx" type="image"></block></block>
   <block id="500ecf85d81873182f0cadf3300f909e" category="section-title">Confronto delle diverse scelte di architettura</block>
   <block id="688c41a4a08a3e0f4011a51649a5a459" category="paragraph">Questa tabella fornisce un confronto tra le architetture fan-out e cascata.</block>
@@ -4176,16 +4165,8 @@ ifdef::aws[]</block>
   <block id="a67640f7cdcc52eaa3b856d6e91a1c2b" category="list-text">La policy di backup predefinita replica le copie Snapshot giornaliere e settimanali, conservando 7 copie Snapshot giornaliere e 52 copie Snapshot settimanali.</block>
   <block id="1711f5c46c237530499df8bd10af41fc" category="paragraph">Se si creano criteri personalizzati per la replica o il backup, le etichette dei criteri (ad esempio, "giornaliero" o "settimanale") devono corrispondere alle etichette presenti nelle policy Snapshot, altrimenti i volumi replicati e i file di backup non verranno creati. È possibile creare policy personalizzate utilizzando Gestione di sistema o l'interfaccia della riga di comando di ONTAP.</block>
   <block id="d4c627b86ea7fcc97aab9ca0d343fcbe" category="inline-link">Creare un criterio di snapshot utilizzando l'interfaccia utente di ONTAP</block>
-  <block id="a697a4067d71d212d6d90b5a40b65f6c" category="inline-link">Creare il criterio di replica utilizzando l'interfaccia utente di ONTAP</block>
-  <block id="4852ced598798ace63321af55f321cf8" category="inline-link">Creare il criterio di backup utilizzando System Manager</block>
   <block id="350061f867dc1c5e72f04f985e74baee" category="inline-link">Creare un criterio di backup utilizzando l'interfaccia utente di ONTAP</block>
-  <block id="a9ae4c6a697b11fdfda0bb4e732b5ea6" category="paragraph"><block ref="d8ea6acc45a89d2ab361031769419dd5" category="inline-link-rx"></block>
-<block ref="f13ee848e87c0aa36c394e684eee24d7" category="inline-link-rx"></block>
-<block ref="ec7e1f50f366316f4481f1b489263d62" category="inline-link-rx"></block>
-<block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
-  <block id="d5221819c45343b141dfebcdd736932f" category="admonition">Se si prevede di creare policy personalizzate quando si utilizza l'architettura a cascata, sarà necessario creare le policy di backup su oggetti sul sistema secondario in cui verranno creati i volumi replicati. Se si utilizzano i criteri predefiniti, tutti i criteri vengono impostati.</block>
   <block id="8cb2e913decbf9b532c186901104e076" category="inline-link-macro">aggiunta di un nuovo criterio di backup</block>
-  <block id="6b411d4748b120033618a859a297c783" category="paragraph">È possibile creare criteri di backup su storage a oggetti nell'interfaccia utente di backup e ripristino di BleXP. Vedere la sezione per <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> per ulteriori informazioni. È necessario creare policy di replica e snapshot utilizzando Gestione di sistema o l'interfaccia CLI di ONTAP.</block>
   <block id="61dc4b0620e6a61c45bae3557cb28951" category="paragraph">Di seguito sono riportati alcuni comandi CLI di esempio di ONTAP che possono essere utili se si creano criteri personalizzati. Tenere presente che è necessario utilizzare il vserver _admin_ (storage VM) come<block ref="f536bcc8fda7ee8ba21dea42b5b1c44d" prefix=" " category="inline-code"></block> in questi comandi.</block>
   <block id="dbb3987abbdf9be78435bfb97c6a1e83" category="cell">Descrizione policy</block>
   <block id="357b8b980947b6d9681d42119e03c9ad" category="cell">Backup semplice sul cloud</block>
@@ -4217,17 +4198,10 @@ ifdef::aws[]</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">Consulta l'elenco completo delle destinazioni di backup supportate</block>
   <block id="df28403f823a8cccd6d3aa652ebe7892" category="paragraph">Quando il backup e ripristino BlueXP viene utilizzato in un sito con connettività Internet completa (nota anche come "modalità standard" o "modalità SaaS"), è possibile creare volumi replicati su qualsiasi sistema ONTAP o Cloud Volumes ONTAP on-premise gestito da BlueXP, inoltre, puoi creare file di backup sullo storage a oggetti in qualsiasi provider cloud supportato. <block ref="53011d10cc707465ef24eb421fc1dc04" category="inline-link-macro-rx"></block>.</block>
   <block id="cd6458cee7347b844e32d364eccbaa5c" category="paragraph">Consultare l'argomento relativo al backup del provider di servizi cloud in cui si prevede di creare file di backup per l'elenco delle posizioni dei connettori valide. Esistono alcune limitazioni per le quali il connettore deve essere installato manualmente su una macchina Linux o implementato in uno specifico cloud provider.</block>
-  <block id="0b1927d444be0de7978184d22b87a396" category="list-text"><block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>.</block>
-  <block id="73787881c6954ed3921a1d5b06187a75" category="list-text"><block ref="7f5adf3b5d9ef637dacd0fcd7017c33f" category="inline-link-macro-rx"></block>.</block>
   <block id="2e87d4ef1e0516d893da73de140af706" category="inline-link-macro">Eseguire il backup dei dati Cloud Volumes ONTAP in Azure Blob</block>
-  <block id="a2c543723fe6f91d3006330134ace7bf" category="list-text"><block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block>.</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">Backup dei dati ONTAP on-premise su Azure Blob</block>
-  <block id="44f7f5461565516d1ed5aad1af7bb2fb" category="list-text"><block ref="9e6e068583778aa95480a42c46f57b8a" category="inline-link-macro-rx"></block>.</block>
   <block id="a6102a3b147e0d099222dfd5f8fa1b0b" category="inline-link-macro">Eseguire il backup dei dati Cloud Volumes ONTAP su Google Cloud</block>
-  <block id="4ea849b0335489aba8b4800f940ce2c9" category="list-text"><block ref="0746a14ab26f1c77013b1b74f69b0e83" category="inline-link-macro-rx"></block>.</block>
   <block id="ee45da3db51b4bd67f3174dd7bdd4bc3" category="inline-link-macro">Eseguire il backup dei dati ONTAP on-premise su Google Cloud</block>
-  <block id="a1b5afc48ce1f15676f11eb72385bfbe" category="list-text"><block ref="7f2906feb9bed8771e4967ea2ed8b648" category="inline-link-macro-rx"></block>.</block>
-  <block id="116403f07f9b0bd589c333bd72de20e9" category="list-text"><block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block>.</block>
   <block id="2714d7e7e24c727c2c54bb6ba96c4617" category="section-title">Supporto per siti con connettività Internet limitata</block>
   <block id="e5f27584b8554a76c0aba2da480263ad" category="paragraph">Il backup e ripristino BlueXP può essere utilizzato in un sito con connettività Internet limitata (nota anche come "modalità limitata") per eseguire il backup dei dati del volume. In questo caso, è necessario implementare BlueXP Connector nell'area limitata.</block>
   <block id="8f573a29259b458aa4c98898b8a3c1ab" category="list-text">Puoi eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali di AWS su Amazon S3. Scopri come <block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block>.</block>
@@ -4320,4 +4294,61 @@ ifdef::aws[]</block>
   <block id="e0db2fdf8995a741b4ad4157a88c1cae" category="paragraph">Il Centro notifiche visualizza numerosi eventi di backup e ripristino, ma solo i seguenti eventi attivano avvisi via email:</block>
   <block id="45b54b60106a7f59e33240f6ddaac7e1" category="list-text">Dalla barra dei menu di BlueXP, selezionare (<block ref="df7c8a71ca3da4359e40e121f18f87b9" category="inline-image-macro-rx" type="image"></block>).</block>
   <block id="5beb7331041291762b098f18521055a9" category="list-text">Esaminare le notifiche.</block>
+  <block id="07412ae70c8f432b19c5d424dc630dcf" category="paragraph">Per impostazione predefinita, il servizio crea i bucket. Se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.</block>
+  <block id="5ea0826986e3031f8bd8e643d1b37ce9" category="paragraph">Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup".</block>
+  <block id="b79f5207c4b1f2d320c8d5fe3eb33f63" category="paragraph">Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.</block>
+  <block id="e9926e61defd3a286477d3a785a7fd6a" category="paragraph">Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise.<block ref="f62b93c20d5bac3c11ab8a3b52ce12c9" category="inline-link-rx"></block>.</block>
+  <block id="d39d5fd7cc5ced3c60a045dedddc0e68" category="inline-link-macro">attivare il backup su ciascun volume che si desidera proteggere</block>
+  <block id="a7ab7e41ab0b37b5c56042c5e14df4ff" category="paragraph">Il backup e ripristino BlueXP è attivato sul sistema. Dopo aver creato i volumi su questi sistemi Cloud Volumes ONTAP, avviare il backup e ripristino BlueXP e. <block ref="70d7256195ed88e78bc7994f2215f899" category="inline-link-macro-rx"></block>.</block>
+  <block id="b7d972f6553934b1eea5e57436b58de2" category="paragraph">Scegli se connettere il tuo cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzerai una VPN o un'interconnessione cloud di Google e instraderai il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.</block>
+  <block id="061189bcae2d45b758f44b801f0cafa0" category="paragraph">Impostare le autorizzazioni per il connettore per creare e gestire il bucket Google Cloud. Dovrai anche impostare le autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket di Google Cloud.</block>
+  <block id="965fc2d93c14a05bf6aa6d11dccdf7f3" category="inline-xref">Scopri come preparare il tuo ambiente Google Cloud per ricevere i backup di ONTAP.</block>
+  <block id="3142575a0ab456d6fc41027f31a44400" category="paragraph">In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Google Cloud. <block ref="24a7679356370a79eec97a5aa8f7e0f4" category="inline-xref-macro-rx"></block></block>
+  <block id="9ad048774cfb757660014ae8b3a5e963" category="paragraph">L'abilitazione del backup e ripristino BlueXP è semplice. I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o nuovo.</block>
+  <block id="50ecfa827055391d1f79881e9faaa9d5" category="paragraph">Abilitare il backup e il ripristino BlueXP su un sistema esistente in qualsiasi momento direttamente dall'ambiente di lavoro.</block>
+  <block id="4dd14adc068a21e0671c3acde608dda6" category="paragraph"><block ref="4dd14adc068a21e0671c3acde608dda6" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="e357379ef349802fe3a5b7a0ea16b622" category="paragraph">Scegli se connettere il tuo cluster ONTAP on-premise direttamente ad Azure tramite Internet pubblico o se utilizzerai una VPN o Azure ExpressRoute e instraderai il traffico attraverso un'interfaccia endpoint VPC privata ad Azure.</block>
+  <block id="bda2bf5fb0b6ef0e110cf67c341d2f58" category="paragraph">È necessario verificare i requisiti di licenza per Azure e BlueXP:</block>
+  <block id="219920185164037444cf297ee6db557a" category="section-title">Crea il tuo account di storage Azure Blob</block>
+  <block id="f7fd8d98e8242ad43571b2edbb91b9fc" category="paragraph">Per impostazione predefinita, il servizio crea account di storage. Se si desidera utilizzare i propri account di storage, è possibile crearli prima di avviare la procedura guidata di attivazione del backup, quindi selezionare tali account di storage nella procedura guidata.</block>
+  <block id="83da16eb347a649074af6b8a1c3d92ae" category="paragraph">Se si creano i propri account di storage, è necessario utilizzare il nome di un account di storage "netapp-backup".</block>
+  <block id="1de16ec5bb8b26ffbf7189e724790630" category="paragraph">In sintesi, questi sono i flussi di protezione validi che è possibile creare per i volumi nel proprio ambiente di lavoro ONTAP:</block>
+  <block id="62fab0bd5cf92ab36f27224d46c5f233" category="paragraph">Un'architettura *fan-out* trasferisce la copia Snapshot in modo indipendente sia al sistema storage di destinazione che all'oggetto di backup nel cloud.</block>
+  <block id="f47293eaa2dd8607290525b210ac8d72" category="paragraph">Un'architettura *Cascade* trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all'oggetto di backup nel cloud.</block>
+  <block id="3477dac7879a3f44096cb4f68455f180" category="inline-link">Creare un criterio di snapshot utilizzando System Manager</block>
+  <block id="c614d93309389f7373130aa7f9186f5d" category="inline-link">Creare un criterio di replica utilizzando System Manager</block>
+  <block id="8a95d969b59555a0a73e2a674b580a6e" category="inline-link">Creare un criterio di replica utilizzando l'interfaccia utente di ONTAP</block>
+  <block id="096dfb23f9de3e352342395b7762f0ba" category="inline-link">Creare una policy di backup utilizzando System Manager</block>
+  <block id="b7ad321010459984fa60de2cd7631626" category="paragraph"><block ref="244560fcf5d380e290ecd4b178a412c9" category="inline-link-rx"></block>
+<block ref="d8ea6acc45a89d2ab361031769419dd5" category="inline-link-rx"></block>
+<block ref="6a671fae687ae09ed6ec2eb759a70329" category="inline-link-rx"></block>
+<block ref="76f9b86225921137bc166f71caebf3f1" category="inline-link-rx"></block>
+<block ref="21814359fa3d01fa463924248dc4810b" category="inline-link-rx"></block>
+<block ref="d73f218743fa1184e2a040cf646f920f" category="inline-link-rx"></block></block>
+  <block id="bf322ff91252b9377a00e3301a9fb8de" category="paragraph">*Nota:* quando si utilizza System Manager, selezionare *Asynchronous* come tipo di policy per le policy di replica e selezionare *Asynchronous* e *Backup nel cloud* per le policy di backup su oggetti.</block>
+  <block id="8c84db8980c0dedab8ce56db7fdbd716" category="paragraph">È possibile creare criteri di backup su storage a oggetti nell'interfaccia utente di backup e ripristino di BlueXP. Vedere la sezione per <block ref="535e99780197daca673e274e7a26ba94" category="inline-link-macro-rx"></block> per ulteriori informazioni. È necessario creare policy di replica e snapshot utilizzando Gestione di sistema o l'interfaccia CLI di ONTAP.</block>
+  <block id="434e82511bf6b4566a7be6239e737769" category="cell">Semplice policy Snapshot</block>
+  <block id="c404f3312a8eec0338ecbc78bdc024ec" category="cell"><block ref="cfcc1000298a724899b278b1bbdc36d0" prefix="" category="inline-code"></block></block>
+  <block id="cc5c8f317eab661af83024bda7eef553" category="section-title">Dove risiedono le policy?</block>
+  <block id="9c58074fed28efa853a138fdba79e26e" category="paragraph">I criteri di backup si trovano in posizioni diverse a seconda dell'architettura di backup che si intende utilizzare: Fan-out o Cascading. I criteri di replica e i criteri di backup non sono progettati allo stesso modo perché le repliche associano due sistemi storage ONTAP e il backup su oggetto utilizza un provider di storage come destinazione.</block>
+  <block id="7a1f25bd1db088139566bfc0df899cb7" category="paragraph">Le policy di Snapshot risiedono sempre nel sistema di storage primario.</block>
+  <block id="631c0944218c78537d6a82498f43a669" category="paragraph">I criteri di replica risiedono sempre nel sistema di storage secondario.</block>
+  <block id="fc33e7c5f1bd8227aeae99689d9aafed" category="paragraph">I criteri di backup su oggetto vengono creati nel sistema in cui risiede il volume di origine, ovvero il cluster principale per le configurazioni fan-out e il cluster secondario per le configurazioni a cascata.</block>
+  <block id="724e50bbeb42e94a045cb1c6c16bd50e" category="paragraph">Queste differenze sono indicate nella tabella.</block>
+  <block id="4c0abf2d4c54820b8d33061abaf30759" category="cell">Policy di Snapshot</block>
+  <block id="afce532bad172bcef50d75935d2ed43b" category="cell">Policy di replica</block>
+  <block id="7759a4720271a1ab3b4e6b1c36a67058" category="cell">Policy di backup</block>
+  <block id="98f03716d5ab40042e83bb54bfdb8ae3" category="cell">*Fan-out*</block>
+  <block id="074de7e7c226d5c60f8af14c20725352" category="cell">Primario</block>
+  <block id="0c7d6cf19426e01dcfa32434828ed266" category="cell">Secondario</block>
+  <block id="d3e1c79e680fc97c2e4901838347539e" category="cell">*Cascade*</block>
+  <block id="4f3e03eb9457fe07aacd5615dc75a081" category="paragraph">Pertanto, se si prevede di creare policy personalizzate quando si utilizza l'architettura a cascata, sarà necessario creare la replica e il backup su policy a oggetti sul sistema secondario in cui verranno creati i volumi replicati. Se si prevede di creare policy personalizzate quando si utilizza l'architettura fan-out, sarà necessario creare policy di replica sul sistema secondario in cui verranno creati i volumi replicati e eseguire il backup su policy a oggetti sul sistema primario.</block>
+  <block id="c9edc6898a1228f4b0c190dac5f6dd15" category="paragraph">Se si utilizzano i criteri predefiniti presenti in tutti i sistemi ONTAP, tutti i criteri sono impostati.</block>
+  <block id="b4a611717e08ba4c0f2fa5390556e4e1" category="list-text"><block ref="b4a611717e08ba4c0f2fa5390556e4e1" category="inline-link-macro-rx"></block></block>
+  <block id="7f5adf3b5d9ef637dacd0fcd7017c33f" category="list-text"><block ref="7f5adf3b5d9ef637dacd0fcd7017c33f" category="inline-link-macro-rx"></block></block>
+  <block id="d0f49153a0d69289bf4d240d8900efdd" category="list-text"><block ref="d0f49153a0d69289bf4d240d8900efdd" category="inline-link-macro-rx"></block></block>
+  <block id="9e6e068583778aa95480a42c46f57b8a" category="list-text"><block ref="9e6e068583778aa95480a42c46f57b8a" category="inline-link-macro-rx"></block></block>
+  <block id="0746a14ab26f1c77013b1b74f69b0e83" category="list-text"><block ref="0746a14ab26f1c77013b1b74f69b0e83" category="inline-link-macro-rx"></block></block>
+  <block id="7f2906feb9bed8771e4967ea2ed8b648" category="list-text"><block ref="7f2906feb9bed8771e4967ea2ed8b648" category="inline-link-macro-rx"></block></block>
+  <block id="80288d2da91f9794088785363d31b6b5" category="list-text"><block ref="80288d2da91f9794088785363d31b6b5" category="inline-link-macro-rx"></block></block>
 </blocks>

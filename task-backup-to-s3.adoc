@@ -215,10 +215,13 @@ Configurazione richiesta per la creazione di backup in un account AWS diverso:: 
 
 
 --
-Crea i tuoi bucket:: Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.
-
-
+Crea i tuoi bucket:: Per impostazione predefinita, il servizio crea i bucket. Se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.
++
+--
 Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup".
+
+--
+
 
 
 
@@ -230,7 +233,7 @@ Prima di attivare i backup in BlueXP backup e recovery, assicurarsi che i sistem
 
 ==== Requisiti di rete Cloud Volumes ONTAP
 
-Il gruppo di protezione dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
+Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
 
 
 
@@ -239,7 +242,7 @@ Il gruppo di protezione dell'istanza deve includere le regole in entrata e in us
 * Se il cluster è on-premise, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel provider di servizi cloud. Si tratta in genere di una connessione VPN.
 * I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.
 +
-Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. Fare riferimento a. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
+Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
 
 
 
@@ -250,7 +253,7 @@ Poiché è possibile eseguire la replica su Cloud Volumes ONTAP o su un sistema 
 
 == Abilitare il backup e ripristino BlueXP su Cloud Volumes ONTAP
 
-Abilitare il backup e il ripristino di BluXP è semplice. I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o nuovo.
+L'abilitazione del backup e ripristino BlueXP è semplice. I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o nuovo.
 
 *Attivare il backup e il ripristino BlueXP su un nuovo sistema*
 
@@ -270,11 +273,11 @@ image:screenshot_backup_to_gcp.png["Mostra l'opzione di backup e ripristino di B
 
 
 .Risultato
-Il backup e ripristino di BlueXP è attivato sul sistema e consente di eseguire il backup dei volumi ogni giorno, conservando le 30 copie di backup più recenti.
+Il backup e ripristino BlueXP è attivato sul sistema. Dopo aver creato i volumi su questi sistemi Cloud Volumes ONTAP, avviare il backup e ripristino BlueXP e. link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["attivare il backup su ciascun volume che si desidera proteggere"].
 
 *Attivare il backup e il ripristino BlueXP su un sistema esistente*
 
-Abilitare il backup e il ripristino BlueXP in qualsiasi momento direttamente dall'ambiente di lavoro.
+Abilitare il backup e il ripristino BlueXP su un sistema esistente in qualsiasi momento direttamente dall'ambiente di lavoro.
 
 .Fasi
 . Da BlueXP Canvas, selezionare l'ambiente di lavoro e selezionare *Enable* (attiva) accanto al servizio di backup e ripristino nel pannello di destra.
