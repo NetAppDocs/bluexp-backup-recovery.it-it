@@ -329,6 +329,8 @@ Quando si configura il servizio di backup, sarà necessario inserire le chiavi i
 
 Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.
 
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Scopri di più sulla creazione di bucket personalizzati"^].
+
 
 
 === Impostare le chiavi di crittografia gestite dal cliente (CMEK) per la crittografia dei dati

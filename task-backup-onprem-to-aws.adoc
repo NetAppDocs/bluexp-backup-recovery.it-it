@@ -405,7 +405,9 @@ Fare riferimento a. https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_cr
 
 Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.
 
-Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup".  Se si desidera utilizzare un nome personalizzato, modificare `ontapcloud-instance-policy-netapp-backup` IAMRole per i CVO esistenti e aggiungere il seguente elenco ai permessi S3. Devi includere `“Resource”: “arn:aws:s3:::*”` e assegnare tutte le autorizzazioni necessarie che devono essere associate al bucket.
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Scopri di più sulla creazione di bucket personalizzati"^].
+
+Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup". Se si desidera utilizzare un nome personalizzato, modificare `ontapcloud-instance-policy-netapp-backup` IAMRole per i CVO esistenti e aggiungere il seguente elenco ai permessi S3. Devi includere `“Resource”: “arn:aws:s3:::*”` e assegnare tutte le autorizzazioni necessarie che devono essere associate al bucket.
 
 [%collapsible]
 ====

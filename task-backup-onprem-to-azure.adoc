@@ -339,7 +339,7 @@ Tenere presente che il backup e il ripristino supportano _policy di accesso Azur
 
 Per impostazione predefinita, il servizio crea account di storage. Se si desidera utilizzare i propri account di storage, è possibile crearli prima di avviare la procedura guidata di attivazione del backup, quindi selezionare tali account di storage nella procedura guidata.
 
-Se si creano i propri account di storage, è necessario utilizzare il nome di un account di storage "netapp-backup".
+link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Scopri di più sulla creazione di account storage personalizzati"^].
 
 
 

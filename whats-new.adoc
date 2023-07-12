@@ -46,9 +46,9 @@ Quindi, puoi gestire i cluster meno recenti utilizzando la versione precedente d
 
 
 
-=== Possibilità di creare i bucket per il backup sullo storage a oggetti
+=== Possibilità di creare un container di storage per il backup sullo storage a oggetti
 
-Per impostazione predefinita, quando si creano file di backup nello storage a oggetti, il servizio di backup e ripristino crea i bucket nello storage a oggetti. È possibile creare autonomamente i bucket se si desidera utilizzare un determinato nome o assegnare proprietà speciali. Se si desidera creare un bucket personalizzato, è necessario crearlo prima di avviare l'attivazione guidata.
+Per impostazione predefinita, quando si creano file di backup nello storage a oggetti, il servizio di backup e ripristino crea i bucket nello storage a oggetti. È possibile creare autonomamente i bucket se si desidera utilizzare un determinato nome o assegnare proprietà speciali. Se si desidera creare un bucket personalizzato, è necessario crearlo prima di avviare l'attivazione guidata. https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Scopri come creare i bucket di storage a oggetti"].
 
 Questa funzionalità non è attualmente supportata quando si creano file di backup su sistemi StorageGRID.
 
