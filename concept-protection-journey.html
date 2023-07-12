@@ -1592,7 +1592,7 @@
 <p class="page-details">
   
     
-    <time datetime="2023-07-11 20:52:35 +0000">07/11/2023</time>
+    <time datetime="2023-07-12 20:42:38 +0000">07/12/2023</time>
     
   
 
@@ -1946,13 +1946,16 @@ Per le relazioni di backup su cloud è possibile utilizzare solo le policy del v
 </div>
 </div>
 <div class="sect1">
-<h2 id="vuoi-che-il-servizio-crei-i-bucket-cloud-per-te">Vuoi che il servizio crei i bucket cloud per te</h2>
+<h2 id="si-desidera-creare-un-container-di-storage-a-oggetti-personalizzato">Si desidera creare un container di storage a oggetti personalizzato</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Quando si creano file di backup nello storage cloud, per impostazione predefinita, il servizio di backup e recovery crea i bucket in cui risiedono i file di backup. È possibile creare autonomamente i bucket se si desidera utilizzare un determinato nome o assegnare proprietà speciali. Se si desidera creare un bucket personalizzato, è necessario crearlo prima di avviare l&#8217;attivazione guidata.</p>
+<p>Per impostazione predefinita, quando si creano file di backup nello storage a oggetti per un ambiente di lavoro, il servizio di backup e recovery crea il container (bucket o account di storage) per i file di backup nell&#8217;account di storage a oggetti configurato. Per impostazione predefinita, il bucket AWS o GCP è denominato "netapp-backup-&lt;uuid&gt;". L&#8217;account di storage Azure Blob è denominato "&lt;uuid&gt;".</p>
 </div>
 <div class="paragraph">
-<p>Puoi creare il container da BlueXP o dal tuo cloud provider.</p>
+<p>Se si desidera utilizzare un determinato prefisso o assegnare proprietà speciali, è possibile creare il container direttamente nell&#8217;account del provider di oggetti. Se si desidera creare un container personalizzato, è necessario crearlo prima di avviare l&#8217;attivazione guidata. Il container deve essere utilizzato esclusivamente per la memorizzazione dei file di backup dei volumi ONTAP e non può essere utilizzato per altri scopi. La procedura guidata di attivazione del backup rileva automaticamente i container forniti per l&#8217;account e le credenziali selezionati, in modo da poter selezionare quello che si desidera utilizzare.</p>
+</div>
+<div class="paragraph">
+<p>Puoi creare il bucket da BlueXP o dal tuo cloud provider.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1968,7 +1971,46 @@ Per le relazioni di backup su cloud è possibile utilizzare solo le policy del v
 </ul>
 </div>
 <div class="paragraph">
-<p>Non è possibile creare i propri bucket S3 durante la creazione di backup nei sistemi StorageGRID.</p>
+<p><strong>Nota:</strong> al momento non è possibile utilizzare i propri bucket S3 quando si creano backup nei sistemi StorageGRID.</p>
+</div>
+<div class="paragraph">
+<p>Se si prevede di utilizzare un prefisso bucket diverso da "netapp-backup-xxxxxx", sarà necessario modificare le autorizzazioni S3 per il ruolo IAM del connettore. Per ulteriori informazioni, consultare gli argomenti relativi alla creazione di backup in AWS S3.</p>
+</div>
+<div class="sect2">
+<h3 id="impostazioni-avanzate-della-benna">Impostazioni avanzate della benna</h3>
+<div class="paragraph">
+<p>Se si prevede di spostare i file di backup meno recenti nello storage di archiviazione, o se si intende attivare la protezione DataLock e ransomware per bloccare i file di backup ed eseguirne la scansione per eventuali ransomware, è necessario creare il container con determinate impostazioni di configurazione:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lo storage di archiviazione sui bucket è attualmente supportato nello storage AWS S3 quando si utilizza ONTAP 9.10.1 o software superiore sui cluster. Per impostazione predefinita, i backup iniziano nella classe di storage S3 <em>Standard</em>. Assicurarsi di creare il bucket con le regole del ciclo di vita appropriate:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sposta gli oggetti nell&#8217;intero ambito del bucket in S3 <em>Standard-IA</em> dopo 30 giorni.</p>
+</li>
+<li>
+<p>Spostare gli oggetti con il tag "smc_push_to_archive: True" in <em>Glacier Flexible Retrieval</em> (in precedenza S3 Glacier)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>La protezione DataLock e ransomware è supportata nello storage AWS quando si utilizza software ONTAP 9.11.1 o superiore sui cluster e nello storage Azure quando si utilizza software ONTAP 9.12.1 o superiore.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Per AWS, è necessario attivare il blocco degli oggetti sul bucket utilizzando un periodo di conservazione di 30 giorni.</p>
+</li>
+<li>
+<p>Per Azure, è necessario creare la classe di storage con il supporto dell&#8217;immutabilità a livello di versione.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
