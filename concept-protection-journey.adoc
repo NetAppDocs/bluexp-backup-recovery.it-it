@@ -201,12 +201,12 @@ Se si desidera utilizzare un determinato prefisso o assegnare proprietà special
 
 Puoi creare il bucket da BlueXP o dal tuo cloud provider.
 
-* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Crea bucket S3 da BlueXP"]
+* https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Crea bucket Amazon S3 da BlueXP"]
 * https://docs.netapp.com/us-en/bluexp-blob-storage/task-add-blob-storage.html["Creare account di storage Azure Blob da BlueXP"]
 * https://docs.netapp.com/us-en/bluexp-google-cloud-storage/task-add-gcp-bucket.html["Crea bucket di storage Google Cloud da BlueXP"]
 
 
-*Nota:* al momento non è possibile utilizzare i propri bucket S3 quando si creano backup nei sistemi StorageGRID.
+*Nota:* al momento non è possibile utilizzare i propri bucket S3 quando si creano backup nei sistemi StorageGRID o in ONTAP S3.
 
 Se si prevede di utilizzare un prefisso bucket diverso da "netapp-backup-xxxxxx", sarà necessario modificare le autorizzazioni S3 per il ruolo IAM del connettore. Per ulteriori informazioni, consultare gli argomenti relativi alla creazione di backup in AWS S3.
 
@@ -274,6 +274,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * link:task-backup-onprem-private-cloud.html["Eseguire il backup dei dati ONTAP on-premise su StorageGRID"]
+* link:task-backup-onprem-to-ontap-s3.html["Esegui il backup da ONTAP on-premise a ONTAP S3"]
 
 
 
@@ -302,7 +303,8 @@ endif::azure[]
 
 Il backup e il ripristino BlueXP possono essere utilizzati in un sito senza connettività Internet (noto anche come siti "privati" o "scuri") per eseguire il backup dei dati del volume. In questo caso, sarà necessario implementare BlueXP Connector su un host Linux nello stesso sito.
 
-* È possibile eseguire il backup dei dati dai sistemi ONTAP locali on-premise ai sistemi NetApp StorageGRID locali. Scopri come  link:task-backup-onprem-private-cloud.html["Eseguire il backup dei dati ONTAP on-premise su StorageGRID"] per ulteriori informazioni.
+* È possibile eseguire il backup dei dati dai sistemi ONTAP locali on-premise ai sistemi NetApp StorageGRID locali. Scopri come link:task-backup-onprem-private-cloud.html["Eseguire il backup dei dati ONTAP on-premise su StorageGRID"] per ulteriori informazioni.
+* Puoi effettuare il backup dei dati dai sistemi ONTAP locali on-premise ai sistemi ONTAP locali on-premise o ai sistemi Cloud Volumes ONTAP configurati per lo storage a oggetti S3. Scopri come link:task-backup-onprem-to-ontap-s3.html["Effettua il backup dei dati ONTAP on-premise su ONTAP S3"] per ulteriori informazioni.
 ifdef::aws[]
 
 

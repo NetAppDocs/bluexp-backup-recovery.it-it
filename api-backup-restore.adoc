@@ -97,8 +97,6 @@ Questa API restituirà una risposta simile a quella riportata di seguito. È pos
 
 Nell'esempio seguente viene illustrata una chiamata API per attivare il backup e il ripristino di BlueXP in un ambiente di lavoro con una nuova policy con etichette giornaliere, orarie e settimanali impostate, che archiviano dopo giorni impostati su 180 giorni, nella regione Est-US-2 nel cloud Azure. Si noti che questo abilita solo il backup nell'ambiente di lavoro, ma non viene eseguito il backup dei volumi.
 
-Se si sceglie "auto-backup-enabled" (backup automatico abilitato): "True" (vero), viene eseguito il backup di tutti i volumi già presenti nel sistema e di tutti i volumi futuri.
-
 .Richiesta API
 Verrà utilizzato l'ID account BlueXP `account-DpTFcxN3`, ID connettore BlueXP `iZwFFeVCZjWnzGlw8RgD0QQNANZvpP7Iclients`e token utente `Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6Ik5rSXlPVFUzUWpZek1E…y6nyhBjwkeMwHc4ValobjUmju2x0xUH48g` in questo comando.
 

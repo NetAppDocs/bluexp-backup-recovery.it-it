@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database 
-summary: 'Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, noto come "modalità privata", il backup dei dati di configurazione di backup e ripristino BlueXP viene eseguito nel bucket StorageGRID in cui vengono memorizzati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.' 
+summary: 'Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, noto come "modalità privata", viene eseguito il backup dei dati di configurazione del backup e recovery di BlueXP nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.' 
 ---
 = Ripristinare i dati di backup e ripristino BlueXP in un sito buio
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Quando si utilizza il backup e ripristino BlueXP in un sito senza acce
 
 
 [role="lead"]
-Quando si utilizza il backup e ripristino BlueXP in un sito senza accesso a Internet, noto come "modalità privata" o "sito oscuro", il backup dei dati di configurazione di backup e ripristino BlueXP viene eseguito nel bucket StorageGRID in cui vengono memorizzati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
+Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, noto come "modalità privata", viene eseguito il backup dei dati di configurazione del backup e recovery di BlueXP nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
 
 Si noti che quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS in cui BlueXP Connector viene implementato presso il provider cloud o sul proprio sistema host dotato di accesso a Internet, tutti i dati importanti di configurazione di backup e ripristino BlueXP vengono sottoposti a backup e protetti nel cloud. In caso di problemi con il connettore, è sufficiente creare un nuovo connettore e aggiungere gli ambienti di lavoro per ripristinare automaticamente i dettagli del backup.
 
@@ -46,7 +46,7 @@ Per riportare il sistema di backup e ripristino BlueXP a uno stato operativo, è
 Una volta verificato il corretto funzionamento del sistema, si consiglia di creare nuovi file di backup.
 
 .Di cosa hai bisogno
-È necessario accedere ai backup di database e indici più recenti dal bucket StorageGRID in cui vengono memorizzati i file di backup:
+È necessario accedere ai backup di database e indici più recenti dal bucket StorageGRID o ONTAP S3 in cui vengono memorizzati i file di backup:
 
 * File di database MySQL per backup e ripristino BlueXP
 +
@@ -131,7 +131,7 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 
 === Scopri i tuoi cluster ONTAP e i sistemi StorageGRID
 
-. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Scopri tutti gli ambienti di lavoro ONTAP on-premise"^] che erano disponibili nel tuo ambiente precedente.
+. https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html#discover-clusters-using-a-connector["Scopri tutti gli ambienti di lavoro ONTAP on-premise"^] che erano disponibili nel tuo ambiente precedente. Questo include il sistema ONTAP utilizzato come server S3.
 . https://docs.netapp.com/us-en/bluexp-storagegrid/task-discover-storagegrid.html["Scopri i tuoi sistemi StorageGRID"^].
 
 

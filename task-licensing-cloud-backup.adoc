@@ -135,9 +135,22 @@ Il portafoglio digitale BlueXP consente di gestire le licenze BYOL. È possibile
 
 === Ottenere il file di licenza per il backup e ripristino BlueXP
 
-Dopo aver acquistato la licenza di backup e ripristino BlueXP, attivare la licenza in BlueXP inserendo il numero di serie di backup e ripristino BlueXP e l'account NSS oppure caricando il file di licenza NLF. Se si prevede di utilizzare questo metodo, la procedura riportata di seguito mostra come ottenere il file di licenza NLF.
+Dopo aver acquistato la licenza di backup e recovery BlueXP (Cloud Backup), puoi attivare la licenza in BlueXP inserendo il numero seriale di backup e recovery e l'account NSS di BlueXP o caricando il file di licenza NLF. Se si prevede di utilizzare questo metodo, la procedura riportata di seguito mostra come ottenere il file di licenza NLF.
 
-Se si esegue il backup e il ripristino di BlueXP in un sito on-premise che non dispone di accesso a Internet, il che significa che è stato implementato BlueXP Connector su un host nel sito on-premise offline, è necessario ottenere il file di licenza da un sistema connesso a Internet. L'attivazione della licenza utilizzando il numero seriale e l'account NSS non è disponibile per le installazioni offline (sito oscuro).
+Se esegui backup e recovery di BlueXP in un sito on-premise che non dispone di accesso a Internet, significa che hai implementato il connettore BlueXP in https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode["modalità privata"^], è necessario ottenere il file di licenza da un sistema connesso a internet. L'attivazione della licenza tramite il numero seriale e l'account NSS non è disponibile per le installazioni in modalità privata.
+
+.Prima di iniziare
+Prima di iniziare, è necessario disporre delle seguenti informazioni:
+
+* Numero di serie di backup e recovery di BlueXP
++
+Individua questo numero nell'ordine di vendita o contatta l'account team per ottenere queste informazioni.
+
+* ID account BlueXP
++
+Puoi trovare il tuo ID account BlueXP selezionando l'elenco a discesa *account* nella parte superiore di BlueXP, quindi facendo clic su *Gestisci account* accanto all'account. L'ID account si trova nella scheda Panoramica.
+
+
 
 .Fasi
 . Accedere a https://mysupport.netapp.com["Sito di supporto NetApp"^] E fare clic su *sistemi > licenze software*.
@@ -149,9 +162,6 @@ image:screenshot_cloud_backup_license_step1.gif["Una schermata che mostra una ta
 . Inserire l'ID account BlueXP (chiamato ID tenant sul sito di supporto) e fare clic su *Submit* (Invia) per scaricare il file di licenza.
 +
 image:screenshot_cloud_backup_license_step2.gif["Una schermata che mostra la finestra di dialogo Get License (Ottieni licenza) in cui inserire l'ID tenant e fare clic su Submit (Invia) per scaricare il file di licenza."]
-
-+
-Puoi trovare il tuo ID account BlueXP selezionando l'elenco a discesa *account* nella parte superiore di BlueXP, quindi facendo clic su *Gestisci account* accanto all'account. L'ID account si trova nella scheda Panoramica.
 
 
 

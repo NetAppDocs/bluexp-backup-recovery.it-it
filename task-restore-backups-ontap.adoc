@@ -154,6 +154,10 @@ Sistema ONTAP on-premise | Cloud Volumes ONTAP in Google on-premise ONTAP system
 
 | NetApp StorageGRID | Sistema ONTAP on-premise
 Cloud Volumes ONTAP | Sistema ONTAP on-premise 
+
+
+| ONTAP S3 | Sistema ONTAP on-premise
+Cloud Volumes ONTAP | Sistema ONTAP on-premise 
 |===
 ifdef::aws[]
 
@@ -191,6 +195,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Per StorageGRID, il connettore deve essere implementato in sede, con o senza accesso a Internet
+* Per ONTAP S3, il connettore può essere implementato in sede (con o senza accesso a Internet) o in un ambiente cloud provider
 
 
 Si noti che i riferimenti ai "sistemi ONTAP on-premise" includono i sistemi FAS, AFF e ONTAP Select.
@@ -262,6 +267,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Quando si esegue il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, selezionare la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti e l'IPSpace nel cluster ONTAP in cui risiede il volume di destinazione.
+* Quando si esegue il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archivio oggetti, e l'IPSpace nel cluster ONTAP in cui risiede il volume di destinazione.
 +
 .. Immettere il nome da utilizzare per il volume ripristinato e selezionare Storage VM (VM di archiviazione) e aggregate (aggregato) in cui si trova il volume. Quando si ripristina un volume FlexGroup, è possibile scegliere più aggregati. Per impostazione predefinita, il nome del volume è *<source_volume_name>_restore*.
 +
@@ -307,8 +313,13 @@ Il ripristino di un volume da un file di backup che risiede nello storage di arc
 
 Se è necessario ripristinare solo alcuni file da un backup di un volume ONTAP, è possibile scegliere di ripristinare una cartella o singoli file invece di ripristinare l'intero volume. È possibile ripristinare cartelle e file in un volume esistente nell'ambiente di lavoro originale o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.
 
-*Nota:* al momento è possibile ripristinare una cartella o singoli file solo da un file di backup nello storage a oggetti. Il ripristino di file e cartelle non è attualmente supportato da una copia Snapshot locale o da un file di backup che risiede in un ambiente di lavoro secondario (un volume replicato).
+[NOTE]
+====
+* Al momento, è possibile ripristinare una cartella o singoli file solo da un file di backup nello storage a oggetti. Il ripristino di file e cartelle non è attualmente supportato da una copia Snapshot locale o da un file di backup che risiede in un ambiente di lavoro secondario (un volume replicato).
+* Il ripristino di file e cartelle non è attualmente supportato dai volumi nello storage a oggetti ONTAP S3.
 
+
+====
 Se si selezionano più file, tutti i file vengono ripristinati nello stesso volume di destinazione scelto. Quindi, se si desidera ripristinare i file in volumi diversi, è necessario eseguire il processo di ripristino più volte.
 
 Quando si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una cartella insieme a tutti i file e le sottocartelle all'interno di essa. Quando si utilizza una versione di ONTAP precedente alla 9.13.0, vengono ripristinati solo i file di tale cartella, non vengono ripristinate sottocartelle o file in sottocartelle.
@@ -500,6 +511,7 @@ endif::gcp[]
 * Se il file di backup nello storage a oggetti è stato configurato con la protezione DataLock e ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l'intero volume dal file di backup e accedere alla cartella e ai file necessari.
 * Se il file di backup nello storage a oggetti risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l'intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.
 * La priorità di ripristino "alta" non è supportata quando si ripristinano i dati dallo storage di archivio Azure ai sistemi StorageGRID.
+* Il ripristino delle cartelle non è attualmente supportato dai volumi nello storage a oggetti ONTAP S3.
 
 
 ====
@@ -538,6 +550,10 @@ Sistema ONTAP on-premise | Cloud Volumes ONTAP in Google on-premise ONTAP system
 
 | NetApp StorageGRID | Sistema ONTAP on-premise
 Cloud Volumes ONTAP | Sistema ONTAP on-premise 
+
+
+| ONTAP S3 | Sistema ONTAP on-premise
+Cloud Volumes ONTAP | Sistema ONTAP on-premise 
 |===
 Per Search & Restore, il connettore può essere installato nelle seguenti posizioni:
 
@@ -563,6 +579,7 @@ ifdef::gcp[]
 endif::gcp[]
 
 * Per StorageGRID, il connettore deve essere implementato in sede, con o senza accesso a Internet
+* Per ONTAP S3, il connettore può essere implementato in sede (con o senza accesso a Internet) o in un ambiente cloud provider
 
 
 Si noti che i riferimenti ai "sistemi ONTAP on-premise" includono i sistemi FAS, AFF e ONTAP Select.
@@ -625,7 +642,7 @@ Nota: Se si utilizzava già il backup e ripristino BlueXP con un connettore conf
 
 endif::gcp[]
 
-* Requisiti StorageGRID:
+* Requisiti StorageGRID e ONTAP S3:
 +
 A seconda della configurazione, sono disponibili 2 modi per implementare Search & Restore:
 
@@ -690,7 +707,7 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* Per i backup memorizzati in StorageGRID, fornisce spazio sul connettore o sull'ambiente del cloud provider.
+* Per i backup archiviati in StorageGRID o ONTAP S3, offre spazio sul connettore o sull'ambiente cloud provider.
 
 
 Se l'indicizzazione è già stata attivata per l'ambiente di lavoro, passare alla sezione successiva per ripristinare i dati.
@@ -751,7 +768,7 @@ Se si seleziona un sistema ONTAP on-premise e non è già stata configurata la c
 ifdef::aws[]
 
 +
-*** Quando si esegue il ripristino da Amazon S3, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione, immettere la chiave di accesso e la chiave segreta per l'utente creato per consentire al cluster ONTAP di accedere al bucket S3, E, se lo si desidera, scegliere un endpoint VPC privato per il trasferimento sicuro dei dati. link:task-backup-onprem-to-aws.html#cluster-networking-requirements["Consulta i dettagli su questi requisiti"].
+*** Quando si esegue il ripristino da Amazon S3, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione, immettere la chiave di accesso e la chiave segreta per l'utente creato per consentire al cluster ONTAP di accedere al bucket S3, E, se lo si desidera, scegliere un endpoint VPC privato per il trasferimento sicuro dei dati. link:task-backup-onprem-to-aws.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["Consulta i dettagli su questi requisiti"].
 
 
 
@@ -762,19 +779,20 @@ endif::aws[]
 
 ifdef::azure[]
 
-* Quando si esegue il ripristino da Azure Blob, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione e, se si desidera, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando VNET e Subnet. link:task-backup-onprem-to-azure.html#requirements["Consulta i dettagli su questi requisiti"].
+* Quando si esegue il ripristino da Azure Blob, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione e, se si desidera, scegliere un endpoint privato per il trasferimento sicuro dei dati selezionando VNET e Subnet. link:task-backup-onprem-to-azure.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["Consulta i dettagli su questi requisiti"].
 
 
 endif::azure[]
 
 ifdef::gcp[]
 
-* Quando si esegue il ripristino da Google Cloud Storage, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione e la chiave di accesso e la chiave segreta per accedere allo storage a oggetti. link:task-backup-onprem-to-gcp.html#requirements["Consulta i dettagli su questi requisiti"].
+* Quando si esegue il ripristino da Google Cloud Storage, selezionare IPSpace nel cluster ONTAP in cui si trova il volume di destinazione e la chiave di accesso e la chiave segreta per accedere allo storage a oggetti. link:task-backup-onprem-to-gcp.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["Consulta i dettagli su questi requisiti"].
 
 
 endif::gcp[]
 
-* Quando si esegue il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti e l'IPSpace nel cluster ONTAP in cui risiede il volume di destinazione. link:task-backup-onprem-private-cloud.html#requirements["Consulta i dettagli su questi requisiti"].
+* Quando si esegue il ripristino da StorageGRID, immettere l'FQDN del server StorageGRID e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con StorageGRID, immettere la chiave di accesso e la chiave segreta necessarie per accedere allo storage a oggetti e l'IPSpace nel cluster ONTAP in cui risiede il volume di destinazione. link:task-backup-onprem-private-cloud.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["Consulta i dettagli su questi requisiti"].
+* Quando si esegue il ripristino da ONTAP S3, immettere l'FQDN del server ONTAP S3 e la porta che ONTAP deve utilizzare per la comunicazione HTTPS con ONTAP S3, selezionare la chiave di accesso e la chiave segreta necessarie per accedere all'archivio oggetti, e l'IPSpace nel cluster ONTAP in cui risiede il volume di destinazione. link:task-backup-onprem-to-ontap-s3.html#verify-ontap-networking-requirements-for-backing-up-data-to-object-storage["Consulta i dettagli su questi requisiti"].
 
 
 .Risultati

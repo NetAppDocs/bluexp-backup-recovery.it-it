@@ -184,7 +184,7 @@ Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP:
 Scopri come https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["gestire le licenze del cluster"^].
 
 * L'ora e il fuso orario sono impostati correttamente. Scopri come https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html["configurare l'ora del cluster"^].
-* Se si intende replicare i dati, è necessario verificare che i volumi di origine e di destinazione eseguano versioni ONTAP compatibili prima di replicare i dati.
+* Se si intende replicare i dati, è necessario verificare che i sistemi di origine e di destinazione eseguano versioni di ONTAP compatibili prima di replicare i dati.
 +
 https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html["Visualizza le versioni di ONTAP compatibili per le relazioni SnapMirror"^].
 
@@ -227,7 +227,7 @@ Tutte le LIF di intercluster all'interno di IPSpace devono avere accesso all'arc
 
 === Verificare i requisiti di rete di ONTAP per la replica dei volumi
 
-Prima di attivare i backup in BlueXP backup e recovery, assicurarsi che i sistemi di origine e di destinazione soddisfino la versione di ONTAP e i requisiti di rete.
+Prima di attivare i backup nel backup e recovery di BlueXP, assicurati che i sistemi di origine e destinazione soddisfino i seguenti requisiti di networking.
 
 
 
@@ -239,7 +239,7 @@ Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in usc
 
 ==== Requisiti di rete ONTAP on-premise
 
-* Se il cluster è on-premise, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel provider di servizi cloud. Si tratta in genere di una connessione VPN.
+* Se il cluster si trova in sede, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel cloud provider. Si tratta in genere di una connessione VPN.
 * I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.
 +
 Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
@@ -330,7 +330,7 @@ La preparazione di Amazon S3 come destinazione di backup prevede i seguenti pass
           "Resource": [
               "arn:aws:s3:::netapp-backup-*"
           ]
-      },
+      }
 ----
 ====
 +
@@ -540,29 +540,24 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 
 === Selezionare i volumi di cui si desidera eseguire il backup
 
-Scegliere i volumi che si desidera proteggere. È possibile scegliere di proteggere i volumi FlexVol o FlexGroup; tuttavia, non è possibile selezionare una combinazione di questi volumi per l'ambiente di lavoro che si è scelto di proteggere.
+Scegliere i volumi che si desidera proteggere. Per volume protetto si intende un volume con una o più delle seguenti opzioni: Policy di snapshot, policy di replica, policy di backup su oggetti.
+
+Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi selezionare un mix di questi volumi quando si attiva il backup per un ambiente di lavoro. Scopri come link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["attivare il backup per volumi aggiuntivi nell'ambiente di lavoro"] (FlexVol o FlexGroup) dopo aver configurato il backup per i volumi iniziali.
 
 [NOTE]
 ====
 * È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.
-* Anche i volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. (I volumi con la modalità di conformità SnapLock non sono attualmente supportati). Non è possibile selezionare una combinazione di volumi bloccati e sbloccati.
+* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. (I volumi con la modalità conformità SnapLock non sono attualmente supportati).
 
 
 ====
-Per volume protetto si intende un volume con una o più delle seguenti opzioni: Policy di snapshot, policy di replica, policy di backup su oggetti.
-
-
-NOTE: Se i volumi scelti presentano policy di replica e snapshot diverse da quelle selezionate in seguito, le policy esistenti verranno sovrascritte.
-
 .Fasi
+Se per i volumi selezionati sono già state applicate le policy di snapshot o replica, le policy selezionate in seguito sovrascriveranno quelle esistenti.
+
 . Nella pagina Select Volumes (Seleziona volumi), selezionare il volume o i volumi che si desidera proteggere.
 +
-** Facoltativamente, filtrare le righe per visualizzare solo i volumi con determinati tipi di volume, stili e altro ancora per semplificare la selezione.
-** Dopo aver selezionato il primo volume, è possibile selezionare All FlexVol Volumes (tutti i volumi). Per eseguire il backup di tutti i volumi FlexVol esistenti e di eventuali volumi FlexVol aggiunti in futuro, selezionare prima un volume, quindi la casella nella riga del titolo. (image:button_backup_all_volumes.png[""]).
-+
-
-TIP: Si consiglia di utilizzare questa opzione per eseguire il backup di tutti i volumi e non è necessario ricordarsi di attivare i backup per i nuovi volumi.
-
+** In alternativa, filtrare le righe per visualizzare solo i volumi con determinati tipi di volume, stili e altro ancora per semplificare la selezione.
+** Dopo aver selezionato il primo volume, è possibile selezionare tutti i volumi FlexVol (è possibile selezionare solo i volumi FlexGroup uno alla volta). Per eseguire il backup di tutti i volumi FlexVol esistenti, selezionare prima un volume, quindi selezionare la casella nella riga del titolo. (image:button_backup_all_volumes.png[""]).
 ** Per eseguire il backup di singoli volumi, selezionare la casella relativa a ciascun volume (image:button_backup_1_volume.png[""]).
 
 
@@ -641,7 +636,7 @@ NOTE: Se si sceglie un bucket esistente, le informazioni di crittografia sono gi
 
 TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
 
-** *Esportare le copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se in questo ambiente di lavoro sono presenti copie Snapshot locali per volumi di lettura/scrittura che corrispondono all'etichetta della pianificazione di backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
+** *Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
 
 
 . Selezionare *Avanti*.

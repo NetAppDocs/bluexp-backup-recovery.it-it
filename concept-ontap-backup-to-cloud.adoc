@@ -114,7 +114,28 @@ Sistema ONTAP on-premise | Google Cloud Storage endif::gcp[]
 
 
 | Sistema ONTAP on-premise | Cloud Volumes ONTAP
-Sistema ONTAP on-premise | Ifdef::aws[] Amazzonia S3 endif::aws[] ifdef::Azure[] Azure Blob endif::Azure[] ifdef::gcp[] Google Cloud Storage endif::gcp[] NetApp StorageGRID 
+Sistema ONTAP on-premise | ifdef::aws[]
+
+Amazon S3
+
+endif::aws[]
+
+
+ifdef::azure[]
+
+Azure Blob
+
+endif::azure[]
+
+
+ifdef::gcp[]
+
+Storage Google Cloud
+
+endif::gcp[]
+
+NetApp StorageGRID
+ONTAP S3 
 |===
 
 
@@ -143,6 +164,10 @@ Sistema ONTAP on-premise | Cloud Volumes ONTAP in Google on-premise ONTAP system
 
 
 | NetApp StorageGRID | Sistema ONTAP on-premise
+Cloud Volumes ONTAP | Sistema ONTAP on-premise 
+
+
+| ONTAP S3 | Sistema ONTAP on-premise
 Cloud Volumes ONTAP | Sistema ONTAP on-premise 
 |===
 Si noti che i riferimenti ai "sistemi ONTAP on-premise" includono i sistemi FAS, AFF e ONTAP Select.
@@ -231,6 +256,8 @@ Il backup e ripristino BlueXP è disponibile con i seguenti modelli di consumo:
 * *Annuale*: Un contratto annuale dal mercato del tuo cloud provider.
 
 
+Una licenza di backup è richiesta solo per il backup e il ripristino dallo storage a oggetti. La creazione di copie Snapshot e volumi replicati non richiede una licenza.
+
 
 
 === Porta la tua licenza
@@ -298,6 +325,8 @@ Questo diagramma mostra i volumi replicati in un sistema Cloud Volumes ONTAP, ma
 
 === Dove risiedono i backup
 
+I backup risiedono in posizioni deffent in base al tipo di backup:
+
 * _Copie Snapshot_ risiedono nel volume di origine nell'ambiente di lavoro di origine.
 * _Volumi replicati_ risiedono nel sistema di storage secondario, un sistema Cloud Volumes ONTAP o ONTAP on-premise.
 * _Copie di backup_ vengono memorizzate in un archivio di oggetti creato da BlueXP nel tuo account cloud. C'è un archivio di oggetti per cluster/ambiente di lavoro e BlueXP nomina l'archivio di oggetti come segue: "netapp-backup-clusteruid". Assicurarsi di non eliminare questo archivio di oggetti.
@@ -325,9 +354,11 @@ ifdef::gcp[]
 endif::gcp[]
 
 +
-** In StorageGRID, BlueXP utilizza un account di storage esistente per il bucket dell'archivio di oggetti.
+** In StorageGRID, BlueXP usa un account tenant esistente per il bucket S3.
 
 +
+** In ONTAP S3, BlueXP usa un account utente esistente per il bucket S3.
+
 Se si desidera modificare l'archivio di oggetti di destinazione per un cluster in futuro, è necessario link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Annullare la registrazione del backup e ripristino BlueXP per l'ambiente di lavoro"^], Quindi abilitare il backup e il ripristino BlueXP utilizzando le informazioni del nuovo provider di cloud.
 
 
