@@ -22,7 +22,7 @@ Scopri le novità di BlueXP backup e recovery.
 
 [IMPORTANT]
 ====
-A causa di un importante miglioramento della sicurezza, il connettore ora richiede l'accesso a Internet outbound a due endpoint aggiuntivi per gestire le risorse di backup e recovery nell'ambiente cloud pubblico. Se questi endpoint non sono stati inseriti nella whitelist del firewall, nell'interfaccia utente viene visualizzato un errore relativo a "Servizio non disponibile" o "Impossibile determinare lo stato del servizio":
+A causa di un importante miglioramento della sicurezza, il connettore ora richiede l'accesso a Internet outbound a due endpoint aggiuntivi per gestire le risorse di backup e recovery nell'ambiente cloud pubblico. Se questi endpoint non sono stati aggiunti all'elenco "consentiti" del firewall, nell'interfaccia utente viene visualizzato un errore relativo a "Servizio non disponibile" o "Impossibile determinare lo stato del servizio":
 
 \https://api.cloud.netapp.com
 \https://netapp-cloud-account.auth0.com/userinfo

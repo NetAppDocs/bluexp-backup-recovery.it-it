@@ -242,7 +242,6 @@
   <block id="f68bf28051d836364652b5a91d1bcd3a" category="list-text">Inserire l'ID account BlueXP (chiamato ID tenant sul sito di supporto) e fare clic su *Submit* (Invia) per scaricare il file di licenza.</block>
   <block id="56273f3344c87fabbf5196fba9816fff" category="inline-image-macro">Una schermata che mostra la finestra di dialogo Get License (Ottieni licenza) in cui inserire l'ID tenant e fare clic su Submit (Invia) per scaricare il file di licenza.</block>
   <block id="7ca3a83129f844a42c263755a0fa4a32" category="paragraph"><block ref="7ca3a83129f844a42c263755a0fa4a32" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="257ff1df6b80ed0bf9b3463d53be79f9" category="paragraph">Puoi trovare il tuo ID account BlueXP selezionando l'elenco a discesa *account* nella parte superiore di BlueXP, quindi facendo clic su *Gestisci account* accanto all'account. L'ID account si trova nella scheda Panoramica.</block>
   <block id="fda78c118f583aef58210df788084452" category="section-title">Aggiungere al proprio account le licenze BYOL di backup e ripristino BlueXP</block>
   <block id="affa7da483903ef78f13bda66b93fbbd" category="paragraph">Dopo aver acquistato una licenza di backup e ripristino BlueXP per il tuo account NetApp, devi aggiungere la licenza a BlueXP.</block>
   <block id="8d080a0104c2b8b29f5fc2be913926af" category="list-text">Dal menu BlueXP, fare clic su *Governance &gt; Digital wallet*, quindi selezionare la scheda *licenze servizi dati*.</block>
@@ -4456,7 +4455,6 @@ ONTAP S3</block>
   <block id="e4cf85fe9c170bcb24ec06be023db892" category="paragraph">È necessario accedere ai backup di database e indici più recenti dal bucket StorageGRID o ONTAP S3 in cui vengono memorizzati i file di backup:</block>
   <block id="b805aeaea109186b2d372f733c8143b0" category="list-text"><block ref="9b634f22874d44b1e001e536ff14de06" category="inline-link-rx"></block> che erano disponibili nel tuo ambiente precedente. Questo include il sistema ONTAP utilizzato come server S3.</block>
   <block id="ca8395d0f02816c74d48e7e263466096" category="section-title">1 agosto 2023</block>
-  <block id="a94cc1f58758ef957ce137579b41fcfe" category="paragraph">A causa di un importante miglioramento della sicurezza, il connettore ora richiede l'accesso a Internet outbound a due endpoint aggiuntivi per gestire le risorse di backup e recovery nell'ambiente cloud pubblico. Se questi endpoint non sono stati inseriti nella whitelist del firewall, nell'interfaccia utente viene visualizzato un errore relativo a "Servizio non disponibile" o "Impossibile determinare lo stato del servizio":</block>
   <block id="0d087a4d2e8c88a4f4a80cf0360fd410" category="paragraph">\https://api.cloud.netapp.com
 \https://netapp-cloud-account.auth0.com/userinfo</block>
   <block id="e752fa0925615f823987d88e457d59fd" category="section-title">È stato aggiunto il supporto per il backup dei volumi nei bucket su sistemi ONTAP S3-configurati</block>
@@ -4474,4 +4472,6 @@ ONTAP S3</block>
   <block id="bf6c8f020a512a9accf77240c1333a16" category="paragraph"><block ref="f412c2e0203811d72b16f88cf9eb5d19" category="inline-link-rx"></block>.</block>
   <block id="f0de192c113fd89f1d8027714c573105" category="sidebar">Da ONTAP on-premise a ONTAP S3</block>
   <block id="d09fe30f62c514ce3f7fb2767974cf23" category="sidebar">Video su backup e recovery di BlueXP</block>
+  <block id="b2263890e0533b772d021294e4d3aa41" category="paragraph">Puoi trovare il tuo ID account BlueXP selezionando l'elenco a discesa *account* nella parte superiore di BlueXP, quindi facendo clic su *Gestisci account* accanto all'account. L'ID account si trova nella scheda Panoramica. Per il sito in modalità privata senza accesso a Internet, utilizzare *account-DARKSITE1*.</block>
+  <block id="c098886cae0a337e7ab216f45f15ced7" category="paragraph">A causa di un importante miglioramento della sicurezza, il connettore ora richiede l'accesso a Internet outbound a due endpoint aggiuntivi per gestire le risorse di backup e recovery nell'ambiente cloud pubblico. Se questi endpoint non sono stati aggiunti all'elenco "consentiti" del firewall, nell'interfaccia utente viene visualizzato un errore relativo a "Servizio non disponibile" o "Impossibile determinare lo stato del servizio":</block>
 </blocks>
