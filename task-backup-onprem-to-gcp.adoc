@@ -34,7 +34,7 @@ Scegli se connettere il tuo cluster ONTAP on-premise direttamente allo storage c
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Preparare il connettore BlueXP
 [role="quick-margin-para"]
-Se hai già un connettore implementato in Google Cloud o on-premise, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a Google Cloud.
+Se hai già un connettore implementato nel tuo VPC Google Cloud Platform, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a Google Cloud.
 
 [role="quick-margin-para"]
 <<Preparare il connettore BlueXP,Scopri come creare un connettore e come definire le impostazioni di rete richieste.>>

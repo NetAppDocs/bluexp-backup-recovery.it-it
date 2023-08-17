@@ -148,11 +148,11 @@ BlueXP Notification Center tiene traccia dell'avanzamento dei processi di backup
 
 Oltre a visualizzare gli avvisi nel Centro notifiche, è possibile configurare BlueXP in modo che invii alcuni tipi di notifiche via email come avvisi, in modo da essere informato di importanti attività del sistema anche quando non si è connessi al sistema. https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html["Scopri di più sul Centro notifiche e su come inviare e-mail di avviso per i processi di backup e ripristino"^].
 
-Il Centro notifiche visualizza numerosi eventi di istantanea, replica, backup nel cloud e ripristino, ma solo i seguenti eventi attivano avvisi e-mail:
+Il Centro notifiche visualizza numerosi eventi di istantanea, replica, backup nel cloud e ripristino, ma solo determinati eventi attivano avvisi e-mail:
 
 [cols="1,2,1,1"]
 |===
-| Tipo di operazione | Operazione | Livello di avviso | E-mail inviata 
+| Tipo di operazione | Evento | Livello di avviso | E-mail inviata 
 
 
 | Attivazione | Attivazione backup e ripristino non riuscita per l'ambiente di lavoro | Errore | Sì 
