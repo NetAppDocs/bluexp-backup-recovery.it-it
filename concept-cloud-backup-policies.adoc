@@ -220,7 +220,6 @@ ifdef::aws[]
 *** s3:GetObject
 *** s3:PutBucketObjectLockConfiguration
 *** s3:GetLifecycleConfiguration
-*** s3:ListBucketByTags
 *** s3:GetBucketTagging
 *** s3:DeleteObjectVersion
 *** s3:ListBucketVersions
@@ -277,7 +276,6 @@ endif::azure[]
 *** s3:GetObject
 *** s3:PutBucketObjectLockConfiguration
 *** s3:GetLifecycleConfiguration
-*** s3:ListBucketByTags
 *** s3:GetBucketTagging
 *** s3:DeleteObjectVersion
 *** s3:ListBucketVersions

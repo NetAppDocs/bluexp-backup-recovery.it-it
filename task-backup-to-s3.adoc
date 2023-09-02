@@ -157,7 +157,6 @@ Di seguito sono riportate le autorizzazioni specifiche della policy:
                 "s3:GetObjectRetention",
                 "s3:DeleteObjectVersionTagging",
                 "s3:PutBucketObjectLockConfiguration",
-                "s3:ListBucketByTags",
                 "s3:DeleteObjectVersion",
                 "s3:GetObjectTagging",
                 "s3:PutBucketVersioning",
