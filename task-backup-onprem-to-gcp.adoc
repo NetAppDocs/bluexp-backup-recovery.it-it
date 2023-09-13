@@ -394,7 +394,7 @@ image:screenshot_backup_onprem_enable.png["Una schermata che mostra il pulsante 
 +
 Se la destinazione di Google Cloud Storage per i backup esiste come ambiente di lavoro su Canvas, è possibile trascinare il cluster ONTAP sullo storage a oggetti di Google Cloud.
 
-** Selezionare *Volumes* (volumi) nella barra Backup and Recovery (Backup e ripristino). Dalla scheda Volumes (volumi), selezionare l'opzione *Actions (...)* e selezionare *Activate Backup* (attiva backup) per un singolo volume (che non dispone già di replica o backup su storage a oggetti). .
+** Selezionare *Volumes* (volumi) nella barra Backup and Recovery (Backup e ripristino). Dalla scheda volumi, selezionare *azioni* image:icon-action.png["Icona delle azioni"] E selezionare *attiva backup* per un singolo volume (che non ha già attivato la replica o il backup nell'archiviazione a oggetti). .
 
 
 +
@@ -419,7 +419,7 @@ Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi sele
 [NOTE]
 ====
 * È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.
-* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. (I volumi con la modalità conformità SnapLock non sono attualmente supportati).
+* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. I volumi in modalità conformità SnapLock richiedono ONTAP 9,14 o versione successiva.
 
 
 ====
@@ -473,13 +473,17 @@ Per ulteriori informazioni su queste architetture, fare riferimento a. link:conc
 . *Snapshot locale*: Scegliere una policy Snapshot esistente.
 +
 
-TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
 
 . *Replication*: Impostare le seguenti opzioni:
 +
 ** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
 ** *Replication policy*: Scegliere un criterio di replica esistente.
 
+
++
+
+TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
 
 . *Backup su oggetto*: Se si seleziona *Backup*, impostare le seguenti opzioni:
 +
@@ -507,11 +511,14 @@ Se si sceglie di utilizzare le proprie chiavi gestite dal cliente, inserire il p
 +
 IPSpace nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. Le LIF intercluster per questo IPSpace devono disporre di accesso a Internet in uscita.
 
-** *Backup policy*: Selezionare un criterio di backup esistente.
+** *Criterio di backup*: Selezionare un criterio di archiviazione di Backup in oggetto esistente.
+
+
 +
 
-TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP. Fare riferimento a <link>.
+TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
 
++
 ** *Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
 
 

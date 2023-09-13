@@ -179,13 +179,10 @@ Si noti che i riferimenti ai "sistemi ONTAP on-premise" includono i sistemi FAS,
 Il backup e ripristino di BlueXP supporta i seguenti tipi di volumi:
 
 * Volumi di lettura/scrittura FlexVol
-* Volumi di destinazione SnapMirror Data Protection (DP)
-* Volumi aziendali SnapLock (richiede ONTAP 9.11.1 o versione successiva)
-+
-** I volumi di conformità SnapLock non sono attualmente supportati.
-
-
 * FlexGroup Volumes (richiede ONTAP 9.12.1 o versione successiva)
+* Volumi aziendali SnapLock (richiede ONTAP 9.11.1 o versione successiva)
+* Volumi conformità SnapLock (richiede ONTAP 9,14 o versione successiva)
+* Volumi di destinazione SnapMirror Data Protection (DP)
 
 
 Vedere le sezioni a. <<Limitazioni,Limitazioni di backup e ripristino>> per ulteriori requisiti e limitazioni.

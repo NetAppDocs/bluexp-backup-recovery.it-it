@@ -362,7 +362,7 @@ Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi sele
 [NOTE]
 ====
 * È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.
-* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. (I volumi con la modalità conformità SnapLock non sono attualmente supportati).
+* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. I volumi in modalità conformità SnapLock richiedono ONTAP 9,14 o versione successiva.
 
 
 ====
@@ -416,13 +416,19 @@ Per ulteriori informazioni su queste architetture, fare riferimento a. link:conc
 . *Snapshot locale*: Scegliere una policy Snapshot esistente.
 +
 
-TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+TIP: Per creare un criterio personalizzato, fare riferimento alla sezione
+link:task-create-policies-ontap.html["Creare un criterio"].
 
 . *Replication*: Impostare le seguenti opzioni:
 +
 ** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
 ** *Replication policy*: Scegliere un criterio di replica esistente.
 
+
++
+
+TIP: Per creare un criterio personalizzato, fare riferimento alla sezione
+link:task-create-policies-ontap.html["Creare un criterio"].
 
 . *Backup su oggetto*: Se si seleziona *Backup*, impostare le seguenti opzioni:
 +
@@ -436,10 +442,11 @@ La chiave di accesso e la chiave segreta sono destinate all'utente IAM creato pe
 
 TIP: La selezione dell'IPSpace corretto garantisce che il backup e ripristino BlueXP possa configurare una connessione da ONTAP allo storage a oggetti StorageGRID.
 
-** *Backup policy*: Selezionare un criterio di backup esistente.
+** *Criterio di backup*: Selezionare un criterio di archiviazione di Backup in oggetto esistente.
 +
 
-TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+TIP: Per creare un criterio personalizzato, fare riferimento alla sezione
+link:task-create-policies-ontap.html["Creare un criterio"].
 
 +
 Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile scegliere di proteggere i backup da attacchi ransomware e di eliminazione configurando _DataLock e ransomware Protection_. _DataLock_ protegge i file di backup da modifiche o eliminazioni e _ransomware Protection_ esegue la scansione dei file di backup per rilevare eventuali attacchi ransomware nei file di backup. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Scopri di più sulle impostazioni DataLock disponibili"^].

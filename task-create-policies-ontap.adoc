@@ -1,0 +1,195 @@
+---
+sidebar: sidebar 
+permalink: task-create-policies-ontap.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+summary: 'È possibile utilizzare i criteri di backup predefiniti forniti da NetApp per creare i backup oppure è possibile creare criteri personalizzati. I criteri regolano il tipo di backup, l"architettura di backup, i sistemi di storage e la frequenza dei backup.' 
+---
+= Gestire le policy di backup per i volumi ONTAP
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile utilizzare i criteri di backup predefiniti forniti da NetApp per creare i backup oppure è possibile creare criteri personalizzati. Le policy regolano la frequenza, l'ora di esecuzione del backup e il numero dei file di backup che vengono conservati.
+
+Quando si utilizza la procedura guidata di attivazione per attivare il servizio di backup e ripristino per i volumi, è possibile scegliere tra i criteri predefiniti e gli altri criteri già presenti nell'ambiente di lavoro (sistema Cloud Volumes ONTAP o ONTAP on-premise). Se si desidera utilizzare un criterio diverso da quelli esistenti, è necessario crearlo prima di avviare l'attivazione guidata.
+
+Per informazioni sui criteri di backup predefiniti forniti, fare riferimento a. link:concept-protection-journey.html["Pianifica il tuo percorso di protezione"].
+
+Il backup e recovery di BlueXP offre tre tipi di backup di dati ONTAP: Snapshot, repliche e backup sullo storage a oggetti. Le loro policy risiedono in luoghi diversi a causa dell'architettura che utilizzi e del tipo di backup:
+
+[cols="25,25,25,25"]
+|===
+| Architettura | Posizione di archiviazione della policy di snapshot | Posizione di archiviazione dei criteri di replica | Backup nella posizione di storage della policy a oggetti 
+
+
+| *Fan-out* | Primario | Secondario | Primario 
+
+
+| *Cascade* | Primario | Secondario | Secondario 
+|===
+Creare criteri di backup utilizzando i seguenti strumenti a seconda dell'ambiente, delle preferenze e del tipo di protezione:
+
+* Interfaccia utente di BlueXP
+* Interfaccia utente di System Manager
+* CLI ONTAP
+
+
+
+TIP: Quando si utilizza System Manager, selezionare *asincrono* come tipo di criterio per i criteri di replica e selezionare *asincrono* e *Backup su cloud* per i criteri di backup su oggetti.
+
+
+
+== Visualizzare i criteri per un ambiente di lavoro
+
+. Nell'interfaccia utente di BlueXP, selezionare *volumi* > *Impostazioni di backup*.
+. Nella pagina Backup Settings (Impostazioni di backup), selezionare l'ambiente di lavoro, quindi selezionare *Actions* image:icon-action.png["Icona delle azioni"] E selezionare *Gestione criteri*.
++
+Viene visualizzata la pagina Gestione criteri.
+
++
+image:screenshot_policies_management.png["Pagina di gestione dei criteri"]
+
++
+Per impostazione predefinita, le policy degli snapshot vengono visualizzate.
+
+. Per visualizzare altri criteri esistenti nell'ambiente di lavoro, selezionare *Criteri di replica* o *Criteri di backup*. Se è possibile utilizzare le policy esistenti per i piani di backup, è tutto impostato. Se è necessario disporre di un criterio con caratteristiche diverse, è possibile creare nuovi criteri da questa pagina.
+
+
+
+
+== Creare una policy Snapshot
+
+Parte della strategia 3-2-1 prevede la creazione di una copia Snapshot del volume sul sistema di storage *primario*.
+
+Parte del processo di creazione delle policy implica l'identificazione delle etichette di Snapshot e SnapMirror che denotano pianificazione e conservazione. È possibile utilizzare etichette predefinite o crearne di proprie.
+
+.Fasi
+. Nella pagina Criteri, selezionare *Crea nuovo criterio* > *Crea criterio istantanea*.
+. Specificare il nome del criterio.
+. Selezionare la pianificazione o le pianificazioni delle istantanee. È possibile avere un massimo di 5 etichette. In alternativa, creare una pianificazione.
+. Se si sceglie di creare una pianificazione:
++
+.. Selezionare la frequenza oraria, giornaliera, settimanale, mensile o annuale.
+.. Specificare le etichette dell'istantanea che indicano la pianificazione e la conservazione.
+.. Immettere la data e la frequenza di esecuzione dell'istantanea.
+.. Retention (conservazione): Immettere il numero di snapshot da conservare.
+
+
+. Selezionare *Crea*.
+
+
+
+
+=== Esempio di criterio snapshot che utilizza un'architettura a cascata
+
+Questo esempio crea una policy Snapshot con due cluster:
+
+. Cluster 1:
++
+.. Selezionare Cluster 1 nella pagina dei criteri.
+.. Ignorare le sezioni dei criteri Replica e Backup su oggetto.
+.. Creare la policy Snapshot.
+
+
+. Cluster 2:
++
+.. Selezionare Cluster 2 nella pagina Policy.
+.. Ignorare la sezione criterio snapshot.
+.. Configurare i criteri di replica e backup su oggetti.
+
+
+
+
+
+
+== Creare un criterio di replica
+
+La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di storage diverso. Il criterio di replica risiede nel sistema di archiviazione *secondario*.
+
+.Fasi
+. Nella pagina Criteri, selezionare *Crea nuovo criterio* > *Crea nuovo criterio di replica*.
+. Nella sezione Dettagli policy, specificare il nome del policy.
+. Specifica le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
+. Specificare la pianificazione del trasferimento.
+. Selezionare *Crea*.
+
+
+
+
+== Crea una policy di backup sullo storage a oggetti
+
+La tua strategia 3-2-1 potrebbe includere il backup di un volume sullo storage a oggetti.
+
+Questo criterio di storage risiede in diverse ubicazioni dei sistemi di storage, a seconda dell'architettura di backup:
+
+* Fan-out: Sistema di storage primario
+* A cascata: Sistema storage secondario
+
+
+.Fasi
+. Nella pagina Gestione criteri, selezionare *Crea nuovo criterio* > *Crea nuovo criterio di backup*.
+. Nella sezione Dettagli policy, specificare il nome del policy.
+. Specifica le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
+. Specificare le impostazioni, incluso il programma di trasferimento e quando archiviare i backup.
+. (Facoltativo) per spostare i file di backup meno recenti in una classe di archiviazione o livello di accesso meno costosi dopo un certo numero di giorni, selezionare l'opzione *Archivio* e indicare il numero di giorni che devono trascorrere prima che i dati vengano archiviati.
++
+https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["Scopri di più sulle impostazioni dello storage di archiviazione"].
+
+. (Opzionale) per proteggere i backup dalla modifica o dall'eliminazione, selezionare l'opzione *DataLock & ransomware Protection*.
++
+Se il cluster utilizza ONTAP 9.11.1 o versioni successive, puoi scegliere di proteggere i backup dall'eliminazione configurando _DataLock_ e _ransomware Protection_.
+
++
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Scopri di più sulle impostazioni DataLock disponibili"^].
+
+. Selezionare *Crea*.
+
+
+
+
+== Modificare un criterio
+
+È possibile modificare una policy di backup, replica o snapshot personalizzata.
+
+La modifica del criterio di backup influisce su tutti i volumi che utilizzano tale criterio.
+
+.Fasi
+. Nella pagina Gestione criteri, selezionare il criterio, quindi selezionare *azioni* image:icon-action.png["Icona delle azioni"] E selezionare *Modifica criterio*.
++
+
+NOTE: Il processo è lo stesso per i criteri di replica e backup.
+
+. Nella pagina Modifica criterio, apportare le modifiche.
+. Selezionare *Salva*.
+
+
+
+
+== Eliminazione di un criterio
+
+È possibile eliminare criteri non associati a alcun volume.
+
+Se un criterio è associato a un volume e si desidera eliminarlo, è necessario prima rimuoverlo dal volume.
+
+.Fasi
+. Nella pagina Gestione criteri, selezionare il criterio, quindi selezionare *azioni* image:icon-action.png["Icona delle azioni"] E selezionare *Elimina criterio istantanea*.
+. Selezionare *Delete* (Elimina).
+
+
+
+
+== Trova ulteriori informazioni
+
+Per istruzioni sulla creazione di policy con System Manager o l'interfaccia a riga di comando di ONTAP, vedere quanto segue:
+
+https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Creare una policy Snapshot utilizzando System Manager"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Creare una policy Snapshot utilizzando l'interfaccia a riga di comando di ONTAP"^]
+https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Creare un criterio di replica utilizzando System Manager"^]
+https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Creare un criterio di replica utilizzando l'interfaccia utente di ONTAP"^]
+https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Creare una policy di backup sullo storage a oggetti utilizzando System Manager"^]
+https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Creare una policy di backup sullo storage a oggetti utilizzando l'interfaccia a riga di comando di ONTAP"^]

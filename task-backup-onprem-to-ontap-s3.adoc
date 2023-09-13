@@ -312,7 +312,7 @@ Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi sele
 [NOTE]
 ====
 * È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.
-* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. (I volumi con la modalità conformità SnapLock non sono attualmente supportati).
+* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. I volumi in modalità conformità SnapLock richiedono ONTAP 9,14 o versione successiva.
 
 
 ====
@@ -386,6 +386,10 @@ TIP: Selezionando l'IPSpace corretto, il backup e recovery di BlueXP può config
 +
 
 TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+
++
+
+TIP: Per creare un criterio personalizzato utilizzando l'interfaccia utente, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
 
 
 
