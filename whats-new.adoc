@@ -306,9 +306,9 @@ In passato, quando si ripristinava una cartella, venivano ripristinati solo i fi
 
 
 
-=== Possibilità di eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP in siti oscuri
+=== Capacità di eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP nei siti con una connettività in uscita limitata
 
-Ora puoi eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali di AWS e Azure su Amazon S3 o Azure Blob. Ciò richiede l'installazione del connettore su un host Linux nell'area commerciale e l'implementazione del sistema Cloud Volumes ONTAP. Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
+Ora puoi eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali di AWS e Azure su Amazon S3 o Azure Blob. Questo richiede che il connettore venga installato in "modalità limitata" su un host Linux nella regione commerciale e che venga installato anche il sistema Cloud Volumes ONTAP. Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
 
 
 
