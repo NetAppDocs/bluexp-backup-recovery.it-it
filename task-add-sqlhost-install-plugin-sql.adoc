@@ -1,0 +1,380 @@
+---
+sidebar: sidebar 
+permalink: task-add-sqlhost-install-plugin-sql.html 
+keywords: Cloud Manager, BlueXP, SnapCenter Plug-in for SQL, SQL, database, host, install, add host, discover 
+summary: Installare il plug-in SnapCenter per SQL su ciascuno degli host del database SQL. 
+---
+= Installare il plug-in SnapCenter per SQL Server e aggiungere host di database
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È necessario installare il plug-in di SnapCenter per SQL Server su ciascuno degli host del database SQL, aggiungere gli host del database, rilevare le istanze del database e configurare le credenziali per le istanze del database.
+
+
+
+== Installare il plug-in SnapCenter per SQL Server
+
+È necessario scaricare il plug-in *snapcenter_service_Windows_host_plugin.exe* e quindi eseguire il comando silent installer per installare il plug-in sull'host del database.
+
+.Prima di iniziare
+* È necessario verificare che siano soddisfatti i seguenti prerequisiti.
++
+** È installato .Net 4.7.2
+** Viene installato PowerShell 4,0
+** È disponibile uno spazio minimo su disco di 5 GB
+** È disponibile una dimensione minima di 4 GB di RAM
+
+
+* È necessario eseguire l'API per completare l'assunzione del cliente. Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Tenant%20Registration/createTenant[]
+
+
+.Fasi
+. Scaricare il plug-in eseguendo l'API dall'host del connettore.
+`docker exec -it cloudmanager_scs_cloud curl 'http://127.0.0.1/api/v2/pluginpackage/windows'`
++
+La posizione del file è _/var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/<agent_version>/sc-Windows-host-plugin/snapcenter_service_Windows_host_plugin.exe_.
+
+. Copiare _snapcenter_service_Windows_host_plugin.exe_ dal connettore a ciascuno degli host del database MSSQL Server utilizzando SCP o altri metodi alternativi.
+. Installare il plug-in.
+'"C://<install_folder>/snapcenter_service_Windows_host_plugin.exe"/silent/debuglog "C://<install_folder>/ha_Suite_Silent_Install_SCSQL_FRESH.log" /log"C://install_folder/" BI_SNAPCENTER_PORT=8145 ISFeatureInstall=SCSQL'
+. Copiare il certificato autofirmato da _/var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/client/certificate/certificate.pem_ negli host del database di MSSQL Server.
++
+È inoltre possibile generare un certificato autofirmato o un certificato CA firmato se non si utilizza quello predefinito.
+
+. Convertire il certificato dal formato .pem al formato .crt nell'host del connettore.
+'openssl x509 -outform der -in certificate.pem -out certificate.crt'
+. Fare doppio clic sul certificato per aggiungerlo all'archivio *Personal* e *Trusted Root Certification Authority*.
+
+
+
+
+== Aggiungere l'host del database SQL Server
+
+È necessario aggiungere l'host del database MSSQL utilizzando l'FQDN host.
+
+"POST snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Host%20Management/AddHosts[]
+
+Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.
+
+
+
+=== Parametri
+
+|===
+| Nome | Tipo | Obbligatorio 
+
+
+ a| 
+addr
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+id_connettore
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+plugin_type
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+metodo_installazione
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+porta_plugin
+ a| 
+numero
+ a| 
+Vero
+
+
+
+ a| 
+nome utente
+ a| 
+stringa
+ a| 
+Vero
+
+|===
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 202.
+
+Esempio:
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== Visualizzare gli host del database SQL Server aggiunti
+
+È possibile eseguire questa API per visualizzare tutti gli host di database SQL Server aggiunti.
+
+"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/Host%20Management/GetHosts[]
+
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 200.
+
+Esempio:
+
+[listing]
+----
+{
+  "num_records": 1,
+    "total_records": 1,
+    "records": [
+        {
+            "id": "85bd4603-08f7-45f4-ba8e-a0b1e2a0f4d0",
+            "addr": "scspa2722211001.rtp.openenglab.netapp.com",
+            "status": "Running",
+            "connector_id": "fBf8Iwbp4BscBfD02qBwWm6I03gGAesRclients",
+            "plugin_port": 8145,
+            "plugins": [
+                {
+                    "type": "mssql"
+                }
+            ],
+            "os_type": "windows",
+            "platform": "onprem",
+            "username": "administrator",
+            "operating_mode": "production"
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----
+
+
+== Rilevare le istanze del database
+
+È possibile eseguire questa API e immettere l'ID host per rilevare tutte le istanze MSSQL.
+
+"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/discovery'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Instances/MSSQLInstancesDiscoveryRequest[]
+
+Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.
+
+
+
+=== Parametro
+
+|===
+| Nome | Tipo | Obbligatorio 
+
+
+ a| 
+host_id
+ a| 
+stringa
+ a| 
+Vero
+
+|===
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 202.
+
+Esempio:
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== Visualizzare le istanze del database rilevate
+
+È possibile eseguire questa API per visualizzare tutte le istanze del database rilevate.
+
+"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Instances/GetMSSQLInstancesRequest[]
+
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 200.
+
+Esempio:
+
+[listing]
+----
+{
+    "num_records": 2,
+    "total_records": 2,
+    "records": [
+        {
+            "id": "953e66de-10d9-4fd9-bdf2-bf4b0eaabfd7",
+            "name": "scspa2722211001\\NAMEDINSTANCE1",
+            "host_id": "85bd4603-08f7-45f4-ba8e-a0b1e2a0f4d0",
+            "status": "Running",
+            "auth_mode": 0,
+            "version": "",
+            "is_clustered": false,
+            "is_credentials_configured": false,
+            "protection_mode": ""
+        },
+        {
+            "id": "18e1b586-4c89-45bd-99c8-26268def787c",
+            "name": "scspa2722211001",
+            "host_id": "85bd4603-08f7-45f4-ba8e-a0b1e2a0f4d0",
+            "status": "Stopped",
+            "auth_mode": 0,
+            "version": "",
+            "is_clustered": false,
+            "is_credentials_configured": false,
+            "protection_mode": ""
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----
+
+
+== Configurare le credenziali dell'istanza del database
+
+È possibile eseguire questa API per convalidare e impostare le credenziali per le istanze del database.
+
+"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql//api/mssql/credentials-configuration'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Instances/ConfigureCredentialRequest[]
+
+Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.
+
+
+
+=== Parametro
+
+|===
+| Nome | Tipo | Obbligatorio 
+
+
+ a| 
+host_id
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+id_istanza
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+nome utente
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+password
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+auth_mode
+ a| 
+stringa
+ a| 
+Vero
+
+|===
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 202.
+
+Esempio:
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----

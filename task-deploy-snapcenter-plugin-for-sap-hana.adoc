@@ -59,7 +59,7 @@ Creare un utente non root (sudo) per installare il plug-in.
 . Accedere a Connector VM.
 . Scarica il binario del plug-in host Linux di SnapCenter.
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
-. Copia il contenuto di *sudoer.txt* che si trova in: _/var/lib/docker/Volumes/service-manager[1]-2_cloud_manager_scs_cloud_volume/_data/€(sudo docker ps|grep -po "cloud_manager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_
+. Copiare il contenuto di *sudoer.txt* situato all'indirizzo: _/var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/$(sudo docker ps|grep -po "cloudmanager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_
 . Accedere all'host di sistema SAP HANA utilizzando l'account utente root.
 . Configurare l'accesso sudo per l'utente non root copiando il testo copiato nel passaggio 3 nel file _/etc/sudoers.d/snapcenter_.
 +
@@ -162,7 +162,7 @@ Se l'autenticazione basata su chiave SSH non è abilitata sull'host HANA, attene
 . Scarica il binario del plug-in host Linux di SnapCenter.
 `sudo docker exec -it cloudmanager_scs_cloud curl -X GET 'http://127.0.0.1/deploy/downloadLinuxPlugin'`
 +
-Il binario del plug-in è disponibile all'indirizzo: _cd /var/lib/docker/Volumes/service-manager[1]-2_cloudmanager_scs_cloud_volume/_data/€(sudo docker ps|grep -po "cloudmanager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_
+Il binario del plug-in è disponibile all'indirizzo: _cd /var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/€(sudo docker ps|grep -po "cloudmanager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_
 
 . Copiare _snapcenter_linux_host_plugin_scs.bin_ dal percorso sopra indicato al percorso _/home/<non root user (sudo)>/.sc_netapp_ per ciascuno degli host di database SAP HANA utilizzando metodi SCP o altri metodi alternativi.
 . Accedere all'host del database SAP HANA utilizzando l'account non root (sudo).
@@ -170,9 +170,9 @@ Il binario del plug-in è disponibile all'indirizzo: _cd /var/lib/docker/Volumes
 `chmod +x snapcenter_linux_host_plugin_scs.bin`
 . Installare il plug-in SAP HANA come utente sudo SnapCenter.
 `./snapcenter_linux_host_plugin_scs.bin -i silent -DSPL_USER=<non-root>`
-. Copiare _certificate.p12_ dal percorso _<base_mount_path>/client/certificate/_ del connettore VM a _/var/opt/snapcenter/spl/etc/_ sull'host del plug-in.
+. Copiare _certificate.pem_ dal percorso _<base_mount_path>/client/certificate/_ del connettore VM a _/var/opt/snapcenter/spl/etc/_ sull'host plug-in.
 . Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il certificato.
-`keytool -v -importkeystore -srckeystore certificate.p12 -srcstoretype PKCS12 -destkeystore keystore.jks -deststoretype JKS -srcstorepass snapcenter -deststorepass snapcenter -srcalias agentcert -destalias agentcert -noprompt`
+`keytool -import -alias agentcert -file certificate.pem -keystore keystore.jks -deststorepass snapcenter -noprompt`
 . Riavviare SPL: `systemctl restart spl`
 . Verificare che il plug-in sia raggiungibile dal connettore eseguendo il comando riportato di seguito dal connettore.
 `docker exec -it cloudmanager_scs_cloud curl -ik \https://<FQDN or IP of the plug-in host>:<plug-in port>/PluginService/Version --cert  config/client/certificate/certificate.pem --key /config/client/certificate/key.pem`
@@ -210,20 +210,18 @@ Se si utilizza un connettore meno recente, eseguire il seguente comando per aggi
 
 *Fasi*
 
-. Nell'interfaccia utente *BlueXP*, fare clic su *Protection* > *Backup and Recovery* > *Applications*.
-. Fare clic su *Scopri applicazioni*.
-. Selezionare *Cloud Native* > *SAP HANA* e fare clic su *Avanti*.
-. Nella pagina *applicazioni*, fare clic su *Aggiungi sistema*.
+. Nell'interfaccia utente *BlueXP*, selezionare *protezione* > *Backup e ripristino* > *applicazioni*.
+. Selezionare *trova applicazioni*.
+. Selezionare *Cloud Native* > *SAP HANA* e selezionare *Next*.
+. Nella pagina *applicazioni*, selezionare *Aggiungi sistema*.
 . Nella pagina *Dettagli sistema*, eseguire le seguenti operazioni:
 +
-.. Selezionare System Type (tipo di sistema) come Multi-tenant database container (contenitore database multi-tenant) o Single container (contenitore singolo).
+.. Selezionare tipo di sistema come container di database multi-tenant o volumi non dati globali.
 .. Inserire il nome del sistema SAP HANA.
 .. Specificare il SID del sistema SAP HANA.
-.. (Facoltativo) modificare l'utente del sistema operativo HDBSQL.
-.. Selezionare host plug-in.
-(Facoltativo) se l'host non viene aggiunto, fare clic su *Add Plug-in host* (Aggiungi host plug-in).
+.. (Facoltativo) modificare l'utente OSDB.
 .. Se il sistema HANA è configurato con la replica del sistema HANA, attivare *sistema di replica del sistema HANA (HSR)*.
-.. Fare clic sulla casella di testo *HDB Secure User Store Keys* (chiavi di memorizzazione utente protette HDB) per aggiungere i dettagli delle chiavi di memorizzazione utente.
+.. Selezionare la casella di testo *HDB Secure User Store Keys* per aggiungere i dettagli dei tasti di memorizzazione utente.
 +
 Specificare il nome della chiave, i dettagli del sistema, il nome utente e la password e fare clic su *Aggiungi chiave*.
 
@@ -232,18 +230,36 @@ Specificare il nome della chiave, i dettagli del sistema, il nome utente e la pa
 
 
 
-. Fare clic su *Avanti*.
-. Nella pagina *Storage Footprint*, fare clic su *Add Storage* (Aggiungi storage) ed eseguire le seguenti operazioni:
+. Selezionare *Avanti*.
+. Nella pagina *Dettagli host*, effettuare le seguenti operazioni:
++
+.. Selezionare *Aggiungi nuovo host* o *Usa host esistente*.
+.. Selezionare *usando SSH* o *Manuale*.
++
+Per Manuale, immettere il FQDN host o IP, connettore, Nome utente, porta SSH, porta plug-in, e, facoltativamente, aggiungere e convalidare la chiave privata SSH.
+
++
+Per SSH, immettere il nome host FQDN o IP, Connector, Username e plug-in port.
+
+.. Selezionare *Avanti*.
+
+
+. Nella pagina *Configurazione host*, verificare se i requisiti di configurazione sono soddisfatti.
++
+Selezionare le caselle di controllo per confermare.
+
+. Selezionare *Avanti*.
+. Nella pagina *Storage Footprint*, selezionare *Aggiungi archiviazione* ed eseguire le seguenti operazioni:
 +
 .. Selezionare l'ambiente di lavoro e specificare l'account NetApp.
 +
 Dal riquadro di navigazione a sinistra, selezionare BlueXP *Canvas* per aggiungere un nuovo ambiente di lavoro.
 
 .. Selezionare i volumi richiesti.
-.. Fare clic su *Aggiungi storage*.
+.. Selezionare *Aggiungi archiviazione*.
 
 
-. Esaminare tutti i dettagli e fare clic su *Aggiungi sistema*.
+. Controllare tutti i dettagli e selezionare *Aggiungi sistema*.
 
 
 È possibile modificare o rimuovere i sistemi SAP HANA dall'interfaccia utente.
@@ -252,43 +268,9 @@ Prima di rimuovere il sistema SAP HANA, è necessario eliminare tutti i backup a
 
 
 
-=== Eliminare l'host del database SAP HANA
-
-È possibile rimuovere l'host del database SAP HANA utilizzando solo API REST.
-
-*Fasi*
-
-. Eliminare tutti i sistemi associati all'host del database SAP HANA utilizzando l'interfaccia utente o utilizzando l'API REST riportata di seguito.
-`DELETE /saphana/anf/systems/(id)`
-. Per rimuovere l'host del database SAP HANA, procedere come segue.
-+
-.. Utilizzare L'API GET REST per ottenere l'ID dell'host del database SAP HANA che deve essere cancellato.
-`GET /saphana/hosts`
-   `{`
-    `"num_records": 1,`
-    `"records": [`
-        `{`
-            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
-            `"host_name": "galaxy-vm134.netapp.com",`
-            `"port": 443,`
-            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
-       
-`}`
-    `]`
-`}`
-.. Eliminare l'host del database SAP HANA passando l'ID dall'API REST sottostante.
-`DELETE /saphana/hosts/(id)`
-.. Disinstallare il plug-in SAP HANA Linux sull'host del database utilizzando il comando riportato di seguito.
-`/opt/NetApp/snapcenter/spl/installation/plugins/uninstall`
-
-
-
-
-
-
 === Aggiungere volumi non dati
 
-Dopo aver aggiunto il container di database multi-tenant o il sistema SAP HANA di tipo container singolo, è possibile aggiungere i volumi non-data del sistema HANA.
+Dopo aver aggiunto il sistema SAP HANA di tipo container di database multi-tenant, è possibile aggiungere i volumi non-Data del sistema HANA.
 
 È possibile aggiungere queste risorse ai gruppi di risorse per eseguire operazioni di protezione dei dati dopo aver individuato i database SAP HANA disponibili.
 
@@ -304,7 +286,7 @@ Dopo aver aggiunto il container di database multi-tenant o il sistema SAP HANA d
 
 === Aggiungere volumi non dati globali
 
-Dopo aver aggiunto il container di database multi-tenant o il sistema SAP HANA di tipo container singolo, è possibile aggiungere i volumi non-dati globali del sistema HANA.
+Dopo aver aggiunto il sistema SAP HANA di tipo container di database multi-tenant, puoi aggiungere i Global non-Data Volumes del sistema HANA.
 
 *Fasi*
 
@@ -316,39 +298,14 @@ Dopo aver aggiunto il container di database multi-tenant o il sistema SAP HANA d
 +
 .. Dal menu a discesa System Type (tipo di sistema), selezionare *Global non-Data Volume* (Volume non dati globale).
 .. Inserire il nome del sistema SAP HANA.
+
+
+. . Nella pagina *Dettagli host*, effettuare le seguenti operazioni:
++
 .. Specificare i SID associati al sistema SAP HANA.
 .. Selezionare l'host del plug-in
 .. Fare clic su *Avanti*.
 .. Esaminare tutti i dettagli e fare clic su *Aggiungi sistema*.
 
 
-
-
-
-
-=== Modificare l'host del database SAP HANA
-
-Dopo aver aggiunto l'host del database SAP HANA, è possibile modificare il nome host o la porta del plug-in utilizzando l'API REST.
-
-*Fasi*
-
-. Utilizzare L'API GET REST per ottenere l'ID dell'host del database SAP HANA che deve essere cancellato. `GET /saphana/hosts`
-   `{`
-    `"num_records": 1,`
-    `"records": [`
-        `{`
-            `"id": "c9a6849f-29ea-45c5-a17f-a1e78ad2a30e",`
-            `"host_name": "galaxy-vm134.netapp.com",`
-            `"port": 443,`
-            `"agent_id": "n3TrgkGvnTOFTJJNBxeh3oPxG8AcrcHeclients"`
-       
-`}`
-    `]`
-`}`
-. Modificare il nome host o la porta del plug-in utilizzando l'API DELLA PATCH riportata di seguito.
-`PATCH /saphana/hosts/(id)`
-`{`
-`"host_name": "vm136.dummy.com",`
-`"port": 8145,`
-`}`
 

@@ -56,6 +56,7 @@ IMPORTANT: Il tempo necessario per l'elenco dei backup dipende dalla pianificazi
 * Per i database Microsoft SQL Server, vengono elencati solo i backup completi e la data di fine di ciascun backup. È possibile selezionare il backup e ripristinare il database nella posizione originale o alternativa.
 * Per l'istanza di Microsoft SQL Server, vengono elencati i backup dei database in tale istanza.
 * Per i database SAP HANA, vengono elencati solo i backup dei dati e la data di fine di ciascun backup. È possibile selezionare il backup ed eseguire l'esportazione dello storage su un determinato host.
+* Per MongoDB, MySQL e PostgreSQL, sono elencati solo i backup dei dati e la data finale di ciascun backup. È possibile selezionare il backup ed eseguire l'esportazione dello storage su un determinato host.
 
 
 

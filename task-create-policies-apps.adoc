@@ -22,6 +22,7 @@ summary: 'Creare policy personalizzate per proteggere l"applicazione.'
 ** Se utilizzi i servizi Web Amazon, dovresti utilizzare ONTAP 9.10.1 o versione successiva
 ** Se si utilizza Microsoft Azure, è necessario utilizzare ONTAP 9.10.1 o versione successiva
 ** Se utilizzi Google Cloud, dovresti utilizzare ONTAP 9.12.1 o versione successiva
+** Se si utilizza StorageGRID, si consiglia di utilizzare ONTAP 9.12.1 o versione successiva
 
 
 * È necessario configurare il Tier di accesso all'archivio per ciascun provider di cloud.

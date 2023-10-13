@@ -4,7 +4,6 @@
   <block id="3e1a90c2232c83a5583ba782a21c185a" category="doc">Aggiornare il sistema di destinazione SAP HANA</block>
   <block id="17e2d63e3b45ecbfe13bcc32fec929d0" category="paragraph">*Prima di iniziare*</block>
   <block id="6a2d5949052d8d9118cfcade0cfdd25c" category="list-text">Installare il sistema di destinazione SAP HANA prima di eseguire la prima operazione di refresh.</block>
-  <block id="c1c067a0bb1a2fe75a7db399b7e238ad" category="list-text">È necessario aggiungere manualmente i sistemi HANA di origine e di destinazione nel backup cloud.</block>
   <block id="e58cfb63a12429814fc30c5d8f0e8d76" category="list-text">Assicurarsi che la versione del database SAP HANA sia la stessa sul sistema di origine e di destinazione.</block>
   <block id="9f4392bfcc6722ccfa013cf6e6660770" category="list-text">Si sarebbe dovuto decidere quali script di refresh utilizzare. Gli script di refresh sono disponibili nel report tecnico della soluzione.</block>
   <block id="d648af91bd5d8a9bfbf67955f22a64fc" category="inline-link">Script di esempio di automazione</block>
@@ -29,7 +28,6 @@
   <block id="158a3a34d49db71bd2f895fba2c38243" category="list-text">Nella pagina *applicazioni*, fare clic su <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> Per selezionare l'azione corrispondente al sistema che si desidera aggiornare e selezionare *System Refresh* (Aggiorna sistema).</block>
   <block id="f573ee64ef887f8b0f16bdb22bf2dd34" category="list-text">Nella pagina *System Refresh*, eseguire le seguenti operazioni:</block>
   <block id="521e5b4ee67bb67042f49209b8653819" category="list-text">Selezionare il sistema di origine e la copia Snapshot.</block>
-  <block id="445c03c33e1539bd0b41eb36082d3cb2" category="list-text">Immettere gli indirizzi di esportazione da cui è possibile accedere ai nuovi volumi.</block>
   <block id="5b1b42f6958d8e1fc337204814ce7e96" category="list-text">Immettere prescrittt, postscript e i percorsi degli script di errore. Lo script on failure viene eseguito solo quando l'operazione di refresh del sistema non riesce.</block>
   <block id="d687cb57e7c0a2bc72631659265b9d28" category="list-text">Fare clic su *Aggiorna*.</block>
   <block id="f20cd1b900b89f55ebfb06447e182090" category="summary">Installare il plug-in SnapCenter per Oracle su ciascuno degli host di database Oracle.</block>
@@ -117,8 +115,6 @@
   <block id="28cd1feed4d1442bb984e3c27e99d2ee" category="list-text">Accedere all'host del database Oracle utilizzando l'account non root (sudo).</block>
   <block id="dc81da6c3b34e4764e2512da3b003dc6" category="list-text">Modificare la directory in _/home/&lt;non root user&gt;/.sc_netapp/_ ed eseguire il seguente comando per abilitare le autorizzazioni di esecuzione per il file binario.<block ref="4cd88a831fa940d7f40686837061308c" prefix=" " category="inline-code"></block></block>
   <block id="7b6e585ad01188657c8452ae21b445b8" category="list-text">Installare il plug-in Oracle come utente sudo SnapCenter.<block ref="f11871e64bd259821edac15d21de1875" prefix=" " category="inline-code"></block></block>
-  <block id="e83ebe810e7607148882f52b5e3b71fd" category="list-text">Copiare _certificate.p12_ dal percorso _&lt;base_mount_path&gt;/client/certificate/_ del connettore VM a _/var/opt/snapcenter/spl/etc/_ sull'host del plug-in.</block>
-  <block id="7550e76395e0f500b3d970b6fa0ec73f" category="list-text">Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il certificato.<block ref="0d48a0d1a6daee261d59f76e1ce65f98" prefix=" " category="inline-code"></block></block>
   <block id="22dfbb640fee5a33dc6e592f121a4423" category="list-text">Riavviare SPL:<block ref="71198797ebafeed74a5891400987351c" prefix=" " category="inline-code"></block></block>
   <block id="576e31061b4a534413b8faf6e0741f32" category="list-text">Verificare che il plug-in sia raggiungibile dal connettore eseguendo il comando riportato di seguito dal connettore.<block ref="673477aaa70ebb53bf7cf3d6ff85e120" prefix=" " category="inline-code"></block></block>
   <block id="fd9cc0fdcc5cde5efec19c54d871da3a" category="section-title">Configurare le credenziali del database Oracle</block>
@@ -710,58 +706,22 @@
   <block id="2f17daad641775cccb25673e3b31136b" category="list-text">Selezionare *Cloud Native* &gt; *SAP HANA* e fare clic su *Avanti*.</block>
   <block id="0e53671fc8cff81722b57059b60e55f3" category="list-text">Nella pagina *applicazioni*, fare clic su *Aggiungi sistema*.</block>
   <block id="5b0cc95a598bb6ede67addc2262b79e2" category="list-text">Nella pagina *Dettagli sistema*, eseguire le seguenti operazioni:</block>
-  <block id="32403f6c910a8a0d4190a977cd4bb5a5" category="list-text">Selezionare System Type (tipo di sistema) come Multi-tenant database container (contenitore database multi-tenant) o Single container (contenitore singolo).</block>
   <block id="e898199c829d90ae41784a78cdd2d6d9" category="list-text">Inserire il nome del sistema SAP HANA.</block>
   <block id="a3df030ad26d42c5af0fcbd0e6f513d7" category="list-text">Specificare il SID del sistema SAP HANA.</block>
-  <block id="82079d60037e9d0df21acad72b86e52d" category="list-text">(Facoltativo) modificare l'utente del sistema operativo HDBSQL.</block>
   <block id="d800d8f61fa1a641d5224e310e459b0c" category="list-text">Se il sistema HANA è configurato con la replica del sistema HANA, attivare *sistema di replica del sistema HANA (HSR)*.</block>
-  <block id="802a79f8e4284baac3abc3713a39791d" category="list-text">Fare clic sulla casella di testo *HDB Secure User Store Keys* (chiavi di memorizzazione utente protette HDB) per aggiungere i dettagli delle chiavi di memorizzazione utente.</block>
   <block id="2145a09d2b376e7f0609f6fb4c6b5be5" category="paragraph">Specificare il nome della chiave, i dettagli del sistema, il nome utente e la password e fare clic su *Aggiungi chiave*.</block>
   <block id="b53a101b6e60770ada5a46695bb46566" category="paragraph">È possibile eliminare o modificare le chiavi dell'archivio utente.</block>
-  <block id="50606df711052c72cb3650915aa18292" category="list-text">Nella pagina *Storage Footprint*, fare clic su *Add Storage* (Aggiungi storage) ed eseguire le seguenti operazioni:</block>
   <block id="0b4d4df45dec0f187977abf3a0e77fca" category="list-text">Selezionare l'ambiente di lavoro e specificare l'account NetApp.</block>
   <block id="d253da62a1a7bf3e4d5c1adf904b607a" category="list-text">Selezionare i volumi richiesti.</block>
-  <block id="160c15dad3c86fc7f11c9d0f725a510f" category="list-text">Fare clic su *Aggiungi storage*.</block>
   <block id="5d74f0257578ebb70b128ed79394919f" category="list-text">Esaminare tutti i dettagli e fare clic su *Aggiungi sistema*.</block>
   <block id="1cb5dc89376339563335539bf6e6b34f" category="paragraph">Prima di rimuovere il sistema SAP HANA, è necessario eliminare tutti i backup associati e rimuovere la protezione.</block>
-  <block id="297636b2bcb79ee4ccd3bb7671403999" category="section-title">Eliminare l'host del database SAP HANA</block>
-  <block id="a2d13879a7b76ffe897fe8103b434355" category="paragraph">È possibile rimuovere l'host del database SAP HANA utilizzando solo API REST.</block>
-  <block id="b7f6974b5d69aff198f9237a0a2c094d" category="list-text">Per rimuovere l'host del database SAP HANA, procedere come segue.</block>
-  <block id="200afc5eca1ab2aaaf44d39b4e461f2a" category="list-text">Utilizzare L'API GET REST per ottenere l'ID dell'host del database SAP HANA che deve essere cancellato.<block ref="51dad906998af1627cfd8c445b8b43ab" prefix=" " category="inline-code"></block>
-  <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-   <block ref="a641cfb5b011b5cb49303b34c80a6cfb" prefix=" " category="inline-code"></block>
-   <block ref="f3b599239bed41162cfb754c5bb9df44" prefix=" " category="inline-code"></block>
-       <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-           <block ref="ed7b8bd22adb1714fa637cd7b3b4331b" prefix=" " category="inline-code"></block>
-           <block ref="f7c6ee9d9565c48c4aa24578d992f34b" prefix=" " category="inline-code"></block>
-           <block ref="095c01fe765e288681985447a475baee" prefix=" " category="inline-code"></block>
-           <block ref="db764a9381e247045b4f4a6c09e121b0" prefix=" " category="inline-code"></block>
-       <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
-   <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
-  <block id="51a11f42ba598ff4a34cf79c1f4610af" category="list-text">Eliminare l'host del database SAP HANA passando l'ID dall'API REST sottostante.<block ref="60ca3266dc3cf7874e88782aed985504" prefix=" " category="inline-code"></block></block>
-  <block id="d8328889034337fbd81cf76d0c3dce07" category="list-text">Disinstallare il plug-in SAP HANA Linux sull'host del database utilizzando il comando riportato di seguito.<block ref="45dc69782ede4b4cd03c3ab1172c0756" prefix=" " category="inline-code"></block></block>
   <block id="718c7b6c3378e6331dfacc19082eceda" category="section-title">Aggiungere volumi non dati</block>
-  <block id="ed610882a056fb1f63c13e2a503a9aad" category="paragraph">Dopo aver aggiunto il container di database multi-tenant o il sistema SAP HANA di tipo container singolo, è possibile aggiungere i volumi non-data del sistema HANA.</block>
   <block id="d9242f06d616d0d0d92448044927a033" category="paragraph">È possibile aggiungere queste risorse ai gruppi di risorse per eseguire operazioni di protezione dei dati dopo aver individuato i database SAP HANA disponibili.</block>
   <block id="70ece8b209ed1c9476f13c0fa00e2a77" category="list-text">Nella pagina *applicazioni*, fare clic su <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> Corrispondente al sistema per cui si desidera aggiungere volumi non dati e selezionare *Manage System* (Gestisci sistema) &gt; *non-Data Volume* (Volume non dati).</block>
   <block id="ed4c596de80903a7b24e5ada4ad1cb18" category="section-title">Aggiungere volumi non dati globali</block>
-  <block id="ae2f6000d9cdad6b8f7e1ca8fca0b847" category="paragraph">Dopo aver aggiunto il container di database multi-tenant o il sistema SAP HANA di tipo container singolo, è possibile aggiungere i volumi non-dati globali del sistema HANA.</block>
   <block id="01f13da2dfcf737f54346ebf7f44db6f" category="list-text">Dal menu a discesa System Type (tipo di sistema), selezionare *Global non-Data Volume* (Volume non dati globale).</block>
   <block id="5d9b8dbd580deb48e76c53d62ab7c6f3" category="list-text">Specificare i SID associati al sistema SAP HANA.</block>
   <block id="9c40bb6f28c1548e2bec94c55bf9bf96" category="list-text">Selezionare l'host del plug-in</block>
-  <block id="190be79bcda9073c7cc174d89a62b124" category="section-title">Modificare l'host del database SAP HANA</block>
-  <block id="b5c57e960c8315130e111d59c3f6629e" category="paragraph">Dopo aver aggiunto l'host del database SAP HANA, è possibile modificare il nome host o la porta del plug-in utilizzando l'API REST.</block>
-  <block id="25e29ce32228dfb20b227bafb1c5eff6" category="list-text">Utilizzare L'API GET REST per ottenere l'ID dell'host del database SAP HANA che deve essere cancellato.<block ref="51dad906998af1627cfd8c445b8b43ab" prefix=" " category="inline-code"></block>
-  <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-   <block ref="a641cfb5b011b5cb49303b34c80a6cfb" prefix=" " category="inline-code"></block>
-   <block ref="f3b599239bed41162cfb754c5bb9df44" prefix=" " category="inline-code"></block>
-       <block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block>
-           <block ref="ed7b8bd22adb1714fa637cd7b3b4331b" prefix=" " category="inline-code"></block>
-           <block ref="f7c6ee9d9565c48c4aa24578d992f34b" prefix=" " category="inline-code"></block>
-           <block ref="095c01fe765e288681985447a475baee" prefix=" " category="inline-code"></block>
-           <block ref="db764a9381e247045b4f4a6c09e121b0" prefix=" " category="inline-code"></block>
-       <block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block>
-   <block ref="0fbd1776e1ad22c59a7080d35c7fd4db" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
   <block id="2eeb194bf5c17f3408edda6fb4570318" category="summary">Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP ad Azure.</block>
   <block id="007849ce4500e0ef940d682709a64c87" category="doc">Eseguire il backup dei dati delle applicazioni on-premise su Microsoft Azure</block>
   <block id="0dbcf5d30fb23b988f7e09251180eac1" category="paragraph">Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a Microsoft Azure.</block>
@@ -1564,7 +1524,6 @@
   <block id="ddac760f2c60fbb2375807e939befa9d" category="summary">Scopri di più sulla protezione dei dati sulle tue macchine virtuali e sulle diverse policy.</block>
   <block id="97bfb69bf5a1d719c6265b922436bbaa" category="doc">Proteggi i dati delle tue macchine virtuali</block>
   <block id="9647181c2307f39ebfee949998c189db" category="paragraph">Il backup e ripristino BlueXP per macchine virtuali offre funzionalità di protezione dei dati eseguendo il backup dei datastore e il ripristino delle macchine virtuali.</block>
-  <block id="40c5998ccd6f421d1eaa29ece0c36b59" category="paragraph">È possibile eseguire il backup dei datastore su Amazon Web Services S3, Microsoft Azure Blob, piattaforma cloud Google e StorageGRID e ripristinare le macchine virtuali nel plug-in SnapCenter on-premise per l'host VMware vSphere.</block>
   <block id="949ad3136d64be33cc1a6a67e3add3d1" category="paragraph">Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione supportata prima di iniziare il backup di datastore e macchine virtuali su un cloud provider.</block>
   <block id="d511399444cf864b695600d159b7c93b" category="list-text">Plug-in SnapCenter per VMware vSphere 4.6P1 o versione successiva</block>
   <block id="2a18af02b6c0b7e92a17df9509574f26" category="list-text">Si consiglia di utilizzare il plug-in SnapCenter per VMware vSphere 4.7P1 o versione successiva per eseguire il backup dei datastore dallo storage secondario on-premise.</block>
@@ -2433,7 +2392,6 @@
   <block id="bb6fe4a6a5ec39b73343acf26f19b5fc" category="summary">Integra il backup e ripristino BlueXP per le applicazioni con BlueXP e SnapCenter on-premise per eseguire il backup delle snapshot coerenti dell'applicazione da ONTAP on-premise al cloud.</block>
   <block id="18a6c204240510c87aba39d6d8b5d26b" category="doc">Proteggi i dati delle tue applicazioni on-premise</block>
   <block id="21b391aa8b20883f254b17bcbc33d986" category="paragraph">Il backup e ripristino BlueXP per le applicazioni offre funzionalità di protezione dei dati per snapshot coerenti con le applicazioni da ONTAP primario on-premise a cloud provider.</block>
-  <block id="ded90f27fe65ac910c74189d47b689e7" category="paragraph">È possibile eseguire il backup dei dati delle applicazioni Oracle, Microsoft SQL e SAP HANA dai sistemi ONTAP on-premise su Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID.</block>
   <block id="c676db7c97a4870687fb3952bca7fd13" category="paragraph">Per ulteriori informazioni sul backup e ripristino BlueXP per le applicazioni, fare riferimento a:</block>
   <block id="3a462fe0425c18b634a1f644c1b6e5b0" category="inline-link">Backup integrato con l'applicazione con backup e ripristino BlueXP e SnapCenter</block>
   <block id="d924f26cc49b9ff35abdb19f684eccab" category="list-text"><block ref="d924f26cc49b9ff35abdb19f684eccab" category="inline-link-rx"></block></block>
@@ -2444,7 +2402,6 @@
   <block id="f38022cdfb27bcdacebc0633036b927c" category="list-text">Proteggere le applicazioni SAP HANA</block>
   <block id="0a2eb5b37c8e172647166550f43db124" category="list-text">Proteggere le applicazioni Oracle e SQL presenti nell'ambiente VMware</block>
   <block id="f3753469514d2cda99cee390aa2bf172" category="list-text">Nel server SnapCenter deve essere disponibile almeno un backup per applicazione</block>
-  <block id="20bf35a5a6263705cb77bbd72a8cbce2" category="list-text">Almeno una policy giornaliera, settimanale o mensile in SnapCenter senza etichetta o etichetta uguale a quella della policy in BlueXP.</block>
   <block id="29d7639a0c7b9ce1eeb1a132409265c0" category="paragraph">L'immagine seguente mostra ogni componente durante il backup nel cloud e le connessioni che è necessario preparare tra di essi:</block>
   <block id="ddc4eff2345788fc606fb71155e77e08" category="inline-image-macro">Un diagramma che mostra come il backup e ripristino BlueXP comunica con le applicazioni on-premise e lo storage di destinazione in cui si trovano i file di backup.</block>
   <block id="5900ca7e734dbd4ebfc5c92beb6901ad" category="paragraph"><block ref="5900ca7e734dbd4ebfc5c92beb6901ad" category="inline-image-macro-rx" type="image"></block></block>
@@ -2906,7 +2863,6 @@
   <block id="54153028a776309bcfbdd3b7b8285463" category="sidebar">Blog di backup e ripristino BlueXP</block>
   <block id="960dd4200d015a0a12dfd299c1348c9c" category="sidebar">Casi di utilizzo di backup e ripristino BlueXP</block>
   <block id="f93e4e0ba0745745e36a3b67b14a8a5b" category="sidebar">Webinar BlueXP</block>
-  <block id="7a45e6298bb69116e2c6db653fb88884" category="sidebar">Tutta la documentazione BlueXP</block>
   <block id="e29d7c0b36af68edd13ebac84f15b44b" category="sidebar">Cloud provider</block>
   <block id="46aef2e5080a5347df1ce7546e1be1df" category="sidebar">Tutti i cloud provider</block>
   <block id="6beccc67ff905f7da0b29dece26b0485" category="sidebar">Amazon Web Services</block>
@@ -3198,7 +3154,6 @@
   <block id="7c5673794ab84049a1575a551e904955" category="admonition">QoS è applicabile solo per pool di capacità di tipo "Manuale".</block>
   <block id="d8e8e1e9be8176a39942efc9316a29da" category="paragraph">Per l'operazione di connessione e ripristino delle copie, accedere al portale Microsoft Azure, selezionare il volume, fare clic su *Edit* e attivare *Hide snapshot path*.</block>
   <block id="9ecc57e66b15cefd0125186929dc1975" category="admonition">Il nome host deve essere uguale a quello dell'host utilizzato nella replica HSR.</block>
-  <block id="4b5d09f1726d80469776849660024054" category="list-text">Copia il contenuto di *sudoer.txt* che si trova in: _/var/lib/docker/Volumes/service-manager[1]-2_cloud_manager_scs_cloud_volume/_data/€(sudo docker ps|grep -po "cloud_manager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_</block>
   <block id="d15dde190bd80c4b67a19bec549b644a" category="list-text">Accedere all'host di sistema SAP HANA utilizzando l'account utente root.</block>
   <block id="185df8fc7d6cba2b3dc4ddbb241610fe" category="paragraph-title">Prima di iniziare</block>
   <block id="2d38677e8a4946bdca4b843432495b0d" category="list-text">Installare il plug-in utilizzando lo script fornito nel connettore.<block ref="712ebead777e5d0341cb4c470ac313e6" prefix=" " category="inline-code"></block></block>
@@ -3207,12 +3162,8 @@
   <block id="32ded8361c7915052bda371f53ac1cd2" category="paragraph">Il binario del plug-in è disponibile all'indirizzo: _cd /var/lib/docker/Volumes/service-manager[1]-2_cloudmanager_scs_cloud_volume/_data/€(sudo docker ps|grep -po "cloudmanager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_</block>
   <block id="2b331824c3cc83f2a2e03c85bb44862f" category="list-text">Configurare sudo per l'utente SnapCenter. Per ulteriori informazioni, vedere <block ref="5e3b9649d708169ed88a9a242f31b61c" category="inline-xref-macro-rx"></block>.</block>
   <block id="a64a15a54bc15fd76d581f201d8597db" category="paragraph">Se si utilizza un connettore meno recente, eseguire il seguente comando per aggiornare il plug-in.<block ref="54993491d663e6aaf93dc6ed29ee78c5" prefix=" " category="inline-code"></block></block>
-  <block id="c1c67d1a62632a7d21817e74b7a9b4b6" category="list-text">Selezionare host plug-in.
-(Facoltativo) se l'host non viene aggiunto, fare clic su *Add Plug-in host* (Aggiungi host plug-in).</block>
   <block id="010678b7a184d05aec2abd32b800f89b" category="paragraph">Dal riquadro di navigazione a sinistra, selezionare BlueXP *Canvas* per aggiungere un nuovo ambiente di lavoro.</block>
   <block id="6127a1470e4ac9558619287c2c509e80" category="paragraph">È possibile modificare o rimuovere i sistemi SAP HANA dall'interfaccia utente.</block>
-  <block id="d65cdf24414c885f7a1b05c0cbb361d5" category="list-text">Eliminare tutti i sistemi associati all'host del database SAP HANA utilizzando l'interfaccia utente o utilizzando l'API REST riportata di seguito.<block ref="0c0baa47c52b612c6253de1836b4f5e6" prefix=" " category="inline-code"></block></block>
-  <block id="bfd23c3bc8b4cf882aac94054775463a" category="list-text">Modificare il nome host o la porta del plug-in utilizzando l'API DELLA PATCH riportata di seguito.<block ref="3df630cb139718471dc01612fab9397c" prefix=" " category="inline-code"></block><block ref="f95b70fdc3088560732a5ac135644506" prefix=" " category="inline-code"></block><block ref="a37ea85e4042f80d9f4b6f965b1b2646" prefix=" " category="inline-code"></block><block ref="a783ebe0e7707148dae78011dee49146" prefix=" " category="inline-code"></block><block ref="cbb184dd8e05c9709e5dcaedaa0495cf" prefix=" " category="inline-code"></block></block>
   <block id="51276db22ab007bf8378ddc5150c089e" category="section-title">04 luglio 2023</block>
   <block id="91abdc8faafafce1c7b76b1ecb8b37a6" category="list-text">Sistemi SAP HANA</block>
   <block id="bd8b9d76d990f261019903335a2c9e94" category="list-text">Supporta il ripristino di connessione e copia di volumi non dati e volumi non dati globali con protezione secondaria Azure NetApp Files</block>
@@ -3235,11 +3186,9 @@
   <block id="e7abe879ad8765bcf5e173bd23f0644d" category="paragraph">In caso di perdita di dati, è possibile ripristinare i file di dati, i file di controllo o entrambi nella posizione originale e quindi ripristinare il database.</block>
   <block id="a5233c6b5d691a32f2faf916f0baebe1" category="summary">Puoi ripristinare il database SAP HANA dal cloud al server SnapCenter on-premise.</block>
   <block id="4916c64add300658e04310a106e04012" category="doc">Ripristinare il database SAP HANA</block>
-  <block id="33f890a5e5f85b7caf971e2a72c73036" category="paragraph">È possibile ripristinare il database SAP HANA sullo stesso host.</block>
   <block id="4b214d6e7bd95c0516f3f50fc89a0e3e" category="list-text">Nel campo *Filtra per*, selezionare il filtro *tipo* e dal menu a discesa selezionare *HANA*.</block>
   <block id="839eae4432b00e9cfcdd83d532a31b83" category="list-text">Nella pagina delle opzioni di ripristino, specificare una delle seguenti opzioni:</block>
   <block id="eee7cd91c87d431eb526192fb8d8f8fa" category="list-text">Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.</block>
-  <block id="0a7a7ddc8742b5a7471a5c2d0a3cecb0" category="admonition">Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.</block>
   <block id="cfca0342d906d31ff717aa42ed391bcb" category="list-text">Se lo spazio disponibile sullo storage di origine non è sufficiente o se lo storage di origine non è disponibile, selezionare *Modifica ubicazione dello storage*.</block>
   <block id="d0aa9f6dc927738d3c07012b7c8b6e03" category="list-text">Nella pagina Storage mapping, specificare i dettagli della posizione di storage alternativa in cui verranno memorizzati i dati ripristinati dall'archivio di oggetti.</block>
   <block id="d3cb840d450fe62742c860611a591afe" category="paragraph">Questa operazione esegue solo l'esportazione dello storage del backup selezionato sull'host specificato. Si consiglia di montare manualmente il file system e di visualizzare il database. Dopo aver utilizzato il volume, l'amministratore dello storage può eliminare il volume dal cluster ONTAP.</block>
@@ -3355,13 +3304,11 @@ Le informazioni relative ai parametri che possono essere utilizzati con il cmdle
   <block id="bb4f335f0d25871a3b9c36796484e4bb" category="list-text">Nella struttura della console, fare doppio clic su *certificati*.</block>
   <block id="62cf2c06af955668bade109f16b05be8" category="list-text">Fare clic con il pulsante destro del mouse sull'archivio *Trusted Root Certification Authorities*.</block>
   <block id="f4139147b1b7b2fc4471626b33811546" category="list-text">Fare clic su *Import* (Importa) per importare i certificati e seguire la procedura descritta in *Certificate Import Wizard* (importazione guidata certificati).</block>
-  <block id="5f9593f53c029e05ad3fe317372bbbb7" category="paragraph">È possibile eseguire un refresh di un sistema di destinazione SAP HANA con i dati di un sistema di origine SAP HANA. Questo può essere utilizzato per fornire i dati di produzione correnti in un sistema di test. Il backup cloud consente di selezionare una copia Snapshot da un sistema di origine e di creare un nuovo volume Azure NetApp Files in base alla copia Snapshot. Sono disponibili script di esempio che consentono di eseguire le operazioni necessarie sull'host del database per ripristinare il database SAP HANA.</block>
   <block id="3205bfd250f7e652581ed45c1db8eb26" category="list-text">Il "numero massimo di throughput" per il nuovo volume viene prelevato dal volume del sistema di destinazione con pool di capacità manuali Quality of Service (QoS).
 Per i pool di capacità QoS automatici, il throughput è definito dalla capacità del volume di origine.</block>
   <block id="170cf8aa630273f26a308eb9c95fb49a" category="list-text">Server SnapCenter 4.6 o versione successiva</block>
   <block id="a60ee7cfb0bf03a2eb61a9b068a5f2bf" category="list-text">Se si desidera utilizzare le seguenti funzionalità, si consiglia di utilizzare SnapCenter Server 4.7 o versioni successive:</block>
   <block id="d3456e6a0908a4918170d02ea0c3ee84" category="list-text">Esportazione dello storage di un backup</block>
-  <block id="0d85057e25566698a3c3dc29d49db941" category="list-text">Se si desidera utilizzare le seguenti funzionalità, si consiglia di utilizzare il server SnapCenter 4.9:</block>
   <block id="b8507ca67617589814152570680713d8" category="list-text">Montare i backup del database Oracle</block>
   <block id="b1736bc032b4a5b6d651f60785db87f7" category="list-text">Ripristinare lo storage alternativo</block>
   <block id="94a7d215d3c763dcc4768c5097b88e2c" category="summary">È possibile visualizzare i dettagli del backup, monitorare lo stato di tutti i processi, eliminare il clone, controllare i dati, aggiornare i dettagli del connettore, configurare i certificati CA, e gestire gli host.</block>
@@ -3378,7 +3325,6 @@ Per i pool di capacità QoS automatici, il throughput è definito dalla capacit�
   <block id="4dc136998723b1723dd65fb967c4745d" category="paragraph">Desidera portare l'host fuori dalla modalità di manutenzione</block>
   <block id="3261eb27fd899680f932574f52ee49e3" category="paragraph">Fare clic su <block ref="2231c326e067595aca2fb0545475acf4" category="inline-image-macro-rx" type="image"></block> Corrispondente all'host in manutenzione e selezionare *Disable maintenance mode* (Disattiva modalità di manutenzione).</block>
   <block id="2cd898c5523193b070234ed5d34c815d" category="list-text">Copiare certificate.pem dal percorso _&lt;base_mount_path&gt;/client/certificate/_ del connettore VM a _/var/opt/snapcenter/spl/etc/_ sull'host del plug-in.</block>
-  <block id="d3794a65ac38525b0f295e41c150ee12" category="list-text">Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il file certificate.p12.<block ref="11eedec2593dcf6deecf4133d03a7613" prefix=" " category="inline-code"></block></block>
   <block id="40827a860546af59127b7a2ff41eb4ce" category="list-text">Eseguire una delle seguenti operazioni:</block>
   <block id="3a42f0d8ab8360d2ee5a9c291f78ccf8" category="list-text">Eseguire il seguente comando per ottenere _&lt;base_mount_path&gt;_:<block ref="22ab9e84fb8aba7e93d8b90366ddca59" prefix=" " category="inline-code"></block></block>
   <block id="3717efafcaa340ed61240daf5d7a6b9b" category="list-text">Copiare il certificato.pem e i certificati per tutte le CA intermedie e root dal connettore all'host plug-in in _/var/opt/snapcenter/spl/etc/_.</block>
@@ -4576,4 +4522,229 @@ ONTAP S3</block>
   <block id="522cbb900314aeb84eb5a961c5f94672" category="section-title">Ottieni supporto per un file service del cloud provider</block>
   <block id="f6185bb12f5e53c800be8cda7fbca65b" category="paragraph">Per supporto tecnico relativo a un file service di un cloud provider, alla sua infrastruttura o a una soluzione che utilizza il servizio, fare riferimento a "Guida in linea" nella documentazione BlueXP relativa a quel prodotto.</block>
   <block id="3880ae5df9fdc4d0fc4a6d00a2239530" category="paragraph">Per ricevere supporto tecnico specifico di BlueXP e delle relative soluzioni e servizi storage, utilizza le opzioni di supporto descritte di seguito.</block>
+  <block id="eb018f0a377269905eb589a99448cf57" category="section-title">13 ottobre 2023</block>
+  <block id="d9a26494c95cbef43a71fa2585292af3" category="list-text">Database Microsoft SQL Server</block>
+  <block id="270a06ed19fec772bcfb084931cae13d" category="list-text">Supporta backup, ripristino e recovery di database Microsoft SQL Server che risiedono in Amazon FSX per NetApp ONTAP</block>
+  <block id="d4da4ec044327991fbcd43ca1778c38f" category="list-text">Tutte le operazioni sono supportate solo tramite API REST.</block>
+  <block id="3b05cd173ffd47ef0b4346901ab9e0d3" category="list-text">Durante l'aggiornamento del sistema, il montaggio e la disinstallazione automatici dei volumi vengono eseguiti utilizzando workflow e non script</block>
+  <block id="29db6fe351e2079efe0622a1b5bd15f4" category="list-text">Supporta aggiunta, rimozione, modifica, eliminazione, manutenzione, e l'aggiornamento dell'host plug-in utilizzando l'interfaccia utente</block>
+  <block id="b4445605950c5dae15c10f509d6f0f79" category="list-text">Supporto del blocco dei dati e della protezione da ransomware</block>
+  <block id="188502bd01986373f9c31291dc835e82" category="list-text">Supporta lo spostamento dei backup da StorageGRID a Tier di archiviazione</block>
+  <block id="541019d49feaf31b8000318aac636f92" category="list-text">Supporta il backup dei dati delle applicazioni MongoDB, MySQL e PostgreSQL dai sistemi ONTAP on-premise ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID. È possibile ripristinare i dati quando necessario.</block>
+  <block id="11a3809c55f7c25dbda24854a827db05" category="section-title">Miglioramenti al backup e recovery di BlueXP per Virtual Machine</block>
+  <block id="60a7ad592c196ecee9eebdab38d4ed7e" category="list-text">Supporto per il modello di distribuzione proxy del connettore</block>
+  <block id="82725bf31262afb73c02d0bbce2d3389" category="paragraph">Per tutte le operazioni di backup e recovery di BlueXP vengono create delle job. È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ciascuna attività.</block>
+  <block id="65e3ba6149c87f14c99c67806cbe8899" category="doc">Ripristino dei database MongoDB, MySQL e PostgreSQL</block>
+  <block id="eb92df223c0140de30f9a1bfb050ab30" category="paragraph">È possibile ripristinare i database MongoDB, MySQL e PostgreSQL su qualsiasi host.</block>
+  <block id="b89cd7529d8b58accf14d298da485e40" category="list-text">Nel campo *Filtra per*, seleziona il filtro *tipo* e dal menu a discesa seleziona *MongoDB*, *MySQL* o *PostgreSQL*.</block>
+  <block id="0aa96c72f941184ee1fddb9f1e93bb8e" category="paragraph">Se si seleziona *Modifica posizione di memorizzazione*, è possibile aggiungere un suffisso al volume di destinazione. Se la casella di controllo non è stata selezionata, per impostazione predefinita *_restore* viene aggiunto al volume di destinazione.</block>
+  <block id="1b7f45b11a0b3c23c673c7b492b95608" category="list-text">Database Microsoft SQL Server residenti in Amazon FSX per NetApp ONTAP</block>
+  <block id="517bdb688e6c84b0e18a16f2d57e6b65" category="section-title">Proteggere il database di Microsoft SQL Server</block>
+  <block id="427c0c21d4da0306e332645c2d0885cc" category="list-text">Aggiungere manualmente l'host e distribuire il plug-in</block>
+  <block id="3974ae13f8a1f2a9ced9b4edf794e919" category="list-text">Rilevare i database manualmente</block>
+  <block id="9c2f9028ae71359c5989e7895d825384" category="list-text">Eseguire il backup delle istanze di SQL Server che risiedono in Amazon FSX per NetApp ONTAP</block>
+  <block id="005935debd617b1d21ee33bc1decbc01" category="list-text">Backup pianificato in base al criterio</block>
+  <block id="09463b4b21cca932be39c18ad78a5842" category="list-text">Backup del registro dell'istanza di Microsoft SQL Server</block>
+  <block id="b387ef5ecece4fdf341cd40a2e974951" category="list-text">Ripristinare il database nella posizione originale</block>
+  <block id="587dd10f4ff0a4218b9e6cf664ddccc6" category="list-text">Il backup è supportato solo per le istanze di SQL Server</block>
+  <block id="4d6796db789f823d90158e326dd2f45e" category="list-text">La configurazione di istanza cluster di failover (FCI) non è supportata</block>
+  <block id="d8857d2c7de259a1526f243b862d6e51" category="list-text">L'interfaccia utente di BlueXP non supporta operazioni specifiche del database SQL</block>
+  <block id="ba6967a5092def4a6f5a7a11e4b419b4" category="paragraph">Tutte le operazioni specifiche dei database Microsoft SQL Server vengono eseguite tramite API REST.</block>
+  <block id="c9739a96cc0c081597fb757f6922b81b" category="list-text">Il ripristino in una posizione alternativa non è supportato</block>
+  <block id="aaa14c52f8ab40d691dbaa0e0accaf05" category="summary">Installare il plug-in SnapCenter per SQL su ciascuno degli host del database SQL.</block>
+  <block id="cb465f84fc2fa964f57db77216bdbdbf" category="doc">Installare il plug-in SnapCenter per SQL Server e aggiungere host di database</block>
+  <block id="fe9579e8db11464e1fbc8b14bd3ac64a" category="paragraph">È necessario installare il plug-in di SnapCenter per SQL Server su ciascuno degli host del database SQL, aggiungere gli host del database, rilevare le istanze del database e configurare le credenziali per le istanze del database.</block>
+  <block id="08bf99571b9b82afc673fb035d644b54" category="section-title">Installare il plug-in SnapCenter per SQL Server</block>
+  <block id="c40ea3874f348e43e57fb1101b4b2a6f" category="paragraph">È necessario scaricare il plug-in *snapcenter_service_Windows_host_plugin.exe* e quindi eseguire il comando silent installer per installare il plug-in sull'host del database.</block>
+  <block id="954ad5658c84798f7b1c55aa74b22532" category="list-text">È necessario verificare che siano soddisfatti i seguenti prerequisiti.</block>
+  <block id="21e4202c3ee900d38275eabeac7d9598" category="list-text">È installato .Net 4.7.2</block>
+  <block id="d6b5f75ce7d1601c4c91df6325ace553" category="list-text">Viene installato PowerShell 4,0</block>
+  <block id="d27121a4aecaa4be2b69e420dae5864f" category="list-text">È disponibile uno spazio minimo su disco di 5 GB</block>
+  <block id="40a9ba36f79f8ec6ceba274601a7e7cd" category="list-text">È disponibile una dimensione minima di 4 GB di RAM</block>
+  <block id="5647ce1798fff3b8d7059b740850a8ba" category="list-text">È necessario eseguire l'API per completare l'assunzione del cliente. Per ulteriori informazioni, fare riferimento a:<block ref="ff9af33ae93b9ea753b85111c1bb4f78" category="inline-link-rx"></block></block>
+  <block id="8d0b9bb4ef0c4282c5ce4c8ac803ffef" category="list-text">Scaricare il plug-in eseguendo l'API dall'host del connettore.<block ref="3cbce18f076b94178b1b686c273c9f52" prefix=" " category="inline-code"></block></block>
+  <block id="c46f2c1e7cece7711fa93ceffa5b946b" category="paragraph">La posizione del file è _/var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/&lt;agent_version&gt;/sc-Windows-host-plugin/snapcenter_service_Windows_host_plugin.exe_.</block>
+  <block id="15e1905699c6d15bec3a24f6b6f7ae4d" category="list-text">Copiare _snapcenter_service_Windows_host_plugin.exe_ dal connettore a ciascuno degli host del database MSSQL Server utilizzando SCP o altri metodi alternativi.</block>
+  <block id="f5fe27280bc5a294bce5e07589cec0da" category="list-text">Installare il plug-in.
+'"C://&lt;install_folder&gt;/snapcenter_service_Windows_host_plugin.exe"/silent/debuglog "C://&lt;install_folder&gt;/ha_Suite_Silent_Install_SCSQL_FRESH.log" /log"C://install_folder/" BI_SNAPCENTER_PORT=8145 ISFeatureInstall=SCSQL'</block>
+  <block id="2fa63a1a862e1a3e085e9db0061167cb" category="list-text">Copiare il certificato autofirmato da _/var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/client/certificate/certificate.pem_ negli host del database di MSSQL Server.</block>
+  <block id="6b6be07cee8e3ec8cb1dba2da7cef557" category="paragraph">È inoltre possibile generare un certificato autofirmato o un certificato CA firmato se non si utilizza quello predefinito.</block>
+  <block id="17afa11613a55a7bb8cf4c9c6059e5fc" category="list-text">Convertire il certificato dal formato .pem al formato .crt nell'host del connettore.
+'openssl x509 -outform der -in certificate.pem -out certificate.crt'</block>
+  <block id="370b04f1aa72c5c5c1e0bbae86f8cfff" category="list-text">Fare doppio clic sul certificato per aggiungerlo all'archivio *Personal* e *Trusted Root Certification Authority*.</block>
+  <block id="93aeb9a2132e6f8160d289af3bbd5644" category="section-title">Aggiungere l'host del database SQL Server</block>
+  <block id="4399183c2c7007fff4bbf707b1f04a13" category="paragraph">È necessario aggiungere l'host del database MSSQL utilizzando l'FQDN host.</block>
+  <block id="a85945882541fbef38f38e088491ff39" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'</block>
+  <block id="aafb212ffe1e43a6b2073be689998e1f" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="c017ac367d82118efe33e9edf91b01ce" category="inline-link-rx"></block></block>
+  <block id="2a44b2caaf84a8da94f2abe59810d8d3" category="paragraph">Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.</block>
+  <block id="3225a10b07f1580f10dee4abc3779e6c" category="section-title">Parametri</block>
+  <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">Tipo</block>
+  <block id="b651efdb98a5d6bd2b3935d0c3f4a5e2" category="cell">Obbligatorio</block>
+  <block id="3ef9a0d7fab5d2bcabf0978c0a35244e" category="paragraph">addr</block>
+  <block id="b45cffe084dd3d20d928bee85e7b0f21" category="paragraph">stringa</block>
+  <block id="f827cf462f62848df37c5e1e94a4da74" category="paragraph">Vero</block>
+  <block id="2b69d2ab5aec459dabdafdaa2bf52655" category="paragraph">id_connettore</block>
+  <block id="b5e4cf8f15340fe583549c72bb27e387" category="paragraph">plugin_type</block>
+  <block id="dac82a1f4d600b10cf3def8851bb0781" category="paragraph">metodo_installazione</block>
+  <block id="b1bc248a7ff2b2e95569f56de68615df" category="paragraph">numero</block>
+  <block id="14c4b06b824ec593239362517f538b29" category="paragraph">nome utente</block>
+  <block id="d64ed3e9c10229648e069f56e32f4c8e" category="section-title">Risposta</block>
+  <block id="f031e50c868376b26c4a5bb9a2f7a1f3" category="paragraph">Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 202.</block>
+  <block id="81eeab9506186e2dca8faefa78d54067" category="paragraph">Esempio:</block>
+  <block id="4696ee250f842f44c04adb21b847e87d" category="section-title">Visualizzare gli host del database SQL Server aggiunti</block>
+  <block id="31bc9159740971fb9dc74609c30c4db2" category="paragraph">È possibile eseguire questa API per visualizzare tutti gli host di database SQL Server aggiunti.</block>
+  <block id="a0680349450a6524501f3b1691973317" category="paragraph">"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/v1/hosts'</block>
+  <block id="039b59ff3193133f8a35f93c887b8566" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="999902e84118ca4b248b249437dd5328" category="inline-link-rx"></block></block>
+  <block id="ad6a5a04a03dcd1c7ddf68e41cca0167" category="paragraph">Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 200.</block>
+  <block id="1c4d441cefa0a8fa4eb54aa8bfc1ddaf" category="section-title">Rilevare le istanze del database</block>
+  <block id="ee581a2186d7bd0d10dc336318d625e4" category="paragraph">È possibile eseguire questa API e immettere l'ID host per rilevare tutte le istanze MSSQL.</block>
+  <block id="f4ca8afc79d8fe4cce889ea13120d0bd" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/discovery'</block>
+  <block id="29152cb1595a2170e9ca099a0ed46cfc" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="418542270b6e1faa620e3805d0e63f99" category="inline-link-rx"></block></block>
+  <block id="8396f175b8a7f69db14f4d12e415869d" category="paragraph">host_id</block>
+  <block id="4817d7c5bfbb82d69274eb709a10fe7b" category="section-title">Visualizzare le istanze del database rilevate</block>
+  <block id="81f51e4104d179eaf15c8b24ac8bc89a" category="paragraph">È possibile eseguire questa API per visualizzare tutte le istanze del database rilevate.</block>
+  <block id="9cd6d90751e08036172df22e21b9502d" category="paragraph">"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances'</block>
+  <block id="51547d7a40b38b2025c43cfa5e37c344" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="e6cccd2a7e8d81abf532712d71c7ecee" category="inline-link-rx"></block></block>
+  <block id="6cade9418d2953a83e67c4eef00aea73" category="section-title">Configurare le credenziali dell'istanza del database</block>
+  <block id="c3a69dae6b2b3822ecca1e687f77d66c" category="paragraph">È possibile eseguire questa API per convalidare e impostare le credenziali per le istanze del database.</block>
+  <block id="cdf0fd50cb211928756a59b401044161" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql//api/mssql/credentials-configuration'</block>
+  <block id="2df6fd7718098d10437cb4e49c440f36" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="d6982c00d01bece0ea3e7e55011bce6e" category="inline-link-rx"></block></block>
+  <block id="2eef3504d993383a677995e93a4f9f76" category="paragraph">id_istanza</block>
+  <block id="5f4dcc3b5aa765d61d8327deb882cf99" category="paragraph">password</block>
+  <block id="c2f317611e4ff4d753766c5bc5aec5b0" category="paragraph">auth_mode</block>
+  <block id="ccb96b4d60af322f1f0f10d1acb10195" category="summary">Completare alcuni passaggi per iniziare a eseguire il backup del database Microsoft SQL Server.</block>
+  <block id="4083fee85864d55c66d5e0b21a7928b3" category="list-text">Windows 2016</block>
+  <block id="0a412bceaa4a8d671231ab04d2e0296e" category="list-text">Windows 2019</block>
+  <block id="3ffd22c07b48a1c76b76f941ad1cad96" category="list-text">Windows 2022</block>
+  <block id="07ef77a1b7ac63f701c543115924abb8" category="list-text">Cloud storage NetApp: Amazon FSX per NetApp ONTAP</block>
+  <block id="5beef1beb6565ceb9f5849d1265b9f73" category="list-text">Layout dello storage: SAN (ISCSI)</block>
+  <block id="7be5a6388bd087b8bf70e58fee91d770" category="paragraph">La configurazione NAS non è supportata.</block>
+  <block id="3d70aee8377c8fd2c6ab572c1ce710d7" category="list-text">Versioni database:</block>
+  <block id="c9cf486f968bed470720b8014710f2cf" category="list-text">Microsoft SQL Server 2016</block>
+  <block id="f6d2c8f6c5f57ce5542457131b856e66" category="list-text">Microsoft SQL Server 2019</block>
+  <block id="1969e2463b90c3e6d0f8a9e57e6e6790" category="list-text">Microsoft SQL Server 2022</block>
+  <block id="e8052b6372945ef61c70f02e7fcee945" category="list-text">Configurazione database:</block>
+  <block id="5c80f101108a356211fcb26b3f83eabb" category="list-text">Standalone</block>
+  <block id="4d82a1ec1af02725042c8c785564ee7a" category="list-text">Amazon FSX per NetApp ONTAP</block>
+  <block id="4bca56bf446030b30e5509102dc7d31d" category="paragraph">BlueXP supporta il blocco dei dati e la protezione dal ransomware. Se il cluster ONTAP è in esecuzione su ONTAP 9.12.1 o versione successiva e non hai configurato lo storage di archivio, puoi proteggere i backup dalla sovrascrittura, dall'eliminazione e dalle minacce ransomware.</block>
+  <block id="bcbbe01c67d093d1c5217f38a5c8bb3f" category="list-text">Selezionare il livello di archiviazione se è stato configurato lo spazio di archiviazione nel criterio.</block>
+  <block id="a271ff9e1d0739d62e4ef10ba279b1e9" category="list-text">Configurare il blocco dei dati e la protezione dal ransomware.</block>
+  <block id="6ee247c1c78655e4971dd99925015322" category="list-text">Copiare _certificate.pem_ dal percorso _&lt;base_mount_path&gt;/client/certificate/_ del connettore VM a _/var/opt/snapcenter/spl/etc/_ sull'host plug-in.</block>
+  <block id="48d029428403cd451e9e9977113b8c28" category="list-text">Andare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il file certificate.pem.<block ref="d29553c6cbdee9fd0a8fc198c6e1bbe1" prefix=" " category="inline-code"></block></block>
+  <block id="baf1519220b3476b87f2b72bf2f67230" category="list-text">Copiare il contenuto di *sudoer.txt* situato all'indirizzo: _/var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/$(sudo docker ps|grep -po "cloudmanager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_</block>
+  <block id="480a5ae9d6c54a41b779f14faf22d588" category="paragraph">Il binario del plug-in è disponibile all'indirizzo: _cd /var/lib/docker/Volumes/service-manager-2_cloudmanager_scs_cloud_volume/_data/€(sudo docker ps|grep -po "cloudmanager_scs_cloud:.*? "|sed -e/ */'|cut -f2 -d":")/sc-linux-host-plugin_</block>
+  <block id="a2e1d1f9e874911e6c678a7fdfcd1671" category="list-text">Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il certificato.<block ref="d29553c6cbdee9fd0a8fc198c6e1bbe1" prefix=" " category="inline-code"></block></block>
+  <block id="c1586a5991b11f49efb2a70834e56e16" category="list-text">Nell'interfaccia utente *BlueXP*, selezionare *protezione* &gt; *Backup e ripristino* &gt; *applicazioni*.</block>
+  <block id="c5c2c06388567c8010b829d486201edd" category="list-text">Selezionare *trova applicazioni*.</block>
+  <block id="0618a9ddd7e88e70d7479dfa35e01d86" category="list-text">Selezionare *Cloud Native* &gt; *SAP HANA* e selezionare *Next*.</block>
+  <block id="5aeb727bef86ad9ccaac5a82e7e66777" category="list-text">Nella pagina *applicazioni*, selezionare *Aggiungi sistema*.</block>
+  <block id="69c4d962a907629ca02789bb2119ada9" category="list-text">Selezionare tipo di sistema come container di database multi-tenant o volumi non dati globali.</block>
+  <block id="24299d01b3bb01ee051a1b601c8a8df9" category="list-text">(Facoltativo) modificare l'utente OSDB.</block>
+  <block id="4e747b9eff790cc47a77ad567b2b8bfb" category="list-text">Selezionare la casella di testo *HDB Secure User Store Keys* per aggiungere i dettagli dei tasti di memorizzazione utente.</block>
+  <block id="83b4aeed58c081c1701c2ad6bcd70cca" category="list-text">Nella pagina *Dettagli host*, effettuare le seguenti operazioni:</block>
+  <block id="0e464be44c9a16be3ffaf49a158aa196" category="list-text">Selezionare *Aggiungi nuovo host* o *Usa host esistente*.</block>
+  <block id="1a02c8892f8416d639609a335d521127" category="list-text">Selezionare *usando SSH* o *Manuale*.</block>
+  <block id="b3eb143877addb049a483b7d3074ca84" category="paragraph">Per Manuale, immettere il FQDN host o IP, connettore, Nome utente, porta SSH, porta plug-in, e, facoltativamente, aggiungere e convalidare la chiave privata SSH.</block>
+  <block id="9a559c034a3ca9c2382dcd0d38f3e6b8" category="paragraph">Per SSH, immettere il nome host FQDN o IP, Connector, Username e plug-in port.</block>
+  <block id="ea78d93af5c804e83d45cdb58b884610" category="list-text">Nella pagina *Configurazione host*, verificare se i requisiti di configurazione sono soddisfatti.</block>
+  <block id="63881970bbaf0571639ad5dff80f02aa" category="paragraph">Selezionare le caselle di controllo per confermare.</block>
+  <block id="c5f8fde5dae5abbe87d152101d5d20ae" category="list-text">Nella pagina *Storage Footprint*, selezionare *Aggiungi archiviazione* ed eseguire le seguenti operazioni:</block>
+  <block id="bbe06e5eec2cc084e2340e2dc6400440" category="list-text">Selezionare *Aggiungi archiviazione*.</block>
+  <block id="61f4a5353c44bbf9bbfa8e2bb857577c" category="list-text">Controllare tutti i dettagli e selezionare *Aggiungi sistema*.</block>
+  <block id="bb97e08485a32b1b60213ae78dc73ac8" category="paragraph">Dopo aver aggiunto il sistema SAP HANA di tipo container di database multi-tenant, è possibile aggiungere i volumi non-Data del sistema HANA.</block>
+  <block id="13b8c4a95d7b28028a271913dee6da39" category="paragraph">Dopo aver aggiunto il sistema SAP HANA di tipo container di database multi-tenant, puoi aggiungere i Global non-Data Volumes del sistema HANA.</block>
+  <block id="add1dde657a589d908a9cde160eee44b" category="list-text">. Nella pagina *Dettagli host*, effettuare le seguenti operazioni:</block>
+  <block id="000d02ad3bd664c7ea6bd8e52da45932" category="admonition">I lavori pianificati verranno elencati nella pagina di monitoraggio dei lavori BlueXP dopo un ritardo di 5 minuti (massimo) dall'ora di completamento del lavoro.</block>
+  <block id="63d1835869ddb853434e7e3db1b546e0" category="summary">È possibile ripristinare il database SQL dal cloud allo stesso host.</block>
+  <block id="3424cc7da1d16af06bb6970242ec18c0" category="doc">Ripristinare il database Microsoft SQL Server</block>
+  <block id="fec03b8cc4c44aaabe7c63f81c986be7" category="paragraph">È possibile ripristinare il database Microsoft SQL Server sullo stesso host. È necessario prima ottenere l'elenco dei database e poi ripristinare il database.</block>
+  <block id="0a558dd1d7f549e5bb6315bf53077bdf" category="section-title">Visualizzare l'elenco dei database</block>
+  <block id="c23ebb820414168ef3ebfccce54446a7" category="paragraph">È possibile eseguire questa API per visualizzare l'elenco dei database.</block>
+  <block id="e7fbfce4d9fbdb422a76ed4547091ed5" category="paragraph">"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases'</block>
+  <block id="fb8d99a8d958b48eda414f1fc374d17e" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="99a98b4ff9e35f9bd5870047483675c8" category="inline-link-rx"></block></block>
+  <block id="3db7e44dcba18afa9414359baa6b1855" category="section-title">Ripristinare e ripristinare il database MSSQL</block>
+  <block id="924dd545d1cad07f5913f5abdcf05870" category="paragraph">È possibile eseguire questa API per ripristinare il database MSSQL.</block>
+  <block id="020dd1e6ac6217f75e0d57668257cf42" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/databases/{id}/restore'</block>
+  <block id="3d584902b99b583c0aba1c81c5cfdb31" category="paragraph">Dove _id_ è l'ID del database MSSQL ottenuto eseguendo l'API del database di visualizzazione. Per ulteriori informazioni, fare riferimento a. <block ref="bce1e003aa5f7dcae20591d29f8df376" category="inline-xref-macro-rx"></block>.</block>
+  <block id="8fc108ad806760c879e9230a69685908" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="750ccf486ad0c1766b6fedb08f88b26d" category="inline-link-rx"></block></block>
+  <block id="8a277038af43b865467968046e7a000b" category="paragraph">id_backup</block>
+  <block id="f1d5929d1df959a6acff0193e3ca2e77" category="paragraph">sovrascrivi_database</block>
+  <block id="c506ff134babdd6e68ab3e6350e95305" category="paragraph">bool</block>
+  <block id="ac622749dcfadf56eeb7a1f93137789b" category="paragraph">retain_replication_settings</block>
+  <block id="f8320b26d30ab433c5a54546d21f414c" category="paragraph">Falso</block>
+  <block id="2d832d9239feee194c8e9a91fc096811" category="paragraph">modalità_ripristino</block>
+  <block id="ac3c8b97f4b281b8134853d957d21cfa" category="paragraph">Le stringhe supportate da 3 sono _Operational_, _nonoperational_ e _ReadOnly_.</block>
+  <block id="880905045bc381284d782e85c6604380" category="paragraph">annulla_directory_file</block>
+  <block id="6fd11dd3594a4c62311aae93219b377d" category="paragraph">restore_type</block>
+  <block id="206e3718af092fd1d12f80cae771ccac" category="list-text">MongoDB</block>
+  <block id="62a004b95946bb97541afa471dcca73a" category="list-text">MySQL</block>
+  <block id="399bd1ee587245ecac6f39beaa99886f" category="list-text">PostgreSQL</block>
+  <block id="b3b5981b5c14115139a4ba794d8c793a" category="paragraph">È possibile ripristinare il database SAP HANA su qualsiasi host.</block>
+  <block id="c82ab188948ddcbdff4e3d7a532e7e12" category="paragraph">È possibile eseguire un refresh di un sistema di destinazione SAP HANA con i dati di un sistema di origine SAP HANA. Questo può essere utilizzato per fornire i dati di produzione correnti in un sistema di test. Il backup e recovery di BlueXP ti consente di selezionare una copia Snapshot da un sistema di origine e di creare un nuovo volume Azure NetApp Files basato sulla copia Snapshot. Sono disponibili script di esempio che consentono di eseguire le operazioni necessarie sull'host del database per ripristinare il database SAP HANA.</block>
+  <block id="ff843b4e5e355ba5f31708ace563ca57" category="list-text">Dovresti aggiungere manualmente i sistemi HANA di origine e destinazione nel backup e recovery di BlueXP.</block>
+  <block id="b2604b8680084825e527aff6193ee920" category="list-text">È necessario aggiornare il plug-in alla versione 3,0.</block>
+  <block id="76f0a90c84b9977f916f987012ea9e29" category="list-text">I percorsi di montaggio devono essere identici per il volume di dati sui sistemi SAP HANA di origine e di destinazione.</block>
+  <block id="1a7ec5a4c5530349d629d5779cc7a842" category="list-text">Prima della prima operazione di aggiornamento, assicurarsi che il file '/etc/fstab' non contenga voci per i volumi di dati del sistema SAP HANA di destinazione.</block>
+  <block id="17801831df8690e9e2ba7c5584adac8d" category="list-text">Durante l'aggiornamento del sistema, il montaggio e la disinstallazione automatici dei volumi vengono eseguiti utilizzando workflow e non script.</block>
+  <block id="a5962e1d1985c8bb9326550afd4c702d" category="list-text">(Facoltativo) immettere gli indirizzi di esportazione da cui è possibile accedere ai nuovi volumi.</block>
+  <block id="c1fabf9acc4a184cd74cde0d01093de1" category="list-text">(Opzionale) immettere la massima velocità di trasmissione dello storage (MIB).</block>
+  <block id="ba4b1fdd90381666d97a2e59fb00966e" category="paragraph">BlueXP supporta il blocco dei dati e la protezione dal ransomware. Se il cluster ONTAP è in esecuzione su ONTAP 9.11.1 o versione successiva, i sistemi StorageGRID sono 11.6.0.3 o versione successiva e se non hai configurato lo storage di archivio, puoi proteggere i backup da sovrascrittura, eliminazione e minacce ransomware.</block>
+  <block id="9a6113d5326dfb90b5db6b0741ca8825" category="list-text">Specificare il livello di archiviazione se è stato configurato lo spazio di archiviazione nel criterio.</block>
+  <block id="7f2e7c1f843724479ad33af92042ed17" category="cell">Se si seleziona...</block>
+  <block id="592a3b45c9297fe905b909e9ac714fad" category="cell">Eseguire le seguenti operazioni...</block>
+  <block id="22c52a6e95d8c684b8eb086270330ab0" category="list-text">Selezionare il StorageGRID dal menu a discesa o aggiungere il cluster StorageGRID.</block>
+  <block id="b69c04cbc4cab46d7ef82b0687e311c1" category="list-text">Selezionare il cluster StorageGRID dal menu a discesa o aggiungere il cluster.</block>
+  <block id="a7abc6648bf0f980d7382b0d6c64a0e0" category="paragraph">BlueXP supporta il blocco dei dati e la protezione dal ransomware. Se il cluster ONTAP è in esecuzione su ONTAP 9.11.1 o versione successiva e non hai configurato lo storage di archivio, puoi proteggere i backup dalla sovrascrittura, dall'eliminazione e dalle minacce ransomware.</block>
+  <block id="495b38ce22b9921d524af6512fbadb82" category="paragraph">È possibile eseguire il backup dei datastore su Amazon Web Services S3, Microsoft Azure Blob, piattaforma cloud Google e StorageGRID e ripristinare le macchine virtuali nel plug-in SnapCenter on-premise per l'host VMware vSphere. Il backup e recovery di BlueXP per le macchine virtuali supporta anche il modello di implementazione di Connector proxy.</block>
+  <block id="7148963c1fe9bd20799d84596b688191" category="list-text">Per distribuire un connettore con proxy configurato, assicurarsi che tutte le chiamate dei connettori in uscita siano instradate attraverso il server proxy.</block>
+  <block id="7cf1f6b25cc54596cbc34164085a3299" category="summary">Creare un criterio, assegnare il criterio e quindi creare backup su richiesta del database SQL.</block>
+  <block id="3330b65184d2418caf781c3b2d954ec2" category="doc">Eseguire il backup di database Microsoft SQL Server nativi per il cloud</block>
+  <block id="b43a9686ddd2ab877e9ecc5c9ac38847" category="paragraph">È possibile creare backup pianificati o su richiesta assegnando i criteri creati.</block>
+  <block id="aad49551351256549bb40d89b7e44dc6" category="section-title">Creare un criterio di backup</block>
+  <block id="60a92f58e9d87bec38c55e4c409257d0" category="paragraph">È possibile eseguire questa API per creare il criterio di backup.</block>
+  <block id="fe0e6faf28179a3c98f94b4a628030ef" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backup/policies'</block>
+  <block id="d1e1d2350616ae448c2c5f90ef0b0fc2" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="a85d1c770d5e5866b41b99ebeee98206" category="inline-link-rx"></block></block>
+  <block id="b068931cc450442b63f5b3d276ea4297" category="paragraph">nome</block>
+  <block id="4778aad2c248689435962249f68b925d" category="paragraph">tipo_backup</block>
+  <block id="f412f3f1d8557afb3106c9512cefee73" category="paragraph">copia_solo_backup</block>
+  <block id="c41ff142f11e4c249906d563ec5aaf92" category="paragraph">è_definito_sistema</block>
+  <block id="2ec907f69df4ccec2c4186f122fda4e7" category="paragraph">formato_nome_backup</block>
+  <block id="c4d98dbd5badae901761ab6422fa3e70" category="paragraph">ora_inizio</block>
+  <block id="fdb3374343fbd86c32d9c3a4a3f09abb" category="paragraph">hours_interval</block>
+  <block id="e5d9c0128ea8329fd9487b6de2fa2dbc" category="paragraph">minuti_intervallo</block>
+  <block id="f7b3a8f3455de677ae040a5f4e384326" category="paragraph">retention_type</block>
+  <block id="0cac4fe46ccd0085d94017bad554fea9" category="paragraph">retention_count</block>
+  <block id="305d28898e362717b3ad3d0181c15636" category="paragraph">ora_fine</block>
+  <block id="e1da8f5f41a3e28ca94b84b31c3ca15b" category="paragraph">Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 201.</block>
+  <block id="3085603f0133dc9a98cbf7274a497af9" category="section-title">Assegnare il criterio all'istanza del database SQL</block>
+  <block id="85db300bbf3d600e965c4285adfd05ba" category="paragraph">È possibile eseguire questa API per assegnare i criteri all'istanza del database SQL.</block>
+  <block id="e51c6c754da7f9fe4cef080ef47ecf6f" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/{id}/policy-assignment'</block>
+  <block id="8e44fab620f20377568ba74aabbde7b3" category="paragraph">Dove _id_ è l'ID istanza MSSQL ottenuto eseguendo l'API dell'istanza del database Discover. Per ulteriori informazioni, fare riferimento a. <block ref="e644e627b67ede40a16e6044c1513b0a" category="inline-link-macro-rx"></block>.</block>
+  <block id="28c20f9925fe62aab2600e7884b997a8" category="paragraph">Array di ID è l'input qui. Ad esempio:</block>
+  <block id="52a0b8ae37ef51698580df45a96b787f" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="a710463455080e679e877c246e7b7d15" category="inline-link-rx"></block></block>
+  <block id="6c4e6d5940a93fcf9cfb1c5d53280da3" category="section-title">Crea un backup su richiesta</block>
+  <block id="8c0be4da88941592cef6fa5830f6793f" category="paragraph">Puoi eseguire questa API per creare un backup on-demand.</block>
+  <block id="b1a4099d18b0533c89d005201fd90c72" category="paragraph">"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'</block>
+  <block id="1d47257b0ebeeecd8a90506b424ef2d1" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="8036b06aa038df00c81b08102864fa4d" category="inline-link-rx"></block></block>
+  <block id="b80bb7740288fda1f201890375a60c8f" category="paragraph">id</block>
+  <block id="3de029d1f2e7f5abc188e1684d4e4005" category="admonition">Questo è l'ID dell'istanza del database MSSQL.</block>
+  <block id="4562f0d0d33d5117041bff91f9fadb94" category="paragraph">tipo_risorsa</block>
+  <block id="cab0ca13ed5233521e8178702bad40f8" category="paragraph">policy_id</block>
+  <block id="e18f9de3af904d3630a91a45d1c8eae0" category="section-title">Visualizzare i backup</block>
+  <block id="56d781cd40a338a41972e201fd08621e" category="paragraph">È possibile eseguire queste API per visualizzare l'elenco di tutti i backup e per visualizzare i dettagli di un particolare backup.</block>
+  <block id="6d8c070460107d62495704aaf1bad176" category="paragraph">"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'</block>
+  <block id="1b81cc73dcb071bc023bcf4be4d7e64a" category="paragraph">"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups/{id}'</block>
+  <block id="aedade97989d44aa9c1debd97284c314" category="paragraph">Per ulteriori informazioni, fare riferimento a:<block ref="837bc8e0f022c24e2fdb2c934adf99c9" category="inline-link-rx"></block></block>
+  <block id="ab414934858114c45b862fbf3a2f8f9d" category="list-text">Per MongoDB, MySQL e PostgreSQL, sono elencati solo i backup dei dati e la data finale di ciascun backup. È possibile selezionare il backup ed eseguire l'esportazione dello storage su un determinato host.</block>
+  <block id="b990e3bc53a993c1bb7ffa70e2c933ce" category="list-text">Se si utilizza StorageGRID, si consiglia di utilizzare ONTAP 9.12.1 o versione successiva</block>
+  <block id="a2d862330d4e63170bca9d0f51144971" category="paragraph">Puoi eseguire il backup di Oracle, Microsoft SQL, SAP HANA, MongoDB, MySQL, e PostgreSQL dai sistemi ONTAP on-premise ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID.</block>
+  <block id="2c0ff6d2d5f06f0642fa97f6503759c8" category="list-text">Utilizzare SnapCenter Server 4,9 o versioni successive se si desidera utilizzare le seguenti funzioni:</block>
+  <block id="cc85bc216febb004b3c0a27e902bba3c" category="list-text">Se si desidera proteggere le applicazioni MongoDB, MySQL e PostgreSQL, è consigliabile utilizzare SnapCenter Server 4,9P1</block>
+  <block id="78f574473b6c7ae09ac2b3653050e608" category="list-text">Almeno una policy giornaliera, settimanale o mensile in SnapCenter senza etichetta o stessa etichetta della policy in BlueXP</block>
+  <block id="06820b13b19298866efcc3db6ac97bf5" category="sidebar">Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST</block>
+  <block id="c9451ea35f35ed30a32348021953a59c" category="sidebar">Aggiungere l'host e installare il plug-in SnapCenter per SQL Server</block>
+  <block id="54bab37592758bedbe84c23554e20c3a" category="sidebar">Eseguire il backup dei database di SQL Server</block>
+  <block id="f055d7dc297e937dbedf854f4e8d5f28" category="sidebar">Ripristina i database SQL Server nativi del cloud</block>
+  <block id="eacd1d0a9374cb22a99c806b2924cf90" category="sidebar">Eseguire il backup del database SQL Server nativo nel cloud</block>
+  <block id="6240606371654cf871393e757b75ae12" category="sidebar">Ripristina i dati di SQL Server nativi del cloud</block>
 </blocks>

@@ -67,6 +67,9 @@ Le applicazioni supportate e le relative configurazioni sono:
 ** Risorse NDV (non-data Volumes) come file binari HANA, volume di log di archiviazione HANA, volume condiviso HANA e così via
 
 
+* MongoDB
+* MySQL
+* PostgreSQL
 
 
 I seguenti database non vengono visualizzati:

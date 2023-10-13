@@ -19,6 +19,9 @@ summary: È possibile visualizzare i dettagli del backup, monitorare lo stato di
 
 È possibile monitorare lo stato dei lavori avviati negli ambienti di lavoro. In questo modo è possibile visualizzare i lavori completati correttamente, quelli in corso e quelli che non sono riusciti, in modo da poter diagnosticare e risolvere eventuali problemi.
 
+
+NOTE: I lavori pianificati verranno elencati nella pagina di monitoraggio dei lavori BlueXP dopo un ritardo di 5 minuti (massimo) dall'ora di completamento del lavoro.
+
 Per ulteriori informazioni, fare riferimento a. link:https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["Monitorare lo stato del lavoro"].
 
 
@@ -113,7 +116,7 @@ Dopo aver aggiornato i dettagli del connettore per gli host Oracle o SAP HANA, e
 
 . Accedere all'host del plug-in ed eseguire le seguenti operazioni:
 +
-.. Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il file certificate.p12.
+.. Passare a _/var/opt/snapcenter/spl/etc_ ed eseguire il comando keytool per importare il file certificate.pem.
 `keytool -import -alias agentcert -file certificate.pem  -keystore keystore.jks -deststorepass snapcenter -noprompt`
 .. Riavviare SPL: `systemctl restart spl`
 .. Eseguire una delle seguenti operazioni:

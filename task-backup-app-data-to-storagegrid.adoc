@@ -16,6 +16,8 @@ summary: Completare alcuni passaggi per eseguire il backup dei dati delle applic
 [role="lead"]
 Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a StorageGRID.
 
+BlueXP supporta il blocco dei dati e la protezione dal ransomware. Se il cluster ONTAP è in esecuzione su ONTAP 9.11.1 o versione successiva, i sistemi StorageGRID sono 11.6.0.3 o versione successiva e se non hai configurato lo storage di archivio, puoi proteggere i backup da sovrascrittura, eliminazione e minacce ransomware.
+
 .Prima di iniziare
 Quando si esegue il backup dei dati su StorageGRID, è necessario che sia disponibile un connettore on-premise. Sarà necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise. Il connettore può essere installato in un sito con o senza accesso a Internet.
 
@@ -52,7 +54,41 @@ Inserire i dettagli nel formato FQDN:PORT.
 .. Nel campo Access Key (chiave di accesso), specificare la chiave.
 .. Nel campo Secret Key (chiave segreta), specificare la password.
 .. Specificare lo spazio IP.
+.. Specificare il livello di archiviazione se è stato configurato lo spazio di archiviazione nel criterio.
++
+|===
+| Se si seleziona... | Eseguire le seguenti operazioni... 
 
 
+ a| 
+AWS
+ a| 
+... Selezionare il StorageGRID dal menu a discesa o aggiungere il cluster StorageGRID.
+... Specificare l'account AWS.
+... Nel campo AWS Access Key (chiave di accesso AWS), specificare la chiave.
+... Nel campo AWS Secret Key (chiave segreta AWS), specificare la password.
+... Selezionare la regione in cui si desidera creare i backup.
+... Fare clic su *Save* (Salva).
+
+
+
+
+ a| 
+Azure
+ a| 
+... Selezionare il cluster StorageGRID dal menu a discesa o aggiungere il cluster.
+... Specificare l'ID dell'abbonamento Azure.
+... Selezionare la regione in cui si desidera creare i backup.
+... Creare un nuovo gruppo di risorse o utilizzare un gruppo di risorse esistente.
+... Fare clic su *Save* (Salva).
+
+
+|===
++
+Si consiglia di impostare il livello di archiviazione perché si tratta di un'attività una tantum e non sarà possibile configurarla in un secondo momento.
+
+
+
+. Configurare il blocco dei dati e la protezione dal ransomware.
 . Esaminare i dettagli e fare clic su *Activate Backup* (attiva backup).
 

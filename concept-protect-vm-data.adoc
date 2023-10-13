@@ -16,7 +16,7 @@ summary: Scopri di più sulla protezione dei dati sulle tue macchine virtuali e 
 [role="lead"]
 Il backup e ripristino BlueXP per macchine virtuali offre funzionalità di protezione dei dati eseguendo il backup dei datastore e il ripristino delle macchine virtuali.
 
-È possibile eseguire il backup dei datastore su Amazon Web Services S3, Microsoft Azure Blob, piattaforma cloud Google e StorageGRID e ripristinare le macchine virtuali nel plug-in SnapCenter on-premise per l'host VMware vSphere.
+È possibile eseguire il backup dei datastore su Amazon Web Services S3, Microsoft Azure Blob, piattaforma cloud Google e StorageGRID e ripristinare le macchine virtuali nel plug-in SnapCenter on-premise per l'host VMware vSphere. Il backup e recovery di BlueXP per le macchine virtuali supporta anche il modello di implementazione di Connector proxy.
 
 .Prima di iniziare
 Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione supportata prima di iniziare il backup di datastore e macchine virtuali su un cloud provider.
@@ -37,6 +37,7 @@ Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione s
 * Disattivare "*_Recent*" sui gruppi di risorse richiesti. Se "*_Recent*" è attivato per il gruppo di risorse, i backup di tali gruppi di risorse non possono essere utilizzati per la protezione dei dati nel cloud e, successivamente, non possono essere utilizzati per l'operazione di ripristino.
 * Assicurarsi che il datastore di destinazione in cui verrà ripristinata la macchina virtuale disponga di spazio sufficiente per ospitare una copia di tutti i file delle macchine virtuali, ad esempio VMDK, VMX, VMSD e così via.
 * Assicurarsi che l'archivio dati di destinazione non abbia file di macchine virtuali obsoleti nel formato restore_xxx_xxxxxx_filename degli errori dell'operazione di ripristino precedente. Eliminare i file obsoleti prima di avviare un'operazione di ripristino.
+* Per distribuire un connettore con proxy configurato, assicurarsi che tutte le chiamate dei connettori in uscita siano instradate attraverso il server proxy.
 
 
 L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:

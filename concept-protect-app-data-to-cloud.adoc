@@ -16,7 +16,7 @@ summary: 'Integra il backup e ripristino BlueXP per le applicazioni con BlueXP e
 [role="lead"]
 Il backup e ripristino BlueXP per le applicazioni offre funzionalità di protezione dei dati per snapshot coerenti con le applicazioni da ONTAP primario on-premise a cloud provider.
 
-È possibile eseguire il backup dei dati delle applicazioni Oracle, Microsoft SQL e SAP HANA dai sistemi ONTAP on-premise su Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID.
+Puoi eseguire il backup di Oracle, Microsoft SQL, SAP HANA, MongoDB, MySQL, e PostgreSQL dai sistemi ONTAP on-premise ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID.
 
 Per ulteriori informazioni sul backup e ripristino BlueXP per le applicazioni, fare riferimento a:
 
@@ -44,16 +44,17 @@ Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione s
 *** Annullare la registrazione del server SnapCenter
 
 
-** Se si desidera utilizzare le seguenti funzionalità, si consiglia di utilizzare il server SnapCenter 4.9:
+** Utilizzare SnapCenter Server 4,9 o versioni successive se si desidera utilizzare le seguenti funzioni:
 +
 *** Montare i backup del database Oracle
 *** Ripristinare lo storage alternativo
 
 
+** Se si desidera proteggere le applicazioni MongoDB, MySQL e PostgreSQL, è consigliabile utilizzare SnapCenter Server 4,9P1
 
 
 * Nel server SnapCenter deve essere disponibile almeno un backup per applicazione
-* Almeno una policy giornaliera, settimanale o mensile in SnapCenter senza etichetta o etichetta uguale a quella della policy in BlueXP.
+* Almeno una policy giornaliera, settimanale o mensile in SnapCenter senza etichetta o stessa etichetta della policy in BlueXP
 
 
 L'immagine seguente mostra ogni componente durante il backup nel cloud e le connessioni che è necessario preparare tra di essi:

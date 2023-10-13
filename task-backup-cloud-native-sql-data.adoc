@@ -1,0 +1,328 @@
+---
+sidebar: sidebar 
+permalink: task-backup-cloud-native-sql-data.html 
+keywords: BlueXP, scheduled backups, on-demand backups, create policy, SQL database 
+summary: Creare un criterio, assegnare il criterio e quindi creare backup su richiesta del database SQL. 
+---
+= Eseguire il backup di database Microsoft SQL Server nativi per il cloud
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile creare backup pianificati o su richiesta assegnando i criteri creati.
+
+
+
+== Creare un criterio di backup
+
+È possibile eseguire questa API per creare il criterio di backup.
+
+"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backup/policies'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Backup%20Policies/MSSQLBackupPolicyService_CreateMSSQLBackupPolicy[]
+
+Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.
+
+
+
+=== Parametri
+
+|===
+| Nome | Tipo | Obbligatorio 
+
+
+ a| 
+nome
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+tipo_backup
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+copia_solo_backup
+ a| 
+stringa
+ a| 
+Falso
+
+
+
+ a| 
+è_definito_sistema
+ a| 
+stringa
+ a| 
+Falso
+
+
+
+ a| 
+formato_nome_backup
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+tipo_pianificazione
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+ora_inizio
+ a| 
+numero
+ a| 
+Vero
+
+
+
+ a| 
+hours_interval
+ a| 
+numero
+ a| 
+Vero
+
+
+
+ a| 
+minuti_intervallo
+ a| 
+numero
+ a| 
+Vero
+
+
+
+ a| 
+retention_type
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+retention_count
+ a| 
+numero
+ a| 
+Vero
+
+
+
+ a| 
+ora_fine
+ a| 
+numero
+ a| 
+Vero
+
+|===
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 201.
+
+Esempio:
+
+[listing]
+----
+{
+    "_links": {
+    "self": {
+        "href": "/api/resourcelink"
+      }
+    }
+}
+----
+
+
+== Assegnare il criterio all'istanza del database SQL
+
+È possibile eseguire questa API per assegnare i criteri all'istanza del database SQL.
+
+"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/instances/{id}/policy-assignment'
+
+Dove _id_ è l'ID istanza MSSQL ottenuto eseguendo l'API dell'istanza del database Discover. Per ulteriori informazioni, fare riferimento a. link:task-add-sqlhost-install-plugin-sql.html#discover-the-database-instances["Rilevare le istanze del database"].
+
+Array di ID è l'input qui. Ad esempio:
+
+[listing]
+----
+[
+  "c9f3e68d-1f9c-44dc-b9af-72a9dfc54320"
+]
+----
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Policy%20Assignment/PostMSSQLInstanceAssignPolicyRequest[]
+
+Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.
+
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 202.
+
+Esempio:
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== Crea un backup su richiesta
+
+Puoi eseguire questa API per creare un backup on-demand.
+
+"POST snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Backups/CreateMSSQLBackupRequest[]
+
+Questa API crea un lavoro che può essere monitorato dalla scheda *Job Monitor* nell'interfaccia utente di BlueXP.
+
+
+
+=== Parametri
+
+|===
+| Nome | Tipo | Obbligatorio 
+
+
+ a| 
+id
+
+
+NOTE: Questo è l'ID dell'istanza del database MSSQL.
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+tipo_risorsa
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+policy_id
+ a| 
+stringa
+ a| 
+Vero
+
+
+
+ a| 
+tipo_pianificazione
+ a| 
+stringa
+ a| 
+Vero
+
+|===
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 202.
+
+Esempio:
+
+[listing]
+----
+{
+  "job": {
+    "_links": {
+      "self": {
+        "href": "/api/resourcelink"
+      }
+    },
+    "uuid": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+  }
+}
+----
+
+
+== Visualizzare i backup
+
+È possibile eseguire queste API per visualizzare l'elenco di tutti i backup e per visualizzare i dettagli di un particolare backup.
+
+"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups'
+
+"OTTIENI snapcenter.cloudmanager.cloud.netapp.com/api/mssql/backups/{id}'
+
+Per ulteriori informazioni, fare riferimento a: https://snapcenter.cloudmanager.cloud.netapp.com/api-doc/#/MSSQL%20Backups/MSSQLGetBackupsRequest[]
+
+
+
+=== Risposta
+
+Se l'API viene eseguita correttamente, viene visualizzato il codice di risposta 200.
+
+Esempio:
+
+[listing]
+----
+{
+    "total_records": 1,
+    "num_records": 1,
+    "records": [
+        {
+            "backup_id": "602d7796-8074-43fc-a178-eee8c78566ac",
+            "resource_id": "a779578d-cf78-46f3-923d-b9223255938c",
+            "backup_name": "Hourly_policy2_scspa2722211001_NAMEDINSTANCE1_2023_08_08_07_02_01_81269_0",
+            "policy_name": "policy2",
+            "schedule_type": "Hourly",
+            "start_time": "2023-08-08T07:02:10.203Z",
+            "end_time": "0001-01-01T00:00:00Z",
+            "backup_status": "success",
+            "backup_type": "FullBackup"
+        }
+    ],
+    "_links": {
+        "next": {}
+    }
+}
+----

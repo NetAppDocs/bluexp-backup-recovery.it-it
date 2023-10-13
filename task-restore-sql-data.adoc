@@ -35,10 +35,6 @@ Ripristinare la posizione originale
  a| 
 .. Selezionare *Restore to original location* (Ripristina posizione originale).
 .. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
-+
-
-NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
-
 .. Fare clic su *Avanti*.
 
 
@@ -49,11 +45,10 @@ Ripristinare temporaneamente in un altro storage e copiare i file ripristinati n
  a| 
 .. Selezionare *Restore to original location* (Ripristina posizione originale).
 .. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
-+
-
-NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
-
 .. Selezionare *Modifica posizione di storage*.
++
+Se si seleziona *Modifica posizione di memorizzazione*, è possibile aggiungere un suffisso al volume di destinazione. Se la casella di controllo non è stata selezionata, per impostazione predefinita *_restore* viene aggiunto al volume di destinazione.
+
 .. Fare clic su *Avanti*.
 .. Nella pagina Storage mapping, specificare i dettagli della posizione di storage alternativa in cui i dati ripristinati dall'archivio di oggetti verranno memorizzati temporaneamente.
 .. Fare clic su *Avanti*.
@@ -66,10 +61,6 @@ Ripristinare in una posizione alternativa
  a| 
 .. Selezionare *Ripristina in una posizione alternativa*.
 .. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
-+
-
-NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
-
 .. Fare clic su *Avanti*.
 .. Nella pagina host di destinazione, selezionare un nome host, specificare un nome di database (facoltativo), selezionare un'istanza e specificare i percorsi di ripristino.
 +
@@ -86,11 +77,10 @@ Ripristinare temporaneamente in un altro storage e copiare i file ripristinati n
  a| 
 .. Selezionare *Ripristina in una posizione alternativa*.
 .. Se lo snapshot si trova nello storage di archiviazione, selezionare la priorità per ripristinare i dati dallo storage di archiviazione.
-+
-
-NOTE: Solo se utilizzi Amazon Web Services o Microsoft Azure come provider cloud, devi specificare la priorità.
-
 .. Selezionare *Modifica posizione di storage*.
++
+Se si seleziona *Modifica posizione di memorizzazione*, è possibile aggiungere un suffisso al volume di destinazione. Se la casella di controllo non è stata selezionata, per impostazione predefinita *_restore* viene aggiunto al volume di destinazione.
+
 .. Fare clic su *Avanti*.
 .. Nella pagina Storage mapping, specificare i dettagli della posizione di storage alternativa in cui i dati ripristinati dall'archivio di oggetti verranno memorizzati temporaneamente.
 .. Fare clic su *Avanti*.

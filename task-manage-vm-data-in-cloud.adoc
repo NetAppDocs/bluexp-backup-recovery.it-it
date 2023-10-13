@@ -89,7 +89,7 @@ Tutti i datastore e le macchine virtuali associati al plug-in SnapCenter per hos
 
 == Monitorare i lavori
 
-I job vengono creati per tutte le operazioni di Cloud Backup. È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ciascuna attività.
+Per tutte le operazioni di backup e recovery di BlueXP vengono create delle job. È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ciascuna attività.
 
 . Fare clic su *Backup and Recovery* > *Job Monitoring*.
 +
