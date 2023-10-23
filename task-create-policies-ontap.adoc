@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-create-policies-ontap.html 
-keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, amazon s3, government 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 'È possibile utilizzare i criteri di backup predefiniti forniti da NetApp per creare i backup oppure è possibile creare criteri personalizzati. I criteri regolano il tipo di backup, l"architettura di backup, i sistemi di storage e la frequenza dei backup.' 
 ---
 = Gestire le policy di backup per i volumi ONTAP
@@ -141,9 +141,9 @@ Questo criterio di storage risiede in diverse ubicazioni dei sistemi di storage,
 . Nella sezione Dettagli policy, specificare il nome del policy.
 . Specifica le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
 . Specificare le impostazioni, incluso il programma di trasferimento e quando archiviare i backup.
-. (Facoltativo) per spostare i file di backup meno recenti in una classe di archiviazione o livello di accesso meno costosi dopo un certo numero di giorni, selezionare l'opzione *Archivio* e indicare il numero di giorni che devono trascorrere prima che i dati vengano archiviati.
+. (Facoltativo) per spostare i file di backup meno recenti in una classe di archiviazione o livello di accesso meno costosi dopo un certo numero di giorni, selezionare l'opzione *Archivio* e indicare il numero di giorni che devono trascorrere prima che i dati vengano archiviati. Immettere *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio.
 +
-https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html#archival-storage-settings["Scopri di più sulle impostazioni dello storage di archiviazione"].
+link:concept-cloud-backup-policies.html#archival-storage-settings["Scopri di più sulle impostazioni dello storage di archiviazione"].
 
 . (Opzionale) per proteggere i backup dalla modifica o dall'eliminazione, selezionare l'opzione *DataLock & ransomware Protection*.
 +

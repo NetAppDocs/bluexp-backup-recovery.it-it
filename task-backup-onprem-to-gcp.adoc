@@ -248,13 +248,7 @@ Se si utilizza Private Google Access o Private Service Connect, assicurarsi che 
 
 === Verificare i requisiti di rete di ONTAP per la replica dei volumi
 
-Prima di attivare i backup nel backup e recovery di BlueXP, assicurati che i sistemi di origine e destinazione soddisfino i seguenti requisiti di networking.
-
-
-
-==== Requisiti di rete Cloud Volumes ONTAP
-
-Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
+Se intendi creare volumi replicati su un sistema ONTAP secondario utilizzando il backup e recovery di BlueXP, assicurati che i sistemi di origine e destinazione soddisfino i seguenti requisiti di rete.
 
 
 
@@ -265,6 +259,13 @@ Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in usc
 +
 Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html["Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"^].
 
+
+
+
+
+==== Requisiti di rete Cloud Volumes ONTAP
+
+* Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.
 
 
 

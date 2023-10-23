@@ -311,10 +311,17 @@ endif::azure[]
 
 == Impostazioni dello storage di archiviazione
 
-Quando si utilizza un determinato cloud storage, è possibile spostare i file di backup meno recenti su un livello di accesso/classe di storage meno costoso dopo un certo numero di giorni. Nota: Non è possibile utilizzare lo storage di archiviazione se è stato attivato DataLock.
+Quando utilizzi AWS, Azure o Google Cloud storage, dopo un certo numero di giorni puoi spostare i file di backup meno recenti in una classe di archiviazione/Tier di accesso meno costoso. Puoi anche scegliere di inviare immediatamente i file di backup allo storage di archivio senza essere scritti su cloud storage standard. È sufficiente inserire *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio. Ciò può risultare particolarmente utile per gli utenti che raramente hanno bisogno di accedere ai dati da backup del cloud o per gli utenti che stanno sostituendo una soluzione di backup su nastro.
 
-Non è possibile accedere immediatamente ai dati nei Tier di archiviazione quando necessario e richiede un costo di recupero più elevato, quindi è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati dai file di backup archiviati.
+Non è possibile accedere immediatamente ai dati nei livelli di archiviazione quando necessario e richiede un costo di recupero più elevato, pertanto è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati dai file di backup prima di decidere di archiviare i file di backup.
 
+[NOTE]
+====
+* Non è possibile utilizzare lo storage di archiviazione se è stato attivato DataLock.
+* Non è possibile modificare il criterio di archiviazione dopo aver selezionato *0* giorni (archiviare immediatamente).
+
+
+====
 Ogni policy di backup fornisce una sezione per _Archival Policy_ che è possibile applicare ai file di backup.
 
 image:screenshot_archive_tier_settings.png["Una schermata delle impostazioni di Archival Policy (Criteri di archiviazione) durante la creazione di un criterio di backup."]

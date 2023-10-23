@@ -27,7 +27,11 @@ sidebar:
   - title: Documenti di backup e ripristino BlueXP
     url: "/index.html"
   - title: Note di rilascio
-    url: "/whats-new.html"
+    entries:
+    - title: Novità
+      url: "/whats-new.html"
+    - title: Limitazioni note
+      url: "/reference-limitations.html"
   - title: Inizia subito
     entries:
     - title: Informazioni su backup e ripristino BlueXP
