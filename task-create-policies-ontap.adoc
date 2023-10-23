@@ -16,7 +16,7 @@ summary: 'È possibile utilizzare i criteri di backup predefiniti forniti da Net
 [role="lead"]
 È possibile utilizzare i criteri di backup predefiniti forniti da NetApp per creare i backup oppure è possibile creare criteri personalizzati. Le policy regolano la frequenza, l'ora di esecuzione del backup e il numero dei file di backup che vengono conservati.
 
-Quando si utilizza la procedura guidata di attivazione per attivare il servizio di backup e ripristino per i volumi, è possibile scegliere tra i criteri predefiniti e gli altri criteri già presenti nell'ambiente di lavoro (sistema Cloud Volumes ONTAP o ONTAP on-premise). Se si desidera utilizzare un criterio diverso da quelli esistenti, è necessario crearlo prima di avviare l'attivazione guidata.
+Quando si utilizza la procedura guidata di attivazione per attivare il servizio di backup e ripristino per i volumi, è possibile scegliere tra i criteri predefiniti e gli altri criteri già presenti nell'ambiente di lavoro (sistema Cloud Volumes ONTAP o ONTAP on-premise). Se si desidera utilizzare un criterio diverso da quello esistente, è possibile crearne uno prima o durante l'utilizzo della procedura guidata di attivazione.
 
 Per informazioni sui criteri di backup predefiniti forniti, fare riferimento a. link:concept-protection-journey.html["Pianifica il tuo percorso di protezione"].
 
@@ -62,14 +62,19 @@ Per impostazione predefinita, le policy degli snapshot vengono visualizzate.
 
 
 
-== Creare una policy Snapshot
+== Creare un criterio Snapshot prima di avviare lo Snapshot
 
 Parte della strategia 3-2-1 prevede la creazione di una copia Snapshot del volume sul sistema di storage *primario*.
 
 Parte del processo di creazione delle policy implica l'identificazione delle etichette di Snapshot e SnapMirror che denotano pianificazione e conservazione. È possibile utilizzare etichette predefinite o crearne di proprie.
 
 .Fasi
-. Nella pagina Criteri, selezionare *Crea nuovo criterio* > *Crea criterio istantanea*.
+. Nell'interfaccia utente di BlueXP, selezionare *volumi* > *Impostazioni di backup*.
+. Nella pagina Backup Settings (Impostazioni di backup), selezionare l'ambiente di lavoro, quindi selezionare *Actions* image:icon-action.png["Icona delle azioni"] E selezionare *Gestione criteri*.
++
+Viene visualizzata la pagina Gestione criteri.
+
+. Nella pagina Criteri, selezionare *Crea criterio* > *Crea criterio istantanea*.
 . Specificare il nome del criterio.
 . Selezionare la pianificazione o le pianificazioni delle istantanee. È possibile avere un massimo di 5 etichette. In alternativa, creare una pianificazione.
 . Se si sceglie di creare una pianificazione:
@@ -107,12 +112,12 @@ Questo esempio crea una policy Snapshot con due cluster:
 
 
 
-== Creare un criterio di replica
+== Creare un criterio di replica prima di avviare la replica
 
 La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di storage diverso. Il criterio di replica risiede nel sistema di archiviazione *secondario*.
 
 .Fasi
-. Nella pagina Criteri, selezionare *Crea nuovo criterio* > *Crea nuovo criterio di replica*.
+. Nella pagina Criteri, selezionare *Crea criterio* > *Crea criterio di replica*.
 . Nella sezione Dettagli policy, specificare il nome del policy.
 . Specifica le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
 . Specificare la pianificazione del trasferimento.
@@ -121,7 +126,7 @@ La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di s
 
 
 
-== Crea una policy di backup sullo storage a oggetti
+== Creare una policy di backup sullo storage a oggetti prima di iniziare il backup
 
 La tua strategia 3-2-1 potrebbe includere il backup di un volume sullo storage a oggetti.
 
@@ -132,7 +137,7 @@ Questo criterio di storage risiede in diverse ubicazioni dei sistemi di storage,
 
 
 .Fasi
-. Nella pagina Gestione criteri, selezionare *Crea nuovo criterio* > *Crea nuovo criterio di backup*.
+. Nella pagina Gestione criteri, selezionare *Crea criterio* > *Crea criterio di backup*.
 . Nella sezione Dettagli policy, specificare il nome del policy.
 . Specifica le etichette SnapMirror (massimo 5) che indicano la conservazione per ciascuna etichetta.
 . Specificare le impostazioni, incluso il programma di trasferimento e quando archiviare i backup.

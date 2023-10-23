@@ -413,22 +413,38 @@ Per ulteriori informazioni su queste architetture, fare riferimento a. link:conc
 
 
 
-. *Snapshot locale*: Scegliere una policy Snapshot esistente.
+. *Istantanea locale*: Scegliere un criterio istantanea esistente o crearne uno nuovo.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione
-link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare l'istantanea, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+** Immettere il nome del criterio.
+** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+** Selezionare *Crea*.
+
 
 . *Replication*: Impostare le seguenti opzioni:
 +
 ** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
-** *Replication policy*: Scegliere un criterio di replica esistente.
-
-
+** *Criterio di replica*: Scegliere un criterio di replica esistente o crearne uno.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione
-link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare la replica, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
+
+
 
 . *Backup su oggetto*: Se si seleziona *Backup*, impostare le seguenti opzioni:
 +
@@ -442,17 +458,25 @@ La chiave di accesso e la chiave segreta sono destinate all'utente IAM creato pe
 
 TIP: La selezione dell'IPSpace corretto garantisce che il backup e ripristino BlueXP possa configurare una connessione da ONTAP allo storage a oggetti StorageGRID.
 
-** *Criterio di backup*: Selezionare un criterio di archiviazione di Backup in oggetto esistente.
+** *Criterio di backup*: Selezionare un criterio di archiviazione Backup su oggetti esistente o crearne uno.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione
-link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare il backup, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
 
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
 +
 Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile scegliere di proteggere i backup da attacchi ransomware e di eliminazione configurando _DataLock e ransomware Protection_. _DataLock_ protegge i file di backup da modifiche o eliminazioni e _ransomware Protection_ esegue la scansione dei file di backup per rilevare eventuali attacchi ransomware nei file di backup. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Scopri di più sulle impostazioni DataLock disponibili"^].
 
 +
 Se il cluster utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza la versione 11.4 o successiva, è possibile scegliere di raggruppare i backup meno recenti in Tier di archivio del cloud pubblico dopo un certo numero di giorni. Attualmente il supporto è per i Tier di storage AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Preparing to archive older backup files to public cloud storage,Scopri come configurare i tuoi sistemi per questa funzionalità>>.
+
+
 
 ** *Tier backup to public cloud*: Seleziona il provider cloud a cui vuoi eseguire il Tier backup e inserisci i dettagli del provider.
 +

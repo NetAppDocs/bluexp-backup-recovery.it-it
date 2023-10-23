@@ -396,18 +396,36 @@ Per ulteriori informazioni su queste architetture, fare riferimento a. link:conc
 
 
 
-. *Snapshot locale*: Scegliere una policy Snapshot esistente.
+. *Istantanea locale*: Scegliere un criterio istantanea esistente o crearne uno nuovo.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare l'istantanea, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+** Immettere il nome del criterio.
+** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+** Selezionare *Crea*.
+
 
 . *Replication*: Impostare le seguenti opzioni:
 +
 ** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
-** *Replication policy*: Scegliere un criterio di replica esistente.
+** *Criterio di replica*: Scegliere un criterio di replica esistente o crearne uno.
 +
 
 TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"]..
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
 
 
 
@@ -438,10 +456,19 @@ Se si sceglie di utilizzare le proprie chiavi gestite dal cliente, inserire l'ar
 NOTE: Se si sceglie un bucket esistente, le informazioni di crittografia sono già disponibili, quindi non è necessario immetterle ora.
 
 +
-** *Criterio di backup*: Selezionare un criterio di archiviazione di Backup in oggetto esistente.
+** *Criterio di backup*: Selezionare un criterio di archiviazione di backup su oggetti esistente o crearne uno.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare il backup, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
 
 ** *Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
 

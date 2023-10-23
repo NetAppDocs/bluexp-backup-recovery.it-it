@@ -359,15 +359,37 @@ Per ulteriori informazioni su queste architetture, fare riferimento a. link:conc
 
 
 
-. *Snapshot locale*: Scegliere una policy Snapshot esistente.
+. *Istantanea locale*: Scegliere un criterio istantanea esistente o crearne uno nuovo.
 +
 
-TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+TIP: Se si desidera creare una policy personalizzata prima di attivare la snapshot, è possibile utilizzare Gestione di sistema o l'interfaccia a riga di comando di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+
++
+
+TIP: Per creare una policy personalizzata utilizzando questo servizio prima di attivare l'istantanea, fare riferimento alla link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+** Immettere il nome del criterio.
+** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+** Selezionare *Crea*.
+
 
 . *Replica*: Se si seleziona *Replica*, impostare le seguenti opzioni:
 +
 ** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. In alternativa, selezionare l'aggregato di destinazione (o gli aggregati per volumi FlexGroup) e un prefisso o suffisso che verrà aggiunto al nome del volume replicato.
-** *Replication policy*: Scegliere un criterio di replica esistente.
+** *Criterio di replica*: Scegliere un criterio di replica esistente o crearne uno nuovo.
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
+
 
 
 . *Backup su oggetto*: Se si seleziona *Backup*, impostare le seguenti opzioni:
@@ -382,14 +404,23 @@ La chiave di accesso e la chiave segreta si riferiscono all'utente creato per fo
 
 TIP: Selezionando l'IPSpace corretto, il backup e recovery di BlueXP può configurare una connessione da ONTAP allo storage a oggetti ONTAP S3.
 
-** *Backup policy*: Selezionare un criterio di backup esistente.
+** *Criterio di backup*: Selezionare un criterio di backup esistente o crearne uno nuovo.
 +
 
-TIP: Se si desidera creare un criterio personalizzato, è possibile utilizzare Gestione sistema o l'interfaccia utente di ONTAP `snapmirror policy create` comando. Fare riferimento a..
+TIP: È possibile creare una policy con System Manager o l'interfaccia a riga di comando di ONTAP. Per creare un criterio personalizzato utilizzando l'interfaccia CLI di ONTAP `snapmirror policy create` fare riferimento a..
 
 +
 
-TIP: Per creare un criterio personalizzato utilizzando l'interfaccia utente, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare il backup utilizzando l'interfaccia utente, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
 
 
 

@@ -325,7 +325,7 @@ La pagina Introduzione della procedura guidata mostra le opzioni di protezione, 
 
 === Selezionare i volumi di cui si desidera eseguire il backup
 
-Scegliere i volumi che si desidera proteggere. Per volume protetto si intende un volume con una o più delle seguenti opzioni: Policy di snapshot, policy di replica, policy di backup su oggetti.
+Scegliere i volumi che si desidera proteggere. Un volume protetto presenta uno o più dei seguenti elementi: Policy di snapshot, policy di replica, policy di backup su oggetto.
 
 Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi selezionare un mix di questi volumi quando si attiva il backup per un ambiente di lavoro. Scopri come link:task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment["attivare il backup per volumi aggiuntivi nell'ambiente di lavoro"] (FlexVol o FlexGroup) dopo aver configurato il backup per i volumi iniziali.
 
@@ -342,7 +342,7 @@ Se per i volumi selezionati sono già state applicate le policy di snapshot o re
 . Nella pagina Select Volumes (Seleziona volumi), selezionare il volume o i volumi che si desidera proteggere.
 +
 ** In alternativa, filtrare le righe per visualizzare solo i volumi con determinati tipi di volume, stili e altro ancora per semplificare la selezione.
-** Dopo aver selezionato il primo volume, è possibile selezionare tutti i volumi FlexVol (è possibile selezionare solo i volumi FlexGroup uno alla volta). Per eseguire il backup di tutti i volumi FlexVol esistenti, selezionare prima un volume, quindi selezionare la casella nella riga del titolo. (image:button_backup_all_volumes.png[""]).
+** Dopo aver selezionato il primo volume, è possibile selezionare All FlexVol Volumes (tutti i volumi). (È possibile selezionare solo i volumi FlexGroup uno alla volta). Per eseguire il backup di tutti i volumi FlexVol esistenti, selezionare prima un volume, quindi selezionare la casella nella riga del titolo. (image:button_backup_all_volumes.png[""]).
 ** Per eseguire il backup di singoli volumi, selezionare la casella relativa a ciascun volume (image:button_backup_1_volume.png[""]).
 
 
@@ -383,18 +383,36 @@ Per ulteriori informazioni su queste architetture, fare riferimento a. link:conc
 
 
 
-. *Snapshot locale*: Scegliere una policy Snapshot esistente.
+. *Istantanea locale*: Scegliere un criterio istantanea esistente o crearne uno.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare l'istantanea, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+** Immettere il nome del criterio.
+** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+** Selezionare *Crea*.
+
 
 . *Replication*: Impostare le seguenti opzioni:
 +
 ** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
-** *Replication policy*: Scegliere un criterio di replica esistente.
+** *Criterio di replica*: Scegliere un criterio di replica esistente o crearne uno.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare la replica, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
 
 
 
@@ -439,10 +457,19 @@ NOTE: Se si sceglie un account di storage Microsoft esistente, le informazioni d
 ... Se lo si desidera, scegliere se utilizzare un endpoint privato Azure precedentemente configurato. https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview["Scopri come utilizzare un endpoint privato Azure"].
 
 
-** *Criterio di backup*: Selezionare un criterio di archiviazione di Backup in oggetto esistente.
+** *Criterio di backup*: Selezionare un criterio di archiviazione backup su oggetti esistente.
 +
 
-TIP: Per creare un criterio personalizzato, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+TIP: Per creare un criterio personalizzato prima di attivare il backup, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
+
++
+Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
+
++
+*** Immettere il nome del criterio.
+*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+*** Selezionare *Crea*.
+
 
 ** *Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
 

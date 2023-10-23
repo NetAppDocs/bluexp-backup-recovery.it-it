@@ -18,7 +18,7 @@ Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficien
 
 Il servizio esegue una replica incrementale a livello di blocco e per sempre e preserva tutte le efficienze dello storage, riducendo in modo significativo la quantità di dati replicati e memorizzati. Inoltre, pagherai solo ciò che è protetto e utilizzi i Tier di storage più economici disponibili, rendendo il backup e ripristino BlueXP molto conveniente.
 
-Se necessario, è possibile ripristinare un intero _volume_ da un backup nello stesso ambiente di lavoro o in un ambiente di lavoro diverso. Quando si esegue il backup dei dati ONTAP, è anche possibile scegliere di ripristinare uno o più _file_ da un backup nello stesso ambiente di lavoro o in un ambiente di lavoro diverso.
+Se necessario, è possibile ripristinare un intero _volume_ da un backup nello stesso ambiente di lavoro o in un ambiente di lavoro diverso. Quando si esegue il backup dei dati ONTAP, è anche possibile scegliere di ripristinare una cartella o uno o più _file_ da un backup nello stesso ambiente di lavoro o in un altro ambiente di lavoro.
 
 https://bluexp.netapp.com/cloud-backup["Scopri di più sul backup e ripristino BlueXP"^].
 
@@ -49,7 +49,7 @@ image:diagram_cloud_backup_general.png["Un diagramma che mostra come il backup e
 
 === Dove risiedono i backup
 
-Le copie di backup vengono memorizzate in un archivio di oggetti creato da BlueXP nel tuo account cloud. Esiste un archivio di oggetti per cluster/ambiente di lavoro e BlueXP assegna un nome all'archivio di oggetti come segue: `netapp-backup-clusteruuid`. Assicurarsi di non eliminare questo archivio di oggetti.
+Le copie di backup vengono memorizzate in un archivio di oggetti creato da BlueXP nel tuo account cloud. Esiste un archivio di oggetti per cluster/ambiente di lavoro e BlueXP nomina l'archivio di oggetti come segue: `netapp-backup-clusteruuid`. Assicurarsi di non eliminare questo archivio di oggetti.
 
 ifdef::aws[]
 
@@ -73,11 +73,12 @@ ifdef::gcp[]
 endif::gcp[]
 
 * In StorageGRID, BlueXP utilizza un account di storage esistente per il bucket dell'archivio di oggetti.
+* In ONTAP S3, BlueXP utilizza un account utente esistente per il bucket S3.
 
 
 
 
-=== I backup vengono eseguiti a mezzanotte
+=== Quando vengono eseguiti i backup
 
 * I backup orari iniziano 5 minuti dopo l'ora, ogni ora.
 * I backup giornalieri iniziano ogni giorno dopo la mezzanotte.

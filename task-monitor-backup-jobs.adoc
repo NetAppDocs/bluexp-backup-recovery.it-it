@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-monitor-backup-jobs.html 
 keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
-summary: 'È possibile monitorare lo stato di istantanee locali, repliche e backup dei processi di archiviazione a oggetti avviati e ripristinare i processi avviati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l"invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l"interfaccia utente o l"API.' 
+summary: 'È possibile monitorare lo stato di istantanee locali, repliche e backup dei processi di archiviazione a oggetti avviati o pianificati e ripristinare i processi avviati o pianificati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l"invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l"interfaccia utente o l"API.' 
 ---
 = Monitorare lo stato dei processi di backup e ripristino
 :hardbreaks:
@@ -31,7 +31,7 @@ Lo stato può essere:
 * Non riuscito
 
 
-Snapshot, repliche, backup su storage a oggetti e operazioni di ripristino avviate dall'interfaccia utente e dall'API di backup e recovery di BlueXP, e processi avviati dal sistema come operazioni di backup pianificate in corso, sono disponibili nella scheda Job Monitoring. Tuttavia, questo vale solo per i sistemi Cloud Volumes ONTAP con ONTAP 9.13.0 o superiore e per i sistemi ONTAP on-premise con ONTAP 9.13.1 o superiore. Quando si eseguono versioni precedenti di ONTAP, vengono visualizzati solo i processi avviati dall'utente.
+Snapshot, repliche, backup sullo storage a oggetti e operazioni di ripristino avviate dall'interfaccia utente e dall'API di backup e recovery di BlueXP sono disponibili nella scheda Job Monitoring.
 
 
 NOTE: Se i sistemi ONTAP sono stati aggiornati alla versione 9.13.x e non vengono visualizzate operazioni di backup pianificate in corso in Job Monitor, sarà necessario riavviare il servizio di backup e ripristino BlueXP. link:reference-restart-backup.html["Scopri come riavviare il backup e il ripristino di BlueXP"].
@@ -128,7 +128,7 @@ Dalle informazioni relative ai dettagli di monitoraggio dei processi, è possibi
 
 == Esaminare i processi di conservazione (ciclo di vita del backup)
 
-Il monitoring dei flussi di conservazione (ciclo di vita del backup) ti aiuta a completare la revisione, rendere conto e proteggere il backup. Per tenere traccia del ciclo di vita del backup, è possibile identificare la scadenza di tutte le copie di backup.
+Il monitoraggio dei flussi di conservazione (o _ciclo di vita del backup_) consente di ottenere la completezza, la responsabilità e la sicurezza dei backup durante le verifiche. Per tenere traccia del ciclo di vita del backup, è possibile identificare la scadenza di tutte le copie di backup.
 
 Un processo di ciclo di vita di backup tiene traccia di tutte le copie Snapshot che vengono eliminate o nella coda da eliminare. A partire da ONTAP 9,13, è possibile esaminare tutti i tipi di lavoro denominati "conservazione" nella pagina monitoraggio processi.
 
@@ -137,7 +137,7 @@ Il tipo di lavoro "conservazione" acquisisce tutti i processi di eliminazione Sn
 .Fasi
 . Selezionare la scheda *Job Monitoring*.
 . Selezionare l'area *Advanced Search & Filtering* (Ricerca e filtraggio avanzati) per aprire il pannello Search (Cerca).
-. Selezionare il tipo di lavoro di "conservazione".
+. Selezionare "conservazione" come tipo di lavoro.
 
 
 

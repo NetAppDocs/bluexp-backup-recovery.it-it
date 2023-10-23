@@ -18,6 +18,30 @@ Scopri le novità di BlueXP backup e recovery.
 
 
 
+== 23 ottobre 2023
+
+
+
+=== 3-2-1 creazione di criteri durante l'attivazione del backup
+
+In precedenza, era necessario creare criteri personalizzati prima di avviare una snapshot, una replica o un backup. A partire da ONTAP 9,8 P5, ora puoi creare una policy durante il processo di attivazione del backup utilizzando l'interfaccia utente di backup e recovery di BlueXP.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["Ulteriori informazioni sulle politiche"].
+
+
+
+=== Supporto del ripristino rapido on-demand
+
+Il backup e recovery di BlueXP ora permette di eseguire un "ripristino rapido" di un volume dal cloud storage a un sistema Cloud Volumes ONTAP. Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume invece di ripristinare l'intero file di backup.
+
+Il sistema di destinazione Cloud Volumes ONTAP deve eseguire ONTAP versione 9.13.0 o successiva.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["Ulteriori informazioni sul ripristino dei dati"].
+
+Il monitoraggio dei processi di backup e ripristino di BlueXP visualizza ora informazioni sui processi di ripristino rapido.
+
+
+
 == 13 ottobre 2023
 
 
