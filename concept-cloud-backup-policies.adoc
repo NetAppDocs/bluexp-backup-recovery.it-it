@@ -66,6 +66,7 @@ Questa funzione non fornisce protezione per i volumi di origine, ma solo per i b
 ====
 * Se si intende utilizzare la protezione DataLock e ransomware, è necessario abilitarla durante la creazione del primo criterio di backup e l'attivazione del backup e ripristino BlueXP per il cluster.
 * Una volta configurato, la protezione DataLock e ransomware non può essere disattivata per un cluster. Non attivare questa funzione su un cluster per provarla.
+* Quando BlueXP analizza un file di backup per ransomware durante il ripristino dei dati di volume, si verificheranno costi aggiuntivi in uscita dal cloud provider per accedere ai contenuti del file di backup.
 
 
 ====

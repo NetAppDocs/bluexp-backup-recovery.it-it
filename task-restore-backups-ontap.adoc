@@ -238,7 +238,7 @@ image:screenshot_restore_select_volume_snapshot.png["Una schermata che mostra la
 
 . Fare clic su *Avanti*.
 +
-Si noti che se si seleziona un file di backup nello storage a oggetti e la protezione ransomware è attiva per tale backup (se sono stati attivati DataLock e ransomware Protection nel criterio di backup), viene richiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware.
+Si noti che se si seleziona un file di backup nello storage a oggetti e la protezione ransomware è attiva per tale backup (se sono stati attivati DataLock e ransomware Protection nel criterio di backup), viene richiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware. (Saranno necessari costi di uscita extra da parte del cloud provider per accedere ai contenuti del file di backup).
 
 . Nella pagina _Select Destination_, selezionare *Working Environment* (ambiente di lavoro) in cui si desidera ripristinare il volume.
 +
@@ -405,7 +405,8 @@ link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["Sc
 
 endif::gcp[]
 
-+ e se la protezione ransomware è attiva per il file di backup (se sono stati attivati DataLock e ransomware Protection nella policy di backup), viene richiesto di eseguire un'ulteriore scansione ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware.
++
+E se la protezione dal ransomware è attiva per il file di backup (se hai abilitato DataLock e protezione dal ransomware nella policy di backup), ti viene richiesto di eseguire un'ulteriore scansione dal ransomware sul file di backup prima di ripristinare i dati. Si consiglia di eseguire la scansione del file di backup per il ransomware. (Saranno necessari costi di uscita extra da parte del cloud provider per accedere ai contenuti del file di backup).
 
 +image:screenshot_restore_select_files.png["Una schermata della pagina Select ITEMS (Seleziona elementi) che consente di accedere agli elementi da ripristinare."]
 

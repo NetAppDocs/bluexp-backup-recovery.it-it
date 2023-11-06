@@ -234,7 +234,8 @@ ifdef::gcp[]
 
 endif::gcp[]
 
-* Se è necessario ripristinare i dati di un volume da un file di backup spostato nello storage a oggetti di archiviazione, è prevista una tariffa aggiuntiva per il recupero per ogni GiB e per ogni richiesta da parte del cloud provider.
+* Se si prevede di ripristinare i dati del volume da un file di backup spostato nello storage a oggetti di archivio, è prevista una tariffa aggiuntiva per il recupero di GiB e per richiesta addebitata dal cloud provider.
+* Se intendi analizzare un file di backup per un ransomware durante il processo di ripristino dei dati dei volumi (se hai attivato DataLock e protezione dal ransomware per i backup nel cloud), ti verranno addebitati anche costi di uscita extra da parte del tuo cloud provider.
 
 
 *Costi di servizio*
