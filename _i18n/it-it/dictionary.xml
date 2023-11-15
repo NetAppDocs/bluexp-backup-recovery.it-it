@@ -4772,4 +4772,7 @@ E se la protezione dal ransomware è attiva per il file di backup (se hai abilit
   <block id="61f06895b4fcad7d6460158ccfc33c17" category="paragraph">Il BYOL è basato sulla capacità a termine (1, 2 o 3 anni) _e_ in incrementi di 1 TiB. Pagherai NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TIB.</block>
   <block id="bc74d224d8eebb9d1f7a6a0cca3c6a3d" category="paragraph">Quando utilizzi AWS, sono disponibili due contratti annuali per i termini da 1, 2 o 3 anni:</block>
   <block id="a31db27d8aef7db23d51910ceb960041" category="paragraph">Quando utilizzi Azure, due contratti annuali sono disponibili per i termini a 1, 2 o 3 anni:</block>
+  <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">Supporto per i processi pianificati in Job Monitor</block>
+  <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">Il monitoraggio del processo di backup e recovery di BlueXP, in precedenza, ha monitorato processi di backup e ripristino pianificati da volume a archivio oggetti, ma non processi di snapshot, replica, backup e ripristino locali pianificati tramite l'interfaccia utente o l'API.</block>
+  <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">Il monitoraggio dei processi di backup e ripristino di BlueXP include ora i processi pianificati per Snapshot locali, repliche e backup sullo storage a oggetti.</block>
 </blocks>
