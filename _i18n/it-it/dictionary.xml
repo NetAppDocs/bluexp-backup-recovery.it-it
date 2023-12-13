@@ -480,7 +480,6 @@
   <block id="25ea6f476e6d2e28d6075e5526758673" category="inline-link">Installazione del connettore in modalità limitata (accesso in uscita limitato)</block>
   <block id="a6e42fec71384a3a5d77eba684fba2c9" category="inline-link">Documentazione AWS: Modifica delle policy IAM</block>
   <block id="02c17660d0f6b51d0aeadd6bfd390921" category="paragraph">Di seguito sono riportate le autorizzazioni specifiche della policy:</block>
-  <block id="6b238043e3f0cbcb294416f3238efea2" category="admonition">Quando si creano backup nelle regioni AWS China, è necessario modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ delle policy IAM da "aws" a "aws-cn", ad esempio<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>.</block>
   <block id="5fc7bffc6ccf29fc2aae8be1237ab6b8" category="list-text">Autorizzazioni AWS Cloud Volumes ONTAP richieste</block>
   <block id="4739ea782eb59e2b0593d9f546ccdb1c" category="inline-link">Policy Cloud Volumes ONTAP</block>
   <block id="992f6f150ac0b46aba4a6eeb1d21d085" category="paragraph">Se l'ambiente di lavoro Cloud Volumes ONTAP è stato creato utilizzando BlueXP versione 3.9.23 o successiva, queste autorizzazioni dovrebbero già far parte del ruolo IAM. In caso contrario, sarà necessario aggiungere le autorizzazioni mancanti.</block>
@@ -2297,9 +2296,7 @@
   <block id="72828ef5ab3d5aa027bfcdd1a9224f67" category="paragraph">Se si desidera utilizzare le chiavi di crittografia predefinite di Amazon S3 per crittografare i dati trasferiti tra il cluster on-premise e il bucket S3, l'installazione predefinita utilizza questo tipo di crittografia.</block>
   <block id="486567bdd60f21beefa59174661f6d52" category="section-title">Configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC</block>
   <block id="d37ada70a820c5c84f992a48e05045cf" category="inline-link-macro">primo diagramma</block>
-  <block id="55082684c888abf218793c0bd2f3b5e4" category="paragraph">Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dal connettore e non è necessario eseguire altre operazioni. Questo tipo di connessione viene mostrato nella <block ref="b1224f75874af139b1e7a51a1da970e9" category="inline-link-macro-rx"></block>.</block>
   <block id="7cb65d7424b08922f4902800ae6b79d0" category="inline-link-macro">secondo diagramma</block>
-  <block id="ca301c03d4c5ce91946df8b15f3dbe5f" category="paragraph">Se si desidera una connessione più sicura via Internet dal data center on-premise al VPC, è possibile selezionare una connessione AWS PrivateLink nella procedura guidata di attivazione del backup. È necessario se si intende utilizzare una VPN o una connessione diretta AWS per collegare il sistema on-premise tramite un'interfaccia endpoint VPC che utilizza un indirizzo IP privato. Questo tipo di connessione viene mostrato nella <block ref="0f7afb920fb200721cfd6111e33f99d4" category="inline-link-macro-rx"></block>.</block>
   <block id="a08b285fd78cf03936887841fbc87805" category="inline-link">Scopri i dettagli sull'utilizzo di AWS PrivateLink per Amazon S3</block>
   <block id="4adab5b6b391c43cf0cfd73c09d5bdf8" category="inline-xref">Aggiungere le autorizzazioni S3 dal criterio di backup</block>
   <block id="f59bbb6de7b8eafb6ccb2f617135ff84" category="list-text">Modificare la configurazione del gruppo di protezione associata a BlueXP Connector. È necessario modificare la policy in "Custom" (da "Full Access") <block ref="52cd24ecfd99d5b16a10d03c54f9d16b" category="inline-xref-macro-rx"></block> come mostrato in precedenza.</block>
@@ -3828,28 +3825,6 @@ ifdef::aws[]</block>
   <block id="12486a40437a6b66be9b1d2eaf68dacb" category="list-text">(Facoltativo) configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC.</block>
   <block id="27481ab02cd2907ee58a87a01de37de2" category="list-text">Quando si attiva il servizio, la procedura guidata di backup richiede di inserire una chiave di accesso e una chiave segreta. Queste credenziali vengono passate al cluster ONTAP in modo che ONTAP possa eseguire il backup e il ripristino dei dati nel bucket S3. A tale scopo, è necessario creare un utente IAM con le seguenti autorizzazioni.</block>
   <block id="b4bc25d0b351437deb290fa50a36f062" category="paragraph">Fare riferimento a.<block ref="eb8d2636cc0b0f2875b50c1561ec0060" category="inline-link-rx"></block>.</block>
-  <block id="50b086f5a622de5e2ad8e86ada10bc12" category="paragraph">"Azione": [
-    "S3:ListBucket"
-    "S3:GetBucketLocation"
-]
-"Risorsa": "arn:aws:s3:::*",
-"Effetto": "Consenti"
-},
-{
-    "Azione": [
-        "S3:GetObject",
-        "S3:PutObject",
-        "S3:DeleteObject",
-        "S3:ListAllMyBucket",
-        "S3:PutObjectTagging",
-        "S3:GetObjectTagging",
-        "S3:RestoreObject",
-        "S3:GetBucketObjectLockConfiguration",
-        "S3:GetObjectRetention",
-        "S3:PutBucketObjectLockConfiguration",
-        "S3:PutObjectRetention"
-        ]
-    "Risorsa": "arn:aws:s3:::*",</block>
   <block id="e2eb08f750d15308f8411635e75fc5e7" category="inline-link">Fare riferimento a come utilizzare le proprie chiavi</block>
   <block id="de4ef5a5f97836ab944189954e7907e4" category="paragraph">Se invece si desidera utilizzare le proprie chiavi gestite dal cliente per la crittografia dei dati piuttosto che le chiavi predefinite, è necessario che le chiavi gestite per la crittografia siano già impostate prima di avviare la procedura guidata di backup e ripristino BlueXP.<block ref="4f334d1f128fd0a003f5f48bc9fc4cbc" category="inline-link-rx"></block>.</block>
   <block id="b08fc812a1a1619370d32b6eda413475" category="inline-link">Consulta i dettagli sull'utilizzo di AWS PrivateLink per Amazon S3</block>
@@ -4078,7 +4053,6 @@ ifdef::aws[]</block>
   <block id="594ef985d417f60832e167b7a55944ba" category="paragraph"><block ref="90242aed4d9e662a807d0696ac4bc7d5" category="inline-link-macro-rx"></block>.</block>
   <block id="11a8a2e103fceba512eb133362ab467a" category="inline-link-macro">Scopri di più sulla creazione di account storage personalizzati</block>
   <block id="b1864ef3e1c982ea79e143744ce2e778" category="paragraph"><block ref="5168b6a061fd7575c70ed688cdecff09" category="inline-link-macro-rx"></block>.</block>
-  <block id="24c3f29f7b3c09228614448507eb27eb" category="paragraph">Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup". Se si desidera utilizzare un nome personalizzato, modificare<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> IAMRole per i CVO esistenti e aggiungere il seguente elenco ai permessi S3. Devi includere<block ref="a99022ed92fce54cbefc53cc3a7bb0a9" prefix=" " category="inline-code"></block> e assegnare tutte le autorizzazioni necessarie che devono essere associate al bucket.</block>
   <block id="28543445b2c93df38084996ffc019a63" category="section-title">Si desidera creare un container di storage a oggetti personalizzato</block>
   <block id="44f63148cdcdb30b0f9a4cc99944e0cb" category="paragraph">Per impostazione predefinita, quando si creano file di backup nello storage a oggetti per un ambiente di lavoro, il servizio di backup e recovery crea il container (bucket o account di storage) per i file di backup nell'account di storage a oggetti configurato. Per impostazione predefinita, il bucket AWS o GCP è denominato "netapp-backup-&lt;uuid&gt;". L'account di storage Azure Blob è denominato "&lt;uuid&gt;".</block>
   <block id="f108f3b7f4cf5d3e79e581222e60586a" category="paragraph">Se si desidera utilizzare un determinato prefisso o assegnare proprietà speciali, è possibile creare il container direttamente nell'account del provider di oggetti. Se si desidera creare un container personalizzato, è necessario crearlo prima di avviare l'attivazione guidata. Il container deve essere utilizzato esclusivamente per la memorizzazione dei file di backup dei volumi ONTAP e non può essere utilizzato per altri scopi. La procedura guidata di attivazione del backup rileva automaticamente i container forniti per l'account e le credenziali selezionati, in modo da poter selezionare quello che si desidera utilizzare.</block>
@@ -4775,4 +4749,14 @@ E se la protezione dal ransomware è attiva per il file di backup (se hai abilit
   <block id="aa4c67fd3731395f4450c9686b20f799" category="section-title">Supporto per i processi pianificati in Job Monitor</block>
   <block id="314b40130d46a229c3a19dc5e2e23aa4" category="paragraph">Il monitoraggio del processo di backup e recovery di BlueXP, in precedenza, ha monitorato processi di backup e ripristino pianificati da volume a archivio oggetti, ma non processi di snapshot, replica, backup e ripristino locali pianificati tramite l'interfaccia utente o l'API.</block>
   <block id="04c6b318fe9c7f19ae925a90e52c6569" category="paragraph">Il monitoraggio dei processi di backup e ripristino di BlueXP include ora i processi pianificati per Snapshot locali, repliche e backup sullo storage a oggetti.</block>
+  <block id="10c83d8d6aa254ef1949380a4435a4d4" category="paragraph">Se stai creando backup nelle aree di AWS GovCloud o AWS China, dovrai modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ dei due set di autorizzazioni seguenti:</block>
+  <block id="4c8fab8f36cba8fb1f202396d9a9ebcd" category="list-text">Per le regioni di AWS GovCloud, ad esempio, è necessario modificare "aws" in "aws-us-gov"<block ref="5437327155aa3716e710fd4319a91b7e" prefix=" " category="inline-code"></block>.</block>
+  <block id="d55b464ea46a7e055a6cefee97d57046" category="list-text">Per le regioni AWS China, ad esempio, è necessario modificare "aws" in "aws-cn"<block ref="e50d17688e67620204df0dd1b12e2baf" prefix=" " category="inline-code"></block>.</block>
+  <block id="c791030455c6b061d69eaa3110693967" category="paragraph">Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup". Se si desidera utilizzare un nome personalizzato, modificare<block ref="36f2cf0d90ddea374df0d9a8b6aa6300" prefix=" " category="inline-code"></block> IAMRole per i CVO esistenti e aggiungere il seguente elenco ai permessi S3.</block>
+  <block id="a2cea9ad2302bf1c011966b2b76de8a1" category="paragraph">Se i bucket personalizzati si trovano nelle regioni di AWS GovCloud o AWS China, dovrai modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ delle autorizzazioni:</block>
+  <block id="a306027de621391e07a3f37323f0a7a1" category="list-text">Per le regioni di AWS GovCloud, ad esempio, è necessario modificare "aws" in "aws-us-gov"<block ref="d3c2ab280b3f8c407baa043db6f71305" prefix=" " category="inline-code"></block>.</block>
+  <block id="fdd52d5d7016bf165e6a4cb2d6cab2d3" category="list-text">Per le regioni AWS China, ad esempio, è necessario modificare "aws" in "aws-cn"<block ref="bb55156256f7fc6b96c6be713812db69" prefix=" " category="inline-code"></block>.</block>
+  <block id="4ec233ea13ab88b2246fbb211a91665c" category="paragraph">Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dal connettore e non è necessario eseguire altre operazioni. Questo tipo di connessione viene mostrato nella <block ref="38757d2cfcaca456ef39c830b3fbfbb6" category="inline-link-macro-rx"></block>.</block>
+  <block id="4d9403aeb0d455887fedd3ace41764e0" category="paragraph">Se si desidera una connessione più sicura via Internet dal data center on-premise al VPC, è possibile selezionare una connessione AWS PrivateLink nella procedura guidata di attivazione del backup. È necessario se si intende utilizzare una VPN o una connessione diretta AWS per collegare il sistema on-premise tramite un'interfaccia endpoint VPC che utilizza un indirizzo IP privato. Questo tipo di connessione viene mostrato nella <block ref="95f59ac3cbae4d92bede28fe387b5a78" category="inline-link-macro-rx"></block>.</block>
+  <block id="d32f70c539312af4cedd6200342bc293" category="paragraph">Se stai creando backup nelle aree di AWS GovCloud o AWS China, dovrai modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ dei set di autorizzazioni indicati sopra e sotto:</block>
 </blocks>
