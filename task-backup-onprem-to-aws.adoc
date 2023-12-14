@@ -466,10 +466,6 @@ Se si desidera una connessione più sicura via Internet dal data center on-premi
 
 .Fasi
 . Creare una configurazione dell'endpoint dell'interfaccia utilizzando la console Amazon VPC o la riga di comando. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulta i dettagli sull'utilizzo di AWS PrivateLink per Amazon S3"^].
-. Modificare la configurazione del gruppo di protezione associata a BlueXP Connector. È necessario modificare la policy in "Custom" (da "Full Access") <<Impostare le autorizzazioni S3,Aggiungere le autorizzazioni S3 dal criterio di backup>> come mostrato in precedenza.
-+
-image:screenshot_backup_aws_sec_group.png["Una schermata del gruppo di sicurezza AWS associato al connettore."]
-
 +
 Se si utilizza la porta 80 (HTTP) per la comunicazione con l'endpoint privato, si è tutti impostati. È ora possibile attivare il backup e il ripristino BlueXP sul cluster.
 
