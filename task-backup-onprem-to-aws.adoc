@@ -407,7 +407,7 @@ Per impostazione predefinita, il servizio crea i bucket. Se si desidera utilizza
 
 link:concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Scopri di più sulla creazione di bucket personalizzati"^].
 
-Se si creano i propri bucket, è necessario utilizzare il nome del bucket "netapp-backup". Se si desidera utilizzare un nome personalizzato, modificare `ontapcloud-instance-policy-netapp-backup` IAMRole per i CVO esistenti e aggiungere il seguente elenco ai permessi S3.
+Se crei i tuoi bucket, dovresti utilizzare un nome bucket che inizia con "netapp-backup". Se è necessario utilizzare un nome personalizzato, modificare i criteri utilizzati nella sezione delle autorizzazioni di impostazione S3 per utilizzare un codice ARN di risorsa che corrisponda al proprio prefisso bucket personalizzato.
 
 [%collapsible]
 ====

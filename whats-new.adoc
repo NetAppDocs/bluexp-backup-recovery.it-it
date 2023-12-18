@@ -18,6 +18,39 @@ Scopri le novità di BlueXP backup e recovery.
 
 
 
+== 15 dicembre 2023
+
+
+
+=== Report disponibili per le copie Snapshot locali e di replica
+
+In precedenza, era possibile generare report solo sulle copie di backup. Adesso puoi creare report sulle copie Snapshot locali e sulle copie Snapshot di replica.
+
+Con questi rapporti, è possibile effettuare le seguenti operazioni:
+
+* Assicurati che i dati critici siano protetti in base alla tua politica organizzativa.
+* Accertarsi che i backup siano stati eseguiti correttamente per un gruppo di volumi.
+* Offri una prova della protezione sui dati di produzione.
+
+
+Fare riferimento a. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-report-inventory.html["Report sulla copertura per la data Protection"].
+
+
+
+=== Tagging personalizzato disponibile sui volumi per l'ordinamento e il filtraggio
+
+Ora puoi aggiungere tag personalizzati ai volumi a partire da ONTAP 9.13.1 in modo da raggruppare i volumi all'interno e tra gli ambienti di lavoro. In questo modo, puoi ordinare i volumi nelle pagine dell'interfaccia utente di backup e recovery di BlueXP e filtrarli nei report.
+
+
+
+=== Backup del catalogo conservati per 30 giorni
+
+In precedenza, Catalog.zip backup venivano conservati per 7 giorni. Ora, sono conservati per 30 giorni.
+
+Fare riferimento a. https://docs.netapp.com/us-en/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html["Ripristina i dati di backup e recovery di BlueXP nei siti oscuri"].
+
+
+
 == 23 ottobre 2023
 
 
@@ -37,6 +70,14 @@ Il backup e recovery di BlueXP ora permette di eseguire un "ripristino rapido" d
 Il sistema di destinazione Cloud Volumes ONTAP deve eseguire ONTAP versione 9.13.0 o successiva. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["Ulteriori informazioni sul ripristino dei dati"].
 
 Inoltre, il monitoraggio dei processi di backup e ripristino di BlueXP mostra informazioni sullo stato di avanzamento dei processi di ripristino rapido.
+
+
+
+=== Aumento dei backup dei dati ONTAP on-premise su bucket StorageGRID di conservazione
+
+StorageGRID ora può conservare fino a 30 backup dei dati ONTAP on-premise da backup e recovery BlueXP in un singolo bucket. In precedenza, il numero massimo era di 7 backup in un bucket.
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-private-cloud.html["Scopri di più sul backup on-premise dei dati ONTAP su StorageGRID"].
 
 
 

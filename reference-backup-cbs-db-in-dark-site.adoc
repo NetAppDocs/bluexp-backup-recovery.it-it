@@ -24,7 +24,7 @@ Sono disponibili 2 tipi di dati di cui viene eseguito il backup:
 * File di catalogo indicizzati - contiene indici dettagliati utilizzati per la funzionalità di ricerca e ripristino che rendono le ricerche molto rapide ed efficienti quando si cercano i dati dei volumi che si desidera ripristinare.
 
 
-Il backup di questi dati viene eseguito una volta al giorno a mezzanotte e viene conservato un massimo di 7 copie di ciascun file. Se il connettore gestisce più ambienti di lavoro ONTAP on-premise, i file di backup e ripristino BlueXP si trovano nel bucket dell'ambiente di lavoro attivato per primo.
+Viene eseguito il backup di questi dati una volta al giorno a mezzanotte e viene conservato un massimo di 30 copie di ciascun file. Se il connettore gestisce più ambienti di lavoro ONTAP on-premise, i file di backup e ripristino BlueXP si trovano nel bucket dell'ambiente di lavoro attivato per primo.
 
 
 TIP: Nessun dato di volume è mai incluso nel database di backup e ripristino BlueXP o nei file di catalogo indicizzati.

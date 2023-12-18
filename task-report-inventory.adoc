@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: task-report-inventory.html 
 keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory 
-summary: 'Con i report di backup e ripristino BlueXP, puoi garantire che i dati critici siano protetti in base alle policy definite dalla tua organizzazione e supportare in modo efficiente i processi di audit per la conformità. Con il report dell"inventario di backup, è possibile visualizzare tutti i backup di un account, un ambiente di lavoro o un inventario SVM specifico.' 
+summary: 'Con i report di backup e ripristino BlueXP, puoi garantire che i dati critici siano protetti in base alle policy definite dalla tua organizzazione e supportare in modo efficiente i processi di audit per la conformità. Con il report dell"inventario di backup è possibile visualizzare tutte le copie Snapshot locali, le repliche e i backup.' 
 ---
 = Report sulla copertura per la data Protection
 :hardbreaks:
@@ -41,18 +41,18 @@ I report di backup e ripristino di BlueXP forniscono informazioni sui seguenti a
 
 == Creare un report sull'inventario di backup
 
-Dalla scheda Backup and Recovery Reports di BlueXP, è possibile creare il report Backup Inventory e filtrarne il contenuto. Con il report Backup Inventory, puoi visualizzare tutti i backup relativi a un account specifico, un ambiente di lavoro o un inventario SVM.
+Dalla scheda Report di backup e recovery di BlueXP, puoi creare un report sull'inventario di backup e filtrarne il contenuto. Con il report Backup Inventory, puoi visualizzare tutte le copie Snapshot locali, le repliche sullo storage secondario e i backup di un account, un ambiente di lavoro o un inventario SVM specifici.
 
 Il report Backup Inventory mostra le seguenti informazioni e molto altro ancora:
 
 * Account, ambiente di lavoro e SVM
 * Volumi protetti e non protetti
-* Destinazione del backup
-* Policy di backup applicata
+* Destinazione
+* Policy applicata
 * Stile di crittografia (chiave gestita dal provider o chiave gestita dall'utente)
 * Stato di protezione di DataLock e ransomware (governance, compliance o nessuno)
 * Stato di archiviazione abilitato
-* Numero di copie di backup
+* Numero di copie Snapshot, repliche o copie di backup locali
 * Tipo di backup (backup ad hoc pianificato o avviato dall'utente)
 * Classe di storage
 * Etichetta Snapshot
@@ -63,28 +63,25 @@ NOTE: Il report Backup Inventory non include informazioni di backup scadute o no
 
 La parte superiore del report include un grafico che mostra le seguenti informazioni:
 
-* Numero di volumi nell'ambito con almeno un backup
+* Numero di volumi con almeno una snapshot, replica o backup locale (a seconda della scheda mostrata)
 * Totale di volumi inattivi più volumi attivi
 
 
-Il report Backup Inventory mostra i seguenti grafici:
-
-* *Volume backup status* (Stato backup volume): Mostra i volumi protetti rispetto ai volumi non protetti per l'ambito selezionato.
-* *Volumi per numero di backup*: Raggruppa i volumi in base al numero di copie di backup disponibili per questo volume.
-
+image:screenshot-report-backup-accountlevel.png["Un esempio di rapporto Backup Inventory"]
 
 .Fasi
 . Dal menu in alto, selezionare *Report*.
 . Selezionare *Backup Inventory*.
 . Selezionare *Crea report*.
-. Selezionare l'account, l'ambiente di lavoro e SVM.
+. Selezionare l'ambito del report a livello di account o personalizzato.
+. Selezionare i filtri per il rapporto:
 +
+** Volumi
+** Protezione: Selezionare il tipo di protezione (copie snapshot locali, replica o backup) che si desidera nel report. È possibile selezionare tutte e tre le opzioni. Inoltre, selezionare se si desidera includere volumi non protetti.
 
-TIP: È possibile selezionare più ambienti di lavoro e SVM.
 
-. Selezionare l'intervallo di tempo: Ultime 24 ore, settimana o mese.
-. Esaminare le sezioni del report (Snapshot Policy, Replication Policy o Backup Policy), a seconda delle selezioni del report.
-. (Facoltativo) Filtra i risultati in base allo stato del lavoro.
+. Selezionare *Crea report*.
+. Esaminare le schede del rapporto (istantanea locale, Replica o Backup), a seconda delle selezioni del rapporto.
 . (Facoltativo) esportare il contenuto del report in formato .CSV selezionando *Download CSV*.
 
 

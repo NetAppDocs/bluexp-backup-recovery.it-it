@@ -231,10 +231,13 @@ image:screenshot_restore_volume_selection.png["Schermata che mostra la selezione
 
 . Nella pagina _Select Source_, accedere al file di backup del volume che si desidera ripristinare. Selezionare il file *Working Environment* (ambiente di lavoro), *Volume* (Volume) e *Backup* con la data e l'ora da cui si desidera eseguire il ripristino.
 +
-La colonna *percorso* indica se il file di backup (Snapshot) è *locale* (una copia Snapshot sul sistema di origine), *secondario* (un volume replicato su un sistema ONTAP secondario) o *archiviazione oggetto* (un file di backup nello storage a oggetti). Scegliere il file che si desidera ripristinare.
+Facoltativamente, cercare tag personalizzati per elencare solo i volumi con un tag specifico.
 
 +
-image:screenshot_restore_select_volume_snapshot.png["Una schermata che mostra la selezione dell'ambiente di lavoro, del volume e del file di backup del volume che si desidera ripristinare."]
+image:screenshot_restore_select_volume_snapshot2.png["Una schermata che mostra la selezione dell'ambiente di lavoro, del volume e del file di backup del volume che si desidera ripristinare."]
+
++
+La colonna *percorso* indica se il file di backup (Snapshot) è *locale* (una copia Snapshot sul sistema di origine), *secondario* (un volume replicato su un sistema ONTAP secondario) o *archiviazione oggetto* (un file di backup nello storage a oggetti). Scegliere il file che si desidera ripristinare.
 
 . Fare clic su *Avanti*.
 +
