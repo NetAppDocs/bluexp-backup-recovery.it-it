@@ -46,6 +46,9 @@ Prima di selezionare le funzioni da utilizzare, ecco una rapida spiegazione dell
 |===
 Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino. Una copia Snapshot è un'immagine point-in-time di sola lettura di un volume. L'immagine consuma uno spazio di storage minimo e comporta un overhead delle performance trascurabile, in quanto registra solo le modifiche apportate ai file dall'ultima copia Snapshot. La copia Snapshot creata sul volume viene utilizzata per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.
 
+
+NOTE: Gli snapshot devono avere nomi univoci, altrimenti le operazioni di ripristino non funzioneranno correttamente.
+
 image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono nel sistema di origine come copie Snapshot, come volumi replicati nel sistema di storage secondario e come file di backup nello storage a oggetti."]
 
 È possibile scegliere di creare volumi replicati su un altro sistema storage ONTAP e file di backup nel cloud. In alternativa, puoi scegliere di creare volumi replicati o file di backup.
@@ -236,7 +239,7 @@ Se si prevede di spostare i file di backup meno recenti nello storage di archivi
 
 == Quale modalità di implementazione di BlueXP Connector si sta utilizzando
 
-Se si utilizza già BlueXP per gestire lo storage, è già stato installato un connettore BlueXP. Se si prevede di utilizzare lo stesso connettore con il backup e ripristino di BlueXP, si è tutti impostati. Se è necessario utilizzare un connettore diverso, è necessario installarlo prima di iniziare l'implementazione del backup e ripristino.
+Se si utilizza già BlueXP per gestire lo storage, è già stato installato un connettore BlueXP. Se si prevede di utilizzare lo stesso connettore con il backup e ripristino di BlueXP, si è tutti impostati. Se è necessario utilizzare un connettore diverso, è necessario distribuirlo prima di avviare l'implementazione del backup e del ripristino.
 
 BlueXP offre diverse modalità di implementazione che consentono di utilizzare BlueXP in modo da soddisfare i requisiti di sicurezza e di business. _Standard mode_ sfrutta il layer BlueXP SaaS per fornire funzionalità complete, mentre _restricted mode_ e _private mode_ sono disponibili per le organizzazioni con restrizioni di connettività.
 
@@ -245,11 +248,11 @@ https://www.netapp.tv/details/30567["Guarda questo video sulle modalità di impl
 
 
 
-=== Supporto per siti con connettività Internet completa
+=== Supporto quando si utilizza la modalità standard
 
-Quando il backup e ripristino BlueXP viene utilizzato in un sito con connettività Internet completa (nota anche come "modalità standard" o "modalità SaaS"), è possibile creare volumi replicati su qualsiasi sistema ONTAP o Cloud Volumes ONTAP on-premise gestito da BlueXP, inoltre, puoi creare file di backup sullo storage a oggetti in qualsiasi provider cloud supportato. link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["Consulta l'elenco completo delle destinazioni di backup supportate"].
+Il backup e recovery di BlueXP è completamente supportato in modalità standard, siti con connettività Internet completa. In questo caso, puoi creare volumi replicati su qualsiasi sistema ONTAP o Cloud Volumes ONTAP on-premise gestito da BlueXP, oltre a creare file di backup su storage a oggetti in qualsiasi cloud provider supportato. link:concept-ontap-backup-to-cloud.html#supported-backup-destinations["Consulta l'elenco completo delle destinazioni di backup supportate"].
 
-Consultare l'argomento relativo al backup del provider di servizi cloud in cui si prevede di creare file di backup per l'elenco delle posizioni dei connettori valide. Esistono alcune limitazioni per le quali il connettore deve essere installato manualmente su una macchina Linux o implementato in uno specifico cloud provider.
+Consultare l'argomento relativo al backup del provider di servizi cloud in cui si prevede di creare file di backup per l'elenco delle posizioni dei connettori valide. Potrebbero esserci alcune limitazioni quando il connettore viene distribuito in un provider cloud specifico o quando viene installato manualmente su una macchina Linux.
 
 ifdef::aws[]
 
@@ -281,9 +284,9 @@ endif::gcp[]
 
 
 
-=== Supporto per siti con connettività Internet limitata
+=== Supporto quando si utilizza la modalità limitata
 
-Il backup e ripristino BlueXP può essere utilizzato in un sito con connettività Internet limitata (nota anche come "modalità limitata") per eseguire il backup dei dati del volume. In questo caso, è necessario implementare BlueXP Connector nell'area limitata.
+Il backup e recovery di BlueXP è supportato in modalità limitata, siti con connettività Internet limitata. In questo caso puoi creare file di backup solo su un set limitato di cloud provider. Dovrai implementare il connettore BlueXP nell'area riservata.
 
 ifdef::aws[]
 
@@ -301,9 +304,9 @@ endif::azure[]
 
 
 
-=== Supporto per siti senza connessione a Internet
+=== Supporto quando si utilizza la modalità privata
 
-Il backup e il ripristino BlueXP possono essere utilizzati in un sito senza connettività Internet (noto anche come siti "privati" o "scuri") per eseguire il backup dei dati del volume. In questo caso, sarà necessario implementare BlueXP Connector su un host Linux nello stesso sito.
+Il backup e recovery di BlueXP è supportato in modalità privata, siti senza connettività Internet. In questo caso puoi creare file di backup solo su un set limitato di provider di storage a oggetti. Dovrai implementare il connettore BlueXP su un host Linux nello stesso sito on-premise.
 
 * È possibile eseguire il backup dei dati dai sistemi ONTAP locali on-premise ai sistemi NetApp StorageGRID locali. Scopri come link:task-backup-onprem-private-cloud.html["Eseguire il backup dei dati ONTAP on-premise su StorageGRID"] per ulteriori informazioni.
 * Puoi effettuare il backup dei dati dai sistemi ONTAP locali on-premise ai sistemi ONTAP locali on-premise o ai sistemi Cloud Volumes ONTAP configurati per lo storage a oggetti S3. Scopri come link:task-backup-onprem-to-ontap-s3.html["Effettua il backup dei dati ONTAP on-premise su ONTAP S3"] per ulteriori informazioni.

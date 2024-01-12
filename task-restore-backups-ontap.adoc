@@ -23,6 +23,9 @@ I backup dei dati del volume ONTAP sono disponibili dalle posizioni in cui sono 
 
 Per ripristinare i dati dai file di backup a un sistema di produzione, è necessaria una licenza di backup e ripristino BlueXP valida.
 
+
+NOTE: Gli snapshot devono avere nomi univoci, altrimenti le operazioni di ripristino non funzioneranno correttamente.
+
 In sintesi, questi sono i flussi validi che è possibile utilizzare per ripristinare i dati dei volumi in un ambiente di lavoro ONTAP:
 
 * File di backup -> volume ripristinato
