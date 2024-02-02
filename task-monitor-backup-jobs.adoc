@@ -40,7 +40,7 @@ NOTE: Se i sistemi ONTAP sono stati aggiornati alla versione 9.13.x e non vengon
 . Dal menu BlueXP, selezionare *protezione > Backup e ripristino*.
 . Selezionare la scheda *Job Monitoring*.
 +
-image:screenshot_backup_job_monitor2.png["Una schermata che mostra i processi di backup e ripristino nella dashboard di monitoraggio dei processi."]
+image:screenshot_backup_job_monitor.png["Una schermata che mostra i processi di backup e ripristino nella dashboard di monitoraggio dei processi."]
 
 +
 Questa schermata mostra le intestazioni di colonna predefinite.
@@ -52,7 +52,7 @@ Questa schermata mostra le intestazioni di colonna predefinite.
 
 === Cercare e filtrare l'elenco dei job
 
-È possibile filtrare le operazioni nella pagina Job Monitoring utilizzando diversi filtri, come policy, etichette Snapshot, tipo di operazione (protezione, ripristino, conservazione o altro), tag personalizzati sui volumi e tipo di protezione (snapshot locale, replica o backup nel cloud).
+È possibile filtrare le operazioni nella pagina monitoraggio lavoro utilizzando diversi filtri, ad esempio criteri, etichette Snapshot, tipo di operazione (protezione, ripristino, conservazione o altro) e tipo di protezione (istantanea locale, replica o backup nel cloud).
 
 Per impostazione predefinita, nella pagina monitoraggio processi vengono visualizzati i processi di protezione e ripristino delle ultime 24 ore. È possibile modificare l'intervallo di tempo utilizzando il filtro dell'intervallo di tempo.
 
