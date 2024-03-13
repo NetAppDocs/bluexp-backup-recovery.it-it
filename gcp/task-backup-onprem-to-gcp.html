@@ -1,0 +1,3164 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head class="at-element-marker">
+  <title>Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+	<meta property="og:description" content="Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise a un sistema di storage secondario e a Google Clo..." />
+  <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise a un sistema di storage secondario e a Google Clo...">
+  <meta name="keywords" content=" backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, gcp, google cloud"><!-- Icons -->
+  <link rel="icon" href="/it-it/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/bluexp-backup-recovery/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/it-it/bluexp-backup-recovery/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/it-it/bluexp-backup-recovery/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/it-it/bluexp-backup-recovery/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-backup-onprem-to-gcp.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/it-it/bluexp-backup-recovery/js/na-search.js'></script><script src='/it-it/bluexp-backup-recovery/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/it-it/bluexp-backup-recovery/js/custom-dropdown.js'></script>
+  <script src='/it-it/bluexp-backup-recovery/js/FileSaver.min.js'></script>
+  <script src='/it-it/bluexp-backup-recovery/js/jszip-utils.min.js'></script>
+  <script src='/it-it/bluexp-backup-recovery/js/jszip.min.js'></script><script src='/it-it/bluexp-backup-recovery/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="gcp">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/it-it/bluexp-backup-recovery/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/it">
+                <image id="ie-header-logo" src="/it-it/bluexp-backup-recovery/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/it/support-and-training/documentation/">Documenti</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/it-it/bluexp-backup-recovery/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">Italiano</span>
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-backup-onprem-to-gcp.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/it-it/bluexp-backup-recovery/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">Tutto NetApp</span>
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Supporto</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Knowledge Base</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/it/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Training</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">Tutti i documenti</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">Documentazione Cloud</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/it-it/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/it-it/bluexp-backup-recovery/">-->
+      BlueXP backup and recovery
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html">
+  
+  
+  <div class="custom-dropdown-select selected" title="Google Cloud">
+    <label>Cloud provider</label>
+    <div>Google Cloud</div>  
+    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+    <!--<img src="/it-it/bluexp-backup-recovery/images/dismiss.svg" class="custom-icon selected" id="remove-flavor" alt="" />-->
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/it-it/bluexp-backup-recovery/aws">Amazon Web Services</li>
+    
+    
+    
+    <li data-value="gcp" data-url="/it-it/bluexp-backup-recovery/gcp/task-backup-onprem-to-gcp.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/it-it/bluexp-backup-recovery/azure">Microsoft Azure</li>
+    
+    
+    <li data-url="/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html">Tutti i cloud provider</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/it-it/bluexp-backup-recovery/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/it-it/bluexp-backup-recovery/gcp/search.html" 
+        data-type="widget"
+        data-placeholder="Esplora la documentazione"
+        data-no-results-found="Nessun risultato per {query}"
+        data-did-you-mean="Cerca {suggestion}."
+        data-no-results-found-did-you-mean="Nessun risultato per {query}. Intendi {suggestion}?"
+        data-results-found="{hitCount} risultati trovati"
+        data-error-message="Si è verificato un errore. Riprova."
+        data-error-reset="Reimposta ricerca"
+        data-sk-es-pf-indexes="" 
+        data-flavor="gcp">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documenti di backup e ripristino BlueXP"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-backup-recovery/gcp/index.html">
+        Documenti di backup e ripristino BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note di rilascio"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Note di rilascio</div>-->
+         Note di rilascio
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Novità"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/whats-new.html">
+        Novità
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Limitazioni note"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/reference-limitations.html">
+        Limitazioni note
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Inizia subito"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Inizia subito</div>-->
+         Inizia subito
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Informazioni su backup e ripristino BlueXP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-backup-to-cloud.html">
+        Informazioni su backup e ripristino BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostare la licenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-licensing-cloud-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-licensing-cloud-backup.html">
+        Impostare la licenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare la protezione dei dati"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Monitorare la protezione dei dati</div>-->
+         Monitorare la protezione dei dati
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Report sulla copertura per la data Protection"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-report-inventory.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-report-inventory.html">
+        Report sulla copertura per la data Protection
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato dei processi di backup e ripristino"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-monitor-backup-jobs.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-monitor-backup-jobs.html">
+        Monitorare lo stato dei processi di backup e ripristino
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati ONTAP"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati ONTAP</div>-->
+         Backup e ripristino dei dati ONTAP
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati del tuo volume ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-ontap-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-ontap-backup-to-cloud.html">
+        Proteggi i dati del tuo volume ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-protection-journey.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le policy per ONTAP Volumes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-create-policies-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-create-policies-ontap.html">
+        Gestire le policy per ONTAP Volumes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-to-gcp.html">
+        Eseguire il backup di Cloud Volumes ONTAP su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su Google Cloud"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-onprem-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-onprem-to-gcp.html">
+        Eseguire il backup on-premise di ONTAP su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Esegui il backup da ONTAP on-premise a ONTAP S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-onprem-to-ontap-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-onprem-to-ontap-s3.html">
+        Esegui il backup da ONTAP on-premise a ONTAP S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-onprem-private-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-onprem-private-cloud.html">
+        Eseguire il backup on-premise di ONTAP su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire i backup di ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-manage-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-manage-backups-ontap.html">
+        Gestire i backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dai backup di ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-backups-ontap.html">
+        Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-manage-backup-settings-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati delle applicazioni on-premise</div>-->
+         Backup e ripristino dei dati delle applicazioni on-premise
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue applicazioni on-premise"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-protect-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-protect-app-data-to-cloud.html">
+        Proteggi i dati delle tue applicazioni on-premise
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrare il server SnapCenter"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-register-snapcenter-server.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-register-snapcenter-server.html">
+        Registrare il server SnapCenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare un criterio per il backup delle applicazioni"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-create-policies-apps.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-create-policies-apps.html">
+        Creare un criterio per il backup delle applicazioni
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-app-data-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-app-data-to-gcp.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-app-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-app-data-to-storagegrid.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire la protezione delle applicazioni"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-manage-app-backups.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-manage-app-backups.html">
+        Gestire la protezione delle applicazioni
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i dati delle applicazioni on-premise"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Ripristinare i dati delle applicazioni on-premise</div>-->
+         Ripristinare i dati delle applicazioni on-premise
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database Oracle"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-oracle-data.html">
+        Ripristinare il database Oracle
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database di SQL Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-sql-data.html">
+        Ripristinare il database di SQL Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database SAP HANA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-hana-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-hana-backup.html">
+        Ripristinare il database SAP HANA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dei database MongoDB, MySQL e PostgreSQL"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-customplugin-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-customplugin-backup.html">
+        Ripristino dei database MongoDB, MySQL e PostgreSQL
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle applicazioni native del cloud"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati delle applicazioni native del cloud</div>-->
+         Backup e ripristino dei dati delle applicazioni native del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue applicazioni native del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-protect-cloud-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-protect-cloud-app-data-to-cloud.html">
+        Proteggi i dati delle tue applicazioni native del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database Oracle nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Eseguire il backup dei database Oracle nativi del cloud</div>-->
+         Eseguire il backup dei database Oracle nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-quick-start-oracle.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-quick-start-oracle.html">
+        Avvio rapido
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare FSX per ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/reference-configure-fsx-for-ontap.html">
+        Configurare FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-configure-cloud-volumes-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/reference-configure-cloud-volumes-ontap.html">
+        Configurare Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installare il plug-in SnapCenter per Oracle e aggiungere host di database"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-add-host-discover-oracle-databases.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-add-host-discover-oracle-databases.html">
+        Installare il plug-in SnapCenter per Oracle e aggiungere host di database
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database Oracle"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-cloud-native-oracle-data.html">
+        Eseguire il backup dei database Oracle
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST</div>-->
+         Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-quick-start-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-quick-start-sql.html">
+        Avvio rapido
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare FSX per ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/reference-configure-fsx-for-ontap.html">
+        Configurare FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aggiungere l'host e installare il plug-in SnapCenter per SQL Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-add-sqlhost-install-plugin-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-add-sqlhost-install-plugin-sql.html">
+        Aggiungere l'host e installare il plug-in SnapCenter per SQL Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database di SQL Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-cloud-native-sql-data.html">
+        Eseguire il backup dei database di SQL Server
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i database Oracle nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Ripristinare i database Oracle nativi del cloud</div>-->
+         Ripristinare i database Oracle nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare la posizione originale"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-original-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-cloud-native-oracle-data-to-original-location.html">
+        Ripristinare la posizione originale
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare in una posizione alternativa"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-alternate-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-cloud-native-oracle-data-to-alternate-location.html">
+        Ripristinare in una posizione alternativa
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristina i database SQL Server nativi del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-cloud-native-sql-data.html">
+        Ripristina i database SQL Server nativi del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare i database Oracle nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Clonare i database Oracle nativi del cloud</div>-->
+         Clonare i database Oracle nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare concetti e requisiti"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-clone-cloud-native-oracle-concepts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/concept-clone-cloud-native-oracle-concepts.html">
+        Clonare concetti e requisiti
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare i database Oracle nativi del cloud"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-clone-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/gcp/task-clone-cloud-native-oracle-data.html">
+        Clonare i database Oracle nativi del cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire la protezione dei dati applicativi nativi del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-manage-cloud-native-app-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-manage-cloud-native-app-data.html">
+        Gestire la protezione dei dati applicativi nativi del cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle macchine virtuali"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati delle macchine virtuali</div>-->
+         Backup e ripristino dei dati delle macchine virtuali
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue macchine virtuali"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-protect-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-protect-vm-data.html">
+        Proteggi i dati delle tue macchine virtuali
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrare il plug-in SnapCenter per l'host VMware vSphere"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-register-snapCenter-plug-in-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
+        Registrare il plug-in SnapCenter per l'host VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare una policy per il backup dei datastore"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-create-policies-vms.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-create-policies-vms.html">
+        Creare una policy per il backup dei datastore
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup dei datastore su Google Cloud Platform"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-vm-data-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-vm-data-to-gcp.html">
+        Backup dei datastore su Google Cloud Platform
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei datastore su StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-vm-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-vm-data-to-storagegrid.html">
+        Eseguire il backup dei datastore su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestione della protezione dei dati di datastore e macchine virtuali"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-manage-vm-data-in-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-manage-vm-data-in-cloud.html">
+        Gestione della protezione dei dati di datastore e macchine virtuali
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i dati delle macchine virtuali"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-vm-data.html">
+        Ripristinare i dati delle macchine virtuali
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati Kubernetes"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati Kubernetes</div>-->
+         Backup e ripristino dei dati Kubernetes
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i tuoi dati Kubernetes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-kubernetes-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-kubernetes-backup-to-cloud.html">
+        Proteggi i tuoi dati Kubernetes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-backup-kubernetes-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-backup-kubernetes-to-gcp.html">
+        Backup su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire i backup di Kubernetes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-manage-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-manage-backups-kubernetes.html">
+        Gestire i backup di Kubernetes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dai backup di Kubernetes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-restore-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-restore-backups-kubernetes.html">
+        Ripristino dai backup di Kubernetes
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatizza con l'API REST"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/api-backup-restore.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-backup-recovery/gcp/api-backup-restore.html">
+        Automatizza con l'API REST
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riferimento"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Riferimento</div>-->
+         Riferimento
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostazioni dei criteri di backup"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/concept-cloud-backup-policies.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/concept-cloud-backup-policies.html">
+        Impostazioni dei criteri di backup
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di storage di archivio AWS supportati"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-aws-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/reference-aws-backup-tiers.html">
+        Tier di storage di archivio AWS supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di accesso all'archivio Azure supportati"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-azure-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/reference-azure-backup-tiers.html">
+        Tier di accesso all'archivio Azure supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di storage di archivio supportati da Google"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-google-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/reference-google-backup-tiers.html">
+        Tier di storage di archivio supportati da Google
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database di backup e ripristino BlueXP in un sito buio"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-backup-cbs-db-in-dark-site.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/reference-backup-cbs-db-in-dark-site.html">
+        Ripristinare il database di backup e ripristino BlueXP in un sito buio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riavviare il backup e il ripristino di BlueXP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/reference-restart-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/reference-restart-backup.html">
+        Riavviare il backup e il ripristino di BlueXP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conoscenza e supporto"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Conoscenza e supporto</div>-->
+         Conoscenza e supporto
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrati per ricevere assistenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-support-registration.html">
+        Registrati per ricevere assistenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Richiedi assistenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/gcp/task-get-help.html">
+        Richiedi assistenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note legali"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-backup-onprem-to-gcp.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-backup-recovery/gcp/legal-notices.html">
+        Note legali
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/it-it/bluexp-backup-recovery"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/it-it/bluexp-backup-recovery"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/it-it/bluexp-backup-recovery/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2023-10-23 22:27:42 +0000">10/23/2023</time>
+        
+    
+    
+        <span>Collaboratori
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Suggerisci modifiche</span>
+        <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html&page-title=Eseguire il backup dei dati ONTAP on-premise su Google Cloud Storage" class="page-nav-contribute-link" role="button">Richiedi modifiche alla documentazione</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-backup-onprem-to-gcp.adoc" class="page-nav-contribute-link" role="button">Modifica questa pagina</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Scopri come collaborare</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/it-it/bluexp-backup-recovery/pdfs/gcp/fullsite-sidebar/Documentazione_di_backup_e_ripristino_BlueXP.pdf" >
+                    <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Note_di_rilascio.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Note di rilascio
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Inizia_subito.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Inizia subito
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Monitorare_la_protezione_dei_dati.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Monitorare la protezione dei dati
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_ONTAP.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati ONTAP
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_on_premise.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle applicazioni on-premise
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Ripristinare_i_dati_delle_applicazioni_on_premise.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Ripristinare i dati delle applicazioni on-premise
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_native_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle applicazioni native del cloud
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Eseguire_il_backup_dei_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Eseguire il backup dei database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Eseguire_il_backup_dei_database_SAP_HANA_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Eseguire il backup dei database SAP HANA nativi del cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Eseguire_il_backup_di_database_SQL_Server_nativi_per_il_cloud_utilizzando_le_API_REST.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Ripristinare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Ripristinare i database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Clonare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Clonare i database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_delle_macchine_virtuali.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle macchine virtuali
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Backup_e_ripristino_dei_dati_Kubernetes.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati Kubernetes
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Riferimento.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Riferimento
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/gcp/sidebar/Conoscenza_e_supporto.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Conoscenza e supporto
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/it-it/bluexp-backup-recovery/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Raccolta di documenti PDF separati<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP primari on-premise su un sistema di storage secondario e su Google Cloud Storage.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="avvio-rapido">Avvio rapido</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Inizia subito seguendo questa procedura. I dettagli di ciascuna fase sono forniti nelle sezioni seguenti di questo argomento.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png" alt="Uno"></span> Identificare il metodo di connessione da utilizzare</div>
+<p>Scegli se connettere il tuo cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzerai una VPN o un'interconnessione cloud di Google e instraderai il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#identificare-il-metodo-di-connessione">Identificare il metodo di connessione</a>.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png" alt="Due"></span> Preparare il connettore BlueXP</div>
+<p>Se hai già un connettore implementato nel tuo VPC Google Cloud Platform, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a Google Cloud.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#preparare-il-connettore-bluexp">Scopri come creare un connettore e come definire le impostazioni di rete richieste.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png" alt="Tre"></span> Verificare i requisiti di licenza</div>
+<p>È necessario verificare i requisiti di licenza per Google Cloud e BlueXP.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p>Fare riferimento a. <a href="#verificare-i-requisiti-di-licenza">Verificare i requisiti di licenza</a>.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png" alt="Quattro"></span> Preparare i cluster ONTAP</div>
+<p>Scopri i tuoi cluster ONTAP in BlueXP, verifica che soddisfino i requisiti minimi e personalizza le impostazioni di rete in modo che i cluster possano connettersi a Google Cloud.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#preparare-i-cluster-ontap">Scopri come preparare i cluster ONTAP.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png" alt="Cinque"></span> Prepara Google Cloud come destinazione per il backup</div>
+<p>Impostare le autorizzazioni per il connettore per creare e gestire il bucket Google Cloud. Dovrai anche impostare le autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket di Google Cloud.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p>In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Google Cloud. <a href="#Prepare Google Cloud as your backup target">Scopri come preparare il tuo ambiente Google Cloud per ricevere i backup di ONTAP.</a></p>
+</div>
+<div class="paragraph quick-margin-para">
+<div class="title"><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png" alt="Sei"></span> Attivare i backup sui volumi ONTAP</div>
+<p>Selezionare l'ambiente di lavoro e fare clic su <strong>Enable &gt; Backup Volumes</strong> (Abilita &gt; volumi di backup) accanto al servizio di backup e ripristino nel pannello di destra. Quindi, seguire la procedura di installazione guidata per selezionare i criteri di replica e backup da utilizzare e i volumi di cui si desidera eseguire il backup.</p>
+</div>
+<div class="paragraph quick-margin-para">
+<p><a href="#attivare-i-backup-sui-volumi-ontap">Attivare i backup sui volumi ONTAP</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="identificare-il-metodo-di-connessione">Identificare il metodo di connessione</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scegliere quale dei due metodi di connessione utilizzare per la configurazione dei backup dai sistemi ONTAP on-premise allo storage cloud Google.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Connessione pubblica</strong> - consente di connettere direttamente il sistema ONTAP allo storage cloud di Google utilizzando un endpoint pubblico di Google.</p>
+</li>
+<li>
+<p><strong>Connessione privata</strong> - utilizza una VPN o Google Cloud Interconnect e instrada il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In alternativa, è possibile connettersi a un sistema ONTAP secondario per i volumi replicati utilizzando anche la connessione pubblica o privata.</p>
+</div>
+<div class="paragraph">
+<p>Il seguente diagramma mostra il metodo <strong>connessione pubblica</strong> e le connessioni che è necessario preparare tra i componenti. Il connettore deve essere implementato in Google Cloud Platform VPC.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_backup_onprem_gcp_public.png" alt="Un diagramma che mostra come il backup e ripristino BlueXP comunica tramite una connessione pubblica con i volumi sul cluster e lo storage Google Cloud in cui si trovano i file di backup."></span></p>
+</div>
+<div class="paragraph">
+<p>Il seguente diagramma mostra il metodo <strong>private Connection</strong> e le connessioni che è necessario preparare tra i componenti. Il connettore deve essere implementato in Google Cloud Platform VPC.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/diagram_cloud_backup_onprem_gcp_private.png" alt="Un diagramma che mostra come il backup e ripristino BlueXP comunica tramite una connessione privata con i volumi sul cluster e lo storage Google Cloud in cui si trovano i file di backup."></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-il-connettore-bluexp">Preparare il connettore BlueXP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>BlueXP Connector è il software principale per la funzionalità BlueXP. Per eseguire il backup e il ripristino dei dati ONTAP è necessario un connettore.</p>
+</div>
+<div class="sect2">
+<h3 id="creare-o-cambiare-connettori">Creare o cambiare connettori</h3>
+<div class="paragraph">
+<p>Se hai già un connettore implementato nel tuo VPC Google Cloud Platform, allora sei tutto impostato.</p>
+</div>
+<div class="paragraph">
+<p>In caso contrario, sarà necessario creare un connettore in tale posizione per eseguire il backup dei dati ONTAP su Google Cloud Storage. Non puoi utilizzare un connettore implementato in un altro cloud provider o on-premise.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html" target="_blank" rel="noopener">"Scopri di più sui connettori"</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-google.html" target="_blank" rel="noopener">"Installare un connettore nel GCP"</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-il-collegamento-in-rete-per-il-connettore">Preparare il collegamento in rete per il connettore</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Assicurarsi che il connettore disponga delle connessioni di rete richieste.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti connessioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Una connessione HTTPS tramite la porta 443 al servizio di backup e ripristino BlueXP e allo storage Google Cloud (<a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-set-up-networking-google.html#endpoints-contacted-for-day-to-day-operations" target="_blank" rel="noopener">"vedere l'elenco degli endpoint"</a>)</p>
+</li>
+<li>
+<p>Una connessione HTTPS sulla porta 443 alla LIF di gestione del cluster ONTAP</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Abilitare Private Google Access (o Private Service Connect) sulla subnet in cui si intende implementare il connettore. <a href="https://cloud.google.com/vpc/docs/configure-private-google-access" target="_blank" rel="noopener">"Accesso privato a Google"</a> oppure <a href="https://cloud.google.com/vpc/docs/configure-private-service-connect-apis#on-premises" target="_blank" rel="noopener">"Connessione al servizio privato"</a> Sono necessari se si dispone di una connessione diretta dal cluster ONTAP al VPC e si desidera che la comunicazione tra il connettore e lo storage cloud di Google rimanga nella rete privata virtuale (una connessione <strong>privata</strong>).</p>
+<div class="paragraph">
+<p>Seguire le istruzioni di Google per configurare queste opzioni di accesso privato. Assicurarsi che i server DNS siano configurati in modo da puntare <code>www.googleapis.com</code> e. <code>storage.googleapis.com</code> Agli indirizzi IP interni (privati) corretti.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="sect2">
+<h3 id="verificare-o-aggiungere-le-autorizzazioni-al-connettore">Verificare o aggiungere le autorizzazioni al connettore</h3>
+<div class="paragraph">
+<p>Per utilizzare la funzionalità di backup e ripristino di BlueXP, è necessario disporre di autorizzazioni specifiche nel ruolo del connettore in modo che possa accedere al servizio Google Cloud BigQuery. Esaminare le autorizzazioni riportate di seguito e seguire la procedura per modificare il criterio.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>In <a href="https://console.cloud.google.com" target="_blank" rel="noopener">"Console Google Cloud"</a>, Accedere alla pagina <strong>ruoli</strong>.</p>
+</li>
+<li>
+<p>Utilizzando l'elenco a discesa nella parte superiore della pagina, selezionare il progetto o l'organizzazione che contiene il ruolo che si desidera modificare.</p>
+</li>
+<li>
+<p>Selezionare un ruolo personalizzato.</p>
+</li>
+<li>
+<p>Selezionare <strong>Edit role</strong> (Modifica ruolo) per aggiornare le autorizzazioni del ruolo.</p>
+</li>
+<li>
+<p>Selezionare <strong>Add Permissions</strong> (Aggiungi permessi) per aggiungere le seguenti nuove autorizzazioni al ruolo.</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">bigquery.jobs.get
+bigquery.jobs.list
+bigquery.jobs.listAll
+bigquery.datasets.create
+bigquery.datasets.get
+bigquery.jobs.create
+bigquery.tables.get
+bigquery.tables.getData
+bigquery.tables.list
+bigquery.tables.create</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Aggiorna</strong> per salvare il ruolo modificato.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="verificare-i-requisiti-di-licenza">Verificare i requisiti di licenza</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Prima di poter attivare il backup e il ripristino BlueXP per il cluster, è necessario sottoscrivere un'offerta PayGo BlueXP Marketplace di Google oppure acquistare e attivare una licenza BYOL di backup e ripristino BlueXP da NetApp. Queste licenze sono destinate al tuo account e possono essere utilizzate su più sistemi.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Per le licenze PAYGO di backup e ripristino BlueXP, è necessario un abbonamento a <a href="https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project" target="_blank" rel="noopener">"Offerta NetApp BlueXP di Google Marketplace"</a>. La fatturazione per il backup e il ripristino BlueXP viene effettuata tramite questo abbonamento.</p>
+</li>
+<li>
+<p>Per le licenze BYOL di backup e ripristino BlueXP, è necessario il numero di serie di NetApp che consente di utilizzare il servizio per la durata e la capacità della licenza. <a href="task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license">"Scopri come gestire le tue licenze BYOL"</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>È necessario disporre di un abbonamento Google per lo spazio di storage a oggetti in cui verranno posizionati i backup.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Regioni supportate</strong></p>
+</div>
+<div class="paragraph">
+<p>Puoi creare backup da sistemi on-premise a Google Cloud Storage in tutte le regioni <a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">"Dove è supportato Cloud Volumes ONTAP"</a>. Specificare la regione in cui verranno memorizzati i backup quando si imposta il servizio.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-i-cluster-ontap">Preparare i cluster ONTAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dovrai preparare il tuo sistema ONTAP on-premise di origine e qualsiasi altro sistema ONTAP o Cloud Volumes ONTAP secondario on-premise.</p>
+</div>
+<div class="paragraph">
+<p>La preparazione dei cluster ONTAP prevede i seguenti passaggi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Scopri i tuoi sistemi ONTAP in BlueXP</p>
+</li>
+<li>
+<p>Verificare i requisiti di sistema di ONTAP</p>
+</li>
+<li>
+<p>Verificare i requisiti di rete di ONTAP per il backup dei dati nello storage a oggetti</p>
+</li>
+<li>
+<p>Verificare i requisiti di rete di ONTAP per la replica dei volumi</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="scopri-i-tuoi-sistemi-ontap-in-bluexp">Scopri i tuoi sistemi ONTAP in BlueXP</h3>
+<div class="paragraph">
+<p>Il sistema ONTAP di origine on-premise e qualsiasi sistema ONTAP o Cloud Volumes ONTAP secondario on-premise devono essere disponibili su BlueXP Canvas.</p>
+</div>
+<div class="paragraph">
+<p>Per aggiungere il cluster, è necessario conoscere l'indirizzo IP di gestione del cluster e la password dell'account utente amministratore.<br>
+<a href="https://docs.netapp.com/us-en/bluexp-ontap-onprem/task-discovering-ontap.html" target="_blank" rel="noopener">"Scopri come individuare un cluster"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verificare-i-requisiti-di-sistema-di-ontap">Verificare i requisiti di sistema di ONTAP</h3>
+<div class="paragraph">
+<p>Assicurarsi che siano soddisfatti i seguenti requisiti ONTAP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Almeno ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.</p>
+</li>
+<li>
+<p>Una licenza SnapMirror (inclusa nel Premium Bundle o nel Data Protection Bundle).</p>
+<div class="paragraph">
+<p><strong>Nota:</strong> il "Hybrid Cloud Bundle" non è richiesto quando si utilizza il backup e ripristino BlueXP.</p>
+</div>
+<div class="paragraph">
+<p>Scopri come <a href="https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html" target="_blank" rel="noopener">"gestire le licenze del cluster"</a>.</p>
+</div>
+</li>
+<li>
+<p>L'ora e il fuso orario sono impostati correttamente. Scopri come <a href="https://docs.netapp.com/us-en/ontap/system-admin/manage-cluster-time-concept.html" target="_blank" rel="noopener">"configurare l'ora del cluster"</a>.</p>
+</li>
+<li>
+<p>Se si intende replicare i dati, è necessario verificare che i sistemi di origine e di destinazione eseguano versioni di ONTAP compatibili prima di replicare i dati.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/data-protection/compatible-ontap-versions-snapmirror-concept.html" target="_blank" rel="noopener">"Visualizza le versioni di ONTAP compatibili per le relazioni SnapMirror"</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verificare-i-requisiti-di-rete-di-ontap-per-il-backup-dei-dati-nello-storage-a-oggetti">Verificare i requisiti di rete di ONTAP per il backup dei dati nello storage a oggetti</h3>
+<div class="paragraph">
+<p>È necessario configurare i seguenti requisiti sul sistema che si connette allo storage a oggetti.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Per un'architettura di backup fan-out, configurare le seguenti impostazioni sul sistema <em>primario</em>.</p>
+</li>
+<li>
+<p>Per un'architettura di backup a cascata, configurare le seguenti impostazioni sul sistema <em>secondario</em>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Sono necessari i seguenti requisiti di rete del cluster ONTAP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Il cluster ONTAP avvia una connessione HTTPS sulla porta 443 dalla LIF dell'intercluster allo storage cloud di Google per le operazioni di backup e ripristino.</p>
+<div class="paragraph">
+<p>ONTAP legge e scrive i dati da e verso lo storage a oggetti. Lo storage a oggetti non viene mai avviato, ma risponde.</p>
+</div>
+</li>
+<li>
+<p>ONTAP richiede una connessione in entrata dal connettore alla LIF di gestione del cluster. Il connettore può risiedere in un VPC Google Cloud Platform.</p>
+</li>
+<li>
+<p>Su ogni nodo ONTAP che ospita i volumi di cui si desidera eseguire il backup è richiesta una LIF intercluster. La LIF deve essere associata a <em>IPSpace</em> che ONTAP deve utilizzare per connettersi allo storage a oggetti. <a href="https://docs.netapp.com/us-en/ontap/networking/standard_properties_of_ipspaces.html" target="_blank" rel="noopener">"Scopri di più su IPspaces"</a>.</p>
+<div class="paragraph">
+<p>Quando si imposta il backup e il ripristino di BlueXP, viene richiesto di utilizzare IPSpace. È necessario scegliere l'IPSpace a cui ciascun LIF è associato. Potrebbe trattarsi dell'IPSpace "predefinito" o di un IPSpace personalizzato creato.</p>
+</div>
+</li>
+<li>
+<p>I LIF intercluster dei nodi sono in grado di accedere all'archivio di oggetti.</p>
+</li>
+<li>
+<p>I server DNS sono stati configurati per la VM di storage in cui si trovano i volumi. Scopri come <a href="https://docs.netapp.com/us-en/ontap/networking/configure_dns_services_auto.html" target="_blank" rel="noopener">"Configurare i servizi DNS per SVM"</a>.</p>
+<div class="paragraph">
+<p>Se si utilizza Private Google Access o Private Service Connect, assicurarsi che i server DNS siano configurati in modo da puntare <code>storage.googleapis.com</code> Al corretto indirizzo IP interno (privato).</p>
+</div>
+</li>
+<li>
+<p>Se si utilizza un IPSpace diverso da quello predefinito, potrebbe essere necessario creare un percorso statico per accedere allo storage a oggetti.</p>
+</li>
+<li>
+<p>Aggiornare le regole del firewall, se necessario, per consentire le connessioni di backup e ripristino BlueXP da ONTAP allo storage a oggetti tramite la porta 443 e il traffico di risoluzione dei nomi dalla VM dello storage al server DNS tramite la porta 53 (TCP/UDP).</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="verificare-i-requisiti-di-rete-di-ontap-per-la-replica-dei-volumi">Verificare i requisiti di rete di ONTAP per la replica dei volumi</h3>
+<div class="paragraph">
+<p>Se intendi creare volumi replicati su un sistema ONTAP secondario utilizzando il backup e recovery di BlueXP, assicurati che i sistemi di origine e destinazione soddisfino i seguenti requisiti di rete.</p>
+</div>
+<div class="sect3">
+<h4 id="requisiti-di-rete-ontap-on-premise">Requisiti di rete ONTAP on-premise</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Se il cluster si trova in sede, è necessario disporre di una connessione dalla rete aziendale alla rete virtuale nel cloud provider. Si tratta in genere di una connessione VPN.</p>
+</li>
+<li>
+<p>I cluster ONTAP devono soddisfare ulteriori requisiti di subnet, porta, firewall e cluster.</p>
+<div class="paragraph">
+<p>Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-premise, esaminare i requisiti di peering per i sistemi ONTAP on-premise. <a href="https://docs.netapp.com/us-en/ontap-sm-classic/peering/reference_prerequisites_for_cluster_peering.html" target="_blank" rel="noopener">"Visualizzare i prerequisiti per il peering dei cluster nella documentazione di ONTAP"</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="requisiti-di-rete-cloud-volumes-ontap">Requisiti di rete Cloud Volumes ONTAP</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Il gruppo di sicurezza dell'istanza deve includere le regole in entrata e in uscita richieste, in particolare le regole per ICMP e le porte 11104 e 11105. Queste regole sono incluse nel gruppo di protezione predefinito.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="preparare-google-cloud-storage-come-destinazione-di-backup">Preparare Google Cloud Storage come destinazione di backup</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>La preparazione di Google Cloud Storage come destinazione di backup prevede i seguenti passaggi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Impostare le autorizzazioni.</p>
+</li>
+<li>
+<p>(Facoltativo) Crea i tuoi bucket. (Il servizio creerà i bucket per te, se lo desideri).</p>
+</li>
+<li>
+<p>(Facoltativo) impostare le chiavi gestite dal cliente per la crittografia dei dati</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="impostare-le-autorizzazioni">Impostare le autorizzazioni</h3>
+<div class="paragraph">
+<p>Quando si imposta il backup, è necessario fornire chiavi di accesso allo storage per un account di servizio che dispone di autorizzazioni specifiche. Un account di servizio consente il backup e il recovery di BlueXP per autenticare e accedere ai bucket Cloud Storage utilizzati per memorizzare i backup. Le chiavi sono necessarie in modo che Google Cloud Storage sappia chi sta effettuando la richiesta.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>In <a href="https://console.cloud.google.com" target="_blank" rel="noopener">"Console Google Cloud"</a>, Accedere alla pagina <strong>ruoli</strong>.</p>
+</li>
+<li>
+<p><a href="https://cloud.google.com/iam/docs/creating-custom-roles#creating_a_custom_role" target="_blank" rel="noopener">"Creare un nuovo ruolo"</a> con le seguenti autorizzazioni:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">storage.buckets.create
+storage.buckets.delete
+storage.buckets.get
+storage.buckets.list
+storage.buckets.update
+storage.buckets.getIamPolicy
+storage.multipartUploads.create
+storage.objects.create
+storage.objects.delete
+storage.objects.get
+storage.objects.list
+storage.objects.update</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Nella console di Google Cloud, <a href="https://console.cloud.google.com/iam-admin/serviceaccounts" target="_blank" rel="noopener">"Accedere alla pagina Service accounts (account servizio)"</a>.</p>
+</li>
+<li>
+<p>Seleziona il tuo progetto Cloud.</p>
+</li>
+<li>
+<p>Selezionare <strong>Crea account servizio</strong> e fornire le informazioni richieste:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Dettagli account servizio</strong>: Inserire un nome e una descrizione.</p>
+</li>
+<li>
+<p><strong>Consenti a questo account di servizio l'accesso al progetto</strong>: Seleziona il ruolo personalizzato appena creato.</p>
+</li>
+<li>
+<p>Selezionare <strong>fine</strong>.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Passare a. <a href="https://console.cloud.google.com/storage/settings" target="_blank" rel="noopener">"Impostazioni storage GCP"</a> e creare le chiavi di accesso per l'account di servizio:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Selezionare un progetto e scegliere <strong>interoperabilità</strong>. Se non è già stato fatto, selezionare <strong>Enable Interoperability access</strong> (attiva accesso all'interoperabilità).</p>
+</li>
+<li>
+<p>In <strong>chiavi di accesso per gli account di servizio</strong>, selezionare <strong>Crea una chiave per un account di servizio</strong>, selezionare l'account di servizio appena creato e fare clic su <strong>Crea chiave</strong>.</p>
+<div class="paragraph">
+<p>Quando si configura il servizio di backup, sarà necessario inserire le chiavi in BlueXP backup and Recovery in un secondo momento.</p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="crea-i-tuoi-bucket">Crea i tuoi bucket</h3>
+<div class="paragraph">
+<p>Per impostazione predefinita, il servizio crea i bucket. In alternativa, se si desidera utilizzare i propri bucket, è possibile crearli prima di avviare la procedura guidata di attivazione del backup e selezionare tali bucket nella procedura guidata.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container" target="_blank" rel="noopener">"Scopri di più sulla creazione di bucket personalizzati"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="impostare-le-chiavi-di-crittografia-gestite-dal-cliente-cmek-per-la-crittografia-dei-dati">Impostare le chiavi di crittografia gestite dal cliente (CMEK) per la crittografia dei dati</h3>
+<div class="paragraph">
+<p>È possibile utilizzare le proprie chiavi gestite dal cliente per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite gestite da Google. Sono supportate sia le chiavi cross-region che cross-project, in modo da poter scegliere un progetto per un bucket diverso dal progetto della chiave CMEK.</p>
+</div>
+<div class="paragraph">
+<p>Se stai pensando di utilizzare le tue chiavi gestite dal cliente:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Per aggiungere queste informazioni nell'attivazione guidata, è necessario disporre di Key Ring e Key Name (Nome chiave). <a href="https://cloud.google.com/kms/docs/cmek" target="_blank" rel="noopener">"Scopri di più sulle chiavi di crittografia gestite dal cliente"</a>.</p>
+</li>
+<li>
+<p>È necessario verificare che le autorizzazioni richieste siano incluse nel ruolo del connettore:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">cloudkms.cryptoKeys.get
+cloudkms.cryptoKeys.getIamPolicy
+cloudkms.cryptoKeys.list
+cloudkms.cryptoKeys.setIamPolicy
+cloudkms.keyRings.get
+cloudkms.keyRings.getIamPolicy
+cloudkms.keyRings.list
+cloudkms.keyRings.setIamPolicy</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>È necessario verificare che l'API "Cloud Key Management Service (KMS)" di Google sia attivata nel progetto. Vedere <a href="https://cloud.google.com/apis/docs/getting-started#enabling_apis">"Documentazione di Google Cloud: Abilitazione delle API"</a> per ulteriori informazioni.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Considerazioni CMEK:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sono supportate sia le chiavi HSM (hardware-backed) che quelle generate dal software.</p>
+</li>
+<li>
+<p>Sono supportate entrambe le chiavi Cloud KMS appena create o importate.</p>
+</li>
+<li>
+<p>Sono supportate solo le chiavi regionali, le chiavi globali non sono supportate.</p>
+</li>
+<li>
+<p>Attualmente, è supportato solo lo scopo di "crittografia/decrittografia simmetrica".</p>
+</li>
+<li>
+<p>All'agente di servizio associato all'account di storage viene assegnato il ruolo IAM "CryptoKey Encrypter/Decrypter (role/cloudkms.cryptKeyEncrypterDecrypter)" dal backup e ripristino BlueXP.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="attivare-i-backup-sui-volumi-ontap">Attivare i backup sui volumi ONTAP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Attiva i backup in qualsiasi momento direttamente dall'ambiente di lavoro on-premise.</p>
+</div>
+<div class="paragraph">
+<p>La procedura guidata consente di eseguire le seguenti operazioni principali:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#selezionare-i-volumi-di-cui-si-desidera-eseguire-il-backup">Selezionare i volumi di cui si desidera eseguire il backup</a></p>
+</li>
+<li>
+<p><a href="#definire-la-strategia-di-backup">Definire la strategia di backup</a></p>
+</li>
+<li>
+<p><a href="#rivedere-le-selezioni">Rivedere le selezioni</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Puoi anche farlo <a href="#mostra-i-comandi-api">Mostra i comandi API</a> durante la fase di revisione, è possibile copiare il codice per automatizzare l'attivazione del backup per gli ambienti di lavoro futuri.</p>
+</div>
+<div class="sect2">
+<h3 id="avviare-la-procedura-guidata">Avviare la procedura guidata</h3>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Accedere alla procedura guidata attiva backup e ripristino utilizzando uno dei seguenti metodi:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Nell'area di lavoro di BlueXP, selezionare l'ambiente di lavoro e selezionare <strong>Enable &gt; Backup Volumes</strong> (Abilita &gt; volumi di backup) accanto al servizio di backup e ripristino nel pannello a destra.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_backup_onprem_enable.png" alt="Una schermata che mostra il pulsante di abilitazione del backup e ripristino disponibile dopo aver selezionato un ambiente di lavoro."></span></p>
+</div>
+<div class="paragraph">
+<p>Se la destinazione di Google Cloud Storage per i backup esiste come ambiente di lavoro su Canvas, è possibile trascinare il cluster ONTAP sullo storage a oggetti di Google Cloud.</p>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Volumes</strong> (volumi) nella barra Backup and Recovery (Backup e ripristino). Dalla scheda volumi, selezionare <strong>azioni</strong> <span class="image"><img src="./media/icon-action.png" alt="Icona delle azioni"></span> E selezionare <strong>attiva backup</strong> per un singolo volume (che non ha già attivato la replica o il backup nell'archiviazione a oggetti). .</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>La pagina Introduzione della procedura guidata mostra le opzioni di protezione, tra cui snapshot locali, replica e backup. Se è stata eseguita la seconda opzione in questa fase, viene visualizzata la pagina Definisci strategia di backup con un volume selezionato.</p>
+</div>
+</li>
+<li>
+<p>Continuare con le seguenti opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si dispone già di un connettore BlueXP, tutti i dispositivi sono impostati. Seleziona <strong>Avanti</strong>.</p>
+</li>
+<li>
+<p>Se non si dispone già di un connettore BlueXP, viene visualizzata l'opzione <strong>Aggiungi un connettore</strong>. Fare riferimento a. <a href="#preparare-il-connettore-bluexp">Preparare il connettore BlueXP</a>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selezionare-i-volumi-di-cui-si-desidera-eseguire-il-backup">Selezionare i volumi di cui si desidera eseguire il backup</h3>
+<div class="paragraph">
+<p>Scegliere i volumi che si desidera proteggere. Per volume protetto si intende un volume con una o più delle seguenti opzioni: Policy di snapshot, policy di replica, policy di backup su oggetti.</p>
+</div>
+<div class="paragraph">
+<p>Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi selezionare un mix di questi volumi quando si attiva il backup per un ambiente di lavoro. Scopri come <a href="task-manage-backups-ontap.html#activate-backup-on-additional-volumes-in-a-working-environment">"attivare il backup per volumi aggiuntivi nell'ambiente di lavoro"</a> (FlexVol o FlexGroup) dopo aver configurato il backup per i volumi iniziali.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.</p>
+</li>
+<li>
+<p>I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. I volumi in modalità conformità SnapLock richiedono ONTAP 9,14 o versione successiva.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">Fasi</div>
+<p>Se per i volumi selezionati sono già state applicate le policy di snapshot o replica, le policy selezionate in seguito sovrascriveranno quelle esistenti.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Nella pagina Select Volumes (Seleziona volumi), selezionare il volume o i volumi che si desidera proteggere.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>In alternativa, filtrare le righe per visualizzare solo i volumi con determinati tipi di volume, stili e altro ancora per semplificare la selezione.</p>
+</li>
+<li>
+<p>Dopo aver selezionato il primo volume, è possibile selezionare tutti i volumi FlexVol (è possibile selezionare solo i volumi FlexGroup uno alla volta). Per eseguire il backup di tutti i volumi FlexVol esistenti, selezionare prima un volume, quindi selezionare la casella nella riga del titolo. (<span class="image"><img src="./media/button_backup_all_volumes.png" alt=""></span>).</p>
+</li>
+<li>
+<p>Per eseguire il backup di singoli volumi, selezionare la casella relativa a ciascun volume (<span class="image"><img src="./media/button_backup_1_volume.png" alt=""></span>).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Avanti</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="definire-la-strategia-di-backup">Definire la strategia di backup</h3>
+<div class="paragraph">
+<p>La definizione della strategia di backup implica l'impostazione delle seguenti opzioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Sia che si desideri una o tutte le opzioni di backup: Snapshot locali, replica e backup su storage a oggetti</p>
+</li>
+<li>
+<p>Architettura</p>
+</li>
+<li>
+<p>Policy Snapshot locale</p>
+</li>
+<li>
+<p>Target e policy di replica</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se i volumi scelti hanno policy di replica e snapshot diverse da quelle selezionate in questa fase, le policy esistenti verranno sovrascritte.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Backup delle informazioni sullo storage a oggetti (provider, crittografia, rete, policy di backup e opzioni di esportazione).</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Nella pagina Definisci strategia di backup, scegliere una o tutte le opzioni seguenti. Per impostazione predefinita, vengono selezionate tutte e tre le opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Local Snapshots</strong>: Se si esegue la replica o il backup sullo storage a oggetti, è necessario creare snapshot locali.</p>
+</li>
+<li>
+<p><strong>Replication</strong>: Consente di creare volumi replicati su un altro sistema storage ONTAP.</p>
+</li>
+<li>
+<p><strong>Backup</strong>: Esegue il backup dei volumi nello storage a oggetti.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Architettura</strong>: Se si sceglie la replica e il backup, scegliere uno dei seguenti flussi di informazioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Cascading</strong>: Flussi di informazioni dal primario al secondario e dal secondario allo storage a oggetti.</p>
+</li>
+<li>
+<p><strong>Fan out</strong>: I flussi di informazioni dal primario al secondario <em>e</em> dallo storage primario a oggetti.</p>
+<div class="paragraph">
+<p>Per ulteriori informazioni su queste architetture, fare riferimento a. <a href="concept-protection-journey.html">"Pianifica il tuo percorso di protezione"</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Istantanea locale</strong>: Scegliere un criterio istantanea esistente o crearne uno nuovo.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Per creare un criterio personalizzato prima di attivare l'istantanea, fare riferimento alla sezione <a href="task-create-policies-ontap.html">"Creare un criterio"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Per creare un criterio, selezionare <strong>Crea nuovo criterio</strong> ed effettuare le seguenti operazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Immettere il nome del criterio.</p>
+</li>
+<li>
+<p>Selezionare fino a 5 programmi, generalmente di frequenze diverse.</p>
+</li>
+<li>
+<p>Selezionare <strong>Crea</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Replication</strong>: Impostare le seguenti opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Destinazione della replica</strong>: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.</p>
+</li>
+<li>
+<p><strong>Criterio di replica</strong>: Scegliere un criterio di replica esistente o crearne uno nuovo.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Per creare un criterio personalizzato prima di attivare la replica, fare riferimento alla sezione <a href="task-create-policies-ontap.html">"Creare un criterio"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Per creare un criterio, selezionare <strong>Crea nuovo criterio</strong> ed effettuare le seguenti operazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Immettere il nome del criterio.</p>
+</li>
+<li>
+<p>Selezionare fino a 5 programmi, generalmente di frequenze diverse.</p>
+</li>
+<li>
+<p>Selezionare <strong>Crea</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Backup su oggetto</strong>: Se si seleziona <strong>Backup</strong>, impostare le seguenti opzioni:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Provider</strong>: Selezionare <strong>Google Cloud</strong>.</p>
+</li>
+<li>
+<p><strong>Impostazioni provider</strong>: Immettere i dettagli del provider e la regione in cui verranno memorizzati i backup.</p>
+<div class="paragraph">
+<p>Creare un nuovo bucket o selezionarne uno già creato.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Se si desidera eseguire il tiering dei file di backup più vecchi sullo storage di Google Cloud Archive per un'ulteriore ottimizzazione dei costi, assicurarsi che il bucket disponga della regola del ciclo di vita appropriata.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Immettere la chiave di accesso e la chiave segreta di Google Cloud.</p>
+</div>
+</li>
+<li>
+<p><strong>Chiave di crittografia</strong>: Se è stato creato un nuovo account di storage Google Cloud, immettere le informazioni sulla chiave di crittografia fornite dal provider. Per gestire la crittografia dei dati, scegli se utilizzare le chiavi di crittografia predefinite di Google Cloud o le chiavi gestite dal cliente dall'account Google Cloud.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/note.svg" alt="Nota">
+</td>
+<td class="content">
+Se hai scelto un account di storage Google Cloud esistente, le informazioni di crittografia sono già disponibili, quindi non è necessario immetterle ora.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Se si sceglie di utilizzare le proprie chiavi gestite dal cliente, inserire il portachiavi e il nome della chiave. <a href="https://cloud.google.com/kms/docs/cmek" target="_blank" rel="noopener">"Scopri di più sulle chiavi di crittografia gestite dal cliente"</a>.</p>
+</div>
+</li>
+<li>
+<p><strong>Networking</strong>: Scegliere IPSpace.</p>
+<div class="paragraph">
+<p>IPSpace nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. Le LIF intercluster per questo IPSpace devono disporre di accesso a Internet in uscita.</p>
+</div>
+</li>
+<li>
+<p><strong>Criterio di backup</strong>: Selezionare un criterio di archiviazione di Backup in oggetto esistente o crearne uno nuovo.</p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/bluexp-backup-recovery/images/tip.svg" alt="Suggerimento">
+</td>
+<td class="content">
+Per creare un criterio personalizzato prima di attivare il backup, fare riferimento alla sezione <a href="task-create-policies-ontap.html">"Creare un criterio"</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Per creare un criterio, selezionare <strong>Crea nuovo criterio</strong> ed effettuare le seguenti operazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Immettere il nome del criterio.</p>
+</li>
+<li>
+<p>Selezionare fino a 5 programmi, generalmente di frequenze diverse.</p>
+</li>
+<li>
+<p>Selezionare <strong>Crea</strong>.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup</strong>: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Selezionare <strong>Avanti</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="rivedere-le-selezioni">Rivedere le selezioni</h3>
+<div class="paragraph">
+<p>Questa è la possibilità di rivedere le selezioni e apportare eventuali modifiche.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Nella pagina Review (esamina), rivedere le selezioni.</p>
+</li>
+<li>
+<p>Facoltativamente, selezionare la casella <strong>Sincronizza automaticamente le etichette dei criteri Snapshot con le etichette dei criteri di replica e backup</strong>. In questo modo, vengono create istantanee con un'etichetta che corrisponde alle etichette dei criteri di replica e backup.</p>
+</li>
+<li>
+<p>Selezionare <strong>Activate Backup</strong> (attiva backup).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>Il backup e ripristino di BlueXP inizia a eseguire i backup iniziali dei volumi. Il trasferimento di riferimento del volume replicato e del file di backup include una copia completa dei dati del sistema di storage primario. I trasferimenti successivi contengono copie differenziali dei dati del sistema di storage primario contenuti nelle copie Snapshot.</p>
+</div>
+<div class="paragraph">
+<p>Nel cluster di destinazione viene creato un volume replicato che verrà sincronizzato con il volume di origine.</p>
+</div>
+<div class="paragraph">
+<p>Un bucket di Google Cloud Storage viene creato automaticamente nell'account di servizio indicato dalla chiave di accesso e dalla chiave segreta di Google immessi e i file di backup vengono memorizzati in tale account. Viene visualizzata la dashboard di backup del volume, che consente di monitorare lo stato dei backup.</p>
+</div>
+<div class="paragraph">
+<p>È inoltre possibile monitorare lo stato dei processi di backup e ripristino utilizzando <a href="task-monitor-backup-jobs.html" target="_blank" rel="noopener">"Pannello Job Monitoring (monitoraggio processi)"</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="mostra-i-comandi-api">Mostra i comandi API</h3>
+<div class="paragraph">
+<p>È possibile visualizzare e, facoltativamente, copiare i comandi API utilizzati nella procedura guidata attiva backup e ripristino. Questa operazione potrebbe essere utile per automatizzare l'attivazione del backup negli ambienti di lavoro futuri.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dalla procedura guidata Activate backup and recovery (attiva backup e ripristino), selezionare <strong>View API request</strong> (Visualizza richiesta API).</p>
+</li>
+<li>
+<p>Per copiare i comandi negli Appunti, selezionare l'icona <strong>Copia</strong>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quali-sono-le-prossime-novità">Quali sono le prossime novità?</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>È possibile <a href="task-manage-backups-ontap.html" target="_blank" rel="noopener">"gestire i file di backup e le policy di backup"</a>. Ciò include l'avvio e l'arresto dei backup, l'eliminazione dei backup, l'aggiunta e la modifica della pianificazione di backup e molto altro ancora.</p>
+</li>
+<li>
+<p>È possibile <a href="task-manage-backup-settings-ontap.html" target="_blank" rel="noopener">"gestire le impostazioni di backup a livello di cluster"</a>. Ciò include la modifica delle chiavi di storage utilizzate da ONTAP per accedere allo storage cloud, la modifica della larghezza di banda della rete disponibile per caricare i backup nello storage a oggetti, la modifica dell'impostazione di backup automatico per i volumi futuri e molto altro ancora.</p>
+</li>
+<li>
+<p>Puoi anche farlo <a href="task-restore-backups-ontap.html" target="_blank" rel="noopener">"ripristinare volumi, cartelle o singoli file da un file di backup"</a> A un sistema Cloud Volumes ONTAP in Google o a un sistema ONTAP on-premise.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">In questa pagina</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Condizioni per l'utilizzo</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Direttiva sulla privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Direttiva sui cookie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Impostazioni cookie</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Invia feedback su questa pagina</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/it-it/bluexp-backup-recovery/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/it-it/bluexp-backup-recovery/js/prism.js'></script>
+      <script type="text/javascript" src='/it-it/bluexp-backup-recovery/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/it-it/bluexp-backup-recovery/js/ie-tabbed-blocks.js'></script>
+    <script src='/it-it/bluexp-backup-recovery/js/ie-sidebar.js'></script>
+  </body>
+
+</html>

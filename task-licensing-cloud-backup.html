@@ -1,0 +1,2718 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head class="at-element-marker">
+  <title>Impostare le licenze per il backup e ripristino BlueXP | NetApp Documentation</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
+  <meta http-equiv="language" content="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Impostare le licenze per il backup e ripristino BlueXP | NetApp Documentation" />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+	<meta property="og:description" content="Puoi concedere in licenza il backup e il recovery BlueXP acquistando un abbonamento al mercato annuale o pay-as-you-go dal tuo cloud provider o acquistando u..." />
+  <meta property="og:image" content="https://docs.netapp.com/it-it/bluexp-backup-recovery/images/logo-tophat-social.png" />
+  <meta property="og:image:alt" content="NetApp Logo" />
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="encoding" content="utf-8">
+  <meta http-equiv="nss-type" content="Product Documentation"/>
+  <meta http-equiv="nss-subtype" content="User Guide"/><meta name="description" content="Puoi concedere in licenza il backup e il recovery BlueXP acquistando un abbonamento al mercato annuale o pay-as-you-go dal tuo cloud provider o acquistando u...">
+  <meta name="keywords" content=" license, licensing, updating license, paygo license, byol license, nlf, license generator, backup license, add backup license, update backup license, annual"><!-- Icons -->
+  <link rel="icon" href="/it-it/bluexp-backup-recovery/images/favicon.ico" type="image/x-icon">
+
+  <!-- RSS Feed --><link rel="alternate" type="application/rss+xml" title="NetApp Documentation" href="/it-it/bluexp-backup-recovery/feed.xml"><!-- CSS Definitions: NetApp CSS should be defined after generic css -->
+
+
+  <!-- Combined CSS -->
+  <link rel="stylesheet" type="text/css" href="/it-it/bluexp-backup-recovery/css/ie-netappdocs.css">
+
+  
+  <link rel="stylesheet" href="/it-it/bluexp-backup-recovery/css/ie-landing-page.css" type="text/css">
+  <link rel="stylesheet" href="/it-it/bluexp-backup-recovery/css/ie-tabbed-blocks.css" type="text/css">
+  <!-- Canonical url -->
+  <link rel="canonical" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="x-default" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="it" href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="en" href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="ja" href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="ko" href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="zh-Hans" href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="de" href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="es" href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <link rel="alternate" hreflang="fr" href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-licensing-cloud-backup.html" />
+  <!-- Top level site integrations -->
+<script type="text/javascript" src="https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js"></script>
+    <script type="text/javascript" src="https://cdn.cookielaw.org/scripttemplates/otSDKStub.js" charset="UTF-8" data-document-language="true" data-domain-script="72570c5c-fe30-465f-b0e0-b77f7fb4ae34"></script>
+    <script type="text/javascript">function OptanonWrapper() { }</script>
+    <script type="text/plain" class="optanon-category-C0002" src="https://assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js"></script>
+    <script class="optanon-category-C0001">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.setAttributeNode(d.createAttribute('data-ot-ignore'));j.setAttribute('class','optanon-category-C0001');j.async=true;
+        j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl+'';f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-MD73T9M');</script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  
+  <script>
+    $(document).ready(function() {
+      const MASTHEAD_OFFSET = 65;
+      const SECTIONS = $("main h2, main h3");
+      // PAGE NAV - Init
+      if (SECTIONS.length == 0) {
+        // remove if there is no elements
+        /*
+        $("#ie-right-navbar").remove();
+        $("#ie-right-navbar-collapse").remove();
+        */
+      } else {
+        $(".page-nav-title").css('display', 'block');
+        for (var i = 0; i < SECTIONS.length; i++) {
+          var sectionId = $(SECTIONS[i]).attr('id');
+          var sectionName = $(SECTIONS[i]).text();
+          var subClass = $(SECTIONS[i]).is("h3") ? ' page-nav__sublink' : '';
+          $("#page-menu").append('<li class="page-nav-item"><a href="#' + sectionId + '" class="page-nav__link' + subClass + '">' + sectionName + '</a></li>');
+        }
+      }
+    });
+  </script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/it-it/bluexp-backup-recovery/js/na-search.js'></script><script src='/it-it/bluexp-backup-recovery/js/ie-clouddocs.js'></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><script>
+    /*
+      $(document).ready(function() {
+          $("#tg-sb-link").click(function() {
+              $("#tg-sb-sidebar").toggle();
+              $("#tg-sb-content").toggleClass('col-md-9');
+              $("#tg-sb-content").toggleClass('col-md-12');
+              $("#tg-sb-icon").toggleClass('fa-toggle-on');
+              $("#tg-sb-icon").toggleClass('fa-toggle-off');
+          });
+      });
+      */
+  </script>
+  <script src='/it-it/bluexp-backup-recovery/js/custom-dropdown.js'></script>
+  <script src='/it-it/bluexp-backup-recovery/js/FileSaver.min.js'></script>
+  <script src='/it-it/bluexp-backup-recovery/js/jszip-utils.min.js'></script>
+  <script src='/it-it/bluexp-backup-recovery/js/jszip.min.js'></script><script src='/it-it/bluexp-backup-recovery/js/ie-pdf-ux.js'></script></head>
+
+
+  <body class role="document" data-flavor="">
+    <div class="skip-to-main">
+      <a href="#main" >Skip to main content</a>
+    </div><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MD73T9M"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><div id="page" class="">
+      <div id="ie-phone-menu" class=""></div>
+      <div id="ie-content-wrap" class="">
+        <nav id="ie-new-header">
+    <ul>
+        <li id="ie-phone-menu-button">
+            <a href="#">
+                <image id="" src="/it-it/bluexp-backup-recovery/images/hamburger.svg" alt="menu" />
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.netapp.com/it">
+                <image id="ie-header-logo" src="/it-it/bluexp-backup-recovery/images/netapp_logo.svg" alt="netapp" />
+            </a>
+        </li>
+        <li id="ie-header-docs">
+            <a href="https://www.netapp.com/it/support-and-training/documentation/">Documenti</a>
+        </li>
+
+        <!-- Empty container to push header left with or without lang selector -->
+        <li id="empty-container" style="margin-left: auto">
+        </li>
+        <!-- Start Language Selector --><li id="ie-language-dropdown">
+            <div id="language-dropdown" class="custom-dropdown custom-dropdown-lang">
+                <div class="custom-dropdown-select custom-dropdown-select-lang">
+                    <img src="/it-it/bluexp-backup-recovery/images/language_white_24dp.svg" class="n-globe__icon" />
+                    <span class="lang-name">Italiano</span>
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu"><li>
+                        <a href="https://docs.netapp.com/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">Italiano</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/us-en/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">English</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ja-jp/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">日本語</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/ko-kr/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">한국어</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-cn/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">简体中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/zh-tw/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">繁體中文</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/de-de/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">Deutsch</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/es-es/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">Español</span></a>
+                    </li><li>
+                        <a href="https://docs.netapp.com/fr-fr/bluexp-backup-recovery/task-licensing-cloud-backup.html"
+                            target="_self"><span translate="no" class="notranslate">Français</span></a>
+                    </li></ul>
+            </div>
+            </li>
+        <!-- End Language Selector -->
+
+
+        <li id="ie-allnetapp">
+            <div id="allnetapp-dropdown" class="custom-dropdown custom-dropdown-allnetapp">
+                <div class="custom-dropdown-select custom-dropdown-select-allnetapp">
+                    <img src="/it-it/bluexp-backup-recovery/images/apps_white_24dp.svg" alt="" class="allnetapp-icon" />
+                    <span class="allnetapp-name">Tutto NetApp</span>
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown header invisible" />
+                    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup header" />
+                    </button>
+                </div>
+
+                <ul class="custom-dropdown-menu allnetapp-dropdown">
+                    <li>
+                        <a href="https://bluexp.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">BlueXP</span></a>
+                    </li>
+                    <li>
+                        <a href="https://mysupport.netapp.com/site/"
+                            target="_self"><span translate="no" class="notranslate">Supporto</span></a>
+                    </li>
+                    <li>
+                        <a href="https://kb.netapp.com/"
+                            target="_self"><span translate="no" class="notranslate">Knowledge Base</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.netapp.com/it/support-and-training/netapp-learning-services/"
+                            target="_self"><span translate="no" class="notranslate">Training</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </li>
+
+    </ul>
+</nav>
+
+        <main id="n-main-content" class="n-main-content">
+          <!-- Start Documentation Content -->
+<div class="ie-main">
+
+<div id="ie-new-sidebar-collapse" style="display: none">
+    <img id="sidebar-expand" class="ie-searchbox-icon" src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-new-sidebar">
+    <div id="ie-product-identity-lockup">
+        <div id="sidebar-collapse" class="">
+            <img src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+        </div>
+        <div id="ie-breadcrumb" class="">
+  <ul class="ie-breadcrumb">
+    <li class="">
+      <a href="https://docs.netapp.com">Tutti i documenti</a>
+    </li>
+    
+    
+    <li class="">
+      <a href="https://docs.netapp.com/us-en/cloud/">Documentazione Cloud</a>
+    </li>
+    
+
+    
+    <li class="">
+      <a href="https://docs.netapp.com/it-it/bluexp-family/">
+        BlueXP
+      </a>
+    </li>
+    
+  </ul>
+  
+  <div class="ie-product-name" >
+    <!--<a href="/it-it/bluexp-backup-recovery/">-->
+      BlueXP backup and recovery
+    <!--</a>-->
+  </div>
+</div>
+
+            
+<div id="ie-selectors">
+<div id="flavor-dropdown" class="custom-dropdown" data-url="/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html">
+  
+  <div class="custom-dropdown-select unselected flavor" title="Tutti i cloud provider">
+    <label>Cloud provider</label>
+    <span>Tutti i cloud provider</span>
+    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown flavor invisible" />
+    <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup flavor" />
+  </div>
+  
+
+  <ul class="custom-dropdown-menu">
+    
+    
+    <li data-value="aws" data-url="/it-it/bluexp-backup-recovery/aws/task-licensing-cloud-backup.html">Amazon Web Services
+    </li>
+    
+    
+    
+    <li data-value="gcp" data-url="/it-it/bluexp-backup-recovery/gcp/task-licensing-cloud-backup.html">Google Cloud
+    </li>
+    
+    
+    
+    <li data-value="azure" data-url="/it-it/bluexp-backup-recovery/azure/task-licensing-cloud-backup.html">Microsoft Azure
+    </li>
+    
+    
+    <li data-url="/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html">Tutti i cloud provider</li>
+  </ul>
+</div>
+</div>
+        
+        
+
+<div id="ie-searchbox" class="ie-searchbox-sidebar ">
+    <img class="ie-searchbox-icon" src="/it-it/bluexp-backup-recovery/images/loupe.svg" alt=""/>
+    <div id="react-search" 
+        data-search-html="/it-it/bluexp-backup-recovery/search.html" 
+        data-type="widget"
+        data-placeholder="Esplora la documentazione"
+        data-no-results-found="Nessun risultato per {query}"
+        data-did-you-mean="Cerca {suggestion}."
+        data-no-results-found-did-you-mean="Nessun risultato per {query}. Intendi {suggestion}?"
+        data-results-found="{hitCount} risultati trovati"
+        data-error-message="Si è verificato un errore. Riprova."
+        data-error-reset="Reimposta ricerca"
+        data-sk-es-pf-indexes="" 
+        data-flavor="">
+    </div>
+</div>
+        
+    </div>
+    <div id="ie-new-toc"><script>
+  let sidebarAccordion = true;
+
+  /* specific css rules for Mac */
+  if(navigator.platform.match('Mac') !== null) {
+    document.body.setAttribute('class', 'OSX');
+  }
+
+</script>
+
+<div id="ie-sidebar-container">
+  <ul id="ie-sidebar-list" ><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Documenti di backup e ripristino BlueXP"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/index.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-backup-recovery/index.html">
+        Documenti di backup e ripristino BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note di rilascio"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Note di rilascio</div>-->
+         Note di rilascio
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Novità"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/whats-new.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/whats-new.html">
+        Novità
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Limitazioni note"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-limitations.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-limitations.html">
+        Limitazioni note
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Inizia subito"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Inizia subito</div>-->
+         Inizia subito
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Informazioni su backup e ripristino BlueXP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-backup-to-cloud.html">
+        Informazioni su backup e ripristino BlueXP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostare la licenza"
+      data-li-level="2#" 
+      class="  ie-sidebar-selected    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-licensing-cloud-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html">
+        Impostare la licenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare la protezione dei dati"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Monitorare la protezione dei dati</div>-->
+         Monitorare la protezione dei dati
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Report sulla copertura per la data Protection"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-report-inventory.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-report-inventory.html">
+        Report sulla copertura per la data Protection
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Monitorare lo stato dei processi di backup e ripristino"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-monitor-backup-jobs.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-monitor-backup-jobs.html">
+        Monitorare lo stato dei processi di backup e ripristino
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati ONTAP"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati ONTAP</div>-->
+         Backup e ripristino dei dati ONTAP
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati del tuo volume ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-ontap-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html">
+        Proteggi i dati del tuo volume ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Pianifica il tuo percorso di protezione"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-protection-journey.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-protection-journey.html">
+        Pianifica il tuo percorso di protezione
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le policy per ONTAP Volumes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-create-policies-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-create-policies-ontap.html">
+        Gestire le policy per ONTAP Volumes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Amazon S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-to-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-to-s3.html">
+        Eseguire il backup di Cloud Volumes ONTAP su Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup di Cloud Volumes ONTAP in Azure Blob"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-to-azure.html">
+        Backup di Cloud Volumes ONTAP in Azure Blob
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup di Cloud Volumes ONTAP su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-to-gcp.html">
+        Eseguire il backup di Cloud Volumes ONTAP su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su Amazon S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-onprem-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-aws.html">
+        Eseguire il backup on-premise di ONTAP su Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Esegui il backup di ONTAP on-premise in Azure Blob"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-onprem-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-azure.html">
+        Esegui il backup di ONTAP on-premise in Azure Blob
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-onprem-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-gcp.html">
+        Eseguire il backup on-premise di ONTAP su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Esegui il backup da ONTAP on-premise a ONTAP S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-onprem-to-ontap-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-onprem-to-ontap-s3.html">
+        Esegui il backup da ONTAP on-premise a ONTAP S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup on-premise di ONTAP su StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-onprem-private-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-onprem-private-cloud.html">
+        Eseguire il backup on-premise di ONTAP su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire i backup di ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-manage-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-manage-backups-ontap.html">
+        Gestire i backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dai backup di ONTAP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-backups-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-restore-backups-ontap.html">
+        Ripristino dai backup di ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire le impostazioni di backup a livello di cluster su oggetti"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-manage-backup-settings-ontap.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-manage-backup-settings-ontap.html">
+        Gestire le impostazioni di backup a livello di cluster su oggetti
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle applicazioni on-premise"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati delle applicazioni on-premise</div>-->
+         Backup e ripristino dei dati delle applicazioni on-premise
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue applicazioni on-premise"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-protect-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-protect-app-data-to-cloud.html">
+        Proteggi i dati delle tue applicazioni on-premise
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrare il server SnapCenter"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-register-snapcenter-server.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-register-snapcenter-server.html">
+        Registrare il server SnapCenter
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare un criterio per il backup delle applicazioni"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-create-policies-apps.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-create-policies-apps.html">
+        Creare un criterio per il backup delle applicazioni
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Amazon Web Services"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-app-data-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-aws.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su Amazon Web Services
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Microsoft Azure"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-app-data-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-azure.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su Microsoft Azure
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-app-data-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-gcp.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-app-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-app-data-to-storagegrid.html">
+        Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire la protezione delle applicazioni"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-manage-app-backups.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-manage-app-backups.html">
+        Gestire la protezione delle applicazioni
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i dati delle applicazioni on-premise"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Ripristinare i dati delle applicazioni on-premise</div>-->
+         Ripristinare i dati delle applicazioni on-premise
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database Oracle"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-restore-oracle-data.html">
+        Ripristinare il database Oracle
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database di SQL Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-restore-sql-data.html">
+        Ripristinare il database di SQL Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database SAP HANA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-hana-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-restore-hana-backup.html">
+        Ripristinare il database SAP HANA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dei database MongoDB, MySQL e PostgreSQL"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-customplugin-backup.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-restore-customplugin-backup.html">
+        Ripristino dei database MongoDB, MySQL e PostgreSQL
+      </a></li></ul></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle applicazioni native del cloud"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati delle applicazioni native del cloud</div>-->
+         Backup e ripristino dei dati delle applicazioni native del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue applicazioni native del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-protect-cloud-app-data-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-protect-cloud-app-data-to-cloud.html">
+        Proteggi i dati delle tue applicazioni native del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database Oracle nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Eseguire il backup dei database Oracle nativi del cloud</div>-->
+         Eseguire il backup dei database Oracle nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-quick-start-oracle.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-quick-start-oracle.html">
+        Avvio rapido
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare FSX per ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/reference-configure-fsx-for-ontap.html">
+        Configurare FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare Cloud Volumes ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-configure-cloud-volumes-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/reference-configure-cloud-volumes-ontap.html">
+        Configurare Cloud Volumes ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare Azure NetApp Files"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-configure-azure-netapp-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/reference-configure-azure-netapp-files.html">
+        Configurare Azure NetApp Files
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installare il plug-in SnapCenter per Oracle e aggiungere host di database"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-add-host-discover-oracle-databases.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-add-host-discover-oracle-databases.html">
+        Installare il plug-in SnapCenter per Oracle e aggiungere host di database
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database Oracle"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-backup-cloud-native-oracle-data.html">
+        Eseguire il backup dei database Oracle
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database SAP HANA nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Eseguire il backup dei database SAP HANA nativi del cloud</div>-->
+         Eseguire il backup dei database SAP HANA nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-quick-start-hana.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-quick-start-hana.html">
+        Avvio rapido
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare Azure NetApp Files"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-configure-azure-netapp-files.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/reference-configure-azure-netapp-files.html">
+        Configurare Azure NetApp Files
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Installare il plug-in SnapCenter per SAP HANA e aggiungere host di database"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-deploy-snapcenter-plugin-for-sap-hana.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-deploy-snapcenter-plugin-for-sap-hana.html">
+        Installare il plug-in SnapCenter per SAP HANA e aggiungere host di database
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database SAP HANA"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-cloud-native-sap-hana-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-backup-cloud-native-sap-hana-data.html">
+        Eseguire il backup dei database SAP HANA
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST</div>-->
+         Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Avvio rapido"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-quick-start-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-quick-start-sql.html">
+        Avvio rapido
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare FSX per ONTAP"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-configure-fsx-for-ontap.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/reference-configure-fsx-for-ontap.html">
+        Configurare FSX per ONTAP
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aggiungere l'host e installare il plug-in SnapCenter per SQL Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-add-sqlhost-install-plugin-sql.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-add-sqlhost-install-plugin-sql.html">
+        Aggiungere l'host e installare il plug-in SnapCenter per SQL Server
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei database di SQL Server"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-backup-cloud-native-sql-data.html">
+        Eseguire il backup dei database di SQL Server
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i database Oracle nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Ripristinare i database Oracle nativi del cloud</div>-->
+         Ripristinare i database Oracle nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare la posizione originale"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-original-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-original-location.html">
+        Ripristinare la posizione originale
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare in una posizione alternativa"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-cloud-native-oracle-data-to-alternate-location.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-restore-cloud-native-oracle-data-to-alternate-location.html">
+        Ripristinare in una posizione alternativa
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i database SAP HANA nativi del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-cloud-native-sap-hana-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-restore-cloud-native-sap-hana-data.html">
+        Ripristinare i database SAP HANA nativi del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristina i database SQL Server nativi del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-cloud-native-sql-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-restore-cloud-native-sql-data.html">
+        Ripristina i database SQL Server nativi del cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare i database Oracle nativi del cloud"
+      data-li-level="2" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-2  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Clonare i database Oracle nativi del cloud</div>-->
+         Clonare i database Oracle nativi del cloud
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare concetti e requisiti"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-clone-cloud-native-oracle-concepts.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/concept-clone-cloud-native-oracle-concepts.html">
+        Clonare concetti e requisiti
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Clonare i database Oracle nativi del cloud"
+      data-li-level="3#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-clone-cloud-native-oracle-data.html" 
+    ><a class="ie-sidebar-menuitem-3 " href="/it-it/bluexp-backup-recovery/task-clone-cloud-native-oracle-data.html">
+        Clonare i database Oracle nativi del cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Aggiornare il sistema di destinazione SAP HANA"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-refresh-sap-hana-target-system.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-refresh-sap-hana-target-system.html">
+        Aggiornare il sistema di destinazione SAP HANA
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire la protezione dei dati applicativi nativi del cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-manage-cloud-native-app-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-manage-cloud-native-app-data.html">
+        Gestire la protezione dei dati applicativi nativi del cloud
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati delle macchine virtuali"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati delle macchine virtuali</div>-->
+         Backup e ripristino dei dati delle macchine virtuali
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i dati delle tue macchine virtuali"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-protect-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-protect-vm-data.html">
+        Proteggi i dati delle tue macchine virtuali
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrare il plug-in SnapCenter per l'host VMware vSphere"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-register-snapCenter-plug-in-for-vmware-vsphere.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-register-snapCenter-plug-in-for-vmware-vsphere.html">
+        Registrare il plug-in SnapCenter per l'host VMware vSphere
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Creare una policy per il backup dei datastore"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-create-policies-vms.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-create-policies-vms.html">
+        Creare una policy per il backup dei datastore
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei datastore su Amazon Web Services"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-vm-data-to-aws.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-aws.html">
+        Eseguire il backup dei datastore su Amazon Web Services
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei datastore su Microsoft Azure"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-vm-data-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-azure.html">
+        Eseguire il backup dei datastore su Microsoft Azure
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup dei datastore su Google Cloud Platform"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-vm-data-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-gcp.html">
+        Backup dei datastore su Google Cloud Platform
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup dei datastore su StorageGRID"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-vm-data-to-storagegrid.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-vm-data-to-storagegrid.html">
+        Eseguire il backup dei datastore su StorageGRID
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestione della protezione dei dati di datastore e macchine virtuali"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-manage-vm-data-in-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-manage-vm-data-in-cloud.html">
+        Gestione della protezione dei dati di datastore e macchine virtuali
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare i dati delle macchine virtuali"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-vm-data.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-restore-vm-data.html">
+        Ripristinare i dati delle macchine virtuali
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup e ripristino dei dati Kubernetes"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Backup e ripristino dei dati Kubernetes</div>-->
+         Backup e ripristino dei dati Kubernetes
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Proteggi i tuoi dati Kubernetes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-kubernetes-backup-to-cloud.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-kubernetes-backup-to-cloud.html">
+        Proteggi i tuoi dati Kubernetes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Eseguire il backup su Amazon S3"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-kubernetes-to-s3.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-kubernetes-to-s3.html">
+        Eseguire il backup su Amazon S3
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup su Azure Blob"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-kubernetes-to-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-kubernetes-to-azure.html">
+        Backup su Azure Blob
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Backup su Google Cloud"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-backup-kubernetes-to-gcp.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-backup-kubernetes-to-gcp.html">
+        Backup su Google Cloud
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Gestire i backup di Kubernetes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-manage-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-manage-backups-kubernetes.html">
+        Gestire i backup di Kubernetes
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristino dai backup di Kubernetes"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-restore-backups-kubernetes.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-restore-backups-kubernetes.html">
+        Ripristino dai backup di Kubernetes
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Automatizza con l'API REST"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/api-backup-restore.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-backup-recovery/api-backup-restore.html">
+        Automatizza con l'API REST
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riferimento"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Riferimento</div>-->
+         Riferimento
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Impostazioni dei criteri di backup"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/concept-cloud-backup-policies.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/concept-cloud-backup-policies.html">
+        Impostazioni dei criteri di backup
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di storage di archivio AWS supportati"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-aws-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-aws-backup-tiers.html">
+        Tier di storage di archivio AWS supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di accesso all'archivio Azure supportati"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-azure-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-azure-backup-tiers.html">
+        Tier di accesso all'archivio Azure supportati
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Tier di storage di archivio supportati da Google"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-google-backup-tiers.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-google-backup-tiers.html">
+        Tier di storage di archivio supportati da Google
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Configurare il backup per l'accesso multi-account in Azure"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-backup-multi-account-azure.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-backup-multi-account-azure.html">
+        Configurare il backup per l'accesso multi-account in Azure
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Ripristinare il database di backup e ripristino BlueXP in un sito buio"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-backup-cbs-db-in-dark-site.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-backup-cbs-db-in-dark-site.html">
+        Ripristinare il database di backup e ripristino BlueXP in un sito buio
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Riavviare il backup e il ripristino di BlueXP"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/reference-restart-backup.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/reference-restart-backup.html">
+        Riavviare il backup e il ripristino di BlueXP
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Conoscenza e supporto"
+      data-li-level="1" 
+      class=" sidebar-folder    "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="" 
+    ><a class="ie-sidebar-menuitem-1  ie-sidebar-button " href="#">
+        <img class="ie-sidebar-icon ie-sidebar-button open" src="/it-it/bluexp-backup-recovery/images/link_expand.svg" alt="" />
+        <img class="ie-sidebar-icon ie-sidebar-button close" src="/it-it/bluexp-backup-recovery/images/link_collapse.svg" alt="" />
+        <!--<div class="" style="display: inline;"> Conoscenza e supporto</div>-->
+         Conoscenza e supporto
+      </a>
+      <ul class="">
+        <li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Registrati per ricevere assistenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-support-registration.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-support-registration.html">
+        Registrati per ricevere assistenza
+      </a></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Richiedi assistenza"
+      data-li-level="2#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/task-get-help.html" 
+    ><a class="ie-sidebar-menuitem-2 " href="/it-it/bluexp-backup-recovery/task-get-help.html">
+        Richiedi assistenza
+      </a></li></ul></li><li 
+      data-pdf-exists="true" 
+      data-pdf-filename="Note legali"
+      data-li-level="1#" 
+      class="   "
+      dale-page-url="/task-licensing-cloud-backup.html" 
+      dale-entry-url="/legal-notices.html" 
+    ><a class="ie-sidebar-menuitem-1 " href="/it-it/bluexp-backup-recovery/legal-notices.html">
+        Note legali
+      </a></li></ul>
+</div>
+<script>
+
+  $(".ie-sidebar-button").click(function (e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    expandedLI = $('li.ie-sidebar-expand')
+
+    const li = $(this).closest("li");
+
+    const parentsLI = $(li).parents('li');
+
+    expandedLI.map(element => {
+      if (sidebarAccordion && !li.hasClass('ie-sidebar-expand') && jQuery.inArray(expandedLI[element], parentsLI) == -1) {
+        $(expandedLI[element]).toggleClass('ie-sidebar-expand');
+        $(expandedLI[element]).children("ul").animate({ height: 'toggle' }, 400, function () {
+          $(li).children("ul").toggleClass('ie-sidebar-open');
+
+        })
+      }
+
+    })
+
+    $(li).toggleClass('ie-sidebar-expand');
+    $(li).children("ul").animate({ height: 'toggle' }, 400, function () {
+      $(li).children("ul").toggleClass('ie-sidebar-open');
+    })
+  });
+
+
+  
+    $("li.ie-sidebar-selected").parents('ul').toggleClass("ie-sidebar-open");
+    $("li.ie-sidebar-selected").toggleClass("ie-sidebar-expand")
+    $("ul.ie-sidebar-open").parent().toggleClass("ie-sidebar-expand");
+    $("li.ie-sidebar-selected").children('ul').toggleClass("ie-sidebar-open")
+  
+  
+</script>
+    </div>
+</div>
+<script>
+
+    
+    let sidebarScrollTopPosition = 0;
+    $("#ie-new-toc").on("scroll", function () {
+        if (sidebarScrollTopPosition == 0) {
+            $.cookie("sidebarScroll", $("#ie-new-toc").scrollTop(), {
+                path: "/it-it/bluexp-backup-recovery"
+            });
+        }
+
+        if ($("#ie-new-toc").scrollTop() > 0) {
+            $('#ie-product-identity-lockup').addClass('ie-addShadow');
+        } else {
+            $('#ie-product-identity-lockup').removeClass('ie-addShadow');
+        }
+    });
+
+    $(function () {
+        if ($.cookie("sidebarScroll")) {
+            $("#ie-new-toc").scrollTop($.cookie("sidebarScroll"));
+        }
+    });
+
+    function setSidebarBottom() {
+        const footerGap = PXinViewport($(".n-footer"));
+        document.getElementById("ie-new-sidebar").style.bottom = Math.max(0, footerGap) + "px";
+    }
+
+    window.onscroll = () => {
+        setSidebarBottom();
+    };
+
+    $("#sidebar-collapse").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        if ($.cookie("sidebarScroll")) {
+            sidebarScrollTopPosition = $.cookie("sidebarScroll");
+        }
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 350, function () {
+            $("#ie-new-sidebar-collapse").show();
+            $("#ie-new-sidebar").removeClass("open")
+            $("#ie-new-sidebar").addClass("close")
+            $("#ie-new-sidebar").removeAttr("style")
+        });
+        $(".ie-content-pane").animate({ width: (width + sidebarWidth), marginLeft: (marginLeft - sidebarWidth) }, 350, function () {
+            resizeContent()
+        })
+
+    });
+    $("#sidebar-expand").click(function (e) {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        e.preventDefault();
+        const width = $(".ie-content-pane").width();
+        const marginLeft = parseInt($(".ie-content-pane").css('marginLeft'));
+
+        $("#ie-new-sidebar").animate({ width: 'toggle' }, 250, function () {
+            $('#ie-new-sidebar').css('display', 'flex');
+            $("#ie-new-sidebar-collapse").hide();
+            $("#ie-new-sidebar").removeClass("close")
+            $("#ie-new-sidebar").addClass("open")
+            setSidebarBottom();
+
+            if (sidebarScrollTopPosition != 0) {
+                $.cookie("sidebarScroll", sidebarScrollTopPosition, {
+                    path: "/it-it/bluexp-backup-recovery"
+                })
+                $("#ie-new-toc").scrollTop(sidebarScrollTopPosition);
+                sidebarScrollTopPosition = 0;
+            }
+        });
+        $(".ie-content-pane").animate({ width: (width - sidebarWidth), 'marginLeft': (marginLeft + sidebarWidth) }, 250, function () {
+            resizeContent()
+        })
+    });
+    function resizeContent() {
+        const sidebarWidth = $("#ie-new-sidebar").width() - $("#ie-new-sidebar-collapse").width();
+        const rightNavbarVisible =  $("#ie-right-navbar").css('display') && $("#ie-right-navbar").css('display') != 'none';
+        const sidebarVisible = $("#ie-new-sidebar").css('display') != 'none';
+        const rightNavbarWidth = $("#ie-right-navbar").width();
+        const rightNavbarCollapseWidth = $("#ie-right-navbar-collapse").width();
+        const rightNavbarCollapseVisible = $("#ie-right-navbar-collapse").css('display') && $("#ie-right-navbar-collapse").css('display') != 'none';
+        
+        if (rightNavbarVisible && sidebarVisible) {
+            $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarWidth}px)`)
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+        } else if (sidebarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${sidebarWidth}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${sidebarWidth + rightNavbarCollapseWidth}px)`)
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar").width()}px)`)
+            }
+
+        } else if (rightNavbarVisible) {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            $(".ie-content-pane").width(`calc(100% - ${rightNavbarWidth}px)`)
+        } else {
+            $(".ie-content-pane").css('marginLeft', `${$("#ie-new-sidebar-collapse").width()}px`)
+            if (rightNavbarCollapseVisible) {
+                $(".ie-content-pane").width(`calc(100% - ${rightNavbarCollapseWidth}px)`);
+            } else {
+                $(".ie-content-pane").width(`calc(100% - ${$("#ie-new-sidebar-collapse").width()}px) `);
+            }
+            
+        }
+    }
+    $(window).on("resize load", function () {
+        setSidebarBottom();
+        resizeContent()
+    });
+
+
+</script>
+
+<div class="ie-content-pane ie-component-detail-content ie-component-detail-content--show-code">
+    <!-- Begin of page container --><article class="page-content" id="main">
+      <!-- include utility.html -->
+      <div class="ie-info-disclaimer">
+    <span>
+      <div class="ie-info-disclaimer-container">
+        <div class="ie-info-disclaimer-icon">
+          <img src="/it-it/bluexp-backup-recovery/images/notification-icons.svg" class="luci-icon" alt="" />
+        </div>
+        <div class="ie-info-disclaimer-content">
+          <span> La versione in lingua italiana fornita proviene da una traduzione automatica. Per eventuali incoerenze, fare riferimento alla versione in lingua inglese. </span>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+    </span>
+  </div><div class="ie-component-detail-heading-wrap">
+  <h1 class="ie-component-detail-heading">Impostare le licenze per il backup e ripristino BlueXP</h1>
+</div>
+
+<div id="ie-byline">
+  
+<div class="page-details">
+    
+        
+            <time datetime="2023-11-14 22:52:36 +0000">11/14/2023</time>
+        
+    
+    
+        <span>Collaboratori
+        </span>
+    
+    
+</div>
+<div class="page-controls">
+    <div id="contribute-dropdown" class="custom-dropdown custom-dropdown-contrib" >
+        <div class="custom-dropdown-select custom-dropdown-select-contrib">
+        <span class="contrib-name"><img src="/it-it/bluexp-backup-recovery/images/discuss-sm.svg" alt="" class="github-icon" />Suggerisci modifiche</span>
+        <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevrondown invisible" />
+        <img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" alt="" class="custom-icon chevronup" />
+        </div>
+        <ul class="custom-dropdown-menu suggested-changes-dropdown"><li>
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery.it-it/issues/new?template=new-from-page.yml&page-url=https://docs.netapp.com/it-it/bluexp-backup-recovery/task-licensing-cloud-backup.html&page-title=Impostare le licenze per il backup e ripristino BlueXP" class="page-nav-contribute-link" role="button">Richiedi modifiche alla documentazione</a>
+            </li><li> 
+                <a target="_blank" href="https://github.com/NetAppDocs/bluexp-backup-recovery/blob/main/task-licensing-cloud-backup.adoc" class="page-nav-contribute-link" role="button">Modifica questa pagina</a>
+            </li><li><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  >Scopri come collaborare</a></li>
+        </ul>
+    </div>
+    <div id="pdf-control-container">
+        <div class="n-pdf-header">
+            <a id="toggleButtonPdf" class="n-pdf-button" type="button">
+                <img class="adobe-icon" src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>PDF<img src="/it-it/bluexp-backup-recovery/images/dropdown-arrow.svg" class="custom-icon" alt="" />
+            </a>
+        </div>
+        <div class="n-pdf-body-container">
+            <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+                    
+                    
+                    
+                    <a target="_blank" class="pdf-download-link" href="/it-it/bluexp-backup-recovery/pdfs/fullsite-sidebar/Documentazione_di_backup_e_ripristino_BlueXP.pdf" >
+                    <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>PDF del sito di questa documentazione</a>
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Note_di_rilascio.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Note di rilascio
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Inizia_subito.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Inizia subito
+          </a>
+          
+
+
+    <ul class="subfolders" id="pdf-remove" style="display:none;"><li class="active"></li></ul>
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Monitorare_la_protezione_dei_dati.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Monitorare la protezione dei dati
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_ONTAP.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati ONTAP
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_on_premise.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle applicazioni on-premise
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Ripristinare_i_dati_delle_applicazioni_on_premise.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Ripristinare i dati delle applicazioni on-premise
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_delle_applicazioni_native_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle applicazioni native del cloud
+          </a>
+          
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Eseguire_il_backup_dei_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Eseguire il backup dei database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Eseguire_il_backup_dei_database_SAP_HANA_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Eseguire il backup dei database SAP HANA nativi del cloud
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Eseguire_il_backup_di_database_SQL_Server_nativi_per_il_cloud_utilizzando_le_API_REST.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Eseguire il backup di database SQL Server nativi per il cloud utilizzando le API REST
+          </a>
+          
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Ripristinare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Ripristinare i database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Clonare_i_database_Oracle_nativi_del_cloud.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Clonare i database Oracle nativi del cloud
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_delle_macchine_virtuali.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati delle macchine virtuali
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Backup_e_ripristino_dei_dati_Kubernetes.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Backup e ripristino dei dati Kubernetes
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Riferimento.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Riferimento
+          </a>
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+    
+      <ul class="subfolders" style="display:none;">
+        <li class="pdf-ux-container">
+          
+          
+          
+          <a target="_blank" class="pdf-download-link"
+            
+              href="/it-it/bluexp-backup-recovery/pdfs/sidebar/Conoscenza_e_supporto.pdf" 
+            
+          >
+            <img src="/it-it/bluexp-backup-recovery/images/pdf-icon.png" alt="" width="16" height="16"/>
+            Conoscenza e supporto
+          </a>
+          
+
+
+
+
+        </li>
+      </ul>
+    
+
+  
+
+
+
+</li></ul>
+            <div class="zip-pdf-link-container" style="display: none;">   
+                <a href="#" id="zipPdf">
+                <img src="/it-it/bluexp-backup-recovery/images/pdf-zip.png" alt="" width="16" height="16"/>
+                <pre>Raccolta di documenti PDF separati<span class="zip-size"></span></pre>
+                </a><div id="zip-link-popup" class="hide">
+    <div class="inner-modal">
+        <div class="downloading-progress">
+            <div class="spinner"></div>
+            <h1>Creating your file...</h1>
+            <div>This may take a few minutes. Thanks for your patience.</div>
+            <button class="cancel-download-btn" type="button">Cancel</button>
+        </div>
+        <div class="download-complete hide">
+            <div class="done-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>
+            </div>
+            <div>Your file is ready</div>
+            <button class="cancel-download-btn" type="button">OK</button>
+        </div>
+    </div>
+</div>
+<script>
+    $(".cancel-download-btn").click(function(){
+        $("#zip-link-popup").addClass("hide");
+        $("#zip-link-popup .downloading-progress").removeClass("hide");
+        $("#zip-link-popup .download-complete").addClass("hide");
+    });
+</script></div>
+        </div>
+    </div>        
+<script>
+$("#toggleContainerPdf li.active:last-child").parents('ul.subfolders').toggle('display');
+$("#toggleButtonPdf").on('click', function(e){ 
+    e.stopPropagation();
+    $("#toggleContainerPdf").toggle('display');
+    $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+});
+
+//hide is by clicking outside pdfcontainer
+$(document).on('click', function (e) {
+    if ($('#toggleContainerPdf').is(':visible') && !$('.n-pdf-body-container').is(e.target) && !$('.n-pdf-body-container').has(e.target).length)  {
+        
+        $("#toggleContainerPdf").toggle('display');
+        $(".n-pdf-body-container .zip-pdf-link-container").toggle('display');
+        $("#toggleButtonPdf").removeClass("active");
+    }
+});
+</script>
+<script>
+    function getPdfLocation() {
+        const pdfLocation = window.scrollX + document.querySelector('#pdf-control-container').getBoundingClientRect().left
+        if (pdfLocation < 450) {
+            $(".n-pdf-body-container").addClass("block")
+        } else {
+            $(".n-pdf-body-container").removeClass("block")
+        }
+    
+    }
+    $( window ).on( "resize", function() {
+        getPdfLocation()
+} );
+</script>
+<script>
+    const pdfButtonWidth =  $(".n-pdf-header").width();
+    const pdfMenuWidth = $(".n-pdf-body-container").width();
+    $(".n-pdf-body-container").css('margin-left', `calc(${pdfButtonWidth - pdfMenuWidth}px)`);
+</script>
+</div>
+
+    
+
+</div>
+
+
+
+
+<div class="content-to-index">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph lead">
+<p>Puoi concedere in licenza il backup e il ripristino BlueXP acquistando un abbonamento al mercato annuale o pay-as-you-go (PAYGO) dal tuo cloud provider oppure acquistando una licenza Bring-Your-Own (BYOL) da NetApp. È necessaria una licenza valida per attivare il backup e ripristino BlueXP in un ambiente di lavoro, per creare backup dei dati di produzione e per ripristinare i dati di backup in un sistema di produzione.</p>
+</div>
+<div class="paragraph">
+<p>Alcune note prima di leggere ulteriori informazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se hai già sottoscritto l'abbonamento pay-as-you-go (PAYGO) nel mercato del tuo cloud provider per un sistema Cloud Volumes ONTAP, sarai automaticamente iscritto anche al backup e ripristino BlueXP. Non dovrai più iscriverti.</p>
+</li>
+<li>
+<p>La licenza BYOL (Bring-Your-Own-License) di backup e ripristino BlueXP è una licenza mobile che è possibile utilizzare in tutti i sistemi associati all'account BlueXP. Quindi, se si dispone di una capacità di backup sufficiente da una licenza BYOL esistente, non sarà necessario acquistare un'altra licenza BYOL.</p>
+</li>
+<li>
+<p>Se si utilizza una licenza BYOL, si consiglia di sottoscrivere anche un abbonamento PAYGO. Se si esegue il backup di un numero di dati superiore a quello consentito dalla licenza BYOL, o se la durata della licenza scade, il backup prosegue con l'abbonamento pay-as-you-go, senza interruzioni del servizio.</p>
+</li>
+<li>
+<p>Quando si esegue il backup dei dati ONTAP on-premise su StorageGRID, è necessaria una licenza BYOL, ma lo spazio di storage del cloud provider non costa.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="concept-ontap-backup-to-cloud.html#cost">"Scopri di più sui costi legati all'utilizzo del backup e ripristino BlueXP."</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="30-giorni-di-prova-gratuita">30 giorni di prova gratuita</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Se ti iscrivi a un abbonamento pay-as-you-go nel marketplace del tuo cloud provider, è disponibile una prova gratuita di 30 giorni di backup e recovery BlueXP. La versione di prova gratuita inizia dal momento in cui ti iscrivi al marketplace listing. Nota: Se paghi per l'iscrizione al marketplace durante l'implementazione di un sistema Cloud Volumes ONTAP e poi avvia la prova gratuita di backup e recovery di BlueXP 10 giorni dopo, avrai 20 giorni rimanenti per utilizzare la prova gratuita.</p>
+</div>
+<div class="paragraph">
+<p>Al termine della prova gratuita, potrai passare automaticamente all'abbonamento PAYGO senza interruzioni. Se decidi di non continuare a utilizzare il backup e il ripristino BlueXP, basta <a href="task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment">"Annullare la registrazione del backup e ripristino BlueXP dall'ambiente di lavoro"</a> prima della fine della prova, non ti verrà addebitato alcun costo.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utilizza-un-abbonamento-a-paygo-per-il-backup-e-ripristino-bluexp">Utilizza un abbonamento A PAYGO per il backup e ripristino BlueXP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Per il pay-as-you-go, pagherai il tuo cloud provider per i costi dello storage a oggetti e per le licenze di backup NetApp su base oraria in un singolo abbonamento. È necessario iscriversi anche se si dispone di una versione di prova gratuita o se si porta la propria licenza (BYOL):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>L'iscrizione garantisce che il servizio non subisca interruzioni al termine della prova gratuita. Al termine della prova, ti verrà addebitato ogni ora in base alla quantità di dati di cui hai effettuato il backup.</p>
+</li>
+<li>
+<p>Se effettui il backup di più dati di quanto consentito dalla licenza BYOL, le operazioni di backup e ripristino dei dati proseguiranno con l'abbonamento pay-as-you-go. Ad esempio, se si dispone di una licenza 10 TIB BYOL, tutta la capacità oltre la 10 TIB viene addebitata tramite l'abbonamento PAYGO.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Non ti verrà addebitato alcun costo dal tuo abbonamento pay-as-you-go durante la prova gratuita o se non hai superato la licenza BYOL.</p>
+</div>
+<div class="paragraph">
+<p>Esistono alcuni piani PAYGO per il backup e il ripristino BlueXP:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un pacchetto di "backup cloud" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP on-premise.</p>
+</li>
+<li>
+<p>Un pacchetto "CVO Professional" che consente di unire backup e ripristino di Cloud Volumes ONTAP e BlueXP. Sono inclusi backup illimitati per il sistema Cloud Volumes ONTAP che utilizza la licenza (la capacità di backup non viene conteggiata rispetto alla capacità concessa in licenza). Questa opzione non consente di eseguire il backup dei dati ONTAP on-premise.</p>
+<div class="paragraph">
+<p>Questa opzione richiede anche un abbonamento PAYGO di backup e recovery, ma non verranno addebitati costi per i sistemi Cloud Volumes ONTAP idonei.</p>
+</div>
+</li>
+<li>
+<p>Un pacchetto "CVO Edge cache" ha le stesse funzionalità del pacchetto "CVO Professional", ma include anche il supporto per <a href="https://docs.netapp.com/us-en/bluexp-edge-caching/concept-gfc.html" target="_blank" rel="noopener">"Caching edge BlueXP"</a> servizio. Hai diritto a implementare un sistema edge caching BlueXP per ogni 3 TIB di capacità fornita sul sistema Cloud Volumes ONTAP. Questa opzione è disponibile nei mercati Azure e Google e non consente di eseguire il backup dei dati ONTAP on-premise.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing">"Scopri di più su questi pacchetti di licenza basati sulla capacità"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Utilizza questi link per iscriverti al backup e ripristino BlueXP dal tuo mercato di cloud provider:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AWS: <a href="https://aws.amazon.com/marketplace/pp/prodview-oorxakq6lq7m4" target="_blank" rel="noopener">"Per informazioni sui prezzi, consulta l'offerta BlueXP Marketplace"</a>.</p>
+</li>
+<li>
+<p>Azure: <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.cloud-manager?tab=Overview" target="_blank" rel="noopener">"Per informazioni sui prezzi, consulta l'offerta BlueXP Marketplace"</a>.</p>
+</li>
+<li>
+<p>Google Cloud: <a href="https://console.cloud.google.com/marketplace/details/netapp-cloudmanager/cloud-manager?supportedpurview=project" target="_blank" rel="noopener">"Per informazioni sui prezzi, consulta l'offerta BlueXP Marketplace"</a>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utilizzare-un-contratto-annuale">Utilizzare un contratto annuale</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Pagare il backup e il ripristino BlueXP ogni anno acquistando un contratto annuale. Sono disponibili in termini di 1, 2 o 3 anni.</p>
+</div>
+<div class="paragraph">
+<p>Se si dispone di un contratto annuale da un marketplace, tutti i consumi di backup e recovery di BlueXP vengono addebitati a fronte di tale contratto. Non puoi combinare un contratto di mercato annuale con un BYOL.</p>
+</div>
+<div class="paragraph">
+<p>Quando si utilizza AWS, sono disponibili due contratti annuali da <a href="https://aws.amazon.com/marketplace/pp/prodview-q7dg6zwszplri" target="_blank" rel="noopener">"Pagina AWS Marketplace"</a> Per i sistemi Cloud Volumes ONTAP e ONTAP on-premise:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un piano di "backup sul cloud" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP on-premise.</p>
+<div class="paragraph">
+<p>Se si desidera utilizzare questa opzione, impostare l'abbonamento dalla pagina Marketplace, quindi <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-aws-accounts.html#associate-an-aws-subscription" target="_blank" rel="noopener">"Associare l'abbonamento alle credenziali AWS"</a>. È inoltre necessario pagare i sistemi Cloud Volumes ONTAP utilizzando questo abbonamento annuale, in quanto è possibile assegnare un solo abbonamento attivo alle credenziali AWS in BlueXP.</p>
+</div>
+</li>
+<li>
+<p>Un piano "CVO Professional" che consente di unire backup e ripristino di Cloud Volumes ONTAP e BlueXP. Sono inclusi backup illimitati per il sistema Cloud Volumes ONTAP che utilizza la licenza (la capacità di backup non viene conteggiata rispetto alla capacità concessa in licenza). Questa opzione non consente di eseguire il backup dei dati ONTAP on-premise.</p>
+<div class="paragraph">
+<p>Vedere <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html" target="_blank" rel="noopener">"Argomento relativo alle licenze Cloud Volumes ONTAP"</a> per ulteriori informazioni su questa opzione di licenza.</p>
+</div>
+<div class="paragraph">
+<p>Se si desidera utilizzare questa opzione, è possibile impostare il contratto annuale quando si crea un ambiente di lavoro Cloud Volumes ONTAP e BlueXP richiede di iscriversi al marketplace AWS.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Quando si utilizza Azure, sono disponibili due contratti annuali da <a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/netapp.netapp-bluexp" target="_blank" rel="noopener">"Pagina del marketplace di Azure"</a> Per i sistemi Cloud Volumes ONTAP e ONTAP on-premise:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Un piano di "backup sul cloud" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP on-premise.</p>
+<div class="paragraph">
+<p>Se si desidera utilizzare questa opzione, impostare l'abbonamento dalla pagina Marketplace, quindi <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-azure-accounts.html#subscribe" target="_blank" rel="noopener">"Associare l'iscrizione alle credenziali Azure"</a>. Nota: Dovrai anche pagare per i tuoi sistemi Cloud Volumes ONTAP utilizzando questo abbonamento di contratto annuale, poiché puoi assegnare solo un abbonamento attivo alle tue credenziali Azure in BlueXP.</p>
+</div>
+</li>
+<li>
+<p>Un piano "CVO Professional" che consente di unire backup e ripristino di Cloud Volumes ONTAP e BlueXP. Sono inclusi backup illimitati per il sistema Cloud Volumes ONTAP che utilizza la licenza (la capacità di backup non viene conteggiata rispetto alla capacità concessa in licenza). Questa opzione non consente di eseguire il backup dei dati ONTAP on-premise.</p>
+<div class="paragraph">
+<p>Vedere <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/concept-licensing.html" target="_blank" rel="noopener">"Argomento relativo alle licenze Cloud Volumes ONTAP"</a> per ulteriori informazioni su questa opzione di licenza.</p>
+</div>
+<div class="paragraph">
+<p>Se vuoi utilizzare questa opzione, puoi impostare un contratto annuale quando crei un ambiente di lavoro Cloud Volumes ONTAP e BlueXP ti richiede di iscriverti ad Azure Marketplace.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Quando si utilizza GCP, contattare il rappresentante commerciale NetApp per acquistare un contratto annuale. Il contratto è disponibile come offerta privata in Google Cloud Marketplace.</p>
+</div>
+<div class="paragraph">
+<p>Una volta che NetApp condivide l'offerta privata con te, puoi selezionare il piano annuale quando ti iscrivi da Google Cloud Marketplace durante l'attivazione del backup e ripristino BlueXP.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="utilizzare-una-licenza-byol-di-backup-e-ripristino-bluexp">Utilizzare una licenza BYOL di backup e ripristino BlueXP</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Le licenze Bring-Your-Own di NetApp offrono termini di 1, 2 o 3 anni. Si paga solo per i dati protetti, calcolati in base alla capacità logica utilizzata (<em>prima</em> eventuali efficienze) dei volumi ONTAP di origine di cui viene eseguito il backup. Questa capacità è nota anche come terabyte front-end (FETB).</p>
+</div>
+<div class="paragraph">
+<p>La licenza di backup e ripristino BYOL BlueXP è una licenza mobile in cui la capacità totale è condivisa tra tutti i sistemi associati all'account BlueXP. Per i sistemi ONTAP, è possibile ottenere una stima approssimativa della capacità necessaria eseguendo il comando CLI <code>volume show -fields logical-used-by-afs</code> per i volumi di cui si intende eseguire il backup.</p>
+</div>
+<div class="paragraph">
+<p>Se non si dispone di una licenza BYOL di backup e ripristino BlueXP, fare clic sull'icona della chat nell'angolo inferiore destro di BlueXP per acquistarne una.</p>
+</div>
+<div class="paragraph">
+<p>Se si dispone di una licenza basata su nodo non assegnata per Cloud Volumes ONTAP che non si intende utilizzare, è possibile convertirla in una licenza di backup e ripristino BlueXP con la stessa equivalenza in dollari e la stessa data di scadenza. <a href="https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-node-licenses.html#exchange-unassigned-node-based-licenses" target="_blank" rel="noopener">"Fai clic qui per ulteriori informazioni"</a>.</p>
+</div>
+<div class="paragraph">
+<p>Il portafoglio digitale BlueXP consente di gestire le licenze BYOL. È possibile aggiungere nuove licenze, aggiornare le licenze esistenti e visualizzare lo stato della licenza dal portafoglio digitale BlueXP.</p>
+</div>
+<div class="sect2">
+<h3 id="ottenere-il-file-di-licenza-per-il-backup-e-ripristino-bluexp">Ottenere il file di licenza per il backup e ripristino BlueXP</h3>
+<div class="paragraph">
+<p>Dopo aver acquistato la licenza di backup e recovery BlueXP (backup cloud), attiva la licenza in BlueXP inserendo il numero di serie di backup e recovery di BlueXP e l'account NSS (NetApp Support Site), oppure caricando il file di licenza NetApp (NLF). Se si prevede di utilizzare questo metodo, la procedura riportata di seguito mostra come ottenere il file di licenza NLF.</p>
+</div>
+<div class="paragraph">
+<p>Se esegui backup e recovery di BlueXP in un sito on-premise che non dispone di accesso a Internet, significa che hai implementato il connettore BlueXP in <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html#private-mode" target="_blank" rel="noopener">"modalità privata"</a>, è necessario ottenere il file di licenza da un sistema connesso a internet. L'attivazione della licenza tramite il numero di serie e l'account del sito di supporto NetApp non è disponibile per le installazioni in modalità privata.</p>
+</div>
+<div class="paragraph">
+<div class="title">Prima di iniziare</div>
+<p>Prima di iniziare, è necessario disporre delle seguenti informazioni:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Numero di serie di backup e recovery di BlueXP</p>
+<div class="paragraph">
+<p>Individua questo numero nell'ordine di vendita o contatta l'account team per ottenere queste informazioni.</p>
+</div>
+</li>
+<li>
+<p>ID account BlueXP</p>
+<div class="paragraph">
+<p>Puoi trovare il tuo ID account BlueXP selezionando l'elenco a discesa <strong>account</strong> nella parte superiore di BlueXP, quindi facendo clic su <strong>Gestisci account</strong> accanto all'account. L'ID account si trova nella scheda Panoramica. Per il sito in modalità privata senza accesso a Internet, utilizzare <strong>account-DARKSITE1</strong>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Accedere a <a href="https://mysupport.netapp.com" target="_blank" rel="noopener">"Sito di supporto NetApp"</a> E fare clic su <strong>sistemi &gt; licenze software</strong>.</p>
+</li>
+<li>
+<p>Inserire il numero di serie della licenza di backup e ripristino BlueXP.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cloud_backup_license_step1.gif" alt="Una schermata che mostra una tabella di licenze dopo la ricerca per numero di serie."></span></p>
+</div>
+</li>
+<li>
+<p>Nella colonna <strong>chiave di licenza</strong>, fare clic su <strong>Ottieni file di licenza NetApp</strong>.</p>
+</li>
+<li>
+<p>Inserire l'ID account BlueXP (chiamato ID tenant sul sito di supporto) e fare clic su <strong>Submit</strong> (Invia) per scaricare il file di licenza.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_cloud_backup_license_step2.gif" alt="Una schermata che mostra la finestra di dialogo Get License (Ottieni licenza) in cui inserire l'ID tenant e fare clic su Submit (Invia) per scaricare il file di licenza."></span></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aggiungere-al-proprio-account-le-licenze-byol-di-backup-e-ripristino-bluexp">Aggiungere al proprio account le licenze BYOL di backup e ripristino BlueXP</h3>
+<div class="paragraph">
+<p>Dopo aver acquistato una licenza di backup e ripristino BlueXP per il tuo account NetApp, devi aggiungere la licenza a BlueXP.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Dal menu BlueXP, fare clic su <strong>Governance &gt; Digital wallet</strong>, quindi selezionare la scheda <strong>licenze servizi dati</strong>.</p>
+</li>
+<li>
+<p>Fare clic su <strong>Aggiungi licenza</strong>.</p>
+</li>
+<li>
+<p>Nella finestra di dialogo <em>Add License</em>, inserire le informazioni sulla licenza e fare clic su <strong>Add License</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Se si dispone del numero di serie della licenza di backup e si conosce l'account NSS, selezionare l'opzione <strong>inserire il numero di serie</strong> e immettere le informazioni desiderate.</p>
+<div class="paragraph">
+<p>Se il tuo account NetApp Support Site non è disponibile nell'elenco a discesa, <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-adding-nss-accounts.html" target="_blank" rel="noopener">"Aggiungere l'account NSS a BlueXP"</a>.</p>
+</div>
+</li>
+<li>
+<p>Se si dispone del file di licenza di backup (richiesto se installato in un sito buio), selezionare l'opzione <strong>Upload License file</strong> (carica file di licenza) e seguire le istruzioni per allegare il file.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_add2.png" alt="Una schermata che mostra la pagina per aggiungere la licenza BYOL di backup e ripristino BlueXP."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>BlueXP aggiunge la licenza in modo che il backup e ripristino BlueXP sia attivo.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="aggiornare-una-licenza-byol-di-backup-e-ripristino-bluexp">Aggiornare una licenza BYOL di backup e ripristino BlueXP</h3>
+<div class="paragraph">
+<p>Se la durata della licenza è prossima alla data di scadenza, o se la capacità concessa in licenza sta raggiungendo il limite, l'utente verrà avvisato nell'interfaccia utente di backup. Questo stato viene visualizzato anche nella pagina del portafoglio digitale BlueXP e in <a href="https://docs.netapp.com/us-en/bluexp-setup-admin/task-monitor-cm-operations.html#monitoring-operations-status-using-the-notification-center">"Notifiche"</a>.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_expire.png" alt="Una schermata che mostra una licenza in scadenza nella pagina del portafoglio digitale BlueXP."></span></p>
+</div>
+<div class="paragraph">
+<p>È possibile aggiornare la licenza di backup e ripristino BlueXP prima della scadenza, in modo da non interrompere la capacità di backup e ripristino dei dati.</p>
+</div>
+<div class="olist arabic">
+<div class="title">Fasi</div>
+<ol class="arabic">
+<li>
+<p>Fare clic sull'icona della chat in basso a destra in BlueXP oppure contattare il supporto per richiedere un'estensione del termine o una capacità aggiuntiva alla licenza di backup e ripristino BlueXP per il numero di serie specifico.</p>
+<div class="paragraph">
+<p>Dopo aver pagato la licenza e averla registrata nel NetApp Support Site, BlueXP aggiorna automaticamente la licenza nel portafoglio digitale BlueXP e la pagina licenze servizi dati rifletterà la modifica tra 5 e 10 minuti.</p>
+</div>
+</li>
+<li>
+<p>Se BlueXP non riesce ad aggiornare automaticamente la licenza (ad esempio, se installata in un sito buio), sarà necessario caricare manualmente il file di licenza.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>È possibile <a href="#ottenere-il-file-di-licenza-per-il-backup-e-ripristino-bluexp">Ottenere il file di licenza dal NetApp Support Site</a>.</p>
+</li>
+<li>
+<p>Nella scheda <em>licenze servizi dati</em> della pagina del portafoglio digitale BlueXP, fare clic su <span class="image"><img src="./media/screenshot_horizontal_more_button.gif" alt="Icona Altro"></span> Per il numero di serie del servizio che si sta aggiornando, fare clic su <strong>Aggiorna licenza</strong>.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot_services_license_update1.png" alt="Schermata che mostra la selezione del pulsante Update License (Aggiorna licenza) per un determinato servizio."></span></p>
+</div>
+</li>
+<li>
+<p>Nella pagina <em>Update License</em>, caricare il file di licenza e fare clic su <strong>Update License</strong> (Aggiorna licenza).</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Risultato</div>
+<p>BlueXP aggiorna la licenza in modo che il backup e il ripristino di BlueXP continuino ad essere attivi.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="considerazioni-sulla-licenza-byol">Considerazioni sulla licenza BYOL</h3>
+<div class="paragraph">
+<p>Quando si utilizza una licenza BYOL di backup e ripristino BlueXP, nell'interfaccia utente di BlueXP viene visualizzato un avviso quando la dimensione di tutti i dati di cui si esegue il backup è prossima al limite di capacità o alla data di scadenza della licenza. Riceverai questi avvisi:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Quando i backup hanno raggiunto il 80% della capacità concessa in licenza, e ancora una volta quando hai raggiunto il limite</p>
+</li>
+<li>
+<p>30 giorni prima della scadenza di una licenza e di nuovo alla scadenza della stessa</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Utilizzare l'icona chat in basso a destra dell'interfaccia BlueXP per rinnovare la licenza quando vengono visualizzati questi avvisi.</p>
+</div>
+<div class="paragraph">
+<p>Due cose possono accadere alla scadenza della licenza BYOL:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Se l'account che stai utilizzando ha un account Marketplace PAYGO, il servizio di backup continua a funzionare, ma si passa a un modello di licenza PAYGO. La capacità utilizzata dai backup viene addebitata.</p>
+</li>
+<li>
+<p>Se l'account in uso non dispone di un account Marketplace, il servizio di backup continua a essere in esecuzione, ma verranno visualizzati gli avvisi.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Una volta rinnovato l'abbonamento BYOL, BlueXP aggiorna automaticamente la licenza. Se BlueXP non riesce ad accedere al file di licenza tramite una connessione Internet sicura (ad esempio, se installato in un sito buio), è possibile ottenere il file da soli e caricarlo manualmente su BlueXP. Per istruzioni, vedere <a href="task-licensing-cloud-backup.html#update-a-bluexp-backup-and-recovery-byol-license">"Come aggiornare una licenza di backup e ripristino BlueXP"</a>.</p>
+</div>
+<div class="paragraph">
+<p>I sistemi trasferiti a UNA licenza PAYGO vengono restituiti automaticamente alla licenza BYOL. E i sistemi che erano in esecuzione senza una licenza non vedranno più gli avvisi.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+
+    </article>
+    <!-- Page Container -->
+  </div>
+
+  
+  <!-- Start Page Toolbar -->
+<div id="ie-right-navbar-collapse" class="close">
+  <img id="navbar-expand" class="ie-searchbox-icon" src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+</div>
+<div id="ie-right-navbar" class="open">
+  <div id="right-navbar-collapse">
+    <img src="/it-it/bluexp-backup-recovery/images/double_arrow.svg" alt="" />
+  </div>
+  <div class="page-nav-container">
+    <nav class="page-nav-fixed">
+      <div class="page-nav-title">In questa pagina</div>
+      <div class="page-nav-links">
+        <ul class="page-nav-inner" id="page-menu"></ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+
+<script>
+  resizeContent();
+  function setRightBarHeight() {
+    var h = 0;
+
+    // header 1
+    h += PXinViewport($('.n-footer'));
+    h += PXinViewport($('#ie-new-header'));
+
+    if ($('#ie-right-navbar').length) {
+      $('#ie-right-navbar').css({ height: `calc(100vh - ${h}px)` });
+    }
+    if ($('.page-nav-links').length) {
+      h += 98;
+      $('.page-nav-links').css({ height: `calc(100vh - ${h}px)` });
+    }
+  }
+
+  $(document).ready(function () {
+    // PAGE NAV - Click
+    const MASTHEAD_OFFSET = 65;
+    const SECTIONS = $("main h2, main h3");
+    let calculateActiveSection = false;
+    setTimeout(() => {
+      calculateActiveSection = true;
+    }, 100)
+
+    $(".page-nav__link").click(function (event) {
+      calculateActiveSection = false;
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      var target = $(event.target);
+      target.addClass('page-nav__link--active');
+      location.hash = event.target.hash;
+      setTimeout(() => {
+        calculateActiveSection = true;
+      }, 100)
+
+    });
+
+    // PAGE NAV - Scroll
+    $(window).on('resize scroll', function () {
+      if (calculateActiveSection) {
+        var activeSection = getActiveSection(SECTIONS, MASTHEAD_OFFSET);
+        if (activeSection) {
+          var activeHref = $(activeSection).attr('id');
+          $(".page-nav__link").removeClass('page-nav__link--active');
+          $("#page-menu a[href=#" + activeHref + "]").addClass('page-nav__link--active');
+          if (location.hash != "#" + activeHref) {
+            if (history.replaceState) {
+              history.replaceState(null, null, "#" + activeHref);
+            }
+          }
+        }
+      }
+    });
+
+    $(".n-pdf-button").click(function () {
+      $(this).toggleClass("active");
+    });
+
+    $.fn.isVisibleAndInViewport = function () {
+      var elementTop = $(this).offset().top;
+      var elementBottom = elementTop + $(this).outerHeight();
+
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = viewportTop + $(window).height();
+
+      return elementBottom > viewportTop && elementTop < viewportBottom && $(this).is(":visible");
+    };
+
+
+    $(window).on('resize scroll', function () {
+      setRightBarHeight();
+    });
+
+    $(window).trigger('resize');
+
+
+  });
+
+  $("#right-navbar-collapse").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 350, function () {
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+    });
+    $(".ie-content-pane").animate({ width: (width + rightNavbarWidth) }, 350, function () {
+      resizeContent()
+      setSidebarBottom();
+    })
+
+  });
+  $("#navbar-expand").click(function (e) {
+    const rightNavbarWidth = $("#ie-right-navbar").width() - $("#ie-right-navbar-collapse").width();
+    e.preventDefault();
+    const width = $(".ie-content-pane").width();
+    $("#ie-right-navbar").animate({ width: 'toggle' }, 250, function () {
+      $("#ie-right-navbar-collapse").removeClass("open")
+      $("#ie-right-navbar-collapse").addClass("close")
+      $("#ie-right-navbar").removeClass("close")
+      $("#ie-right-navbar").addClass("open")
+      setRightBarHeight();
+      setSidebarBottom();
+    });
+    $(".ie-content-pane").animate({ width: (width - rightNavbarWidth) }, 250, function () {
+      resizeContent()
+    })
+  });
+
+  function navbarResize() {
+    const rightNavbarResized = $("#ie-right-navbar-collapse").hasClass('resized');
+    if (window.innerWidth < 1024) {
+      $("#ie-right-navbar").removeClass("open")
+      $("#ie-right-navbar").addClass("close")
+      $("#ie-right-navbar").removeAttr("style")
+      $("#ie-right-navbar-collapse").removeClass("close")
+      $("#ie-right-navbar-collapse").addClass("open")
+      $("#ie-right-navbar-collapse").addClass("resized")
+    } else {
+      if (rightNavbarResized) {
+        $('#ie-right-navbar').removeClass('close');
+        $('#ie-right-navbar').addClass('open');
+        $("#ie-right-navbar-collapse").removeClass("resized")
+        $("#ie-right-navbar-collapse").removeClass("open")
+        $("#ie-right-navbar-collapse").addClass("close")
+      }
+    }
+    resizeContent()
+  }
+  navbarResize();
+  $(window).on('resize load', function () {
+    navbarResize()
+  });
+
+  function getActiveSection(sections, offset) {
+    var scrollPosition = $(window).scrollTop() + offset + 5;
+    var activeSection;
+    for (var i = 0; i < sections.length; i++) {
+      var el = $(sections[i]);
+      var activePosition = el.offset().top;
+      if (activePosition > scrollPosition) {
+        break;
+      }
+
+      activeSection = sections[i];
+    }
+
+    return activeSection;
+  }
+
+  $("a[href*=#]:not([href=#])").click(function () {
+    setTimeout(() => {
+      $(window).trigger('scroll');
+    }, 105)
+  })
+
+  const hashOnLoad = location.href.split("#")[1];
+  setTimeout(function () {
+    if (hashOnLoad) {
+      $(".page-nav__link").removeClass('page-nav__link--active');
+      $("#page-menu a[href=#" + hashOnLoad + "]").addClass('page-nav__link--active');
+    }
+  }, 100)
+
+</script>
+
+
+  <div style="clear: both"></div><!-- Main needs to have height --></div>
+
+        </main>
+
+        <footer class="n-footer">
+  <div class="n-footer__bottom">
+    <div class="n-container">
+        <div class="n-footer__left">
+          <li class="n-footer__copyright-link">
+                    <a href="https://www.netapp.com/company/legal/copyright/">© 2024 NetApp, Inc.</a>
+          </li>
+        </div>
+        <div class="n-footer__center">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Condizioni per l'utilizzo</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Direttiva sulla privacy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Direttiva sui cookie</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Impostazioni cookie</a>
+            </li>
+          </ul>
+       </div>
+        <div class="n-footer__right">
+              <li class="n-footer__copyright-link">
+                <a target="_self" href="javascript:netapp_mailto()">Invia feedback su questa pagina</a>
+              </li>
+        </div>
+     </div>
+  </div>
+</footer>
+
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/it-it/bluexp-backup-recovery/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
+      <script type="text/javascript" src='/it-it/bluexp-backup-recovery/js/prism.js'></script>
+      <script type="text/javascript" src='/it-it/bluexp-backup-recovery/js/prism-curl.js'></script>
+    </div>
+    <script>
+      document.body.offsetWidth=1903;
+      cookieLaw = {}
+      cookieLaw.euCountry = "US";
+      cookieLaw.invoke = function(){return false;}
+    </script>
+    <script src='/it-it/bluexp-backup-recovery/js/ie-tabbed-blocks.js'></script>
+    <script src='/it-it/bluexp-backup-recovery/js/ie-sidebar.js'></script>
+  </body>
+
+</html>
