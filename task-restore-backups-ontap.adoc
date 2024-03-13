@@ -56,16 +56,19 @@ Questa tabella fornisce un confronto tra le funzionalità dei 2 metodi.
 | Sfoglia e ripristina | Ricerca e ripristino 
 
 
-| Sfogliare una struttura in stile cartella per trovare il volume, la cartella o il file all'interno di un singolo file di backup | Cercare un volume, una cartella o un file in *tutti i file di backup* in base al nome del volume parziale o completo, al nome di cartella o file completo, all'intervallo di dimensioni e ai filtri di ricerca aggiuntivi 
+| Sfogliare una struttura in stile cartella per trovare il volume, la cartella o il file all'interno di un singolo file di backup. | Cercare un volume, una cartella o un file in *tutti i file di backup* per nome di volume parziale o completo, nome di cartella o file completo, intervallo di dimensioni e filtri di ricerca aggiuntivi. 
 
 
 | Non gestisce il ripristino del file se il file è stato cancellato o rinominato e l'utente non conosce il nome del file originale | Gestisce le directory appena create/eliminate/rinominate e i file appena creati/cancellati/rinominati 
 
 
-| Non sono richieste risorse aggiuntive per i cloud provider | Durante il ripristino dal cloud, sono necessarie risorse aggiuntive per bucket e provider di cloud pubblico per account 
+| Non sono richieste risorse aggiuntive per i cloud provider | Quando effettui il ripristino dal cloud, sono necessarie risorse aggiuntive nel bucket e nel provider di cloud pubblico per account. 
 
 
-| Non sono richiesti costi aggiuntivi per i cloud provider | Quando si esegue il ripristino dal cloud, sono necessari costi aggiuntivi per la scansione dei backup e dei volumi per i risultati della ricerca 
+| Non sono richiesti costi aggiuntivi per i cloud provider | Quando esegui il ripristino dal cloud, sono necessari costi aggiuntivi per la scansione dei backup e dei volumi per i risultati di ricerca. 
+
+
+| Il ripristino rapido è supportato. | Il ripristino rapido non è supportato. 
 |===
 Questa tabella fornisce un elenco di operazioni di ripristino valide in base alla posizione in cui si trovano i file di backup.
 
@@ -77,10 +80,10 @@ Questa tabella fornisce un elenco di operazioni di ripristino valide in base all
 |  | *Volume di ripristino* | *Ripristinare i file* | *Cartella di ripristino* | *Volume di ripristino* | *Ripristinare i file* | *Cartella di ripristino* 
 
 
-| Copia Snapshot | Sì | No | No | Sì | Sì | No 
+| Copia Snapshot | Sì | No | No | Sì | Sì | Sì 
 
 
-| Volume replicato | Sì | No | No | Sì | Sì | No 
+| Volume replicato | Sì | No | No | Sì | Sì | Sì 
 
 
 | File di backup | Sì | Sì | Sì | Sì | Sì | Sì 
@@ -131,32 +134,42 @@ NOTE: La priorità alta non è supportata quando si ripristinano i dati dallo st
 
 *Nota:* è possibile ripristinare un volume da qualsiasi tipo di file di backup, ma è possibile ripristinare una cartella o singoli file solo da un file di backup nello storage a oggetti in questo momento.
 
-[cols="33,33,33"]
+[cols="25,25,25,25"]
 |===
-2+| Percorso del file di backup | Ambiente di lavoro di destinazione 
+| *Da archivio oggetti (backup)* | *Da primario (istantanea)* | *Dal sistema secondario (replica)* | A ambiente di lavoro di destinazione
 
-
-| *Archivio oggetti (backup)* | *Sistema secondario (replica)* | ifdef::aws[] 
+ifdef::aws[] 
 
 
 | Amazon S3 | Cloud Volumes ONTAP in AWS
-Sistema ONTAP on-premise | Cloud Volumes ONTAP in AWS on-premise ONTAP system endif::aws[] ifdef::Azure[] 
+Sistema ONTAP on-premise | Cloud Volumes ONTAP in AWS
+Sistema ONTAP on-premise
+
+endif::aws[]
 
 
-| Azure Blob | Cloud Volumes ONTAP in Azure
-Sistema ONTAP on-premise | Cloud Volumes ONTAP in Azure on-premise ONTAP system endif::Azure[] ifdef::gcp[] 
+
+ifdef::azure[] | Azure Blob 
 
 
-| Storage Google Cloud | Cloud Volumes ONTAP in Google
-Sistema ONTAP on-premise | Cloud Volumes ONTAP in Google on-premise ONTAP system endif::gcp[] 
+| Cloud Volumes ONTAP in Azure
+Sistema ONTAP on-premise | Cloud Volumes ONTAP in Azure
+Sistema ONTAP on-premise
+
+endif::azure[]
 
 
-| NetApp StorageGRID | Sistema ONTAP on-premise
-Cloud Volumes ONTAP | Sistema ONTAP on-premise 
+
+ifdef::gcp[] | Storage Google Cloud | Cloud Volumes ONTAP in Google
+Sistema ONTAP on-premise 
 
 
-| ONTAP S3 | Sistema ONTAP on-premise
-Cloud Volumes ONTAP | Sistema ONTAP on-premise 
+| Cloud Volumes ONTAP in Google on-premise ONTAP system endif::gcp[] | NetApp StorageGRID | Sistema ONTAP on-premise | Sistema ONTAP on-premise
+Cloud Volumes ONTAP 
+
+
+| Al sistema ONTAP on-premise | ONTAP S3 | Sistema ONTAP on-premise | Sistema ONTAP on-premise
+Cloud Volumes ONTAP 
 |===
 ifdef::aws[]
 
@@ -208,7 +221,7 @@ NOTE: Se la versione di ONTAP sul sistema è inferiore alla 9.13.1, non è possi
 
 Quando si ripristina un volume da un file di backup, il backup e ripristino di BlueXP crea un _nuovo_ volume utilizzando i dati del backup. Quando utilizzi un backup dallo storage a oggetti, puoi ripristinare i dati su un volume dell'ambiente di lavoro originale, in un ambiente di lavoro diverso che si trova nello stesso account cloud dell'ambiente di lavoro di origine o in un sistema ONTAP on-premise.
 
-Quando si ripristina un backup cloud su un sistema Cloud Volumes ONTAP utilizzando ONTAP 9.13.0 o versioni successive, è possibile eseguire un'operazione di "ripristino rapido". Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume invece di ripristinare l'intero file di backup. Il ripristino rapido non è consigliato per le applicazioni sensibili alle prestazioni o alla latenza e non è supportato con i backup nello storage archiviato.
+Quando si ripristina un backup cloud su un sistema Cloud Volumes ONTAP con ONTAP 9.13.0 o versione successiva o su un sistema ONTAP on-premise che esegue ONTAP 9.14.1, è possibile eseguire un'operazione di _ripristino rapido_. Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume invece di ripristinare l'intero file di backup. Il ripristino rapido non è consigliato per le applicazioni sensibili alle prestazioni o alla latenza e non è supportato con i backup nello storage archiviato.
 
 
 NOTE: Il ripristino rapido è supportato per i volumi FlexGroup solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.12.1 o versioni successive. Inoltre, è supportato per i volumi SnapLock solo se il sistema di origine esegue ONTAP 9.11.0 o superiore.
@@ -278,7 +291,7 @@ endif::gcp[]
 image:screenshot_restore_new_vol_name.png["Una schermata che mostra l'immissione del nome del nuovo volume che si desidera ripristinare."]
 
 +
-Quando si ripristina un backup dallo storage a oggetti a un sistema Cloud Volumes ONTAP utilizzando ONTAP 9.13.0 o versioni successive, è possibile eseguire un'operazione di "ripristino rapido".
+Quando ripristini un backup dallo storage a oggetti a un sistema Cloud Volumes ONTAP usando ONTAP 9.13.0 o versione successiva o su un sistema ONTAP on-premise che esegue ONTAP 9.14.1, potrai eseguire un'operazione di _ripristino rapido_.
 
 +
 Se si sta ripristinando il volume da un file di backup che risiede in un Tier di storage di archiviazione (disponibile a partire da ONTAP 9.10.1), è possibile selezionare la priorità di ripristino.
@@ -305,6 +318,15 @@ ifdef::gcp[]
 link:reference-google-backup-tiers.html#restoring-data-from-archival-storage["Scopri di più sul ripristino dallo storage di archiviazione di Google"]. I file di backup nel Tier di storage di Google Archive vengono ripristinati quasi immediatamente e non richiedono alcuna priorità di ripristino.
 
 endif::gcp[]
+
+. Fare clic su *Avanti* per scegliere se eseguire un ripristino normale o un processo di ripristino rapido:
++
+image:screenshot_restore_browse_quick_restore.png["Una schermata che mostra i processi normali e di ripristino rapido."]
+
++
+** *Ripristino normale*: Utilizzare il ripristino normale su volumi che richiedono prestazioni elevate. I volumi non saranno disponibili fino al completamento del processo di ripristino.
+** *Ripristino rapido*: I volumi e i dati ripristinati saranno immediatamente disponibili. Non utilizzare questa opzione sui volumi che richiedono prestazioni elevate, poiché durante il processo di ripristino rapido l'accesso ai dati potrebbe essere più lento del solito.
+
 
 . Fare clic su *Restore* (Ripristina) per tornare alla dashboard di ripristino, in modo da esaminare l'avanzamento dell'operazione di ripristino.
 
@@ -486,8 +508,6 @@ L'operazione di ricerca analizza tutte le copie Snapshot locali esistenti per i 
 
 Quando ripristini un _volume completo_ da un file di backup, il backup e il recovery di BlueXP crea un volume _nuovo_ utilizzando i dati del backup. Puoi ripristinare i dati come volume nell'ambiente di lavoro originale, in un ambiente di lavoro diverso che si trova nello stesso account cloud dell'ambiente di lavoro di origine o in un sistema ONTAP on-premise.
 
-Quando si ripristina un backup cloud su un sistema Cloud Volumes ONTAP utilizzando ONTAP 9.13.0 o versioni successive, è possibile eseguire un'operazione di "ripristino rapido". Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire accesso a un volume il prima possibile. Un ripristino rapido ripristina i metadati dal file di backup a un volume invece di ripristinare l'intero file di backup. Il ripristino rapido non è consigliato per le applicazioni sensibili alle prestazioni o alla latenza e non è supportato con i backup nello storage archiviato.
-
 È possibile ripristinare _cartelle o file_ nella posizione originale del volume, in un volume diverso nello stesso ambiente di lavoro, in un ambiente di lavoro diverso che utilizza lo stesso account cloud o in un volume su un sistema ONTAP on-premise.
 
 Quando si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare una cartella insieme a tutti i file e le sottocartelle all'interno di essa. Quando si utilizza una versione di ONTAP precedente alla 9.13.0, vengono ripristinati solo i file di tale cartella, non vengono ripristinate sottocartelle o file in sottocartelle.
@@ -516,7 +536,6 @@ endif::gcp[]
 ====
 * Se il file di backup nello storage a oggetti è stato configurato con la protezione DataLock e ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l'intero volume dal file di backup e accedere alla cartella e ai file necessari.
 * Se il file di backup nello storage a oggetti risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l'intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.
-* Il ripristino rapido è supportato per i volumi FlexGroup solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.12.1 o versioni successive. Il ripristino rapido per SnapLock Volumes è supportato solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.11.0 o versioni successive. Non esistono requisiti minimi per FlexVol Volumes.
 * La priorità di ripristino "alta" non è supportata quando si ripristinano i dati dallo storage di archivio Azure ai sistemi StorageGRID.
 * Il ripristino delle cartelle non è attualmente supportato dai volumi nello storage a oggetti ONTAP S3.
 
@@ -761,14 +780,11 @@ image:screenshot_restore_step2_search_restore.png["Una schermata che mostra come
 
 . Individuare il file di backup che si desidera utilizzare per ripristinare i dati e fare clic su *Restore* (Ripristina).
 +
-I risultati identificano anche le copie Snapshot del volume locale che contengono il file nella ricerca. È possibile scegliere di eseguire il ripristino dal file di backup del cloud o dalla copia Snapshot.
+I risultati identificano le copie Snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca. Puoi scegliere di eseguire il ripristino dal file di backup nel cloud, dalla copia Snapshot o dal volume replicato.
 
 . Selezionare il percorso di destinazione in cui si desidera ripristinare il volume, la cartella o i file e fare clic su *Restore* (Ripristina).
 +
 ** Per i volumi, è possibile selezionare l'ambiente di lavoro di destinazione originale oppure un ambiente di lavoro alternativo. Durante il ripristino di un volume FlexGroup, dovrai scegliere più aggregati.
-+
-Quando si ripristina un backup dallo storage a oggetti a un sistema Cloud Volumes ONTAP utilizzando ONTAP 9.13.0 o versioni successive, è possibile eseguire un'operazione di "ripristino rapido".
-
 ** Per le cartelle, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, inclusi ambiente di lavoro, volume e cartella.
 ** Per i file, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, inclusi ambiente di lavoro, volume e cartella. Quando si seleziona la posizione originale, è possibile scegliere di sovrascrivere i file di origine o di creare nuovi file.
 +

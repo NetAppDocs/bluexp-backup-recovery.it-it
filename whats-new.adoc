@@ -18,6 +18,30 @@ Scopri le novità di BlueXP backup e recovery.
 
 
 
+== 12 marzo 2024
+
+
+
+=== Possibilità di eseguire "ripristini rapidi" dai backup cloud ai volumi ONTAP on-premise
+
+Ora puoi eseguire un _ripristino rapido_ di un volume dal cloud storage a un volume di destinazione ONTAP on-premise. In precedenza era possibile eseguire un ripristino rapido solo su un sistema Cloud Volumes ONTAP. Il ripristino rapido è ideale per le situazioni di disaster recovery in cui è necessario fornire accesso a un volume il prima possibile. Un ripristino rapido è molto più veloce di un ripristino completo di volumi e ripristina i metadati da una snapshot cloud a un volume di destinazione ONTAP. L'origine potrebbe provenire da AWS S3, BLOB di Azure, Google Cloud Services o NetApp StorageGRID.
+
+Il sistema di destinazione ONTAP on-premise deve eseguire ONTAP versione 9.14.1 o successiva.
+
+È possibile eseguire questa operazione utilizzando il processo di ricerca e ripristino, non il processo di ricerca e ripristino.
+
+Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html["Ripristinare i dati ONTAP dai file di backup"].
+
+
+
+=== Possibilità di ripristinare file e cartelle da copie Snapshot e di replica
+
+In precedenza, potevi ripristinare file e cartelle solo dalle copie di backup in AWS, Azure e Google Cloud Services. Ora, è possibile ripristinare file e cartelle da copie Snapshot locali e da copie di replica.
+
+È possibile eseguire questa funzione utilizzando il processo di ricerca e ripristino, non utilizzando il processo di ricerca e ripristino.
+
+
+
 == 01 febbraio 2024
 
 

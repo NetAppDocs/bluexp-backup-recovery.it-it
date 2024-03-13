@@ -56,7 +56,7 @@ Tenere presente che i backup annaturali verranno eliminati automaticamente dal s
 
 Il backup e ripristino BlueXP fornisce supporto per la protezione DataLock e ransomware per i backup dei volumi. Queste funzionalità consentono di bloccare i file di backup e di eseguirne la scansione per rilevare eventuali ransomware sui file di backup. Si tratta di un'impostazione opzionale che è possibile definire nei criteri di backup quando si desidera una protezione aggiuntiva per i backup dei volumi per un cluster.
 
-Entrambe queste funzionalità proteggono i file di backup in modo che sia sempre disponibile un file di backup valido per il ripristino dei dati in caso di attacco ransomware ai backup. È inoltre utile soddisfare alcuni requisiti normativi in cui i backup devono essere bloccati e conservati per un certo periodo di tempo. Quando la protezione DataLock e ransomware è attivata, il bucket cloud che viene fornito come parte dell'attivazione del backup e ripristino di BlueXP avrà il blocco degli oggetti e il controllo della versione degli oggetti attivati.
+Entrambe queste funzionalità proteggono i file di backup in modo che sia sempre disponibile un file di backup valido per il ripristino dei dati in caso di attacco ransomware ai backup. È inoltre utile soddisfare alcuni requisiti normativi in cui i backup devono essere bloccati e conservati per un certo periodo di tempo. Una volta abilitata l'opzione DataLock e protezione dal ransomware, il bucket cloud su cui viene eseguito il provisioning come parte dell'attivazione di backup e recovery di BlueXP avrà abilitato il blocco degli oggetti e la versione degli oggetti.
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Per ulteriori informazioni, consulta il blog sulla protezione di DataLock e ransomware"^].
 
@@ -74,7 +74,7 @@ Questa funzione non fornisce protezione per i volumi di origine, ma solo per i b
 
 === Cos'è DataLock
 
-DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo, detto anche storage immutabile. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti". Il periodo di tempo in cui il file di backup viene bloccato (e conservato) viene definito periodo di conservazione DataLock. Si basa sulla pianificazione dei criteri di backup e sull'impostazione di conservazione definita dall'utente, oltre a un buffer di 14 giorni. Qualsiasi policy di conservazione DataLock inferiore a 30 giorni viene arrotondata al minimo di 30 giorni.
+DataLock protegge i file di backup da modifiche o eliminazioni per un certo periodo di tempo, denominato anche _storage immutabile_. Questa funzionalità utilizza la tecnologia del provider di storage a oggetti per il "blocco degli oggetti". Il periodo di tempo in cui il file di backup viene bloccato (e conservato) viene definito periodo di conservazione DataLock. E si basa sulla pianificazione dei criteri di backup e sull'impostazione di conservazione definita dall'utente, oltre a un buffer di 14 giorni. Qualsiasi policy di conservazione DataLock inferiore a 30 giorni viene arrotondata al minimo di 30 giorni.
 
 Tenere presente che i vecchi backup vengono cancellati dopo la scadenza del periodo di conservazione DataLock, non dopo la scadenza del periodo di conservazione dei criteri di backup.
 
@@ -300,7 +300,7 @@ endif::azure[]
 
 === Restrizioni
 
-* La protezione DataLock e ransomware non è disponibile se lo storage di archiviazione è stato configurato nel criterio di backup.
+* La funzionalità di protezione DataLock e ransomware non è disponibile se è stato configurato lo storage di archivio nel criterio di backup.
 * L'opzione DataLock selezionata quando si attiva il backup e il ripristino BlueXP deve essere utilizzata per tutti i criteri di backup per quel cluster.
 * Non è possibile utilizzare più modalità DataLock su un singolo cluster.
 * Se si attiva DataLock, tutti i backup dei volumi verranno bloccati. Non è possibile combinare backup di volumi bloccati e non bloccati per un singolo cluster.
@@ -312,12 +312,13 @@ endif::azure[]
 
 == Impostazioni dello storage di archiviazione
 
-Quando utilizzi AWS, Azure o Google Cloud storage, dopo un certo numero di giorni puoi spostare i file di backup meno recenti in una classe di archiviazione/Tier di accesso meno costoso. Puoi anche scegliere di inviare immediatamente i file di backup allo storage di archivio senza essere scritti su cloud storage standard. È sufficiente inserire *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio. Ciò può risultare particolarmente utile per gli utenti che raramente hanno bisogno di accedere ai dati da backup del cloud o per gli utenti che stanno sostituendo una soluzione di backup su nastro.
+Quando si utilizza il cloud storage AWS, Azure o Google, dopo un certo numero di giorni è possibile spostare i file di backup meno recenti in una classe di archiviazione o un Tier di accesso meno costosi. Puoi anche scegliere di inviare immediatamente i file di backup allo storage di archivio senza essere scritti su cloud storage standard. È sufficiente inserire *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio. Ciò può risultare particolarmente utile per gli utenti che raramente hanno bisogno di accedere ai dati da backup del cloud o per gli utenti che stanno sostituendo una soluzione di backup su nastro.
 
 Non è possibile accedere immediatamente ai dati nei livelli di archiviazione quando necessario e richiede un costo di recupero più elevato, pertanto è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati dai file di backup prima di decidere di archiviare i file di backup.
 
 [NOTE]
 ====
+* Anche se selezioni "0" per inviare tutti i blocchi di dati al cloud storage di archiviazione, i blocchi di metadati vengono sempre scritti nel cloud storage standard.
 * Non è possibile utilizzare lo storage di archiviazione se è stato attivato DataLock.
 * Non è possibile modificare il criterio di archiviazione dopo aver selezionato *0* giorni (archiviare immediatamente).
 
