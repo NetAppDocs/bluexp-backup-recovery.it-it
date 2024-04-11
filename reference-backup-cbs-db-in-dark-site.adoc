@@ -14,7 +14,7 @@ summary: 'Quando utilizzi il backup e recovery di BlueXP in un sito senza access
 
 
 [role="lead"]
-Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, noto come "modalità privata", viene eseguito il backup dei dati di configurazione del backup e recovery di BlueXP nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
+Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, noto come _modalità privata_, viene eseguito il backup dei dati di configurazione di backup e recovery di BlueXP nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
 
 Si noti che quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS in cui BlueXP Connector viene implementato presso il provider cloud o sul proprio sistema host dotato di accesso a Internet, tutti i dati importanti di configurazione di backup e ripristino BlueXP vengono sottoposti a backup e protetti nel cloud. In caso di problemi con il connettore, è sufficiente creare un nuovo connettore e aggiungere gli ambienti di lavoro per ripristinare automaticamente i dettagli del backup.
 

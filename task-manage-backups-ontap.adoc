@@ -261,7 +261,7 @@ Dopo aver selezionato un'azione, BlueXP aggiorna la relazione.
 
 
 
-== Modificare una policy di backup su cloud esistente
+== Modifica di una policy di backup nel cloud esistente
 
 È possibile modificare gli attributi di un criterio di backup attualmente applicato ai volumi in un ambiente di lavoro. La modifica del criterio di backup influisce su tutti i volumi esistenti che utilizzano il criterio.
 
@@ -319,7 +319,7 @@ endif::gcp[]
 
 
 
-== Aggiungi un nuovo backup alla policy cloud
+== Aggiungi una nuova policy di backup nel cloud
 
 Quando si attiva il backup e il ripristino BlueXP per un ambiente di lavoro, tutti i volumi selezionati inizialmente vengono sottoposti a backup utilizzando il criterio di backup predefinito definito. Se si desidera assegnare criteri di backup diversi a determinati volumi con obiettivi RPO (Recovery Point Objective) diversi, è possibile creare criteri aggiuntivi per tale cluster e assegnarli ad altri volumi.
 

@@ -18,6 +18,25 @@ Scopri le novità di BlueXP backup e recovery.
 
 
 
+== 04 aprile 2024
+
+
+
+=== Capacità di abilitare o disabilitare le scansioni ransomware
+
+In precedenza, quando hai abilitato il rilevamento di ransomware in una policy di backup, si sono verificate automaticamente le scansioni al momento della creazione del primo backup e al ripristino di un backup. In precedenza, il servizio ha eseguito la scansione di tutte le copie Snapshot e non è stato possibile disattivare le scansioni.
+
+Con questa release, puoi ora abilitare o disabilitare le scansioni ransomware sull'ultima copia Snapshot, utilizzando l'opzione nella pagina Impostazioni avanzate. Se si attiva, le scansioni vengono eseguite settimanalmente per impostazione predefinita. È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
+
+Fare riferimento alle seguenti informazioni per i dettagli:
+
+* link:task-manage-backup-settings-ontap.html["Gestire le impostazioni di backup"]
+* link:task-create-policies-ontap.html["Gestire le policy per ONTAP Volumes"]
+* link:concept-cloud-backup-policies.html["Impostazioni dei criteri di backup su oggetti"]
+
+
+
+
 == 12 marzo 2024
 
 

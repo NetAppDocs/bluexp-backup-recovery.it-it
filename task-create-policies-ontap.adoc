@@ -20,7 +20,7 @@ Quando si utilizza la procedura guidata di attivazione per attivare il servizio 
 
 Per informazioni sui criteri di backup predefiniti forniti, fare riferimento a. link:concept-protection-journey.html["Pianifica il tuo percorso di protezione"].
 
-Il backup e recovery di BlueXP offre tre tipi di backup di dati ONTAP: Snapshot, repliche e backup sullo storage a oggetti. Le loro policy risiedono in luoghi diversi a causa dell'architettura che utilizzi e del tipo di backup:
+Il backup e recovery di BlueXP offre tre tipi di backup di dati ONTAP: Snapshot, repliche e backup sullo storage a oggetti. Le loro policy risiedono in sedi diverse, in base all'architettura che utilizzi e al tipo di backup:
 
 [cols="25,25,25,25"]
 |===
@@ -62,7 +62,18 @@ Per impostazione predefinita, le policy degli snapshot vengono visualizzate.
 
 
 
-== Creare un criterio Snapshot prima di avviare lo Snapshot
+== Creare policy
+
+È possibile creare policy per le copie Snapshot, le repliche e i backup sullo storage a oggetti:
+
+* <<Creare un criterio Snapshot prima di avviare lo Snapshot>>
+* <<Creare un criterio di replica prima di avviare la replica>>
+* <<Creare una policy di backup sullo storage a oggetti prima di iniziare il backup>>
+
+
+
+
+=== Creare un criterio Snapshot prima di avviare lo Snapshot
 
 Parte della strategia 3-2-1 prevede la creazione di una copia Snapshot del volume sul sistema di storage *primario*.
 
@@ -88,9 +99,7 @@ Viene visualizzata la pagina Gestione criteri.
 . Selezionare *Crea*.
 
 
-
-
-=== Esempio di criterio snapshot che utilizza un'architettura a cascata
+*Esempio di criterio Snapshot utilizzando un'architettura a cascata*
 
 Questo esempio crea una policy Snapshot con due cluster:
 
@@ -112,7 +121,7 @@ Questo esempio crea una policy Snapshot con due cluster:
 
 
 
-== Creare un criterio di replica prima di avviare la replica
+=== Creare un criterio di replica prima di avviare la replica
 
 La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di storage diverso. Il criterio di replica risiede nel sistema di archiviazione *secondario*.
 
@@ -126,7 +135,7 @@ La strategia 3-2-1 potrebbe includere la replica di un volume su un sistema di s
 
 
 
-== Creare una policy di backup sullo storage a oggetti prima di iniziare il backup
+=== Creare una policy di backup sullo storage a oggetti prima di iniziare il backup
 
 La tua strategia 3-2-1 potrebbe includere il backup di un volume sullo storage a oggetti.
 

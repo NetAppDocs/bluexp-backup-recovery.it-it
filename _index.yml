@@ -1,0 +1,137 @@
+---
+indexpage:
+  title: Documentazione di backup e ripristino BlueXP
+  summary: Il servizio di backup e recovery di BlueXP offre una data Protection efficiente,
+    sicura e conveniente per i dati NetApp ONTAP, volumi persistenti di Kubernetes,
+    database e macchine virtuali (VM), sia on-premise che nel cloud.
+  keywords: bluexp, bluexp backup recovery, ontap, kubernetes, virtual machines, vm,
+    on-premises, data protection
+  lead: Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficiente,
+    sicura e conveniente per i dati NetApp ONTAP, Kubernetes volumi persistenti, database
+    e macchine virtuali, sia on-premise che nel cloud.
+  tiles:
+  - title: Inizia subito
+    links:
+    - title: Informazioni su backup e ripristino BlueXP
+      url: concept-backup-to-cloud.html
+    - title: Novità
+      url: whats-new.html
+    - title: Impostare la licenza
+      url: task-licensing-cloud-backup.html
+    - title: Monitorare lo stato dei processi di backup e ripristino
+      url: task-monitor-backup-jobs.html
+    - title: Creazione di report sulla copertura per la data Protection
+      url: task-report-inventory.html
+  - title: Eseguire il backup dei dati ONTAP nel cloud
+    links:
+    - title: Eseguire il backup di Cloud Volumes ONTAP su Amazon S3
+      url: task-backup-to-s3.html
+      flavor: aws
+    - title: Backup di Cloud Volumes ONTAP in Azure Blob
+      url: task-backup-to-azure.html
+      flavor: azure
+    - title: Eseguire il backup di Cloud Volumes ONTAP su Google Cloud
+      url: task-backup-to-gcp.html
+      flavor: gcp
+    - title: Eseguire il backup on-premise di ONTAP su Amazon S3
+      url: task-backup-onprem-to-aws.html
+      flavor: aws
+    - title: Esegui il backup di ONTAP on-premise in Azure Blob
+      url: task-backup-onprem-to-azure.html
+      flavor: azure
+    - title: Eseguire il backup on-premise di ONTAP su Google Cloud
+      url: task-backup-onprem-to-gcp.html
+      flavor: gcp
+    - title: Esegui il backup da ONTAP on-premise a ONTAP S3
+      url: task-backup-onprem-to-ontap-s3.html
+    - title: Eseguire il backup on-premise di ONTAP su StorageGRID
+      url: task-backup-onprem-private-cloud.html
+  - title: Gestire i file di backup di ONTAP
+    links:
+    - title: Gestire i backup dei sistemi ONTAP
+      url: task-manage-backups-ontap.html
+    - title: Gestire le policy per ONTAP Volumes
+      url: task-create-policies-ontap.html
+    - title: Opzioni di policy backup-to-object (DataLock e protezione ransomware)
+      url: concept-cloud-backup-policies.html
+    - title: Gestire le opzioni di backup su oggetto in Impostazioni avanzate
+      url: task-manage-backup-settings-ontap.html
+    - title: Gestire le relazioni di replica
+      url: task-manage-backups-ontap.html#manage-the-replication-relationship-with-the-source-volume
+  - title: Eseguire il backup dei dati delle applicazioni nel cloud
+    links:
+    - title: Eseguire il backup dei dati delle applicazioni on-premise su Amazon Web
+        Services
+      flavor: aws
+      url: task-backup-app-data-to-aws.html
+    - title: Eseguire il backup dei dati delle applicazioni on-premise su Microsoft
+        Azure
+      flavor: azure
+      url: task-backup-app-data-to-azure.html
+    - title: Eseguire il backup dei dati delle applicazioni on-premise su Google Cloud
+      flavor: gcp
+      url: task-backup-app-data-to-gcp.html
+    - title: Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
+      url: task-backup-app-data-to-storagegrid.html
+    - title: Eseguire il backup del database Oracle nativo del cloud
+      url: task-backup-cloud-native-oracle-data.html
+    - title: Eseguire il backup del database SAP HANA nativo del cloud
+      flavor: azure
+      url: task-backup-cloud-native-sap-hana-data.html
+    - title: Eseguire il backup del database SQL Server nativo nel cloud
+      url: task-backup-cloud-native-sql-data.html
+  - title: Eseguire il backup dei datastore nel cloud
+    links:
+    - title: Eseguire il backup dei datastore su Amazon Web Services
+      flavor: aws
+      url: task-backup-vm-data-to-aws.html
+    - title: Eseguire il backup dei datastore su Microsoft Azure
+      flavor: azure
+      url: task-backup-vm-data-to-azure.html
+    - title: Backup dei datastore su Google Cloud Platform
+      flavor: gcp
+      url: task-backup-vm-data-to-gcp.html
+    - title: Eseguire il backup dei datastore su StorageGRID
+      url: task-backup-vm-data-to-storagegrid.html
+  - title: Ripristinare i dati dal cloud
+    links:
+    - title: Ripristinare i dati del volume ONTAP
+      url: task-restore-backups-ontap.html
+    - title: Ripristinare i dati delle applicazioni Oracle on-premise
+      url: task-restore-oracle-data.html
+    - title: Ripristinare i dati delle applicazioni SQL Server on-premise
+      url: task-restore-sql-data.html
+    - title: Ripristinare i dati delle applicazioni Oracle native del cloud
+      url: task-restore-cloud-native-oracle-data.html
+    - title: Ripristinare i dati delle applicazioni SAP HANA native del cloud
+      flavor: azure
+      url: task-restore-cloud-native-sap-hana-data.html
+    - title: Ripristina i dati di SQL Server nativi del cloud
+      url: task-restore-cloud-native-sql-data.html
+    - title: Ripristinare i dati delle macchine virtuali
+      url: task-restore-vm-data.html
+    - title: Ripristinare i dati del volume Kubernetes
+      url: task-restore-backups-kubernetes.html
+  - title: Eseguire il backup dei dati Kubernetes nel cloud
+    links:
+    - title: Eseguire il backup del cluster Kubernetes su Amazon S3
+      url: task-backup-kubernetes-to-s3.html
+      flavor: aws
+    - title: Effettua il backup del cluster Kubernetes in Azure Blob
+      url: task-backup-kubernetes-to-azure.html
+      flavor: azure
+    - title: Eseguire il backup del cluster Kubernetes in Google Cloud
+      url: task-backup-kubernetes-to-gcp.html
+      flavor: gcp
+  - title: Blog e community
+    links:
+    - title: Community NetApp
+      url: https://community.netapp.com/t5/Public-Cloud-Services/ct-p/CDS
+    - title: Blog di backup e ripristino BlueXP
+      url: https://bluexp.netapp.com/blog/topic/cloud-backup
+    - title: Casi di utilizzo di backup e ripristino BlueXP
+      url: https://bluexp.netapp.com/cloud-backup
+    - title: Video su backup e recovery di BlueXP
+      url: https://youtube.com/playlist?list=PLdXI3bZJEw7modoLQEVUHoQ8DJyVk_1wU
+    - title: Webinar BlueXP
+      url: https://bluexp.netapp.com/events

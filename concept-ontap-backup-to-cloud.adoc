@@ -58,7 +58,7 @@ Se necessario, è possibile ripristinare un intero _volume_, una _cartella_ o un
 
 Vedere link:reference-limitations.html#replication-limitations["Limitazioni della replica"] Per un elenco delle funzionalità di replica non disponibili con il backup e ripristino BlueXP.
 
-*Funzionalità di backup su oggetto:*
+*Caratteristiche di backup su oggetto:*
 
 * Eseguire il backup di copie indipendenti dei volumi di dati in uno storage a oggetti a basso costo.
 * Applicare una singola policy di backup a tutti i volumi di un cluster oppure assegnare policy di backup diverse a volumi che hanno obiettivi di punto di ripristino univoci.
@@ -78,9 +78,9 @@ Vedere link:reference-limitations.html#replication-limitations["Limitazioni dell
 * Ripristinare i dati da un punto specifico di tempo da copie Snapshot locali, volumi replicati o volumi di backup nello storage a oggetti.
 * Ripristinare un volume, una cartella o singoli file nel sistema di origine o in un sistema diverso.
 * Ripristinare i dati in un ambiente di lavoro utilizzando un abbonamento/account diverso o che si trova in un'altra regione.
-* Capacità di eseguire un _ripristino rapido_ di un volume dal cloud storage a un sistema Cloud Volumes ONTAP o a un sistema on-premise; ideale per situazioni di disaster recovery in cui è necessario fornire l'accesso a un volume il prima possibile.
-* I dati vengono ripristinati a livello di blocco, posizionando i dati direttamente nella posizione specificata, il tutto mantenendo gli ACL originali.
-* Cataloghi di file esplorabili e ricercabili per una facile selezione di singole cartelle e file per un singolo ripristino dei file.
+* Eseguire un _ripristino rapido_ di un volume dal cloud storage a un sistema Cloud Volumes ONTAP o a un sistema on-premise; perfetto per situazioni di disaster recovery in cui è necessario fornire l'accesso a un volume il prima possibile.
+* Ripristinare i dati a livello di blocco, posizionando i dati direttamente nella posizione specificata, il tutto mantenendo gli ACL originali.
+* Sfoglia e cerca nei cataloghi di file per selezionare facilmente singole cartelle e file per il ripristino di un singolo file.
 
 
 
@@ -389,13 +389,23 @@ TIP: Il periodo di conservazione per i backup dei volumi di protezione dei dati 
 
 === Impostazioni di protezione del file di backup
 
-Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile proteggere i backup nello storage a oggetti da attacchi ransomware e di eliminazione. Ogni policy di backup fornisce una sezione per _DataLock e ransomware Protection_ che può essere applicata ai file di backup per un periodo di tempo specifico, il _periodo di conservazione_. _DataLock_ protegge i file di backup da modifiche o eliminazioni. _Ransomware Protection_ esegue la scansione dei file di backup per cercare la prova di un attacco ransomware quando viene creato un file di backup e quando vengono ripristinati i dati di un file di backup.
+Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile proteggere i backup nello storage a oggetti da attacchi ransomware e di eliminazione. Ogni policy di backup fornisce una sezione per _DataLock e ransomware Protection_ che può essere applicata ai file di backup per un periodo di tempo specifico, il _periodo di conservazione_.
+
+* _DataLock_ protegge i file di backup da modifiche o eliminazioni.
+* _Ransomware Protection_ esegue la scansione dei file di backup per cercare la prova di un attacco ransomware quando viene creato un file di backup e quando vengono ripristinati i dati di un file di backup.
+
+
+Le scansioni pianificate di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Le scansioni pianificate possono essere disattivate per ridurre i costi. Puoi abilitare o disabilitare le scansioni ransomware pianificate sull'ultima copia Snapshot utilizzando l'opzione nella pagina Advanced Settings (Impostazioni avanzate). Se si attiva, le scansioni vengono eseguite settimanalmente per impostazione predefinita. È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
 
 Il periodo di conservazione del backup è lo stesso del periodo di conservazione della pianificazione del backup, più 14 giorni. Ad esempio, i backup _settimanali_ con _5_ copie conservate bloccano ogni file di backup per 5 settimane. I backup _mensili_ con _6_ copie conservate bloccano ogni file di backup per 6 mesi.
 
 Il supporto è attualmente disponibile quando la destinazione del backup è Amazon S3, Azure Blob o NetApp StorageGRID. Le destinazioni di altri provider di storage verranno aggiunte nelle versioni future.
 
-Vedere link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Protezione DataLock e ransomware"^] Per ulteriori informazioni sul funzionamento della protezione DataLock e ransomware.
+Per ulteriori informazioni, fare riferimento a queste informazioni:
+
+* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Funzionamento di DataLock e protezione ransomware"].
+* link:manage-backup-settings-ontap.html["Come aggiornare le opzioni di protezione dal ransomware nella pagina Impostazioni avanzate"].
+
 
 
 TIP: Non è possibile attivare DataLock se si stanno eseguendo il tiering dei backup nello storage di archiviazione.

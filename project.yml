@@ -52,6 +52,10 @@ sidebar:
       url: "/concept-protection-journey.html"
     - title: Gestire le policy per ONTAP Volumes
       url: "/task-create-policies-ontap.html"
+    - title: Opzioni di policy backup su oggetti
+      url: "/concept-cloud-backup-policies.html"
+    - title: Gestire le opzioni di backup su oggetto in Impostazioni avanzate
+      url: "/task-manage-backup-settings-ontap.html"
     - title: Eseguire il backup di Cloud Volumes ONTAP su Amazon S3
       flavor: aws
       url: "/task-backup-to-s3.html"
@@ -78,8 +82,6 @@ sidebar:
       url: "/task-manage-backups-ontap.html"
     - title: Ripristino dai backup di ONTAP
       url: "/task-restore-backups-ontap.html"
-    - title: Gestire le impostazioni di backup a livello di cluster su oggetti
-      url: "/task-manage-backup-settings-ontap.html"
   - title: Backup e ripristino dei dati delle applicazioni on-premise
     entries:
     - title: Proteggi i dati delle tue applicazioni on-premise
@@ -224,8 +226,6 @@ sidebar:
     url: "/api-backup-restore.html"
   - title: Riferimento
     entries:
-    - title: Impostazioni dei criteri di backup
-      url: "/concept-cloud-backup-policies.html"
     - title: Tier di storage di archivio AWS supportati
       url: "/reference-aws-backup-tiers.html"
     - title: Tier di accesso all'archivio Azure supportati

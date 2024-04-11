@@ -604,13 +604,21 @@ Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le segue
 +
 ** Immettere il nome del criterio.
 ** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
-** Selezionare *Crea*.
-
-
-. *Replication*: Impostare le seguenti opzioni:
 +
-** *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
-** *Criterio di replica*: Scegliere un criterio di replica esistente o crearne uno.
+*** Per le policy di backup su oggetto, imposta le impostazioni DataLock e protezione dal ransomware. Per ulteriori informazioni su DataLock e protezione dal ransomware, fare riferimento a. link:concept-cloud-backup-policies.html["Impostazioni dei criteri di backup su oggetti"].
+
+
+
+
+
+
+* Selezionare *Crea*.
++
+.. *Replication*: Impostare le seguenti opzioni:
+
+
+* *Destinazione della replica*: Selezionare l'ambiente di lavoro di destinazione e SVM. Facoltativamente, selezionare l'aggregato o gli aggregati di destinazione e il prefisso o suffisso da aggiungere al nome del volume replicato.
+* *Criterio di replica*: Scegliere un criterio di replica esistente o crearne uno.
 +
 
 TIP: Per creare un criterio personalizzato prima di attivare la replica, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
@@ -619,36 +627,33 @@ TIP: Per creare un criterio personalizzato prima di attivare la replica, fare ri
 Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
 
 +
-*** Immettere il nome del criterio.
-*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
-*** Selezionare *Crea*.
-
-
-
-
-. *Backup su oggetto*: Se si seleziona *Backup*, impostare le seguenti opzioni:
+** Immettere il nome del criterio.
+** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+** Selezionare *Crea*.
 +
-** *Provider*: Selezionare *Amazon Web Services*.
-** *Provider settings* (Impostazioni provider): Inserire i dettagli del provider e la regione AWS in cui verranno memorizzati i backup.
+... *Backup su oggetto*: Se si seleziona *Backup*, impostare le seguenti opzioni:
+
+
+
+
+* *Provider*: Selezionare *Amazon Web Services*.
+* *Provider settings* (Impostazioni provider): Inserire i dettagli del provider e la regione AWS in cui verranno memorizzati i backup.
 +
 La chiave di accesso e la chiave segreta sono destinate all'utente IAM creato per consentire al cluster ONTAP di accedere al bucket S3.
 
-** *Bucket*: Scegliere un bucket S3 esistente o crearne uno nuovo. Fare riferimento a. https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Aggiungere i bucket S3"^].
-** *Chiave di crittografia*: Se è stato creato un nuovo bucket S3, immettere le informazioni sulla chiave di crittografia fornite dal provider. Per gestire la crittografia dei dati, scegli se utilizzare le chiavi di crittografia Amazon S3 predefinite o le chiavi gestite dal cliente dall'account AWS.
-
-
+* *Bucket*: Scegliere un bucket S3 esistente o crearne uno nuovo. Fare riferimento a. https://docs.netapp.com/us-en/bluexp-s3-storage/task-add-s3-bucket.html["Aggiungere i bucket S3"^].
+* *Chiave di crittografia*: Se è stato creato un nuovo bucket S3, immettere le informazioni sulla chiave di crittografia fornite dal provider. Per gestire la crittografia dei dati, scegli se utilizzare le chiavi di crittografia Amazon S3 predefinite o le chiavi gestite dal cliente dall'account AWS.
 +
 
 NOTE: Se si sceglie un bucket esistente, le informazioni di crittografia sono già disponibili, quindi non è necessario immetterle ora.
 
+* *Rete*: Scegliere IPSpace e scegliere se si desidera utilizzare un endpoint privato. L'endpoint privato è disattivato per impostazione predefinita.
 +
-** *Rete*: Scegliere IPSpace e scegliere se si desidera utilizzare un endpoint privato. L'endpoint privato è disattivato per impostazione predefinita.
-+
-... IPSpace nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. Le LIF intercluster per questo IPSpace devono disporre di accesso a Internet in uscita.
-... Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Scopri i dettagli sull'utilizzo di AWS PrivateLink per Amazon S3"^].
+.. IPSpace nel cluster ONTAP in cui risiedono i volumi di cui si desidera eseguire il backup. Le LIF intercluster per questo IPSpace devono disporre di accesso a Internet in uscita.
+.. Se si desidera, scegliere se utilizzare un AWS PrivateLink precedentemente configurato. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Scopri i dettagli sull'utilizzo di AWS PrivateLink per Amazon S3"^].
 
 
-** *Criterio di backup*: Selezionare un criterio di backup esistente o crearne uno.
+* *Criterio di backup*: Selezionare un criterio di backup esistente o crearne uno.
 +
 
 TIP: Per creare un criterio personalizzato prima di attivare il backup, fare riferimento alla sezione link:task-create-policies-ontap.html["Creare un criterio"].
@@ -657,15 +662,16 @@ TIP: Per creare un criterio personalizzato prima di attivare il backup, fare rif
 Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le seguenti operazioni:
 
 +
-*** Immettere il nome del criterio.
-*** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
-*** Selezionare *Crea*.
+** Immettere il nome del criterio.
+** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
+** Selezionare *Crea*.
 
 
-** *Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
+* *Esporta copie Snapshot esistenti nello storage a oggetti come copie di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata per questo ambiente di lavoro (ad esempio, giornaliero, settimanale, ecc.), viene visualizzata questa richiesta aggiuntiva. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
++
+.. Selezionare *Avanti*.
 
 
-. Selezionare *Avanti*.
 
 
 
