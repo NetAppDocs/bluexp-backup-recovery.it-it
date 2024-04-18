@@ -14,7 +14,7 @@ summary: Puoi modificare molte impostazioni di backup su oggetto a livello di cl
 
 
 [role="lead"]
-Puoi modificare le impostazioni dello storage di backup su oggetti a livello di cluster impostate al momento dell'attivazione del backup e recovery di BlueXP per ogni sistema ONTAP usando la pagina Impostazioni avanzate. È inoltre possibile modificare alcune impostazioni applicate come impostazioni di backup predefinite. Ciò include la modifica della velocità di trasferimento dei backup nello storage a oggetti, se le copie Snapshot storiche vengono esportate come file di backup e l'attivazione o la disattivazione di scansioni ransomware pianificate per un ambiente di lavoro.
+Puoi modificare le impostazioni dello storage di backup su oggetti a livello di cluster impostate al momento dell'attivazione del backup e recovery di BlueXP per ogni sistema ONTAP usando la pagina Impostazioni avanzate. È inoltre possibile modificare alcune impostazioni applicate come impostazioni di backup predefinite. Ciò include la modifica della velocità di trasferimento dei backup nello storage a oggetti, se le copie Snapshot storiche vengono esportate come file di backup e l'attivazione o la disattivazione delle scansioni ransomware per un ambiente di lavoro.
 
 
 NOTE: Queste impostazioni sono disponibili solo per lo storage a oggetti di backup. Nessuna di queste impostazioni influisce sulle impostazioni di Snapshot o di replica. In futuro verranno aggiunte impostazioni di replica simili a livello di cluster per snapshot e repliche.
@@ -29,7 +29,7 @@ endif::aws[]
 
 * Modifica dell'eventuale esportazione delle copie Snapshot storiche come file di backup e inclusione nei file di backup di base iniziali per volumi futuri
 * Modifica della rimozione delle snapshot "annuali" dal sistema di origine
-* Abilitazione o disabilitazione di scansioni pianificate di ransomware per un ambiente di lavoro
+* Abilitazione o disabilitazione delle scansioni ransomware per un ambiente di lavoro
 
 
 
@@ -123,16 +123,12 @@ image:screenshot_backup_edit_yearly_snap_delete.png["Una schermata della voce Ye
 
 
 
-== Abilitare o disabilitare le scansioni pianificate di ransomware
+== Abilitare o disabilitare le scansioni ransomware
 
-Le scansioni pianificate di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Puoi abilitare o disabilitare le scansioni ransomware pianificate sull'ultima copia Snapshot utilizzando l'opzione nella pagina Advanced Settings (Impostazioni avanzate). Se si attiva, le scansioni vengono eseguite ogni 7 giorni per impostazione predefinita. È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
+Le scansioni di protezione ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Puoi abilitare o disabilitare le scansioni ransomware sull'ultima copia Snapshot utilizzando l'opzione nella pagina Impostazioni avanzate. Se si attiva, le scansioni vengono eseguite ogni 7 giorni per impostazione predefinita.
 
 
 TIP: L'abilitazione delle scansioni ransomware comporterà costi aggiuntivi in base al cloud provider.
-
-Scansioni pianificate anti-ransomware vengono eseguite solo sull'ultima copia Snapshot.
-
-Se le scansioni pianificate tramite ransomware sono disattivate, è comunque possibile eseguire scansioni on-demand e durante un'operazione di ripristino.
 
 Fare riferimento a. link:task-create-policies-ontap.html["Gestire le policy"] per dettagli sulla gestione delle policy che implementano il rilevamento ransomware.
 
@@ -140,8 +136,5 @@ Fare riferimento a. link:task-create-policies-ontap.html["Gestire le policy"] pe
 . Dalla scheda *Volumes* (volumi), selezionare *Backup Settings* (Impostazioni di backup).
 . Dalla _pagina Backup Settings_, fare clic su image:screenshot_horizontal_more_button.gif["Icona Altro"] Per l'ambiente di lavoro e selezionare *Advanced Settings* (Impostazioni avanzate).
 . Nella pagina Impostazioni avanzate, espandere la sezione *scansione ransomware*.
-. Selezionare *scansione ransomware pianificata*.
-. Facoltativamente, modificare la scansione predefinita ogni settimana in giorni o settimane.
-. Impostare la frequenza in giorni o settimane di esecuzione della scansione.
-. Selezionare *Applica*.
+. Abilitare o disabilitare *scansione ransomware*.
 

@@ -98,7 +98,7 @@ Le scansioni ransomware avvengono in 3 punti del processo di backup e ripristino
 
 * Quando viene creato un file di backup.
 +
-Puoi facoltativamente abilitare o disabilitare le scansioni pianificate dai ransomware.
+Puoi facoltativamente abilitare o disabilitare le scansioni ransomware.
 
 +
 La scansione non viene eseguita sul file di backup quando viene scritto per la prima volta sullo storage cloud, ma quando viene scritto il file di backup *successivo*. Ad esempio, se si dispone di una pianificazione di backup settimanale impostata per martedì, martedì 14 viene creato un backup. Martedì 21 viene creato un altro backup. La scansione ransomware viene eseguita sul file di backup a partire dal 14.
@@ -121,7 +121,7 @@ Ogni policy di backup fornisce una sezione per _DataLock e ransomware Protection
 
 image:screenshot_datalock_ransomware_settings.png["Una schermata delle impostazioni DataLock e protezione ransomware per AWS, Azure e StorageGRID durante la creazione di un criterio di backup."]
 
-Le scansioni pianificate di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Puoi abilitare o disabilitare le scansioni ransomware pianificate sull'ultima copia Snapshot utilizzando l'opzione nella pagina Advanced Settings (Impostazioni avanzate). Se si attiva, le scansioni vengono eseguite ogni 7 giorni per impostazione predefinita. È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
+Le scansioni di protezione ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Puoi abilitare o disabilitare le scansioni ransomware sull'ultima copia Snapshot utilizzando l'opzione nella pagina Impostazioni avanzate. Se si attiva, le scansioni vengono eseguite ogni 7 giorni per impostazione predefinita.
 
 Fare riferimento a. link:manage-backup-settings-ontap.html["Come aggiornare le opzioni di protezione dal ransomware nella pagina Impostazioni avanzate"].
 

@@ -421,21 +421,16 @@ Per creare un criterio, selezionare *Crea nuovo criterio* ed effettuare le segue
 *** Immettere il nome del criterio.
 *** Selezionare fino a 5 programmi, generalmente di frequenze diverse.
 *** Per le policy di backup su oggetto, imposta le impostazioni DataLock e protezione dal ransomware. Per ulteriori informazioni su DataLock e protezione dal ransomware, fare riferimento a. link:concept-cloud-backup-policies.html["Impostazioni dei criteri di backup su oggetti"].
+*** Selezionare *Crea*.
 
 
 
 
-
-
-* Selezionare *Crea*.
 +
 ** *Esporta copie Snapshot esistenti nello storage a oggetti come file di backup*: Se vi sono copie Snapshot locali per i volumi in questo ambiente di lavoro che corrispondono all'etichetta di pianificazione del backup appena selezionata (ad esempio, giornaliera, settimanale, ecc.), viene visualizzato questo prompt aggiuntivo. Selezionare questa casella per copiare tutte le istantanee storiche nello storage a oggetti come file di backup per garantire la protezione più completa per i volumi.
-+
-... Selezionare *Avanti*.
 
 
-
-
+. Selezionare *Avanti*.
 
 
 
