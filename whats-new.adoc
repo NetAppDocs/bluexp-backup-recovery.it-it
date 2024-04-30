@@ -18,6 +18,25 @@ Scopri le novità di BlueXP backup e recovery.
 
 
 
+== 30 aprile 2024
+
+
+
+=== Capacità di abilitare o disabilitare scansioni pianificate di ransomware
+
+In precedenza potevi abilitare o disabilitare le scansioni ransomware, ma non potevi farlo per le scansioni pianificate.
+
+Con questa release, puoi ora abilitare o disabilitare le scansioni ransomware pianificate sull'ultima copia Snapshot utilizzando l'opzione nella pagina Advanced Settings. Se si attiva, le scansioni vengono eseguite settimanalmente per impostazione predefinita. È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
+
+Fare riferimento alle seguenti informazioni per i dettagli:
+
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-manage-backup-settings-ontap.html["Gestire le impostazioni di backup"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["Gestire le policy per ONTAP Volumes"]
+* https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["Impostazioni dei criteri di backup su oggetti"]
+
+
+
+
 == 04 aprile 2024
 
 

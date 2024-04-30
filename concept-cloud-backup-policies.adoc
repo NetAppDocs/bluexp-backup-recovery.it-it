@@ -94,7 +94,7 @@ In quest'ultimo caso, se ogni file di backup viene bloccato per 44 giorni, si ot
 
 La protezione ransomware esegue la scansione dei file di backup per cercare la prova di un attacco ransomware. Il rilevamento di attacchi ransomware viene eseguito utilizzando un confronto checksum. Se viene identificato un potenziale ransomware in un nuovo file di backup rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra segni di un attacco ransomware. (Il file identificato come un attacco ransomware viene cancellato 1 giorno dopo la sua sostituzione).
 
-Le scansioni ransomware avvengono in 3 punti del processo di backup e ripristino:
+Le scansioni ransomware avvengono in corrispondenza dei seguenti punti del processo di backup e ripristino:
 
 * Quando viene creato un file di backup.
 +
@@ -123,7 +123,9 @@ image:screenshot_datalock_ransomware_settings.png["Una schermata delle impostazi
 
 Le scansioni di protezione ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Puoi abilitare o disabilitare le scansioni ransomware sull'ultima copia Snapshot utilizzando l'opzione nella pagina Impostazioni avanzate. Se si attiva, le scansioni vengono eseguite ogni 7 giorni per impostazione predefinita.
 
-Fare riferimento a. link:manage-backup-settings-ontap.html["Come aggiornare le opzioni di protezione dal ransomware nella pagina Impostazioni avanzate"].
+È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
+
+Fare riferimento a. link:task-manage-backup-settings-ontap.html["Come aggiornare le opzioni di protezione dal ransomware nella pagina Impostazioni avanzate"].
 
 È possibile scegliere tra le seguenti impostazioni per ciascun criterio di backup:
 
