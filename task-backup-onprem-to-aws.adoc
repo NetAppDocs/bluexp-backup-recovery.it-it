@@ -442,9 +442,9 @@ Se invece si desidera utilizzare le proprie chiavi gestite dal cliente per la cr
 
 === Configurare il sistema per una connessione privata utilizzando un'interfaccia endpoint VPC
 
-Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dal connettore e non è necessario eseguire altre operazioni. Questo tipo di connessione viene mostrato nella link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["primo diagramma"].
+Se si desidera utilizzare una connessione Internet pubblica standard, tutte le autorizzazioni vengono impostate dal connettore e non è necessario eseguire altre operazioni. Questo tipo di connessione viene mostrato nella link:task-backup-onprem-to-aws.html#identify-the-connection-method["primo diagramma"].
 
-Se si desidera una connessione più sicura via Internet dal data center on-premise al VPC, è possibile selezionare una connessione AWS PrivateLink nella procedura guidata di attivazione del backup. È necessario se si intende utilizzare una VPN o una connessione diretta AWS per collegare il sistema on-premise tramite un'interfaccia endpoint VPC che utilizza un indirizzo IP privato. Questo tipo di connessione viene mostrato nella link:task-backup-onprem-to-aws.html#network-diagrams-for-connection-options["secondo diagramma"].
+Se si desidera una connessione più sicura via Internet dal data center on-premise al VPC, è possibile selezionare una connessione AWS PrivateLink nella procedura guidata di attivazione del backup. È necessario se si intende utilizzare una VPN o una connessione diretta AWS per collegare il sistema on-premise tramite un'interfaccia endpoint VPC che utilizza un indirizzo IP privato. Questo tipo di connessione viene mostrato nella link:task-backup-onprem-to-aws.html#identify-the-connection-method["secondo diagramma"].
 
 .Fasi
 . Creare una configurazione dell'endpoint dell'interfaccia utilizzando la console Amazon VPC o la riga di comando. https://docs.aws.amazon.com/AmazonS3/latest/userguide/privatelink-interface-endpoints.html["Consulta i dettagli sull'utilizzo di AWS PrivateLink per Amazon S3"^].

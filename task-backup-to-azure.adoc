@@ -241,7 +241,7 @@ Il backup e ripristino BlueXP è attivato per impostazione predefinita nella pro
 Vedere https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-deploying-otc-azure.html["Lancio di Cloud Volumes ONTAP in Azure"^] Per i requisiti e i dettagli per la creazione del sistema Cloud Volumes ONTAP.
 
 
-NOTE: Se si desidera selezionare il nome del gruppo di risorse, *disabilitare* il backup e il ripristino di BlueXP durante la distribuzione di Cloud Volumes ONTAP. Seguire la procedura per <<enabling-bluexp-backup-and-recovery-on-an-existing-system,Attivazione del backup e ripristino BlueXP su un sistema esistente>> Per attivare il backup e il ripristino di BlueXP e scegliere il gruppo di risorse.
+NOTE: Se si desidera selezionare il nome del gruppo di risorse, *disabilitare* il backup e il ripristino di BlueXP durante la distribuzione di Cloud Volumes ONTAP. Seguire la procedura per <<enable-bluexp-backup-and-recovery-on-cloud-volumes-ontap,Attivazione del backup e ripristino BlueXP su un sistema esistente>> Per attivare il backup e il ripristino di BlueXP e scegliere il gruppo di risorse.
 
 .Fasi
 . Da BlueXP Canvas, selezionare *Add Working Environment* (Aggiungi ambiente di lavoro), scegliere il provider cloud e selezionare *Add New* (Aggiungi nuovo). Selezionare *Crea Cloud Volumes ONTAP*.

@@ -363,7 +363,7 @@ endif::gcp[]
 +
 ** In ONTAP S3, BlueXP usa un account utente esistente per il bucket S3.
 
-Se si desidera modificare l'archivio di oggetti di destinazione per un cluster in futuro, è necessario link:task-manage-backups-ontap.html#unregistering-bluexp-backup-and-recovery-for-a-working-environment["Annullare la registrazione del backup e ripristino BlueXP per l'ambiente di lavoro"^], Quindi abilitare il backup e il ripristino BlueXP utilizzando le informazioni del nuovo provider di cloud.
+Se si desidera modificare l'archivio di oggetti di destinazione per un cluster in futuro, è necessario link:task-manage-backups-ontap.html#unregister-bluexp-backup-and-recovery-for-a-working-environment["Annullare la registrazione del backup e ripristino BlueXP per l'ambiente di lavoro"^], Quindi abilitare il backup e il ripristino BlueXP utilizzando le informazioni del nuovo provider di cloud.
 
 
 
@@ -378,9 +378,9 @@ NOTE: Il criterio Snapshot applicato al volume deve avere una delle etichette ut
 
 Una volta raggiunto il numero massimo di backup per una categoria o intervallo, i backup meno recenti vengono rimossi in modo da avere sempre i backup più recenti (e quindi i backup obsoleti non continuano a occupare spazio).
 
-Vedere link:concept-cloud-backup-policies.html#backup-schedules["Pianificazioni di backup"^] per ulteriori informazioni sulle opzioni di pianificazione disponibili.
+Vedere link:concept-cloud-backup-policies.html["Pianificazioni di backup"^] per ulteriori informazioni sulle opzioni di pianificazione disponibili.
 
-Nota: È possibile link:task-manage-backups-ontap.html#creating-a-manual-volume-backup-at-any-time["creare un backup on-demand di un volume"] Dalla dashboard di backup in qualsiasi momento, oltre ai file di backup creati dai backup pianificati.
+Nota: È possibile link:task-manage-backups-ontap.html#create-a-manual-volume-backup-at-any-time["creare un backup on-demand di un volume"] Dalla dashboard di backup in qualsiasi momento, oltre ai file di backup creati dai backup pianificati.
 
 
 TIP: Il periodo di conservazione per i backup dei volumi di protezione dei dati è lo stesso definito nella relazione SnapMirror di origine. È possibile modificare questa impostazione utilizzando l'API.
@@ -403,8 +403,8 @@ Il supporto è attualmente disponibile quando la destinazione del backup è Amaz
 
 Per ulteriori informazioni, fare riferimento a queste informazioni:
 
-* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Funzionamento di DataLock e protezione ransomware"].
-* link:manage-backup-settings-ontap.html["Come aggiornare le opzioni di protezione dal ransomware nella pagina Impostazioni avanzate"].
+* link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["Funzionamento di DataLock e protezione ransomware"].
+* link:task-manage-backup-settings-ontap.html["Come aggiornare le opzioni di protezione dal ransomware nella pagina Impostazioni avanzate"].
 
 
 
@@ -448,11 +448,11 @@ endif::gcp[]
 
 * In StorageGRID, i backup sono associati alla classe di storage _Standard_.
 +
-Se il cluster on-premise utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza 11.4 o versione successiva, è possibile archiviare i file di backup meno recenti nello storage di archiviazione del cloud pubblico dopo un certo numero di giorni. Attualmente il supporto è per i Tier di storage AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. link:task-backup-onprem-private-cloud.html#preparing-to-archive-older-backup-files-to-public-cloud-storage["Scopri di più sull'archiviazione dei file di backup da StorageGRID"^].
+Se il cluster on-premise utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza 11.4 o versione successiva, è possibile archiviare i file di backup meno recenti nello storage di archiviazione del cloud pubblico dopo un certo numero di giorni. Attualmente il supporto è per i Tier di storage AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. link:task-backup-onprem-private-cloud.html#prepare-to-archive-older-backup-files-to-public-cloud-storage["Scopri di più sull'archiviazione dei file di backup da StorageGRID"^].
 
 
 
-Vedere link:concept-cloud-backup-policies.html#archival-storage-settings["Impostazioni dello storage di archiviazione"] per ulteriori informazioni sull'archiviazione dei file di backup meno recenti.
+Vedere link:concept-cloud-backup-policies.html#archival-storage-options["Impostazioni dello storage di archiviazione"] per ulteriori informazioni sull'archiviazione dei file di backup meno recenti.
 
 
 

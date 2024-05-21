@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-manage-backups-ontap.html 
-keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup 
+keywords: cloud backup, cloud backup service, backup schedule, change schedule, change backup schedule, modify schedule, modify backup schedule, retention, backup retention, delete, delete backups, deleting, deleting backups, disable, disable backups, turn off backups, disable cloud backup, turn off cloud backup, bluexp 
 summary: È possibile gestire i backup per i sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione del backup, creando nuove policy di backup, attivando/disattivando i backup dei volumi, mettendo in pausa i backup, eliminando i backup e molto altro ancora. Sono inclusi tutti i tipi di backup, incluse le copie Snapshot, i volumi replicati e i file di backup nello storage a oggetti. 
 ---
 = Gestisci i backup per i tuoi sistemi ONTAP
@@ -136,7 +136,7 @@ Se sono stati attivati _DataLock e ransomware Protection_ per i backup cloud nel
 
 Il nome del backup include la data e l'ora in modo da poter identificare il backup on-demand di altri backup pianificati.
 
-Se sono stati attivati _DataLock e ransomware Protection_ durante l'attivazione del backup e ripristino BlueXP per questo cluster, anche il backup on-demand verrà configurato con DataLock e il periodo di conservazione sarà di 30 giorni. Le scansioni ransomware non sono supportate per i backup ad-hoc. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Scopri di più su DataLock e la protezione ransomware"^].
+Se sono stati attivati _DataLock e ransomware Protection_ durante l'attivazione del backup e ripristino BlueXP per questo cluster, anche il backup on-demand verrà configurato con DataLock e il periodo di conservazione sarà di 30 giorni. Le scansioni ransomware non sono supportate per i backup ad-hoc. link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["Scopri di più su DataLock e la protezione ransomware"^].
 
 Quando si crea un backup ad-hoc, viene creata un'istantanea sul volume di origine. Poiché questa istantanea non fa parte di una normale pianificazione Snapshot, non viene disattivata. Una volta completato il backup, è possibile eliminare manualmente questa istantanea dal volume di origine. In questo modo, i blocchi correlati a questa istantanea verranno liberati. Il nome dell'istantanea inizia con `cbs-snapshot-adhoc-`. https://docs.netapp.com/us-en/ontap/san-admin/delete-all-existing-snapshot-copies-volume-task.html["Scopri come eliminare un'istantanea utilizzando la CLI di ONTAP"^].
 
@@ -323,7 +323,7 @@ endif::gcp[]
 
 Quando si attiva il backup e il ripristino BlueXP per un ambiente di lavoro, tutti i volumi selezionati inizialmente vengono sottoposti a backup utilizzando il criterio di backup predefinito definito. Se si desidera assegnare criteri di backup diversi a determinati volumi con obiettivi RPO (Recovery Point Objective) diversi, è possibile creare criteri aggiuntivi per tale cluster e assegnarli ad altri volumi.
 
-Se si desidera applicare un nuovo criterio di backup a determinati volumi in un ambiente di lavoro, è necessario prima aggiungere il criterio di backup all'ambiente di lavoro. Allora è possibile <<Changing the policy assigned to existing volumes,applicare il criterio ai volumi in tale ambiente di lavoro>>.
+Se si desidera applicare un nuovo criterio di backup a determinati volumi in un ambiente di lavoro, è necessario prima aggiungere il criterio di backup all'ambiente di lavoro. Allora è possibile <<Modificare le impostazioni di backup assegnate ai volumi esistenti,applicare il criterio ai volumi in tale ambiente di lavoro>>.
 
 [NOTE]
 ====
@@ -390,7 +390,7 @@ CAUTION: Se si prevede di eliminare un ambiente di lavoro o un cluster con backu
 
 === Eliminare tutti i file di backup per un ambiente di lavoro
 
-L'eliminazione di tutti i backup sullo storage a oggetti per un ambiente di lavoro non disattiva i backup futuri dei volumi in questo ambiente di lavoro. Se si desidera interrompere la creazione di backup di tutti i volumi in un ambiente di lavoro, è possibile disattivare i backup <<Deactivating BlueXP backup and recovery for a working environment,come descritto qui>>.
+L'eliminazione di tutti i backup sullo storage a oggetti per un ambiente di lavoro non disattiva i backup futuri dei volumi in questo ambiente di lavoro. Se si desidera interrompere la creazione di backup di tutti i volumi in un ambiente di lavoro, è possibile disattivare i backup <<Disattivare il backup e ripristino BlueXP per un ambiente di lavoro,come descritto qui>>.
 
 Si noti che questa azione non influisce sulle copie Snapshot o sui volumi replicati: Questi tipi di file di backup non vengono eliminati.
 
@@ -449,7 +449,7 @@ Questa funzione è disponibile solo se nel sistema è in esecuzione ONTAP 9.12.1
 Non è possibile eliminare il volume di origine dall'interfaccia utente di backup e ripristino di BlueXP. Tuttavia, è possibile aprire la pagina Volume Details (Dettagli volume) in Canvas, e. https://docs.netapp.com/us-en/bluexp-cloud-volumes-ontap/task-manage-volumes.html#manage-volumes["eliminare il volume da lì"].
 
 
-NOTE: Una volta eliminata la relazione, non è possibile eliminare i singoli file di backup dei volumi. Tuttavia, è possibile link:task-manage-backups-ontap.html#deleting-all-backup-files-for-a-volume["eliminare tutti i backup del volume"] se si desidera rimuovere tutti i file di backup.
+NOTE: Una volta eliminata la relazione, non è possibile eliminare i singoli file di backup dei volumi. È tuttavia possibile eliminare tutti i backup del volume.
 
 .Fasi
 . Dalla scheda *Volumes* (volumi), fare clic su image:screenshot_horizontal_more_button.gif["Icona Altro"] Per il volume di origine e selezionare *Backup* > *Elimina relazione*.
@@ -464,7 +464,7 @@ image:screenshot_delete_relationship_single.png["Una schermata che mostra come e
 
 La disattivazione del backup e ripristino BlueXP per un ambiente di lavoro disattiva i backup di ciascun volume sul sistema e disattiva anche la possibilità di ripristinare un volume. I backup esistenti non verranno eliminati. In questo modo non si annulla la registrazione del servizio di backup da questo ambiente di lavoro, ma è possibile sospendere tutte le attività di backup e ripristino per un determinato periodo di tempo.
 
-Tieni presente che il tuo cloud provider continuerà a addebitare i costi dello storage a oggetti per la capacità utilizzata dai backup, a meno che tu non lo utilizzi <<Eliminazione di tutti i file di backup per un ambiente di lavoro,eliminare i backup>>.
+Tieni presente che il tuo cloud provider continuerà a addebitare i costi dello storage a oggetti per la capacità utilizzata dai backup, a meno che tu non lo utilizzi <<Eliminare i backup,eliminare i backup>>.
 
 .Fasi
 . Dalla scheda *Volumes* (volumi), selezionare *Backup Settings* (Impostazioni di backup).

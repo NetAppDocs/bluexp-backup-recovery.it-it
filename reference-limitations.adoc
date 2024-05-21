@@ -40,7 +40,7 @@ Non esistono limiti per i volumi FlexVol: È possibile selezionare tutti i volum
 
 
 
-=== Limitazioni del backup su oggetti
+=== Limitazioni relative al backup su oggetti
 
 * Quando si crea o modifica un criterio di backup quando al criterio non sono assegnati volumi, il numero di backup conservati può essere massimo di 1018. Dopo aver assegnato i volumi al criterio, è possibile modificare il criterio per creare fino a 4000 backup.
 * Quando si esegue il backup dei volumi di protezione dei dati (DP):
@@ -103,3 +103,24 @@ Quando si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino d
 
 
 
+
+
+
+=== Limitazioni nell'uso di RHEL 8+ con Podman
+
+
+
+==== Il ripristino a file singolo non è supportato
+
+La funzionalità Browse & Restore per il ripristino di file singoli e directory non è supportata quando si utilizza Podman. Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:
+
+* Ripristinare i file o le cartelle da un volume replicato, se esiste un volume replicato.
+* Ripristinare i file o le cartelle da un backup cloud utilizzando la funzione Cerca e ripristina.
+* Ripristinare il volume da un backup su cloud utilizzando Browse & Restore e accedere ai file o alle cartelle necessari.
+
+
+
+
+==== La scansione ransomware dei tuoi backup nel cloud non è supportata
+
+La scansione dei backup cloud per il ransomware non è supportata quando si utilizza il motore Podman. Se stai utilizzando la funzionalità DataLock & ransomware per i tuoi backup nel cloud, devi disabilitare le scansioni ransomware. link:task-manage-backup-settings-ontap.html#enable-or-disable-ransomware-scans["Scopri come disattivare la scansione ransomware"].

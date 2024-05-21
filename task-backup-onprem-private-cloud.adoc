@@ -480,7 +480,7 @@ Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile sceglier
 
 
 +
-Se il cluster utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza la versione 11.4 o successiva, è possibile scegliere di raggruppare i backup meno recenti in Tier di archivio del cloud pubblico dopo un certo numero di giorni. Attualmente il supporto è per i Tier di storage AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Preparing to archive older backup files to public cloud storage,Scopri come configurare i tuoi sistemi per questa funzionalità>>.
+Se il cluster utilizza ONTAP 9.12.1 o versione successiva e il sistema StorageGRID utilizza la versione 11.4 o successiva, è possibile scegliere di raggruppare i backup meno recenti in Tier di archivio del cloud pubblico dopo un certo numero di giorni. Attualmente il supporto è per i Tier di storage AWS S3 Glacier/S3 Glacier Deep Archive o Azure Archive. <<Preparatevi ad archiviare i file di backup meno recenti nello storage di cloud pubblico,Scopri come configurare i tuoi sistemi per questa funzionalità>>.
 
 +
 ** *Tier backup to public cloud*: Seleziona il provider cloud a cui vuoi eseguire il Tier backup e inserisci i dettagli del provider.

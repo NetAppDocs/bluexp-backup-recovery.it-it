@@ -152,14 +152,14 @@ Questo criterio di storage risiede in diverse ubicazioni dei sistemi di storage,
 . Specificare le impostazioni, incluso il programma di trasferimento e quando archiviare i backup.
 . (Facoltativo) per spostare i file di backup meno recenti in una classe di archiviazione o livello di accesso meno costosi dopo un certo numero di giorni, selezionare l'opzione *Archivio* e indicare il numero di giorni che devono trascorrere prima che i dati vengano archiviati. Immettere *0* come "Archivia dopo giorni" per inviare il file di backup direttamente all'archivio.
 +
-link:concept-cloud-backup-policies.html#archival-storage-settings["Scopri di più sulle impostazioni dello storage di archiviazione"].
+link:concept-cloud-backup-policies.html#archival-storage-options["Scopri di più sulle impostazioni dello storage di archiviazione"].
 
 . (Opzionale) per proteggere i backup dalla modifica o dall'eliminazione, selezionare l'opzione *DataLock & ransomware Protection*.
 +
 Se il cluster utilizza ONTAP 9.11.1 o versioni successive, puoi scegliere di proteggere i backup dall'eliminazione configurando _DataLock_ e _ransomware Protection_.
 
 +
-link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection["Scopri di più sulle impostazioni DataLock disponibili"^].
+link:concept-cloud-backup-policies.html#datalock-and-ransomware-protection-options["Scopri di più sulle impostazioni DataLock disponibili"^].
 
 . Selezionare *Crea*.
 

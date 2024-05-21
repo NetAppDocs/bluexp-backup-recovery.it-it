@@ -102,7 +102,7 @@ indexpage:
     - title: Ripristinare i dati delle applicazioni SQL Server on-premise
       url: task-restore-sql-data.html
     - title: Ripristinare i dati delle applicazioni Oracle native del cloud
-      url: task-restore-cloud-native-oracle-data.html
+      url: task-restore-cloud-native-oracle-data-to-original-location.html
     - title: Ripristinare i dati delle applicazioni SAP HANA native del cloud
       flavor: azure
       url: task-restore-cloud-native-sap-hana-data.html
