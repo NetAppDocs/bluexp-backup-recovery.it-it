@@ -100,7 +100,7 @@ Quando effettui il backup dei dati su ONTAP S3, deve essere disponibile un conne
 * https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html#how-to-create-a-connector["Installare il connettore nell'ambiente cloud"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-connector-on-prem.html["Installazione del connettore su un host Linux con accesso a Internet"^]
 * https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Installazione del connettore su un host Linux senza accesso a Internet"^]
-* https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html["Passaggio da un connettore all'altro"^]
+* https://docs.netapp.com/us-en/bluexp-setup-admin/task-manage-multiple-connectors.html#switch-between-connectors["Passaggio da un connettore all'altro"^]
 
 
 
@@ -118,7 +118,7 @@ Assicurarsi che la rete in cui è installato il connettore abiliti le seguenti c
 
 ==== Considerazioni sulla modalità privata (sito scuro)
 
-La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Una volta installato in modalità privata, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare link:whats-new.html["Novità di BlueXP per backup e ripristino"] Per visualizzare le nuove funzionalità di ogni versione di backup e ripristino di BlueXP. Per utilizzare le nuove funzioni, seguire i passaggi da a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-when-using-private-mode["Aggiornare il software del connettore"^].
+La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Una volta installato in modalità privata, è necessario aggiornare periodicamente il software del connettore per accedere alle nuove funzioni. Controllare link:whats-new.html["Novità di BlueXP per backup e ripristino"] Per visualizzare le nuove funzionalità di ogni versione di backup e ripristino di BlueXP. Per utilizzare le nuove funzioni, seguire i passaggi da a. https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Aggiornare il software del connettore"^].
 
 Quando utilizzi il backup e recovery di BlueXP in un ambiente SaaS standard, i dati di configurazione di backup e recovery di BlueXP vengono sottoposti a backup nel cloud. Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, i dati di configurazione del backup e recovery di BlueXP vengono sottoposti a backup nel bucket ONTAP S3 in cui vengono archiviati i backup. Se si verifica un errore del connettore nel sito in modalità privata, è possibile link:reference-backup-cbs-db-in-dark-site.html["Ripristinare i dati di backup e ripristino di BlueXP su un nuovo connettore"^].
 

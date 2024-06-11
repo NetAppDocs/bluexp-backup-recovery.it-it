@@ -26,7 +26,7 @@ La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueX
 | Posizione del connettore | Procedura 
 
 
-| Implementazione del cloud | Seguire le istruzioni per https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#connect-to-the-linux-vm["Connessione alla macchina virtuale Connector Linux"^] a seconda del cloud provider utilizzato. 
+| Implementazione del cloud | Seguire le istruzioni per https://docs.netapp.com/us-en/bluexp-setup-admin/task-maintain-connectors.html#connect-to-the-linux-vm["Connessione alla macchina virtuale Connector Linux"^] a seconda del cloud provider utilizzato. 
 
 
 | Installazione manuale | Accedere al sistema Linux. 

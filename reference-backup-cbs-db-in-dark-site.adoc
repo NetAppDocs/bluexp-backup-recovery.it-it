@@ -62,7 +62,7 @@ Questo file si trova nella seguente posizione nel bucket `netapp-backup-<GUID>/c
 
 === Installare un nuovo connettore su un nuovo host Linux on-premise
 
-Quando si installa un nuovo connettore BlueXP, assicurarsi di scaricare la stessa versione del software installata sul connettore originale. Le modifiche periodiche alla struttura del database di backup e ripristino di BlueXP possono rendere incompatibili le versioni software più recenti con i backup del database originali. È possibile https://docs.netapp.com/us-en/bluexp-setup-admin/task-managing-connectors.html#upgrade-the-connector-on-prem-without-internet-access["Aggiornare il software del connettore alla versione più recente dopo il ripristino del database di backup"^].
+Quando si installa un nuovo connettore BlueXP, assicurarsi di scaricare la stessa versione del software installata sul connettore originale. Le modifiche periodiche alla struttura del database di backup e ripristino di BlueXP possono rendere incompatibili le versioni software più recenti con i backup del database originali. È possibile https://docs.netapp.com/us-en/bluexp-setup-admin/task-upgrade-connector.html["Aggiornare il software del connettore alla versione più recente dopo il ripristino del database di backup"^].
 
 . https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-private-mode.html["Installare il connettore BlueXP su un nuovo host Linux on-premise"^]
 . Accedere a BlueXP utilizzando le credenziali utente amministratore appena create.
