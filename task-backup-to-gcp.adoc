@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-backup-to-gcp.html 
-keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup 
+keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, gcp, google cloud, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi Cloud Volumes ONTAP allo storage Google Cloud. 
 ---
 = Eseguire il backup dei dati Cloud Volumes ONTAP su Google Cloud Storage
@@ -203,7 +203,7 @@ Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-pre
 
 == Abilitare il backup e ripristino BlueXP su Cloud Volumes ONTAP
 
-Abilitare il backup e il ripristino di BluXP è semplice. I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o nuovo.
+L'abilitazione del backup e ripristino BlueXP è semplice. I passaggi variano leggermente a seconda che si disponga di un sistema Cloud Volumes ONTAP esistente o nuovo.
 
 *Attivare il backup e il ripristino BlueXP su un nuovo sistema*
 

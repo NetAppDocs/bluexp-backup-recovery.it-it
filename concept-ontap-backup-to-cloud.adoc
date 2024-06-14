@@ -91,6 +91,14 @@ Il backup e ripristino BlueXP supporta gli ambienti di lavoro ONTAP e i provider
 
 
 
+=== Regioni supportate
+
+Il backup e recovery di BlueXP è supportato con Cloud Volumes ONTAP in molte regioni di Amazon Web Services, Microsoft Azure e Google Cloud.
+
+https://bluexp.netapp.com/cloud-volumes-global-regions?__hstc=177456119.0da05194dc19e7d38fcb4a4d94f105bc.1583956311718.1592507347473.1592829225079.52&__hssc=177456119.1.1592838591096&__hsfp=76784061&hsCtaTracking=c082a886-e2e2-4ef0-8ef2-89061b2b1955%7Cd07def13-e88c-40a0-b2a1-23b3b4e7a6e7#cvo["Ulteriori informazioni utilizzando la mappa delle regioni globali"^]
+
+
+
 === Destinazioni di backup supportate
 
 Il backup e ripristino BlueXP consente di eseguire il backup dei volumi ONTAP dai seguenti ambienti di lavoro di origine ai seguenti ambienti di lavoro secondari e storage a oggetti nei provider di cloud pubblici e privati. Le copie Snapshot risiedono nell'ambiente di lavoro di origine.
