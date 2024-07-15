@@ -94,6 +94,7 @@ Quando si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino d
 * Il ripristino da volumi FlexGroup a volumi FlexVol o da volumi FlexVol a volumi FlexGroup non è supportato.
 * Il file da ripristinare deve utilizzare la stessa lingua del volume di destinazione. Se le lingue non sono uguali, viene visualizzato un messaggio di errore.
 * La priorità di ripristino _alta_ non è supportata quando si ripristinano i dati dallo storage di archivio Azure ai sistemi StorageGRID.
+* Se si effettua il backup di un volume DP e si decide di interrompere la relazione di SnapMirror in quel volume, non sarà possibile ripristinare i file in quel volume a meno che non si elimini anche la relazione di SnapMirror o si inverta la direzione di SnapMirror.
 * Limitazioni del ripristino rapido:
 +
 ** La posizione di destinazione deve essere un sistema Cloud Volumes ONTAP che utilizzi ONTAP 9.13.0 o versioni successive.
@@ -112,7 +113,7 @@ Quando si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino d
 
 ==== Il ripristino a file singolo non è supportato
 
-La funzionalità Browse & Restore per il ripristino di file singoli e directory non è supportata quando si utilizza Podman. Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:
+La funzionalità Browse & Restore per il ripristino di file singoli e directory non è supportata quando si utilizzano BlueXP Connectors in esecuzione in Podman (connettori BlueXP creati manualmente quando in esecuzione su RHEL 8 o 9). Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:
 
 * Ripristinare i file o le cartelle da un volume replicato, se esiste un volume replicato.
 * Ripristinare i file o le cartelle da un backup cloud utilizzando la funzione Cerca e ripristina.

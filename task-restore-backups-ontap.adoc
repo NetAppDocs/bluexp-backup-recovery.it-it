@@ -31,6 +31,9 @@ In sintesi, questi sono i flussi validi che è possibile utilizzare per ripristi
 
 
 
+NOTE: Per le limitazioni relative al ripristino dei dati ONTAP, vedere link:reference-limitations.html["Limitazioni di backup e ripristino per ONTAP Volumes"].
+
+
 
 == La dashboard di ripristino
 

@@ -3783,8 +3783,6 @@ Cloud Volumes ONTAP</block>
   <block id="bd83bdfad11f4eb2160cecbaafa5771f" category="section-title">Quale modalità di implementazione di BlueXP Connector si sta utilizzando</block>
   <block id="40f7e0f171ae7f38e670d73e8a4c284b" category="paragraph">BlueXP offre diverse modalità di implementazione che consentono di utilizzare BlueXP in modo da soddisfare i requisiti di sicurezza e di business. _Standard mode_ sfrutta il layer BlueXP SaaS per fornire funzionalità complete, mentre _restricted mode_ e _private mode_ sono disponibili per le organizzazioni con restrizioni di connettività.</block>
   <block id="fb67e88bd0479a55df78c8a83275d5e7" category="inline-link">Guarda questo video sulle modalità di implementazione di BlueXP</block>
-  <block id="72e192cdf7601017af8b339164635167" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>.
-<block ref="86b5ac5922ab7c62d6a8a3ff686cf32a" category="inline-link-rx"></block>.</block>
   <block id="0f8751300c4a6857f8a492b7f39fba12" category="inline-link-macro">Consulta l'elenco completo delle destinazioni di backup supportate</block>
   <block id="2e87d4ef1e0516d893da73de140af706" category="inline-link-macro">Eseguire il backup dei dati Cloud Volumes ONTAP in Azure Blob</block>
   <block id="32f34f4c2eca6b21bfa54bfe2cf7ad10" category="inline-link-macro">Backup dei dati ONTAP on-premise su Azure Blob</block>
@@ -4858,7 +4856,6 @@ ifdef::aws[]</block>
   <block id="2dc37cecffdd7077ba99c0ba111ad347" category="section-title">Limitazioni relative al backup su oggetti</block>
   <block id="215d6f1bc8d7005b7bb981d9a3dc7b78" category="section-title">Limitazioni nell'uso di RHEL 8+ con Podman</block>
   <block id="38c44a50a75c15410df928f63928acf8" category="section-title">Il ripristino a file singolo non è supportato</block>
-  <block id="8d98ce1c70029af5a2d95ea5cd356016" category="paragraph">La funzionalità Browse &amp; Restore per il ripristino di file singoli e directory non è supportata quando si utilizza Podman. Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:</block>
   <block id="dbeaadfb952b8aa57d00264751776087" category="list-text">Ripristinare i file o le cartelle da un volume replicato, se esiste un volume replicato.</block>
   <block id="e647cb9e3bb11f1dcf4383ae4ae00f0f" category="list-text">Ripristinare i file o le cartelle da un backup cloud utilizzando la funzione Cerca e ripristina.</block>
   <block id="b760ac1d9088cf17812b95299a0f4c97" category="list-text">Ripristinare il volume da un backup su cloud utilizzando Browse &amp; Restore e accedere ai file o alle cartelle necessari.</block>
@@ -4919,4 +4916,8 @@ ifdef::aws[]</block>
   <block id="90463a14d4c78ea524911daef7d9cf71" category="paragraph">Il backup e recovery di BlueXP è supportato con Cloud Volumes ONTAP in molte regioni di Amazon Web Services, Microsoft Azure e Google Cloud.</block>
   <block id="6c6a0225cb0a619d8872981b7be0ac95" category="inline-link">Ulteriori informazioni utilizzando la mappa delle regioni globali</block>
   <block id="dac27b02289e52ad3bf6be2e625f4031" category="paragraph"><block ref="70c5fe87a2dc0f089282cb7307d783bf" category="inline-link-rx"></block></block>
+  <block id="a0833f9e76bfd36f87ee1d758fbe0cf4" category="paragraph"><block ref="2f5063518a76fb11ac58b566cf1a20ab" category="inline-link-rx"></block>. <block ref="1335d5eb0bcdbaf6050d71dc83f5893f" category="inline-link-rx"></block>.</block>
+  <block id="baa1235434f9122bbcf4cd93c72c3ed3" category="list-text">Se si effettua il backup di un volume DP e si decide di interrompere la relazione di SnapMirror in quel volume, non sarà possibile ripristinare i file in quel volume a meno che non si elimini anche la relazione di SnapMirror o si inverta la direzione di SnapMirror.</block>
+  <block id="97a40c9bbf6946a2928acd09286296b8" category="paragraph">La funzionalità Browse &amp; Restore per il ripristino di file singoli e directory non è supportata quando si utilizzano BlueXP Connectors in esecuzione in Podman (connettori BlueXP creati manualmente quando in esecuzione su RHEL 8 o 9). Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:</block>
+  <block id="210a764f3461866061c80320620c0eec" category="admonition">Per le limitazioni relative al ripristino dei dati ONTAP, vedere <block ref="15bd83aed33bf3bd63f2e9166e3e91ba" category="inline-link-macro-rx"></block>.</block>
 </blocks>
