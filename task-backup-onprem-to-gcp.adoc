@@ -29,43 +29,28 @@ Inizia subito seguendo questa procedura. I dettagli di ciascuna fase sono fornit
 [role="quick-margin-para"]
 Scegli se connettere il tuo cluster ONTAP on-premise direttamente allo storage cloud di Google tramite Internet pubblico o se utilizzerai una VPN o un'interconnessione cloud di Google e instraderai il traffico attraverso un'interfaccia privata di Google Access che utilizza un indirizzo IP privato.
 
-[role="quick-margin-para"]
-<<Identificare il metodo di connessione>>.
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["Due"] Preparare il connettore BlueXP
 [role="quick-margin-para"]
 Se hai già un connettore implementato nel tuo VPC Google Cloud Platform, allora sei tutto impostato. In caso contrario, è necessario creare un connettore BlueXP per eseguire il backup dei dati ONTAP sullo storage Google Cloud. Sarà inoltre necessario personalizzare le impostazioni di rete per il connettore in modo che possa connettersi a Google Cloud.
-
-[role="quick-margin-para"]
-<<Preparare il connettore BlueXP,Scopri come creare un connettore e come definire le impostazioni di rete richieste.>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["Tre"] Verificare i requisiti di licenza
 [role="quick-margin-para"]
 È necessario verificare i requisiti di licenza per Google Cloud e BlueXP.
 
-[role="quick-margin-para"]
-Fare riferimento a. <<Verificare i requisiti di licenza>>.
-
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["Quattro"] Preparare i cluster ONTAP
 [role="quick-margin-para"]
 Scopri i tuoi cluster ONTAP in BlueXP, verifica che soddisfino i requisiti minimi e personalizza le impostazioni di rete in modo che i cluster possano connettersi a Google Cloud.
-
-[role="quick-margin-para"]
-<<Preparare i cluster ONTAP,Scopri come preparare i cluster ONTAP.>>
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-5.png["Cinque"] Prepara Google Cloud come destinazione per il backup
 [role="quick-margin-para"]
 Impostare le autorizzazioni per il connettore per creare e gestire il bucket Google Cloud. Dovrai anche impostare le autorizzazioni per il cluster ONTAP on-premise in modo che possa leggere e scrivere i dati nel bucket di Google Cloud.
 
 [role="quick-margin-para"]
-In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Google Cloud. <<Prepare Google Cloud storage as your backup target,Scopri come preparare il tuo ambiente Google Cloud per ricevere i backup di ONTAP.>>
+In alternativa, è possibile impostare chiavi personalizzate per la crittografia dei dati invece di utilizzare le chiavi di crittografia predefinite di Google Cloud.
 
 .image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-6.png["Sei"] Attivare i backup sui volumi ONTAP
 [role="quick-margin-para"]
 Selezionare l'ambiente di lavoro e fare clic su *Enable > Backup Volumes* (Abilita > volumi di backup) accanto al servizio di backup e ripristino nel pannello di destra. Quindi, seguire la procedura di installazione guidata per selezionare i criteri di replica e backup da utilizzare e i volumi di cui si desidera eseguire il backup.
-
-[role="quick-margin-para"]
-<<Attivare i backup sui volumi ONTAP>>.
 
 
 
