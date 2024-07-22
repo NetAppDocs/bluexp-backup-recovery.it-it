@@ -343,7 +343,7 @@ Il ripristino di un volume da un file di backup che risiede nello storage di arc
 
 === Ripristinare cartelle e file utilizzando Sfoglia & Ripristina
 
-Se è necessario ripristinare solo alcuni file da un backup di un volume ONTAP, è possibile scegliere di ripristinare una cartella o singoli file invece di ripristinare l'intero volume. È possibile ripristinare cartelle e file in un volume esistente nell'ambiente di lavoro originale o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.
+Se hai bisogno di ripristinare solo pochi file da un backup di un volume ONTAP, puoi scegliere di ripristinare una cartella o singoli file invece di ripristinare l'intero volume. È possibile ripristinare cartelle e file in un volume esistente nell'ambiente di lavoro originale o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.
 
 
 NOTE: Al momento, è possibile ripristinare una cartella o singoli file solo da un file di backup nello storage a oggetti. Il ripristino di file e cartelle non è attualmente supportato da una copia Snapshot locale o da un file di backup che risiede in un ambiente di lavoro secondario (un volume replicato).
@@ -356,6 +356,7 @@ Quando si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare
 ====
 * Se il file di backup è stato configurato con la protezione DataLock & ransomware, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare l'intero volume dal file di backup e accedere alla cartella e ai file necessari.
 * Se il file di backup risiede nello storage di archiviazione, il ripristino a livello di cartella è supportato solo se la versione di ONTAP è 9.13.1 o superiore. Se si utilizza una versione precedente di ONTAP, è possibile ripristinare la cartella da un file di backup più recente che non è stato archiviato oppure è possibile ripristinare l'intero volume dal backup archiviato e quindi accedere alla cartella e ai file necessari.
+* Con ONTAP 9.15.1 P2, è possibile ripristinare le cartelle di FlexGroup utilizzando l'opzione Sfoglia e ripristina.
 
 
 ====
@@ -365,6 +366,7 @@ Quando si utilizza ONTAP 9.13.0 o versione successiva, è possibile ripristinare
 
 * La versione di ONTAP deve essere 9.6 o superiore per eseguire le operazioni di ripristino di _file_.
 * La versione di ONTAP deve essere 9.11.1 o superiore per eseguire le operazioni di ripristino della _cartella_. ONTAP versione 9.13.1 è richiesto se i dati si trovano nello storage di archiviazione o se il file di backup utilizza DataLock e la protezione ransomware.
+* La versione di ONTAP deve essere 9.15.1 P2 o superiore per ripristinare le directory FlexGroup utilizzando l'opzione Sfoglia e ripristina.
 
 
 

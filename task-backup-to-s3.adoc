@@ -275,7 +275,7 @@ image:screenshot_backup_cvo_enable.png["Una schermata che mostra il pulsante di 
 
 
 
-TIP: Per modificare le impostazioni di backup o aggiungere la replica, fare riferimento a. link:../task-manage-backups-ontap.html["Gestire i backup di ONTAP"].
+TIP: Per modificare le impostazioni di backup o aggiungere la replica, fare riferimento a link:task-manage-backups-ontap.html["Gestire i backup di ONTAP"].
 
 
 
