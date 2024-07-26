@@ -233,7 +233,7 @@ Se si utilizza già BlueXP per gestire lo storage, è già stato installato un c
 
 BlueXP offre diverse modalità di implementazione che consentono di utilizzare BlueXP in modo da soddisfare i requisiti di sicurezza e di business. _Standard mode_ sfrutta il layer BlueXP SaaS per fornire funzionalità complete, mentre _restricted mode_ e _private mode_ sono disponibili per le organizzazioni con restrizioni di connettività.
 
-https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Scopri di più sulle modalità di implementazione di BlueXP"^]. https://media.netapp.com/video-detail/078912eb-f081-5bd3-8342-bdd2d5c85d44/netapp-bluexp-backup-and-recovery-deployment-modes["Guarda questo video sulle modalità di implementazione di BlueXP"^].
+https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Scopri di più sulle modalità di implementazione di BlueXP"^].
 
 
 
