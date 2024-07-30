@@ -542,7 +542,7 @@ Puoi scegliere di proteggere volumi FlexVol o FlexGroup; tuttavia, non puoi sele
 [NOTE]
 ====
 * È possibile attivare un backup solo su un singolo volume FlexGroup alla volta.
-* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock. I volumi in modalità conformità SnapLock richiedono ONTAP 9,14 o versione successiva.
+* I volumi selezionati devono avere la stessa impostazione SnapLock. Tutti i volumi devono avere abilitato SnapLock Enterprise o avere disattivato SnapLock.
 
 
 ====
