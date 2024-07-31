@@ -21,7 +21,7 @@ BlueXP supporta il blocco dei dati e la protezione dal ransomware. Se il cluster
 .Prima di iniziare
 Quando si esegue il backup dei dati su StorageGRID, è necessario che sia disponibile un connettore on-premise. Sarà necessario installare un nuovo connettore o assicurarsi che il connettore attualmente selezionato risieda on-premise. Il connettore può essere installato in un sito con o senza accesso a Internet.
 
-Per ulteriori informazioni, vedere link:task-backup-onprem-private-cloud.html#creating-or-switching-connectors["Creare connettori per StorageGRID"].
+Per informazioni, vedere link:task-backup-onprem-private-cloud.html#create-or-switch-connectors["Creare connettori per StorageGRID"].
 
 .Fasi
 . Nell'interfaccia utente di BlueXP, fare clic su *Protection* > *Backup and Recovery* > *Applications*.

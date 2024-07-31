@@ -467,7 +467,7 @@ Ora puoi scegliere un bucket che si trova in un progetto diverso rispetto al pro
 
 Le regioni AWS China Pechino (cn-North-1) e Ningxia (cn-Nordovest-1) sono ora supportate come destinazioni per i file di backup se il cluster esegue ONTAP 9.12.1 o superiore.
 
-Si noti che i criteri IAM assegnati al connettore BlueXP devono modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ da "aws" a "aws-cn", ad esempio "arn:aws-cn:s3:::netapp-backup-*". Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["Backup dei dati ONTAP on-premise su Amazon S3"] per ulteriori informazioni.
+Si noti che i criteri IAM assegnati al connettore BlueXP devono modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ da "aws" a "aws-cn", ad esempio "arn:aws-cn:s3:::netapp-backup-*". Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["Eseguire il backup dei dati ONTAP on-premise su Amazon S3"]
 
 
 
