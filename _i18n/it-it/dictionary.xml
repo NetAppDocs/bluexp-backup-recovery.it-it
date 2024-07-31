@@ -3953,7 +3953,6 @@ ifdef::aws[]</block>
   <block id="e2220c538d5ed850f5ecb8375389dad3" category="list-text">Devi disporre di un account di servizio nel tuo Google Cloud Project che abbia il ruolo personalizzato.<block ref="bb9056f672c7da9a9c8e1e60191fd39c" category="inline-link-rx"></block></block>
   <block id="f6b23a9e657d0c84ca0f004a895e6b12" category="admonition">Per modificare le impostazioni di backup o aggiungere la replica, fare riferimento a <block ref="437ca1df9d07fa739678476083489c0d" category="inline-link-macro-rx"></block>.</block>
   <block id="031305d7be8e01cb27587340a16572f8" category="paragraph">Se hai bisogno di ripristinare solo pochi file da un backup di un volume ONTAP, puoi scegliere di ripristinare una cartella o singoli file invece di ripristinare l'intero volume. È possibile ripristinare cartelle e file in un volume esistente nell'ambiente di lavoro originale o in un ambiente di lavoro diverso che utilizza lo stesso account cloud. È inoltre possibile ripristinare cartelle e file in un volume su un sistema ONTAP on-premise.</block>
-  <block id="87eb849ca11537b79f083ee5fbad6738" category="list-text">Con ONTAP 9.15.1 P2, è possibile ripristinare le cartelle di FlexGroup utilizzando l'opzione Sfoglia e ripristina.</block>
   <block id="57bb710d517f010c4fce20687ec1c6ff" category="list-text">La versione di ONTAP deve essere 9.15.1 P2 o superiore per ripristinare le directory FlexGroup utilizzando l'opzione Sfoglia e ripristina.</block>
   <block id="ba874eb3ffbdba518b95ce26bc81a861" category="section-title">22 luglio 2024</block>
   <block id="9d5f0e2f1682000ac365243e21301823" category="section-title">Ripristina volumi inferiori a 1 GB</block>
@@ -3980,4 +3979,7 @@ ifdef::aws[]</block>
   <block id="a53c24ea75123fb92d916ca3c6592e08" category="paragraph">Per informazioni su come attivare il database SAP HANA, vedere<block ref="d89e94a6aaf703375bdbc4104c3e8227" category="inline-link-rx"></block>.</block>
   <block id="a9e237979cbdc38b90d3a128b7a087d1" category="inline-link">Eseguire il backup dei dati ONTAP on-premise su Amazon S3</block>
   <block id="5ab37a7c23f6f643a1684bd78480a163" category="paragraph">Si noti che i criteri IAM assegnati al connettore BlueXP devono modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ da "aws" a "aws-cn", ad esempio "arn:aws-cn:s3:::netapp-backup-*". Per ulteriori informazioni, vedere<block ref="6bde8133d7092193dd76584d1547b993" category="inline-link-rx"></block> e.<block ref="54f3812958e7ffc22b3859734114af6b" category="inline-link-rx"></block></block>
+  <block id="15f09261e873aa1d63f5dcc04347b79b" category="list-text">Con ONTAP 9.15.1, è possibile ripristinare le cartelle di FlexGroup utilizzando l'opzione "Sfoglia e ripristina". Questa funzione è in modalità Anteprima tecnologica.</block>
+  <block id="db0f3d3c6912a5ee817314070056f087" category="inline-link">Backup e recovery di BlueXP - blog sulla release di luglio 2024</block>
+  <block id="ec53b6836352750173251f0c57f2ed93" category="paragraph">È possibile testarlo utilizzando un flag speciale descritto nella<block ref="33c6d5d03ae6e02d266d11d3de66dc86" category="inline-link-rx"></block>.</block>
 </blocks>
