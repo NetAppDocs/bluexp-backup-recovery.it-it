@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: task-report-inventory.html 
-keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory 
+keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory, bluexp 
 summary: 'Con i report di backup e ripristino BlueXP, puoi garantire che i dati critici siano protetti in base alle policy definite dalla tua organizzazione e supportare in modo efficiente i processi di audit per la conformità. Con il report dell"inventario di backup, è possibile visualizzare tutti i backup di un account, un ambiente di lavoro o un inventario SVM specifico.' 
 ---
 = Report sulla copertura per la data Protection
@@ -32,7 +32,7 @@ NOTE: Le attività dei report vengono monitorate nel registro Job Monitoring in 
 I report di backup e ripristino di BlueXP forniscono informazioni sui seguenti aspetti:
 
 * *Posizione del connettore*: On-premise o nel cloud
-* *Origine*: Volumi Cloud Volumes ONTAP, volumi ONTAP on-premise, applicazioni o volumi persistenti Kubernetes
+* *Fonte*: Volumi Cloud Volumes ONTAP, volumi ONTAP on-premise o applicazioni
 * *Destinazione*: Qualsiasi provider cloud, NetApp StorageGRID o ONTAP S3
 * *Versioni ONTAP*: 9.13.0
 
@@ -94,7 +94,7 @@ TIP: È possibile selezionare più ambienti di lavoro e SVM.
 
 Il monitoraggio proattivo può ridurre gli sforzi necessari per monitorare tutte le risorse del tuo ecosistema. A partire da ONTAP 9.13.0, il report attività di protezione dei dati fornisce informazioni sulle operazioni di snapshot, backup, cloning e ripristino che è possibile utilizzare con il monitoraggio SLA e con i tassi di backup e ripristino.
 
-Il report si applica alle operazioni di backup e recovery di BlueXP per Cloud Volumes ONTAP, on-premise, applicazioni e dati Kubernetes.
+Il report si applica alle operazioni di backup e recovery di BlueXP  per dati Cloud Volumes ONTAP, on-premise e applicativi.
 
 Il report Data Protection Job Activity mostra le seguenti informazioni e molto altro ancora:
 
@@ -114,7 +114,6 @@ I grafici nella parte superiore della pagina mostrano le seguenti informazioni:
 ** Numero di processi di backup e ripristino dei volumi ONTAP
 ** Numero di processi di backup e ripristino delle applicazioni
 ** Numero di processi di backup e ripristino delle macchine virtuali
-** Numero di processi di backup e ripristino Kubernetes
 
 
 * Attività lavorativa giornaliera

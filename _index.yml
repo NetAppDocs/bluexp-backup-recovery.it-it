@@ -1,14 +1,14 @@
 ---
 indexpage:
   title: Documentazione di backup e ripristino BlueXP
-  summary: Il servizio di backup e recovery di BlueXP offre una data Protection efficiente,
-    sicura e conveniente per i dati NetApp ONTAP, volumi persistenti di Kubernetes,
-    database e macchine virtuali (VM), sia on-premise che nel cloud.
-  keywords: bluexp, bluexp backup recovery, ontap, kubernetes, virtual machines, vm,
-    on-premises, data protection
+  summary: Il servizio di backup e recovery di BlueXP  offre una data Protection efficiente,
+    sicura e conveniente per i dati, i database e le macchine virtuali (VM) NetApp
+    ONTAP, sia on-premise che nel cloud.
+  keywords: bluexp, bluexp backup recovery, ontap, virtual machine, vm, on-premises,
+    data protection
   lead: Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficiente,
-    sicura e conveniente per i dati NetApp ONTAP, Kubernetes volumi persistenti, database
-    e macchine virtuali, sia on-premise che nel cloud.
+    sicura e conveniente per i dati, i database e le macchine virtuali NetApp ONTAP,
+    sia on-premise che nel cloud.
   tiles:
   - title: Inizia subito
     links:
@@ -96,19 +96,6 @@ indexpage:
       url: task-restore-sql-data.html
     - title: Ripristinare i dati delle macchine virtuali
       url: task-restore-vm-data.html
-    - title: Ripristinare i dati del volume Kubernetes
-      url: task-restore-backups-kubernetes.html
-  - title: Eseguire il backup dei dati Kubernetes nel cloud
-    links:
-    - title: Eseguire il backup del cluster Kubernetes su Amazon S3
-      url: task-backup-kubernetes-to-s3.html
-      flavor: aws
-    - title: Effettua il backup del cluster Kubernetes in Azure Blob
-      url: task-backup-kubernetes-to-azure.html
-      flavor: azure
-    - title: Eseguire il backup del cluster Kubernetes in Google Cloud
-      url: task-backup-kubernetes-to-gcp.html
-      flavor: gcp
   - title: Blog e community
     links:
     - title: Community NetApp

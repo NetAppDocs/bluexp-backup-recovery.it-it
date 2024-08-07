@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, kubernetes, applications, virtual machines, backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
 summary: Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficiente, sicura e conveniente per i dati, i database e le macchine virtuali NetApp ONTAP, sia on-premise che nel cloud. I backup vengono generati e memorizzati automaticamente in un archivio di oggetti nel tuo account di cloud pubblico o privato. 
 ---
 = Informazioni su backup e ripristino BlueXP
@@ -14,7 +14,7 @@ summary: Il servizio di backup e ripristino BlueXP offre una protezione dei dati
 
 
 [role="lead"]
-Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficiente, sicura e conveniente per i dati NetApp ONTAP, Kubernetes volumi persistenti, database e macchine virtuali, sia on-premise che nel cloud. I backup vengono generati e memorizzati automaticamente in un archivio di oggetti nel tuo account di cloud pubblico o privato.
+Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficiente, sicura e conveniente per i dati, i database e le macchine virtuali NetApp ONTAP, sia on-premise che nel cloud. I backup vengono generati e memorizzati automaticamente in un archivio di oggetti nel tuo account di cloud pubblico o privato.
 
 Il servizio esegue una replica incrementale a livello di blocco e per sempre e preserva tutte le efficienze dello storage, riducendo in modo significativo la quantità di dati replicati e memorizzati. Inoltre, pagherai solo ciò che è protetto e utilizzi i Tier di storage più economici disponibili, rendendo il backup e ripristino BlueXP molto conveniente.
 
@@ -25,7 +25,6 @@ https://bluexp.netapp.com/cloud-backup["Scopri di più sul backup e ripristino B
 Il backup e il ripristino possono essere utilizzati per:
 
 * Backup e ripristino dei dati dei volumi ONTAP da sistemi Cloud Volumes ONTAP e ONTAP on-premise. link:concept-ontap-backup-to-cloud.html["Scopri le funzionalità dettagliate qui"].
-* Eseguire il backup e il ripristino dei volumi persistenti di Kubernetes. link:concept-kubernetes-backup-to-cloud.html["Scopri le funzionalità dettagliate qui"].
 * Eseguire il backup delle istantanee coerenti con l'applicazione dai sistemi ONTAP on-premise utilizzando il backup e il ripristino BlueXP per le applicazioni. link:concept-protect-app-data-to-cloud.html["Scopri le funzionalità dettagliate qui"].
 * Eseguire il backup dei datastore nel cloud e ripristinare le macchine virtuali nel vCenter on-premise utilizzando il backup e ripristino BlueXP per VMware. link:concept-protect-vm-data.html["Scopri le funzionalità dettagliate qui"].
 
@@ -33,7 +32,7 @@ Il backup e il ripristino possono essere utilizzati per:
 https://www.youtube.com/watch?v=DF0knrH2a80["Guarda una rapida demo"^]
 
 
-TIP: Quando BlueXP Connector viene implementato in un'area governativa nel cloud o in un sito senza accesso a Internet (un sito oscuro), il backup e ripristino BlueXP supporta solo le operazioni di backup e ripristino dai sistemi ONTAP. Quando si utilizzano questi metodi di implementazione, il backup e ripristino BlueXP non supporta le operazioni di backup e ripristino da cluster, applicazioni o macchine virtuali Kubernetes.
+TIP: Quando BlueXP Connector viene implementato in un'area governativa nel cloud o in un sito senza accesso a Internet (un sito oscuro), il backup e ripristino BlueXP supporta solo le operazioni di backup e ripristino dai sistemi ONTAP. Quando si utilizzano questi metodi di distribuzione, il backup e recovery di BlueXP  non supporta le operazioni di backup e ripristino da applicazioni o macchine virtuali.
 
 
 

@@ -20,7 +20,7 @@ summary: 'È possibile monitorare lo stato di istantanee locali, repliche e back
 
 == Visualizzare lo stato del lavoro in Job Monitor
 
-È possibile visualizzare un elenco di tutte le operazioni di istantanea, replica, backup nell'archiviazione a oggetti e ripristino e il relativo stato corrente nella scheda *monitoraggio processi*. Ciò include operazioni da Cloud Volumes ONTAP, ONTAP on-premise, applicazioni, macchine virtuali e sistemi Kubernetes. Ogni operazione, o lavoro, ha un ID univoco e uno stato.
+È possibile visualizzare un elenco di tutte le operazioni di istantanea, replica, backup nell'archiviazione a oggetti e ripristino e il relativo stato corrente nella scheda *monitoraggio processi*. Ciò include le operazioni di Cloud Volumes ONTAP, ONTAP on-premise, applicazioni e macchine virtuali. Ogni operazione, o lavoro, ha un ID univoco e uno stato.
 
 Lo stato può essere:
 
@@ -76,7 +76,6 @@ La maggior parte dei filtri sono intuitivi. Il filtro per "carico di lavoro" con
 ** Volumi (Cloud Volumes ONTAP e ONTAP Volumes on-premise)
 ** Applicazioni
 ** Macchine virtuali
-** Kubernetes
 
 
 +

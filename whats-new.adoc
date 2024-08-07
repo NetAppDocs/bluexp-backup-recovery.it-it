@@ -560,7 +560,7 @@ Ora puoi eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati 
 
 === Miglioramenti multipli di Job Monitor
 
-* La pagina Job Monitoring ha aggiunto un filtro avanzato che consente di cercare i processi di backup e ripristino in base al tempo, al carico di lavoro (volumi, applicazioni, macchine virtuali o Kubernetes), Tipo di lavoro, stato, ambiente di lavoro e VM di storage. È anche possibile inserire testo libero per cercare qualsiasi risorsa, ad esempio "application_3".  https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Scopri come utilizzare i filtri avanzati"].
+* La pagina monitoraggio processi ha aggiunto un filtro avanzato che consente di cercare i processi di backup e ripristino in base a tempo, carico di lavoro (volumi, applicazioni o macchine virtuali), tipo di lavoro, stato, ambiente di lavoro e VM di storage. È anche possibile inserire testo libero per cercare qualsiasi risorsa, ad esempio "application_3".  https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html#searching-and-filtering-the-list-of-jobs["Scopri come utilizzare i filtri avanzati"].
 * Sia le operazioni di backup e ripristino avviate dall'utente dall'interfaccia utente e dall'API di backup e ripristino di BlueXP, sia i processi avviati dal sistema, come le operazioni di backup in corso, sono ora disponibili nella scheda *monitoraggio del processo* per i sistemi Cloud Volumes ONTAP che eseguono ONTAP 9.13.0 o versione successiva. Le versioni precedenti dei sistemi Cloud Volumes ONTAP e dei sistemi ONTAP on-premise visualizzano solo i processi avviati dall'utente.
 
 
@@ -789,7 +789,7 @@ A questo punto, il connettore deve essere implementato nella piattaforma Google 
 
 Sono stati apportati i seguenti aggiornamenti a https://docs.netapp.com/us-en/bluexp-backup-recovery/task-monitor-backup-jobs.html["Pagina Job Monitoring"]:
 
-* È disponibile una colonna per "workload", che consente di filtrare la pagina per visualizzare i job per i seguenti servizi di backup: Volumi, applicazioni, macchine virtuali e Kubernetes.
+* È disponibile una colonna per "carico di lavoro" che consente di filtrare la pagina per visualizzare i lavori per i seguenti servizi di backup: Volumi, applicazioni e macchine virtuali.
 * È possibile aggiungere nuove colonne per "Nome utente" e "tipo di lavoro" se si desidera visualizzare questi dettagli per un processo di backup specifico.
 * La pagina Dettagli lavoro visualizza tutti i lavori secondari in esecuzione per completare il lavoro principale.
 * La pagina viene aggiornata automaticamente ogni 15 minuti in modo da visualizzare sempre i risultati più recenti dello stato del lavoro. E fare clic sul pulsante *Refresh* (Aggiorna) per aggiornare immediatamente la pagina.

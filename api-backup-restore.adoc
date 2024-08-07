@@ -184,4 +184,4 @@ curl --location --request GET 'https://api.bluexp.netapp.com/account/account-DpT
 
 == Riferimento API
 
-La documentazione per ciascuna API di backup e ripristino BlueXP è disponibile all'interno del sito https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html[].
+La documentazione per ogni API di backup e ripristino BlueXP  è disponibile all'indirizzo https://docs.netapp.com/us-en/bluexp-automation/cbs/overview.html["Automazione di BlueXP "^].
