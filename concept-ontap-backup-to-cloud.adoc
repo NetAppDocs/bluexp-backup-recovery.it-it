@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: concept-ontap-backup-to-cloud.html 
-keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, bluexp, bluexp backup and recovery 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, billing, cost, on-premises ontap, onprem, bluexp, bluexp backup and recovery, protection 
 summary: 'Il servizio di backup e ripristino BlueXP offre funzionalità di backup e ripristino per la protezione e l"archiviazione a lungo termine dei dati del volume ONTAP. Puoi implementare una strategia 3-2-1 in cui hai 3 copie dei dati di origine su 2 sistemi storage diversi insieme a una copia nel cloud.' 
 ---
 = Proteggi i dati dei volumi ONTAP utilizzando il backup e ripristino BlueXP

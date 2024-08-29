@@ -169,7 +169,7 @@ Il Centro notifiche visualizza numerosi eventi di istantanea, replica, backup ne
 | Replica | Errore del processo di pausa del backup e recovery di BlueXP | Errore | No 
 
 
-| Replica | Guasto al lavoro di freno di replica del backup e recovery di BlueXP | Errore | No 
+| Replica | Errore del processo di interruzione della replica di backup e ripristino BlueXP  | Errore | No 
 
 
 | Replica | Errore del processo di risincronizzazione della replica di backup e recovery di BlueXP | Errore | No 

@@ -3043,7 +3043,6 @@ ONTAP S3</block>
   <block id="3b2352f9f987ea3f850c59d97818e5b2" category="cell">Errore del processo di creazione di snapshot ad-hoc di backup e recovery di BlueXP</block>
   <block id="7dfd6144b0880ea61dc9ca44cde23608" category="cell">Errore del processo di replica ad-hoc di backup e recovery di BlueXP</block>
   <block id="44fb2635a11260b2cc484928766b933c" category="cell">Errore del processo di pausa del backup e recovery di BlueXP</block>
-  <block id="ebc078a09fc4b31b91b35b54aa44f5c4" category="cell">Guasto al lavoro di freno di replica del backup e recovery di BlueXP</block>
   <block id="c55e60943b328ba5333135136a72eed3" category="cell">Errore del processo di risincronizzazione della replica di backup e recovery di BlueXP</block>
   <block id="5e67cebd99d17acfd6723171138a26c0" category="cell">La replica di backup e recovery di BlueXP arresta il guasto al processo</block>
   <block id="148858fe75d91455e16176a0e57a23a4" category="cell">Errore durante la risincronizzazione inversa del processo di backup e recovery di BlueXP</block>
@@ -3735,4 +3734,5 @@ ifdef::aws[]</block>
   <block id="0d80ea71f9929ca6943ff4f16a27de3e" category="list-text">È disponibile una colonna per "carico di lavoro" che consente di filtrare la pagina per visualizzare i lavori per i seguenti servizi di backup: Volumi, applicazioni e macchine virtuali.</block>
   <block id="756733f39050e99f4221fe80d10ea604" category="sidebar">Il servizio di backup e ripristino BlueXP offre una protezione dei dati efficiente, sicura e conveniente per i dati, i database e le macchine virtuali NetApp ONTAP, sia on-premise che nel cloud.</block>
   <block id="e117f11185531a360eff8bfed09af453" category="sidebar">Il servizio di backup e recovery di BlueXP  offre una data Protection efficiente, sicura e conveniente per i dati, i database e le macchine virtuali (VM) NetApp ONTAP, sia on-premise che nel cloud.</block>
+  <block id="0760245e68680af16b611d238a130354" category="cell">Errore del processo di interruzione della replica di backup e ripristino BlueXP </block>
 </blocks>
