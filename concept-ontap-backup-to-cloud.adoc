@@ -301,7 +301,7 @@ endif::aws[]
 
 ifdef::azure[]
 
-Quando utilizzi Azure, due contratti annuali sono disponibili per i termini a 1, 2 o 3 anni:
+Quando utilizzi Azure, sono disponibili due contratti annuali per i termini di 1, 2 o 3 anni:
 
 * Un piano di "backup sul cloud" che consente di eseguire il backup dei dati Cloud Volumes ONTAP e dei dati ONTAP on-premise.
 * Un piano "CVO Professional" che consente di unire backup e ripristino di Cloud Volumes ONTAP e BlueXP. Questo include backup illimitati per volumi Cloud Volumes ONTAP addebitati a fronte di questa licenza (la capacità di backup non viene conteggiata rispetto alla licenza).
@@ -311,7 +311,7 @@ endif::azure[]
 
 ifdef::gcp[]
 
-Quando si utilizza GCP, è possibile richiedere un'offerta privata da NetApp e selezionare il piano quando si effettua l'iscrizione da Google Cloud Marketplace durante l'attivazione del backup e ripristino BlueXP.
+Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp, e quindi selezionare il piano quando ti iscrivi da Google Cloud Marketplace durante l'attivazione di backup e recovery di BlueXP .
 
 endif::gcp[]
 
@@ -404,7 +404,7 @@ Se il cluster utilizza ONTAP 9.11.1 o versione successiva, è possibile protegge
 
 Le scansioni pianificate di protezione dal ransomware sono abilitate per impostazione predefinita. L'impostazione predefinita per la frequenza di scansione è di 7 giorni. La scansione viene eseguita solo sull'ultima copia Snapshot. Le scansioni pianificate possono essere disattivate per ridurre i costi. Puoi abilitare o disabilitare le scansioni ransomware pianificate sull'ultima copia Snapshot utilizzando l'opzione nella pagina Advanced Settings (Impostazioni avanzate). Se si attiva, le scansioni vengono eseguite settimanalmente per impostazione predefinita. È possibile modificare la pianificazione in giorni o settimane o disattivarla, risparmiando sui costi.
 
-Il periodo di conservazione del backup è lo stesso del periodo di conservazione della pianificazione del backup, più 14 giorni. Ad esempio, i backup _settimanali_ con _5_ copie conservate bloccano ogni file di backup per 5 settimane. I backup _mensili_ con _6_ copie conservate bloccano ogni file di backup per 6 mesi.
+Il periodo di conservazione dei backup è lo stesso del periodo di conservazione della pianificazione dei backup, più un buffer massimo di 31 giorni. Ad esempio, i backup _settimanali_ con _5_ copie conservate bloccano ogni file di backup per 5 settimane. I backup _mensili_ con _6_ copie conservate bloccano ogni file di backup per 6 mesi.
 
 Il supporto è attualmente disponibile quando la destinazione del backup è Amazon S3, Azure Blob o NetApp StorageGRID. Le destinazioni di altri provider di storage verranno aggiunte nelle versioni future.
 
