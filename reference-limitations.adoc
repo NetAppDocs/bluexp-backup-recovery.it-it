@@ -111,7 +111,10 @@ Quando si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino d
 
 
 
-==== Il ripristino a file singolo non è supportato
+==== Supporto di ripristino a file singolo
+
+
+IMPORTANT: A partire dalla versione del 30 settembre 2024, questa limitazione è stata rimossa.
 
 La funzionalità Browse & Restore per il ripristino di file singoli e directory non è supportata quando si utilizzano BlueXP Connectors in esecuzione in Podman (connettori BlueXP creati manualmente quando in esecuzione su RHEL 8 o 9). Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:
 
