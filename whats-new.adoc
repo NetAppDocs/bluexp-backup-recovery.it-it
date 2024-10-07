@@ -64,7 +64,11 @@ Il servizio Amazon Web Services (AWS) Identity and Access Management (IAM) Roles
 
 Con questa release, il supporto per il servizio AWS IAM Roles Anywhere è un'anteprima tecnologica.
 
-Ciò vale per il backup link:task-backup-to-s3.html["Backup di Cloud Volumes ONTAP su AWS"] e link:task-backup-onprem-to-aws.html["Backup dei dati ONTAP on-premise su AWS"].
+ifdef::aws[]
+
+Questo vale per link:task-backup-to-s3.html["Backup di Cloud Volumes ONTAP su AWS"]. Questo vale per link:task-backup-onprem-to-aws.html["Backup dei dati ONTAP on-premise su AWS"].
+
+endif::aws[]
 
 Fare riferimento alla https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-July-2024-Release/ba-p/453993["Blog sulla release di luglio 2024 per backup e recovery di BlueXP"].
 
@@ -135,6 +139,12 @@ Fare riferimento alle seguenti informazioni per i dettagli:
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/task-create-policies-ontap.html["Gestire le policy per ONTAP Volumes"]
 * https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-cloud-backup-policies.html["Impostazioni dei criteri di backup su oggetti"]
 
+
+ifdef::aws[]
+
+Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"] e https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
+
+endif::aws[]
 
 
 
@@ -329,7 +339,11 @@ https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-clo
 
 Ora puoi utilizzare un sistema ONTAP che è stato configurato per Simple Storage Service (S3) per eseguire il backup dei volumi nello storage a oggetti. Questo è supportato sia per i sistemi ONTAP on-premise che per i sistemi Cloud Volumes ONTAP. Questa configurazione è supportata in implementazioni cloud e in sedi interne senza accesso a Internet (distribuzione in modalità "privata").
 
+ifdef::aws[]
+
 https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-ontap-s3.html["Scopri di più"].
+
+endif::aws[]
 
 
 
@@ -481,7 +495,13 @@ Se un file di backup è stato configurato con la protezione DataLock & ransomwar
 
 === Le chiavi gestite dal cliente per più aree e progetti sono supportate quando si esegue il backup dei volumi su Google Cloud
 
-Ora puoi scegliere un bucket che si trova in un progetto diverso rispetto al progetto delle chiavi di crittografia gestite dal cliente (CMEK). https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Scopri di più sulla configurazione delle tue chiavi di crittografia gestite dal cliente"].
+Ora puoi scegliere un bucket che si trova in un progetto diverso rispetto al progetto delle chiavi di crittografia gestite dal cliente (CMEK).
+
+ifdef::gcp[]
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Scopri di più sulla configurazione delle tue chiavi di crittografia gestite dal cliente"].
+
+endif::gcp[]
 
 
 
@@ -489,7 +509,13 @@ Ora puoi scegliere un bucket che si trova in un progetto diverso rispetto al pro
 
 Le regioni AWS China Pechino (cn-North-1) e Ningxia (cn-Nordovest-1) sono ora supportate come destinazioni per i file di backup se il cluster esegue ONTAP 9.12.1 o superiore.
 
-Si noti che i criteri IAM assegnati al connettore BlueXP devono modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ da "aws" a "aws-cn", ad esempio "arn:aws-cn:s3:::netapp-backup-*". Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["Eseguire il backup dei dati ONTAP on-premise su Amazon S3"]
+Si noti che i criteri IAM assegnati al connettore BlueXP devono modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ da "aws" a "aws-cn", ad esempio "arn:aws-cn:s3:::netapp-backup-*".
+
+ifdef::aws[]
+
+Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Eseguire il backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-aws.html["Eseguire il backup dei dati ONTAP on-premise su Amazon S3"]
+
+endif::aws[]
 
 
 
@@ -539,7 +565,19 @@ I processi avviati dal sistema, come le operazioni di backup in corso, sono ora 
 
 === Possibilità di eseguire il backup dei dati nel cloud dai sistemi Cloud Volumes ONTAP in modalità "limitata"
 
-Ora è possibile eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali AWS, Azure e GCP in "modalità limitata". Ciò richiede l'installazione del connettore nella regione commerciale "limitata". https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Scopri di più sulle modalità di implementazione di BlueXP"^]. Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
+Ora è possibile eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali AWS, Azure e GCP in "modalità limitata". Questo richiede l'installazione del connettore nell'area commerciale "limitata". https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Scopri di più sulle modalità di implementazione di BlueXP"^].
+
+ifdef::aws[]
+
+Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"]
+
+endif::aws[]
+
+ifdef::azure[]
+
+Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
+
+endif::azure[]
 
 
 
@@ -576,7 +614,19 @@ In passato, quando si ripristinava una cartella, venivano ripristinati solo i fi
 
 === Capacità di eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP nei siti con una connettività in uscita limitata
 
-Ora puoi eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali di AWS e Azure su Amazon S3 o Azure Blob. Questo richiede che il connettore venga installato in "modalità limitata" su un host Linux nella regione commerciale e che venga installato anche il sistema Cloud Volumes ONTAP. Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"] e. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
+Ora puoi eseguire il backup dei dati dai sistemi Cloud Volumes ONTAP installati nelle aree commerciali di AWS e Azure su Amazon S3 o Azure Blob. Questo richiede che il connettore venga installato in "modalità limitata" su un host Linux nella regione commerciale e che venga installato anche il sistema Cloud Volumes ONTAP.
+
+ifdef::aws[]
+
+Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-s3.html["Backup dei dati Cloud Volumes ONTAP su Amazon S3"].
+
+endif::aws[]
+
+ifdef::azure[]
+
+Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-to-azure.html["Backup dei dati Cloud Volumes ONTAP in Azure Blob"].
+
+endif::azure[]
 
 
 
@@ -654,7 +704,13 @@ Quando si esegue il backup dei dati dai sistemi ONTAP su Google Cloud Storage, �
 
 === Il ruolo "Storage Admin" non è più necessario per l'account del servizio per creare backup in Google Cloud Storage
 
-Nelle versioni precedenti, il ruolo "Storage Admin" era richiesto per l'account del servizio che consente il backup e il ripristino BlueXP per accedere ai bucket di storage Google Cloud. Ora è possibile creare un ruolo personalizzato con un set ridotto di autorizzazioni da assegnare all'account del servizio. https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Scopri come preparare il tuo Google Cloud Storage per i backup"].
+Nelle versioni precedenti, il ruolo "Storage Admin" era richiesto per l'account del servizio che consente il backup e il ripristino BlueXP per accedere ai bucket di storage Google Cloud. Ora è possibile creare un ruolo personalizzato con un set ridotto di autorizzazioni da assegnare all'account del servizio.
+
+ifdef::gcp[]
+
+https://docs.netapp.com/us-en/bluexp-backup-recovery/task-backup-onprem-to-gcp.html#preparing-google-cloud-storage-for-backups["Scopri come preparare il tuo Google Cloud Storage per i backup"].
+
+endif::gcp[]
 
 
 

@@ -271,7 +271,7 @@ Una licenza di backup è richiesta solo per il backup e il ripristino dallo stor
 
 Il BYOL è basato sulla capacità a termine (1, 2 o 3 anni) _e_ in incrementi di 1 TiB. Pagherai NetApp per utilizzare il servizio per un periodo di tempo, ad esempio 1 anno, e per una capacità massima, ad esempio 10 TIB.
 
-Riceverai un numero di serie che inserisci nella pagina del portafoglio digitale BlueXP per attivare il servizio. Una volta raggiunto il limite, è necessario rinnovare la licenza. La licenza BYOL di backup si applica a tutti i sistemi di origine associati al https://docs.netapp.com/us-en/bluexp-setup-admin/concept-netapp-accounts.html["Account BlueXP"^].
+Riceverai un numero di serie che inserisci nella pagina del portafoglio digitale BlueXP per attivare il servizio. Una volta raggiunto il limite, è necessario rinnovare la licenza. La licenza BYOL di backup si applica a tutti i sistemi sorgente associati alla tua organizzazione o account BlueXP .
 
 link:task-licensing-cloud-backup.html#use-a-bluexp-backup-and-recovery-byol-license["Scopri come gestire le tue licenze BYOL"].
 

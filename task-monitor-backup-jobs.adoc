@@ -186,7 +186,7 @@ Il Centro notifiche visualizza numerosi eventi di istantanea, replica, backup ne
 
 NOTE: A partire da ONTAP 9.13.0, tutti gli avvisi vengono visualizzati per i sistemi Cloud Volumes ONTAP e ONTAP on-premise. Per i sistemi con Cloud Volumes ONTAP 9.13.0 e on-premise ONTAP, viene visualizzato solo l'avviso relativo al completamento del processo di ripristino, ma con avvisi.
 
-Per impostazione predefinita, gli account Admins di BlueXP ricevono e-mail per tutti gli avvisi "critici" e "raccomandati". Per impostazione predefinita, tutti gli altri utenti e destinatari non ricevono alcuna notifica e-mail. Le e-mail possono essere inviate a qualsiasi utente BlueXP che fa parte del tuo NetApp Cloud account o a qualsiasi altro destinatario che abbia bisogno di conoscere l'attività di backup e ripristino.
+Per impostazione predefinita, gli amministratori dell'organizzazione e degli account BlueXP  ricevono e-mail per tutti gli avvisi "critici" e "consigliati". Per impostazione predefinita, tutti gli altri utenti e destinatari non ricevono alcuna notifica e-mail. Le e-mail possono essere inviate a qualsiasi utente BlueXP che fa parte del tuo NetApp Cloud account o a qualsiasi altro destinatario che abbia bisogno di conoscere l'attività di backup e ripristino.
 
 Per ricevere gli avvisi e-mail di backup e ripristino di BlueXP, è necessario selezionare i tipi di severità della notifica "critico", "Avviso" e "errore" nella pagina Impostazioni avvisi e notifiche.
 
