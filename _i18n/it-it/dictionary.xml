@@ -3506,8 +3506,6 @@ ifdef::aws[]</block>
   <block id="216ef706f9f25f4eb179f940b530a4d5" category="admonition">Queste impostazioni di policy sono rilevanti solo per il backup sullo storage a oggetti. Nessuna di queste impostazioni influisce sulle policy di Snapshot o di replica. Impostazioni di policy simili per snapshot e repliche verranno aggiunte in futuro.</block>
   <block id="a2e6f50bd5494a56ee0794883aeee5e5" category="section-title">Opzioni di pianificazione del backup</block>
   <block id="051658be4ba182ab30138c3d0fa07f2b" category="section-title">Opzioni di protezione DataLock e ransomware</block>
-  <block id="5eab2e069820454037ee67f5a8712f35" category="list-text">Se intendi utilizzare DataLock e la protezione dal ransomware, puoi abilitarla durante la creazione della prima policy di backup e l'attivazione di backup e recovery di BlueXP per quel cluster. Puoi abilitarlo in seguito utilizzando le impostazioni avanzate di backup e recovery di BlueXP.</block>
-  <block id="8bf75ab26f222aaa987f761ede723ee0" category="list-text">DataLock e la protezione ransomware possono essere disattivati per un cluster dopo essere stati configurati per risparmiare sui costi.</block>
   <block id="943aed8f26021fcc91ef6a9745099eea" category="list-text">Quando viene creato un file di backup.</block>
   <block id="645f12199dae2b82a1985743cbc3e647" category="section-title">Opzioni di protezione DataLock e ransomware</block>
   <block id="28393e8d0c5d4d42b764689c3d805dd0" category="example-title">Autorizzazioni di AWS S3</block>
@@ -3757,4 +3755,5 @@ ifdef::aws[]</block>
   <block id="8d9ab45267715f2ac0f3956dcc48c029" category="paragraph">Vedere<block ref="17dde2a04d27e7ad2a9f0a451a7a0e90" category="inline-link-rx"></block>.</block>
   <block id="78d043c8f38ceca4388c8f7251b8d0a4" category="paragraph">Nelle versioni precedenti, il ruolo "Storage Admin" era richiesto per l'account del servizio che consente il backup e il ripristino BlueXP per accedere ai bucket di storage Google Cloud. Ora è possibile creare un ruolo personalizzato con un set ridotto di autorizzazioni da assegnare all'account del servizio.</block>
   <block id="c3fc4078f4f9169223583aa65515bc3a" category="paragraph"><block ref="dc783245fae5a9dea930533d2d02d38a" category="inline-link-rx"></block>.</block>
+  <block id="5b932b14c237e03588a415b41b9a0b43" category="list-text">Se intendi utilizzare DataLock e la protezione dal ransomware, puoi abilitarla durante la creazione della prima policy di backup e l'attivazione di backup e recovery di BlueXP per quel cluster. In seguito, puoi abilitare o disabilitare la scansione ransomware utilizzando le impostazioni avanzate di backup e ripristino di BlueXP .</block>
 </blocks>
