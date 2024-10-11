@@ -194,7 +194,7 @@ Se si utilizzano i criteri predefiniti presenti in tutti i sistemi ONTAP, tutti 
 
 Per impostazione predefinita, quando si creano file di backup nello storage a oggetti per un ambiente di lavoro, il servizio di backup e recovery crea il container (bucket o account di storage) per i file di backup nell'account di storage a oggetti configurato. Per impostazione predefinita, il bucket AWS o GCP è denominato "netapp-backup-<uuid>". L'account di storage Azure Blob è denominato "<uuid>".
 
-Se si desidera utilizzare un determinato prefisso o assegnare proprietà speciali, è possibile creare il container direttamente nell'account del provider di oggetti. Se si desidera creare un container personalizzato, è necessario crearlo prima di avviare l'attivazione guidata. Il container deve essere utilizzato esclusivamente per la memorizzazione dei file di backup dei volumi ONTAP e non può essere utilizzato per altri scopi. La procedura guidata di attivazione del backup rileva automaticamente i container forniti per l'account e le credenziali selezionati, in modo da poter selezionare quello che si desidera utilizzare.
+Se si desidera utilizzare un determinato prefisso o assegnare proprietà speciali, è possibile creare il container direttamente nell'account del provider di oggetti. Se si desidera creare un container personalizzato, è necessario crearlo prima di avviare l'attivazione guidata. Il backup e recovery di BlueXP  può utilizzare qualsiasi bucket e condividere. La procedura guidata di attivazione del backup rileva automaticamente i container forniti per l'account e le credenziali selezionati, in modo da poter selezionare quello che si desidera utilizzare.
 
 Puoi creare il bucket da BlueXP o dal tuo cloud provider.
 
