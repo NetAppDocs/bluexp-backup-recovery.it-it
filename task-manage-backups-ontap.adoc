@@ -96,6 +96,8 @@ Quando si lavora con più volumi, tutti i volumi devono avere le seguenti caratt
 * Stesso tipo (volume Read-write o Data Protection)
 
 
+Se per il backup sono abilitati più di cinque volumi, il backup e ripristino di BlueXP  inizializza solo cinque volumi alla volta. Al termine di queste operazioni, viene creato il batch successivo di cinque sottolavori per avviare il set successivo e continua fino all'inizializzazione di tutti i volumi.
+
 .Fasi
 . Dalla scheda *Volumes* (volumi), filtrare in base all'ambiente di lavoro in cui risiedono i volumi.
 . Selezionare tutti i volumi su cui si desidera gestire le impostazioni di backup.
