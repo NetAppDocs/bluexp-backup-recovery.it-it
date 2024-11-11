@@ -3757,4 +3757,16 @@ ifdef::aws[]</block>
   <block id="ba69c078d6c88577ac4045721cf8bc4b" category="cell"><block ref="1db7b4242367cddbadaf1e041e531c76" prefix="" category="inline-code"></block></block>
   <block id="e23da6bf724f3225b25342aa20aab822" category="cell"><block ref="1e8904cbbffb7eff1de96297f70cd53e" prefix="" category="inline-code"></block></block>
   <block id="7a912606781d54fe98a96090d0cd3c74" category="paragraph">Se per il backup sono abilitati più di cinque volumi, il backup e ripristino di BlueXP  inizializza solo cinque volumi alla volta. Al termine di queste operazioni, viene creato il batch successivo di cinque sottolavori per avviare il set successivo e continua fino all'inizializzazione di tutti i volumi.</block>
+  <block id="46206fcd0fa4af78eefe04f1bd8d42c6" category="list-text">SnapLock Compliance per volumi on-premise (richiede ONTAP 9.14 o versioni successive)</block>
+  <block id="07c8845dbdef949b860ebfc99bd558ac" category="section-title">6 novembre 2024</block>
+  <block id="a5fd9c132798873e9eb6aafb58e50034" category="section-title">Modalità di protezione SnapLock Compliance e SnapLock Enterprise</block>
+  <block id="139da935670a9f985194d3241917c359" category="paragraph">Il backup e recovery di BlueXP  ora può eseguire il backup dei volumi on-premise FlexVol e FlexGroup configurati con le modalità di protezione SnapLock Compliance o SnapLock Enterprise. Per supportare questo tipo di supporto, i cluster devono eseguire ONTAP 9,14 o versione successiva. Il backup dei volumi FlexVol utilizzando la modalità SnapLock Enterprise è supportato a partire dalla versione ONTAP 9.11.1. Le release precedenti di ONTAP non supportano il backup di volumi di protezione SnapLock.</block>
+  <block id="9ddb3e6714694f5c7f619d474fec8169" category="paragraph">Consultare l'elenco completo dei volumi supportati nella<block ref="9e68a582cc487ad29425f5a4796c9e45" category="inline-link-rx"></block> .</block>
+  <block id="fec92c3dfb6a0b3db498488c7f4d2f29" category="section-title">Indicizzazione per il processo di ricerca e ripristino nella pagina dei volumi</block>
+  <block id="20d3b0b7cfe7a9f3dcfdb0faa9398efd" category="paragraph">Prima di utilizzare Search &amp; Restore, è necessario attivare l'indicizzazione su ogni ambiente di lavoro di origine da cui si desidera ripristinare i dati dei volumi. In questo modo, il catalogo indicizzato può tenere traccia dei file di backup per ogni volume. La pagina volumi ora mostra lo stato di indicizzazione:</block>
+  <block id="cd9b31737e78e0a0a755acc12151f766" category="list-text">Indicizzato: I volumi sono stati indicizzati.</block>
+  <block id="02e4eb80c967f3b9add2ba16a690eef2" category="list-text">In corso</block>
+  <block id="838534d879f74e7af515a7de57e72b71" category="list-text">Non indicizzato</block>
+  <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">Indicizzazione in pausa</block>
+  <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">Non attivato</block>
 </blocks>
