@@ -191,7 +191,6 @@ Il backup e ripristino di BlueXP supporta i seguenti tipi di volumi:
 * Volumi di lettura/scrittura FlexVol
 * FlexGroup Volumes (richiede ONTAP 9.12.1 o versione successiva)
 * Volumi aziendali SnapLock (richiede ONTAP 9.11.1 o versione successiva)
-* SnapLock Compliance per volumi on-premise (richiede ONTAP 9.14 o versioni successive)
 * Volumi di destinazione SnapMirror Data Protection (DP)
 
 
