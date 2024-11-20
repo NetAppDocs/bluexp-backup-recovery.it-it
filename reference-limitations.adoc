@@ -122,9 +122,3 @@ La funzionalità Browse & Restore per il ripristino di file singoli e directory 
 * Ripristinare i file o le cartelle da un backup cloud utilizzando la funzione Cerca e ripristina.
 * Ripristinare il volume da un backup su cloud utilizzando Browse & Restore e accedere ai file o alle cartelle necessari.
 
-
-
-
-==== La scansione ransomware dei tuoi backup nel cloud non è supportata
-
-La scansione dei backup cloud per il ransomware non è supportata quando si utilizza il motore Podman. Se stai utilizzando la funzionalità DataLock & ransomware per i tuoi backup nel cloud, devi disabilitare le scansioni ransomware. link:task-manage-backup-settings-ontap.html#enable-or-disable-ransomware-scans["Scopri come disattivare la scansione ransomware"].
