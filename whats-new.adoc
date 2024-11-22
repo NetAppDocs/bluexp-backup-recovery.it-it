@@ -18,7 +18,37 @@ Scopri le novità di BlueXP backup e recovery.
 
 
 
+== 22 novembre 2024
+
+Questa versione di backup e ripristino di BlueXP  include i seguenti aggiornamenti.
+
+
+
+=== Modalità di protezione SnapLock Compliance e SnapLock Enterprise
+
+Il backup e recovery di BlueXP  ora può eseguire il backup dei volumi on-premise FlexVol e FlexGroup configurati con le modalità di protezione SnapLock Compliance o SnapLock Enterprise. Per supportare questo tipo di supporto, i cluster devono eseguire ONTAP 9,14 o versione successiva. Il backup dei volumi FlexVol utilizzando la modalità SnapLock Enterprise è supportato a partire dalla versione ONTAP 9.11.1. Le release precedenti di ONTAP non supportano il backup di volumi di protezione SnapLock.
+
+Consultare l'elenco completo dei volumi supportati nella https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["Informazioni su backup e ripristino BlueXP"] .
+
+
+
+=== Indicizzazione per il processo di ricerca e ripristino nella pagina dei volumi
+
+Prima di utilizzare Search & Restore, è necessario attivare l'indicizzazione su ogni ambiente di lavoro di origine da cui si desidera ripristinare i dati dei volumi. In questo modo, il catalogo indicizzato può tenere traccia dei file di backup per ogni volume. La pagina volumi ora mostra lo stato di indicizzazione:
+
+* Indicizzato: I volumi sono stati indicizzati.
+* In corso
+* Non indicizzato
+* Indicizzazione in pausa
+* Errore
+* Non attivato
+
+
+
+
 == 27 settembre 2024
+
+Questa versione di backup e ripristino di BlueXP  include i seguenti aggiornamenti.
 
 
 

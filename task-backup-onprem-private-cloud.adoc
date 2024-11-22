@@ -231,6 +231,8 @@ Poiché è possibile eseguire la replica su sistemi Cloud Volumes ONTAP o on-pre
 
 StorageGRID deve soddisfare i seguenti requisiti. Vedere https://docs.netapp.com/us-en/storagegrid-117/["Documentazione StorageGRID"^] per ulteriori informazioni.
 
+Per ulteriori informazioni sui requisiti di protezione DataLock e ransomware per StorageGRID, fare riferimento a link:concept-cloud-backup-policies.html["Opzioni di policy backup su oggetti"].
+
 Versioni di StorageGRID supportate:: È supportato StorageGRID 10.3 e versioni successive.
 +
 --

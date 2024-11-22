@@ -270,69 +270,7 @@ La preparazione di Amazon S3 come destinazione di backup prevede i seguenti pass
 
 
 .Fasi
-. Confermare che le seguenti autorizzazioni S3 (dall'ultima https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["Policy BlueXP"^]) Fanno parte del ruolo IAM che fornisce al connettore le autorizzazioni necessarie. In caso contrario, consultare https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-edit.html["Documentazione AWS: Modifica delle policy IAM"].
-+
-[%collapsible]
-====
-[source, json]
-----
-{
-          "Sid": "backupPolicy",
-          "Effect": "Allow",
-          "Action": [
-              "s3:DeleteBucket",
-              "s3:GetLifecycleConfiguration",
-              "s3:PutLifecycleConfiguration",
-              "s3:PutBucketTagging",
-              "s3:ListBucketVersions",
-              "s3:GetObject",
-              "s3:DeleteObject",
-              "s3:PutObject",
-              "s3:ListBucket",
-              "s3:ListAllMyBuckets",
-              "s3:GetBucketTagging",
-              "s3:GetBucketLocation",
-              "s3:GetBucketPolicyStatus",
-              "s3:GetBucketPublicAccessBlock",
-              "s3:GetBucketAcl",
-              "s3:GetBucketPolicy",
-              "s3:PutBucketPolicy",
-              "s3:PutBucketOwnershipControls",
-              "s3:PutBucketPublicAccessBlock",
-              "s3:PutEncryptionConfiguration",
-              "s3:GetObjectVersionTagging",
-              "s3:GetBucketObjectLockConfiguration",
-              "s3:GetObjectVersionAcl",
-              "s3:PutObjectTagging",
-              "s3:DeleteObjectTagging",
-              "s3:GetObjectRetention",
-              "s3:DeleteObjectVersionTagging",
-              "s3:PutBucketObjectLockConfiguration",
-              "s3:DeleteObjectVersion",
-              "s3:GetObjectTagging",
-              "s3:PutBucketVersioning",
-              "s3:PutObjectVersionTagging",
-              "s3:GetBucketVersioning",
-              "s3:BypassGovernanceRetention",
-              "s3:PutObjectRetention",
-              "s3:GetObjectVersion",
-              "athena:StartQueryExecution",
-              "athena:GetQueryResults",
-              "athena:GetQueryExecution",
-              "glue:GetDatabase",
-              "glue:GetTable",
-              "glue:CreateTable",
-              "glue:CreateDatabase",
-              "glue:GetPartitions",
-              "glue:BatchCreatePartition",
-              "glue:BatchDeletePartition"
-          ],
-          "Resource": [
-              "arn:aws:s3:::netapp-backup-*"
-          ]
-      }
-----
-====
+. Assicurarsi che il connettore disponga delle autorizzazioni necessarie. Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/bluexp-setup-admin/reference-permissions-aws.html["Autorizzazioni dei criteri BlueXP "].
 +
 
 NOTE: Quando si creano backup nelle regioni AWS China, è necessario modificare il nome risorsa AWS "arn" in tutte le sezioni _Resource_ delle policy IAM da "aws" a "aws-cn", ad esempio `arn:aws-cn:s3:::netapp-backup-*`.
