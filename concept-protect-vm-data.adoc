@@ -38,6 +38,7 @@ Leggere i seguenti requisiti per assicurarsi di disporre di una configurazione s
 * Assicurarsi che il datastore di destinazione in cui verrà ripristinata la macchina virtuale disponga di spazio sufficiente per ospitare una copia di tutti i file delle macchine virtuali, ad esempio VMDK, VMX, VMSD e così via.
 * Assicurarsi che l'archivio dati di destinazione non abbia file di macchine virtuali obsoleti nel formato restore_xxx_xxxxxx_filename degli errori dell'operazione di ripristino precedente. Eliminare i file obsoleti prima di avviare un'operazione di ripristino.
 * Per distribuire un connettore con proxy configurato, assicurarsi che tutte le chiamate dei connettori in uscita siano instradate attraverso il server proxy.
+* Se un volume di cui è stato eseguito il backup di un datastore è già protetto dalla scheda Volumes (backup e recovery di BlueXP  -> Volumes), non è possibile proteggere nuovamente lo stesso datastore dalla scheda Virtual Machine (backup e recovery di BlueXP  -> Virtual Machine).
 
 
 L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:

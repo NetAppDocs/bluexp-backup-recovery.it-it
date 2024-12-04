@@ -1354,7 +1354,6 @@
   <block id="06ac0cb7b7615ba7b7f08032fcc97c6a" category="summary">Registrare il plug-in SnapCenter per l'host VMware vSphere in BlueXP.</block>
   <block id="437ae89009b207d1aafce3d11e58f524" category="doc">Registrare il plug-in SnapCenter per l'host VMware vSphere</block>
   <block id="8d69a4a1581a5dfb55d085bec9816e72" category="paragraph">È necessario registrare il plug-in SnapCenter per l'host VMware vSphere in BlueXP per visualizzare i datastore e le macchine virtuali. Solo un utente con accesso amministrativo può registrare il plug-in SnapCenter per l'host VMware vSphere.</block>
-  <block id="f352f7544724f99ab1b27e3e40291b49" category="admonition">È possibile registrare più plug-in SnapCenter per gli host VMware vSphere in BlueXP. Tuttavia, una volta effettuata la registrazione, non è possibile rimuovere il plug-in SnapCenter per l'host VMware vSphere.</block>
   <block id="4e5b953e1349e67f48dba9317bba75d3" category="list-text">Fare clic su *Registra il plug-in SnapCenter per VMware vSphere*.</block>
   <block id="12f2045076b291561318e5d9855f26de" category="list-text">Specificare i seguenti dettagli:</block>
   <block id="ebeea6bd6cc46b0c9f463f2b01659606" category="list-text">Nel campo Plug-in SnapCenter per VMware vSphere, specificare l'FQDN o l'indirizzo IP del plug-in SnapCenter per l'host VMware vSphere.</block>
@@ -3769,4 +3768,5 @@ ifdef::aws[]</block>
   <block id="838534d879f74e7af515a7de57e72b71" category="list-text">Non indicizzato</block>
   <block id="73d4d0de3c5f56849f3c1a290a6681f2" category="list-text">Indicizzazione in pausa</block>
   <block id="cb48cbf342305a9ae53e02e21fcb644c" category="list-text">Non attivato</block>
+  <block id="8ce617f9e6329a3aea4d9a3a19e56086" category="list-text">Se un volume di cui è stato eseguito il backup di un datastore è già protetto dalla scheda Volumes (backup e recovery di BlueXP  -&gt; Volumes), non è possibile proteggere nuovamente lo stesso datastore dalla scheda Virtual Machine (backup e recovery di BlueXP  -&gt; Virtual Machine).</block>
 </blocks>
