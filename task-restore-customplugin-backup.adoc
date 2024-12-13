@@ -39,3 +39,6 @@ Se si seleziona *Modifica posizione di memorizzazione*, è possibile aggiungere 
 
 
 Questa operazione esegue solo l'esportazione dello storage del backup selezionato sull'host specificato. Si consiglia di montare manualmente il file system e di visualizzare il database. Dopo aver utilizzato il volume, l'amministratore dello storage può eliminare il volume dal cluster ONTAP.
+
+
+NOTE: Se l'operazione di ripristino non viene completata, non tentare di eseguire nuovamente il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita. Se si tenta di eseguire nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non verrà eseguita nuovamente. Quando lo stato di Job Monitor viene visualizzato come "Failed" (non riuscito), è possibile provare nuovamente il processo di ripristino.

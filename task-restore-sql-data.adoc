@@ -121,3 +121,6 @@ Se l'opzione Undo directory (Annulla directory) è attivata, vengono ripristinat
 . Fare clic su *Avanti*.
 . Esaminare i dettagli e fare clic su *Restore* (Ripristina).
 
+
+
+NOTE: Se l'operazione di ripristino non viene completata, non tentare di eseguire nuovamente il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita. Se si tenta di eseguire nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non verrà eseguita nuovamente. Quando lo stato di Job Monitor viene visualizzato come "Failed" (non riuscito), è possibile provare nuovamente il processo di ripristino.

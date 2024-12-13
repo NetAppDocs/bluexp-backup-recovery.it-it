@@ -142,8 +142,12 @@ Se si seleziona *Modifica posizione di memorizzazione*, è possibile aggiungere 
 . Esaminare i dettagli e fare clic su *Restore* (Ripristina).
 
 
+.Risultati
 L'opzione *Restore to alternate location* (Ripristina in posizione alternativa) consente di montare il backup selezionato sull'host specificato. È necessario visualizzare manualmente il database.
 
 Dopo aver montato il backup, non è possibile montarlo di nuovo fino a quando non viene smontato. È possibile utilizzare l'opzione *Unmount* dall'interfaccia utente per smontare il backup.
 
 Per informazioni su come attivare il database Oracle, vedere https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Cloud_Manager/How_to_bring_up_Oracle_Database_in_another_NFS_host_after_mounting_storage_from_backup_in_Cloud_Backup_for_Applications["Articolo della Knowledge base"].
+
+
+NOTE: Se l'operazione di ripristino non viene completata, non tentare di eseguire nuovamente il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita. Se si tenta di eseguire nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non verrà eseguita nuovamente. Quando lo stato di Job Monitor viene visualizzato come "Failed" (non riuscito), è possibile provare nuovamente il processo di ripristino.

@@ -31,6 +31,9 @@ In sintesi, questi sono i flussi validi che è possibile utilizzare per ripristi
 
 
 
+NOTE: Se l'operazione di ripristino non viene completata, non tentare di eseguire nuovamente il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita. Se si tenta di eseguire nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non verrà eseguita nuovamente. Quando lo stato di Job Monitor viene visualizzato come "Failed" (non riuscito), è possibile provare nuovamente il processo di ripristino.
+
+
 NOTE: Per le limitazioni relative al ripristino dei dati ONTAP, vedere link:reference-limitations.html["Limitazioni di backup e ripristino per ONTAP Volumes"].
 
 
