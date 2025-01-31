@@ -89,7 +89,6 @@ Quando si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino d
 
 * Il ripristino di directory/cartelle è supportato per i dati che risiedono nello storage di archiviazione solo quando il cluster esegue ONTAP 9.13.1 e versioni successive.
 * Il ripristino di directory/cartelle è supportato per i dati protetti mediante DataLock solo quando il cluster esegue ONTAP 9.13.1 e versioni successive.
-* Il ripristino di directory/cartelle non è attualmente supportato sui backup dei volumi FlexGroup.
 * Il ripristino di directory/cartelle non è attualmente supportato da repliche e/o snapshot locali.
 * Il ripristino da volumi FlexGroup a volumi FlexVol o da volumi FlexVol a volumi FlexGroup non è supportato.
 * Il file da ripristinare deve utilizzare la stessa lingua del volume di destinazione. Se le lingue non sono uguali, viene visualizzato un messaggio di errore.
@@ -103,22 +102,4 @@ Quando si utilizza una versione di ONTAP precedente alla 9.11.1, il ripristino d
 ** I volumi SnapLock sono supportati solo se il sistema di origine da cui è stato creato il backup cloud eseguiva ONTAP 9.11.0 o versione successiva.
 
 
-
-
-
-
-=== Limitazioni nell'uso di RHEL 8+ con Podman
-
-
-
-==== Supporto di ripristino a file singolo
-
-
-IMPORTANT: A partire dalla versione del 30 settembre 2024, questa limitazione è stata rimossa.
-
-La funzionalità Browse & Restore per il ripristino di file singoli e directory non è supportata quando si utilizzano BlueXP Connectors in esecuzione in Podman (connettori BlueXP creati manualmente quando in esecuzione su RHEL 8 o 9). Tutti gli altri tipi di operazioni di ripristino sono supportati quando si utilizza Podman, quindi è possibile ripristinare i dati utilizzando questi altri metodi fino a quando il problema non viene risolto:
-
-* Ripristinare i file o le cartelle da un volume replicato, se esiste un volume replicato.
-* Ripristinare i file o le cartelle da un backup cloud utilizzando la funzione Cerca e ripristina.
-* Ripristinare il volume da un backup su cloud utilizzando Browse & Restore e accedere ai file o alle cartelle necessari.
 
