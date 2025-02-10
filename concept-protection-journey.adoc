@@ -18,7 +18,7 @@ Il servizio di backup e ripristino BlueXP consente di creare fino a tre copie de
 
 Esamineremo le seguenti opzioni:
 
-* Quali funzionalità di protezione utilizzerai: Copie Snapshot, volumi replicati e/o backup nel cloud
+* Quali funzionalità di protezione userai: Copie Snapshot, volumi replicati e/o backup nel cloud
 * Quale architettura di backup utilizzerai: Un backup a cascata o fan-out dei tuoi volumi
 * Verranno utilizzati i criteri di backup predefiniti o è necessario creare criteri personalizzati
 * Vuoi che il servizio crei i bucket cloud per te o vuoi creare i container di storage a oggetti prima di iniziare
@@ -36,7 +36,7 @@ Prima di selezionare le funzioni da utilizzare, ecco una rapida spiegazione dell
 | Tipo di backup | Descrizione 
 
 
-| Snapshot | Crea un'immagine point-in-time di sola lettura di un volume all'interno del volume di origine come copia Snapshot. È possibile utilizzare la copia Snapshot per ripristinare singoli file o l'intero contenuto di un volume. 
+| Snapshot | Consente di creare un'immagine point-in-time in sola lettura di un volume all'interno del volume di origine come copia snapshot. È possibile utilizzare la copia snapshot per recuperare singoli file o per ripristinare l'intero contenuto di un volume. 
 
 
 | Replica | Crea una copia secondaria dei tuoi dati su un altro sistema storage ONTAP e aggiorna continuamente i dati secondari. I tuoi dati vengono mantenuti aggiornati e rimangono disponibili ogni volta che ne hai bisogno. 
@@ -44,9 +44,9 @@ Prima di selezionare le funzioni da utilizzare, ecco una rapida spiegazione dell
 
 | Backup nel cloud | Crea backup dei tuoi dati nel cloud per motivi di protezione e archiviazione a lungo termine. Se necessario, è possibile ripristinare un volume, una cartella o singoli file dal backup nello stesso ambiente di lavoro o in un ambiente diverso. 
 |===
-Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino. Una copia Snapshot è un'immagine point-in-time di sola lettura di un volume. L'immagine consuma uno spazio di storage minimo e comporta un overhead delle performance trascurabile, in quanto registra solo le modifiche apportate ai file dall'ultima copia Snapshot. La copia Snapshot creata sul volume viene utilizzata per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.
+Gli snapshot sono la base di tutti i metodi di backup e sono necessari per utilizzare il servizio di backup e ripristino. Una copia snapshot è un'immagine di sola lettura point-in-time di un volume. L'immagine consuma uno spazio di storage minimo e subisce un overhead delle performance trascurabile poiché registra solo le modifiche ai file dall'ultima copia snapshot effettuata. La copia snapshot creata sul volume viene utilizzata per mantenere il volume replicato e il file di backup sincronizzati con le modifiche apportate al volume di origine, come mostrato nella figura.
 
-image:diagram-321-overview.png["Un diagramma che mostra come i file di backup esistono nel sistema di origine come copie Snapshot, come volumi replicati nel sistema di storage secondario e come file di backup nello storage a oggetti."]
+image:diagram-321-overview.png["Un diagramma che mostra l'esistenza dei file di backup sul sistema di origine come copie Snapshot, come volumi replicati sul sistema di storage secondario e come file di backup nello storage a oggetti."]
 
 È possibile scegliere di creare volumi replicati su un altro sistema storage ONTAP e file di backup nel cloud. In alternativa, puoi scegliere di creare volumi replicati o file di backup.
 
@@ -58,7 +58,7 @@ In sintesi, questi sono i flussi di protezione validi che è possibile creare pe
 
 
 
-NOTE: La creazione iniziale di un volume replicato o di un file di backup include una copia completa dei dati di origine, chiamata _trasferimento baseline_. I trasferimenti successivi contengono solo copie differenziali dei dati di origine (Snapshot).
+NOTE: La creazione iniziale di un volume replicato o di un file di backup include una copia completa dei dati di origine, chiamata _trasferimento baseline_. I trasferimenti successivi contengono solo copie differenziali dei dati di origine (lo snapshot).
 
 *Confronto dei diversi metodi di backup*
 
@@ -85,13 +85,13 @@ Oltre a questi criteri, lo storage cloud offre opzioni di sicurezza aggiuntive s
 
 Quando si creano volumi replicati e file di backup, è possibile scegliere un'architettura fan-out o a cascata per eseguire il backup dei volumi.
 
-Un'architettura *fan-out* trasferisce la copia Snapshot in modo indipendente sia al sistema storage di destinazione che all'oggetto di backup nel cloud.
+Un'architettura *fan-out* trasferisce la copia snapshot in modo indipendente nel sistema di storage di destinazione e nell'oggetto di backup nel cloud.
 
-image:diagram-321-fanout-detailed.png["Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."]
+image:diagram-321-fanout-detailed.png["Diagramma che mostra come viene utilizzata una copia snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."]
 
-Un'architettura *Cascade* trasferisce prima la copia Snapshot al sistema di storage di destinazione, quindi il sistema trasferisce la copia all'oggetto di backup nel cloud.
+Un'architettura *a cascata* trasferisce prima la copia snapshot nel sistema di storage di destinazione, quindi il sistema trasferisce la copia nell'oggetto di backup nel cloud.
 
-image:diagram-321-cascade-detailed.png["Un diagramma che mostra come viene utilizzata una copia Snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."]
+image:diagram-321-cascade-detailed.png["Diagramma che mostra come viene utilizzata una copia snapshot di un volume per creare e aggiornare un volume replicato e un file di backup."]
 
 *Confronto delle diverse scelte di architettura*
 
@@ -102,45 +102,42 @@ Questa tabella fornisce un confronto tra le architetture fan-out e cascata.
 | Fan-out | Cascata 
 
 
-| Piccolo impatto sulle performance del sistema di origine, perché invia copie Snapshot a 2 sistemi distinti | Meno effetti sulle performance del sistema storage di origine, in quanto invia la copia Snapshot una sola volta 
+| Piccolo impatto sulle prestazioni del sistema di origine perché invia copie snapshot a 2 sistemi distinti | Minori effetti sulle performance del sistema storage di origine perché invia la copia Snapshot solo una volta 
 
 
 | È più semplice da configurare perché tutte le policy, le reti e le configurazioni ONTAP vengono eseguite sul sistema di origine | Richiede alcune configurazioni di rete e ONTAP anche dal sistema secondario. 
 |===
 
 
-== Verranno utilizzati i criteri predefiniti per le copie Snapshot, le repliche e i backup
+== Verranno utilizzati i criteri predefiniti per istantanee, repliche e backup
 
 È possibile utilizzare i criteri predefiniti forniti da NetApp per creare i backup oppure creare criteri personalizzati. Quando si utilizza la procedura guidata di attivazione per attivare il servizio di backup e ripristino per i volumi, è possibile scegliere tra i criteri predefiniti e gli altri criteri già presenti nell'ambiente di lavoro (sistema Cloud Volumes ONTAP o ONTAP on-premise). Se si desidera utilizzare un criterio diverso da quello esistente, è possibile crearne uno prima di avviare o durante l'attivazione guidata.
 
-* Il policy Snapshot predefinito crea copie Snapshot ogni ora, ogni giorno e ogni settimana, conservando 6 copie Snapshot ogni ora, 2 ogni giorno e 2 ogni settimana.
-* La policy di replica predefinita replica le copie Snapshot giornaliere e settimanali, conservando 7 copie Snapshot giornaliere e 52 copie Snapshot settimanali.
-* La policy di backup predefinita replica le copie Snapshot giornaliere e settimanali, conservando 7 copie Snapshot giornaliere e 52 copie Snapshot settimanali.
+* Il criterio di snapshot predefinito crea copie snapshot ogni ora, ogni giorno e ogni settimana, conservando 6 copie snapshot ogni ora, 2 al giorno e 2 copie snapshot ogni settimana.
+* Il criterio di replica predefinito replica le copie snapshot giornaliere e settimanali, conservando 7 copie snapshot giornaliere e 52 settimanali.
+* Il criterio di backup predefinito replica le copie snapshot giornaliere e settimanali, conservando 7 copie snapshot giornaliere e 52 settimanali.
 
 
-Se si creano criteri personalizzati per la replica o il backup, le etichette dei criteri (ad esempio, "giornaliero" o "settimanale") devono corrispondere alle etichette presenti nelle policy Snapshot, altrimenti i volumi replicati e i file di backup non verranno creati.
+Se si creano criteri personalizzati per la replica o il backup, le etichette dei criteri (ad esempio, "giornaliero" o "settimanale") devono corrispondere alle etichette presenti nei criteri snapshot o nei volumi replicati e nei file di backup non verranno creati.
 
-Puoi creare policy di storage a oggetti Snapshot, replica e backup su storage a oggetti nell'interfaccia utente di backup e recovery di BlueXP. Vedere la sezione per link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["aggiunta di un nuovo criterio di backup"] per ulteriori informazioni.
+Puoi creare policy di backup, replica e backup su storage a oggetti nell'interfaccia utente di backup e recovery di BlueXP . Per ulteriori informazioni, vedere la sezione link:task-manage-backups-ontap.html#add-a-new-backup-to-cloud-policy["aggiunta di un nuovo criterio di backup"].
 
-Oltre a utilizzare l'utilizzo del recovery di backup di BlueXP per creare policy personalizzate, puoi utilizzare System Manager o l'interfaccia a riga di comando (CLI) di ONTAP.
+Oltre a utilizzare il backup e il ripristino di BlueXP  per creare policy personalizzate, puoi utilizzare System Manager o l'interfaccia a riga di comando (CLI) di ONTAP:
 
-https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Creare una policy Snapshot utilizzando System Manager"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-snapshot-policy-task.html["Creare una policy Snapshot utilizzando l'interfaccia a riga di comando di ONTAP"^]
-https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Creare un criterio di replica utilizzando System Manager"^]
-https://docs.netapp.com/us-en/ontap/data-protection/create-custom-replication-policy-concept.html["Creare un criterio di replica utilizzando l'interfaccia utente di ONTAP"^]
-https://docs.netapp.com/us-en/ontap/task_dp_back_up_to_cloud.html#create-a-custom-cloud-backup-policy["Creare una policy di backup utilizzando System Manager"^]
-https://docs.netapp.com/us-en/ontap-cli-9131/snapmirror-policy-create.html#description["Creare un criterio di backup utilizzando l'interfaccia utente di ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_configure_snapshot.html["Creare una policy di snapshot utilizzando System Manager o l'interfaccia a riga di comando di ONTAP"^]
+* https://docs.netapp.com/us-en/ontap/task_dp_create_custom_data_protection_policies.html["Creare un criterio di replica utilizzando System Manager o l'interfaccia a riga di comando di ONTAP"^]
+
 
 *Nota:* quando si utilizza System Manager, selezionare *Asynchronous* come tipo di policy per le policy di replica e selezionare *Asynchronous* e *Backup nel cloud* per le policy di backup su oggetti.
 
-Di seguito sono riportati alcuni comandi CLI di esempio di ONTAP che possono essere utili se si creano criteri personalizzati. Tenere presente che è necessario utilizzare il vserver _admin_ (storage VM) come `<vserver_name>` in questi comandi.
+Di seguito sono riportati alcuni comandi CLI di ONTAP di esempio che potrebbero essere utili per la creazione di criteri personalizzati. Tenere presente che è necessario utilizzare il server virtuale _admin_ (VM di storage) come `<vserver_name>` in questi comandi.
 
 [cols="30,70"]
 |===
 | Descrizione policy | Comando 
 
 
-| Semplice policy Snapshot | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
+| Policy di snapshot semplice | `snapshot policy create -policy WeeklySnapshotPolicy -enabled true -schedule1 weekly -count1 10 -vserver ClusterA -snapmirror-label1 weekly` 
 
 
 | Backup semplice sul cloud | `snapmirror policy create -policy <policy_name> -transfer-priority normal -vserver <vserver_name> -create-snapshot-on-source false -type vault`
