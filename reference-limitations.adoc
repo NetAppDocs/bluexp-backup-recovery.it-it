@@ -20,6 +20,19 @@ Le limitazioni note identificano le funzioni non supportate da questa versione d
 
 == Limitazioni di backup e ripristino per ONTAP Volumes
 
+* Backup e recovery di BlueXP  che eseguono il backup di Cloud Volume ONTAP in un archivio di oggetti nelle aree Cina di AWS (tra cui Pechino e Ningxia); tuttavia, potrebbe essere necessario modificare manualmente le policy IAM (Identity and Access Management) prima di tutto.
++
+Per informazioni dettagliate sulla creazione di un connettore in AWS, fare riferimento alla https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-aws-bluexp.html["Installazione di un connettore in AWS"^].
+
++
+Per ulteriori dettagli in un post su un blog, fare riferimento a https://community.netapp.com/t5/Tech-ONTAP-Blogs/BlueXP-Backup-and-Recovery-Feature-Blog-May-23-Updates/ba-p/444052["Blog della funzione di backup e ripristino BlueXP  - maggio 2023"^].
+
+* Il backup e recovery di BlueXP  non supporta le aree geografiche di Microsoft Azure Cina.
++
+Per informazioni dettagliate sulla creazione di un connettore in Azure, fare riferimento alla sezione https://docs.netapp.com/us-en/bluexp-setup-admin/task-install-connector-azure-bluexp.html["Installazione di un connettore in Azure"^].
+
+
+
 
 
 === Limitazioni della replica
@@ -55,6 +68,7 @@ Non esistono limiti per i volumi FlexVol: È possibile selezionare tutti i volum
 +
 ** I backup sono supportati solo dal secondario ONTAP.
 ** Il criterio Snapshot applicato al volume deve essere uno dei criteri riconosciuti dal backup e ripristino BlueXP, inclusi quelli giornalieri, settimanali, mensili e così via Il criterio predefinito "SM_created" (utilizzato per *Mirror All Snapshots*) non viene riconosciuto e il volume DP non viene visualizzato nell'elenco dei volumi di cui è possibile eseguire il backup.
+** Le soluzioni SVM-DR e backup e recovery dei volumi funzionano in maniera completamente indipendente quando viene eseguito il backup dall'origine o dalla destinazione. L'unica restrizione è che SVM-DR non replica la relazione cloud di SnapMirror. Nello scenario di disaster recovery, quando le SVM vanno online nel luogo secondario, devi aggiornare manualmente la relazione al cloud di SnapMirror.
 
 
 
