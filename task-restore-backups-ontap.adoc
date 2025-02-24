@@ -685,6 +685,9 @@ A seconda della configurazione, sono disponibili 2 modi per implementare Search 
 
 +
 ** Se non sono presenti credenziali del provider cloud nell'account, le informazioni del catalogo indicizzate vengono memorizzate nel connettore.
++
+Per informazioni sul catalogo indicizzato v2, vedere la sezione seguente su come abilitare il catalogo indicizzato.
+
 ** Se si utilizza un connettore in un sito privato (scuro), le informazioni del catalogo indicizzate vengono memorizzate nel connettore (richiede la versione 3.9.25 o superiore del connettore).
 ** Se lo hai fatto https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-aws.html["Credenziali AWS"^] oppure https://docs.netapp.com/us-en/bluexp-setup-admin/concept-accounts-azure.html["Credenziali Azure"^] Nell'account, il catalogo indicizzato viene memorizzato presso il cloud provider, proprio come con un connettore implementato nel cloud. (Se si dispone di entrambe le credenziali, AWS è selezionato per impostazione predefinita).
 +
@@ -721,6 +724,30 @@ Come si può vedere, è sufficiente conoscere un nome parziale e le ricerche di 
 
 Prima di utilizzare Search & Restore, è necessario attivare l'indicizzazione su ogni ambiente di lavoro di origine da cui si intende ripristinare volumi o file. Questo consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche molto rapide ed efficienti.
 
+Il catalogo indicizzato è un database che memorizza i metadati relativi a tutti i volumi e i file di backup nell'ambiente di lavoro. Viene utilizzato dalla funzionalità Cerca e ripristina per trovare rapidamente i file di backup che contengono i dati che si desidera ripristinare.
+
+.Funzionalità del catalogo indicizzato v2
+Il catalogo indicizzato v2, rilasciato a febbraio 2025, presenta nuove funzionalità che lo rendono più efficiente e facile da utilizzare. Questa versione ha un significativo miglioramento delle prestazioni ed è abilitata per impostazione predefinita per tutti i nuovi clienti.
+
+Fare riferimento alle seguenti considerazioni relative a v2:
+
+* Il catalogo indicizzato v2 è disponibile in modalità anteprima.
+* Se si è già clienti e si desidera utilizzare il catalogo v2, è necessario riindicizzare completamente l'ambiente.
+* Il Catalogo v2 indicizza solo gli snapshot che hanno un'etichetta snapshot.
+* Il backup e ripristino di BlueXP  non indicizza le snapshot con etichette SnapMirror "orarie". Se si desidera indicizzare le istantanee con l'etichetta SnapMirror "oraria", è necessario attivarla manualmente mentre v2 è in modalità anteprima.
+* Il backup e ripristino BlueXP  indicizzerà i volumi e le snapshot associati agli ambienti di lavoro protetti dal backup e ripristino BlueXP  solo con il catalogo v2. Gli altri ambienti di lavoro rilevati sulla piattaforma BlueXP  non verranno indicizzati.
+
+
+Il catalogo indicizzato v2 supporta quanto segue:
+
+* Efficienza della ricerca globale in meno di 3 minuti
+* Fino a 5 miliardi di file
+* Fino a 5000 volumi per cluster
+* Fino a 100K snapshot per volume
+* Il tempo massimo per l'indicizzazione della linea di base è inferiore a 7 giorni. Il tempo effettivo varia a seconda dell'ambiente.
+
+
+.Abilitazione del catalogo indicizzato per un ambiente di lavoro
 Quando si attiva questa funzionalità, il backup e ripristino di BlueXP attiva SnapDiff v3 sulla SVM per i volumi ed esegue le seguenti operazioni:
 
 ifdef::aws[]
@@ -749,12 +776,17 @@ endif::gcp[]
 
 Se l'indicizzazione è già stata attivata per l'ambiente di lavoro, passare alla sezione successiva per ripristinare i dati.
 
-Per attivare l'indicizzazione per un ambiente di lavoro:
+.Procedura per attivare l'indicizzazione per un ambiente di lavoro:
+. Effettuare una delle seguenti operazioni:
++
+** Se non sono stati indicizzati ambienti di lavoro, nella dashboard di ripristino in _Search & Restore_, selezionare *Enable Indexing for Working Environments* (Abilita indicizzazione per ambienti di lavoro).
+** Se almeno un ambiente di lavoro è già stato indicizzato, nella dashboard di ripristino in _Search & Restore_, fare clic su *Impostazioni di indicizzazione*.
 
-* Se non sono stati indicizzati ambienti di lavoro, nella dashboard di ripristino in _Search & Restore_, fare clic su *Enable Indexing for Working Environments* (attiva indicizzazione per ambienti di lavoro) e fare clic su *Enable Indexing* (attiva indicizzazione) per l'ambiente di lavoro.
-* Se almeno un ambiente di lavoro è già stato indicizzato, nella dashboard di ripristino in _Search & Restore_, fare clic su *Indexing Settings* (Impostazioni di indicizzazione) e fare clic su *Enable Indexing* (attiva indicizzazione) per l'ambiente di lavoro.
+
+. Selezionare *Abilita indicizzazione* per l'ambiente di lavoro.
 
 
+.Risultato
 Una volta eseguito il provisioning di tutti i servizi e attivato il catalogo indicizzato, l'ambiente di lavoro viene visualizzato come "attivo".
 
 image:screenshot_restore_enable_indexing.png["Una schermata che mostra gli ambienti di lavoro che hanno attivato il catalogo indicizzato."]
