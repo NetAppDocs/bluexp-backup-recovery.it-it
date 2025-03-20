@@ -55,7 +55,7 @@ Non esistono limiti per i volumi FlexVol: È possibile selezionare tutti i volum
 
 === Limitazioni relative al backup su oggetti
 
-* Il backup e recovery di BlueXP  non effettua il backup dei volumi su storage a oggetti con NetApp Volume Encryption (NVE) abilitato e NetApp aggregate Encryption (NAE) abilitato in ONTAP.
+* Durante il backup dei dati, il backup e il ripristino di BlueXP  non manterrà la crittografia del volume NetApp (NVE). Ciò significa che i dati crittografati sul volume NVE verranno decrittografati mentre i dati vengono trasferiti alla destinazione e la crittografia non verrà mantenuta.
 +
 Per una spiegazione su questi tipi di crittografia, fare riferimento a https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["Panoramica sulla configurazione di NetApp Volume Encryption"^].
 

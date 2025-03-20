@@ -51,7 +51,6 @@ Se necessario, è possibile ripristinare un intero _volume_, una _cartella_ o un
 +
 ** Replica di più volumi FlexVol alla volta su un sistema secondario.
 ** Ripristinare un volume replicato nel sistema di origine o in un sistema diverso utilizzando l'interfaccia utente.
-** Gestire le policy di replica
 
 
 

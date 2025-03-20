@@ -1,0 +1,27 @@
+= Esplorazione delle istantanee SMB
+:allow-uri-read: 
+
+
+
+
+=== Esplorazione delle istantanee SMB
+
+Questo aggiornamento di backup e ripristino di BlueXP  ha risolto un problema che ha impedito ai clienti di sfogliare gli snapshot locali in un ambiente SMB.
+
+
+
+=== Update dell'ambiente AWS GovCloud
+
+Questo aggiornamento di backup e ripristino di BlueXP  ha risolto un problema che impediva la connessione dell'interfaccia utente a un ambiente AWS GovCloud a causa di errori di certificato TLS. Il problema è stato risolto utilizzando il nome host del connettore BlueXP  anziché l'indirizzo IP.
+
+
+
+=== Limiti di conservazione della politica di backup
+
+In precedenza, l'interfaccia utente di backup e recovery di BlueXP  limitava i backup a 999 copie, mentre l'interfaccia a riga di comando consentiva di eseguire ulteriori operazioni. Ora, è possibile collegare fino a 4.000 volumi a una policy di backup e includere 1.018 volumi non collegati a una policy di backup. Questo aggiornamento include convalide aggiuntive che impediscono di superare questi limiti.
+
+
+
+=== Risincronizzazione del cloud SnapMirror
+
+Questo aggiornamento garantisce che la risincronizzazione del cloud SnapMirror non possa essere avviata dal backup e ripristino di BlueXP  per le versioni ONTAP non supportate dopo l'eliminazione di una relazione SnapMirror.
