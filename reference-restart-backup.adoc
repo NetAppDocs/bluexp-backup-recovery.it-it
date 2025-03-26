@@ -38,10 +38,10 @@ La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueX
 | Posizione del connettore | Comando Docker | Comando Podman 
 
 
-| Implementazione del cloud | `docker restart cloudmanager_cbs` | `podman restart cloudmanager cbs` 
+| Implementazione del cloud | `docker restart cloudmanager_cbs` | `podman restart cloudmanager_cbs` 
 
 
-| Installazione manuale con accesso a Internet | `docker restart cloudmanager_cbs` | `podman restart cloudmanager cbs` 
+| Installazione manuale con accesso a Internet | `docker restart cloudmanager_cbs` | `podman restart cloudmanager_cbs` 
 
 
 | Installazione manuale senza accesso a Internet | `docker restart ds_cloudmanager_cbs_1` | `podman restart ds_cloudmanager_cbs_1` 
