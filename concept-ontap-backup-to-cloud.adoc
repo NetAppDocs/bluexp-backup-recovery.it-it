@@ -194,6 +194,9 @@ Il backup e ripristino di BlueXP supporta i seguenti tipi di volumi:
 * Volumi di destinazione SnapMirror Data Protection (DP)
 
 
+
+NOTE: Il backup e recovery di BlueXP  non supporta i backup di FlexCache Volumes.
+
 Vedere le sezioni a. link:reference-limitations.html#backup-to-object-limitations["Limitazioni di backup e ripristino"] per ulteriori requisiti e limitazioni.
 
 
