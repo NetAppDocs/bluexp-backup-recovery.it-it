@@ -76,6 +76,9 @@ endif::gcp[]
 
 
 
+NOTE: Il backup e recovery di BlueXP  estende il suo supporto ad archivi di oggetti di terze parti come opzione di anteprima. Questa funzione di anteprima consente di sfruttare qualsiasi archivio di oggetti compatibile con S3 per le proprie esigenze di backup e ripristino. Per informazioni dettagliate sull'attivazione di questa funzione di anteprima, vedere la link:whats-new.html["Supporto per archivio di oggetti di terze parti"] sezione.
+
+
 
 === Quando vengono eseguiti i backup
 

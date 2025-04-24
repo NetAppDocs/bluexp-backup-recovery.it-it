@@ -1,12 +1,6 @@
-= Dashboard volume avanzato (anteprima)
+= Miglioramenti dell'interfaccia utente
 :allow-uri-read: 
 
-
-
-
-=== Dashboard volume avanzato (anteprima)
-
-La Volume Dashboard viene ora caricata in meno di 10 secondi, fornendo un'interfaccia molto più veloce ed efficiente. Questa versione in anteprima è disponibile per alcuni clienti, offrendo loro un'anteprima di questi miglioramenti.
 
 
 
@@ -23,6 +17,12 @@ Questa versione migliora l'esperienza dell'utente semplificando l'interfaccia:
 
 
 
+=== Dashboard volume avanzato (anteprima)
+
+La Volume Dashboard viene ora caricata in meno di 10 secondi, fornendo un'interfaccia molto più veloce ed efficiente. Questa versione in anteprima è disponibile per alcuni clienti, offrendo loro un'anteprima di questi miglioramenti.
+
+
+
 === Supporto per archivio oggetti Wasabi di terze parti (anteprima)
 
 Il backup e recovery di BlueXP  ora estende il suo supporto ad archivi di oggetti di terze parti, con una particolare attenzione al tema di Wasabi. Questa nuova funzione di anteprima consente di sfruttare qualsiasi archivio di oggetti compatibile con S3 per le proprie esigenze di backup e recovery.
@@ -31,7 +31,30 @@ Il backup e recovery di BlueXP  ora estende il suo supporto ad archivi di ogget
 
 ==== Per iniziare con Wasabi
 
-Per iniziare a utilizzare questa funzione, è necessario attivare un flag all'interno dell'interfaccia utente di BlueXP . Quindi, puoi immettere i dettagli di connessione per l'archivio di oggetti di terze parti e integrarlo nei tuoi flussi di lavoro di backup e recovery.
+Per iniziare a utilizzare lo storage di terze parti come archivio di oggetti, è necessario abilitare un flag all'interno di BlueXP  Connector. Quindi, puoi immettere i dettagli di connessione per l'archivio di oggetti di terze parti e integrarlo nei tuoi flussi di lavoro di backup e recovery.
+
+.Fasi
+. SSH nel connettore.
+. Andare nel contenitore di server cbs di backup e ripristino BlueXP :
++
+[listing]
+----
+docker exec -it cloudmanager_cbs sh
+----
+. Aprire il `default.json` file all'interno della `config` cartella tramite VIM o qualsiasi altro editor:
++
+[listing]
+----
+vi default.json
+----
+. Modify `allow-s3-compatible`: false to : `allow-s3-compatible` true.
+. Salvare le modifiche.
+. Uscire dal contenitore.
+. Riavviare il contenitore del server cbs di backup e ripristino BlueXP .
+
+
+.Risultato
+Una volta RIACCESO IL contenitore, aprire l'interfaccia utente di backup e ripristino di BlueXP . Quando avvii un backup o modifichi una strategia di backup, vengono visualizzati il nuovo provider "S3 compatibile" e gli altri provider di backup di AWS, Microsoft Azure, Google Cloud, StorageGRID e ONTAP S3.
 
 
 

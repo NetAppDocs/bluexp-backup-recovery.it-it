@@ -14,11 +14,11 @@ summary: 'Quando utilizzi il backup e recovery di BlueXP in un sito senza access
 
 
 [role="lead"]
-Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, noto come _modalità privata_, viene eseguito il backup dei dati di configurazione di backup e recovery di BlueXP nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host BlueXP Connector in futuro, è possibile implementare un nuovo connettore e ripristinare i dati critici di backup e ripristino di BlueXP.
+Quando utilizzi il backup e recovery di BlueXP in un sito senza accesso a Internet, noto come _modalità privata_, viene eseguito il backup dei dati di configurazione di backup e recovery di BlueXP nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host BlueXP  Connector, è possibile distribuire un nuovo connettore e ripristinare i dati di backup e ripristino critici di BlueXP .
 
-Si noti che quando si utilizza il backup e ripristino BlueXP in un ambiente SaaS in cui BlueXP Connector viene implementato presso il provider cloud o sul proprio sistema host dotato di accesso a Internet, tutti i dati importanti di configurazione di backup e ripristino BlueXP vengono sottoposti a backup e protetti nel cloud. In caso di problemi con il connettore, è sufficiente creare un nuovo connettore e aggiungere gli ambienti di lavoro per ripristinare automaticamente i dettagli del backup.
+Quando utilizzi il backup e recovery di BlueXP  in un ambiente SaaS in cui BlueXP  Connector viene implementato presso il tuo cloud provider o sul tuo sistema host che dispone di accesso a Internet, tutti i più importanti dati di configurazione del backup e recovery di BlueXP  vengono sottoposti a backup e protetti nel cloud. In caso di problemi con il connettore, è sufficiente creare un nuovo connettore e aggiungere gli ambienti di lavoro per ripristinare automaticamente i dettagli del backup.
 
-Sono disponibili 2 tipi di dati di cui viene eseguito il backup:
+È possibile eseguire il backup di due tipi di dati:
 
 * Database di backup e ripristino BlueXP - contiene un elenco di tutti i volumi, i file di backup, i criteri di backup e le informazioni di configurazione.
 * File di catalogo indicizzati - contiene indici dettagliati utilizzati per la funzionalità di ricerca e ripristino che rendono le ricerche molto rapide ed efficienti quando si cercano i dati dei volumi che si desidera ripristinare.
@@ -31,11 +31,11 @@ TIP: Nessun dato di volume è mai incluso nel database di backup e ripristino Bl
 
 
 
-== Ripristinare i dati di backup e ripristino di BlueXP su un nuovo connettore
+== Ripristinare i dati di backup e recovery di BlueXP  su un nuovo BlueXP  Connector
 
-Se il connettore on-premise presenta un guasto catastrofico, è necessario installare un nuovo connettore e ripristinare i dati di backup e ripristino di BlueXP nel nuovo connettore.
+In caso di errore catastrofico del connettore BlueXP  on-premise, sarà necessario installare un nuovo connettore, quindi ripristinare i dati di backup e recovery di BlueXP  sul nuovo connettore.
 
-Per riportare il sistema di backup e ripristino BlueXP a uno stato operativo, è necessario eseguire 4 operazioni:
+Per riportare il sistema di backup e ripristino BlueXP  allo stato operativo, è necessario eseguire le seguenti operazioni:
 
 * Installare un nuovo connettore BlueXP
 * Ripristinare il database di backup e ripristino BlueXP
@@ -151,15 +151,20 @@ unzip Indexed_Catalog_DB_Backup_catalogdb1_23_05_2023.zip -d catalogdb1
 
 Aggiungere i dettagli del sistema StorageGRID associato agli ambienti di lavoro ONTAP così come sono stati configurati nella configurazione originale del connettore utilizzando https://docs.netapp.com/us-en/bluexp-automation/index.html["API BlueXP"^].
 
+Le seguenti informazioni si applicano alle installazioni in modalità privata a partire da BlueXP  3,9.xx. Per le versioni precedenti, attenersi alla seguente procedura: https://community.netapp.com/t5/Tech-ONTAP-Blogs/DarkSite-Cloud-Backup-MySQL-and-Indexed-Catalog-Backup-and-Restore/ba-p/440800["Backup cloud di DarkSite: Backup e ripristino di MySQL e del catalogo indicizzato"^].
+
 È necessario eseguire questa procedura per ogni sistema ONTAP che esegue il backup dei dati su StorageGRID.
 
 . Estrarre il token di autorizzazione utilizzando la seguente API oauth/token.
 +
 [source, http]
 ----
-curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":admin@netapp.com,"password":"Netapp@123","grant_type":"password"}
+curl 'http://10.193.192.202/oauth/token' -X POST -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:100101 Firefox/108.0' -H 'Accept: application/json' -H 'Accept-Language: en-US,en;q=0.5' -H 'Accept-Encoding: gzip, deflate' -H 'Content-Type: application/json' -d '{"username":"admin@netapp.com","password":"Netapp@123","grant_type":"password"}
 > '
 ----
++
+Mentre l'indirizzo IP, il nome utente e le password sono valori personalizzati, il nome account non lo è. Il nome dell'account è sempre "account-DARKSITE1".
+
 +
 Questa API restituirà una risposta simile a quella riportata di seguito. È possibile recuperare il token di autorizzazione come mostrato di seguito.
 
@@ -177,7 +182,7 @@ curl -X GET http://10.193.192.202/tenancy/external/resource?account=account-DARK
 +
 Questa API restituirà una risposta simile a quella riportata di seguito. Il valore sotto "resourceIdentifier" indica _WorkingEnvironment Id_ e il valore sotto "agentId" indica _x-Agent-id_.
 
-. Aggiornare il database di backup e ripristino BlueXP con i dettagli del sistema StorageGRID associato agli ambienti di lavoro. Assicurarsi di immettere il nome di dominio completo del StorageGRID, la chiave di accesso e la chiave di storage come mostrato di seguito:
+. Aggiornare il database di backup e ripristino BlueXP  con i dettagli del sistema StorageGRID associato agli ambienti di lavoro. Assicurarsi di immettere il nome di dominio completo del StorageGRID, la chiave di accesso e la chiave di storage come mostrato di seguito:
 +
 [source, http]
 ----
