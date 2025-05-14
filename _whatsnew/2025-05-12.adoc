@@ -1,0 +1,44 @@
+= Risincronizzazione da SnapMirror al cloud per le migrazioni dei volumi
+:allow-uri-read: 
+
+
+
+
+=== Risincronizzazione da SnapMirror al cloud per le migrazioni dei volumi
+
+La funzionalità risincronizzazione da SnapMirror al cloud ottimizza la data Protection e la continuità durante le migrazioni dei volumi negli ambienti NetApp. Quando un volume viene migrato usando la replica logica SnapMirror (LRSE), da un'implementazione NetApp on-premise a un'altra o a una soluzione basata sul cloud come Cloud Volumes ONTAP o Cloud Volumes Service, SnapMirror to Cloud Resync garantisce che i backup cloud esistenti rimangano intatti e operativi.
+
+Questa funzionalità elimina la necessità di un'operazione di re-baseline, che richiede molto tempo e risorse, consentendo alle operazioni di backup di continuare anche dopo la migrazione. Questa funzionalità è molto utile negli scenari di migrazione dei carichi di lavoro, a supporto di FlexVol e gruppi di lavoro, ed è disponibile a partire dalla versione 9.16.1 di ONTAP.
+
+Mantenendo la continuità del backup in tutti gli ambienti, SnapMirror to Cloud Resync migliora l'efficienza delle operazioni e riduce la complessità della gestione dei dati nel cloud ibrido e multicloud.
+
+Per informazioni dettagliate su come eseguire l'operazione di risincronizzazione, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-migrate-volumes-snapmirror-cloud-resync.html["Migra i volumi usando SnapMirror per la risincronizzazione del cloud"].
+
+
+
+=== Supporto per archivio oggetti MinIO di terze parti (anteprima)
+
+Il backup e ripristino di BlueXP  ora estende il suo supporto ad archivi di oggetti di terze parti, con una particolare attenzione al MinIO. Questa nuova funzione di anteprima consente di sfruttare qualsiasi archivio di oggetti compatibile con S3 per le proprie esigenze di backup e recovery.
+
+Con questa versione di anteprima, speriamo di garantire una solida integrazione con gli archivi di oggetti di terze parti prima che venga implementata la funzionalità completa. Siete incoraggiati ad esplorare questa nuova funzionalità e a fornire feedback per contribuire a migliorare il servizio.
+
+
+IMPORTANT: Questa funzione non deve essere utilizzata in produzione.
+
+*Limiti del modo Anteprima*
+
+Mentre questa funzione è in anteprima, esistono alcune limitazioni:
+
+* Il servizio Bring Your Own Bucket (BYOB) non è supportato.
+* L'attivazione di DataLock nel criterio non è supportata.
+* L'attivazione della modalità archiviazione nel criterio non è supportata.
+* Sono supportati solo gli ambienti ONTAP on-premise.
+* MetroCluster non è supportato.
+* Le opzioni per abilitare la crittografia a livello di bucket non sono supportate.
+
+
+*Guida introduttiva*
+
+Per iniziare a utilizzare questa funzione di anteprima, è necessario attivare un contrassegno sul connettore BlueXP . È quindi possibile immettere i dettagli di connessione dell'archivio oggetti di terze parti MinIO nel flusso di lavoro di protezione scegliendo l'archivio oggetti compatibile con terze parti nella sezione di backup.
+
+Per istruzioni su come attivare le funzioni di anteprima, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-preview-enable.html["Attivare le funzioni di anteprima nel backup e ripristino di BlueXP "].
