@@ -4,7 +4,7 @@ permalink: reference-google-backup-tiers.html
 keywords: google, storage classes, archive 
 summary: Il backup e ripristino BlueXP supporta una classe di storage di archiviazione Google e la maggior parte delle regioni. 
 ---
-= Classi di storage di archivio e tempi di recupero di Google
+= Classi di archiviazione di Google e tempi di recupero e ripristino con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

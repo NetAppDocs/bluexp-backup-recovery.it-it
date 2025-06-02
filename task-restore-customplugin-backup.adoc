@@ -4,7 +4,7 @@ permalink: task-restore-customplugin-backup.html
 keywords: restore, mount application backups, MongoDB, MySQL, PostgreSQL 
 summary: Puoi ripristinare il database SAP HANA dal cloud al server SnapCenter on-premise. 
 ---
-= Ripristino dei database MongoDB, MySQL e PostgreSQL
+= Ripristina i database MongoDB, MySQL e PostgreSQL con il backup e il ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puoi ripristinare il database SAP HANA dal cloud al server SnapCenter o
 
 
 [role="lead"]
-È possibile ripristinare i database MongoDB, MySQL e PostgreSQL su qualsiasi host.
+È possibile ripristinare i database MongoDB, MySQL e PostgreSQL su qualsiasi host con il backup e il ripristino di BlueXP.
 
 *Fasi*
 

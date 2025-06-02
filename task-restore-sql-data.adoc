@@ -4,7 +4,7 @@ permalink: task-restore-sql-data.html
 keywords: restore, Azure, Amazon Web services, Microsoft SQL Server database 
 summary: È possibile ripristinare il database SQL Server dal cloud al server SnapCenter on-premise. 
 ---
-= Ripristinare il database di SQL Server
+= Ripristina i database di SQL Server con il backup e il ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: È possibile ripristinare il database SQL Server dal cloud al server Sn
 
 
 [role="lead"]
-È possibile ripristinare il database di SQL Server nella posizione originale o nella posizione alternativa.
+È possibile ripristinare i database di SQL Server con il backup e il ripristino di BlueXP sia nella posizione originale che in una posizione alternativa.
 
 
 NOTE: Single file Restore (SFR), Recovery of log backups e reseed of Availability group non sono supportati.

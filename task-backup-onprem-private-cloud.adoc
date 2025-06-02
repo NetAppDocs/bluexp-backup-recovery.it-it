@@ -4,7 +4,7 @@ permalink: task-backup-onprem-private-cloud.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, StorageGRID 
 summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise allo storage a oggetti nei tuoi sistemi NetApp StorageGRID. 
 ---
-= Eseguire il backup dei dati ONTAP on-premise su StorageGRID
+= Esegui il backup dei dati ONTAP locali su StorageGRID con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei
 
 
 [role="lead"]
-Completare alcuni passaggi per iniziare il backup dei dati dei volumi dai sistemi ONTAP primari on-premise a un sistema di storage secondario e a uno storage a oggetti nei sistemi NetApp StorageGRID.
+Completa alcuni passaggi nel backup e ripristino di BlueXP per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi ONTAP primari locali a un sistema di storage secondario e allo storage di oggetti nei tuoi sistemi NetApp StorageGRID.
 
 
 NOTE: I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
@@ -239,6 +239,10 @@ Versioni di StorageGRID supportate:: È supportato StorageGRID 10.3 e versioni s
 Per utilizzare la protezione DataLock e ransomware per i backup, i sistemi StorageGRID devono disporre della versione 11.6.0.3 o superiore.
 
 Per eseguire il tiering dei backup più vecchi nello storage di archiviazione cloud, i sistemi StorageGRID devono eseguire la versione 11.3 o superiore. Inoltre, i sistemi StorageGRID devono essere rilevati in BlueXP Canvas.
+
+Per l'archiviazione degli utenti è necessario l'accesso IP al nodo di amministrazione.
+
+L'accesso IP al gateway è sempre necessario.
 
 --
 Credenziali S3:: È necessario aver creato un account tenant S3 per controllare l'accesso allo storage StorageGRID. https://docs.netapp.com/us-en/storagegrid-117/admin/creating-tenant-account.html["Per ulteriori informazioni, consultare la documentazione di StorageGRID"^].

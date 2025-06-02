@@ -4,7 +4,7 @@ permalink: reference-aws-backup-tiers.html
 keywords: aws, amazon, s3, storage classes, archive 
 summary: Il backup e ripristino BlueXP supporta due classi di storage di archiviazione S3 e la maggior parte delle regioni. 
 ---
-= Classi di storage di archivio AWS S3 e tempi di recupero del ripristino
+= Classi di archiviazione AWS S3 e tempi di recupero e ripristino con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 

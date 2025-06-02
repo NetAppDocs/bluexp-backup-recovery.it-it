@@ -4,7 +4,7 @@ permalink: task-backup-app-data-to-storagegrid.html
 keywords: backing up, back up, backup, backup application data, Google Cloud, GCP, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
 summary: Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a GCP. 
 ---
-= Eseguire il backup dei dati delle applicazioni on-premise su StorageGRID
+= Esegui il backup dei dati delle applicazioni locali su StorageGRID con il backup e il ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Completare alcuni passaggi per eseguire il backup dei dati delle applic
 
 
 [role="lead"]
-Completare alcuni passaggi per eseguire il backup dei dati delle applicazioni da ONTAP a StorageGRID.
+Completare alcuni passaggi del backup e del ripristino BlueXP per eseguire il backup dei dati delle applicazioni da ONTAP a StorageGRID.
 
 BlueXP supporta il blocco dei dati e la protezione dal ransomware. Se il cluster ONTAP è in esecuzione su ONTAP 9.11.1 o versione successiva, i sistemi StorageGRID sono 11.6.0.3 o versione successiva e se non hai configurato lo storage di archivio, puoi proteggere i backup da sovrascrittura, eliminazione e minacce ransomware.
 

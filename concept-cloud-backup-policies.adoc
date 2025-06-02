@@ -4,7 +4,7 @@ permalink: concept-cloud-backup-policies.html
 keywords: backing up, back up, backup, back up volumes, cloud backup, backup policies, policies, schedules 
 summary: Il backup e ripristino BlueXP consente di creare policy di backup con diverse impostazioni di configurazione per i sistemi ONTAP e Cloud Volumes ONTAP on-premise. 
 ---
-= Opzioni di policy backup su oggetti
+= Opzioni della policy di backup su oggetto nel backup e ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -60,7 +60,7 @@ Entrambe queste funzionalità proteggono i file di backup in modo che sia sempre
 
 https://bluexp.netapp.com/blog/cbs-blg-the-bluexp-feature-that-protects-backups-from-ransomware["Per ulteriori informazioni, consulta il blog sulla protezione di DataLock e ransomware"^].
 
-Questa funzione non fornisce protezione per i volumi di origine, ma solo per i backup di tali volumi di origine. Utilizzare NetApp https://cloud.netapp.com/ci-sde-plp-cloud-secure-info-trial?hsCtaTracking=fefadff4-c195-4b6a-95e3-265d8ce7c0cd%7Cb696fdde-c026-4007-a39e-5e986c4d27c6["Approfondimenti e Cloud Secure dell'infrastruttura dati"^] o alcune delle https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protezioni anti-ransomware fornite da ONTAP"^] per proteggere i volumi di origine.
+Questa funzione non fornisce protezione per i volumi di origine, ma solo per i backup di tali volumi di origine. Utilizzare alcuni dei  https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html["Protezioni anti-ransomware fornite da ONTAP"^] per proteggere i volumi sorgente.
 
 [CAUTION]
 ====

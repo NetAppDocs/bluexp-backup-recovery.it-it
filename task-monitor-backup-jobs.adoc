@@ -4,7 +4,7 @@ permalink: task-monitor-backup-jobs.html
 keywords: cloud backup, bluexp backup and recovery, backup, restore, status, monitor, alert, notification 
 summary: 'È possibile monitorare lo stato di istantanee locali, repliche e backup dei processi di archiviazione a oggetti avviati o pianificati e ripristinare i processi avviati o pianificati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l"invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l"interfaccia utente o l"API.' 
 ---
-= Monitorare lo stato dei processi di backup e ripristino
+= Monitorare lo stato dei processi di backup e ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'È possibile monitorare lo stato di istantanee locali, repliche e back
 
 
 [role="lead"]
-È possibile monitorare lo stato di istantanee locali, repliche e backup dei processi di archiviazione a oggetti avviati e ripristinare i processi avviati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l'invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l'interfaccia utente o l'API.
+Con il backup e il ripristino di BlueXP puoi monitorare lo stato degli snapshot locali, delle repliche e dei backup nei processi di archiviazione di oggetti avviati, nonché ripristinare i processi avviati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l'invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l'interfaccia utente o l'API.
 
 
 

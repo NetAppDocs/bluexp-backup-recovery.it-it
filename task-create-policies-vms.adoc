@@ -4,7 +4,7 @@ permalink: task-create-policies-vms.html
 keywords: create policy, protection policies, predefined policies, custom policies 
 summary: Creare una policy per il backup dei datastore 
 ---
-= Creare una policy per il backup dei datastore
+= Creare una policy per eseguire il backup degli archivi dati con il backup e il ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Creare una policy per il backup dei datastore
 
 
 [role="lead"]
-È possibile creare un criterio o utilizzare uno dei seguenti criteri predefiniti disponibili in BlueXP.
+È possibile creare una policy o utilizzare una delle seguenti policy predefinite disponibili nel backup e ripristino di BlueXP.
 
 .Prima di iniziare
 * Se non si desidera modificare i criteri predefiniti, è necessario creare dei criteri.

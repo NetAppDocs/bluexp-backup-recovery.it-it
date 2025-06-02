@@ -4,7 +4,7 @@ permalink: task-restore-oracle-data.html
 keywords: restore, Azure, Amazon Web services, Oracle database 
 summary: Puoi ripristinare il database Oracle dal cloud al server SnapCenter on-premise. 
 ---
-= Ripristinare il database Oracle
+= Ripristina i database Oracle con il backup e il ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puoi ripristinare il database Oracle dal cloud al server SnapCenter on-
 
 
 [role="lead"]
-È possibile ripristinare il database Oracle nella posizione originale o nella posizione alternativa. Per un database RAC, i dati vengono ripristinati nel nodo on-premise in cui è stato creato il backup.
+È possibile ripristinare i database Oracle con il backup e il ripristino di BlueXP sia nella posizione originale che in una posizione alternativa. Per un database RAC, i dati vengono ripristinati nel nodo on-premise in cui è stato creato il backup.
 
 È supportato solo il database completo con il ripristino del file di controllo. Se i log di archiviazione non sono presenti in AFS, specificare la posizione che contiene i log di archiviazione richiesti per il ripristino.
 

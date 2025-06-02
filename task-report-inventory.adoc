@@ -4,7 +4,7 @@ permalink: task-report-inventory.html
 keywords: cloud backup, backup and recovery service, backup and recovery, backup, restore, report, inventory, bluexp 
 summary: 'Con i report di backup e ripristino BlueXP, puoi garantire che i dati critici siano protetti in base alle policy definite dalla tua organizzazione e supportare in modo efficiente i processi di audit per la conformità. Con il report dell"inventario di backup, è possibile visualizzare tutti i backup di un account, un ambiente di lavoro o un inventario SVM specifico.' 
 ---
-= Report sulla copertura per la data Protection
+= Report sulla copertura della protezione dei dati con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Con i report di backup e ripristino BlueXP, puoi garantire che i dati 
 
 
 [role="lead"]
-Con i report di backup e ripristino BlueXP, puoi garantire che i dati critici siano protetti in base alle policy definite dalla tua organizzazione e fornire audit per le esigenze di conformità.
+Grazie ai report di backup e ripristino di BlueXP, puoi garantire che i dati critici siano protetti in base alle policy definite dalla tua organizzazione e fornire audit per le esigenze di conformità.
 
 I report di backup e ripristino di BlueXP consentono di ottenere i seguenti risultati:
 

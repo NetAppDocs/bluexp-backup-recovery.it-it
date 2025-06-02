@@ -4,7 +4,7 @@ permalink: task-create-policies-ontap.html
 keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
 summary: 'È possibile utilizzare i criteri di backup predefiniti forniti da NetApp per creare i backup oppure è possibile creare criteri personalizzati. I criteri regolano il tipo di backup, l"architettura di backup, i sistemi di storage e la frequenza dei backup.' 
 ---
-= Gestire le policy di backup per i volumi ONTAP
+= Gestire le policy di backup per i volumi ONTAP con il backup e il ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'È possibile utilizzare i criteri di backup predefiniti forniti da Net
 
 
 [role="lead"]
-È possibile utilizzare i criteri di backup predefiniti forniti da NetApp per creare i backup oppure è possibile creare criteri personalizzati. Le policy regolano la frequenza, l'ora di esecuzione del backup e il numero dei file di backup che vengono conservati.
+Con il backup e il ripristino di BlueXP, puoi utilizzare i criteri di backup predefiniti forniti da NetApp per creare i tuoi backup oppure creare criteri personalizzati. Le policy regolano la frequenza, l'ora di esecuzione del backup e il numero dei file di backup che vengono conservati.
 
 Quando si utilizza la procedura guidata di attivazione per attivare il servizio di backup e ripristino per i volumi, è possibile scegliere tra i criteri predefiniti e gli altri criteri già presenti nell'ambiente di lavoro (sistema Cloud Volumes ONTAP o ONTAP on-premise). Se si desidera utilizzare un criterio diverso da quello esistente, è possibile crearne uno prima o durante l'utilizzo della procedura guidata di attivazione.
 

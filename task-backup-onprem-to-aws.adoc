@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-aws.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-premises, back up volumes, cloud backup, aws, aws s3, amazon s3, govcloud, government 
 summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai sistemi ONTAP on-premise allo storage cloud Amazon S3. 
 ---
-= Eseguire il backup dei dati ONTAP on-premise su Amazon S3
+= Esegui il backup dei dati ONTAP locali su Amazon S3 con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei
 
 
 [role="lead"]
-Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi ONTAP on-premise su un sistema di storage secondario e su uno storage cloud Amazon S3.
+Completa alcuni passaggi del backup e del ripristino BlueXP per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi ONTAP locali a un sistema di archiviazione secondario e all'archiviazione cloud Amazon S3.
 
 
 NOTE: I "sistemi ONTAP on-premise" includono sistemi FAS, AFF e ONTAP Select.
@@ -144,7 +144,7 @@ Verificare che siano soddisfatti i seguenti requisiti di rete:
 
 *Regioni supportate*
 
-Puoi creare backup da sistemi on-premise ad Amazon S3 in tutte le regioni https://cloud.netapp.com/cloud-volumes-global-regions["Dove è supportato Cloud Volumes ONTAP"^]; Incluse le regioni di AWS GovCloud. Specificare la regione in cui verranno memorizzati i backup quando si imposta il servizio.
+È possibile creare backup dai sistemi locali su Amazon S3 in tutte le regioni, comprese le regioni AWS GovCloud. Specificare la regione in cui verranno memorizzati i backup quando si imposta il servizio.
 
 
 

@@ -4,7 +4,7 @@ permalink: task-backup-onprem-to-ontap-s3.html
 keywords: backing up, back up, backup, backup on-prem ontap, on-prem, on-premises, back up volumes, cloud backup, ontap s3 
 summary: 'Completa alcuni passaggi per iniziare il backup dei dati dei volumi dai sistemi ONTAP on-premise primari. Puoi inviare backup a un sistema storage ONTAP secondario (un volume replicato) o a un bucket su un sistema ONTAP configurato come server S3 (un file di backup) o a entrambi.' 
 ---
-= Effettua il backup dei dati ONTAP on-premise su ONTAP S3
+= Esegui il backup dei dati ONTAP locali su ONTAP S3 con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: 'Completa alcuni passaggi per iniziare il backup dei dati dei volumi da
 
 
 [role="lead"]
-Completa alcuni passaggi per iniziare il backup dei dati dei volumi dai sistemi ONTAP on-premise primari. Puoi inviare backup a un sistema storage ONTAP secondario (un volume replicato) o a un bucket su un sistema ONTAP configurato come server S3 (un file di backup) o a entrambi.
+Completa alcuni passaggi nel backup e ripristino di BlueXP per iniziare a eseguire il backup dei dati di volume dai tuoi sistemi ONTAP locali principali. Puoi inviare backup a un sistema storage ONTAP secondario (un volume replicato) o a un bucket su un sistema ONTAP configurato come server S3 (un file di backup) o a entrambi.
 
 Il sistema ONTAP on-premise primario può essere un sistema FAS, AFF o ONTAP Select. Il sistema ONTAP secondario può essere un sistema ONTAP o Cloud Volumes ONTAP on-premise. Lo storage a oggetti può trovarsi su un sistema ONTAP on-premise o su un sistema Cloud Volumes ONTAP in cui hai abilitato un server per lo storage a oggetti Simple Storage Service (S3).
 

@@ -4,7 +4,7 @@ permalink: task-backup-to-azure.html
 keywords: backing up, back up, backup, backup cloud volumes ontap, back up cloud volumes ontap, cloud volumes ontap, azure, azure blob, back up volumes, cloud backup, bluexp, bluexp backup and recovery 
 summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi Cloud Volumes ONTAP allo storage Azure Blob. 
 ---
-= Eseguire il backup dei dati Cloud Volumes ONTAP nello storage Azure Blob
+= Esegui il backup dei dati di Cloud Volumes ONTAP nell'archiviazione BLOB di Azure con backup e ripristino BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei
 
 
 [role="lead"]
-Completa alcuni passaggi per iniziare a eseguire il backup dei dati dei volumi dai tuoi sistemi Cloud Volumes ONTAP allo storage Azure Blob.
+Completa alcuni passaggi nel backup e ripristino di BlueXP per iniziare a eseguire il backup dei dati del volume dai tuoi sistemi Cloud Volumes ONTAP all'archiviazione BLOB di Azure.
 
 
 
@@ -77,7 +77,7 @@ In alternativa, è possibile connettersi a un sistema ONTAP secondario per i vol
 image:diagram_cloud_backup_cvo_azure.png["Un diagramma che mostra come il backup e ripristino BlueXP comunica con i volumi sui sistemi di origine e lo storage di destinazione in cui si trovano i file di backup."]
 
 Versioni di ONTAP supportate:: Almeno ONTAP 9.8; si consiglia ONTAP 9.8P13 e versioni successive.
-Aree Azure supportate:: Il backup e ripristino BlueXP è supportato in tutte le regioni Azure https://cloud.netapp.com/cloud-volumes-global-regions["Dove è supportato Cloud Volumes ONTAP"^]; Incluse le regioni governative di Azure.
+Aree Azure supportate:: Il backup e il ripristino di BlueXP sono supportati in tutte le regioni di Azure, comprese le regioni di Azure Government.
 +
 --
 Per impostazione predefinita, il backup e ripristino BlueXP esegue il provisioning del container Blob con ridondanza locale (LRS) per l'ottimizzazione dei costi. È possibile modificare questa impostazione in ZRS (zone Redundancy) dopo l'attivazione del backup e ripristino di BlueXP se si desidera garantire che i dati vengano replicati tra zone diverse. Consultare le istruzioni Microsoft per https://learn.microsoft.com/en-us/azure/storage/common/redundancy-migration?tabs=portal["modifica della modalità di replica dell'account storage"^].

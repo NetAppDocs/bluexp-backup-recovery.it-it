@@ -4,7 +4,7 @@ permalink: task-restore-vm-data.html
 keywords: restore virtual machines 
 summary: Puoi ripristinare le macchine virtuali dal cloud al SnapCenter on-premise. 
 ---
-= Ripristinare i dati delle macchine virtuali dal cloud
+= Ripristina i dati delle macchine virtuali dal cloud con il backup e il ripristino di BlueXP
 :hardbreaks:
 :allow-uri-read: 
 :nofooter: 
@@ -14,7 +14,7 @@ summary: Puoi ripristinare le macchine virtuali dal cloud al SnapCenter on-premi
 
 
 [role="lead"]
-È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter on-premise. È possibile ripristinare la macchina virtuale nella stessa posizione esatta da cui è stato eseguito il backup o in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando i criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.
+È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter locale con il backup e il ripristino di BlueXP. È possibile ripristinare la macchina virtuale nella stessa posizione esatta da cui è stato eseguito il backup o in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando i criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.
 
 
 NOTE: Non è possibile ripristinare le macchine virtuali che si estendono tra i datastore.
