@@ -47,7 +47,7 @@ NOTE: Il backup e il ripristino di BlueXP devono essere già attivati per almeno
 
 image:screenshot_restore_dashboard.png["La dashboard di ripristino che mostra le opzioni per utilizzare la funzionalità Browse  Restore (Sfoglia  Ripristina) o Search  Restore (Cerca  Ripristina)."]
 
-Come si può vedere, la dashboard di ripristino offre due diversi modi per ripristinare i dati dai file di backup: *Browse & Restore* e *Search & Restore*.
+Come puoi vedere, la dashboard di ripristino offre due modi diversi per ripristinare i dati dai file di backup: *Sfoglia e ripristina* e *Cerca e ripristina*.
 
 
 
@@ -246,7 +246,7 @@ video::9Og5agUWyRk[youtube,width=848,height=480,end=164]
 . Fare clic sulla scheda *Restore* per visualizzare la dashboard di ripristino.
 . Nella sezione _Browse & Restore_, fare clic su *Restore Volume* (Ripristina volume).
 +
-image:screenshot_restore_volume_selection.png["Schermata che mostra la selezione del pulsante Restore Volumes (Ripristina volumi) dalla dashboard di ripristino."]
+image:screenshot_restore_dashboard.png["La dashboard di ripristino che mostra le opzioni per utilizzare la funzionalità Browse  Restore (Sfoglia  Ripristina) o Search  Restore (Cerca  Ripristina)."]
 
 . Nella pagina _Select Source_, accedere al file di backup del volume che si desidera ripristinare. Selezionare il file *Working Environment* (ambiente di lavoro), *Volume* (Volume) e *Backup* con la data e l'ora da cui si desidera eseguire il ripristino.
 +
@@ -407,7 +407,7 @@ video::9Og5agUWyRk[youtube,width=848,height=480,start=165]
 . Fare clic sulla scheda *Restore* per visualizzare la dashboard di ripristino.
 . Nella sezione _Browse & Restore_, fare clic su *Restore Files or Folder* (Ripristina file o cartella).
 +
-image:screenshot_restore_files_selection.png["Schermata che mostra la selezione del pulsante Restore Files (Ripristina file) o Folder (cartella) dalla dashboard di ripristino."]
+image:screenshot_restore_dashboard.png["La dashboard di ripristino che mostra le opzioni per utilizzare la funzionalità Browse  Restore (Sfoglia  Ripristina) o Search  Restore (Cerca  Ripristina)."]
 
 . Nella pagina _Select Source_, accedere al file di backup del volume che contiene la cartella o i file da ripristinare. Selezionare l'opzione *Working Environment* (ambiente di lavoro), *Volume* (Volume) e *Backup* con la data/ora da cui si desidera ripristinare i file.
 +
@@ -727,7 +727,7 @@ Prima di utilizzare Search & Restore, è necessario attivare l'indicizzazione su
 Il catalogo indicizzato è un database che memorizza i metadati relativi a tutti i volumi e i file di backup nell'ambiente di lavoro. Viene utilizzato dalla funzionalità Cerca e ripristina per trovare rapidamente i file di backup che contengono i dati che si desidera ripristinare.
 
 .Funzionalità del catalogo indicizzato v2
-Il catalogo indicizzato v2, rilasciato a febbraio 2025, presenta nuove funzionalità che lo rendono più efficiente e facile da utilizzare. Questa versione ha un significativo miglioramento delle prestazioni ed è abilitata per impostazione predefinita per tutti i nuovi clienti.
+L'Indexed Catalog v2, rilasciato a febbraio 2025 e aggiornato a giugno 2025, include funzionalità che lo rendono più efficiente e facile da usare. Questa versione ha un significativo miglioramento delle prestazioni ed è abilitata per impostazione predefinita per tutti i nuovi clienti.
 
 Fare riferimento alle seguenti considerazioni relative a v2:
 
@@ -736,6 +736,7 @@ Fare riferimento alle seguenti considerazioni relative a v2:
 * Il Catalogo v2 indicizza solo gli snapshot che hanno un'etichetta snapshot.
 * Il backup e ripristino di BlueXP  non indicizza le snapshot con etichette SnapMirror "orarie". Se si desidera indicizzare le istantanee con l'etichetta SnapMirror "oraria", è necessario attivarla manualmente mentre v2 è in modalità anteprima.
 * Il backup e ripristino BlueXP  indicizzerà i volumi e le snapshot associati agli ambienti di lavoro protetti dal backup e ripristino BlueXP  solo con il catalogo v2. Gli altri ambienti di lavoro rilevati sulla piattaforma BlueXP  non verranno indicizzati.
+* L'indicizzazione dei dati con Catalog v2 avviene negli ambienti on-premise e negli ambienti Amazon Web Services, Microsoft Azure e Google Cloud Platform (GCP).
 
 
 Il catalogo indicizzato v2 supporta quanto segue:
@@ -801,31 +802,34 @@ Dopo di che <<enable-the-indexed-catalog-for-each-working-environment,Indicizzaz
 
 .Fasi
 . Dal menu BlueXP, selezionare *protezione > Backup e ripristino*.
-. Fare clic sulla scheda *Restore* per visualizzare la dashboard di ripristino.
-. Nella sezione _Search & Restore_, fare clic su *Search & Restore*.
+. Fare clic sulla scheda *Ripristina*.
 +
-image:screenshot_restore_start_search_restore.png["Schermata che mostra la selezione del pulsante Search  Restore (Cerca  Ripristina) dalla dashboard di ripristino."]
+Viene visualizzata la dashboard di ripristino.
 
-. Dalla pagina Search to Restore (Cerca per il ripristino):
+. Dalla sezione _Cerca e ripristina_, seleziona *Cerca e ripristina*.
++
+image:screenshot_restore_dashboard.png["La dashboard di ripristino che mostra le opzioni per utilizzare la funzionalità Browse  Restore (Sfoglia  Ripristina) o Search  Restore (Cerca  Ripristina)."]
+
+. Dalla pagina Cerca e ripristina:
 +
 .. Nella _barra di ricerca_, immettere un nome completo o parziale del volume, del nome della cartella o del file.
 .. Selezionare il tipo di risorsa: *Volumi*, *file*, *cartelle* o *tutto*.
 .. Nell'area _Filtra per_, selezionare i criteri di filtro. Ad esempio, è possibile selezionare l'ambiente di lavoro in cui risiedono i dati e il tipo di file, ad esempio un file .JPEG. In alternativa, è possibile selezionare il tipo di percorso di backup se si desidera cercare i risultati solo all'interno delle copie Snapshot o dei file di backup disponibili nello storage a oggetti.
 
 
-. Fare clic su *Cerca* e nell'area risultati ricerca vengono visualizzate tutte le risorse che hanno un file, una cartella o un volume corrispondente alla ricerca.
+. Selezionando *Cerca*, nell'area Risultati della ricerca verranno visualizzate tutte le risorse che contengono un file, una cartella o un volume che corrisponde alla tua ricerca.
 +
 image:screenshot_restore_step1_search_restore.png["Una schermata che mostra i criteri di ricerca e i risultati della ricerca nella pagina Search  Restore."]
 
-. Individuare la risorsa contenente i dati da ripristinare e fare clic su *View All backups* (Visualizza tutti i backup) per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.
+. Individua la risorsa contenente i dati che desideri ripristinare e seleziona *Visualizza tutti i backup* per visualizzare tutti i file di backup che contengono il volume, la cartella o il file corrispondente.
 +
 image:screenshot_restore_step2_search_restore.png["Una schermata che mostra come visualizzare tutti i backup che corrispondono ai criteri di ricerca."]
 
-. Individuare il file di backup che si desidera utilizzare per ripristinare i dati e fare clic su *Restore* (Ripristina).
+. Individua il file di backup che vuoi utilizzare per ripristinare i dati e seleziona *Ripristina*.
 +
 I risultati identificano le copie Snapshot dei volumi locali e i volumi replicati remoti che contengono il file nella ricerca. Puoi scegliere di eseguire il ripristino dal file di backup nel cloud, dalla copia Snapshot o dal volume replicato.
 
-. Selezionare il percorso di destinazione in cui si desidera ripristinare il volume, la cartella o i file e fare clic su *Restore* (Ripristina).
+. Selezionare la posizione di destinazione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.
 +
 ** Per i volumi, è possibile selezionare l'ambiente di lavoro di destinazione originale oppure un ambiente di lavoro alternativo. Durante il ripristino di un volume FlexGroup, dovrai scegliere più aggregati.
 ** Per le cartelle, è possibile ripristinare la posizione originale oppure selezionare una posizione alternativa, inclusi ambiente di lavoro, volume e cartella.
@@ -865,6 +869,6 @@ endif::gcp[]
 
 
 .Risultati
-Il volume, la cartella o i file vengono ripristinati e si torna alla dashboard di ripristino, in modo da poter esaminare l'avanzamento dell'operazione di ripristino. È inoltre possibile fare clic sulla scheda *Job Monitoring* per visualizzare l'avanzamento del ripristino.
+Il volume, la cartella o i file vengono ripristinati e si torna alla dashboard di ripristino, in modo da poter esaminare l'avanzamento dell'operazione di ripristino. È anche possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.
 
 Per i volumi ripristinati, è possibile link:task-manage-backups-ontap.html["gestire le impostazioni di backup per questo nuovo volume"] secondo necessità.
