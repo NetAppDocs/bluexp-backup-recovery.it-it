@@ -827,7 +827,6 @@
   <block id="326eb26933ce22b49d0c6ddf7a6e6180" category="paragraph"><block ref="1d155a4bab8461674fe4d884066d77ce" category="inline-image-macro-rx" type="image"></block></block>
   <block id="3909c405c5c3e8aaab7d2079c933cb0f" category="paragraph">Come si può vedere, è sufficiente conoscere un nome parziale e le ricerche di backup e ripristino di BlueXP attraverso tutti i file di backup che corrispondono alla ricerca.</block>
   <block id="721f0292b89494d52fd3ab7655e44491" category="paragraph">Prima di utilizzare Search &amp; Restore, è necessario attivare l'indicizzazione su ogni ambiente di lavoro di origine da cui si intende ripristinare volumi o file. Questo consente al catalogo indicizzato di tenere traccia di ogni volume e di ogni file di backup, rendendo le ricerche molto rapide ed efficienti.</block>
-  <block id="cde27c2ee36cb857ffdbfe24fb0f0fef" category="paragraph">Quando si attiva questa funzionalità, il backup e ripristino di BlueXP attiva SnapDiff v3 sulla SVM per i volumi ed esegue le seguenti operazioni:</block>
   <block id="1bf27db2b6cddc0bbfeb50bd92d954d2" category="inline-link">Servizio di query interattiva Amazon Athena</block>
   <block id="304514e0e009199a95060650dbf9337e" category="inline-link">Servizio di integrazione dei dati senza server AWS Glue</block>
   <block id="7f55f1ead15a67b08eea9e732f6ed59d" category="list-text">Per i backup memorizzati in AWS, fornisce un nuovo bucket S3 e il<block ref="d5a117e0ffd0e43cc6657792905f20d6" category="inline-link-rx"></block> e.<block ref="101f211ea2a04b6a9a7d1de9342390c3" category="inline-link-rx"></block>.</block>
@@ -1117,7 +1116,6 @@
   <block id="9ae1fbeadb6e0efc4e024384fb8a4f8d" category="inline-link">Articolo della Knowledge base</block>
   <block id="cae5363be68b32a2a0c60f8507ae22b0" category="list-text">Per informazioni su come attivare il database Oracle, vedere<block ref="1c9fee5518775de98a67ea9cec93df22" category="inline-link-rx"></block>.</block>
   <block id="993e951005a20173ae0c8c379739a8f1" category="summary">Scopri le novità di BlueXP backup e recovery.</block>
-  <block id="fd3d1ba9a2328492349b6ebea92fe728" category="doc">Novità del backup e ripristino BlueXP</block>
   <block id="ea42cbd645e47130e67a7cbb87fe5de8" category="section-title">8 maggio 2023</block>
   <block id="93c8b08c928ba95dab5c066b4611e000" category="section-title">Le operazioni di ripristino a livello di cartella sono ora supportate dallo storage di archiviazione e dai backup bloccati</block>
   <block id="2f57132a5aa255f3e276ff3b62b985c8" category="paragraph">Se un file di backup è stato configurato con la protezione DataLock &amp; ransomware o se il file di backup risiede nello storage di archiviazione, ora le operazioni di ripristino a livello di cartella sono supportate se il cluster esegue ONTAP 9.13.1 o superiore.</block>
@@ -3949,4 +3947,8 @@ ifdef::aws[]</block>
   <block id="4d1f1dc63841491797cde0fde7dec31d" category="list-text">Selezionare la posizione di destinazione in cui si desidera ripristinare il volume, la cartella o i file e selezionare *Ripristina*.</block>
   <block id="dc98364e6680ec201dcd1e55df5cf2e1" category="paragraph">Il volume, la cartella o i file vengono ripristinati e si torna alla dashboard di ripristino, in modo da poter esaminare l'avanzamento dell'operazione di ripristino. È anche possibile selezionare la scheda *Monitoraggio processi* per visualizzare l'avanzamento del ripristino.</block>
   <block id="791d05d0e9072626d0316ef0a7cf21bc" category="section-title">09 giugno 2025</block>
+  <block id="0a849c115a4741e75692ddd548e07b4d" category="paragraph">È possibile abilitare o disabilitare questa opzione quando si abilita la protezione o si avvia il processo di ripristino.</block>
+  <block id="9bbf67835dcc255a2362d9d5043708ad" category="paragraph">Il servizio non esegue il provisioning di un bucket separato quando si utilizza il Catalogo indicizzato v2. Invece, per i backup archiviati in AWS, Azure, Google Cloud Platform, StorageGRID o ONTAP S3, il servizio esegue il provisioning dello spazio sul connettore o nell'ambiente del provider cloud.</block>
+  <block id="c2da3976b7bba43b7d1d45f7a32a43bd" category="paragraph">Se hai abilitato il catalogo indicizzato prima della versione v2, con gli ambienti di lavoro si verifica quanto segue:</block>
+  <block id="5323d04b0f0228d9a4b7ec5629ddb280" category="doc">Novità nel backup e ripristino di BlueXP</block>
 </blocks>

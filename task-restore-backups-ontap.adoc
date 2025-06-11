@@ -749,29 +749,13 @@ Il catalogo indicizzato v2 supporta quanto segue:
 
 
 .Abilitazione del catalogo indicizzato per un ambiente di lavoro
-Quando si attiva questa funzionalità, il backup e ripristino di BlueXP attiva SnapDiff v3 sulla SVM per i volumi ed esegue le seguenti operazioni:
+Il servizio non esegue il provisioning di un bucket separato quando si utilizza il Catalogo indicizzato v2. Invece, per i backup archiviati in AWS, Azure, Google Cloud Platform, StorageGRID o ONTAP S3, il servizio esegue il provisioning dello spazio sul connettore o nell'ambiente del provider cloud.
 
-ifdef::aws[]
+Se hai abilitato il catalogo indicizzato prima della versione v2, con gli ambienti di lavoro si verifica quanto segue:
 
 * Per i backup memorizzati in AWS, fornisce un nuovo bucket S3 e il https://aws.amazon.com/athena/faqs/["Servizio di query interattiva Amazon Athena"^] e. https://aws.amazon.com/glue/faqs/["Servizio di integrazione dei dati senza server AWS Glue"^].
-
-
-endif::aws[]
-
-ifdef::azure[]
-
 * Per i backup memorizzati in Azure, il sistema fornisce un'area di lavoro di Azure Synapse e un file system di Data Lake come contenitore per memorizzare i dati dell'area di lavoro.
-
-
-endif::azure[]
-
-ifdef::gcp[]
-
 * Per i backup memorizzati in Google Cloud, fornisce un nuovo bucket e il https://cloud.google.com/bigquery["Servizi Google Cloud BigQuery"^] sono forniti a livello di account/progetto.
-
-
-endif::gcp[]
-
 * Per i backup archiviati in StorageGRID o ONTAP S3, offre spazio sul connettore o sull'ambiente cloud provider.
 
 
