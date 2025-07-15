@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-prereqs.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con il BlueXP backup and recovery NetApp BlueXP. 
+---
+= Prerequisiti per i carichi di lavoro delle macchine virtuali nel BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Prima di iniziare a proteggere i carichi di lavoro delle macchine virtuali con il BlueXP backup and recovery, assicurati di soddisfare i seguenti prerequisiti:
+
+* Plug-in SnapCenter per VMware vSphere 4.6P1 o versione successiva
++
+** Si consiglia di utilizzare il plug-in SnapCenter per VMware vSphere 4.7P1 o versione successiva per eseguire il backup dei datastore dallo storage secondario on-premise.
+
+
+* ONTAP 9.8 o versione successiva
+* BlueXP
+* Sono supportati gli archivi dati NFS e VMFS. I vVol non sono supportati.
+* Per il supporto VMFS, il SnapCenter Plug-in for VMware vSphere deve essere in esecuzione sulla versione 4.9 o successiva. Assicurarsi di eseguire un backup del datastore VMFS se il plug-in SnapCenter per l'host VMware vSphere è stato aggiornato da una versione precedente alla release 4.9.
+* Almeno un backup dovrebbe essere stato eseguito nel plug-in SnapCenter per VMware vSphere 4.6P1.
+* Almeno una policy giornaliera, settimanale o mensile nel plug-in SnapCenter per VMware vSphere senza etichetta o etichetta uguale a quella della policy macchine virtuali in BlueXP.
+* Per una policy predefinita, il livello di pianificazione dovrebbe essere lo stesso per il datastore nel SnapCenter Plug-in for VMware vSphere e nel cloud.
+* Assicurarsi che non vi siano volumi FlexGroup nell'archivio dati perché il backup e il ripristino dei volumi FlexGroup non sono supportati.
+* Disattivare "*_Recent*" sui gruppi di risorse richiesti. Se "*_Recent*" è attivato per il gruppo di risorse, i backup di tali gruppi di risorse non possono essere utilizzati per la protezione dei dati nel cloud e, successivamente, non possono essere utilizzati per l'operazione di ripristino.
+* Assicurarsi che il datastore di destinazione in cui verrà ripristinata la macchina virtuale disponga di spazio sufficiente per ospitare una copia di tutti i file delle macchine virtuali, ad esempio VMDK, VMX, VMSD e così via.
+* Assicurarsi che l'archivio dati di destinazione non abbia file di macchine virtuali obsoleti nel formato restore_xxx_xxxxxx_filename degli errori dell'operazione di ripristino precedente. Eliminare i file obsoleti prima di avviare un'operazione di ripristino.
+* Per distribuire un connettore con proxy configurato, assicurarsi che tutte le chiamate dei connettori in uscita siano instradate attraverso il server proxy.
+* Se un volume di cui è stato eseguito il backup di un datastore è già protetto dalla scheda Volumes (backup e recovery di BlueXP  -> Volumes), non è possibile proteggere nuovamente lo stesso datastore dalla scheda Virtual Machine (backup e recovery di BlueXP  -> Virtual Machine).
+
+
+L'immagine seguente mostra ciascun componente e le connessioni che è necessario preparare tra di essi:
+
+image:cloud_backup_vm.png["diagramma dell'architettura"]

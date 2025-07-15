@@ -16,7 +16,7 @@ summary: In alcuni casi potrebbe essere necessario riavviare il servizio di back
 [role="lead"]
 In alcuni casi potrebbe essere necessario riavviare il servizio di backup e ripristino BlueXP.
 
-La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP. Per riavviare il servizio, è necessario seguire diversi passaggi iniziali a seconda che il connettore sia stato implementato nel cloud o che il connettore sia stato installato manualmente su un sistema Linux.
+La funzionalità di backup e ripristino BlueXP è integrata nel connettore BlueXP.
 
 .Fasi
 . Connettersi al sistema Linux su cui è in esecuzione il connettore.

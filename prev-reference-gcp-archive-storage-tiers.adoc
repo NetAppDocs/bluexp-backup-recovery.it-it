@@ -1,0 +1,51 @@
+---
+sidebar: sidebar 
+permalink: prev-reference-gcp-archive-storage-tiers.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Il backup e ripristino BlueXP supporta una classe di storage di archiviazione Google e la maggior parte delle regioni. 
+---
+= Livelli di archiviazione di Google supportati con BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il backup e ripristino BlueXP supporta una classe di storage di archiviazione Google e la maggior parte delle regioni.
+
+[]
+====
+*NOTA* Per passare da una versione all'altra dell'interfaccia utente BlueXP backup and recovery , fare riferimento a link:br-start-switch-ui.html["Passa alla precedente interfaccia utente BlueXP backup and recovery"] .
+
+====
+
+
+== Classi di storage di archivio supportate da Google per backup e ripristino BlueXP
+
+Quando i file di backup vengono creati inizialmente, vengono memorizzati nello storage _Standard_. Questo Tier è ottimizzato per l'archiviazione dei dati a cui si accede raramente, ma che consente anche di accedervi immediatamente.
+
+Se il cluster on-premise utilizza ONTAP 9.12.1 o versione successiva, è possibile scegliere di raggruppare i backup più vecchi in storage _Archive_ nell'interfaccia utente di backup e ripristino BlueXP dopo un certo numero di giorni (in genere più di 30 giorni) per un'ulteriore ottimizzazione dei costi. I dati in questo Tier richiederanno un costo di recupero più elevato, pertanto è necessario considerare la frequenza con cui potrebbe essere necessario ripristinare i dati da questi file di backup archiviati. Consultare la sezione su questa pagina relativa al ripristino dei dati dall'archivio.
+
+Si noti che quando si configura il backup e ripristino di BlueXP con questo tipo di regola del ciclo di vita, non è necessario configurare alcuna regola del ciclo di vita quando si imposta il bucket nell'account Google.
+
+https://cloud.google.com/storage/docs/storage-classes["Scopri le classi di storage di Google"^].
+
+
+
+== Ripristina i dati dallo storage di archivio
+
+Sebbene la memorizzazione di file di backup meno recenti nello storage di archiviazione sia molto meno costosa rispetto allo storage standard, l'accesso ai dati da un file di backup nello storage di archiviazione per le operazioni di ripristino richiederà un tempo leggermente più lungo e costerà più denaro.
+
+Quanto costa ripristinare i dati da Google Archive?:: Per informazioni dettagliate sui prezzi di Google Cloud Storage per regione, visita il https://cloud.google.com/storage/pricing["Pagina dei prezzi di Google Cloud Storage"^].
+Quanto tempo ci vorrà per ripristinare gli oggetti archiviati in Google Archive?:: Il tempo totale di ripristino è costituito da 2 parti:
++
+--
+* *Tempo di recupero*: Tempo necessario per recuperare il file di backup dall'archivio e collocarlo nello storage standard. Questo è talvolta chiamato tempo di "reidratazione". A differenza delle soluzioni di storage più "fredde" fornite da altri cloud provider, i tuoi dati sono accessibili in pochi millisecondi.
+* *Restore Time* (tempo di ripristino): Tempo di ripristino dei dati dal file di backup nello storage standard. Questo tempo non è diverso dall'operazione di ripristino tipica direttamente dallo storage standard, quando non si utilizza un livello di archiviazione.
+
+
+--
+

@@ -1,0 +1,41 @@
+---
+sidebar: sidebar 
+permalink: br-use-reports.html 
+keywords: backing up, back up, backup, backup on-prem ontap, policy, policies, backup policies, cloud backup, aws, aws s3, azure, google cloud 
+summary: 'In BlueXP backup and recovery, puoi creare report per visualizzare lo stato dei tuoi backup, inclusi il numero di backup, il numero di backup riusciti e il numero di backup non riusciti. Puoi anche visualizzare i dettagli di ciascun backup, inclusi il tipo di backup, il sistema di archiviazione utilizzato e l"ora del backup.' 
+---
+= Crea report per i carichi di lavoro di Microsoft SQL Server nel BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+In BlueXP backup and recovery, puoi creare report per i carichi di lavoro di Microsoft SQL Server per visualizzare lo stato dei backup, inclusi il numero di backup, il numero di backup riusciti e il numero di backup non riusciti. Puoi anche visualizzare i dettagli di ciascun backup, inclusi il tipo di backup, il sistema di archiviazione utilizzato e l'ora del backup.
+
+
+
+== Creare un report
+
+*Ruolo BlueXP richiesto* Amministratore dell'organizzazione, Amministratore di cartelle o progetti, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clonazione di Backup e ripristino. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+. Dal menu BlueXP backup and recovery , seleziona la scheda *Report*.
+. Selezionare *Crea report*.
++
+image:../media/screen-br-reports.png["Crea un nuovo screenshot del report"]
+
+. Inserisci i dettagli dell'ambito del report:
++
+** *Nome del report*: inserisci un nome univoco per il report.
+** *Tipo di report*: scegli se desideri un report per account o per carico di lavoro (Microsoft SQL Server).
+** *Seleziona host*: se hai selezionato in base al carico di lavoro, seleziona l'host per il quale desideri generare il report.
+** *Seleziona contenuto*: scegli se desideri che il report includa un riepilogo di tutti i backup o i dettagli di ciascun backup. (Se hai scelto "Per account")
+
+
+. Immetti intervallo di reporting: scegli se desideri che il report includa i dati dell'ultimo giorno, degli ultimi 7 giorni, degli ultimi 30 giorni, dell'ultimo trimestre o dell'ultimo anno.
+. Inserisci i dettagli di invio del report: se desideri che il report venga inviato via email, seleziona *Invia report tramite email*. Inserisci l'indirizzo email a cui desideri che venga inviato il report.
++
+Configura le notifiche email nella pagina Impostazioni. Per dettagli sulla configurazione delle notifiche email, consulta link:br-use-settings-advanced.html["Configurare le impostazioni"] .
+
+

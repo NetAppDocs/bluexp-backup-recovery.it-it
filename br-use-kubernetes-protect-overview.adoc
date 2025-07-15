@@ -1,0 +1,29 @@
+---
+sidebar: sidebar 
+permalink: br-use-kubernetes-protect-overview.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Puoi proteggere le applicazioni Kubernetes e i dati delle applicazioni dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei tuoi dati. 
+---
+= Panoramica sulla gestione dei carichi di lavoro Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La gestione dei carichi di lavoro Kubernetes in BlueXP backup and recovery ti consente di gestire e proteggere i tuoi cluster e le tue applicazioni Kubernetes da un'unica posizione. Puoi gestire risorse e applicazioni ospitate dai tuoi cluster Kubernetes. Puoi anche gestire le impostazioni di protezione dei tuoi carichi di lavoro Kubernetes.
+
+
+NOTE: QUESTA DOCUMENTAZIONE VIENE FORNITA COME ANTEPRIMA TECNOLOGICA. Durante l'anteprima, la funzionalità Kubernetes non è consigliata per i carichi di lavoro di produzione. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
+
+È possibile eseguire le seguenti attività relative alla gestione dei carichi di lavoro di Kubernetes:
+
+* link:br-start-discover.html#discover-kubernetes-workloads["Scopri i carichi di lavoro di Kubernetes"].
+* link:br-use-manage-kubernetes-clusters.html["Gestire i cluster Kubernetes"].
+* link:br-use-protect-kubernetes-applications.html["Aggiungi e proteggi le applicazioni Kubernetes"].
+* link:br-use-manage-kubernetes-applications.html["Gestire le applicazioni Kubernetes"].
+* link:br-use-restore-kubernetes-applications.html["Ripristina le applicazioni Kubernetes"].
+

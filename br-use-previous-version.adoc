@@ -1,0 +1,58 @@
+---
+sidebar: sidebar 
+permalink: br-use-previous-version.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: La versione precedente di BlueXP backup and recovery consente di proteggere diversi tipi di carichi di lavoro, tra cui i carichi di lavoro VMware e ONTAP . 
+---
+= Utilizzare una versione precedente del BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+La versione precedente di BlueXP backup and recovery consente di proteggere diversi tipi di carichi di lavoro, tra cui i carichi di lavoro VMware e ONTAP .
+
+È possibile passare dalla nuova interfaccia utente BlueXP backup and recovery alla precedente interfaccia utente BlueXP backup and recovery . La nuova interfaccia utente è disponibile per tutti ed è possibile tornare all'interfaccia utente precedente se è necessario eseguire il backup di carichi di lavoro non ancora disponibili nella nuova interfaccia utente.
+
+*Quali carichi di lavoro è possibile sottoporre a backup in ciascuna interfaccia utente?*
+
+[cols="40,30,30"]
+|===
+| Carico di lavoro | Nuova interfaccia utente | Interfaccia utente precedente 
+
+
+| Workload di Microsoft SQL Server | Disponibile | Non disponibile 
+
+
+| Workload VMware | Non ancora disponibile | Disponibile 
+
+
+| Volumi | Non ancora disponibile | Disponibile 
+
+
+| Carichi di lavoro di Kubernetes | Non ancora disponibile | Non disponibile 
+|===
+*Come fai a sapere quale interfaccia utente stai utilizzando?* La nuova interfaccia utente utilizza una struttura di menu diversa da quella precedente.
+
+La nuova interfaccia utente: image:screen-br-menu-unified.png["Nuova schermata dell'interfaccia utente per il BlueXP backup and recovery"]
+
+L'interfaccia utente precedente: image:screen-br-menu-legacy.png["Screenshot precedente dell'interfaccia utente per il BlueXP backup and recovery"]
+
+
+
+== Passa a un carico di lavoro diverso
+
+È possibile passare a un carico di lavoro diverso nell'interfaccia utente BlueXP backup and recovery .
+
+.Fasi
+. Dal menu di navigazione a sinistra BlueXP , seleziona *Protezione* > *Backup e ripristino*.
+. Dall'angolo in alto a destra della pagina, seleziona l'elenco a discesa *Cambia carico di lavoro*.
+. Seleziona il carico di lavoro a cui vuoi passare. image:screen-br-menu-switch-ui.png["Cambia lo screenshot del carico di lavoro per il BlueXP backup and recovery"]
++
+La pagina si aggiorna e mostra il carico di lavoro selezionato nell'interfaccia utente appropriata.
+
+

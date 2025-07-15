@@ -1,0 +1,100 @@
+---
+sidebar: sidebar 
+permalink: br-start-faq.html 
+keywords: backup and recovery faq, bluexp backup and recovery frequently asked questions 
+summary: Queste FAQ possono essere utili se stai cercando una risposta rapida a una domanda. 
+---
+= Domande frequenti sul BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ./media/
+
+
+[role="lead"]
+Queste FAQ possono essere utili se stai cercando una risposta rapida a una domanda.
+
+
+
+== Implementazione
+
+*È necessaria una licenza per utilizzare la versione Anteprima BlueXP Backup and Recovery?*
+
+È possibile utilizzare i seguenti tipi di licenza:
+
+* Iscriviti per una prova gratuita di 30 giorni.
+
+
+*Come si abilita il BlueXP backup and recovery?* Il BlueXP backup and recovery non richiedono alcuna abilitazione. L'opzione di backup e ripristino viene abilitata automaticamente nel menu di navigazione a sinistra BlueXP .
+
+Per iniziare, devi iscriverti o contattare il tuo rappresentante commerciale NetApp per provare questo servizio. Quindi, quando si utilizza il connettore BlueXP, esso includerà le funzionalità appropriate per il servizio.
+
+Per iniziare a utilizzare il BlueXP backup and recovery, fai clic su "Inizia a scoprire i carichi di lavoro" nella pagina di destinazione iniziale.
+
+* BlueXP backup and recovery è disponibile nelle modalità standard, limitata e privata?* Al momento, la versione Preview BlueXP backup and recovery è disponibile solo in modalità standard. Continua a seguirci per saperne di più.
+
+Per una spiegazione su queste modalità in tutti i servizi BlueXP , fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-modes.html["Modalità di implementazione di BlueXP"^].
+
+
+
+== Accesso
+
+*Qual è l'URL BlueXP backup and recovery ?* Per l'URL, in un browser, immettere: https://console.bluexp.netapp.com/["https://console.bluexp.netapp.com/backup-and-recovery"^] Per accedere alla console BlueXP .
+
+*Come vengono gestite le autorizzazioni di accesso?* Solo gli amministratori dell'organizzazione possono avviare il servizio e rilevare i carichi di lavoro (perché comporta l'utilizzo di una risorsa). Le interazioni successive possono essere effettuate da qualsiasi ruolo.
+
+*Qual è la migliore risoluzione del dispositivo?* La risoluzione del dispositivo consigliata per il BlueXP backup and recovery è 1920x1080 o superiore.
+
+*Quale browser devo utilizzare?* Qualsiasi browser moderno funzionerà.
+
+
+
+== Interazione con altri servizi
+
+* BlueXP backup and recovery è a conoscenza delle impostazioni di protezione definite in NetApp ONTAP?* Sì, BlueXP backup and recovery rileva le pianificazioni degli snapshot impostate in ONTAP.
+
+*Se imposti una policy utilizzando il BlueXP backup and recovery, devi apportare modifiche future solo in questo servizio?* Ti consigliamo di apportare modifiche alla policy dal servizio BlueXP backup and recovery .
+
+
+
+== Carichi di lavoro
+
+*Che cosa costituisce un carico di lavoro?* Un carico di lavoro è un'applicazione per la versione Preview 2025. Un carico di lavoro include tutti i volumi utilizzati da una singola istanza dell'applicazione. Ad esempio, un'istanza di database di Microsoft SQL Server distribuita su mssql3.host.com può avere volumi vol1 e vol2, rispettivamente per i dati e i log. Questi volumi insieme costituiscono il carico di lavoro per quella specifica istanza del database.
+
+*Quali carichi di lavoro supporta il BlueXP backup and recovery ?*
+
+Per la versione Preview 2025, il BlueXP backup and recovery possono identificare i seguenti carichi di lavoro: applicazioni Microsoft SQL Server.
+
+*Che cos'è un carico di lavoro "protetto"?* Nel BlueXP backup and recovery, un carico di lavoro mostra uno stato "protetto" quando è abilitato un criterio di rilevamento primario.
+
+*Che cos'è un carico di lavoro "a rischio"?* Se un carico di lavoro non ha abilitata una policy di rilevamento primaria, è "a rischio" anche se ha abilitata una policy di backup e snapshot.
+
+*Nuovo carico di lavoro aggiunto, ma non ancora visualizzato* Se hai aggiunto un nuovo carico di lavoro al tuo ambiente, avvia nuovamente l'individuazione e applica i criteri di protezione per proteggere la nuova risorsa.
+
+
+
+== Policy di protezione
+
+* BlueXP backup and recovery è a conoscenza delle impostazioni di protezione definite in NetApp ONTAP?*
+
+Sì, il BlueXP backup and recovery rilevano le pianificazioni degli snapshot impostate in ONTAP e se ARP e FPolicy sono abilitati in un carico di lavoro rilevato. Le informazioni visualizzate inizialmente nella dashboard sono aggregate da altre soluzioni e prodotti NetApp.
+
+* BlueXP backup and recovery è a conoscenza delle policy già definite in SnapCenter?*
+
+Sì, se hai carichi di lavoro gestiti in SnapCenter, i criteri gestiti da tali prodotti vengono importati nel BlueXP backup and recovery.
+
+*È possibile modificare le policy trasferite da SnapCenter?*
+
+Sì, è possibile modificare i criteri gestiti da SnapCenter all'interno BlueXP backup and recovery.
+
+*Se esistono policy da ONTAP (già abilitate in System Manager come ARP, FPolicy e snapshot), vengono modificate nel BlueXP backup and recovery?*
+
+No. Il BlueXP backup and recovery non modificano alcuna policy di rilevamento esistente (impostazioni ARP, FPolicy) da ONTAP.
+
+*Cosa succede se aggiungi nuove policy in SnapCenter dopo aver effettuato la registrazione al BlueXP backup and recovery?*
+
+Il BlueXP backup and recovery riconoscono tutte le nuove policy create in SnapCenter.
+
+*È possibile modificare le policy da ONTAP?*
+
+Sì, è possibile modificare le policy da ONTAP in BlueXP backup and recovery. È inoltre possibile creare nuove policy in BlueXP backup and recovery e applicarle ai carichi di lavoro. Questa azione sostituisce le policy ONTAP esistenti con quelle create in BlueXP backup and recovery.

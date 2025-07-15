@@ -1,0 +1,269 @@
+---
+sidebar: sidebar 
+permalink: br-use-mssql-restore.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: 'Ripristina i carichi di lavoro del database da una copia snapshot, da un backup del carico di lavoro replicato su un archivio secondario o da backup archiviati nell"archivio oggetti.' 
+---
+= Ripristina i carichi di lavoro di Microsoft SQL Server con il BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Ripristina i carichi di lavoro di Microsoft SQL Server da copie snapshot, da un backup del carico di lavoro replicato su storage secondario o da backup archiviati in storage a oggetti utilizzando il BlueXP backup and recovery. Puoi ripristinare un carico di lavoro nell'ambiente di lavoro originale, in un ambiente di lavoro diverso che utilizza lo stesso account cloud o in un sistema ONTAP locale.
+
+.Ripristina da queste posizioni
+È possibile ripristinare i carichi di lavoro da diverse posizioni di partenza:
+
+* Ripristina da una posizione primaria
+* Ripristina da una risorsa replicata
+* Ripristina da un backup dell'archivio oggetti
+
+
+.Ripristinare questi punti
+È possibile ripristinare i dati all'ultimo snapshot o a questi punti:
+
+* Ripristina da snapshot
+* Ripristina fino a un punto specifico nel tempo. Questo è utile se si conoscono il nome e la posizione del file, nonché la data dell'ultima volta in cui era in buone condizioni.
+* Ripristina l'ultimo backup
+
+
+.Considerazioni sul ripristino da storage di oggetti
+Se selezioni un file di backup nell'archivio oggetti e la protezione ransomware è attiva per quel backup (se hai abilitato DataLock e la protezione ransomware nella policy di backup), ti verrà richiesto di eseguire un ulteriore controllo di integrità sul file di backup prima di ripristinare i dati. Ti consigliamo di eseguire la scansione.
+
+
+TIP: Per accedere al contenuto del file di backup, ti verranno addebitati costi di uscita aggiuntivi dal tuo provider cloud.
+
+
+
+== Come funziona il ripristino dei carichi di lavoro
+
+Quando si ripristinano i carichi di lavoro, si verifica quanto segue:
+
+* Quando si ripristina un carico di lavoro da un file di backup, BlueXP backup and recovery crea una _nuova_ risorsa utilizzando i dati del backup.
+* Quando si esegue il ripristino da un carico di lavoro replicato, è possibile ripristinare il carico di lavoro nell'ambiente di lavoro originale o in un sistema ONTAP locale.
++
+image:diagram_browse_restore_volume-unified.png["Un diagramma che mostra il flusso per ripristinare una risorsa"]
+
+* Quando si ripristina un backup da un archivio di oggetti, è possibile ripristinare i dati nell'ambiente di lavoro originale o in un sistema ONTAP locale.
+
+
+
+
+== Metodi di ripristino
+
+È possibile ripristinare i carichi di lavoro utilizzando uno dei seguenti metodi. In genere, è consigliabile scegliere uno dei seguenti metodi in base alle proprie esigenze di ripristino:
+
+* *Dalla pagina Ripristina*: usa questa opzione quando devi ripristinare una risorsa, ma non ricordi il nome esatto, la posizione in cui si trova o la data dell'ultima volta in cui era in buone condizioni. Puoi cercare lo snapshot utilizzando i filtri.
+* *Dalla pagina Inventario*: Usalo quando devi ripristinare una risorsa specifica dell'ultima settimana o mese, di cui conosci il nome, la posizione e la data dell'ultima volta in cui era in buone condizioni. Puoi scorrere un elenco di risorse per trovare quella che desideri ripristinare.
+
+
+*Ruolo BlueXP obbligatorio* Amministratore dell'organizzazione, Amministratore di cartelle o progetti, Super amministratore di backup e ripristino, Amministratore di ripristino di backup e ripristino.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+
+
+== Ripristina i dati del carico di lavoro dall'opzione Ripristina
+
+Ripristinare i carichi di lavoro del database utilizzando l'opzione Ripristina.
+
+.Fasi
+. Dal menu di backup e ripristino BlueXP , seleziona *Ripristina*.
++
+image:screen-br-restore.png["Uno screenshot che mostra la pagina Ripristina."]
+
+. Seleziona il database che desideri ripristinare. Utilizza i filtri per la ricerca.
+. Selezionare l'opzione di ripristino:
++
+** Ripristina da snapshot
+** Ripristina fino a un punto specifico nel tempo. Questo è utile se si conoscono il nome e la posizione del file, nonché la data dell'ultima volta in cui era in buone condizioni.
+** Ripristina l'ultimo backup
++
+image:screen-br-restore-options2.png["Uno screenshot che mostra le opzioni di ripristino."]
+
+
+
+
+
+
+
+=== Ripristinare i carichi di lavoro dagli snapshot
+
+. Proseguendo dalla pagina Opzioni di ripristino, seleziona *Ripristina da snapshot*.
++
+Viene visualizzato un elenco di istantanee.
+
++
+image:screen-br-restore-snapshots-snapshotlist.png["Uno screenshot che mostra l'elenco degli snapshot da ripristinare"]
+
+. Selezionare lo snapshot che si desidera ripristinare.
+. Selezionare *Avanti*.
++
+Successivamente vedrai le opzioni di destinazione.
+
++
+image:screen-br-restore-destination-original-location.png["Uno screenshot che mostra la pagina dei dettagli della destinazione di ripristino."]
+
+. Nella pagina Dettagli destinazione, inserisci le seguenti informazioni:
++
+** *Impostazioni di destinazione*: scegli se desideri ripristinare i dati nella posizione originale o in una posizione alternativa. Per una posizione alternativa, seleziona il nome host e l'istanza, inserisci il nome del database e il percorso di destinazione in cui desideri ripristinare lo snapshot.
+** *Opzioni pre-ripristino*:
++
+*** *Sovrascrivi il database con lo stesso nome durante il ripristino*: durante il ripristino, il nome originale del database viene mantenuto.
+*** *Mantieni impostazioni di replicazione del database SQL*: conserva le impostazioni di replicazione per il database SQL dopo l'operazione di ripristino.
+*** *Crea backup del registro delle transazioni prima del ripristino*: Crea un backup del registro delle transazioni prima dell'operazione di ripristino.*** *Esci dal ripristino se il backup del registro delle transazioni prima del ripristino fallisce*: Interrompe l'operazione di ripristino se il backup del registro delle transazioni non riesce.
+*** *Prescript*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino, tutti gli argomenti richiesti dallo script e il tempo di attesa per il completamento dello script.
+
+
+** *Opzioni post-ripristino*:
++
+*** *Operativo*, ma non disponibile per il ripristino di ulteriori log delle transazioni. Questo ripristina il database online dopo l'applicazione dei backup dei log delle transazioni.
+*** *Non operativo*, ma disponibile per il ripristino di ulteriori log delle transazioni. Mantiene il database in uno stato non operativo dopo l'operazione di ripristino durante il ripristino dei backup dei log delle transazioni. Questa opzione è utile per il ripristino di ulteriori log delle transazioni.
+*** *Modalità di sola lettura* disponibile per il ripristino di ulteriori log delle transazioni. Ripristina il database in modalità di sola lettura e applica i backup dei log delle transazioni.
+*** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+
+
+
+
+. Selezionare *Restore* (Ripristina).
+
+
+
+
+=== Ripristinare un punto specifico nel tempo
+
+Il BlueXP backup and recovery utilizzano i registri e gli snapshot più recenti per creare un ripristino puntuale dei dati.
+
+. Proseguendo dalla pagina Opzioni di ripristino, seleziona *Ripristina in un momento specifico*.
+. Selezionare *Avanti*.
++
+image:screen-br-restore-point-in-time.png["Uno screenshot che mostra la pagina Ripristina a un punto specifico nel tempo"]
+
+. Nella pagina Ripristina a un punto specifico nel tempo, immetti le seguenti informazioni:
++
+** *Data e ora del ripristino dei dati*: Inserisci la data e l'ora esatte dei dati che desideri ripristinare. Questa data e ora provengono dall'host del database Microsoft SQL Server.
+
+
+. Selezionare *Cerca*.
+. Seleziona lo snapshot che vuoi ripristinare.
+. Selezionare *Avanti*.
+. Nella pagina Dettagli destinazione, inserisci le seguenti informazioni:
++
+** *Impostazioni di destinazione*: scegli se desideri ripristinare i dati nella posizione originale o in una posizione alternativa. Per una posizione alternativa, seleziona il nome host e l'istanza, inserisci il nome del database e il percorso di destinazione.
+** *Opzioni pre-ripristino*:
++
+*** *Mantieni il nome originale del database*: durante il ripristino, il nome originale del database viene mantenuto.
+*** *Mantieni impostazioni di replicazione del database SQL*: conserva le impostazioni di replicazione per il database SQL dopo l'operazione di ripristino.
+*** *Prescript*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino, tutti gli argomenti richiesti dallo script e il tempo di attesa per il completamento dello script.
+
+
+** *Opzioni post-ripristino*:
++
+*** *Operativo*, ma non disponibile per il ripristino di ulteriori log delle transazioni. Questo ripristina il database online dopo l'applicazione dei backup dei log delle transazioni.
+*** *Non operativo*, ma disponibile per il ripristino di ulteriori log delle transazioni. Mantiene il database in uno stato non operativo dopo l'operazione di ripristino durante il ripristino dei backup dei log delle transazioni. Questa opzione è utile per il ripristino di ulteriori log delle transazioni.
+*** *Modalità di sola lettura* disponibile per il ripristino di ulteriori log delle transazioni. Ripristina il database in modalità di sola lettura e applica i backup dei log delle transazioni.
+*** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+
+
+
+
+. Selezionare *Restore* (Ripristina).
+
+
+
+
+=== Ripristina l'ultimo backup
+
+Questa opzione utilizza i backup completi e di registro più recenti per ripristinare i dati all'ultimo stato funzionante. Il sistema analizza i registri dall'ultimo snapshot fino a oggi. Il processo tiene traccia delle modifiche e delle attività per ripristinare la versione più recente e accurata dei dati.
+
+. Proseguendo dalla pagina Opzioni di ripristino, seleziona *Ripristina all'ultimo backup*.
++
+BlueXP backup and recovery mostra gli snapshot disponibili per l'operazione di ripristino.
+
++
+image:screen-br-restore-to-latest-state.png["Uno screenshot che mostra la pagina Ripristina allo stato più recente"]
+
+. Nella pagina Ripristina allo stato più recente, seleziona la posizione dello snapshot dell'archiviazione locale, secondaria o dell'archiviazione degli oggetti.
+. Selezionare *Avanti*.
+. Nella pagina Dettagli destinazione, inserisci le seguenti informazioni:
++
+** *Impostazioni di destinazione*: scegli se desideri ripristinare i dati nella posizione originale o in una posizione alternativa. Per una posizione alternativa, seleziona il nome host e l'istanza, inserisci il nome del database e il percorso di destinazione.
+** *Opzioni pre-ripristino*:
++
+*** *Sovrascrivi il database con lo stesso nome durante il ripristino*: durante il ripristino, il nome originale del database viene mantenuto.
+*** *Mantieni impostazioni di replicazione del database SQL*: conserva le impostazioni di replicazione per il database SQL dopo l'operazione di ripristino.
+*** *Crea backup del registro delle transazioni prima del ripristino*: crea un backup del registro delle transazioni prima dell'operazione di ripristino.
+*** *Esci dal ripristino se il backup del registro delle transazioni prima del ripristino fallisce*: interrompe l'operazione di ripristino se il backup del registro delle transazioni fallisce.
+*** *Prescript*: immettere il percorso completo di uno script che deve essere eseguito prima dell'operazione di ripristino, tutti gli argomenti richiesti dallo script e il tempo di attesa per il completamento dello script.
+
+
+** *Opzioni post-ripristino*:
++
+*** *Operativo*, ma non disponibile per il ripristino di ulteriori log delle transazioni. Questo ripristina il database online dopo l'applicazione dei backup dei log delle transazioni.
+*** *Non operativo*, ma disponibile per il ripristino di ulteriori log delle transazioni. Mantiene il database in uno stato non operativo dopo l'operazione di ripristino durante il ripristino dei backup dei log delle transazioni. Questa opzione è utile per il ripristino di ulteriori log delle transazioni.
+*** *Modalità di sola lettura* disponibile per il ripristino di ulteriori log delle transazioni. Ripristina il database in modalità di sola lettura e applica i backup dei log delle transazioni.
+*** *Postscript*: immettere il percorso completo di uno script che deve essere eseguito dopo l'operazione di ripristino e tutti gli argomenti accettati dallo script.
+
+
+
+
+. Selezionare *Restore* (Ripristina).
+
+
+
+
+== Ripristina i dati del carico di lavoro dall'opzione Inventario
+
+Ripristina i carichi di lavoro del database dalla pagina Inventario. Utilizzando l'opzione Inventario, è possibile ripristinare solo i database, non le istanze.
+
+.Fasi
+. Dal menu di backup e ripristino BlueXP , seleziona *Inventario*.
+. Seleziona l'host in cui si trova la risorsa che desideri ripristinare.
+. Seleziona *Azioni* image:icon-action.png["Icona delle azioni"] icona e seleziona *Visualizza dettagli*.
+. Nella pagina Microsoft SQL Server, selezionare la scheda *Database*.
+. Nella scheda Database, seleziona il database che mostra lo stato "Protetto", a indicare che è presente un backup che puoi ripristinare.
++
+image:screen-br-restore-inventory-databases-tab.png["Uno screenshot che mostra la pagina Inventario e la scheda Database"]
+
+. Seleziona *Azioni* image:icon-action.png["Icona delle azioni"] icona e seleziona *Ripristina*.
++
+Vengono visualizzate le stesse tre opzioni presenti quando si esegue il ripristino dalla pagina Ripristina:
+
++
+** Ripristina da snapshot
+** Ripristinare un punto specifico nel tempo
+** Ripristina l'ultimo backup
+
+
+. Continuare con gli stessi passaggi per l'opzione di ripristino dalla pagina Ripristina
++
+image:screen-br-restore-options2.png["Uno screenshot che mostra le opzioni di ripristino."]
+
+
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+ifdef::aws[]
+
+endif::aws[]
+
+ifdef::azure[]
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]

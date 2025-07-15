@@ -1,0 +1,145 @@
+---
+sidebar: sidebar 
+permalink: concept-start-prereq.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, backup and recovery 
+summary: 'Inizia a utilizzare il BlueXP backup and recovery verificando la disponibilità del tuo ambiente operativo, del connettore BlueXP e dell"account BlueXP . Per utilizzare il BlueXP backup and recovery, sono necessari i seguenti prerequisiti.' 
+---
+= Prerequisiti per il BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Inizia a utilizzare il BlueXP backup and recovery verificando la disponibilità del tuo ambiente operativo, del connettore BlueXP e dell'account BlueXP . Per utilizzare il BlueXP backup and recovery, sono necessari i seguenti prerequisiti.
+
+
+
+== Per ONTAP 9.8 e versioni successive
+
+È necessario abilitare una licenza ONTAP One sull'istanza ONTAP locale.
+
+
+
+== Per i backup su storage di oggetti
+
+Per utilizzare l'archiviazione di oggetti come destinazione di backup, è necessario un account con AWS S3, Microsoft Azure Blob, StorageGRID o ONTAP e che siano configurate le autorizzazioni di accesso appropriate.
+
+* link:prev-ontap-protect-overview.html["Proteggi i dati del tuo volume ONTAP"]
+* link:br-use-mssql-protect-overview.html["Proteggi i tuoi database Microsoft SQL Server"]
+* link:prev-vmware-protect-overview.html["Proteggi i carichi di lavoro delle tue macchine virtuali"]
+
+
+
+
+== A BlueXP
+
+* Un utente BlueXP deve disporre del ruolo e dei privilegi necessari per eseguire operazioni sui carichi di lavoro di Microsoft SQL Server. Per individuare le risorse, è necessario disporre del ruolo di Super amministratore BlueXP backup and recovery . Vedere link:reference-roles.html["Accesso basato sui ruoli BlueXP backup and recovery alle funzionalità"] per informazioni dettagliate sui ruoli e le autorizzazioni necessarie per eseguire operazioni BlueXP backup and recovery.
+* Un'organizzazione BlueXP con almeno un connettore BlueXP attivo che si connette a cluster ONTAP on-premise o Cloud Volumes ONTAP. Fare riferimento alla *Procedura di configurazione dell'anteprima iniziale* di seguito.
+* Almeno un ambiente di lavoro BlueXP con un cluster NetApp ONTAP locale o Cloud Volumes ONTAP .
+* Un connettore BlueXP
++
+Fare riferimento a https://docs.netapp.com/us-en/bluexp-setup-admin/concept-connectors.html["Informazioni su come configurare un connettore BlueXP"] e https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Requisiti standard di BlueXP"^].
+
++
+** La versione Preview richiede il sistema operativo Ubuntu 22.04 LTS per il connettore.
+
+
+
+
+
+
+=== Configurare BlueXP
+
+Il passo successivo è configurare BlueXP e il servizio BlueXP backup and recovery .
+
+Revisione https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-checklist-cm.html["Requisiti standard di BlueXP"^].
+
+
+
+=== Crea un connettore BlueXP
+
+Per provare questo servizio, ti consigliamo di contattare il tuo team di prodotto NetApp . Quindi, quando si utilizza il connettore BlueXP, esso includerà le funzionalità appropriate per il servizio.
+
+Per creare un connettore in BlueXP  prima di utilizzare il servizio, fare riferimento alla documentazione di BlueXP  che descrive https://docs.netapp.com/us-en/cloud-manager-setup-admin/concept-connectors.html["Come creare un connettore BlueXP"^].
+
+.Dove installare il connettore BlueXP
+Per completare un'operazione di ripristino, il connettore può essere installato nelle seguenti posizioni:
+
+ifdef::aws[]
+
+* Per Amazon S3, il connettore può essere distribuito in sede.
+
+
+endif::aws[]
+
+ifdef::azure[]
+
+* Per Azure Blob, il connettore può essere distribuito in locale.
+
+
+endif::azure[]
+
+ifdef::gcp[]
+
+endif::gcp[]
+
+* Per StorageGRID, il connettore deve essere distribuito presso la tua sede, con o senza accesso a Internet.
+* Per ONTAP S3, il connettore può essere implementato in sede (con o senza accesso a Internet) o in un ambiente cloud provider
+
+
+
+NOTE: I riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS e AFF .
+
+
+
+== Requisiti host di Microsoft SQL Server
+
+Per utilizzare il BlueXP backup and recovery per i carichi di lavoro di SQL Server, sono necessari i seguenti prerequisiti relativi a sistema host, spazio e dimensioni.
+
+[cols="33,66a"]
+|===
+| Elemento | Requisiti 
+
+
+| Sistemi operativi  a| 
+Microsoft Windows Per le informazioni più recenti sulle versioni supportate, vedere  https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["Tool di matrice di interoperabilità NetApp"^] .
+
+
+
+| Versioni di Microsoft SQL Server  a| 
+Le versioni 2012 e successive sono supportate per VMware Virtual Machine File System (VMFS) e VMware Virtual Machine Disk (VMDK) NFS.
+
+
+
+| Versione di SnapCenter Server  a| 
+Per importare i dati esistenti da SnapCenter in BlueXP backup and recovery è richiesta la versione 5.0 o successiva di SnapCenter Server.
+
+
+NOTE: Se disponi già di SnapCenter, verifica innanzitutto di aver soddisfatto i prerequisiti prima di importare da SnapCenter. Vedere link:concept-start-prereq-snapcenter-import.html["Prerequisiti per l'importazione di risorse da SnapCenter"].
+
+
+
+| RAM minima per il plug-in sull'host SQL Server  a| 
+1 GB
+
+
+
+| Spazio minimo di installazione e registro per il plug-in sull'host SQL Server  a| 
+5 GB
+
+Allocare spazio su disco sufficiente e monitorare il consumo di spazio di archiviazione della cartella dei log. Lo spazio richiesto per i log varia in base al numero di backup eseguiti e alla frequenza delle operazioni di protezione dei dati. Se lo spazio non è sufficiente, i log non verranno creati per le operazioni.
+
+
+
+| Pacchetti software richiesti  a| 
+* Pacchetto di hosting ASP.NET Core Runtime 8.0.12 (e tutte le patch 8.0.x successive)
+* PowerShell Core 7.4.2
+
+
+Per informazioni aggiornate sulle versioni supportate, vedere https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["Tool di matrice di interoperabilità NetApp"^].
+
+|===

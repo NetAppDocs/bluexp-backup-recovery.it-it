@@ -1,0 +1,38 @@
+---
+sidebar: sidebar 
+permalink: br-start-switch-ui.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: 'È possibile passare da un carico di lavoro all"altro di BlueXP backup and recovery . Alcuni carichi di lavoro utilizzano un"interfaccia utente diversa.' 
+---
+= Passa a diversi carichi di lavoro BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile passare da un carico di lavoro all'altro di BlueXP backup and recovery . Alcuni carichi di lavoro utilizzano un'interfaccia utente diversa.
+
+*Come fai a sapere quale interfaccia utente stai utilizzando?*
+
+La barra delle applicazioni per i carichi di lavoro di Microsoft SQL Server si presenta in questo modo: image:screen-br-menu-unified.png["Nuova schermata dell'interfaccia utente per il BlueXP backup and recovery"]
+
+La barra dei menu per i volumi ONTAP e i carichi di lavoro VMware si presenta in questo modo: image:screen-br-menu-legacy.png["Screenshot precedente dell'interfaccia utente per il BlueXP backup and recovery"]
+
+
+
+== Passa a un carico di lavoro diverso
+
+È possibile passare a un carico di lavoro diverso nell'interfaccia utente BlueXP backup and recovery .
+
+.Fasi
+. Dal menu di navigazione a sinistra BlueXP , seleziona *Protezione* > *Backup e ripristino*.
+. Dall'angolo in alto a destra della pagina, seleziona l'elenco a discesa *Cambia carico di lavoro*.
+. Seleziona il carico di lavoro a cui vuoi passare. image:screen-br-menu-switch-ui.png["Cambia lo screenshot del carico di lavoro per il BlueXP backup and recovery"]
++
+La pagina si aggiorna e mostra il carico di lavoro selezionato nell'interfaccia utente appropriata.
+
+

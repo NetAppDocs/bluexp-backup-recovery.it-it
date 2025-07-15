@@ -1,0 +1,76 @@
+---
+sidebar: sidebar 
+permalink: br-use-dashboard.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, bluexp, backup, recovery, dashboard, view, health, status, alerts, notifications 
+summary: Monitorare lo stato dei carichi di lavoro ti consente di essere a conoscenza di eventuali problemi di protezione e di adottare le misure necessarie per risolverli. Visualizza lo stato dei backup e dei ripristini e rispondi a qualsiasi avviso visualizzato nella dashboard di backup e ripristino BlueXP . Puoi consultare il riepilogo della protezione, il riepilogo del ripristino, il riepilogo del sistema e altro ancora. 
+---
+= Visualizza lo stato di protezione sulla dashboard BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Monitorare lo stato dei carichi di lavoro ti consente di essere a conoscenza di eventuali problemi di protezione e di adottare le misure necessarie per risolverli. Visualizza lo stato dei backup e dei ripristini nella dashboard BlueXP backup and recovery . Puoi consultare il riepilogo di sistema, il riepilogo della protezione, il riepilogo dei processi, il riepilogo del ripristino e altro ancora.
+
+*Ruolo BlueXP obbligatorio* Amministratore dell'organizzazione, Amministratore di cartelle o progetti, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clonazione di Backup e ripristino o Ruolo di visualizzatore di Backup e ripristino. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+.Fasi
+. Dal menu BlueXP backup and recovery , seleziona *Dashboard*.
++
+image:screen-br-dashboard2.png["Dashboard BlueXP backup and recovery"]
+
+
+
+
+
+== Visualizza il riepilogo generale del sistema
+
+Il riepilogo del sistema fornisce le seguenti informazioni:
+
+* Numero di host o VM scoperti
+* Numero di cluster Kubernetes scoperti
+* Numero di destinazioni di backup su storage di oggetti
+* Numero di vCenter
+* Numero di cluster di storage in ONTAP
+
+
+
+
+== Visualizza il riepilogo della protezione
+
+Esaminare le seguenti informazioni nel Riepilogo della protezione:
+
+* Numero totale di database protetti e non protetti.
++
+
+TIP: Un database protetto è un database a cui è assegnata una policy di backup. Un database non protetto è un database a cui non è assegnata una policy di backup.
+
+* Numero di backup riusciti, con avviso o non riusciti.
+* Capacità totale rilevata dal servizio di backup e capacità protetta rispetto a quella non protetta. Passa il mouse sull'icona "*i*" per visualizzare i dettagli.
+
+
+
+
+== Visualizza il riepilogo del lavoro
+
+Rivedi il totale dei lavori completati, in esecuzione o non riusciti nel Riepilogo lavori.
+
+.Fasi
+. Per ogni distribuzione dei lavori, modifica un filtro per visualizzare il riepilogo di quelli non riusciti, in esecuzione e completati in base al numero di giorni, ad esempio gli ultimi 30 giorni, gli ultimi 7 giorni, le ultime 24 ore o l'ultimo anno.
+. Visualizza i dettagli dei lavori non riusciti, in esecuzione e completati selezionando *Visualizza monitoraggio lavori*.
+
+
+
+
+== Visualizza il riepilogo del ripristino
+
+Esaminare le seguenti informazioni nel riepilogo del ripristino:
+
+* Numero totale di processi di ripristino eseguiti
+* La quantità totale di capacità che è stata ripristinata
+* Numero di processi di ripristino eseguiti su storage locale, secondario e object storage. Passa il mouse sul grafico per visualizzare i dettagli.
+

@@ -1,0 +1,81 @@
+---
+sidebar: sidebar 
+permalink: br-use-restore-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite un criterio di protezione. 
+---
+= Ripristina le applicazioni Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che questa abbia lo stato di protezione "Protetto" e che sia associata a una policy di protezione. È possibile ripristinare un'applicazione utilizzando un punto di ripristino, costituito dallo snapshot locale, dallo snapshot secondario e dal backup nell'archivio oggetti. È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.
+
+.Ruolo BlueXP richiesto
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+.Fasi
+. Nel BlueXP backup and recovery, seleziona *Inventario*.
+. Scegli un carico di lavoro Kubernetes e seleziona *Visualizza* nella colonna Host per il carico di lavoro.
+. Nell'elenco delle applicazioni, seleziona l'applicazione che desideri ripristinare e seleziona il menu Azioni associato.
+. Selezionare *Visualizza e ripristina*.
++
+Viene visualizzato l'elenco dei punti di ripristino.
+
+. Aprire il menu Azioni per il punto di ripristino che si desidera utilizzare e selezionare *Ripristina*.
+
+
+[discrete]
+===== Impostazioni generali
+
+. Selezionare l'origine da cui effettuare il ripristino (archivio locale, secondario o oggetto).
+. Selezionare il cluster di destinazione dall'elenco *Cluster*.
+. Selezionare lo spazio dei nomi di destinazione del ripristino (originale o nuovo).
++
+Si noti che il ripristino su un cluster diverso e sullo spazio dei nomi originale non è supportato.
+
+. Selezionare *Avanti*.
+
+
+[discrete]
+===== Selezione delle risorse
+
+. Scegli se desideri ripristinare tutte le risorse associate all'applicazione o utilizzare un filtro per selezionare risorse specifiche da ripristinare:
+
+
+[role="tabbed-block"]
+====
+.Ripristina tutte le risorse
+--
+. Selezionare *Ripristina tutte le risorse*.
+. Selezionare *Avanti*.
+
+
+--
+.Ripristinare risorse specifiche
+--
+. Seleziona *Risorse selettive*.
+. Scegli il comportamento del filtro delle risorse. Se scegli *Includi*, le risorse selezionate vengono ripristinate. Se scegli *Escludi*, le risorse selezionate non vengono ripristinate.
+. Seleziona *Aggiungi regole* per aggiungere regole che definiscano i filtri per la selezione delle risorse. È necessaria almeno una regola per filtrare le risorse.
++
+Ogni regola può essere filtrata in base a criteri quali lo spazio dei nomi della risorsa, le etichette, il gruppo, la versione e il tipo.
+
+. Selezionare *Salva* per salvare ciascuna regola.
+. Dopo aver aggiunto tutte le regole necessarie, seleziona *Cerca* per visualizzare le risorse disponibili nell'archivio di backup che corrispondono ai criteri di filtro.
+. Una volta soddisfatti del risultato, selezionare *Avanti*.
+
+
+--
+====
+[discrete]
+===== Impostazioni di destinazione
+
+. Scegliere se ripristinare la classe di archiviazione predefinita o una classe di archiviazione diversa.
+. Facoltativamente, se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine. La classe di archiviazione di destinazione deve essere disponibile sul cluster di destinazione.
+. Selezionare *Restore* (Ripristina).
+

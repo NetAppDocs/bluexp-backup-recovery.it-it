@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: br-use-manage-snapshots.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery 
+summary: È possibile eseguire il backup dei dati delle applicazioni Microsoft SQL Server dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei dati. I backup vengono generati e memorizzati automaticamente in un archivio di oggetti nel tuo account di cloud pubblico o privato. È possibile implementare una strategia 3-2-1, in cui si hanno 3 copie dei dati di origine su 2 sistemi di storage diversi e 1 copia nel cloud. 
+---
+= Gestisci gli snapshot di Microsoft SQL Server con il BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile gestire gli snapshot di Microsoft SQL Server eliminandoli dal BlueXP backup and recovery.
+
+
+
+== Eliminare uno snapshot
+
+È possibile eliminare solo gli snapshot locali.
+
+*Ruolo BlueXP obbligatorio* Amministratore dell'organizzazione, Amministratore di cartelle o progetti, Super amministratore di backup e ripristino, Ruolo di amministratore di backup di backup e ripristino.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+.Fasi
+. Nel BlueXP backup and recovery, seleziona *Inventario*.
+. Selezionare il carico di lavoro e selezionare *Visualizza*.
+. Selezionare la scheda *Database*.
+. Selezionare il database per il quale si desidera eliminare uno snapshot.
+. Dal menu Azioni, seleziona *Visualizza dettagli protezione*.
++
+image:screen-br-inventory-sql-protection-details.png["Visualizza i dettagli della protezione"]
+
+. Seleziona lo snapshot locale che desideri eliminare.
++
+
+TIP: L'icona dello snapshot locale nella colonna *Posizione* su quella riga deve apparire in blu.
+
+. Seleziona *Azioni* image:icon-action.png["Icona delle azioni"] icona e seleziona *Elimina snapshot locale*.
+. Nella finestra di dialogo di conferma, seleziona *Rimuovi*.
+

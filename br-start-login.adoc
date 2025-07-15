@@ -1,0 +1,47 @@
+---
+sidebar: sidebar 
+permalink: br-start-login.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Per accedere al servizio BlueXP backup and recovery , utilizzare NetApp BlueXP . 
+---
+= Accedi al BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Per accedere al servizio BlueXP backup and recovery , utilizzare NetApp BlueXP .
+
+Il BlueXP backup and recovery utilizzano il controllo degli accessi basato sui ruoli (RBAC) per gestire l'accesso di ciascun utente ad azioni specifiche.
+
+Per informazioni dettagliate sulle azioni che ogni ruolo può eseguire, vedere link:reference-roles.html["Ruoli utente BlueXP backup and recovery"].
+
+Per accedere a BlueXP , puoi utilizzare le tue credenziali del sito di supporto NetApp oppure iscriverti a un login cloud NetApp utilizzando la tua email e una password. https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^].
+
+.Fasi
+. Aprire un browser Web e accedere a https://console.bluexp.netapp.com/["Console BlueXP"^].
++
+Viene visualizzata la pagina di accesso a NetApp BlueXP.
+
+. Accedere a BlueXP.
+. Dal menu di navigazione a sinistra BlueXP , seleziona *Protezione* > *Backup e ripristino*.
++
+** Se è la prima volta che accedi a questo servizio e non hai ancora un ambiente di lavoro, verrà visualizzata la pagina di destinazione "Benvenuti al nuovo BlueXP backup and recovery" con l'opzione "Aggiungi ambiente di lavoro". Per informazioni dettagliate sull'aggiunta di un ambiente di lavoro a BlueXP, consulta  https://docs.netapp.com/us-en/bluexp-setup-admin/task-quick-start-standard-mode.html["Introduzione alla modalità standard di BlueXP"^] .
++
+image:screen-br-landing-no-we.png["Screenshot della landing page per BlueXP Backup e ripristino di BlueXP senza un ambiente di lavoro"]
+
+** Se è la prima volta che accedi a questo servizio e hai già un ambiente di lavoro in BlueXP, ma non hai ancora scoperto alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuto nel nuovo BlueXP backup and recovery" che mostra un'opzione per *Scoprire risorse*.
++
+image:screen-br-landing-unified.png["Screenshot della landing page per il backup e il ripristino di BlueXP"]
+
+
+
+. Se non lo hai ancora fatto, seleziona l'opzione *Scopri e gestisci*.
++
+Per i carichi di lavoro di Microsoft SQL Server, fare riferimento a link:br-start-discover.html["Scopri i carichi di lavoro di Microsoft SQL Server"] .
+
+

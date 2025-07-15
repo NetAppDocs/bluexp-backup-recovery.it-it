@@ -1,0 +1,118 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-restore.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con il BlueXP backup and recovery NetApp BlueXP. 
+---
+= Ripristina i dati delle macchine virtuali con il BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile ripristinare i dati delle macchine virtuali dal cloud al vCenter locale con il backup e il ripristino di BlueXP. È possibile ripristinare la macchina virtuale nella stessa posizione esatta da cui è stato eseguito il backup o in una posizione alternativa. Se il backup della macchina virtuale è stato eseguito utilizzando i criteri di archiviazione, è possibile impostare la priorità di ripristino dell'archivio.
+
+
+NOTE: Non è possibile ripristinare le macchine virtuali che si estendono tra i datastore.
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro BlueXP backup and recovery , fare riferimento a link:br-start-switch-ui.html["Passa a diversi carichi di lavoro BlueXP backup and recovery"] .
+
+====
+.Prima di iniziare
+* Assicurati di aver soddisfatto tutti i requisiti link:prev-vmware-prereqs.html["requisiti di protezione della macchina virtuale"] prima di eseguire il backup degli archivi dati sul cloud.
+* Se si esegue il ripristino in una posizione alternativa:
++
+** Verificare che i vCenter di origine e di destinazione siano in modalità collegata.
+** Verificare che i dettagli del cluster di origine e di destinazione siano aggiunti in BlueXP Canvas e in modalità collegata nei vCenter in entrambi i plug-in SnapCenter per l'host VMware vSphere.
+** Assicurarsi che l'ambiente di lavoro (WE) sia aggiunto in corrispondenza della posizione alternativa in BlueXP Canvas.
+
+
+
+
+.Fasi
+. Nell'interfaccia utente BlueXP , selezionare *Protezione* > *Backup e ripristino* > *Macchine virtuali* > * SnapCenter Plug-in for VMware vSphere* e selezionare l'host SnapCenter Plug-in for VMware vSphere .
+
+
+
+NOTE: Se la macchina virtuale di origine viene spostata in un'altra posizione (vMotion) e l'utente attiva un ripristino della macchina virtuale da BlueXP, la macchina virtuale viene ripristinata nella posizione di origine da cui è stato eseguito il backup.
+
+. Puoi ripristinare la macchina virtuale nella posizione originale o in una posizione alternativa dal datastore o dalle macchine virtuali:
+
+
+|===
+| Se si desidera ripristinare la macchina virtuale... | Eseguire questa operazione... 
+
+
+ a| 
+nella posizione originale dal datastore
+ a| 
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente al datastore che si desidera ripristinare e fare clic su *Visualizza dettagli*.
+. Selezionare *Ripristina* corrispondente al backup che si desidera ripristinare.
+. Selezionare la macchina virtuale che si desidera ripristinare dal backup e selezionare *Avanti*.
+. Assicurarsi che sia selezionato *Originale* e selezionare *Continua*.
+. Se la macchina virtuale è protetta mediante un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
++
+La priorità di ripristino dell'archivio supportata per Amazon Web Services è alta, standard e bassa e la priorità di ripristino dell'archivio supportata per Microsoft Azure è alta e standard.
+
+. Rivedi i dettagli e seleziona *Ripristina*.
+
+
+
+
+ a| 
+in una posizione alternativa dal datastore
+ a| 
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente al datastore che si desidera ripristinare e selezionare *Visualizza dettagli*.
+. Selezionare *Ripristina* corrispondente al backup che si desidera ripristinare.
+. Selezionare la macchina virtuale che si desidera ripristinare dal backup e selezionare *Avanti*.
+. Selezionare *alternativa*.
+. Selezionare vCenter Server, host ESXi, datastore e rete alternativi.
+. Dopo il ripristino, specificare un nome per la macchina virtuale e selezionare *Continua*.
+. Se la macchina virtuale è protetta mediante un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
++
+La priorità di ripristino dell'archivio supportata per Amazon Web Services è alta, standard e bassa e la priorità di ripristino dell'archivio supportata per Microsoft Azure è alta e standard.
+
+. Rivedi i dettagli e seleziona *Ripristina*.
+
+
+
+
+ a| 
+nella posizione originale dalle macchine virtuali
+ a| 
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente alla macchina virtuale che si desidera ripristinare e selezionare *Ripristina*.
+. Selezionare il backup tramite il quale si desidera ripristinare la macchina virtuale.
+. Assicurarsi che sia selezionato *Originale* e selezionare *Continua*.
+. Se la macchina virtuale è protetta mediante un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
++
+La priorità di ripristino dell'archivio supportata per Amazon Web Services è alta, standard e bassa e la priorità di ripristino dell'archivio supportata per Microsoft Azure è alta e standard.
+
+. Rivedi i dettagli e seleziona *Ripristina*.
+
+
+
+
+ a| 
+in una posizione alternativa dalle macchine virtuali
+ a| 
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente alla macchina virtuale che si desidera ripristinare e selezionare *Ripristina*.
+. Selezionare il backup tramite il quale si desidera ripristinare la macchina virtuale.
+. Selezionare *alternativa*.
+. Selezionare vCenter Server, host ESXi, datastore e rete alternativi.
+. Dopo il ripristino, specificare un nome per la macchina virtuale e selezionare *Continua*.
+. Se la macchina virtuale è protetta mediante un criterio in cui sono configurate le impostazioni di archiviazione, selezionare *Priorità di ripristino archivio* e selezionare *Avanti*.
++
+La priorità di ripristino dell'archivio supportata per Amazon Web Services è alta, standard e bassa e la priorità di ripristino dell'archivio supportata per Microsoft Azure è alta e standard.
+
+. Rivedi i dettagli e seleziona *Ripristina*.
+
+
+|===
+
+NOTE: Se l'operazione di ripristino non viene completata, non tentare di eseguire nuovamente il processo di ripristino finché Job Monitor non indica che l'operazione di ripristino non è riuscita. Se si tenta di eseguire nuovamente il processo di ripristino prima che Job Monitor indichi che l'operazione di ripristino non è riuscita, l'operazione di ripristino non verrà eseguita nuovamente. Quando lo stato di Job Monitor viene visualizzato come "Failed" (non riuscito), è possibile provare nuovamente il processo di ripristino.

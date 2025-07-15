@@ -1,0 +1,84 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-policy-create.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con il BlueXP backup and recovery NetApp BlueXP. 
+---
+= Creare una policy per eseguire il backup degli archivi dati nel BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+È possibile creare una policy o utilizzare una delle seguenti policy predefinite disponibili nel backup e ripristino di BlueXP.
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro BlueXP backup and recovery , fare riferimento a link:br-start-switch-ui.html["Passa a diversi carichi di lavoro BlueXP backup and recovery"] .
+
+====
+.Prima di iniziare
+* Se non si desidera modificare i criteri predefiniti, è necessario creare dei criteri.
+* Per spostare i backup dall'archivio di oggetti allo storage di archiviazione, è necessario eseguire ONTAP 9.10.1 o versione successiva e i servizi Web Amazon o Microsoft Azure devono essere il provider di cloud.
+* È necessario configurare il Tier di accesso all'archivio per ciascun provider di cloud.
+
+
+.A proposito di questa attività
+In BlueXP sono disponibili i seguenti criteri predefiniti:
+
+|===
+| Nome policy | Etichetta | Valore di conservazione 
+
+
+ a| 
+LTR giornaliero di 1 anno (conservazione a lungo termine)
+ a| 
+Ogni giorno
+ a| 
+366
+
+
+
+ a| 
+5 anni di LTR giornaliero
+ a| 
+Ogni giorno
+ a| 
+1830
+
+
+
+ a| 
+LTR settimanale di 7 anni
+ a| 
+Settimanale
+ a| 
+370
+
+
+
+ a| 
+LTR mensile di 10 anni
+ a| 
+Mensile
+ a| 
+120
+
+|===
+.Fasi
+. Nella pagina macchine virtuali, dall'elenco a discesa Impostazioni, selezionare *Criteri*.
+. Selezionare *Crea policy*.
+. Nella sezione Dettagli policy, specificare il nome del policy.
+. Nella sezione conservazione, selezionare uno dei tipi di conservazione e specificare il numero di backup da conservare.
+. Selezionare Primary (principale) o Secondary (secondario) come origine dello storage di backup.
+. (Facoltativo) se si desidera spostare i backup dall'archivio di oggetti allo storage di archiviazione dopo un certo numero di giorni per l'ottimizzazione dei costi, selezionare la casella di controllo *Tier backups to Archival* e immettere il numero di giorni dopo i quali il backup deve essere archiviato.
+. Selezionare *Crea*.
++
+
+NOTE: Non è possibile modificare o eliminare una policy associata a un datastore.
+
+

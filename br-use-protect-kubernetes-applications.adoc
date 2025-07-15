@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: br-use-protect-kubernetes-applications.html 
+keywords: backing up, restoring, back up, backup, restore, cloud volumes ontap, aws, azure, s3, blob, google cloud, storagegrid, back up volumes, cloud backup, restore volumes, cost, on-premises ontap, onprem, applications, virtual machines, backup and recovery, snapcenter 
+summary: 'Il BlueXP backup and recovery consentono di gestire le informazioni sull"host del carico di lavoro, le informazioni sul database e le informazioni sulle istanze. È possibile visualizzare, modificare ed eliminare le impostazioni di protezione per l"inventario.' 
+---
+= Aggiungi e proteggi le applicazioni Kubernetes
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Il BlueXP backup and recovery consentono di gestire le informazioni sull'host del carico di lavoro, le informazioni sul database e le informazioni sulle istanze. È possibile visualizzare, modificare ed eliminare le impostazioni di protezione del proprio inventario.
+
+.Ruolo BlueXP richiesto
+Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+
+
+== Aggiungi e proteggi una nuova applicazione Kubernetes
+
+Il primo passo per proteggere le applicazioni Kubernetes è creare un'applicazione all'interno BlueXP backup and recovery. Quando si crea un'applicazione, si segnala a BlueXP l'applicazione in esecuzione sul cluster Kubernetes.
+
+.Fasi
+. Nel BlueXP backup and recovery, seleziona *Inventario* > *Applicazioni*.
+. Selezionare *Crea applicazione*.
+. Inserisci un nome per l'applicazione.
+. Seleziona uno dei seguenti campi per cercare le risorse che desideri proteggere:
++
+** Cluster associato
+** Spazi dei nomi associati
+** Tipi di risorse
+** Selettori di etichette
+
+
+. Facoltativamente, seleziona *Risorse con ambito cluster* per scegliere tutte le risorse con ambito a livello di cluster e non incluse nell'applicazione. Se le includi, verranno aggiunte all'applicazione al momento della creazione.
+. Seleziona *Cerca* per trovare le risorse in base ai tuoi criteri di ricerca.
+. BlueXP visualizza un elenco di risorse che corrispondono ai criteri di ricerca.
+. Se l'elenco contiene le risorse che desideri proteggere, seleziona *Avanti*.
+. Nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione oppure creane uno nuovo.
+. Nell'area *Prescript e postscript*, abilitare e configurare eventuali hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup. Per abilitare prescript o postscript, è necessario aver già creato almeno uno. link:br-use-manage-execution-hook-templates.html["modello di gancio di esecuzione"] .
+. Selezionare *Crea*.
+
+
+.Risultato
+L'applicazione viene creata e visualizzata nell'elenco delle applicazioni nella scheda *Applicazioni* dell'inventario di Kubernetes. BlueXP abilita la protezione dell'applicazione in base alle impostazioni e puoi monitorarne l'avanzamento nell'area *Monitoraggio* di backup e ripristino.
+
+
+
+== Proteggere un'applicazione Kubernetes esistente
+
+Abilita un criterio di protezione su un'applicazione Kubernetes che hai già aggiunto.
+
+.Fasi
+. Nel BlueXP backup and recovery, seleziona *Inventario* > *Applicazioni*.
+. Nell'elenco delle applicazioni, seleziona l'applicazione che desideri proteggere e seleziona il menu Azioni associato.
+. Selezionare *Proteggi*.
+. Nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione oppure creane uno nuovo.
+. Nell'area *Prescript e postscript*, abilita e configura eventuali hook di esecuzione prescript o postscript che desideri eseguire prima o dopo le operazioni di backup. Puoi configurare il tipo di hook di esecuzione, il modello utilizzato, gli argomenti e i selettori di etichetta.
+. Selezionare *fine*.
+
+
+.Risultato
+BlueXP consente la protezione dell'applicazione in base alle impostazioni specificate ed è possibile monitorare l'avanzamento nell'area *Monitoraggio* del backup e del ripristino.
+
+
+
+== Esegui subito il backup di un'applicazione Kubernetes
+
+Crea manualmente un backup di un'applicazione Kubernetes per stabilire una base di riferimento per backup e snapshot futuri o per garantire la protezione dei dati più recenti.
+
+.Fasi
+. Nel BlueXP backup and recovery, seleziona *Inventario* > *Applicazioni*.
+. Nell'elenco delle applicazioni, seleziona l'applicazione di cui vuoi effettuare il backup e seleziona il menu Azioni associato.
+. Selezionare *Esegui backup adesso*.
+. Assicurarsi che sia selezionato il nome corretto dell'applicazione.
+. Selezionare una policy di protezione dall'elenco delle policy.
+. Selezionare *Backup*.
+

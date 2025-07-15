@@ -1,0 +1,115 @@
+---
+sidebar: sidebar 
+permalink: prev-vmware-manage.html 
+keywords: backing up, back up, backup, backup application data, Amazon Web services, AWS, BlueXP backup and recovery, Oracle database, Microsoft SQL Server database, SAP HANA database 
+summary: Proteggi i tuoi carichi di lavoro VMware con il BlueXP backup and recovery NetApp BlueXP. 
+---
+= Gestisci la protezione di datastore e VM nel BlueXP backup and recovery
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+Con il backup e il ripristino di BlueXP è possibile visualizzare policy, archivi dati e macchine virtuali prima di eseguire il backup e il ripristino dei dati. A seconda delle modifiche apportate a database, policy o gruppi di risorse, è possibile visualizzare gli aggiornamenti dall'interfaccia utente di BlueXP.
+
+[]
+====
+*NOTA* Per passare da e verso i carichi di lavoro BlueXP backup and recovery , fare riferimento a link:br-start-switch-ui.html["Passa a diversi carichi di lavoro BlueXP backup and recovery"] .
+
+====
+
+
+== Visualizzare le policy
+
+È possibile visualizzare tutti i criteri predefiniti. Per ciascuno di questi criteri, quando si visualizzano i dettagli, vengono elencati tutti i criteri e le macchine virtuali associati.
+
+. Nell'interfaccia utente BlueXP , seleziona *Protezione* > *Backup e ripristino* > *Macchine virtuali*.
+. Dal menu a discesa *Impostazioni*, seleziona *Criteri*.
+. Selezionare *Visualizza dettagli* corrispondente alla polizza di cui si desidera visualizzare i dettagli.
+
+
+Vengono elencati i criteri e le macchine virtuali associati.
+
+
+
+== Visualizza datastore e macchine virtuali
+
+Vengono visualizzati i datastore e le macchine virtuali protetti mediante il plug-in SnapCenter registrato per l'host VMware vSphere.
+
+.Fasi
+. Nell'interfaccia utente BlueXP , seleziona *Protezione* > *Backup e ripristino* > *Macchine virtuali* > *Impostazioni* > * SnapCenter Plug-in for VMware vSphere*.
+. Selezionare il SnapCenter Plug-in for VMware vSphere per il quale si desidera visualizzare i datastore e le macchine virtuali.
+
+
+
+
+== Annullare la protezione dei datastore
+
+Puoi annullare la protezione di un datastore già protetto in precedenza. Puoi annullare la protezione di un datastore quando vuoi eliminare i backup del cloud o non eseguirne più il backup nel cloud. Dopo il successo della mancata protezione, il datastore può essere nuovamente protetto.
+
+.Fasi
+. Nell'interfaccia utente BlueXP , seleziona *Protezione* > *Backup e ripristino* > *Macchine virtuali*.
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente al datastore di cui si desidera rimuovere la protezione e selezionare *Rimuovi protezione*.
+
+
+
+
+== Modificare il plug-in SnapCenter per l'istanza di VMware vSphere
+
+È possibile modificare i dettagli del plug-in SnapCenter per host VMware vSphere in BlueXP.
+
+.Fasi
+. Nell'interfaccia utente BlueXP , seleziona *Protezione* > *Backup e ripristino* > *Macchine virtuali* > *Impostazioni* > * SnapCenter Plug-in for VMware vSphere*.
+. Seleziona l'icona Azioni image:icon-action.png["azione"] e seleziona *Modifica*.
+. Modificare i dettagli come richiesto.
+. Selezionare *Salva*.
+
+
+
+
+== Aggiorna risorse e backup
+
+Se si desidera visualizzare gli ultimi datastore e backup aggiunti all'applicazione, è necessario aggiornare le risorse e i backup. In questo modo si avvia il rilevamento delle risorse e dei backup e vengono visualizzati i dettagli più recenti.
+
+. Selezionare *Backup e ripristino* > *Macchine virtuali*.
+. Dal menu a discesa *Impostazioni*, seleziona * SnapCenter Plug-in for VMware vSphere*.
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente al SnapCenter Plug-in for VMware vSphere e selezionare *Aggiorna risorse e backup*.
+
+
+
+
+== Aggiornare il criterio o il gruppo di risorse
+
+In caso di modifica del criterio o del gruppo di risorse, è necessario aggiornare la relazione di protezione.
+
+. Selezionare *Backup e ripristino* > *Macchine virtuali*.
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente al datastore e selezionare *Aggiorna protezione*.
+
+
+
+
+== Annullare la registrazione del plug-in SnapCenter per l'host VMware vSphere
+
+Tutti i datastore e le macchine virtuali associati al plug-in SnapCenter per host VMware vSphere non saranno protetti.
+
+. Selezionare *Backup e ripristino* > *Macchine virtuali*.
+. Dal menu a discesa *Impostazioni*, seleziona * SnapCenter Plug-in for VMware vSphere*.
+. Seleziona l'icona Azioni image:icon-action.png["azione"] corrispondente al SnapCenter Plug-in for VMware vSphere e selezionare *Annulla registrazione*.
+
+
+
+
+== Monitorare i lavori
+
+Per tutte le operazioni di backup e recovery di BlueXP vengono create delle job. È possibile monitorare tutti i lavori e tutte le sottoattività eseguite come parte di ciascuna attività.
+
+. Selezionare *Backup e ripristino* > *Monitoraggio processi*.
++
+Quando si avvia un'operazione, viene visualizzata una finestra che indica che il processo è stato avviato. È possibile selezionare il collegamento per monitorare il lavoro.
+
+. Selezionare l'attività principale per visualizzare le attività secondarie e lo stato di ciascuna di esse.
+
