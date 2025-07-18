@@ -4228,17 +4228,8 @@ ifdef::aws[]</block>
   <block id="b06c9fd76246f4cfb339125284b25aa5" category="list-text">Se si sceglie l'etichetta *Mensile* con conteggio conservazione 3, il periodo di conservazione dello snapshot è di 90 giorni.</block>
   <block id="efdf2d46dfa5c7a9f73d28bb893f836f" category="list-text">Se si sceglie l'etichetta *Annuale* con Conteggio conservazione 1, il periodo di conservazione dello snapshot è di 365 giorni.</block>
   <block id="a60142749401298f0a788c8439772777" category="section-title">Che cosa è la data di conservazione fino alla data (RUD) e come viene calcolata?</block>
-  <block id="eeada300415ab437a13601d2e69f066a" category="paragraph">La data di conservazione fino alla data (RUD) viene determinata in base al periodo di conservazione degli snapshot.</block>
-  <block id="6984bab6fc7fe177ce259ff499fada58" category="list-text">La data di conservazione fino alla data indicata viene calcolata sommando il periodo di conservazione dello snapshot e un buffer.</block>
-  <block id="95ff93ddc0c74a02cf692e476561a39d" category="list-text">Il buffer è il buffer per il tempo di trasferimento (6 giorni) + il buffer per l'ottimizzazione dei costi (8 giorni), per un totale di 14 giorni.</block>
-  <block id="ac3a820fa3f3116f54715975be367471" category="list-text">La data di conservazione minima è 30 giorni + 14 giorni.</block>
   <block id="c0dc453646abf19770644c4988b76265" category="paragraph">Ecco alcuni esempi:</block>
-  <block id="19606e2b227c881953690cfcbb2621ad" category="list-text">Se si crea una pianificazione di backup mensile con 12 conservazioni, i backup vengono bloccati per 12 mesi (più 14 giorni) prima di essere eliminati (sostituiti dal file di backup successivo).</block>
   <block id="19703e6040b3a90f1ca1c6525c9432f8" category="list-text">Se si crea un criterio di backup che crea 30 backup giornalieri, 7 settimanali e 12 mensili, sono presenti tre periodi di conservazione bloccati:</block>
-  <block id="32e9736765675e582a92ea22621346f6" category="list-text">I backup "30 giornalieri" vengono conservati per 44 giorni (30 giorni più 14 giorni di buffer),</block>
-  <block id="08725775ceb79bf9dd25c482670a47a4" category="list-text">I backup "settimanali" vengono conservati per 9 settimane (7 settimane più 14 giorni) e</block>
-  <block id="f0d1e71c852348fd449a59d2b4456479" category="list-text">I backup "mensili" vengono conservati per 12 mesi (più 14 giorni).</block>
-  <block id="bf7c437191fdcde55e7d7e2fc049c230" category="list-text">Se si crea una pianificazione di backup oraria con 24 ritentions, si potrebbe pensare che i backup siano bloccati per 24 ore. Tuttavia, poiché questo è inferiore al minimo di 30 giorni, ogni backup verrà bloccato e conservato per 44 giorni (30 giorni più 14 giorni di buffer).</block>
   <block id="16ec215ee395a25e960a53b7cdcdc794" category="admonition">I vecchi backup vengono eliminati dopo la scadenza del periodo di conservazione di DataLock, non dopo il periodo di conservazione dei criteri di backup.</block>
   <block id="b31b5b22923a2871f33f5a4b77d6be83" category="paragraph">L'impostazione di conservazione di DataLock sostituisce l'impostazione di conservazione dei criteri dei criteri di backup. Ciò potrebbe influire sui costi di storage, in quanto i file di backup verranno salvati nell'archivio di oggetti per un periodo di tempo più lungo.</block>
   <block id="010f0e105bcb6f73ab6c815fef84dd1c" category="section-title">Abilita la protezione DataLock e Ransomware</block>
@@ -4532,11 +4523,19 @@ ifdef::aws[]</block>
   <block id="79cf38f604ea494dd925df57b6a906b6" category="sidebar">Proteggere i carichi di lavoro delle macchine virtuali</block>
   <block id="7706cc052aa7120ddac8475709793258" category="sidebar">Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali</block>
   <block id="9ce88727019b612743000c7bcc2bfd23" category="sidebar">Prerequisiti per la protezione dei carichi di lavoro delle macchine virtuali</block>
-  <block id="6a1574cd5135a4d659f7c25fd4102feb" category="sidebar">Creare una policy per il backup dei datastore VMware</block>
-  <block id="6cc90c7021ed31cf57b48ce2a8946fd6" category="sidebar">Ripristinare i datastore VMware</block>
   <block id="4639d0e2e2909a747265c2f704128bca" category="sidebar">Monitorare i lavori</block>
   <block id="3e8569bed0b50d0e3ac8dd96195c94f1" category="sidebar">Criteri in SnapCenter confrontati con il BlueXP backup and recovery</block>
   <block id="f1518f15324a3922da2c43bf2d8a6950" category="sidebar">Ruoli e privilegi BlueXP backup and recovery</block>
   <block id="62967cdcfc7912e3c1a9b3870580fe3f" category="sidebar">Livelli di archiviazione di Azure supportati</block>
   <block id="6af2225d62ab9c4b0de4dfa7f9e852f5" category="sidebar">Livelli di archiviazione di Google Cloud supportati</block>
+  <block id="33f34f378ec48f478eda58fa96594aa4" category="paragraph">La data di conservazione fino alla data (RUD) viene determinata in base al periodo di conservazione degli snapshot. La data di conservazione fino alla data indicata viene calcolata sommando il periodo di conservazione dello snapshot e un buffer.</block>
+  <block id="0b918c8e643ab519717fd0eec681371c" category="list-text">Il buffer è il buffer per il tempo di trasferimento (3 giorni) + il buffer per l'ottimizzazione dei costi (28 giorni), per un totale di 31 giorni.</block>
+  <block id="10040237b3e7b790c7f0c1983647279e" category="list-text">La data di conservazione minima è 30 giorni + 31 giorni di buffer = 61 giorni.</block>
+  <block id="f84724515a26602458b4cabf395689b0" category="list-text">Se si crea una pianificazione di backup mensile con 12 conservazioni, i backup vengono bloccati per 12 mesi (più 31 giorni) prima di essere eliminati (sostituiti dal file di backup successivo).</block>
+  <block id="dc1987905977bd763b00c2a0741b977b" category="list-text">I backup "30 giornalieri" vengono conservati per 61 giorni (30 giorni più 31 giorni di buffer),</block>
+  <block id="dda5e0548944d946d7ab9e81fdd1296f" category="list-text">I backup "settimanali" vengono conservati per 11 settimane (7 settimane più 31 giorni) e</block>
+  <block id="b8400c37ab80692ef1ca26e1fa71d6f7" category="list-text">I backup "mensili" vengono conservati per 12 mesi (più 31 giorni).</block>
+  <block id="52d355afb10d30259b33c1f1c1cd46c8" category="list-text">Se si crea una pianificazione di backup oraria con 24 ritentions, si potrebbe pensare che i backup siano bloccati per 24 ore. Tuttavia, poiché questo è inferiore al minimo di 30 giorni, ogni backup verrà bloccato e conservato per 61 giorni (30 giorni più 31 giorni di buffer).</block>
+  <block id="776ec5ed6f61de56be98c037c8ca01c9" category="sidebar">Creare una policy per il backup dei dati della macchina virtuale</block>
+  <block id="9234f5bc35aa09673eacbf8fece508db" category="sidebar">Ripristinare i dati e gli archivi dati delle macchine virtuali</block>
 </blocks>

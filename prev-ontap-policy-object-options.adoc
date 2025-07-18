@@ -96,24 +96,23 @@ Il periodo minimo di conservazione degli snapshot è di 30 giorni. Diamo un'occh
 
 === Che cosa è la data di conservazione fino alla data (RUD) e come viene calcolata?
 
-La data di conservazione fino alla data (RUD) viene determinata in base al periodo di conservazione degli snapshot.
+La data di conservazione fino alla data (RUD) viene determinata in base al periodo di conservazione degli snapshot. La data di conservazione fino alla data indicata viene calcolata sommando il periodo di conservazione dello snapshot e un buffer.
 
-* La data di conservazione fino alla data indicata viene calcolata sommando il periodo di conservazione dello snapshot e un buffer.
-* Il buffer è il buffer per il tempo di trasferimento (6 giorni) + il buffer per l'ottimizzazione dei costi (8 giorni), per un totale di 14 giorni.
-* La data di conservazione minima è 30 giorni + 14 giorni.
+* Il buffer è il buffer per il tempo di trasferimento (3 giorni) + il buffer per l'ottimizzazione dei costi (28 giorni), per un totale di 31 giorni.
+* La data di conservazione minima è 30 giorni + 31 giorni di buffer = 61 giorni.
 
 
 Ecco alcuni esempi:
 
-* Se si crea una pianificazione di backup mensile con 12 conservazioni, i backup vengono bloccati per 12 mesi (più 14 giorni) prima di essere eliminati (sostituiti dal file di backup successivo).
+* Se si crea una pianificazione di backup mensile con 12 conservazioni, i backup vengono bloccati per 12 mesi (più 31 giorni) prima di essere eliminati (sostituiti dal file di backup successivo).
 * Se si crea un criterio di backup che crea 30 backup giornalieri, 7 settimanali e 12 mensili, sono presenti tre periodi di conservazione bloccati:
 +
-** I backup "30 giornalieri" vengono conservati per 44 giorni (30 giorni più 14 giorni di buffer),
-** I backup "settimanali" vengono conservati per 9 settimane (7 settimane più 14 giorni) e
-** I backup "mensili" vengono conservati per 12 mesi (più 14 giorni).
+** I backup "30 giornalieri" vengono conservati per 61 giorni (30 giorni più 31 giorni di buffer),
+** I backup "settimanali" vengono conservati per 11 settimane (7 settimane più 31 giorni) e
+** I backup "mensili" vengono conservati per 12 mesi (più 31 giorni).
 
 
-* Se si crea una pianificazione di backup oraria con 24 ritentions, si potrebbe pensare che i backup siano bloccati per 24 ore. Tuttavia, poiché questo è inferiore al minimo di 30 giorni, ogni backup verrà bloccato e conservato per 44 giorni (30 giorni più 14 giorni di buffer).
+* Se si crea una pianificazione di backup oraria con 24 ritentions, si potrebbe pensare che i backup siano bloccati per 24 ore. Tuttavia, poiché questo è inferiore al minimo di 30 giorni, ogni backup verrà bloccato e conservato per 61 giorni (30 giorni più 31 giorni di buffer).
 
 
 

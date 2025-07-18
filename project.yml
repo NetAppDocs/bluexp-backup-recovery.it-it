@@ -124,7 +124,7 @@ sidebar:
         url: "/prev-vmware-prereqs.html"
       - title: Registrare il plug-in SnapCenter per l'host VMware vSphere
         url: "/prev-vmware-register-snapcenter.html"
-      - title: Creare una policy per il backup dei datastore VMware
+      - title: Creare una policy per il backup dei dati della macchina virtuale
         url: "/prev-vmware-policy-create.html"
       - title: Eseguire il backup dei datastore su Amazon Web Services
         url: "/prev-vmware-backup-aws.html"
@@ -136,7 +136,7 @@ sidebar:
         url: "/prev-vmware-backup-storagegrid.html"
       - title: Gestione della protezione dei dati di datastore e macchine virtuali
         url: "/prev-vmware-manage.html"
-      - title: Ripristinare i datastore VMware
+      - title: Ripristinare i dati e gli archivi dati delle macchine virtuali
         url: "/prev-vmware-restore.html"
     - title: Monitorare i lavori
       url: "/br-use-monitor-tasks.html"
