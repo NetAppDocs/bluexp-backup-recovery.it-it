@@ -26,7 +26,7 @@ Prima di poter utilizzare il metodo Search & Restore per il ripristino dei dati,
 
 Attivare l'indicizzazione nell'ambiente di lavoro di origine selezionando l'opzione "Abilita indicizzazione" quando si esegue una ricerca e ripristino.
 
-Per ulteriori informazioni, consultare la documentazione https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["Come ripristinare i dati ONTAP utilizzando Cerca  Ripristina"].
+Per ulteriori informazioni, consultare la documentazione https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["Come ripristinare i dati ONTAP utilizzando Cerca  Ripristina"].
 
 .Scala supportata
 La nuova funzione di indicizzazione supporta quanto segue:

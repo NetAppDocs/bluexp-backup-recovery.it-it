@@ -8,7 +8,7 @@
 
 Il backup e recovery di BlueXP  ora può eseguire il backup dei volumi on-premise FlexVol e FlexGroup configurati con le modalità di protezione SnapLock Compliance o SnapLock Enterprise. Per supportare questo tipo di supporto, i cluster devono eseguire ONTAP 9,14 o versione successiva. Il backup dei volumi FlexVol utilizzando la modalità SnapLock Enterprise è supportato a partire dalla versione ONTAP 9.11.1. Le release precedenti di ONTAP non supportano il backup di volumi di protezione SnapLock.
 
-Consultare l'elenco completo dei volumi supportati nella https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-ontap-backup-to-cloud.html["Informazioni su backup e ripristino BlueXP"] .
+Consultare l'elenco completo dei volumi supportati nella https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-backup-to-cloud.html["Informazioni su backup e ripristino BlueXP"] .
 
 
 

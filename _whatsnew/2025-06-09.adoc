@@ -15,13 +15,13 @@ Prima di poter utilizzare il metodo Search & Restore per il ripristino dei dati,
 
 Il catalogo indicizzato può quindi tenere traccia di ogni volume e file di backup, rendendo le ricerche rapide ed efficienti.
 
-Per ulteriori informazioni, vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/task-restore-backups-ontap.html#restore-ontap-data-using-search-restore["Come ripristinare i dati ONTAP utilizzando Cerca  Ripristina"].
+Per ulteriori informazioni, fare riferimento a https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-restore.html["Abilita l'indicizzazione per Cerca e Ripristina"].
 
 
 
 === Endpoint di collegamento privato di Azure ed endpoint di servizio
 
-In genere, il backup e il ripristino di BlueXP stabiliscono un endpoint privato con il provider cloud per gestire diverse attività di protezione. Questa versione introduce un'impostazione opzionale che consente di abilitare o disabilitare la creazione automatica di un endpoint privato da parte di BlueXP Backup and Recovery. Questa opzione potrebbe essere utile se si desidera un maggiore controllo sul processo di creazione di endpoint privati.
+In genere, il BlueXP backup and recovery stabiliscono un endpoint privato con il provider cloud per gestire le attività di protezione. Questa versione introduce un'impostazione opzionale che consente di abilitare o disabilitare la creazione automatica di un endpoint privato da parte di BlueXP Backup and Recovery. Questa opzione potrebbe essere utile se si desidera un maggiore controllo sul processo di creazione di endpoint privati.
 
 È possibile abilitare o disabilitare questa opzione quando si abilita la protezione o si avvia il processo di ripristino.
 
@@ -39,4 +39,4 @@ La versione precedente ha introdotto il supporto per SnapMirror to Cloud Resync 
 
 Quando si creano file di backup nell'archiviazione oggetti per un ambiente di lavoro, per impostazione predefinita, BlueXP Backup and Recovery crea il contenitore (bucket o account di archiviazione) per i file di backup nell'account di archiviazione oggetti configurato. In precedenza, era possibile ignorare questa impostazione e specificare un contenitore personalizzato per Amazon S3, Azure Blob Storage e Google Cloud Storage. Con questa versione, è ora possibile utilizzare il proprio contenitore di archiviazione oggetti StorageGRID.
 
-Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/concept-protection-journey.html#do-you-want-to-create-your-own-object-storage-container["Crea il tuo contenitore di archiviazione di oggetti"].
+Vedere https://docs.netapp.com/us-en/bluexp-backup-recovery/prev-ontap-protect-journey.html["Crea il tuo contenitore di archiviazione di oggetti"].
