@@ -4532,4 +4532,5 @@ ifdef::aws[]</block>
   <block id="b75b69427facaf94889fb25900eb710a" category="admonition">La presente documentazione viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
+  <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">Questa funzionalità è disponibile a partire dalla versione 4.0.3 BlueXP backup and recovery, rilasciata a maggio 2025.</block>
 </blocks>
