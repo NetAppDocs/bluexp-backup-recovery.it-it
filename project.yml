@@ -142,7 +142,7 @@ sidebar:
       - title: Panoramica sulla protezione dei carichi di lavoro di Kubernetes
         url: "/br-use-kubernetes-protect-overview.html"
       - title: Scopri i carichi di lavoro di Kubernetes
-        url: br-start-discover-kubernetes.html
+        url: "/br-start-discover-kubernetes.html"
       - title: Aggiungi e proteggi le applicazioni Kubernetes
         url: "/br-use-protect-kubernetes-applications.html"
       - title: Ripristina le applicazioni Kubernetes
