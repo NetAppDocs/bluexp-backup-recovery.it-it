@@ -4497,7 +4497,6 @@ ifdef::aws[]</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
   <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">Questa funzionalità è disponibile a partire dalla versione 4.0.3 BlueXP backup and recovery, rilasciata a maggio 2025.</block>
-  <block id="6902ada6aa5bd3c4c129d87093d48e07" category="doc">Supporto del carico di lavoro Kubernetes come anteprima tecnologica pubblica</block>
   <block id="36442e954ef2484603f79c5f3abc842b" category="paragraph">Questa versione di BlueXP backup and recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Kubernetes:</block>
   <block id="200a1ca96330b8c7561607ba3e8efa76" category="list-text">Scopri i cluster Red Hat OpenShift e Kubernetes open source, supportati da NetApp ONTAP, senza condividere i file kubeconfig.</block>
   <block id="bc97cde5f3a6fe336563401fb4b522a7" category="list-text">Scopri, gestisci e proteggi le applicazioni su più cluster Kubernetes utilizzando un piano di controllo unificato.</block>
@@ -4590,4 +4589,6 @@ ifdef::aws[]</block>
   <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Proteggi i carichi di lavoro di Kubernetes (anteprima)</block>
   <block id="c3c3199204503d3bbd5d4dce7eabf238" category="sidebar">Panoramica sulla protezione dei carichi di lavoro di Kubernetes</block>
   <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes</block>
+  <block id="5d8fc779baf0d068c296ee5013b2224f" category="doc">Supporto del carico di lavoro Kubernetes in anteprima</block>
+  <block id="f4270282e09abd3774ba339dc49af208" category="paragraph">Per i dettagli sulla protezione dei carichi di lavoro di Kubernetes, fare riferimento a <block ref="44b634c6507d9116150094fb69849fd2" category="inline-link-rx"></block> .</block>
 </blocks>

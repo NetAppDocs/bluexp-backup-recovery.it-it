@@ -1,10 +1,10 @@
-= Supporto del carico di lavoro Kubernetes come anteprima tecnologica pubblica
+= Supporto del carico di lavoro Kubernetes in anteprima
 :allow-uri-read: 
 
 
 
 
-=== Supporto del carico di lavoro Kubernetes come anteprima tecnologica pubblica
+=== Supporto del carico di lavoro Kubernetes in anteprima
 
 Questa versione di BlueXP backup and recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Kubernetes:
 
@@ -16,3 +16,5 @@ Questa versione di BlueXP backup and recovery introduce il supporto per l'indivi
 * Lavora con container e macchine virtuali in esecuzione su Kubernetes.
 * Crea backup coerenti con l'applicazione utilizzando modelli e hook di esecuzione.
 
+
+Per i dettagli sulla protezione dei carichi di lavoro di Kubernetes, fare riferimento a  https://docs.netapp.com/us-en/bluexp-backup-recovery/br-use-kubernetes-protect-overview.html["Panoramica sulla protezione dei carichi di lavoro di Kubernetes"] .
