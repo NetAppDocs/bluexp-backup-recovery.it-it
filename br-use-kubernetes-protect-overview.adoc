@@ -14,9 +14,27 @@ summary: Puoi proteggere le applicazioni Kubernetes e i dati delle applicazioni 
 
 
 [role="lead"]
-La gestione dei carichi di lavoro Kubernetes in BlueXP backup and recovery ti consente di gestire e proteggere i tuoi cluster e le tue applicazioni Kubernetes da un'unica posizione. Puoi gestire risorse e applicazioni ospitate dai tuoi cluster Kubernetes. Puoi anche gestire le impostazioni di protezione dei tuoi carichi di lavoro Kubernetes.
+La gestione dei carichi di lavoro Kubernetes in BlueXP backup and recovery ti consente di individuare, gestire e proteggere i tuoi cluster e le tue applicazioni Kubernetes da un'unica posizione. Puoi gestire risorse e applicazioni ospitate sui tuoi cluster Kubernetes. Puoi anche creare e associare policy di protezione ai tuoi carichi di lavoro Kubernetes, il tutto utilizzando un'unica interfaccia.
+
+Il diagramma seguente mostra i componenti e l'architettura di base del backup e del ripristino per i carichi di lavoro Kubernetes e come diverse copie dei dati possono essere archiviate in posizioni diverse:
+
+image:../media/backup-recovery-architecture-diagram.png["Diagramma dell'architettura di backup e ripristino per i carichi di lavoro Kubernetes"]
+
+Il BlueXP backup and recovery offrono i seguenti vantaggi per la gestione dei carichi di lavoro Kubernetes:
+
+* Un unico piano di controllo per proteggere le applicazioni in esecuzione su più cluster Kubernetes. Queste applicazioni possono includere container o macchine virtuali in esecuzione sui cluster Kubernetes.
+* Integrazione nativa con NetApp SnapMirror, che consente funzionalità di offload dello storage per tutti i flussi di lavoro di backup e ripristino.
+* Backup incrementali permanenti per le applicazioni Kubernetes, che si traducono in Recovery Point Objectives (RPO) e Recovery Time Objectives (RTO) inferiori.
+
 
 
 NOTE: La presente documentazione viene fornita come anteprima tecnologica. Durante l'anteprima, la funzionalità Kubernetes non è consigliata per i carichi di lavoro di produzione. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
 
 È possibile eseguire le seguenti attività relative alla gestione dei carichi di lavoro di Kubernetes:
+
+* link:br-start-discover.html#discover-kubernetes-workloads["Scopri i carichi di lavoro di Kubernetes"] .
+* link:br-use-manage-kubernetes-clusters.html["Gestire i cluster Kubernetes"].
+* link:br-use-protect-kubernetes-applications.html["Aggiungi e proteggi le applicazioni Kubernetes"] .
+* link:br-use-manage-kubernetes-applications.html["Gestire le applicazioni Kubernetes"].
+* link:br-use-restore-kubernetes-applications.html["Ripristina le applicazioni Kubernetes"] .
+

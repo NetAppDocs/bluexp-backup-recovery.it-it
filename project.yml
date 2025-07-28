@@ -137,6 +137,22 @@ sidebar:
         url: "/prev-vmware-manage.html"
       - title: Ripristinare i dati e gli archivi dati delle macchine virtuali
         url: "/prev-vmware-restore.html"
+    - title: Proteggi i carichi di lavoro di Kubernetes (anteprima)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro di Kubernetes
+        url: "/br-use-kubernetes-protect-overview.html"
+      - title: Scopri i carichi di lavoro di Kubernetes
+        url: br-start-discover-kubernetes.html
+      - title: Aggiungi e proteggi le applicazioni Kubernetes
+        url: "/br-use-protect-kubernetes-applications.html"
+      - title: Ripristina le applicazioni Kubernetes
+        url: "/br-use-restore-kubernetes-applications.html"
+      - title: Gestire i cluster Kubernetes
+        url: "/br-use-manage-kubernetes-clusters.html"
+      - title: Gestire le applicazioni Kubernetes
+        url: "/br-use-manage-kubernetes-applications.html"
+      - title: Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes
+        url: "/br-use-manage-execution-hook-templates.html"
     - title: Monitorare i lavori
       url: "/br-use-monitor-tasks.html"
     - title: Riavviare il backup e il ripristino di BlueXP

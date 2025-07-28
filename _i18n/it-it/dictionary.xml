@@ -957,7 +957,6 @@
   <block id="64eac08f79d37d2419da437b3453934e" category="paragraph">È possibile annullare la registrazione di backup e ripristino BlueXP per un ambiente di lavoro se non si desidera più utilizzare la funzionalità di backup e si desidera smettere di pagare per i backup in tale ambiente di lavoro. In genere, questa funzione viene utilizzata quando si intende eliminare un ambiente di lavoro e si desidera annullare il servizio di backup.</block>
   <block id="c9df4195a305212ffd7b56d24f67129d" category="summary">NetApp fornisce supporto per BlueXP in diversi modi. Sono disponibili opzioni complete di supporto autonomo gratuito 24 ore su 24, 7 giorni su 7, come articoli della knowledge base (KB) e un forum della community. La registrazione al supporto include il supporto tecnico remoto via web ticketing.</block>
   <block id="fabfc25ef8996fd90836e58a4c0b26b6" category="doc">Richiedi assistenza</block>
-  <block id="7c5661ab6b39ee901cea00a6e7020a49" category="paragraph">NetApp fornisce supporto per BlueXP e i suoi servizi cloud in diversi modi. Sono disponibili opzioni complete di supporto autonomo gratuito 24 ore su 24, 7 giorni su 7, come articoli della knowledge base (KB) e un forum della community. La registrazione al supporto include il supporto tecnico remoto via web ticketing.</block>
   <block id="edd15fbeb7b2dffa163336ecd4f3e80c" category="section-title">Utilizzare le opzioni di supporto automatico</block>
   <block id="5e4b821a1a82558dead1ef6961e90666" category="paragraph">Queste opzioni sono disponibili gratuitamente, 24 ore su 24, 7 giorni su 7:</block>
   <block id="19111351b69b6b15668130b38b7f6038" category="inline-link">Knowledge base</block>
@@ -1124,8 +1123,6 @@
   <block id="3b0a91a5ea7b77db2fb83f740b7d1303" category="list-text">Selezionare *Crea report*.</block>
   <block id="28164bf9e881ddc9e7ff74744bfce180" category="paragraph">La registrazione di entrambi i tipi di numeri di serie offre funzionalità come l'apertura di ticket di supporto e la generazione automatica dei casi. La registrazione viene completata aggiungendo account del sito di supporto NetApp a BlueXP come descritto di seguito.</block>
   <block id="0c788a722f31f8f0cf36539ee04615cf" category="list-text">Selezionare *Aggiungi credenziali NSS* e seguire la richiesta di autenticazione del sito di supporto NetApp.</block>
-  <block id="10c56875db7a47f791d653e5d5bff0e9" category="inline-image-macro">Una schermata che mostra il numero di serie di un account, una casella di controllo verde e il testo registrato per il supporto.</block>
-  <block id="3d183819a15163ef2e2e7d9d764254a9" category="paragraph"><block ref="3d183819a15163ef2e2e7d9d764254a9" category="inline-image-macro-rx" type="image"></block></block>
   <block id="bdd862f49d428a850400bcf2f53cdaf2" category="paragraph">Se sei un cliente NetApp con licenze e numeri di serie esistenti ma _no_ account NSS, devi creare un account NSS e associarlo al tuo login BlueXP.</block>
   <block id="0499bba105f8a891a2c671f1ba99dd34" category="list-text">Associare il nuovo account NSS al login BlueXP completando la procedura riportata sotto <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>.</block>
   <block id="5cdee814e2d9ba3490a8f16d00c65759" category="paragraph">Una volta ottenuto l'account del sito di supporto NetApp, associare l'account al login BlueXP completando la procedura indicata in <block ref="2f3aba04ec49ee5f0573a6c80a1b9df2" category="inline-xref-macro-rx"></block>.</block>
@@ -2744,7 +2741,6 @@ ifdef::aws[]</block>
   <block id="6e9928eb22c01e32a268322a930590b5" category="paragraph"><block ref="6e9928eb22c01e32a268322a930590b5" category="inline-image-macro-rx" type="image"></block></block>
   <block id="5d93632dd21f2b862652e38274ab25f3" category="list-text">Selezionare *Scopri destinazione di backup*.</block>
   <block id="abd59a7e6214ae0bc1f2eb0e1d451616" category="list-text">Selezionare uno dei tipi di destinazione del backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.</block>
-  <block id="9b1e0dd4ace755c537f9972ef8ebdfcc" category="list-text">Inserisci le informazioni. Le informazioni variano a seconda del tipo di destinazione di backup selezionata.</block>
   <block id="b6c8346e3af7fef18cf0ce7935a8df2d" category="list-text">*Nome credenziale*: inserisci il nome della credenziale AWS.</block>
   <block id="de89622fdc09e747a68f2d59e8e93aeb" category="list-text">*Chiave di accesso*: inserisci il segreto AWS.</block>
   <block id="7ae5b4d35ef4eee6d24f3cb1687c3bce" category="list-text">*Chiave segreta*: inserisci la chiave segreta AWS.</block>
@@ -3077,7 +3073,6 @@ ifdef::aws[]</block>
   <block id="b92ff61eb96a6335a8c3f7f10988723a" category="list-text">Numero di processi di ripristino eseguiti su storage locale, secondario e object storage. Passa il mouse sul grafico per visualizzare i dettagli.</block>
   <block id="4c931104d6ff5fdc2a76bdfc6fba4662" category="summary">Puoi proteggere le applicazioni Kubernetes e i dati delle applicazioni dai sistemi ONTAP locali ad Amazon Web Services, Microsoft Azure, Google Cloud Platform e StorageGRID, garantendo la protezione dei tuoi dati.</block>
   <block id="ff1a3fbe6f92249e286b8a93cf5b5d2e" category="doc">Panoramica sulla gestione dei carichi di lavoro Kubernetes</block>
-  <block id="eb77981f2e476b76c513faaacd09914a" category="paragraph">La gestione dei carichi di lavoro Kubernetes in BlueXP backup and recovery ti consente di gestire e proteggere i tuoi cluster e le tue applicazioni Kubernetes da un'unica posizione. Puoi gestire risorse e applicazioni ospitate dai tuoi cluster Kubernetes. Puoi anche gestire le impostazioni di protezione dei tuoi carichi di lavoro Kubernetes.</block>
   <block id="e94d9102ade906ff7fd5fc370d68c0d8" category="paragraph">È possibile eseguire le seguenti attività relative alla gestione dei carichi di lavoro di Kubernetes:</block>
   <block id="384b71db954a7a463c759208283e47c4" category="inline-link-macro">Gestire i cluster Kubernetes</block>
   <block id="75750592598a2163e070809696d795f5" category="list-text"><block ref="4c3d4ee32af52a5715d89ae7d8ef89d4" category="inline-link-macro-rx"></block>.</block>
@@ -3110,7 +3105,6 @@ ifdef::aws[]</block>
   <block id="f098e888afa8ccb3f1ad3337c3b6eea1" category="list-text">Esecuzione di hook post-snapshot</block>
   <block id="59b50be8e9e2ed1b0e1bccae54c76036" category="list-text">Hook pre-backup eseguiti</block>
   <block id="1f374d287bf615eef6eb9afd92b862f2" category="list-text">Hook post-backup eseguiti</block>
-  <block id="e807d528474129e76f18c5ce17a2c3d6" category="admonition">L'esempio dell'ordine precedente si applica solo quando si esegue un backup che non utilizza uno snapshot esistente.</block>
   <block id="b74efcc6eafe1d8dec6ade34cfa13365" category="admonition">Prima di abilitarli in un ambiente di produzione, è necessario verificare sempre gli script hook di esecuzione. È possibile utilizzare il comando 'kubectl exec' per testare comodamente gli script. Dopo aver attivato gli hook di esecuzione in un ambiente di produzione, testare le snapshot e i backup risultanti per assicurarsi che siano coerenti. Per eseguire questa operazione, clonare l'applicazione in uno spazio dei nomi temporaneo, ripristinare lo snapshot o il backup e quindi testare l'applicazione.</block>
   <block id="3094ed24e92fa43f93a063b74aba1810" category="admonition">Se un gancio di esecuzione pre-snapshot aggiunge, modifica o rimuove le risorse Kubernetes, queste modifiche sono incluse nella snapshot o nel backup e in qualsiasi operazione di ripristino successiva.</block>
   <block id="f99748fb4b1cf592516b60937743c52d" category="section-title">Note importanti sugli hook di esecuzione personalizzati</block>
@@ -3135,7 +3129,6 @@ ifdef::aws[]</block>
   <block id="0cb7c5b441857e03f08093031a6339f7" category="list-text">Espandi la sezione *Modello di hook di esecuzione*.</block>
   <block id="2a088015f75a0a613f092e9e8f5f7ecc" category="list-text">Selezionare *Crea modello di hook di esecuzione*.</block>
   <block id="6c2bb6397009eba196d81d9b0513c7af" category="list-text">Immettere un nome per l'hook di esecuzione.</block>
-  <block id="9c9a0aa3db923b616c1a56b0a66bf10b" category="list-text">Scegli un tipo di hook. Ad esempio, un hook post-restore verrà eseguito al termine dell'operazione di ripristino.</block>
   <block id="568e240ce60c5111628400e9a73d1b19" category="list-text">Nella casella di testo *Script*, inserisci lo script shell eseguibile che desideri eseguire come parte del modello di hook di esecuzione. Facoltativamente, puoi selezionare *Carica script* per caricare un file script.</block>
   <block id="2d25ab95e435f153440ab9d3233adfc9" category="paragraph">Il modello viene creato e appare nell'elenco dei modelli nella sezione *Modello di hook di esecuzione*.</block>
   <block id="11855fa3782bd3579091c4ab1eb9cfd1" category="summary">Il BlueXP backup and recovery consentono di gestire le informazioni sull'host del carico di lavoro, le informazioni sul database e le informazioni sulle istanze. È possibile visualizzare, modificare ed eliminare le impostazioni di protezione per l'inventario.</block>
@@ -3217,26 +3210,12 @@ ifdef::aws[]</block>
   <block id="c4c777723be13a16e4277a51201e6ecb" category="paragraph">Puoi eseguire subito il backup delle istanze e dei database di Microsoft SQL Server per garantire la protezione immediata dei tuoi dati.</block>
   <block id="4853389deec9b1ee2dd392ded61fb375" category="list-text">Selezionare la scheda *Istanze* o *Database*.</block>
   <block id="70c2224d92fad32ea2b3d68fcf62837b" category="list-text">Selezionare l'istanza o il database.</block>
-  <block id="e0969aab9a754fbeb65c97a743ecf3e8" category="paragraph">Il BlueXP backup and recovery ti consentono di gestire le tue applicazioni Kubernetes e le risorse associate. Puoi creare, visualizzare, modificare ed eliminare le impostazioni di protezione delle tue applicazioni Kubernetes.</block>
-  <block id="2473107ecc76d85d95c0613ff136ac38" category="section-title">Modifica un'applicazione Kubernetes</block>
-  <block id="1298ad3fdec77ca1e805bb223dca6095" category="paragraph">È possibile modificare le impostazioni di un'applicazione Kubernetes esistente se le risorse associate all'applicazione sono cambiate.</block>
-  <block id="b1259a1c3d1d04e664d36ffe13213f17" category="list-text">Nel BlueXP backup and recovery, seleziona *Inventario* &gt; *Applicazioni*.</block>
-  <block id="eddc20dd71d8c9752bbca2d735f01f8b" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione che desideri modificare e seleziona il menu Azioni associato.</block>
-  <block id="071ef8ace6c74c9a1515550077974172" category="list-text">Selezionare *Modifica*.</block>
-  <block id="63e3dd274252241ed3ae7de72811c358" category="list-text">Apportare le modifiche necessarie alla definizione dell'applicazione, ad esempio il nome o le risorse incluse.</block>
-  <block id="1babd014dacd7ec3dc5797b9becacd63" category="list-text">Al termine, seleziona *Avanti*.</block>
-  <block id="98efd82b79ad45368c5ef167a1c76c07" category="list-text">Apportare le modifiche necessarie alle impostazioni di protezione.</block>
-  <block id="91a8fa3f6989d0babb6d08cdbd5720cd" category="list-text">Al termine, seleziona *Fine*.</block>
   <block id="cff401a662fcb28482f083d31d6cafe6" category="section-title">Rimuovere la protezione da un'applicazione Kubernetes</block>
-  <block id="172487ea9d46d90e7d631e11625255b4" category="paragraph">È possibile rimuovere la protezione da un'applicazione se non si desidera più proteggerla. Quando si rimuove la protezione da un'applicazione, BlueXP backup and recovery interrompe la protezione dell'applicazione, ma conserva tutti i backup e gli snapshot associati fino alla loro scadenza.</block>
   <block id="b48b4006b16497af09b539c62263032c" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione di cui desideri rimuovere la protezione e seleziona il menu Azioni associato.</block>
   <block id="36f0283cb14ad41f5a35341825d6cb8f" category="list-text">Selezionare *Rimuovi protezione*.</block>
   <block id="8896e71a8de95cbfa7c12f414c5bf926" category="list-text">Leggi l'avviso e, quando sei pronto, seleziona *Rimuovi protezione*.</block>
   <block id="f0b8c712a2979155a90a4d45542f57f1" category="section-title">Elimina un'applicazione Kubernetes</block>
-  <block id="64bb5e30da0ef718081b849fa6220af5" category="paragraph">Puoi eliminare un'applicazione se non ti serve più. Quando elimini un'applicazione, BlueXP backup and recovery interrompe la protezione dell'applicazione e, se scegli di farlo, elimina tutti i backup e gli snapshot associati.</block>
   <block id="e9f066e195a46d59f447e0e9faed2a72" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione che desideri eliminare e seleziona il menu Azioni associato.</block>
-  <block id="e321c0c05a076cc3a5dc34f5defbe33c" category="list-text">Facoltativamente, abilitare *Elimina snapshot e backup* per rimuovere tutti gli snapshot e i backup dell'applicazione.</block>
-  <block id="d1b66833603a5e5aeb679ed3da88713c" category="admonition">Se esegui questa operazione, non potrai più ripristinare l'applicazione utilizzando questi snapshot e backup.</block>
   <block id="2c498f050391660a19bd7982f3f63e5f" category="list-text">Conferma l'azione e seleziona *Elimina*.</block>
   <block id="aa9ddc26c88ec2cf667e9e13add116ed" category="summary">Il BlueXP backup and recovery consentono di individuare e gestire i cluster Kubernetes in modo da proteggere le risorse ospitate dai cluster.</block>
   <block id="87534497274da3072815e676c271a1d9" category="section-title">Modifica le informazioni del cluster Kubernetes</block>
@@ -3244,7 +3223,6 @@ ifdef::aws[]</block>
   <block id="c05213ade621f320091205852d0404f9" category="list-text">Nel BlueXP backup and recovery, seleziona *Inventario* &gt; *Cluster*.</block>
   <block id="8eb32ceb6b7d95adcdd8d5829f98c044" category="list-text">Nell'elenco dei cluster, seleziona il cluster che desideri modificare e seleziona il menu Azioni associato.</block>
   <block id="539e1806cdbd1431ba6cb6b4b84fc393" category="list-text">Selezionare *Modifica cluster*.</block>
-  <block id="cf2d600cead59452b16e14068d2cde33" category="list-text">Apportare le modifiche necessarie al nome del cluster.</block>
   <block id="f23e3ed54ae928c06add368fe4fe5a66" category="section-title">Rimuovere un cluster Kubernetes</block>
   <block id="284b1d184c099b9f362ef253708bf5a8" category="paragraph">Se non è più necessario proteggere le risorse ospitate da un cluster Kubernetes, è possibile rimuoverlo da BlueXP backup and recovery. La rimozione di un cluster non elimina il cluster stesso o le sue risorse, ma solo il cluster dall'inventario BlueXP . Prima di poter rimuovere un cluster, è necessario disabilitare la protezione ed eliminare le applicazioni associate da BlueXP backup and recovery.</block>
   <block id="884dae5f1c15db330f66f8e2866510c1" category="list-text">Selezionare *Rimuovi cluster*.</block>
@@ -3715,18 +3693,14 @@ ifdef::aws[]</block>
   <block id="03335a80c0921aa8da8f7e365d892176" category="paragraph">*Come fai a sapere quale interfaccia utente stai utilizzando?* La nuova interfaccia utente utilizza una struttura di menu diversa da quella precedente.</block>
   <block id="a69bdeacbeaa4d505c045535794fede1" category="paragraph">La nuova interfaccia utente: <block ref="5ec9ba2d6c07e18e4f6caf9c1d51cc8e" category="inline-image-macro-rx" type="image"></block></block>
   <block id="c7aa3a54e5fdb6213cad90c7044afd96" category="paragraph">L'interfaccia utente precedente: <block ref="fa2e599941b781bf3a65ea0199d76803" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="f180b22cf0fe1951fec3aeedc5e4c0ae" category="paragraph">Il BlueXP backup and recovery consentono di gestire le informazioni sull'host del carico di lavoro, le informazioni sul database e le informazioni sulle istanze. È possibile visualizzare, modificare ed eliminare le impostazioni di protezione del proprio inventario.</block>
   <block id="5f630cc239007de25f5a99cae937f7b6" category="section-title">Aggiungi e proteggi una nuova applicazione Kubernetes</block>
   <block id="8e104d608697694db956a64bbb7f44d6" category="paragraph">Il primo passo per proteggere le applicazioni Kubernetes è creare un'applicazione all'interno BlueXP backup and recovery. Quando si crea un'applicazione, si segnala a BlueXP l'applicazione in esecuzione sul cluster Kubernetes.</block>
   <block id="1ededf46b716bee183793af35442a908" category="list-text">Selezionare *Crea applicazione*.</block>
   <block id="f446f13c3f03f5e706e59025856f1357" category="list-text">Inserisci un nome per l'applicazione.</block>
-  <block id="213c6ac9f0b7732c6e07fdb1130eec26" category="list-text">Seleziona uno dei seguenti campi per cercare le risorse che desideri proteggere:</block>
   <block id="10c36ac54e8d8af7b07be76efa014c6d" category="list-text">Cluster associato</block>
   <block id="ba8e99e47d2b3859bc28a87f721af62d" category="list-text">Spazi dei nomi associati</block>
   <block id="b6af2b8fdca63591236d48930018b8db" category="list-text">Tipi di risorse</block>
   <block id="635c4235a331a9bc9e0197a493f38268" category="list-text">Selettori di etichette</block>
-  <block id="1437507207cef97741c707e6cdca5446" category="list-text">Facoltativamente, seleziona *Risorse con ambito cluster* per scegliere tutte le risorse con ambito a livello di cluster e non incluse nell'applicazione. Se le includi, verranno aggiunte all'applicazione al momento della creazione.</block>
-  <block id="b4fbd0589f942f7f4b9d49d16ec396e6" category="list-text">Seleziona *Cerca* per trovare le risorse in base ai tuoi criteri di ricerca.</block>
   <block id="de183577631c168afe44797528dcd1b6" category="list-text">BlueXP visualizza un elenco di risorse che corrispondono ai criteri di ricerca.</block>
   <block id="aa49cc3a36d2c16ec191533800daa634" category="list-text">Se l'elenco contiene le risorse che desideri proteggere, seleziona *Avanti*.</block>
   <block id="e9caf784881cf54a35354c0cac59319c" category="list-text">Nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione oppure creane uno nuovo.</block>
@@ -3738,13 +3712,11 @@ ifdef::aws[]</block>
   <block id="104d1a34e290d2de5a494845fa1be7b8" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione che desideri proteggere e seleziona il menu Azioni associato.</block>
   <block id="20d541172ecc7e2d477ce2738120938c" category="list-text">Selezionare *Proteggi*.</block>
   <block id="6eeabb5a1fdc64db00294aa16e2efc65" category="list-text">Nell'area *Prescript e postscript*, abilita e configura eventuali hook di esecuzione prescript o postscript che desideri eseguire prima o dopo le operazioni di backup. Puoi configurare il tipo di hook di esecuzione, il modello utilizzato, gli argomenti e i selettori di etichetta.</block>
-  <block id="142661662e2986b0019be862c0461dea" category="paragraph">BlueXP consente la protezione dell'applicazione in base alle impostazioni specificate ed è possibile monitorare l'avanzamento nell'area *Monitoraggio* del backup e del ripristino.</block>
   <block id="53932eb694521eb34987ea9c43f0a292" category="section-title">Esegui subito il backup di un'applicazione Kubernetes</block>
   <block id="4b6c3c6a317300967177891eec6ba8fd" category="paragraph">Crea manualmente un backup di un'applicazione Kubernetes per stabilire una base di riferimento per backup e snapshot futuri o per garantire la protezione dei dati più recenti.</block>
   <block id="ef4da1dbc592e89fff8af00102b37ff3" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione di cui vuoi effettuare il backup e seleziona il menu Azioni associato.</block>
   <block id="46b6ecff43461a732d3eda912df73a42" category="list-text">Selezionare *Esegui backup adesso*.</block>
   <block id="793c79d603a2a6eb42272304c6135f12" category="list-text">Assicurarsi che sia selezionato il nome corretto dell'applicazione.</block>
-  <block id="754dbe33c97d1eab966f4afbcc17281a" category="list-text">Selezionare una policy di protezione dall'elenco delle policy.</block>
   <block id="ff4d762e1ab6dd75731a4f97e66ec902" category="list-text">Selezionare *Backup*.</block>
   <block id="13aa7d37adedbada3ba62d0025ffd669" category="summary">In BlueXP backup and recovery, puoi creare report per visualizzare lo stato dei tuoi backup, inclusi il numero di backup, il numero di backup riusciti e il numero di backup non riusciti. Puoi anche visualizzare i dettagli di ciascun backup, inclusi il tipo di backup, il sistema di archiviazione utilizzato e l'ora del backup.</block>
   <block id="4ffac2ad8d1b6f043c1b6d9001f3e6f6" category="doc">Crea report per i carichi di lavoro di Microsoft SQL Server nel BlueXP backup and recovery</block>
@@ -3764,17 +3736,12 @@ ifdef::aws[]</block>
   <block id="fb197ee87a0f850dc3b7bb98fe408518" category="inline-link-macro">Configurare le impostazioni</block>
   <block id="33d5eea2cdcc60026d006f7ddcce9495" category="paragraph">Configura le notifiche email nella pagina Impostazioni. Per dettagli sulla configurazione delle notifiche email, consulta <block ref="d31e50b2f0a34cda84cb4d51887db3bf" category="inline-link-macro-rx"></block> .</block>
   <block id="d43afa987ad0de9723ba949b8f0a04a1" category="summary">Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite un criterio di protezione.</block>
-  <block id="1f392f3f733a11cc3493b55c6be17d19" category="paragraph">Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che questa abbia lo stato di protezione "Protetto" e che sia associata a una policy di protezione. È possibile ripristinare un'applicazione utilizzando un punto di ripristino, costituito dallo snapshot locale, dallo snapshot secondario e dal backup nell'archivio oggetti. È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.</block>
-  <block id="03bf994f880d919cb2e0cfede0e2f660" category="list-text">Scegli un carico di lavoro Kubernetes e seleziona *Visualizza* nella colonna Host per il carico di lavoro.</block>
   <block id="b2c71ce0eb7f82adff3580d86f20d76d" category="list-text">Nell'elenco delle applicazioni, seleziona l'applicazione che desideri ripristinare e seleziona il menu Azioni associato.</block>
   <block id="553b5cd5dac97c088cf126dd86d0a9fb" category="list-text">Selezionare *Visualizza e ripristina*.</block>
   <block id="5a870c22146ba310e89eaf52f510bdc8" category="paragraph">Viene visualizzato l'elenco dei punti di ripristino.</block>
   <block id="c42e645eedd858c3f07be6b12b14117e" category="list-text">Aprire il menu Azioni per il punto di ripristino che si desidera utilizzare e selezionare *Ripristina*.</block>
   <block id="de62775a71fc2bf7a13d7530ae24a7ed" category="floating-title">Impostazioni generali</block>
-  <block id="c6e3b7d6e6d837a3fe004e3967838f08" category="list-text">Selezionare l'origine da cui effettuare il ripristino (archivio locale, secondario o oggetto).</block>
   <block id="d7560bb34437cec51e7e4319ee098f83" category="list-text">Selezionare il cluster di destinazione dall'elenco *Cluster*.</block>
-  <block id="b1e7fff726dadc201adbdc2bf9650bb2" category="list-text">Selezionare lo spazio dei nomi di destinazione del ripristino (originale o nuovo).</block>
-  <block id="c15ed67de3c2ba4c15392050d9a04910" category="paragraph">Si noti che il ripristino su un cluster diverso e sullo spazio dei nomi originale non è supportato.</block>
   <block id="0ea90fe06c37ce54f4695cefd1980f66" category="floating-title">Selezione delle risorse</block>
   <block id="74f41c06ce4ca2bd3dc7e2b83148072b" category="list-text">Scegli se desideri ripristinare tutte le risorse associate all'applicazione o utilizzare un filtro per selezionare risorse specifiche da ripristinare:</block>
   <block id="6ead82e0fb87f1d2639b05d1f514c487" category="open-title">Ripristina tutte le risorse</block>
@@ -3789,7 +3756,6 @@ ifdef::aws[]</block>
   <block id="b5c9051aafb85384e02d47693c3be179" category="list-text">Una volta soddisfatti del risultato, selezionare *Avanti*.</block>
   <block id="8d7c9cf5b15032c441cad2d538d90368" category="floating-title">Impostazioni di destinazione</block>
   <block id="5d49eb458c546b4f70a99f4b37bbcc20" category="list-text">Scegliere se ripristinare la classe di archiviazione predefinita o una classe di archiviazione diversa.</block>
-  <block id="59f8aa9e3a0e112d49baa4279aa55fc3" category="list-text">Facoltativamente, se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine. La classe di archiviazione di destinazione deve essere disponibile sul cluster di destinazione.</block>
   <block id="c98c13337e16cd6efd0d5944bba7c3be" category="summary">Alcune impostazioni avanzate potrebbero essere utili per la manutenzione dell'ambiente di backup e ripristino. È possibile configurare impostazioni avanzate per gestire l'inventario, eliminare backup, annullare la registrazione delle risorse, eliminare relazioni, rimuovere la protezione delle risorse per interrompere i costi di servizio, impostare la velocità di trasferimento massima per la relazione SnapMirror , esportare copie snapshot in un archivio oggetti, abilitare l'eliminazione automatica annuale degli snapshot, abilitare la modalità di manutenzione e aggiornare il plug-in dell'applicazione.</block>
   <block id="d8532f86141af810dd005a564080075a" category="doc">Configurare le impostazioni avanzate nel BlueXP backup and recovery</block>
   <block id="576dfff4a076aeb9d45b7d615d1074a3" category="paragraph">Configurare le impostazioni avanzate BlueXP backup and recovery nei seguenti modi:</block>
@@ -3993,7 +3959,6 @@ ifdef::aws[]</block>
   <block id="89c5399d4b0ad654b2008a7c0f2b69cf" category="list-text"><block ref="89c5399d4b0ad654b2008a7c0f2b69cf" category="inline-link-macro-rx"></block></block>
   <block id="a83f1ed3639378d8a5c8766fc08ab842" category="section-title">A BlueXP</block>
   <block id="44b43220cddd60410d9468a032ce4216" category="inline-link-macro">Accesso basato sui ruoli BlueXP backup and recovery alle funzionalità</block>
-  <block id="8a04748ea8a87567c4b5b798c1560ba7" category="list-text">Un utente BlueXP deve disporre del ruolo e dei privilegi necessari per eseguire operazioni sui carichi di lavoro di Microsoft SQL Server. Per individuare le risorse, è necessario disporre del ruolo di Super amministratore BlueXP backup and recovery . Vedere <block ref="a05625c69ff931c9860060259f76b925" category="inline-link-macro-rx"></block> per informazioni dettagliate sui ruoli e le autorizzazioni necessarie per eseguire operazioni BlueXP backup and recovery.</block>
   <block id="b7ab05a2d5f81c9f2d4db3c8f5d660e2" category="list-text">Un'organizzazione BlueXP con almeno un connettore BlueXP attivo che si connette a cluster ONTAP on-premise o Cloud Volumes ONTAP. Fare riferimento alla *Procedura di configurazione dell'anteprima iniziale* di seguito.</block>
   <block id="116655111d41d0456e3b0ef0d3855cd4" category="list-text">Almeno un ambiente di lavoro BlueXP con un cluster NetApp ONTAP locale o Cloud Volumes ONTAP .</block>
   <block id="1814746c026b2253f1fd4e1ea066cea1" category="list-text">Un connettore BlueXP</block>
@@ -4463,7 +4428,6 @@ ifdef::aws[]</block>
   <block id="f2673d4a3fe0162a501d43f5168ae950" category="section-title">14 luglio 2025</block>
   <block id="6cdd743b39af79062eb92fec70569354" category="section-title">13 febbraio 2025</block>
   <block id="8fb577f7388be9dbd876c13b3fce7c69" category="sidebar">Il servizio BlueXP backup and recovery garantisce una protezione dei dati efficiente, sicura e conveniente per i database, sia in locale che nel cloud.</block>
-  <block id="8b11af28439113b2496a02172e80198b" category="sidebar">Gestire le policy per backup e ripristini</block>
   <block id="4cd511c4b46eedfc6c0c344f09eba377" category="sidebar">Creare policy per gestire backup e ripristini</block>
   <block id="79ea3ea9942b969dda927a2d7853b651" category="sidebar">Proteggere i carichi di lavoro dei volumi ONTAP</block>
   <block id="9123d1b1585355faf99db6ce88c0b806" category="sidebar">Panoramica dei carichi di lavoro dei volumi Protect ONTAP</block>
@@ -4533,4 +4497,97 @@ ifdef::aws[]</block>
   <block id="1215f8190533dfdf63d2224a6d88266f" category="inline-link-macro">Google Cloud NetApp Volumes</block>
   <block id="cb4bf32603c89d08cad17e7e7dd302f2" category="list-text"><block ref="cb4bf32603c89d08cad17e7e7dd302f2" category="inline-link-macro-rx"></block></block>
   <block id="5e58a6444bf20b49389e233ebf6021d5" category="admonition">Questa funzionalità è disponibile a partire dalla versione 4.0.3 BlueXP backup and recovery, rilasciata a maggio 2025.</block>
+  <block id="6902ada6aa5bd3c4c129d87093d48e07" category="doc">Supporto del carico di lavoro Kubernetes come anteprima tecnologica pubblica</block>
+  <block id="36442e954ef2484603f79c5f3abc842b" category="paragraph">Questa versione di BlueXP backup and recovery introduce il supporto per l'individuazione e la gestione dei carichi di lavoro Kubernetes:</block>
+  <block id="200a1ca96330b8c7561607ba3e8efa76" category="list-text">Scopri i cluster Red Hat OpenShift e Kubernetes open source, supportati da NetApp ONTAP, senza condividere i file kubeconfig.</block>
+  <block id="bc97cde5f3a6fe336563401fb4b522a7" category="list-text">Scopri, gestisci e proteggi le applicazioni su più cluster Kubernetes utilizzando un piano di controllo unificato.</block>
+  <block id="8671fb87efe354c05f9373edb6889d96" category="list-text">Trasferisci le operazioni di spostamento dei dati per il backup e il ripristino delle applicazioni Kubernetes a NetApp ONTAP.</block>
+  <block id="be6ced50bfb2300cc42f3b12987b1359" category="list-text">Orchestrare i backup delle applicazioni locali e basati su storage di oggetti.</block>
+  <block id="780f81400ecdaedf5afa343aa9bd9abf" category="list-text">Esegui il backup e il ripristino di intere applicazioni e singole risorse su qualsiasi cluster Kubernetes.</block>
+  <block id="a914111953cd6ee9c63146474d7745de" category="list-text">Lavora con container e macchine virtuali in esecuzione su Kubernetes.</block>
+  <block id="87418d35e5df78aab70f2540a73bdaf6" category="list-text">Crea backup coerenti con l'applicazione utilizzando modelli e hook di esecuzione.</block>
+  <block id="0222d44a84ea3563d85d453d801f6427" category="list-text">Nella sezione *Scegli posizione credenziali*, seleziona la posizione in cui risiedono le credenziali, quindi scegli come associarle.</block>
+  <block id="f3ade6a9606e111612431ac1a3ff68e2" category="list-text">Inserisci le informazioni delle credenziali. Le informazioni variano a seconda del tipo di destinazione di backup selezionata e della posizione delle credenziali scelta.</block>
+  <block id="cce6a1d73324f1a96e9e21a346062b73" category="doc">Scopri i carichi di lavoro di Kubernetes nel BlueXP backup and recovery</block>
+  <block id="70f7f628eae3e8e1ca1f6342c3a27f75" category="paragraph">Per poter utilizzare il servizio BlueXP backup and recovery, è necessario innanzitutto rilevare i carichi di lavoro di Kubernetes.</block>
+  <block id="f0338e38e7978ec30d1f5eb9b845e843" category="section-title">Scopri i carichi di lavoro di Kubernetes</block>
+  <block id="c988aaf24f6241e980dd65e46002172d" category="paragraph">Nell'inventario di backup e ripristino, è possibile individuare i carichi di lavoro Kubernetes in esecuzione nel proprio ambiente. L'individuazione di un carico di lavoro aggiunge un cluster Kubernetes al BlueXP backup and recovery, consentendo di aggiungere applicazioni al cluster e proteggere le risorse ospitate dal cluster.</block>
+  <block id="4420c8b02efc1be4f7fbf08201ed7b57" category="list-text">Se stai rilevando carichi di lavoro Kubernetes per la prima volta, in BlueXP backup and recovery seleziona *Discover and Manage* nel tipo di carico di lavoro Kubernetes.</block>
+  <block id="8b317f478daa269f84cd6cdd4931b972" category="list-text">Se hai già individuato i carichi di lavoro di Kubernetes, in BlueXP backup and recovery seleziona *Inventario* &gt; *Carichi di lavoro* e quindi seleziona *Individua risorse*.</block>
+  <block id="e7c444e4a1d2f156d71a907145c8a598" category="list-text">Selezionare il tipo di carico di lavoro *Kubernetes*.</block>
+  <block id="96c35fcba67cbf6710845bcca4668cc2" category="list-text">Inserisci un nome per il cluster e scegli un connettore da utilizzare con il cluster.</block>
+  <block id="39b0136210d9abd099b81781cc0a17db" category="list-text">Seguire le istruzioni della riga di comando che appaiono:</block>
+  <block id="3b47301a2201ba1175e2a109a103127b" category="list-text">Crea uno spazio dei nomi Trident Protect</block>
+  <block id="ed6eabebedff09350cdabab556887c62" category="list-text">Crea un segreto Kubernetes</block>
+  <block id="6c27e11d1144953d7877449d5adc966d" category="list-text">Aggiungi un repository Helm</block>
+  <block id="c1a343fd7e28cea1253758e1b64a4d0d" category="list-text">Installare Trident Protect e il connettore Trident Protect</block>
+  <block id="6534a731be9c6bfffa9e33daa4b11427" category="paragraph">Questi passaggi garantiscono che il BlueXP backup and recovery possano interagire con il cluster.</block>
+  <block id="9bac5e7d53677c1fdcf7d275fd58ed60" category="list-text">Dopo aver completato i passaggi, seleziona *Scopri*.</block>
+  <block id="6b3946603d5588826f1cd3f2695b8542" category="paragraph">Il cluster viene aggiunto all'inventario.</block>
+  <block id="95f06f6ac101b19d86ae2a17fb3eb848" category="list-text">Selezionare *Visualizza* nel carico di lavoro Kubernetes associato per visualizzare l'elenco di applicazioni, cluster e namespace per quel carico di lavoro.</block>
+  <block id="f9fa15d7e7327a0679589b0b4bf63d45" category="paragraph">Per visualizzare la Dashboard BlueXP backup and recovery , seguire questi passaggi.</block>
+  <block id="0023e6c28000b2b0e540612bd4511db3" category="list-text">Dal menu in alto, seleziona *Dashboard*.</block>
+  <block id="2388fac091ce6515773e162ce2488e2f" category="paragraph">La gestione dei carichi di lavoro Kubernetes in BlueXP backup and recovery ti consente di individuare, gestire e proteggere i tuoi cluster e le tue applicazioni Kubernetes da un'unica posizione. Puoi gestire risorse e applicazioni ospitate sui tuoi cluster Kubernetes. Puoi anche creare e associare policy di protezione ai tuoi carichi di lavoro Kubernetes, il tutto utilizzando un'unica interfaccia.</block>
+  <block id="d1b6f4df1f42df470c1bfa384687e106" category="paragraph">Il diagramma seguente mostra i componenti e l'architettura di base del backup e del ripristino per i carichi di lavoro Kubernetes e come diverse copie dei dati possono essere archiviate in posizioni diverse:</block>
+  <block id="47cae08dce34f06a5f1a2add5c4d92c4" category="inline-image-macro">Diagramma dell'architettura di backup e ripristino per i carichi di lavoro Kubernetes</block>
+  <block id="2c3fb17cb3de300689b53969785defa5" category="paragraph"><block ref="2c3fb17cb3de300689b53969785defa5" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="aeb2143cef16a3403bebfefb50c96248" category="paragraph">Il BlueXP backup and recovery offrono i seguenti vantaggi per la gestione dei carichi di lavoro Kubernetes:</block>
+  <block id="2f2ca5d33d51345d8cec8b57e1d131d5" category="list-text">Un unico piano di controllo per proteggere le applicazioni in esecuzione su più cluster Kubernetes. Queste applicazioni possono includere container o macchine virtuali in esecuzione sui cluster Kubernetes.</block>
+  <block id="ed200d27f38aee4afdff8b4619cdf2ae" category="list-text">Integrazione nativa con NetApp SnapMirror, che consente funzionalità di offload dello storage per tutti i flussi di lavoro di backup e ripristino.</block>
+  <block id="1a46229aa405bed39558957f4cb25619" category="list-text">Backup incrementali permanenti per le applicazioni Kubernetes, che si traducono in Recovery Point Objectives (RPO) e Recovery Time Objectives (RTO) inferiori.</block>
+  <block id="0022038e456ea404ab796f4b75f7e6ea" category="list-text"><block ref="1aaecb747e58be0aa9e10461fda65c97" category="inline-link-macro-rx"></block> .</block>
+  <block id="d0b5709d97bbe5098abd93c7e694cb77" category="list-text"><block ref="3e35e8d4173c71043e7b66d0d706f7de" category="inline-link-macro-rx"></block> .</block>
+  <block id="1af35924e4dcf46a6e48f4acc678dff6" category="list-text"><block ref="7769ce529a2e3eb709e04d840fce1c3b" category="inline-link-macro-rx"></block> .</block>
+  <block id="52740a2d44d8a6ec2b73bcb636dfbd8b" category="list-text">In BlueXP, vai su *Protezione* &gt; *Backup e ripristino*.</block>
+  <block id="157e2474b5e10c9143fb5843d68a82e1" category="list-text">Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-restore viene eseguito al termine dell'operazione di ripristino.</block>
+  <block id="fba2fea1f9e53916416ed24e92b83509" category="summary">Il BlueXP backup and recovery consentono di rimuovere la protezione ed eliminare le applicazioni Kubernetes e le risorse associate.</block>
+  <block id="e7841ceb28d947e1589702d3cc8fc671" category="paragraph">È possibile rimuovere la protezione da un'applicazione se non si desidera più proteggerla. Quando si rimuove la protezione da un'applicazione, BlueXP backup and recovery interrompe la protezione dell'applicazione, ma conserva tutti i backup e gli snapshot associati.</block>
+  <block id="4db291743c7cb716f5e5cc7be76bce50" category="list-text">Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.</block>
+  <block id="404131d2e90ac877b08c54d35e0c976e" category="list-text">Selezionare la scheda *Applicazioni*.</block>
+  <block id="4e37736ae1844ec4d0132bb364554433" category="paragraph">Puoi eliminare un'applicazione se non ti serve più. Quando elimini un'applicazione, BlueXP backup and recovery interrompe la protezione dell'applicazione e cancella tutti i backup e gli snapshot associati.</block>
+  <block id="ef50a59af25c08fa4e4c545948dd656e" category="list-text">Abilita *Elimina snapshot e backup* per rimuovere tutti gli snapshot e i backup dell'applicazione.</block>
+  <block id="c62ed3fc24c6a092f0236d0ce18f8adf" category="admonition">Non sarà più possibile ripristinare l'applicazione utilizzando questi snapshot e backup.</block>
+  <block id="52a963c135feb74f5fa42fa2a2e78c47" category="admonition">Per scoprire i cluster Kubernetes, fare riferimento a <block ref="0ea93fbc4698ff0eba11bdb2bfa8224d" category="inline-link-macro-rx"></block> .</block>
+  <block id="9d5bb9ed8ea1b49d007ac97a59fc2f73" category="list-text">Apportare le modifiche necessarie al nome del cluster. Il nome del cluster deve corrispondere al nome utilizzato con il comando Helm durante il processo di individuazione.</block>
+  <block id="17becfe4990286d1ec69c6fa596d27d3" category="paragraph">Il BlueXP backup and recovery consentono di individuare facilmente i cluster Kubernetes, senza dover generare e caricare file kubeconfig. È possibile connettere i cluster Kubernetes e installare il software necessario utilizzando semplici comandi copiati dall'interfaccia utente BlueXP .</block>
+  <block id="e2d84a068107d6310a638f342af1a416" category="inline-link-macro">scopri i carichi di lavoro di Kubernetes</block>
+  <block id="0ff42294892cbc24c39a0f81d88f902b" category="paragraph">Prima di poter aggiungere e proteggere un'applicazione Kubernetes, è necessario <block ref="69f5fa0b5f42b753171e9fa8fbef9c66" category="inline-link-macro-rx"></block> .</block>
+  <block id="1bce142d5bcf9869d1f052a522fa5822" category="list-text">Facoltativamente, seleziona uno dei seguenti campi per cercare le risorse che desideri proteggere:</block>
+  <block id="dc997bda771b80d1666f7d07ffd6b7d7" category="list-text">Facoltativamente, seleziona *Risorse con ambito cluster* per scegliere tutte le risorse con ambito a livello di cluster. Se le includi, verranno aggiunte all'applicazione al momento della creazione.</block>
+  <block id="812f9cbafb4aa2378e7470b20baa1fef" category="list-text">Facoltativamente, seleziona *Cerca* per trovare le risorse in base ai tuoi criteri di ricerca.</block>
+  <block id="cd052ad0ede3d8d23a3b065ef26168d8" category="admonition">BlueXP non memorizza i parametri o i risultati della ricerca; i parametri vengono utilizzati per cercare nel cluster Kubernetes selezionato le risorse che possono essere incluse nell'applicazione.</block>
+  <block id="375665cdd163819cd9ddcb1def13c5da" category="list-text">Facoltativamente, nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione o creane uno nuovo. Se non selezioni un criterio, l'applicazione verrà creata senza criterio di protezione. Puoi aggiungerne uno in seguito.</block>
+  <block id="6bd8ef6649ea59b964673233a7cdd855" category="paragraph">BlueXP abilita la protezione per l'applicazione in base alle impostazioni, ed è possibile monitorarne l'avanzamento nell'area *Monitoraggio* di backup e ripristino. Non appena si abilita la protezione per un'applicazione, BlueXP ne crea un backup completo. Eventuali backup incrementali futuri vengono creati in base alla pianificazione definita nella policy di protezione associata all'applicazione.</block>
+  <block id="be9a2f94b85d3bc8821f79138f4c1385" category="paragraph">BlueXP crea un backup dell'applicazione e ne visualizza l'avanzamento nell'area *Monitoraggio* di backup e ripristino. Il backup viene creato in base ai criteri di protezione associati all'applicazione.</block>
+  <block id="5a5da37e66cddefa275e61455c6ce599" category="paragraph">Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che quest'ultima disponga di almeno un punto di ripristino. Un punto di ripristino può essere costituito dallo snapshot locale o dal backup nell'archivio oggetti (o da entrambi). È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.</block>
+  <block id="0b829a26d220bb63e030d1042081a086" category="list-text">Selezionare l'origine da cui effettuare il ripristino (archivio locale o archivio oggetti).</block>
+  <block id="f01f0a18d4bc038c4ed2929f4450ed7d" category="list-text">Selezionare lo spazio dei nomi di destinazione del ripristino.</block>
+  <block id="75e31fe436b541e95871c54827070e6e" category="paragraph">È possibile ripristinare lo spazio dei nomi originale o uno nuovo.</block>
+  <block id="a9f292136fbf924f6d8d675318db6235" category="admonition">Le risorse mostrate sono le risorse attualmente presenti nel cluster.</block>
+  <block id="12c3c958b266fff57134abb1c9649419" category="list-text">Facoltativamente, se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine.</block>
+  <block id="cb1b8938f12c99c7787423a78f4db357" category="list-text">Carichi di lavoro Kubernetes (anteprima):</block>
+  <block id="1c1c6b4c5003945f6d28242d24286ee6" category="list-text">Gestisci e proteggi le tue applicazioni e risorse Kubernetes, tutto in un unico posto.</block>
+  <block id="3f06fb8fe2ecccdacfaa2644488d935d" category="list-text">Utilizza criteri di protezione per strutturare i tuoi backup incrementali.</block>
+  <block id="116fc6c4cddb8e42e7260e6817cd901f" category="list-text">Ripristinare applicazioni e risorse negli stessi cluster e namespace o in cluster e namespace diversi.</block>
+  <block id="f9e2b15491897c12214f857779daa042" category="list-text">Un utente BlueXP deve disporre del ruolo e dei privilegi necessari per eseguire operazioni sui carichi di lavoro Microsoft SQL Server e Kubernetes. Per individuare le risorse, è necessario disporre del ruolo di Super amministratore BlueXP backup and recovery . Vedi <block ref="a05625c69ff931c9860060259f76b925" category="inline-link-macro-rx"></block> per informazioni dettagliate sui ruoli e le autorizzazioni necessarie per eseguire operazioni BlueXP backup and recovery.</block>
+  <block id="fdbad3e808e9a1c02fc7bb3048776f74" category="section-title">Per proteggere le applicazioni Kubernetes</block>
+  <block id="35efe147e51e11d3e82b92163214c36a" category="paragraph">Per scoprire le risorse di Kubernetes e proteggere le applicazioni Kubernetes, sono necessari requisiti specifici.</block>
+  <block id="b4c31e66ff0b9146f1e9eb96caaa088b" category="paragraph">Per i requisiti BlueXP , fare riferimento a <block ref="254e85327e361b35a0db5eec424af630" category="inline-xref-macro-rx"></block> .</block>
+  <block id="4894ae84725aa8a3354a8774b1566f5f" category="list-text">Un sistema ONTAP primario (ONTAP 9.16.1 o successivo)</block>
+  <block id="806a86b605f4d90fb902dc0738b93a29" category="list-text">Un cluster Kubernetes: le distribuzioni e le versioni di Kubernetes supportate includono:</block>
+  <block id="7cc1edf2116d94e97b8f4a69079de132" category="list-text">Anthos On-Prem (VMware) e Anthos su bare metal 1.16</block>
+  <block id="f39d8c359b3284c30097b65ae4e0dccf" category="list-text">Kubernetes 1.27 - 1.33</block>
+  <block id="d858eab1cb0b74aa1e6d052d7c06bd76" category="list-text">OpenShift 4.10 - 4.18</block>
+  <block id="42113cf11e30b764619d3a98db65262d" category="list-text">Motore Kubernetes Rancher 2 (RKE2) v1.26.7+rke2r1, v1.28.5+rke2r1</block>
+  <block id="59aaea4a07522d3cb111c0d446b7e7e3" category="list-text">NetApp Trident 24.10 o successivo</block>
+  <block id="f186f228bc71cb57a140bcc20f23c216" category="list-text">NetApp Trident Protect 25.07 o versione successiva (installato durante la scoperta del carico di lavoro di Kubernetes)</block>
+  <block id="2c2fbc0a1685b20c95a5f489ce3868b3" category="list-text">NetApp Trident Protect Connector 25.07 o versione successiva (installato durante l'individuazione del carico di lavoro di Kubernetes)</block>
+  <block id="362363dccd2cc68b02c87c4b9e577f91" category="list-text">Assicurarsi che la porta TCP 443 non sia filtrata in uscita tra il cluster Kubernetes, il connettore Trident Protect e il proxy Trident Protect.</block>
+  <block id="bbbc9b55f08bfe80f146b5207bdb7728" category="paragraph">NetApp fornisce supporto per BlueXP e i suoi servizi cloud in diversi modi. Sono disponibili ampie opzioni di supporto autonomo gratuite 24 ore su 24, 7 giorni su 7, come articoli della knowledge base (KB) e un forum della community. La registrazione al supporto include supporto tecnico remoto tramite ticket web.</block>
+  <block id="759d32287efdf88cd8ac71dccc0ecf8d" category="inline-image-macro">Uno screenshot che mostra il numero di serie dell'account, una casella di controllo verde e il testo Registrato per supporto.</block>
+  <block id="4c441b388bebcddf8c08fb782095b864" category="paragraph"><block ref="4c441b388bebcddf8c08fb782095b864" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="67c66b3b8df7b2dee0354dd9f9fcec17" category="section-title">28 luglio 2025</block>
+  <block id="60c0c463b8839d0f2c5e5cea8fa728ad" category="sidebar">Proteggi i carichi di lavoro di Kubernetes (anteprima)</block>
+  <block id="c3c3199204503d3bbd5d4dce7eabf238" category="sidebar">Panoramica sulla protezione dei carichi di lavoro di Kubernetes</block>
+  <block id="3186e7c44dc909386a0204716ffc46f6" category="sidebar">Gestisci i modelli di hook di esecuzione per i carichi di lavoro Kubernetes</block>
 </blocks>

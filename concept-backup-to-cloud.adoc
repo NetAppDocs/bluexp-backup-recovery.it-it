@@ -43,6 +43,13 @@ Utilizza il BlueXP backup and recovery per raggiungere i seguenti obiettivi:
 ** Ripristina i dati delle macchine virtuali dal cloud al vCenter locale con il BlueXP backup and recovery. È possibile ripristinare la macchina virtuale nella stessa posizione esatta da cui è stato eseguito il backup o in una posizione alternativa.
 
 
+* Carichi di lavoro Kubernetes (anteprima):
++
+** Gestisci e proteggi le tue applicazioni e risorse Kubernetes, tutto in un unico posto.
+** Utilizza criteri di protezione per strutturare i tuoi backup incrementali.
+** Ripristinare applicazioni e risorse negli stessi cluster e namespace o in cluster e namespace diversi.
+
+
 
 
 

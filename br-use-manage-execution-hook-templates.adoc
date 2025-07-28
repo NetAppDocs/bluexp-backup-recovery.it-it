@@ -54,9 +54,6 @@ Se si creano più hook di esecuzione dello stesso tipo (ad esempio, pre-snapshot
 
 
 
-NOTE: L'esempio dell'ordine precedente si applica solo quando si esegue un backup che non utilizza uno snapshot esistente.
-
-
 NOTE: Prima di abilitarli in un ambiente di produzione, è necessario verificare sempre gli script hook di esecuzione. È possibile utilizzare il comando 'kubectl exec' per testare comodamente gli script. Dopo aver attivato gli hook di esecuzione in un ambiente di produzione, testare le snapshot e i backup risultanti per assicurarsi che siano coerenti. Per eseguire questa operazione, clonare l'applicazione in uno spazio dei nomi temporaneo, ripristinare lo snapshot o il backup e quindi testare l'applicazione.
 
 
@@ -106,7 +103,7 @@ Visita il sito https://github.com/NetApp/Verda["Progetto NetApp Verda GitHub"] p
 . Espandi la sezione *Modello di hook di esecuzione*.
 . Selezionare *Crea modello di hook di esecuzione*.
 . Immettere un nome per l'hook di esecuzione.
-. Scegli un tipo di hook. Ad esempio, un hook post-restore verrà eseguito al termine dell'operazione di ripristino.
+. Facoltativamente, scegli un tipo di hook. Ad esempio, un hook post-restore viene eseguito al termine dell'operazione di ripristino.
 . Nella casella di testo *Script*, inserisci lo script shell eseguibile che desideri eseguire come parte del modello di hook di esecuzione. Facoltativamente, puoi selezionare *Carica script* per caricare un file script.
 . Selezionare *Crea*.
 +

@@ -14,14 +14,15 @@ summary: Il BlueXP backup and recovery consentono di ripristinare le applicazion
 
 
 [role="lead"]
-Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che questa abbia lo stato di protezione "Protetto" e che sia associata a una policy di protezione. È possibile ripristinare un'applicazione utilizzando un punto di ripristino, costituito dallo snapshot locale, dallo snapshot secondario e dal backup nell'archivio oggetti. È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.
+Il BlueXP backup and recovery consentono di ripristinare le applicazioni protette tramite una policy di protezione. Per ripristinare un'applicazione, è necessario che quest'ultima disponga di almeno un punto di ripristino. Un punto di ripristino può essere costituito dallo snapshot locale o dal backup nell'archivio oggetti (o da entrambi). È possibile ripristinare un'applicazione utilizzando l'archivio locale, secondario o dell'archivio oggetti.
 
 .Ruolo BlueXP richiesto
 Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
 
 .Fasi
 . Nel BlueXP backup and recovery, seleziona *Inventario*.
-. Scegli un carico di lavoro Kubernetes e seleziona *Visualizza* nella colonna Host per il carico di lavoro.
+. Scegli un'istanza di Kubernetes e seleziona *Visualizza* per visualizzare le risorse associate a tale istanza.
+. Selezionare la scheda *Applicazioni*.
 . Nell'elenco delle applicazioni, seleziona l'applicazione che desideri ripristinare e seleziona il menu Azioni associato.
 . Selezionare *Visualizza e ripristina*.
 +
@@ -33,11 +34,11 @@ Viene visualizzato l'elenco dei punti di ripristino.
 [discrete]
 ===== Impostazioni generali
 
-. Selezionare l'origine da cui effettuare il ripristino (archivio locale, secondario o oggetto).
+. Selezionare l'origine da cui effettuare il ripristino (archivio locale o archivio oggetti).
 . Selezionare il cluster di destinazione dall'elenco *Cluster*.
-. Selezionare lo spazio dei nomi di destinazione del ripristino (originale o nuovo).
+. Selezionare lo spazio dei nomi di destinazione del ripristino.
 +
-Si noti che il ripristino su un cluster diverso e sullo spazio dei nomi originale non è supportato.
+È possibile ripristinare lo spazio dei nomi originale o uno nuovo.
 
 . Selezionare *Avanti*.
 
@@ -67,6 +68,10 @@ Ogni regola può essere filtrata in base a criteri quali lo spazio dei nomi dell
 
 . Selezionare *Salva* per salvare ciascuna regola.
 . Dopo aver aggiunto tutte le regole necessarie, seleziona *Cerca* per visualizzare le risorse disponibili nell'archivio di backup che corrispondono ai criteri di filtro.
++
+
+NOTE: Le risorse mostrate sono le risorse attualmente presenti nel cluster.
+
 . Una volta soddisfatti del risultato, selezionare *Avanti*.
 
 
@@ -76,6 +81,6 @@ Ogni regola può essere filtrata in base a criteri quali lo spazio dei nomi dell
 ===== Impostazioni di destinazione
 
 . Scegliere se ripristinare la classe di archiviazione predefinita o una classe di archiviazione diversa.
-. Facoltativamente, se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine. La classe di archiviazione di destinazione deve essere disponibile sul cluster di destinazione.
+. Facoltativamente, se si sceglie di ripristinare in una classe di archiviazione diversa, selezionare una classe di archiviazione di destinazione che corrisponda a ciascuna classe di archiviazione di origine.
 . Selezionare *Restore* (Ripristina).
 

@@ -37,7 +37,7 @@ Per utilizzare l'archiviazione di oggetti come destinazione di backup, è necess
 
 == A BlueXP
 
-* Un utente BlueXP deve disporre del ruolo e dei privilegi necessari per eseguire operazioni sui carichi di lavoro di Microsoft SQL Server. Per individuare le risorse, è necessario disporre del ruolo di Super amministratore BlueXP backup and recovery . Vedere link:reference-roles.html["Accesso basato sui ruoli BlueXP backup and recovery alle funzionalità"] per informazioni dettagliate sui ruoli e le autorizzazioni necessarie per eseguire operazioni BlueXP backup and recovery.
+* Un utente BlueXP deve disporre del ruolo e dei privilegi necessari per eseguire operazioni sui carichi di lavoro Microsoft SQL Server e Kubernetes. Per individuare le risorse, è necessario disporre del ruolo di Super amministratore BlueXP backup and recovery . Vedi link:reference-roles.html["Accesso basato sui ruoli BlueXP backup and recovery alle funzionalità"] per informazioni dettagliate sui ruoli e le autorizzazioni necessarie per eseguire operazioni BlueXP backup and recovery.
 * Un'organizzazione BlueXP con almeno un connettore BlueXP attivo che si connette a cluster ONTAP on-premise o Cloud Volumes ONTAP. Fare riferimento alla *Procedura di configurazione dell'anteprima iniziale* di seguito.
 * Almeno un ambiente di lavoro BlueXP con un cluster NetApp ONTAP locale o Cloud Volumes ONTAP .
 * Un connettore BlueXP
@@ -143,3 +143,28 @@ Allocare spazio su disco sufficiente e monitorare il consumo di spazio di archiv
 Per informazioni aggiornate sulle versioni supportate, vedere https://imt.netapp.com/matrix/imt.jsp?components=121074;&solution=1257&isHWU&src=IMT#welcome["Tool di matrice di interoperabilità NetApp"^].
 
 |===
+
+
+== Per proteggere le applicazioni Kubernetes
+
+Per scoprire le risorse di Kubernetes e proteggere le applicazioni Kubernetes, sono necessari requisiti specifici.
+
+Per i requisiti BlueXP , fare riferimento a <<A BlueXP>> .
+
+* Un sistema ONTAP primario (ONTAP 9.16.1 o successivo)
+* Un cluster Kubernetes: le distribuzioni e le versioni di Kubernetes supportate includono:
++
+** Anthos On-Prem (VMware) e Anthos su bare metal 1.16
+** Kubernetes 1.27 - 1.33
+** OpenShift 4.10 - 4.18
+** Motore Kubernetes Rancher 2 (RKE2) v1.26.7+rke2r1, v1.28.5+rke2r1
+
+
+* NetApp Trident 24.10 o successivo
+* NetApp Trident Protect 25.07 o versione successiva (installato durante la scoperta del carico di lavoro di Kubernetes)
+* NetApp Trident Protect Connector 25.07 o versione successiva (installato durante l'individuazione del carico di lavoro di Kubernetes)
++
+** Assicurarsi che la porta TCP 443 non sia filtrata in uscita tra il cluster Kubernetes, il connettore Trident Protect e il proxy Trident Protect.
+
+
+

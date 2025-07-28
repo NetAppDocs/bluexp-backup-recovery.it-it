@@ -34,7 +34,9 @@ image:screen-br-inventory-offsite-backup-targets.png["Scheda Destinazioni di bac
 
 . Selezionare *Scopri destinazione di backup*.
 . Selezionare uno dei tipi di destinazione del backup: *Amazon Web Services (AWS) S3*, *Microsoft Azure Blob Storage*, * StorageGRID* o * ONTAP S3*.
-. Inserisci le informazioni. Le informazioni variano a seconda del tipo di destinazione di backup selezionata.
+. Nella sezione *Scegli posizione credenziali*, seleziona la posizione in cui risiedono le credenziali, quindi scegli come associarle.
+. Selezionare *Avanti*.
+. Inserisci le informazioni delle credenziali. Le informazioni variano a seconda del tipo di destinazione di backup selezionata e della posizione delle credenziali scelta.
 +
 ** Per AWS:
 +

@@ -21,12 +21,6 @@ indexpage:
       url: br-start-setup.html
     - title: Configurare le impostazioni BlueXP backup and recovery
       url: br-start-configure.html
-  - title: Gestire le policy per backup e ripristini
-    links:
-    - title: Creare policy per gestire backup e ripristini
-      url: br-use-policies-create.html
-    - title: Visualizza lo stato di protezione nella Dashboard
-      url: br-use-dashboard.html
   - title: Proteggere i carichi di lavoro dei volumi ONTAP
     links:
     - title: Panoramica dei carichi di lavoro dei volumi Protect ONTAP
@@ -62,6 +56,20 @@ indexpage:
       url: prev-vmware-policy-create.html
     - title: Ripristinare i carichi di lavoro delle macchine virtuali
       url: prev-vmware-restore.html
+  - title: Proteggi i carichi di lavoro di Kubernetes (anteprima)
+    links:
+    - title: Panoramica sulla protezione dei carichi di lavoro di Kubernetes
+      url: br-use-kubernetes-protect-overview.html
+    - title: Scopri i carichi di lavoro di Kubernetes
+      url: br-start-discover-kubernetes.html
+    - title: Aggiungi e proteggi le applicazioni Kubernetes
+      url: link:br-use-protect-kubernetes-applications.html
+    - title: Gestire i cluster Kubernetes
+      url: br-use-manage-kubernetes-clusters.html
+    - title: Gestire le applicazioni Kubernetes
+      url: br-use-manage-kubernetes-applications.html
+    - title: Ripristina le applicazioni Kubernetes
+      url: br-use-restore-kubernetes-applications.html
   - title: Blog e community
     links:
     - title: Community NetApp
