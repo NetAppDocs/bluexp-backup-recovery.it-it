@@ -16,7 +16,7 @@ summary: Per poter utilizzare il servizio BlueXP backup and recovery è necessar
 [role="lead"]
 Per poter utilizzare il servizio BlueXP backup and recovery, è necessario innanzitutto rilevare i carichi di lavoro di Kubernetes.
 
-*Ruolo BlueXP obbligatorio* Super amministratore di Backup e Ripristino. Scopri di più link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+*Ruolo BlueXP obbligatorio* Questa attività richiede il ruolo di super amministratore per il backup e il ripristino dei servizi dati.  Scopri di piùlink:reference-roles.html["Ruoli e privilegi dei servizi di backup e ripristino dati"] . https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
 
 
 
