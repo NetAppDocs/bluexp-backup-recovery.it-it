@@ -50,7 +50,7 @@ NOTE: BlueXP non memorizza i parametri o i risultati della ricerca; i parametri 
 
 . BlueXP visualizza un elenco di risorse che corrispondono ai criteri di ricerca.
 . Se l'elenco contiene le risorse che desideri proteggere, seleziona *Avanti*.
-. Facoltativamente, nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione o creane uno nuovo. Se non selezioni un criterio, l'applicazione verrà creata senza criterio di protezione. Puoi aggiungerne uno in seguito.
+. Facoltativamente, nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione o creane uno nuovo. Se non selezioni un criterio, l'applicazione verrà creata senza criterio di protezione. Puoilink:br-use-policies-create.html#create-a-policy["aggiungere una politica di protezione"] Dopo.
 . Nell'area *Prescript e postscript*, abilitare e configurare eventuali hook di esecuzione prescript o postscript che si desidera eseguire prima o dopo le operazioni di backup. Per abilitare prescript o postscript, è necessario aver già creato almeno uno. link:br-use-manage-execution-hook-templates.html["modello di gancio di esecuzione"] .
 . Selezionare *Crea*.
 
@@ -70,7 +70,7 @@ Abilita un criterio di protezione su un'applicazione Kubernetes che hai già agg
 . Selezionare la scheda *Applicazioni*.
 . Nell'elenco delle applicazioni, seleziona l'applicazione che desideri proteggere e seleziona il menu Azioni associato.
 . Selezionare *Proteggi*.
-. Nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione oppure creane uno nuovo.
+. Nell'area *Criterio*, seleziona un criterio di protezione esistente per proteggere l'applicazione oppure creane uno nuovo.  Fare riferimento alink:br-use-policies-create.html#create-a-policy["Creare un criterio"] per maggiori informazioni sulla creazione di policy di protezione.
 . Nell'area *Prescript e postscript*, abilita e configura eventuali hook di esecuzione prescript o postscript che desideri eseguire prima o dopo le operazioni di backup. Puoi configurare il tipo di hook di esecuzione, il modello utilizzato, gli argomenti e i selettori di etichetta.
 . Selezionare *fine*.
 
