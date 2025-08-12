@@ -22,6 +22,10 @@ Per informazioni dettagliate sulle azioni che ogni ruolo può eseguire, vedere l
 
 Per accedere a BlueXP , puoi utilizzare le tue credenziali del sito di supporto NetApp oppure iscriverti a un login cloud NetApp utilizzando la tua email e una password. https://docs.netapp.com/us-en/bluexp-setup-admin/task-logging-in.html["Scopri di più sull'accesso"^].
 
+*Ruolo BlueXP obbligatorio* Amministratore dell'organizzazione, Amministratore di cartelle o progetti, Super amministratore di backup e ripristino, Amministratore di ripristino di backup e ripristino.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+Se è la prima volta che accedi BlueXP backup and recovery e per aggiungere un connettore, devi disporre del ruolo di amministratore dell'organizzazione o di super amministratore di backup e ripristino.
+
 .Fasi
 . Aprire un browser Web e accedere a https://console.bluexp.netapp.com/["Console BlueXP"^].
 +
@@ -34,10 +38,11 @@ Viene visualizzata la pagina di accesso a NetApp BlueXP.
 +
 image:screen-br-landing-no-we.png["Screenshot della landing page per BlueXP Backup e ripristino di BlueXP senza un ambiente di lavoro"]
 
-** Se è la prima volta che accedi a questo servizio e hai già un ambiente di lavoro in BlueXP, ma non hai ancora scoperto alcuna risorsa, viene visualizzata la pagina di destinazione "Benvenuto nel nuovo BlueXP backup and recovery" che mostra un'opzione per *Scoprire risorse*.
+** Se è la prima volta che accedi a questo servizio, hai già un ambiente di lavoro in BlueXP, ma non hai ancora iniziato la prova gratuita, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo BlueXP backup and recovery" con l'opzione *Visualizza prova gratuita*.
 +
-image:screen-br-landing-unified.png["Screenshot della landing page per il backup e il ripristino di BlueXP"]
+image:screen-br-landing-unified-trial.png["Screenshot della landing page per BlueXP Backup e ripristino di BlueXP senza prova gratuita"]
 
+** Se è la prima volta che accedi a questo servizio e hai già un ambiente di lavoro in BlueXP, ma non hai ancora individuato alcuna risorsa, verrà visualizzata la pagina di destinazione "Benvenuti nel nuovo BlueXP backup and recovery" con l'opzione *Individuare e gestire*.
 
 
 . Se non lo hai ancora fatto, seleziona l'opzione *Scopri e gestisci*.

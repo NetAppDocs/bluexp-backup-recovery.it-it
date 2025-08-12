@@ -58,6 +58,45 @@ Puoi svolgere le seguenti attività relative alla gestione del tuo inventario:
 
 
 
+=== Gestire gli host
+
+Puoi gestire gli host rilevati nel tuo ambiente di lavoro, separatamente o in gruppo.
+
+
+TIP: È possibile gestire solo gli host che mostrano lo stato "Non gestito" nella colonna Host. Se lo stato è "Gestito", significa che l'host è già gestito da BlueXP backup and recovery.
+
+Dopo aver gestito gli host nel BlueXP backup and recovery, SnapCenter non gestisce più le risorse su tali host.
+
+*Ruolo BlueXP obbligatorio* Amministratore dell'organizzazione, amministratore di cartelle o progetti oppure super amministratore di backup e ripristino.  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
+
+.Fasi
+. Dal menu, seleziona *Inventario*.
++
+image:screen-br-inventory.png["Screenshot dell'inventario per il BlueXP backup and recovery"]
+
+. Selezionare un carico di lavoro per visualizzare i dettagli sulla protezione.
+. Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Visualizza dettagli*.
++
+image:screen-br-inventory-sql.png["Schermata della pagina dei dettagli dell'inventario per il BlueXP backup and recovery"]
+
+. Selezionare la scheda *Host*.
+. Seleziona uno o più host. Se selezioni più host, verrà visualizzata l'opzione "Azioni in blocco" in cui puoi selezionare "Gestisci (fino a 5 host)".
+. Seleziona l'icona Azioni image:../media/icon-action.png["Opzione Azioni"] > *Gestisci*.
++
+image:screen-br-inventory-details-manage-hosts.png["Gestisci la pagina degli host"]
+
+. Esaminare le dipendenze dell'host:
++
+** Se vCenter non viene visualizzato, selezionare l'icona della matita per aggiungere o modificare i dettagli di vCenter.
+** Se si aggiunge un vCenter, è necessario anche registrarlo selezionando *Registra vCenter*.
+
+
+. Seleziona *Convalida impostazioni* per testare le tue impostazioni.
+. Selezionare *Gestisci* per gestire l'host.
+
+
+
+
 === Sospendi gli orari
 
 È possibile sospendere le pianificazioni per interrompere le operazioni di backup e ripristino di un host. Questa operazione potrebbe essere utile se è necessario eseguire attività di manutenzione sull'host.

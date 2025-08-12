@@ -18,6 +18,16 @@ Le limitazioni note identificano piattaforme, dispositivi o funzioni non support
 
 
 
+== Supporto del ciclo di vita dei cloni
+
+* La clonazione da un archivio di oggetti non è supportata.
+* Le operazioni di clonazione in blocco non sono supportate per i cloni su richiesta.
+* La scelta dei gruppi I non è supportata.
+* La scelta delle opzioni QOS (throughput massimo) non è supportata.
+
+
+
+
 == Solo modalità di distribuzione standard
 
 La versione BlueXP backup and recovery funziona solo in modalità di distribuzione standard, non in modalità riservata o privata.

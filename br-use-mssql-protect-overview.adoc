@@ -50,15 +50,18 @@ Il BlueXP backup and recovery consentono di eseguire il backup di istanze e data
 
 
 | Cloud Volumes ONTAP in AWS | Cloud Volumes ONTAP in AWS
-Sistema ONTAP on-premise | Amazon S3 
+Sistema ONTAP on-premise | Amazon S3 ONTAP S3 
 
 
 | Cloud Volumes ONTAP in Azure | Cloud Volumes ONTAP in Azure
-Sistema ONTAP on-premise | Azure Blob 
+Sistema ONTAP on-premise | Azure Blob ONTAP S3 
 
 
 | Sistema ONTAP on-premise | Cloud Volumes ONTAP
-Sistema ONTAP on-premise | Blob di Azure Amazon S3 NetApp StorageGRID ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
+Sistema ONTAP on-premise | Blob di Azure Amazon S3 NetApp StorageGRID ONTAP S3 
+
+
+| Amazon FSX per NetApp ONTAP | Amazon FSX per NetApp ONTAP | NA ifdef::gcp[] endif::gcp[] ifdef::gcp[] endif::gcp[] 
 |===
 .Destinazioni di ripristino supportate
 È possibile ripristinare istanze e database di Microsoft SQL Server da un backup residente nell'archivio primario o in un ambiente di lavoro secondario (un volume replicato) o nell'archivio oggetti (un file di backup) nei seguenti ambienti di lavoro. Le copie Snapshot risiedono nell'ambiente di lavoro di origine e possono essere ripristinate solo sullo stesso sistema.
@@ -72,15 +75,18 @@ Sistema ONTAP on-premise | Blob di Azure Amazon S3 NetApp StorageGRID ifdef::gcp
 
 
 | Amazon S3 | Cloud Volumes ONTAP in AWS
-Sistema ONTAP on-premise | Cloud Volumes nel sistema ONTAP locale di AWS 
+Sistema ONTAP on-premise | Cloud Volumes nel sistema ONTAP locale AWS ONTAP S3 
 
 
 | Azure Blob | Cloud Volumes ONTAP in Azure
-Sistema ONTAP on-premise | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure ifdef::gcp[] endif::gcp[] 
+Sistema ONTAP on-premise | Cloud Volumes ONTAP nel sistema ONTAP locale di Azure ONTAP S3 ifdef::gcp[] endif::gcp[] 
 
 
 | StorageGRID | Cloud Volumes ONTAP
-Sistema ONTAP on-premise | Sistema ONTAP on-premise 
+Sistema ONTAP on-premise | Sistema ONTAP on-premise ONTAP S3 
+
+
+| Amazon FSX per NetApp ONTAP | Amazon FSX per NetApp ONTAP | N / A 
 |===
 
 NOTE: I riferimenti ai "sistemi ONTAP locali" includono i sistemi FAS e AFF .

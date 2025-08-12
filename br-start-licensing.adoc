@@ -36,6 +36,25 @@ Al termine della prova gratuita, potrai passare automaticamente all'abbonamento 
 
 
 
+=== Termina la prova gratuita
+
+Se desideri continuare a utilizzare BlueXP backup and recovery dopo la scadenza del periodo di prova gratuito, devi sottoscrivere un abbonamento a pagamento.  Puoi farlo dall'interfaccia BlueXP andando alla sezione fatturazione e selezionando un piano di abbonamento adatto alle tue esigenze.  Se non desideri continuare a utilizzare BlueXP backup and recovery, puoi interrompere la prova gratuita.
+
+Se termini il periodo di prova gratuito senza sottoscrivere un piano a pagamento, i tuoi dati verranno automaticamente eliminati 60 giorni dopo la fine del periodo di prova gratuito.  Facoltativamente, puoi fare in modo che il sistema elimini immediatamente i tuoi dati.
+
+.Fasi
+. Dalla pagina di destinazione BlueXP backup and recovery , seleziona *Visualizza prova gratuita*.
++
+*DOMANDA AI RECENSORI*: Come fanno gli utenti ad arrivare alla landing page se si trovano su altre pagine BR?
+
+. Seleziona *Termina prova gratuita*.
+. Seleziona *Elimina i dati subito dopo aver terminato la prova gratuita* per eliminare immediatamente i tuoi dati.
+. Digitare *fine prova* nella casella.
+. Selezionare *Fine* per confermare.
+
+
+
+
 == Utilizza un abbonamento A PAYGO per il backup e ripristino BlueXP
 
 Per il pay-as-you-go, pagherai il tuo cloud provider per i costi dello storage a oggetti e per le licenze di backup NetApp su base oraria in un singolo abbonamento. È necessario iscriversi a *servizi intelligenti NetApp* nel mercato anche se si dispone di una versione di prova gratuita o se si porta con sé una propria licenza BYOL:

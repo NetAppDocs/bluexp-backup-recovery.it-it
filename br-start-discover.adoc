@@ -153,7 +153,9 @@ image:../media/screen-br-inventory.png["Pagina dell'inventario"]
 
 === Se SnapCenter non è installato, aggiungi un vCenter e scopri le risorse
 
-Se SnapCenter non è già installato, aggiungi le informazioni di vCenter e fai in modo che BlueXP backup and recovery rilevi i carichi di lavoro. All'interno di ogni BlueXP Connector, seleziona gli ambienti di lavoro in cui desideri rilevare i carichi di lavoro.
+Se SnapCenter non è ancora installato, è possibile aggiungere informazioni su vCenter e fare in modo che BlueXP backup and recovery rilevi i carichi di lavoro.  All'interno di ciascun BlueXP Connector, seleziona gli ambienti di lavoro in cui desideri individuare i carichi di lavoro.
+
+Questa operazione è facoltativa se si dispone di un ambiente VMware.
 
 .Fasi
 . Dal menu di navigazione a sinistra BlueXP , seleziona *Protezione* > *Backup e ripristino*.

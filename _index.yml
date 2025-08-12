@@ -34,7 +34,7 @@ indexpage:
       url: prev-ontap-policy-object-options.html
     - title: Ripristinare i carichi di lavoro dei volumi ONTAP
       url: prev-ontap-restore.html
-  - title: Protezione dei carichi di lavoro di Microsoft SQL Server (anteprima)
+  - title: Proteggere i carichi di lavoro di Microsoft SQL Server
     links:
     - title: Panoramica sulla protezione dei carichi di lavoro di Microsoft SQL Server
       url: br-use-mssql-protect-overview.html

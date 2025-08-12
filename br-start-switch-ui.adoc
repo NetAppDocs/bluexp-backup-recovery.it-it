@@ -18,7 +18,7 @@ summary: 'È possibile passare da un carico di lavoro all"altro di BlueXP backup
 
 *Come fai a sapere quale interfaccia utente stai utilizzando?*
 
-La barra delle applicazioni per i carichi di lavoro di Microsoft SQL Server si presenta in questo modo: image:screen-br-menu-unified.png["Nuova schermata dell'interfaccia utente per il BlueXP backup and recovery"]
+La barra delle applicazioni per i carichi di lavoro Microsoft SQL Server e Kubernetes (anteprima) si presenta così:image:screen-br-menu-unified.png["Nuova schermata dell'interfaccia utente per il BlueXP backup and recovery"]
 
 La barra dei menu per i volumi ONTAP e i carichi di lavoro VMware si presenta in questo modo: image:screen-br-menu-legacy.png["Screenshot precedente dell'interfaccia utente per il BlueXP backup and recovery"]
 

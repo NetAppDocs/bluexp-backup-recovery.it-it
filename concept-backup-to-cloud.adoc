@@ -17,7 +17,7 @@ summary: Il servizio BlueXP backup and recovery garantisce una protezione dei da
 Il servizio BlueXP backup and recovery fornisce una protezione dei dati efficiente, sicura e conveniente per volumi ONTAP , istanze e database Microsoft SQL Server (anteprima), carichi di lavoro VMware e carichi di lavoro Kubernetes (anteprima).
 
 
-NOTE: La presente documentazione viene fornita come anteprima tecnologica. Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli dell'offerta, i contenuti e la tempistica prima della disponibilità generale.
+NOTE: Parte di questa documentazione è fornita come anteprima tecnologica.  Con questa offerta di anteprima, NetApp si riserva il diritto di modificare i dettagli, i contenuti e la tempistica dell'offerta prima della disponibilità generale.
 
 
 
@@ -31,16 +31,17 @@ Utilizza il BlueXP backup and recovery per raggiungere i seguenti obiettivi:
 ** Crea backup incrementali permanenti a livello di blocco, che vengono archiviati su un altro cluster ONTAP e nell'archiviazione di oggetti nel cloud.
 
 
-* Carichi di lavoro di Microsoft SQL Server (anteprima):
+* Carichi di lavoro di Microsoft SQL Server:
 +
-** Esegui il backup di istanze e database di Microsoft SQL Server da sistemi ONTAP locali o Cloud Volumes ONTAP .
-** Ripristinare i database di Microsoft SQL Server sullo stesso host o su un host alternativo, garantendo flessibilità nel recupero dei dati.
+** Esegui il backup di istanze e database di Microsoft SQL Server da ONTAP locale, Cloud Volumes ONTAP o Amazon FSx for NetApp ONTAP.
+** Ripristinare i database di Microsoft SQL Server.
+** Clonare i database Microsoft SQL Server.
 
 
-* Carichi di lavoro VMware:
+* Carichi di lavoro delle VM:
 +
 ** Esegui il backup degli archivi dati su Amazon Web Services S3, Microsoft Azure Blob, Google Cloud Platform e StorageGRID e ripristina le macchine virtuali sull'host SnapCenter Plug-in for VMware vSphere .
-** Ripristina i dati delle macchine virtuali dal cloud al vCenter locale con il BlueXP backup and recovery. È possibile ripristinare la macchina virtuale nella stessa posizione esatta da cui è stato eseguito il backup o in una posizione alternativa.
+** Ripristina i dati delle macchine virtuali dal cloud al vCenter locale con il BlueXP backup and recovery.
 
 
 * Carichi di lavoro Kubernetes (anteprima):
@@ -124,6 +125,9 @@ ifdef::gcp[]
 
 I costi di servizio vengono pagati a NetApp e coprono sia il costo per _creare_ backup nello storage a oggetti che per _ripristinare_ volumi, o file, da tali backup. Si paga solo per i dati protetti nell'archiviazione di oggetti, calcolati in base alla capacità logica utilizzata all'origine (prima delle efficienze ONTAP ) dei volumi ONTAP sottoposti a backup nell'archiviazione di oggetti. Questa capacità è nota anche come terabyte front-end (FETB).
 
+
+NOTE: Per Microsoft SQL Server, vengono applicati dei costi quando si avvia la replica di snapshot su una destinazione ONTAP secondaria o su un archivio di oggetti.
+
 Esistono tre modi per pagare il servizio Backup:
 
 * La prima opzione è iscriversi al tuo cloud provider, che ti consente di pagare al mese.
@@ -190,7 +194,7 @@ Quando utilizzi GCP, puoi richiedere un'offerta privata da NetApp e quindi selez
 Il servizio protegge i seguenti carichi di lavoro:
 
 * Volumi ONTAP
-* Istanze e database di Microsoft SQL Server per NFS fisici, VMware Virtual Machine File System (VMFS) e VMware Virtual Machine Disk (VMDK) (anteprima)
+* Istanze e database di Microsoft SQL Server per NFS fisico, VMware Virtual Machine File System (VMFS) e VMware Virtual Machine Disk (VMDK)
 * Datastore VMware
 * Carichi di lavoro Kubernetes (anteprima)
 
@@ -213,7 +217,7 @@ Il servizio protegge i seguenti carichi di lavoro:
 
 
 
-== Il BlueXP backup and recovery utilizzano il plug-in SnapCenter per Microsoft SQL Server
+== Il BlueXP backup and recovery utilizzano il plug-in per Microsoft SQL Server
 
 BlueXP backup and recovery installa il plug-in per Microsoft SQL Server sul server che ospita Microsoft SQL Server. Il plug-in è un componente lato host che consente la gestione della protezione dei dati basata sulle applicazioni per database e istanze di Microsoft SQL Server.
 

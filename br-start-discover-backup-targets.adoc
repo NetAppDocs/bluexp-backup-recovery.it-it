@@ -26,6 +26,9 @@ Puoi scoprire questi obiettivi automaticamente oppure aggiungerli manualmente.
 
 Fornire le credenziali necessarie per accedere al sistema di account di archiviazione. Queste credenziali vengono utilizzate per individuare i carichi di lavoro di cui si desidera eseguire il backup.
 
+.Prima di iniziare
+Per aggiungere una destinazione di backup offsite, è necessario individuare almeno un carico di lavoro.
+
 .Fasi
 . Dal menu BlueXP backup and recovery , seleziona *Inventario*.
 . Selezionare la scheda *Destinazioni di backup esterne*.
@@ -90,7 +93,7 @@ Invece di far sì che il BlueXP backup and recovery rilevino automaticamente i b
 +
 ** Per AWS:
 +
-*** *Nome bucket*: inserisci il nome del bucket S3.
+*** *Nome bucket*: immettere il nome del bucket S3.  Il prefisso "netapp-backup" è obbligatorio e viene aggiunto automaticamente al nome fornito.
 *** *Account AWS*: inserisci il nome dell'account AWS.
 *** *Regione del bucket*: immetti la regione AWS per il bucket.
 *** *Abilita Blocco Oggetti S3*: seleziona questa opzione per abilitare il Blocco Oggetti S3 per il bucket. Il Blocco Oggetti S3 impedisce che gli oggetti vengano eliminati o sovrascritti per un periodo di conservazione specificato, fornendo un ulteriore livello di protezione dei dati. Puoi abilitare questa opzione solo durante la creazione di un bucket e non potrai disattivarla in seguito.

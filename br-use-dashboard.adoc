@@ -21,7 +21,7 @@ Monitorare lo stato dei carichi di lavoro ti consente di essere a conoscenza di 
 .Fasi
 . Dal menu BlueXP backup and recovery , seleziona *Dashboard*.
 +
-image:screen-br-dashboard2.png["Dashboard BlueXP backup and recovery"]
+image:screen-br-dashboard3.png["Dashboard BlueXP backup and recovery"]
 
 
 
