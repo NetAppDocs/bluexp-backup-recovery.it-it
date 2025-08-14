@@ -14,7 +14,9 @@ summary: Esistono alcune differenze tra i criteri utilizzati nel BlueXP backup a
 [role="lead"]
 Esistono alcune differenze tra i criteri utilizzati in SnapCenter e quelli utilizzati nel BlueXP backup and recovery che potrebbero influire su ciò che viene visualizzato dopo l'importazione di risorse e criteri da SnapCenter.
 
-I backup e il ripristino SnapCenter e BlueXP backup and recovery utilizzano pianificazioni di policy leggermente diverse.
+
+
+== Pianifica i livelli
 
 SnapCenter utilizza i seguenti livelli di pianificazione:
 
@@ -78,6 +80,12 @@ Se in SnapCenter è presente una risorsa con più policy, il BlueXP backup and r
 * Per "Backup completo e registro" più "Backup completo" in SnapCenter, il BlueXP backup and recovery utilizzano il valore di conservazione "Backup completo e registro".
 * Se in SnapCenter è presente solo un backup completo, il BlueXP backup and recovery non abilitano il backup del registro.
 
+
+
+
+== Conservazione del backup del registro
+
+Con SnapCenter è possibile avere più valori di conservazione su più policy associate a una risorsa.  Tuttavia, il BlueXP backup and recovery supportano solo un singolo valore di conservazione per tutti i criteri associati a una risorsa.
 
 
 

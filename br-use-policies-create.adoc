@@ -114,7 +114,7 @@ Fornire informazioni per lo snapshot locale.
 * *Conservazione degli snapshot*: inserisci il numero di snapshot da conservare.
 * *Abilita backup dei log*: (Non disponibile per i carichi di lavoro Kubernetes) Seleziona l'opzione per eseguire il backup dei log e imposta la frequenza e la conservazione dei backup dei log. Per farlo, devi aver già configurato un backup dei log. Vedere link:br-start-configure.html["Configurare le directory di registro"].
 * *Provider*: (solo carichi di lavoro Kubernetes) Seleziona il provider di archiviazione che ospita le risorse dell'applicazione Kubernetes.
-* *Destinazione di backup*: (solo carichi di lavoro Kubernetes) Seleziona il bucket di archiviazione che ospita le risorse dell'applicazione Kubernetes.  Gli snapshot verranno archiviati in questo bucket.  Assicurarsi che il bucket sia accessibile all'interno dell'ambiente di backup.
+* *Destinazione di backup*: (solo carichi di lavoro Kubernetes) Seleziona il bucket di archiviazione che ospita le risorse dell'applicazione Kubernetes. Le definizioni delle risorse dell'applicazione al momento dello snapshot vengono archiviate in questo bucket. Assicurarsi che il bucket sia accessibile all'interno dell'ambiente di backup.
 * Facoltativamente, seleziona *Avanzate* a destra della pianificazione per impostare l'etichetta SnapMirror e abilitare il blocco degli snapshot (non disponibile per i carichi di lavoro Kubernetes).
 +
 ** * Etichetta SnapMirror *: l'etichetta funge da marcatore per il trasferimento di uno snapshot specificato in base alle regole di conservazione della relazione. L'aggiunta di un'etichetta a uno snapshot lo contrassegna come destinazione per la replica SnapMirror .

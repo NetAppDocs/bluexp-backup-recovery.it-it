@@ -109,9 +109,3 @@ SnapCenter non dispone di cluster di storage o SVM per la mappatura delle risors
 Se si dispone di una pianificazione di criteri SnapCenter che inizia a una determinata ora e si ripete ogni tot minuti, ma i minuti non sono a intervalli di 15 minuti, il BlueXP backup and recovery non importeranno la pianificazione.
 
 *Soluzione alternativa*: utilizzare SnapCenter per modificare il criterio in modo che venga ripetuto a intervalli di 15 minuti.
-
-
-
-=== Conservazione del backup del registro
-
-Con SnapCenter, è possibile avere più valori di conservazione per più policy associate a una risorsa. Tuttavia, la versione Preview BlueXP backup and recovery supporta un solo valore di conservazione per tutte le policy associate a una risorsa.

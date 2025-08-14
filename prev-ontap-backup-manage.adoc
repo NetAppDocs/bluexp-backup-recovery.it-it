@@ -14,7 +14,7 @@ summary: Con BlueXP backup and recovery, puoi gestire i backup per i tuoi sistem
 
 
 [role="lead"]
-Con il backup e il ripristino di BlueXP puoi gestire i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP locali modificando la pianificazione dei backup, abilitando/disabilitando i backup dei volumi, sospendendo i backup, eliminando i backup e altro ancora. Questo include tutti i tipi di backup, incluse copie snapshot, volumi replicati e file di backup nell'archiviazione di oggetti. È anche possibile annullare la registrazione BlueXP backup and recovery.
+Con il BlueXP backup and recovery, gestisci i backup per i tuoi sistemi Cloud Volumes ONTAP e ONTAP on-premise modificando la pianificazione dei backup, abilitando/disabilitando i backup dei volumi, sospendendo i backup, eliminando i backup, forzando l'eliminazione dei backup e altro ancora.  Ciò include tutti i tipi di backup, tra cui copie snapshot, volumi replicati e file di backup nell'archiviazione di oggetti.  È anche possibile annullare la registrazione BlueXP backup and recovery.
 
 
 CAUTION: Non gestire o modificare i file di backup direttamente sui sistemi storage o dall'ambiente del cloud provider. Questo potrebbe danneggiare i file e causare una configurazione non supportata.
@@ -371,7 +371,20 @@ Si noti che questa azione non influisce sulle copie Snapshot o sui volumi replic
 image:screenshot_backup_settings_button.png["Una schermata che mostra il pulsante Backup Settings (Impostazioni di backup) disponibile dopo aver selezionato un ambiente di lavoro."]
 
 . Selezionare image:icon-actions-horizontal.gif["Icona delle azioni"] per l'ambiente di lavoro in cui si desidera eliminare tutti i backup e selezionare *Elimina tutti i backup*.
-. Nella finestra di dialogo di conferma, immettere il nome dell'ambiente di lavoro e selezionare *Elimina*.
++
+image:screenshot_backup_delete_all_backups-working-env.png["Uno screenshot che mostra l'opzione Elimina tutti i backup"]
+
+. Nella finestra di dialogo di conferma, immettere il nome dell'ambiente di lavoro.
+. Selezionare *Impostazioni avanzate*.
+. *Forza eliminazione backup*: indica se desideri o meno forzare l'eliminazione di tutti i backup.
++
+In alcuni casi estremi, potresti voler impedire BlueXP backup and recovery di accedere più ai backup. Ciò potrebbe accadere, ad esempio, se il servizio non ha più accesso al bucket di backup o se i backup sono protetti da DataLock ma non si desidera più utilizzarli. In precedenza non era possibile eliminarli autonomamente, ma era necessario contattare l'assistenza NetApp . Con questa versione, è possibile utilizzare l'opzione per forzare l'eliminazione dei backup (a livello di volume e di ambiente di lavoro).
+
++
+
+CAUTION: Utilizzare questa opzione con cautela e solo in caso di estrema necessità di pulizia.  Il BlueXP backup and recovery non avranno più accesso a questi backup, anche se non vengono eliminati dall'archivio oggetti.  Sarà necessario rivolgersi al proprio provider cloud ed eliminare manualmente i backup.
+
+. Selezionare *Delete* (Elimina).
 
 
 
@@ -392,7 +405,16 @@ Viene visualizzato l'elenco di tutti i file di backup.
 +
 image:screenshot_backup_delete_all_backups.png["Uno screenshot che mostra l'opzione Elimina tutti i backup"]
 
-. Immettere il nome del volume e indicare se si desidera o meno forzare l'eliminazione di tutti i backup.
+. Immettere il nome del volume.
+. Selezionare *Impostazioni avanzate*.
+. *Forza eliminazione backup*: indica se desideri o meno forzare l'eliminazione di tutti i backup.
++
+In alcuni casi estremi, potresti voler impedire BlueXP backup and recovery di accedere più ai backup.  Ciò potrebbe verificarsi, ad esempio, se il servizio non ha più accesso al bucket di backup o se i backup sono protetti da DataLock ma non li si desidera più. In precedenza non era possibile eliminarli autonomamente, ma era necessario contattare l'assistenza NetApp . Con questa versione, è possibile utilizzare l'opzione per forzare l'eliminazione dei backup (a livello di volume e di ambiente di lavoro).
+
++
+
+CAUTION: Utilizzare questa opzione con cautela e solo in caso di estrema necessità di pulizia.  Il BlueXP backup and recovery non avranno più accesso a questi backup, anche se non vengono eliminati dall'archivio oggetti.  Sarà necessario rivolgersi al proprio provider cloud ed eliminare manualmente i backup.
+
 . Selezionare *Delete* (Elimina).
 
 
