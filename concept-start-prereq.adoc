@@ -28,13 +28,14 @@ Inizia a utilizzare il BlueXP backup and recovery verificando la disponibilità 
 
 Per utilizzare l'archiviazione di oggetti come destinazione di backup, è necessario un account con AWS S3, Microsoft Azure Blob, StorageGRID o ONTAP e che siano configurate le autorizzazioni di accesso appropriate.
 
-Vederelink:br-start-setup.html["Imposta le destinazioni di backup prima di utilizzare il BlueXP backup and recovery"] per i dettagli su come impostare le destinazioni di backup.
+* link:prev-ontap-protect-overview.html["Proteggi i dati del tuo volume ONTAP"]
 
 
 
-== Requisiti del carico di lavoro di Microsoft SQL Server
 
-Per utilizzare il BlueXP backup and recovery per i carichi di lavoro di SQL Server, sono necessari i seguenti prerequisiti relativi a sistema host, spazio e dimensioni.
+== Requisiti per la protezione dei carichi di lavoro di Microsoft SQL Server
+
+Per utilizzare il BlueXP backup and recovery per i carichi di lavoro di Microsoft SQL Server, sono necessari i seguenti prerequisiti relativi a sistema host, spazio e dimensioni.
 
 [cols="33,66a"]
 |===
@@ -81,7 +82,50 @@ Per informazioni aggiornate sulle versioni supportate, vedere https://imt.netapp
 |===
 
 
-== Requisiti del carico di lavoro di Kubernetes
+== Requisiti per la protezione dei carichi di lavoro VMware
+
+Per individuare e proteggere i carichi di lavoro VMware sono necessari requisiti specifici.
+
+*Supporto software*
+
+* Sono supportati gli archivi dati NFS e VMFS. I vVol non sono supportati.
+* Versioni NFS supportate: NFS 3 e NFS 4.1
+* Versioni di VMware ESXi Server supportate: 7.0U1 e successive
+* Versioni di VMware vCenter vSphere supportate: 7.0U1 e successive
+* Indirizzi IP: IPv4 e IPv6
+* VMware TLS: 1.2, 1.3
+
+
+*Requisiti di connessione e porta per la protezione dei carichi di lavoro VMware*
+
+[cols="33,66a"]
+|===
+| Tipo di porto | Porta preconfigurata 
+
+
+| Porta del server VMware ESXi  a| 
+443 (HTTPS), bidirezionale.  La funzionalità di ripristino dei file guest utilizza questa porta.
+
+
+
+| Porta del server VMware vSphere vCenter  a| 
+Se si proteggono VM vVol, è necessario utilizzare la porta 443.
+
+
+
+| Cluster di archiviazione o porta VM di archiviazione  a| 
+443 (HTTPS), bidirezionale.  80 (HTTP), bidirezionale.  Questa porta viene utilizzata per la comunicazione tra l'appliance virtuale e la VM di archiviazione o il cluster contenente la VM di archiviazione.
+
+|===
+*Requisiti di controllo degli accessi basato sui ruoli (RBAC) per la protezione dei carichi di lavoro VMware*
+
+L'account amministratore vCenter deve disporre dei privilegi vCenter richiesti.
+
+Per un elenco dei privilegi vCenter necessari, vedere https://docs.netapp.com/us-en/sc-plugin-vmware-vsphere/scpivs44_deployment_planning_and_requirements.html#rbac-privileges-required["SnapCenter Plug-in for VMware vSphere Privilegi vCenter necessari"^] .
+
+
+
+== Requisiti per la protezione delle applicazioni Kubernetes
 
 Per scoprire le risorse di Kubernetes e proteggere le applicazioni Kubernetes, sono necessari requisiti specifici.
 

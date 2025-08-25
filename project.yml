@@ -29,10 +29,12 @@ sidebar:
     entries:
     - title: Novità
       url: "/whats-new.html"
-    - title: Limitazioni note per i carichi di lavoro di Microsoft SQL Server
-      url: "/br-limitations.html"
     - title: Limitazioni note per i carichi di lavoro dei volumi ONTAP
       url: "/br-reference-limitations.html"
+    - title: Limitazioni note per i carichi di lavoro di Microsoft SQL Server
+      url: "/br-limitations.html"
+    - title: Limitazioni note per i carichi di lavoro VMware
+      url: "/br-limitations-vmware.html"
   - title: Inizia subito
     entries:
     - title: Informazioni su backup e ripristino BlueXP
@@ -116,7 +118,20 @@ sidebar:
         url: "/br-use-manage-snapshots.html"
       - title: Creare report di Microsoft SQL Server
         url: "/br-use-reports.html"
-    - title: Proteggere i carichi di lavoro delle macchine virtuali
+    - title: Protezione dei carichi di lavoro VMware (anteprima senza plug-in SnapCenter
+        per VMware)
+      entries:
+      - title: Panoramica sulla protezione dei carichi di lavoro VMware
+        url: "/br-use-vmware-protect-overview.html"
+      - title: Scopri i carichi di lavoro VMware
+        url: "/br-use-vmware-discovery.html"
+      - title: Crea e gestisci gruppi di protezione per carichi di lavoro VMware
+        url: "/br-use-vmware-protection-groups.html"
+      - title: Eseguire il backup dei carichi di lavoro VMware
+        url: "/br-use-vmware-backup.html"
+      - title: Ripristinare i carichi di lavoro VMware
+        url: "/br-use-vmware-restore.html"
+    - title: Proteggi i carichi di lavoro VMware (con il plug-in SnapCenter per VMware)
       entries:
       - title: Panoramica sulla protezione dei carichi di lavoro delle macchine virtuali
         url: "/prev-vmware-protect-overview.html"
@@ -167,6 +182,8 @@ sidebar:
       url: "/reference-policy-differences-snapcenter.html"
     - title: Ruoli e privilegi BlueXP backup and recovery
       url: "/reference-roles.html"
+    - title: Ripristinare i dati BlueXP backup and recovery in un sito oscuro
+      url: "/reference-backup-cbs-db-in-dark-site.html"
     - title: Tier di storage di archivio AWS supportati
       url: "/prev-reference-aws-archive-storage-tiers.html"
     - title: Livelli di archiviazione di Azure supportati

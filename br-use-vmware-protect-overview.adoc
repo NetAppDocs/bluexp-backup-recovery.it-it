@@ -14,13 +14,27 @@ summary: Proteggi i tuoi carichi di lavoro VMware con il BlueXP backup and recov
 
 
 [role="lead"]
-Proteggi i tuoi carichi di lavoro VMware con il BlueXP backup and recovery. Il BlueXP backup and recovery offrono operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti con gli arresti anomali e con la VM per VM, datastore e VMDK.
+Proteggi le tue VM VMware e i tuoi datastore con il BlueXP backup and recovery.  Il BlueXP backup and recovery garantiscono operazioni di backup e ripristino rapide, efficienti in termini di spazio, coerenti con gli arresti anomali e con la VM.  È possibile eseguire il backup dei carichi di lavoro VMware su Amazon Web Services S3 o StorageGRID e ripristinarli su un host VMware locale.
 
-È possibile eseguire il backup dei datastore su Amazon Web Services S3, Microsoft Azure Blob, piattaforma cloud Google e StorageGRID e ripristinare le macchine virtuali nel plug-in SnapCenter on-premise per l'host VMware vSphere.
+
+NOTE: Questa versione di BlueXP backup and recovery supporta solo VMware vCenter e non rileva vVols o VM su vVols.
+
+Utilizza il BlueXP backup and recovery per implementare una strategia 3-2-1, in cui hai 3 copie dei tuoi dati di origine su 2 sistemi di archiviazione diversi, oltre a 1 copia nel cloud.  I vantaggi dell'approccio 3-2-1 includono:
+
+* Copie multiple dei dati offrono protezione multi-layer contro le minacce interne (interne) e esterne alla cybersicurezza.
+* Diversi tipi di supporti garantiscono la fattibilità del failover in caso di guasto fisico o logico di un tipo di supporto.
+* La copia in loco agevola i ripristini rapidi, mentre le copie fuori sede sono disponibili nel caso in cui la copia in loco sia compromessa.
+
 
 []
 ====
-*NOTA* Questa funzione utilizza una versione precedente dell'interfaccia utente BlueXP backup and recovery . Per passare da una versione all'altra dell'interfaccia utente BlueXP backup and recovery , fare riferimento a link:br-start-switch-ui.html["Passa alla precedente interfaccia utente BlueXP backup and recovery"] .
+*NOTA* Per passare da una versione all'altra dell'interfaccia utente BlueXP backup and recovery , fare riferimento a link:br-start-switch-ui.html["Passa alla precedente interfaccia utente BlueXP backup and recovery"] .
 
 ====
-Per istruzioni sull'utilizzo della precedente interfaccia utente BlueXP backup and recovery , vedere i seguenti argomenti:
+È possibile utilizzare il BlueXP backup and recovery per eseguire le seguenti attività relative ai carichi di lavoro VMware:
+
+* link:br-use-vmware-discovery.html["Scopri i carichi di lavoro VMware"]
+* link:br-use-vmware-protection-groups.html["Crea e gestisci gruppi di protezione per carichi di lavoro VMware"]
+* link:br-use-vmware-backup.html["Eseguire il backup dei carichi di lavoro VMware"]
+* link:br-use-vmware-restore.html["Ripristinare i carichi di lavoro VMware"]
+

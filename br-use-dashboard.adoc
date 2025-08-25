@@ -44,7 +44,7 @@ Il riepilogo del sistema fornisce le seguenti informazioni:
 
 Esaminare le seguenti informazioni nel Riepilogo della protezione:
 
-* Numero totale di database protetti e non protetti.
+* Numero totale di database, VM e datastore protetti e non protetti.
 +
 
 TIP: Un database protetto è un database a cui è assegnata una policy di backup. Un database non protetto è un database a cui non è assegnata una policy di backup.

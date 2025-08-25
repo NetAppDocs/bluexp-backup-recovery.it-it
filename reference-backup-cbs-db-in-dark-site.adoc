@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: reference-backup-cbs-db-in-dark-site.html 
 keywords: backup database, recover database, dark site, private mode, restore database, backup and recovery, BlueXP Connector 
-summary: 'Quando si utilizza il BlueXP backup and recovery in un sito senza accesso a Internet, noto come "modalità privata", i dati di configurazione BlueXP backup and recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup.  Se in futuro si verifica un problema con il sistema host di BlueXP Connector, è possibile distribuire un nuovo Connector e ripristinare i dati critici BlueXP backup and recovery .' 
+summary: 'Quando si utilizza il BlueXP backup and recovery in un sito senza accesso a Internet, noto come "modalità privata", i dati di configurazione BlueXP backup and recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. Se in futuro si verifica un problema con il sistema host di BlueXP Connector, è possibile distribuire un nuovo Connector e ripristinare i dati critici BlueXP backup and recovery .' 
 ---
 = Ripristinare i dati di configurazione BlueXP backup and recovery in un sito oscuro
 :hardbreaks:
@@ -14,7 +14,7 @@ summary: 'Quando si utilizza il BlueXP backup and recovery in un sito senza acce
 
 
 [role="lead"]
-Quando si utilizza il BlueXP backup and recovery in un sito senza accesso a Internet, noto come _modalità privata_, i dati di configurazione BlueXP backup and recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup.  In caso di problemi con il sistema host di BlueXP Connector, è possibile distribuire un nuovo Connector e ripristinare i dati critici BlueXP backup and recovery .
+Quando si utilizza il BlueXP backup and recovery in un sito senza accesso a Internet, noto come _modalità privata_, i dati di configurazione BlueXP backup and recovery vengono sottoposti a backup nel bucket StorageGRID o ONTAP S3 in cui vengono archiviati i backup. In caso di problemi con il sistema host di BlueXP Connector, è possibile distribuire un nuovo Connector e ripristinare i dati critici BlueXP backup and recovery .
 
 
 NOTE: Questa procedura si applica solo ai dati di volume ONTAP .
