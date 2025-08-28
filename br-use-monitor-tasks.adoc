@@ -16,6 +16,8 @@ summary: Con il backup e il ripristino di BlueXP puoi monitorare lo stato degli 
 [role="lead"]
 Con il BlueXP backup and recovery puoi monitorare lo stato degli snapshot locali, delle repliche e dei backup su processi di archiviazione di oggetti avviati, nonché ripristinare i processi avviati. È possibile visualizzare i lavori completati, in corso o non riusciti, in modo da poter diagnosticare e risolvere i problemi. Utilizzando BlueXP Notification Center, puoi abilitare l'invio di notifiche via email per essere informato di importanti attività del sistema anche quando non sei connesso al sistema. Utilizzando la timeline di BlueXP, è possibile visualizzare i dettagli di tutte le azioni avviate tramite l'interfaccia utente o l'API.
 
+Il BlueXP backup and recovery conservano le informazioni sui processi per 15 giorni, dopodiché vengono eliminate e non sono più visibili in Job Monitor.
+
 *Ruolo BlueXP obbligatorio* Amministratore dell'organizzazione, Amministratore di cartelle o progetti, Super amministratore di Backup e ripristino, Amministratore di backup di Backup e ripristino, Amministratore di ripristino di Backup e ripristino, Amministratore di clonazione di Backup e ripristino o Ruolo di visualizzatore di Backup e ripristino. Scopri di più su link:reference-roles.html["Ruoli e privilegi di backup e ripristino"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
 
 
