@@ -69,7 +69,7 @@ Questa funzione non fornisce protezione per i volumi di origine, ma solo per i b
 
 [CAUTION]
 ====
-* Se intendi utilizzare DataLock e la protezione dal ransomware, puoi abilitarla durante la creazione della prima policy di backup e l'attivazione di backup e recovery di BlueXP per quel cluster. In seguito, puoi abilitare o disabilitare la scansione ransomware utilizzando le impostazioni avanzate di backup e ripristino di BlueXP .
+* Se si prevede di utilizzare la protezione DataLock e Ransomware, è possibile abilitarla durante la creazione del primo criterio di backup e l'attivazione BlueXP backup and recovery per quel cluster.  Successivamente potrai abilitare o disabilitare la scansione Ransomware utilizzando le Impostazioni avanzate BlueXP backup and recovery .
 * Quando BlueXP analizza un file di backup per ransomware durante il ripristino dei dati di volume, si verificheranno costi aggiuntivi in uscita dal cloud provider per accedere ai contenuti del file di backup.
 
 
@@ -140,9 +140,9 @@ Fare riferimento alla link:prev-ontap-policy-object-advanced-settings.html["Come
 
 
 
-=== Cos'è la protezione ransomware
+=== Che cos'è la protezione Ransomware in NetApp Backup and Recovery
 
-La protezione ransomware esegue la scansione dei file di backup per cercare la prova di un attacco ransomware. Il rilevamento di attacchi ransomware viene eseguito utilizzando un confronto checksum. Se viene identificato un potenziale ransomware in un nuovo file di backup rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra segni di un attacco ransomware. (Il file identificato come un attacco ransomware viene cancellato 1 giorno dopo la sua sostituzione).
+L'opzione di protezione ransomware di NetApp Backup and Recovery analizza i file di backup per cercare prove di un attacco ransomware.  Il rilevamento degli attacchi ransomware viene eseguito tramite un confronto di checksum.  Se in un nuovo file di backup viene identificato un potenziale ransomware rispetto al file di backup precedente, il file di backup più recente viene sostituito dal file di backup più recente che non mostra alcun segno di attacco ransomware.  (Il file identificato come vittima di un attacco ransomware viene eliminato 1 giorno dopo essere stato sostituito.)
 
 Le scansioni si verificano nelle seguenti situazioni:
 
@@ -297,7 +297,7 @@ endif::azure[]
 * L'opzione DataLock selezionata quando si attiva il backup e il ripristino BlueXP deve essere utilizzata per tutti i criteri di backup per quel cluster.
 * Non è possibile utilizzare più modalità DataLock su un singolo cluster.
 * Se si attiva DataLock, tutti i backup dei volumi verranno bloccati. Non è possibile combinare backup di volumi bloccati e non bloccati per un singolo cluster.
-* La protezione DataLock e ransomware è applicabile per i nuovi backup dei volumi utilizzando una policy di backup con DataLock e la protezione ransomware attivata. È possibile abilitare o disabilitare queste funzioni in un secondo momento utilizzando l'opzione Impostazioni avanzate.
+* La protezione DataLock e Ransomware è applicabile ai backup di nuovi volumi utilizzando un criterio di backup con protezione DataLock e Ransomware abilitata.  Successivamente potrai abilitare o disabilitare l'opzione di scansione Ransomware utilizzando l'opzione Impostazioni avanzate.
 * I volumi FlexGroup possono utilizzare la protezione DataLock e ransomware solo quando si utilizza ONTAP 9.13.1 o superiore.
 
 

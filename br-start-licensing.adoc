@@ -44,9 +44,6 @@ Se termini il periodo di prova gratuito senza sottoscrivere un piano a pagamento
 
 .Fasi
 . Dalla pagina di destinazione BlueXP backup and recovery , seleziona *Visualizza prova gratuita*.
-+
-*DOMANDA AI RECENSORI*: Come fanno gli utenti ad arrivare alla landing page se si trovano su altre pagine BR?
-
 . Seleziona *Termina prova gratuita*.
 . Seleziona *Elimina i dati subito dopo aver terminato la prova gratuita* per eliminare immediatamente i tuoi dati.
 . Digitare *fine prova* nella casella.
