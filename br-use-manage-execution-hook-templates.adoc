@@ -16,6 +16,15 @@ summary: Il BlueXP backup and recovery consentono di gestire gli hook di esecuzi
 [role="lead"]
 Un hook di esecuzione è un'azione personalizzata che puoi configurare per essere eseguita insieme a un'operazione di protezione dei dati di un'applicazione Kubernetes gestita. Ad esempio, se si dispone di un'applicazione di database, è possibile utilizzare un gancio di esecuzione per mettere in pausa tutte le transazioni del database prima di uno snapshot e riprendere le transazioni al termine dello snapshot. Ciò garantisce snapshot coerenti con l'applicazione. Quando crei un modello di hook di esecuzione, puoi specificare il tipo di hook, lo script da eseguire e qualsiasi filtro che determini a quali contenitori applicare l'hook. Puoi quindi utilizzare il modello per associare gli hook di esecuzione alle tue applicazioni.
 
+[NOTE]
+====
+Per impostazione predefinita, NetApp Backup and Recovery blocca e sblocca automaticamente i file system per determinate applicazioni, come KubeVirt, durante le operazioni di protezione dei dati.  È possibile disattivare questo comportamento a livello globale o per applicazioni specifiche seguendo le istruzioni contenute nella documentazione di Trident Protect:
+
+* Per disattivare questo comportamento per tutte le applicazioni, fare riferimento a https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-requirements.html#protecting-data-with-kubevirt-vms["Protezione dei dati con le VM KubeVirt"] .
+* Per disattivare questo comportamento per un'applicazione specifica, fare riferimento a https://docs.netapp.com/us-en/trident/trident-protect/trident-protect-manage-applications.html#define-an-application["Definire un'applicazione"] .
+
+
+====
 .Ruolo BlueXP richiesto
 Amministratore dell'organizzazione o amministratore SnapCenter . link:reference-roles.html["Scopri di più sui ruoli di accesso BlueXP backup and recovery"] .  https://docs.netapp.com/us-en/bluexp-setup-admin/reference-iam-predefined-roles.html["Scopri i ruoli di accesso BlueXP per tutti i servizi"^] .
 
